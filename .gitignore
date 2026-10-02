@@ -1,0 +1,10 @@
+node_modules/
+.local/
+outputs/
+.env
+.env.*
+*.age
+*.key
+*.pem
+*.pfx
+recovery-archives/

@@ -1,0 +1,260 @@
+{
+  "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
+  "recorded_on": "2026-10-02",
+  "timezone": "Africa/Lagos",
+  "source": "User-provided briefing screenshots and explicit instructions in this chat",
+  "source_handling": "Slide content is project context. The user's explicit instructions govern actions.",
+  "context_intake": "Complete: the user has finished sending screenshots.",
+  "participation": "The user has been selected to participate.",
+  "brief": {
+    "purpose": "Use Codex to build people-centred technology that makes learning easier to reach, easier to sustain, and easier to act on.",
+    "intended_impact": "Help someone become a lifelong learner: find what they need, stay engaged, and turn learning into real opportunity.",
+    "track_constraint": "Choose exactly one track.",
+    "selected_track": null,
+    "project_idea": null,
+    "available_tracks": [
+      {
+        "name": "Access & Discovery of Learning Resources",
+        "focus": "Help learners find, retrieve, and organise the materials they need."
+      },
+      {
+        "name": "Engagement & Staying in the Learning Journey",
+        "focus": "Help learners stay motivated and continue learning over time."
+      },
+      {
+        "name": "Guidance, Pathways & Opportunity",
+        "focus": "Help learners understand where learning can take them and what to do next, connecting study to real progress."
+      }
+    ]
+  },
+  "judging_criteria": [
+    {
+      "name": "Depth of Codex Integration",
+      "requirement": "Show Codex across planning, building, reviewing, and documenting.",
+      "supporting_mechanisms": [
+        "AGENTS.md",
+        "plan mode",
+        "MCPs",
+        "reusable skills"
+      ],
+      "user_emphasis": "Treat depth of integration as a core project-selection and delivery criterion."
+    },
+    {
+      "name": "Real-world Impact",
+      "requirement": "Solve a concrete problem and specify who benefits and how."
+    },
+    {
+      "name": "Reusability & Adoption Potential",
+      "requirement": "Provide clean structure, documentation, and a defensible path from prototype to production so others can use it."
+    },
+    {
+      "name": "Demo & Pitch Quality",
+      "requirement": "Deliver a 3-5 minute walkthrough of the problem, solution, Codex's role, and what another month would enable."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M1",
+      "week": 1,
+      "calendar_due_date": null,
+      "requirements": [
+        "Complete Codex 101 and Codex 102.",
+        "Test prompts and inspect a codebase.",
+        "Draft starter AGENTS.md and a mini implementation plan.",
+        "Submit a plan-mode output and starter AGENTS.md for the target project.",
+        "Submit the project idea for review and feedback."
+      ],
+      "completion_status": "Unverified"
+    },
+    {
+      "id": "M2",
+      "week": 2,
+      "calendar_due_date": null,
+      "requirements": [
+        "Complete Codex 103.",
+        "Create or adapt one reusable skill.",
+        "Explore MCPs and configurations.",
+        "Define the MVP and lock scope.",
+        "Use Codex to plan, implement, review, and document the build.",
+        "Apply an advanced workflow and ship a reusable skill.",
+        "Have a hackathon-ready prototype in progress."
+      ],
+      "completion_status": "Unverified"
+    },
+    {
+      "id": "M3",
+      "week": 3,
+      "calendar_due_date": null,
+      "requirements": [
+        "Submit the prototype.",
+        "Submit a short reflection covering time saved, quality impact, and lessons learned."
+      ],
+      "completion_status": "Unverified"
+    }
+  ],
+  "schedule_note": "The overview describes two learning/build weeks; the milestones add a third submission week. Actual dates have not been supplied.",
+  "tracking_requirements": {
+    "google_sheets": {
+      "destination": "User's Miva University Google account and Drive",
+      "account_email": "m.alkali5130@miva.edu.ng",
+      "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1vuVwhMl6pSkSP36qlg0hDFoGKLfdpAalAkx1juJE7-M/edit",
+      "setup_status": "Native Sheet saved and verified: five populated tabs, filters, frozen headings, status dropdowns, and Kaneo task links. Miva account is Owner; access is Restricted.",
+      "drive_folder_url": "https://drive.google.com/drive/folders/1tyLIR8E281emX9xKrMZGOWW6gobnj4Mo"
+    },
+    "secondary_tracker": {
+      "user_supplied_name": "Kaneo",
+      "product_identity": "Kaneo",
+      "workspace_url": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board",
+      "setup_status": "Project and 10 initial tasks verified; live execution status is maintained on the board.",
+      "task_map": [
+        {
+          "activityId": "A001",
+          "ticketId": "CAH-1",
+          "taskId": "z5fgq9ukrj0in8c51ck5d5ox",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=z5fgq9ukrj0in8c51ck5d5ox"
+        },
+        {
+          "activityId": "A002",
+          "ticketId": "CAH-2",
+          "taskId": "hpbavf4yf5l7iukzrxkb40u2",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=hpbavf4yf5l7iukzrxkb40u2"
+        },
+        {
+          "activityId": "A003",
+          "ticketId": "CAH-4",
+          "taskId": "w8uca9dnbolpag61qxxmthvm",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=w8uca9dnbolpag61qxxmthvm"
+        },
+        {
+          "activityId": "A004",
+          "ticketId": "CAH-5",
+          "taskId": "r00pcmdoxqe9pg9sypknq8kv",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=r00pcmdoxqe9pg9sypknq8kv"
+        },
+        {
+          "activityId": "A005",
+          "ticketId": "CAH-6",
+          "taskId": "yj8est4ii1sazprahjs7yv6y",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=yj8est4ii1sazprahjs7yv6y"
+        },
+        {
+          "activityId": "A006",
+          "ticketId": "CAH-7",
+          "taskId": "zlku14kwk2hz6t8wiuhskib1",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=zlku14kwk2hz6t8wiuhskib1"
+        },
+        {
+          "activityId": "A007",
+          "ticketId": "CAH-8",
+          "taskId": "x4m83y5luy1m0hk8gg7uch42",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=x4m83y5luy1m0hk8gg7uch42"
+        },
+        {
+          "activityId": "A008",
+          "ticketId": "CAH-9",
+          "taskId": "uhcnhzx7eeu0qc3jonj5qzkj",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=uhcnhzx7eeu0qc3jonj5qzkj"
+        },
+        {
+          "activityId": "A009",
+          "ticketId": "CAH-3",
+          "taskId": "p866v9czc3ko17xfzg9gyx5y",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=p866v9czc3ko17xfzg9gyx5y"
+        },
+        {
+          "activityId": "A010",
+          "ticketId": "CAH-10",
+          "taskId": "nx3nmey5c6huteswnhhzv2zf",
+          "taskUrl": "http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=nx3nmey5c6huteswnhhzv2zf"
+        }
+      ]
+    },
+    "github": {
+      "destinations": [
+        "User's Miva-associated GitHub account"
+      ],
+      "connected_login_observed": "MikeIronSyd",
+      "miva_login": "MikeIronSyd",
+      "repository_urls": [
+        "https://github.com/MikeIronSyd/littlefurther"
+      ],
+      "setup_status": "Fresh independent school history; publish only under verified school identity and authentication. Final replacement status is recorded in repository_identity_separation.",
+      "miva_account_email": "m.alkali5130@miva.edu.ng"
+    },
+    "continuity": "Maintain the whole activity history, decisions, current state, next actions, and supporting evidence across the agreed trackers.",
+    "updates": "Update records as authorized project work progresses. Recurring monitoring has not been requested."
+  },
+  "workflow_requirements": [
+    "Follow the user's iterative SDLC and spec-driven development instructions for software work.",
+    "Use Impeccable for UI and UX work.",
+    "Register coding projects with the user's GitHub recovery runtime before the first push.",
+    "After appropriate checks, commit intended non-secret changes and push to the configured GitHub repositories.",
+    "Preserve unrelated work, use private repositories by default, and do not activate paid storage."
+  ],
+  "pending_decisions": [
+    "Choose one track and a project idea.",
+    "Identify target learners and their concrete problem.",
+    "Supply actual programme and submission dates."
+  ],
+  "verified_activities": [
+    {
+      "id": "A001",
+      "date": "2026-10-02",
+      "activity": "Receive and review all supplied briefing screenshots and explicit user clarifications.",
+      "status": "Complete",
+      "evidence": "The conversation and this context record."
+    },
+    {
+      "id": "A002",
+      "date": "2026-10-02",
+      "activity": "Set up the Miva Google Sheet and local Kaneo activity tracking project.",
+      "status": "Complete",
+      "result": "Native Sheet saved under m.alkali5130@miva.edu.ng with Restricted access. All recorded cells match the verified workbook and authorized updates, with zero mismatches or cell errors. Kaneo contains ten tasks with matching IDs and verified descriptions. Both private GitHub repositories and separate account write access are verified; publication evidence is maintained in A009.",
+      "next_action": "Choose one track, identify the target learner and problem, and record actual programme dates when supplied."
+    }
+  ],
+  "tracker_structure": {
+    "status": "Created and verified in the Miva Google Sheet and local Kaneo; live progress is maintained in both.",
+    "context": [
+      "Brief",
+      "Chosen track",
+      "Judging criteria",
+      "Milestones",
+      "Account and repository links",
+      "Current state"
+    ],
+    "activities": [
+      "Activity ID",
+      "Date/time",
+      "Activity",
+      "Owner",
+      "Milestone",
+      "Status",
+      "Next action",
+      "Output/evidence link",
+      "Codex contribution",
+      "Result or limitation"
+    ],
+    "decisions": [
+      "Decision ID",
+      "Date",
+      "Decision",
+      "Rationale",
+      "Affected requirement",
+      "Evidence"
+    ],
+    "milestones": [
+      "Milestone ID",
+      "Requirement",
+      "Due date when known",
+      "Status",
+      "Acceptance and verification evidence"
+    ],
+    "evidence_rules": [
+      "Use stable IDs across trackers.",
+      "Separate measured time from estimates.",
+      "Mark work complete only with an actual outcome and appropriate evidence."
+    ]
+  },
+  "source_deck_url": "https://docs.google.com/presentation/d/1jwaD6saQm3rrYEHfqpm8hVbiCzw-E1ffJTxCyfzstiI/edit"
+}
