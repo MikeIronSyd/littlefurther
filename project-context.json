@@ -85,7 +85,7 @@
     {
       "id": "M3",
       "week": 3,
-      "calendar_due_date": null,
+      "calendar_due_date": "2026-10-14",
       "requirements": [
         "Submit the prototype.",
         "Submit a short reflection covering time saved, quality impact, and lessons learned."
@@ -93,7 +93,15 @@
       "completion_status": "Unverified"
     }
   ],
-  "schedule_note": "The overview describes two learning/build weeks; the milestones add a third submission week. Actual dates have not been supplied.",
+  "schedule_note": "The overview describes two learning/build weeks; the milestones add a third submission week. On 2026-10-03, the user explicitly set the submission deadline to 2026-10-14. The cutoff time and other programme dates remain unspecified.",
+  "submission_deadline": {
+    "date": "2026-10-14",
+    "time": null,
+    "timezone": "Africa/Lagos",
+    "source": "User explicitly instructed: use 14th october as the submission deadline, on 2026-10-03.",
+    "history": "Supersedes the initial in-two-weeks answer and the assistant's derived 17 October estimate.",
+    "organiser_cutoff_independently_verified": false
+  },
   "learning_progress": {
     "course_url": "https://andela-lms.vercel.app/course/c/090e67fd-efc1-4dea-bef6-56067ae6c6bf",
     "verified_on": "2026-10-03",
@@ -238,8 +246,7 @@
   ],
   "pending_decisions": [
     "Choose the first learning area for self-taught beginners and define the product idea and MVP.",
-    "Confirm access to two or three learners for feedback.",
-    "Supply actual programme and submission dates."
+    "Confirm access to two or three learners for feedback."
   ],
   "verified_activities": [
     {
