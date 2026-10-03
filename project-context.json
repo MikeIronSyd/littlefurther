@@ -1,8 +1,9 @@
 {
   "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
   "recorded_on": "2026-10-02",
+  "last_updated_on": "2026-10-03",
   "timezone": "Africa/Lagos",
-  "source": "User-provided briefing screenshots and explicit instructions in this chat",
+  "source": "User-provided briefing screenshots, explicit instructions and clarifications in this chat, and signed-in LMS readback",
   "source_handling": "Slide content is project context. The user's explicit instructions govern actions.",
   "context_intake": "Complete: the user has finished sending screenshots.",
   "participation": "The user has been selected to participate.",
@@ -10,7 +11,7 @@
     "purpose": "Use Codex to build people-centred technology that makes learning easier to reach, easier to sustain, and easier to act on.",
     "intended_impact": "Help someone become a lifelong learner: find what they need, stay engaged, and turn learning into real opportunity.",
     "track_constraint": "Choose exactly one track.",
-    "selected_track": null,
+    "selected_track": "Guidance, Pathways & Opportunity",
     "project_idea": null,
     "available_tracks": [
       {
@@ -93,6 +94,50 @@
     }
   ],
   "schedule_note": "The overview describes two learning/build weeks; the milestones add a third submission week. Actual dates have not been supplied.",
+  "learning_progress": {
+    "course_url": "https://andela-lms.vercel.app/course/c/090e67fd-efc1-4dea-bef6-56067ae6c6bf",
+    "verified_on": "2026-10-03",
+    "evidence": "User reported both modules passed; signed-in LMS readback verified two of two modules passed and 100% course progress.",
+    "modules_passed": 2,
+    "modules_total": 2,
+    "course_progress_percent": 100,
+    "modules": [
+      {
+        "name": "Codex Foundations",
+        "status": "Passed"
+      },
+      {
+        "name": "Practical, Advanced Workflows and Automation",
+        "status": "Passed"
+      }
+    ],
+    "capstone_access": "Unlocked in the LMS course",
+    "milestone_verification_note": "LMS module completion does not verify whole weekly milestones, practical exercises, a reusable skill, the MVP, or submission deliverables. Overall milestone statuses remain unverified.",
+    "submission_readback": {
+      "url": "https://andela-lms.vercel.app/course/c/090e67fd-efc1-4dea-bef6-56067ae6c6bf/capstone/submit",
+      "observed_on": "2026-10-03",
+      "status": "A prerequisite reflection is shown before the submission form; twelve questions, about three minutes, with answers private to Andela staff.",
+      "limitations": "No submission fields, deliverables, file or URL restrictions, or deadline were visible. No answers were entered or submitted during inspection."
+    }
+  },
+  "capstone_kickoff": {
+    "date": "2026-10-03",
+    "delivery_mode": "Solo",
+    "reported_weekly_capacity": "More than ten hours per week; user-reported availability, not measured effort.",
+    "initial_audience": "Self-taught beginners",
+    "learner_observations": [
+      "Learners struggle to identify what to learn and the right resources.",
+      "Learners lose focus or motivation.",
+      "Learners cannot see the eventual outcome of their learning.",
+      "Self-taught beginners face information overload, conflicting resources, and an unclear learning path."
+    ],
+    "other_groups_discussed": "Career changers also face difficulty; open university students were discussed as a comparison around motivation.",
+    "learning_area": null,
+    "access_to_feedback_learners": null,
+    "mvp_scope": null,
+    "evidence": "User's capstone kickoff answers and explicit track selection in this chat.",
+    "stage": "Define the first learning area, feedback access, product concept, and MVP."
+  },
   "tracking_requirements": {
     "google_sheets": {
       "destination": "User's Miva University Google account and Drive",
@@ -192,8 +237,8 @@
     "Preserve unrelated work, use private repositories by default, and do not activate paid storage."
   ],
   "pending_decisions": [
-    "Choose one track and a project idea.",
-    "Identify target learners and their concrete problem.",
+    "Choose the first learning area for self-taught beginners and define the product idea and MVP.",
+    "Confirm access to two or three learners for feedback.",
     "Supply actual programme and submission dates."
   ],
   "verified_activities": [
@@ -211,6 +256,15 @@
       "status": "Complete",
       "result": "Native Sheet saved under m.alkali5130@miva.edu.ng with Restricted access. All recorded cells match the verified workbook and authorized updates, with zero mismatches or cell errors. Kaneo contains ten tasks with matching IDs and verified descriptions. Both private GitHub repositories and separate account write access are verified; publication evidence is maintained in A009.",
       "next_action": "Choose one track, identify the target learner and problem, and record actual programme dates when supplied."
+    },
+    {
+      "id": "A003",
+      "date": "2026-10-03",
+      "activity": "Select the single capstone challenge track.",
+      "status": "Complete",
+      "result": "The user selected Guidance, Pathways & Opportunity. Self-taught beginners are the initial audience; the first learning area, product idea, and MVP remain undecided.",
+      "evidence": "User's explicit track selection and capstone kickoff answers in this chat.",
+      "next_action": "Define the first learning area, confirm access to feedback learners, and specify the product concept and MVP."
     }
   ],
   "tracker_structure": {

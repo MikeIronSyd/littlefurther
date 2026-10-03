@@ -1,12 +1,12 @@
 # Hackathon project instructions
 
-This is the Andela x Miva x OpenAI Codex Accelerator Hackathon workspace. The user has completed briefing intake. The capstone track and product idea have not been selected.
+This is the Andela x Miva x OpenAI Codex Accelerator Hackathon workspace. The user has completed briefing intake and both LMS modules. Guidance, Pathways & Opportunity is the selected capstone track, with self-taught beginners as the initial audience. The first learning area, product idea, and MVP remain undecided.
 
 ## Resume with context
 
 Read `project-context.json` and the applicable specification under `docs/specs/` before starting or resuming work. Consult the linked Miva Google Sheet and local Kaneo project for current activities, decisions, evidence, and next actions. Use the account and destination identities in the context; do not substitute another Google account.
 
-The brief is to use Codex to build people-centred technology that makes learning easier to reach, sustain, and act on. Choose exactly one challenge track with the user. Keep real-world beneficiaries and impact specific.
+The brief is to use Codex to build people-centred technology that makes learning easier to reach, sustain, and act on. Build within the selected Guidance, Pathways & Opportunity track and treat this choice as settled. Keep real-world beneficiaries and impact specific. The user is building solo and reports availability above ten hours per week; distinguish this reported capacity from measured work.
 
 ## Develop from the specification
 
@@ -19,6 +19,8 @@ Automatically use Impeccable for all UI and UX planning, implementation, refinem
 Maintain the whole activity history in both the Miva Google Sheet and Kaneo. Preserve stable A001-style activity IDs and record decisions, outcomes, output links, verification, limitations, and next actions. If a destination is unavailable, record the pending update and its reason.
 
 Show Codex's role across planning, building, reviewing, and documenting. Link actual specifications, plans, AGENTS.md changes, reusable skills, MCP workflows, implementation changes, reviews, and tests. Distinguish measured time from estimates. Do not invent deadlines, course completion, quality gains, time saved, or verification results.
+
+The LMS was verified on 2026-10-03 as two of two modules passed with 100% course progress and capstone access unlocked. Record that progress separately from weekly milestone completion and practical deliverables. Learning-area selection, access to learners for feedback, the product concept, and the MVP still require definition before implementation.
 
 Use Africa/Lagos for user-facing dates and times. Set up recurring monitoring only when requested.
 
