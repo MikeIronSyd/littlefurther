@@ -8,11 +8,24 @@
   "context_intake": "Complete: the user has finished sending screenshots.",
   "participation": "The user has been selected to participate.",
   "brief": {
+    "theme": "Learning That Stays With You",
     "purpose": "Use Codex to build people-centred technology that makes learning easier to reach, easier to sustain, and easier to act on.",
     "intended_impact": "Help someone become a lifelong learner: find what they need, stay engaged, and turn learning into real opportunity.",
+    "scope": "A working proof of concept demonstrating usefulness, viability, and potential for further development; production-ready software is not required.",
+    "idea_origin_guidance": "The supplied brief asks participants to originate their capstone idea without AI idea generation. Codex can help refine the user's observations and concept, validate, specify, build, review, and document.",
+    "operating_constraints": [
+      "Accurate learning materials traceable to credible sources.",
+      "Usefulness with low bandwidth, limited data, unreliable internet, and basic devices.",
+      "Accessibility across literacy, disability, digital confidence, and technology access.",
+      "Personalization that does not exclude learners outside a standard profile.",
+      "Privacy and security for personal, academic, and performance information.",
+      "Learners' multilingual needs.",
+      "Local relevance of curricula, credentials, institutions, and opportunities."
+    ],
+    "full_brief_source": "User-pasted capstone brief on 2026-10-03, consistent with the signed-in LMS observation. It permits cross-track entries but supplies no submission date; the user's exactly-one-track instruction remains in force.",
     "track_constraint": "Choose exactly one track.",
     "selected_track": "Guidance, Pathways & Opportunity",
-    "project_idea": null,
+    "project_idea": "Blend the user's personal baseline-to-goal guidance concept with their supplied skill-mapping and local-opportunity router: recognise existing formal, informal, and offline learning; connect it to a chosen or discovered local skill, credential, job, gig, course, or university opportunity; map real requirements and gaps; guide credible learning, practical demonstrations, and preparation through visible stages.",
     "available_tracks": [
       {
         "name": "Access & Discovery of Learning Resources",
@@ -139,19 +152,89 @@
     "date": "2026-10-03",
     "delivery_mode": "Solo",
     "reported_weekly_capacity": "More than ten hours per week; user-reported availability, not measured effort.",
-    "initial_audience": "Self-taught beginners",
+    "initial_audience": null,
     "learner_observations": [
-      "Learners struggle to identify what to learn and the right resources.",
-      "Learners lose focus or motivation.",
-      "Learners cannot see the eventual outcome of their learning.",
-      "Self-taught beginners face information overload, conflicting resources, and an unclear learning path."
+      "Lack of motivation.",
+      "Not seeing the light at the end of the tunnel; the intended meaning and learner situation are still being clarified."
     ],
-    "other_groups_discussed": "Career changers also face difficulty; open university students were discussed as a comparison around motivation.",
+    "other_groups_discussed": null,
+    "firsthand_case": {
+      "person": "The user",
+      "contexts": [
+        "Learning to code",
+        "Preparing for a project-management certification",
+        "Learning AI development and AI engineering",
+        "User-reported recent enrollment in BSc Artificial Intelligence at Miva Open University"
+      ],
+      "reported_pattern": "The user has experienced low motivation and unclear outcomes repeatedly while pursuing self-development.",
+      "meaning_of_unclear_outcome": "User selected: Both, or I am not sure yet, when asked about unclear eventual benefit versus invisible progress. Neither cause is established.",
+      "scope_limit": "This is one person's reported experience. It does not select a product audience or establish prevalence among other learners.",
+      "next_detail": "The user has now supplied a product concept. Narrow the first goal and decide whether the prototype starts from a known target or helps discover a target first; the earlier episode prompt is superseded."
+    },
+    "user_concept": {
+      "source": "User's own account of their desired support for coding, certifications, AI study, and opportunities, supplied on 2026-10-03.",
+      "goal_types_in_vision": [
+        "Skill",
+        "Certification",
+        "Course",
+        "Specific job opening",
+        "Prospective job or other opportunity",
+        "Gig work",
+        "University requirements"
+      ],
+      "capabilities_in_vision": [
+        "Find out about or choose an opportunity of interest.",
+        "Establish a baseline of what the learner already knows.",
+        "Identify what the learner needs to know or be able to do for the goal.",
+        "Guide the ordered journey: what to study, how to learn, and how to progress between levels.",
+        "Connect learning and practice to achieving the chosen goal.",
+        "Support interview questions and preparation when relevant to the chosen opportunity.",
+        "Recognise informal and offline learning when establishing the baseline.",
+        "Map current knowledge against real local job, credential, gig, or university requirements.",
+        "Show a visual step-by-step path with credible free learning resources; pair the visual path with accessible text."
+      ],
+      "primary_track_recommendation": "Guidance, Pathways & Opportunity",
+      "recommendation_basis": "The central user-stated outcome is a path from current ability toward a chosen goal or opportunity.",
+      "track_reselection_confirmed": true,
+      "track_selection_source": "User's blending request explicitly names Focus Track: Guidance, Pathways & Opportunity.",
+      "scope_status": "Blended concept and single track captured; first country, concrete target, MVP entry mode, languages, product audience, and implementation scope remain open.",
+      "first_prototype_target": null,
+      "entry_mode": null,
+      "prototype_scope_recommendation": "Prove one complete target journey in one country with a small verified requirements/resource pack; preserve other goal types and regions as broader vision.",
+      "blend_details": {
+        "source": "User asked to blend the earlier concept with the supplied skill-mapping and opportunity-router idea on 2026-10-03.",
+        "entry_routes_in_vision": [
+          "Start from existing skills or current study and explore relevant opportunities",
+          "Start from a known goal or opportunity and identify the path toward it"
+        ],
+        "country_examples_only": [
+          "Nigeria",
+          "Kenya",
+          "Senegal"
+        ],
+        "first_country": null,
+        "privacy_proposal": "Account-free browser-local prototype, with LocalStorage suggested by the user. No storage implementation or privacy guarantee has been verified.",
+        "technical_refinements": "Use traceable requirements and resource records with source/date/region. Separate claimed skills, demonstrated skills, and formal eligibility. Browser-local processing and deliberate offline caching are required for a genuinely local/offline core; LocalStorage alone does not establish either security or offline operation. Any external AI or live-feed request needs an explicit data-flow boundary.",
+        "concept_spec": "docs/specs/capstone/spec.md"
+      }
+    },
     "learning_area": null,
     "access_to_feedback_learners": null,
     "mvp_scope": null,
-    "evidence": "User's capstone kickoff answers and explicit track selection in this chat.",
-    "stage": "Define the first learning area, feedback access, product concept, and MVP."
+    "evidence": "User's capstone kickoff answers, explicit track selection, and later fresh-ideation reset in this chat.",
+    "stage": "Review the blended concept proposal, then choose the first country, target, MVP entry route, and supported languages before completing the implementation specification."
+  },
+  "ideation_reset": {
+    "date": "2026-10-03",
+    "instruction": "Ignore the self-taught beginners problem statement and start ideation afresh.",
+    "active_effect": "The earlier beginner audience/problem remains superseded. The user has since supplied a new goal-and-opportunity guidance concept, captured in capstone_kickoff.user_concept; first target, broader audience, and MVP remain open.",
+    "track_status": "The user reopened all three tracks, then explicitly named Guidance, Pathways & Opportunity in the subsequent blending request. Guidance is now the single selected track; the reset remains historical context.",
+    "new_starting_point": "The user's self-development experience now grounds their concept of assessing current knowledge and following a staged path toward a desired goal. Do not claim wider demand or motivation gains without validation.",
+    "superseded_history": {
+      "audience": "Self-taught beginners",
+      "observations": "Information overload, uncertainty about what and where to learn, declining motivation, and unclear learning outcomes.",
+      "other_groups_discussed": "Career changers and open university students were also discussed. These are historical observations, not current audience choices."
+    }
   },
   "tracking_requirements": {
     "google_sheets": {
@@ -252,8 +335,10 @@
     "Preserve unrelated work, use private repositories by default, and do not activate paid storage."
   ],
   "pending_decisions": [
-    "Choose the first learning area for self-taught beginners and define the product idea and MVP.",
-    "Confirm access to two or three learners for feedback.",
+    "Select one concrete first prototype target: a named job role/opening, certification, skill, or course.",
+    "Choose whether the first prototype starts with a goal the learner already has or helps discover a goal first.",
+    "Select the first country, initial languages, product audience, and feedback participants; the country examples Nigeria, Kenya, and Senegal are not a committed rollout scope.",
+    "Complete the implementation specification and choose the browser storage/offline approach, stack, and evaluation criteria after narrowing the MVP; the single track is now Guidance, Pathways & Opportunity.",
     "Record the official submission deadline when announced; it is currently unknown."
   ],
   "verified_activities": [
@@ -277,9 +362,9 @@
       "date": "2026-10-03",
       "activity": "Select the single capstone challenge track.",
       "status": "Complete",
-      "result": "The user selected Guidance, Pathways & Opportunity. Self-taught beginners are the initial audience; the first learning area, product idea, and MVP remain undecided.",
-      "evidence": "User's explicit track selection and capstone kickoff answers in this chat.",
-      "next_action": "Define the first learning area, confirm access to feedback learners, and specify the product concept and MVP."
+      "result": "The user reselected Guidance, Pathways & Opportunity by explicitly naming it in the concept-blending request. The earlier reopening and discarded beginner framing remain historical; no specific product audience has been selected.",
+      "evidence": "User's original selection, fresh-ideation reset, reopening of all tracks, and latest blending request naming Focus Track: Guidance, Pathways & Opportunity.",
+      "next_action": "Narrow the blended concept in A004 to a first country, target, entry route, languages, and verifiable MVP."
     }
   ],
   "tracker_structure": {
