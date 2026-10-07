@@ -1,0 +1,31 @@
+name: Local proof-of-concept checks
+
+# Manual only: publishing source does not start hosted jobs or consume a runner budget.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24.19.0
+          package-manager-cache: false
+      - name: Install pinned package manager
+        run: npm install --global pnpm@11.19.0
+      - name: Install locked dependencies without lifecycle scripts
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Verify Edge prerequisite
+        shell: pwsh
+        run: |
+          $edgePath = Join-Path ${env:ProgramFiles(x86)} 'Microsoft\Edge\Application\msedge.exe'
+          if (-not (Test-Path -LiteralPath $edgePath)) { throw 'Edge is required for the configured browser tests.' }
+      - run: pnpm run verify

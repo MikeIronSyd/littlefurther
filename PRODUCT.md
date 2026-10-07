@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-The accepted delivery plan selects Node 24 LTS, Express 5, strict TypeScript/native browser modules with Vite, Better Auth, and SQLite through better-sqlite3. Selection followed comparison with SvelteKit and ASP.NET Core. The isolated R11 experiment passed frozen installation, strict compilation, 35 authentication/SQLite assertions and a minimal Vite build on this Windows host. Exact versions and limits are in the research record. These results establish stack feasibility; no learner application exists yet.
+The accepted delivery plan selects Node 24 LTS, Express 5, strict TypeScript/native browser modules with Vite, Better Auth, and SQLite through better-sqlite3. Selection followed comparison with SvelteKit and ASP.NET Core. R11 established host feasibility; R15 added verified compatible Biome and Playwright tooling before production code. P04/P05 implements the first private learning journey. Exact versions, implementation boundaries and observed checks are in the research, increment and verification records.
 
 ## Users
 
@@ -45,7 +45,7 @@ The owner supplied briefing slides and `docs/specs/capstone/inputs/CODEX_CAPSTON
 
 Implementation must correct known raster limitations: reclaim the dark collapsed sidebar's wide gutter; preserve `Africa/Lagos` rather than the open mobile image's `Afrique/Lagos`; overlay the unchanged mobile page with one French translation catalogue; make outside modal controls inert without duplicate active utility controls; and implement/verify the intended approximately 80% responsive drawer width. Illustrated focus and portrait framing do not establish accessibility, reflow or native-French validation.
 
-There is currently no delivered app, measured learner benefit, usability study, verified human adoption or finished demo. Amber is the selected visual direction. No final product name or logo has been selected.
+The local P04/P05 app supports account/profile, reviewed plans, study/reflection, explicit completion, retained progress and the Amber shell. Comeback schedule recovery and private peer-circle behavior remain P06/P07 work; UI support rows state that boundary. No measured learner benefit, usability study, verified human adoption or finished demo exists. No final product name or logo has been selected.
 
 ## Product Principles
 

@@ -2,13 +2,25 @@
 
 ## Goal
 
-Carry the user's selected Amber direction into one connected learning journey before frontend implementation. Add requested light/dark switching, a collapsible sidebar, topbar controls and a persistent future brand slot. These are static interface references, not a functioning product or a final brand.
+Carry the user's selected Amber direction into one connected learning journey. P04/P05 now implements the first local private journey, light/dark switching, a collapsible sidebar, topbar controls and persistent provisional branding. This record preserves the original image-first design history below and distinguishes it from current implementation. P06 schedule recovery, P07 private circles and a final brand remain forthcoming.
 
 ## Context Pointers
 
 Use [PRODUCT.md](../../../PRODUCT.md), [spec.md](spec.md), [plan.md](plan.md), [research.md](research.md), and [verification.md](verification.md). Original R01–R12 research closed at 16:57 Africa/Lagos on 7 October 2026; expanded R01–R14 research closed at **20:14 Africa/Lagos** after the theme/navigation request. S23 subsequently supports the corrected panel-toggle icons. Impeccable Operate mode and native image generation remain the design workflow. Research closure establishes the implementation contract, not app behavior.
 
-### Active selection and current references — 7 October 2026
+### Current P04/P05 implementation — 7 October 2026
+
+[DESIGN.md](../../../DESIGN.md) and its [versioned sidecar](../../../.impeccable/design.json) extract actual styling from [styles.css](../../../src/client/styles.css), [journey.ts](../../../src/client/journey.ts), [shell.ts](../../../src/client/shell.ts) and [ui.ts](../../../src/client/ui.ts). The working frontend covers local account/profile, curated or manual reviewed plans, study logging, optional private reflection, explicit completion and retained progress/history. Semantic HTML/CSS/SVG provide the interface; no raster ships. Local Segoe UI is a system-font substitution, not exact or self-hosted reference lettering. [THIRD_PARTY_NOTICES.md](../../../THIRD_PARTY_NOTICES.md) retains icon attribution.
+
+The implemented shell keeps branding outside navigation, correct directional panel geometry, a 240px expanded/72px collapsed rail, guarded non-sensitive preferences and a native mobile modal of min(80vw, 350px). The final bounded mobile correction moves existing DOM nodes into goal/introduction → next action → return support → progress/path → optional support at the 799px breakpoint, retaining focus and restoring desktop order on widening. French uses one catalogue with localized accessible names. Reference 3/8 completion and three study days are synthetic examples; application captures show actual fixture state.
+
+The quality agent reported the final affected browser batch passed 6/6 at 21:42 Africa/Lagos and 19 distinct cases passed across batches; this documenter did not rerun those checks. Root reported browser-MCP readback of French Langue and mobile order. [Verification](verification.md) owns exact commands/results; the [independent visual review](reviews/2026-10-07-first-journey-visual.md) owns the bounded verdict. Current captures are .local/e2e-captures/workspace-light.png, workspace-dark.png and workspace-mobile-fr.png; root also captured [the working English view](../../../outputs/first-journey/amber-working.jpg). Capture existence alone is not a passing review.
+
+Formal Impeccable completion remains unavailable: measured spec 32 regions, zero raster plates and eleven measured text regions; comps skipped, plates open and later phases pending. An additional empty-asset acceptance receipt remains unresolved. Hero/final comp-diff reports, QUALITY BAR and detector findings are unavailable. Do not force closure or fabricate approval; the user's instruction already authorizes the build. Manual/browser review remains distinct from completed tool-pipeline evidence.
+
+P06 Comeback date recovery and P07 private circles remain committed future increments; current support copy states this boundary. Physical internet-disconnection validation, native-French review, complete accessibility conformance and learner-impact claims remain outside these design facts. The local server must remain running.
+
+### Active selection and preserved static references — 7 October 2026
 
 The user explicitly selected **“I will go with Amber.”** The approved direction is [One clear next turn](../../../.impeccable/mocks/decision/next-turn.png), with the exact approval and its limited scope in the [sidecar](../../../.impeccable/mocks/decision/next-turn.png.json). The other direction proposals remain unselected. Do not reopen the direction choice or infer approval of later state images, a final name/logo or application behavior.
 
@@ -45,6 +57,8 @@ The saved [decision payload](../../../.impeccable/decision-options.json) supplie
 At the end of the first generation round no option had approval; the subsequent Amber choice above supersedes that status. No final product name exists; “My learning” is a navigation label. The illustrative programming goal does not restrict the broad learner audience.
 
 ## Constraints
+
+The research/state-map and static-review sections below preserve the preimplementation image-stage record. Their historic unverified statuses apply to that stage; current application evidence is summarized above and recorded in verification.md. The original Done When section likewise describes P03's image-first deliverable, not current P04/P05 status.
 
 ### Truth and design research
 

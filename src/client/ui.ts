@@ -1,0 +1,162 @@
+import { bind, type MessageKey, message } from "./i18n.js";
+
+export function el<K extends keyof HTMLElementTagNameMap>(
+  tag: K,
+  className = "",
+  ...children: (Node | string | null | undefined | false)[]
+): HTMLElementTagNameMap[K] {
+  const node = document.createElement(tag);
+  node.className = className;
+  for (const child of children)
+    if (child !== null && child !== undefined && child !== false) node.append(child);
+  return node;
+}
+export function text<K extends keyof HTMLElementTagNameMap>(
+  tag: K,
+  key: MessageKey,
+  className = "",
+  values: Record<string, string | number> = {},
+): HTMLElementTagNameMap[K] {
+  const node = el(tag, className);
+  bind(node, () => {
+    node.textContent = message(key, values);
+  });
+  return node;
+}
+export function button(key: MessageKey, run: () => void, className = "button"): HTMLButtonElement {
+  const node = text("button", key, className);
+  node.type = "button";
+  node.addEventListener("click", run);
+  return node;
+}
+export function named(node: Element, key: MessageKey, attribute = "aria-label"): void {
+  bind(node, () => {
+    node.setAttribute(attribute, message(key));
+  });
+}
+export function field(
+  key: MessageKey,
+  control: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
+  hint?: MessageKey,
+): HTMLDivElement {
+  control.id ||= `field-${crypto.randomUUID()}`;
+  const label = text("label", key);
+  label.htmlFor = control.id;
+  const wrapper = el("div", "field", label, control);
+  if (hint) {
+    const help = text("p", hint, "hint");
+    help.id = `${control.id}-hint`;
+    control.setAttribute("aria-describedby", help.id);
+    wrapper.append(help);
+  }
+  return wrapper;
+}
+export function input(type: string, name: string, value = ""): HTMLInputElement {
+  const control = el("input");
+  control.type = type;
+  control.name = name;
+  control.value = value;
+  return control;
+}
+export function notice(key: MessageKey, danger = false): HTMLDivElement {
+  const node = text("div", key, danger ? "notice error" : "notice");
+  node.setAttribute("role", danger ? "alert" : "status");
+  return node;
+}
+export function focusHeading(root: HTMLElement): void {
+  const heading = root.querySelector<HTMLElement>("h1");
+  if (heading) {
+    heading.tabIndex = -1;
+    heading.focus();
+  }
+}
+
+export function lockForm(form: HTMLFormElement): () => void {
+  const controls = [
+    ...form.querySelectorAll<
+      HTMLInputElement | HTMLButtonElement | HTMLSelectElement | HTMLTextAreaElement
+    >("input, button, select, textarea"),
+  ].map((control) => ({ control, disabled: control.disabled }));
+  for (const { control } of controls) control.disabled = true;
+  form.setAttribute("aria-busy", "true");
+  return () => {
+    for (const { control, disabled } of controls) control.disabled = disabled;
+    form.removeAttribute("aria-busy");
+  };
+}
+
+export function focusStatus(host: HTMLElement, key: MessageKey): void {
+  const status = notice(key);
+  status.tabIndex = -1;
+  host.replaceChildren(status);
+  status.focus();
+}
+
+// Lucide panel icons, ISC license. Exact upstream geometry:
+// https://lucide.dev/icons/panel-left-close and https://lucide.dev/icons/panel-left-open
+export function icon(
+  kind:
+    | "panel-close"
+    | "panel-open"
+    | "home"
+    | "path"
+    | "activity"
+    | "arrow"
+    | "check"
+    | "clock"
+    | "edit"
+    | "calendar"
+    | "people"
+    | "review",
+): SVGSVGElement {
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  for (const [key, value] of Object.entries({
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    "stroke-width": "1.8",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round",
+    "aria-hidden": "true",
+    focusable: "false",
+  }))
+    svg.setAttribute(key, value);
+  svg.classList.add("icon");
+  const path = (d: string): void => {
+    const p = document.createElementNS(ns, "path");
+    p.setAttribute("d", d);
+    svg.append(p);
+  };
+  if (kind === "panel-close" || kind === "panel-open") {
+    svg.setAttribute("stroke-width", "2");
+    const rect = document.createElementNS(ns, "rect");
+    for (const [key, value] of Object.entries({
+      width: "18",
+      height: "18",
+      x: "3",
+      y: "3",
+      rx: "2",
+    }))
+      rect.setAttribute(key, value);
+    svg.append(rect);
+    path("M9 3v18");
+    path(kind === "panel-close" ? "m16 15-3-3 3-3" : "m14 9 3 3-3 3");
+  } else {
+    const paths = {
+      home: "m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9",
+      path: "m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2ZM9 3v16M15 5v16",
+      activity: "M5 20V13M12 20V7M19 20V3",
+      arrow: "M4 12h16m-7-7 7 7-7 7",
+      check: "m5 12 4 4 10-10",
+      clock: "M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9",
+      edit: "m16 3 5 5-12 12-6 1 1-6ZM13 6l5 5",
+      calendar: "M4 5h16v16H4ZM4 9h16M8 3v4M16 3v4M8 13h1M15 13h1M8 17h1M15 17h1",
+      people:
+        "M15 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M2 21v-2a7 7 0 0 1 14 0v2ZM18 4a4 4 0 0 1 0 8M18 15a5 5 0 0 1 4 5v1",
+      review: "M5 3h14v18H5ZM9 7h6M9 11h6M9 15h4",
+    };
+    path(paths[kind]);
+  }
+  return svg;
+}

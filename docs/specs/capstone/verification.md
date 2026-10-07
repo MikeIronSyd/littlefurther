@@ -1,6 +1,6 @@
 # Capstone verification and judging evidence
 
-Updated: 7 October 2026, Africa/Lagos. Planning/research artifacts and four unapproved desktop direction mockups exist; R11 runtime feasibility passed and the research gate closed at 16:57. No product implementation or product acceptance result exists. E004 covers preparation; E005 covers design artifacts, neither establishes learner outcomes.
+Updated: 7 October 2026, Africa/Lagos. P04/P05 now implements a running private learning journey and Amber shell. R01–R15 research preceded implementation. [First-journey verification](increments/first-journey-verification.md) records actual checks, failures/corrections, browser MCP and scope limits; E007 records this increment. E004–E006 remain historical preparation/design evidence. Full capstone acceptance and learner outcomes remain open.
 
 ## Goal
 
@@ -42,27 +42,27 @@ The runtime report retains initial strict-compiler failures (`bun:sqlite` missin
 
 ### Acceptance verification state
 
-All product acceptance criteria are **planned** because no app exists. This initial state is not a waiver of required checks.
+The table summarizes current evidence for the P04/P05 milestone. A scoped pass does not complete requirements belonging to later increments or establish learner benefit.
 
 | Criteria | Required verification | Current result |
 | --- | --- | --- |
-| AC01–AC02 | Supported/manual planning, validated dates/estimates, editable approval, template/source/prerequisites and fallback. | Planned; no app/content test. |
-| AC03 | Personal study/review, skipped private reflection, activity distinct from completion. | Planned. |
-| AC04 | Seven-calendar-day distinct dates, explicit timezone, midnight/DST/deduplication; reported study minutes distinct from estimates. | Planned. |
-| AC05 | Current scope versus retained history/self-report, empty plan and scope edits. | Planned. |
+| AC01–AC02 | Supported/manual planning, validated dates/estimates, editable approval, template/source/prerequisites and fallback. | Verified for the implemented private journey by domain/HTTP/browser cases and root MCP eight-step template walkthrough. No external content is fetched or validated merely by saving a link. |
+| AC03 | Personal study/review, skipped private reflection, activity distinct from completion. | Verified by HTTP/browser cases and actual saved reflection/completion/reload. |
+| AC04 | Seven-calendar-day distinct dates, explicit timezone, midnight/DST/deduplication; reported study minutes distinct from estimates. | Verified by ten domain cases and HTTP/browser activity observations, including DST and distinct-date accounting. |
+| AC05 | Current scope versus retained history/self-report, empty plan and scope edits. | Verified by scope-removal/empty-state/history domain and HTTP checks, plus browser removal with retained history. |
 | AC06 | Exact unfinished-date shift, order/spacing/history, conflicts, cancel/confirm/stale revision and five-minute activity. | Planned. |
 | AC07 | Two accounts, explicit copies/encouragement, owner/member/nonmember rules, leave/removal/own-copy deletion and owner closure with cleanup/access denial. | Planned; simulation cannot satisfy real peers. |
 | AC08 | Hashed expiring revocable one-use invites; repeated/concurrent/altered/expired/revoked/closed-circle rejection. | Planned. |
-| AC09 | Auth/sign-out, all-request ownership/membership, limits, safe links/text and dependency/review findings. | Planned. |
-| AC10 | Refresh/restart persistence, honest failed saves, reload/use with internet disconnected and local server running, external-request inspection. | Planned; verify the stated condition, not a browser-offline mode that blocks localhost. |
-| AC11; AC11a–AC11f | Image before frontend, both languages/states, desktop/mobile, theme/navigation behavior, keyboard/focus, zoom/reflow, contrast/labels/targets. | Amber selected; six detailed desktop/French-mobile states produced and statically reviewed before frontend. E006 records known implementation adjustments. Behavior, accessibility and full AC remain unverified. |
+| AC09 | Auth/sign-out, all-request ownership/membership, limits, safe links/text and dependency/review findings. | Private-account ownership, sign-out, input/URL/plain-text protections and dependency audit verified. Peer membership/invite lifecycle remains P07. |
+| AC10 | Refresh/restart persistence, honest failed saves, reload/use with internet disconnected and local server running, external-request inspection. | Refresh, actual separate-process restart and failed saves verified. Browser loopback-only request routing passed30 local requests/0 external attempts; physical internet and server egress were not disabled. |
+| AC11; AC11a–AC11f | Image before frontend, both languages/states, desktop/mobile, theme/navigation behavior, keyboard/focus, zoom/reflow, contrast/labels/targets. | Image-first evidence preserved. Scoped browser cases pass theme/storage/sidebar/modal/320px/French/forced-colors/reduced-motion checks. Final mobile-priority/label correction and bounded visual review are recorded separately below; full accessibility/native-language certification is not claimed. |
 | AC12 | Independent clean-checkout run and template/language adaptation from README. | Planned; not human adoption. |
-| AC13 | Lifecycle/MCP work, two uses of each skill, tracker readback and verified dual-remote publication. | Planning/access evidence only; actual product/review/skill outcomes planned. |
+| AC13 | Lifecycle/MCP work, two uses of each skill, tracker readback and verified dual-remote publication. | Actual spec-driven implementation, testing, independent review, root browser MCP and project-skill evidence now exist. E007 tracker/publication readbacks are separate results; full P08/P09 remains pending P06/P07. |
 | AC14 | Timed 3–5 minute full walkthrough, true verification and next-month scope. | Planned; 4:30 target is not measured. |
 
 ### Commands and execution policy
 
-Planned app commands: `npm run check`, `npm run lint`, `npm run format:check`, `npm run build`, `npm test`, `npm run test:e2e`, `npm run audit` (delegates to `pnpm audit` for the selected lockfile). These product scripts are not claimed to exist or pass. Record command, candidate commit, date, outcome and relevant output when available. Resolve required failures or obtain an explicit scoped exception before release; a missing command is not a pass. R11's actual experiment commands/exit codes are separate V09 evidence.
+Product commands: `pnpm run check`, `pnpm run lint`, `pnpm run format:check`, `pnpm run build`, `pnpm test`, `pnpm run verify:process`, `pnpm run test:e2e`, `pnpm run audit`. These are defined in package.json; their actual outcomes and candidate scope are recorded in the first-journey verification record. Resolve required failures or obtain an explicit scoped exception before release; a missing command is not a pass. R11's experiment results remain separate research evidence.
 
 For documentation, run `git diff --check` for tracked changes and a per-file whitespace check for new documents. Check local links and requirement references proportionally. Do not introduce app tests for prose-only edits. Record final actual outcomes below.
 
@@ -70,11 +70,11 @@ For documentation, run `git diff --check` for tracked changes and a per-file whi
 
 | Criterion | Requirement | Artifact/commit connection | Actual check / status | Video timestamp |
 | --- | --- | --- | --- | --- |
-| J1 — Codex integration | AC13; D013 | Saved spec/plan/research, AGENTS and root context/product updates; E004; reproducible R11 fixture/results; later requirement-linked product code/tests/review. | V01–V09 are actual planning/source/access/research checks. Product commits/review/skill iterations planned. | Required walkthrough; actual recording pending. |
-| J1 — MCP contribution | AC07/AC11/AC13 | Personal repository read; future commit/diff/check review and browser app/Sheet/Kaneo work. | V05 passed, V06 unavailable, V07 CLI passed. No native Sheets/Kaneo connector claimed. | Required walkthrough; actual recording pending. |
-| J1 — Reusable skills | AC13 | Project learning-journey-review and capstone-evidence-update skills. | P08/P09 must record actual input/output/findings/dispositions/changes twice; SKILL.md alone is insufficient. | Required walkthrough; actual recording pending. |
-| J2 — Impact | AC01–AC08; D009/D014 | Next action → study/review → progress → comeback → optional private accountability; optional volunteer observations. | Product checks planned; no participants, outcomes, time saving or retention effect recorded. | Required walkthrough; actual recording pending. |
-| J3 — Reuse/adoption potential | AC12 | README, module boundaries, template/language schema, actual clean checkout/adaptation and production gaps. | Planned; agent rehearsal distinct from human adoption. | Required walkthrough; actual recording pending. |
+| J1 — Codex integration | AC13; D013 | Saved spec/plan/research, AGENTS, R11/R15 experiments, P04/P05 contracts/source/tests and independent reviews. | E007 records actual implementation and checks with discovered/fixed defects. Full-capstone P08/P09 remains pending. | Required walkthrough; actual recording pending. |
+| J1 — MCP contribution | AC07/AC11/AC13 | Personal repository reads and root browser app/Sheet/Kaneo work. | Actual eight-step account-to-progress browser MCP journey and shell checks; tracker/publication readback separately below. Miva connector unavailable, CLI route distinguished. No native Sheets/Kaneo connector claimed. | Required walkthrough; actual recording pending. |
+| J1 — Reusable skills | AC13 | Project learning-journey-review and capstone-evidence-update skills. | Meaningful private-journey review/corrections and evidence reconciliation recorded; full P08/P09 still requires all five capabilities. File existence alone is insufficient. | Required walkthrough; actual recording pending. |
+| J2 — Impact | AC01–AC08; D009/D014 | Actual next action → private study/reflection → retained progress; Comeback/peers remain next increments. | Synthetic scenario checks establish working interactions, not learner benefit. No participants, time saving or retention effect recorded. | Required walkthrough; actual recording pending. |
+| J3 — Reuse/adoption potential | AC12 | README/start/stop/configuration, explicit module boundaries, template/language adaptation instructions and executable checks. | Artifacts exist; independent clean-checkout/adaptation rehearsal and human adoption remain unverified. | Required walkthrough; actual recording pending. |
 | J4 — Demo/pitch | AC14 | Required 3–5 minute walkthrough; later actual recording/script with supported claims/limits. | Planned; measured duration and visible working behavior required. | Entire actual 3–5 minute recording pending. |
 
 Attach exact commit/artifact links and actual timestamps as they exist. Local planning files are current evidence but have no verified published increment until normal publication and both-remote readback succeed. V08's baseline hash does not contain this increment.
@@ -87,8 +87,8 @@ Both project skills must contribute across two meaningful iterations: first comp
 
 ### Current limitations
 
-- R11 closes this host's selected runtime feasibility; it does not establish product correctness, clean-machine installation, process/machine restart or cross-platform support.
-- Amber is selected; four historical direction proposals and six reviewed detailed states exist. No application, app tests, enforced CI, learner research, clean-checkout rehearsal or timed demo exists. E006 records static-design findings and pending implementation checks.
+- R11/R15 establish this host's selected runtime/tooling feasibility. Product checks now exist; clean-machine installation, machine reboot and broad cross-platform support remain unverified.
+- The first private journey and shell are implemented. P06/P07, enforced CI, learner research, independent clean-checkout/adaptation and timed demo remain outstanding. E006 retains static-design history; E007 records actual application work.
 - GitHub MCP cannot currently read Miva; scoped CLI can. Browser automation is the Sheet/Kaneo path.
 - Trackers have verified scope/R11 readbacks. Subsequent independent-review and project-publication updates are recorded only after their actual results; source snapshot publication remains a separate delivery step. Any independently scoped global recovery result is recorded separately.
 - Local email/password does not verify email or provide recovery. Public hosting/HTTPS, distributed peers/sync, operational retention/deletion, abuse/moderation, availability, recovery and wider device/language/learner evaluation are future production work.
@@ -160,3 +160,13 @@ The final staged whitespace check passed after removing one terminal blank line 
 Normal git push origin main exited 0 and published artifact commit 486a850bba34d9f9cc8b63599666475764762935 to both private repositories. Both git ls-remote main readbacks returned the exact hash. GitHub MCP github_fetch_commit independently returned the same personal-repository SHA, message, canonical URL and diff. No project backup/recovery wrapper was invoked. These are source publication checks, not product checks.
 
 E006/D015 tracker reconciliation completed through browser MCP under the verified Miva identity. Sheet saved readbacks passed for Decisions A16:F16; Codex evidence A7:J7 and the E005 superseding note H6:I6; Activities G5:K5, G7:K7 and G9:K11; Context B25:C25. Kaneo descriptions for A004/CAH-5, A006/CAH-7, A008/CAH-9, A009/CAH-3 and A010/CAH-10 passed persisted comparison, preserving history. No failed writes or retries. A004/A006/A008/A010 remain In progress, A009 Done for initial setup and A007 To do. The six design references and publication are recorded separately from unverified product behavior, impact, adoption and video.
+
+### E007 — First usable private journey, 7 October 2026
+
+The [implementation contract](increments/first-journey.md) preceded production changes after R15 closed at21:02. The app now provides local identity/profile, supported/manual reviewed plans, separate study/completion, optional private reflection, retained scope/history, calendar-day consistency and the Amber English/French shell. P06 schedule recovery and P07 peers remain required next increments.
+
+[Actual verification](increments/first-journey-verification.md) records20 passing domain/HTTP tests,19 distinct browser cases with passing evidence across corrected batches, final6/6 affected checks, strict/lint/format/build/audit and real separate-process persistence. Root browser MCP performed the synthetic eight-step template journey through saved reflection/completion/reload and confirmed theme/sidebar/French/mobile changes. The independent [behavior review](reviews/2026-10-07-first-journey-review.md) and [visual verdict](reviews/2026-10-07-first-journey-visual.md) retain failures, fixes, fingerprints, captures and claim limits. The two scored visual corrections were resolved; full Impeccable completion was explicitly refused by its phase tool and is not claimed.
+
+This demonstrates actual Codex planning, building, tests, independent review, documentation and browser MCP use (J1), and a working synthetic learner interaction (J2). Source structure/setup/design-system/test artifacts support future reuse (J3), but no independent clean-checkout rehearsal, human adoption or learning benefit is established. Video and measured timing remain pending (J4). Publication and E007 tracker saved readback follow as separate results.
+
+The first publication attempt was rejected by both repositories because the OAuth app lacks `workflow` scope for `.github/workflows/quality.yml`. Both remote readbacks remained at `e740fdc8cf4ac67e45470ffdfbf64826752b30d6`; no ambiguous remote update occurred. Root retained the same manual workflow as `docs/operations/github-quality-workflow.yml`, updated the deployment limitation and amended only its own unpublished local candidate. No credential permission was expanded and no local check was removed or weakened. CI activation remains unavailable under the present login; normal source publication is retried separately.

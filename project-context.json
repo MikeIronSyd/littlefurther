@@ -194,11 +194,11 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "Amber selected by the user; R01-R14 research satisfied for the expanded local PoC. Six detailed shell/restart/sharing/French-mobile images produced and statically reviewed. No product implementation or acceptance verified.",
+      "scope_status": "P04/P05 first private journey implemented and verified within scope:20 unit/HTTP tests,19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. Final source/tracker closeout follows; P06 Comeback schedule recovery and P07 private peers remain required next increments.",
       "ai_product_feature_required": false,
       "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
-      "stack": "Selected Node 24 LTS / Express 5 / strict TypeScript and Vite native browser modules / Better Auth / better-sqlite3. R11 isolated feasibility passed on this Windows host: frozen install, strict compiler, 35 HTTP/auth/SQLite assertions and build. Exact pins and limitations are in docs/specs/capstone/experiments/runtime-feasibility/REPORT.md. No application is installed or verified.",
+      "stack": "Node24.19.0 / pnpm11.19.0 / Express5.2.1 / strict TypeScript7.0.2 / Vite8.3.3 / Better Auth1.7.7 / better-sqlite3 13.0.3; Biome2.5.15 and Playwright1.63.0. R01-R15 closed before production implementation. Exact pins in package.json and pnpm-lock.yaml. Actual product check results: docs/specs/capstone/increments/first-journey-verification.md.",
       "concept_spec": "docs/specs/capstone/spec.md",
       "runtime_ai": false,
       "languages": [
@@ -209,9 +209,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "Amber selected by the user; R01-R14 research satisfied for the expanded local PoC. Six detailed shell/restart/sharing/French-mobile images produced and statically reviewed. No product implementation or acceptance verified.",
+    "mvp_scope": "P04/P05 first private journey implemented and verified within scope:20 unit/HTTP tests,19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. Final source/tracker closeout follows; P06 Comeback schedule recovery and P07 private peers remain required next increments.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "Selected Amber design elaborated with light/dark, sidebar/topbar and placeholder branding; static review complete with recorded implementation corrections. P03 in progress; application implementation next."
+    "stage": "P04/P05 first usable increment verification and delivery; full MVP, learner evaluation, reuse rehearsal and video remain open."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -524,7 +524,7 @@
     },
     "browser_mcp": {
       "purpose": "Operate the running app for observed behaviour and maintain Miva Sheet/Kaneo with saved readback.",
-      "boundary": "Browser automation through MCP, not native Google Sheets or Kaneo MCP; app behaviour is not yet tested."
+      "boundary": "Actual IAB account/profile/template/study/reflection/completion/reload and shell observations. Tracker operations use browser MCP, not native Google Sheets/Kaneo connectors. Synthetic demo data; no learner impact inference."
     },
     "project_skills": [
       {
@@ -543,7 +543,7 @@
   },
   "current_preparation": {
     "recorded_on": "2026-10-07",
-    "status": "Amber selected by the user; R01-R14 research satisfied for the expanded local PoC. Six detailed shell/restart/sharing/French-mobile images produced and statically reviewed. No product implementation or acceptance verified.",
+    "status": "P04/P05 first private journey implemented and verified within scope:20 unit/HTTP tests,19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. Final source/tracker closeout follows; P06 Comeback schedule recovery and P07 private peers remain required next increments.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -561,30 +561,56 @@
       ".impeccable/mocks/amber/sharing-preview.png",
       ".impeccable/mocks/amber/mobile-fr-closed.png",
       ".impeccable/mocks/amber/mobile-fr-open.png",
-      ".impeccable/surfaces/src-client-main-ts.md"
+      ".impeccable/surfaces/src-client-main-ts.md",
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/client/main.ts",
+      "src/server/app.ts",
+      "docs/specs/capstone/increments/first-journey.md",
+      "docs/specs/capstone/increments/first-journey-verification.md",
+      "docs/operations/local-demo.md",
+      "tools/verify-process.mjs"
     ],
-    "tracker_record": "E004 preparation; E005 first direction round; E006 Amber and shell design; D009-D015 and A001-A010 preserved.",
-    "tracker_sync": "E006/D015 reconciliation completed on 7 October 2026 through browser MCP under the verified Miva account. Saved readbacks passed for Decisions A16:F16, Codex evidence A7:J7 and E005 H6:I6, Activities G5:K5/G7:K7/G9:K11, and Context B25:C25. Kaneo A004/A006/A008/A009/A010 persisted comparisons passed, preserving history/statuses. No failed writes or pending tracker updates. All product behavior remains unverified.",
-    "publication": "Amber artifact commit 486a850bba34d9f9cc8b63599666475764762935 published through normal Git to both authorized private repositories; both remote heads matched. Personal commit independently read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. No project backup or recovery wrapper invoked.",
+    "tracker_record": "E004 preparation; E005 first direction round; E006 Amber shell design; E007 first private journey reserved after live uniqueness read. D009-D015 and A001-A010 preserved.",
+    "tracker_sync": "E007 final updates pending final verification/publication; both destinations read and account/IDs verified. Prior E006 history preserved in milestone_history. Existing ContextC25 literal undefined will be repaired without discarding saved history.",
+    "publication": "First private journey source publication pending checks/review closeout. Prior artifact1856e4b and closeout707d08e remain published; no recovery wrapper invoked.",
     "limitations": [
-      "No app code or application tests completed.",
-      "No learner evaluation or human adoption verified.",
-      "No measured retention, motivation, quality uplift or time savings.",
-      "Six detailed static Amber states reviewed; known desktop/mobile layout corrections are documented for implementation. No functioning controls, native French validation, 320px reflow, accessibility pass or demo video."
+      "P06 schedule recovery and P07 peer circles remain unimplemented; all five capabilities stay required.",
+      "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
+      "No independent fresh-checkout/adaptation rehearsal or timed video.",
+      "Physical internet and server egress were not disconnected: browser-only loopback request restriction tested.",
+      "Native-French quality, broad devices and full accessibility conformance unverified.",
+      "Formal Impeccable pipeline remains at plates awaiting an extra receipt; no phase forcing or invented approval. Manual visual review recorded separately.",
+      "Manual-only GitHub CI has not run and no provider gate enforcement is claimed."
     ],
     "tracker_sync_history": [
       "E005 and publication reconciliation completed on 2026-10-07 through browser MCP in the verified Miva account and Kaneo. Sheet exact readbacks passed for E005 A6:J6, E004 H5:I5, Activities G5:K5/G7:K7/G9:K11 and Context B25:C25. Kaneo A004/A006/A008/A009/A010 passed persisted comparison after navigation, preserving history and statuses. P03 in progress; no visual approval or product acceptance inferred."
     ],
     "publication_history": [
       "Design artifact commit c89194b2bd3920c8ef5931cff87a6b5d7b852d3a published with normal Git and read back on both private remotes; personal commit also read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. Global-only CodexRecovery is separate; no project backup invoked."
+    ],
+    "milestone_history": [
+      {
+        "id": "E006",
+        "recorded_on": "2026-10-07",
+        "status": "Amber selected by the user; R01-R14 research satisfied for the expanded local PoC. Six detailed shell/restart/sharing/French-mobile images produced and statically reviewed. No product implementation or acceptance verified.",
+        "tracker_sync": "E006/D015 reconciliation completed on 7 October 2026 through browser MCP under the verified Miva account. Saved readbacks passed for Decisions A16:F16, Codex evidence A7:J7 and E005 H6:I6, Activities G5:K5/G7:K7/G9:K11, and Context B25:C25. Kaneo A004/A006/A008/A009/A010 persisted comparisons passed, preserving history/statuses. No failed writes or pending tracker updates. All product behavior remains unverified.",
+        "publication": "Amber artifact commit 486a850bba34d9f9cc8b63599666475764762935 published through normal Git to both authorized private repositories; both remote heads matched. Personal commit independently read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. No project backup or recovery wrapper invoked.",
+        "limitations": [
+          "No app code or application tests completed.",
+          "No learner evaluation or human adoption verified.",
+          "No measured retention, motivation, quality uplift or time savings.",
+          "Six detailed static Amber states reviewed; known desktop/mobile layout corrections are documented for implementation. No functioning controls, native French validation, 320px reflow, accessibility pass or demo video."
+        ]
+      }
     ]
   },
   "research_gate": {
-    "status": "Closed for agreed local proof-of-concept scope",
-    "closed_at": "2026-10-07T20:14:00+01:00",
+    "status": "Closed for R01-R15 before first production increment",
+    "closed_at": "2026-10-07T21:02:00+01:00",
     "checklist": "docs/specs/capstone/research.md",
     "evidence": "docs/specs/capstone/experiments/runtime-feasibility/REPORT.md",
-    "boundary": "All fourteen scoped research needs satisfied, including R13 theme and R14 navigation; official Lucide sources S23 subsequently support exact panel icons. This is not product verification; reopen affected research for consequential unknowns.",
+    "boundary": "All fifteen scoped research needs satisfied. R15 records exact tooling compatibility and positive/negative isolated tests. No application acceptance inferred; reopen consequential unknowns.",
     "initial_closed_at": "2026-10-07T16:57:00+01:00"
   },
   "design_direction": {
@@ -602,7 +628,7 @@
     ],
     "approval_boundary": "The original direction/reference is selected. Detailed state images carry approved:false; no further direction vote required and no product behavior approval inferred.",
     "shell": "Stable top-left brand placeholder outside sidebar; My learning/Journeys/Activity navigation; top utilities; device-preference theme with explicit light/dark override; proper divided-panel icon with left/right chevron.",
-    "review": "Root and independent agent inspected six static images. Counts, restart date shifts, sharing boundary and icon directions are coherent. Dark collapsed-width gutter and mobile overlay/header/timezone/copy corrections remain implementation requirements.",
-    "behavior_status": "Not implemented or tested."
+    "review": "Fresh independent paired desktop/light-dark/French-mobile review found one mobile priority-order fix; existing semantic/Segoe UI adaptation and selected Amber hierarchy retained. Formal tool fidelity receipts unavailable and not inferred from manual screenshots.",
+    "behavior_status": "Private-journey shell checks passed, including final6 affected browser cases after mobile ordering/French accessible-label corrections. Formal Impeccable pipeline remains open; manual visual verdict is separate."
   }
 }

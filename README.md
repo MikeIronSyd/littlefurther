@@ -19,15 +19,35 @@ The original handover and superseded concepts remain under `docs/specs/capstone/
 
 ## Constraints
 
-**Current status, 7 October 2026:** the user selected Amber and requested a light/dark toggle, collapsible sidebar, topbar utilities, future brand space at top left and a proper sidebar-toggle icon. The original selected reference records that approval; detailed state images remain design elaborations with no additional approval inferred. Six desktop/mobile references and prompt records have completed static review. Expanded R01–R14 research closed at 20:14 Africa/Lagos, preserving the earlier 16:57 closure.
+**Current milestone, 7 October 2026:** a running first private journey implements the selected Amber shell, local accounts, explicit timezone, curated/manual editable plans, study sessions, optional private reflection, separate step completion and retained history. English/French, light/dark mode, the correct divided-panel sidebar icons and a mobile drawer are implemented. Research R01–R15 closed before production work. Actual checks and remaining limits are recorded in [verification](docs/specs/capstone/verification.md); implementation alone is not an acceptance pass.
 
-There is no runnable learner application or completed product test suite yet. The isolated runtime experiment is research, not the prototype. The verification record distinguishes completed preparation and static design artifacts from outstanding implementation and evaluation. Theme/storage behavior, sidebar/drawer interaction, accessibility and all learner workflows remain unverified. The design record lists required implementation adjustments: reclaim collapsed width, preserve `Africa/Lagos`, keep one consistent French catalogue and unchanged background under the mobile overlay, enforce modal inertness without duplicate active utilities, and verify the approximately 80% responsive drawer target. Static focus styling does not establish accessible behavior or native-French validation.
+Comeback schedule previews and private peer circles are the next ordered increments. The interface identifies these as forthcoming; all five capabilities remain requirements for the full capstone. No learner-impact, human adoption or completed-video claim is made.
+
+### Run locally
+
+Prerequisites: Node **24.19.0**, pnpm **11.19.0**. Install from the repository root:
+
+```powershell
+pnpm install --frozen-lockfile --ignore-scripts
+pnpm run build
+pnpm start
+```
+
+Open **http://127.0.0.1:4317** and keep the server running. Create a local demo account, confirm your timezone, choose a template or supply your own topics, review the draft, and save it explicitly. Stop the server with Ctrl+C. Rebuild and restart after source changes. See [local operations](docs/operations/local-demo.md) for configuration, isolated data, checks and recovery limits.
+
+`pnpm run verify` runs strict compilation, lint, format, build, domain/HTTP tests, a separate-process persistence check, browser tests and a dependency audit. Browser tests require installed Microsoft Edge. A manual-only CI template is saved under docs/operations; the current GitHub login lacks workflow-write scope, so it is not activated. No paid service or enforced provider gate is implied.
+
+### Maintain or adapt
+
+The boundaries are deliberately small: serializable types in `src/shared`, pure business rules and curated metadata in `src/domain`, auth/SQLite/HTTP in `src/server`, and semantic browser UI in `src/client`. Canonical records stay in ignored `.local/data`; never commit that folder or the generated auth secret.
+
+For a local template wording adaptation, edit both locale entries and source/prerequisite records in `src/domain/templates.ts`, preserving stable IDs and version semantics; run the required checks and review the draft in both languages. Changed supported outcomes or new template IDs also require corresponding validator/contract updates. UI translations live in `src/client/i18n.ts` and use matching typed keys. Preserve learner-authored content when switching language. These are adaptation instructions, not evidence of an independent fresh-checkout rehearsal.
 
 The selected design is a local browser app using Node 24 LTS, Express 5, strict TypeScript/Vite, Better Auth and SQLite. Initial installation will need dependencies; the intended demo runs without internet while its local server remains running. It does not promise remote peer access, offline external learning websites, or operation after the local server stops.
 
 Plans use curated templates or supplied topics/text and reference links. English and French are the initial interface languages. There is no runtime AI, PDF import, automatic URL fetching, full chat or public hosting in scope. A reference image precedes frontend code. The official submission deadline is unannounced; 14 October is an internal target only.
 
-The planned shell keeps the provisional brand slot visible outside the sidebar, uses three standard navigation destinations and keeps theme/language/account controls in the topbar. Device theme applies until an explicit choice; only non-sensitive shell preferences may use guarded browser storage. Canonical learner data stays in SQLite. `PanelLeftClose`/`PanelLeftOpen` indicate sidebar state; narrow screens use a labelled modal drawer with a Close control. See the specification for F15/F16 and AC11a–AC11f; these are planned behavior, not working features.
+The shell keeps the provisional brand slot visible outside the sidebar, uses three standard navigation destinations and keeps theme/language/account controls in the topbar. Device theme applies until an explicit choice; only non-sensitive shell preferences use guarded browser storage. `PanelLeftClose`/`PanelLeftOpen` indicate sidebar state; narrow screens use a labelled modal drawer with a Close control. See F15/F16, AC11a–AC11f and [third-party notices](THIRD_PARTY_NOTICES.md). No final product name or logo has been selected.
 
 Use GitHub MCP for supported repository/commit/check readback and browser MCP for app observations and correct-account tracker interactions. After applicable checks, use normal local Git commits and `git push origin main` to publish intended source to the existing private separate account and MikeIronSyd repositories; verify both remote heads and preserve unrelated Git hooks. CodexRecovery covers only global instructions, skills and essential settings: never register or back up this project's files or Git history through it, and do not use `Push-WithBackup` for project publication. Do not commit secrets, local databases or real learner records.
 

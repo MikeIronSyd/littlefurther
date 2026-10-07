@@ -1,0 +1,42 @@
+{
+  "name": "learning-engagement-capstone",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local Track 2 learning engagement proof of concept",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=24.19.0 <25"
+  },
+  "scripts": {
+    "check": "tsc -p tsconfig.json",
+    "lint": "biome lint --error-on-warnings src tests tools vite.config.ts playwright.config.ts",
+    "format": "biome format --write src tests tools package.json biome.json tsconfig.json tsconfig.server.json tsconfig.tests.json vite.config.ts playwright.config.ts index.html",
+    "format:check": "biome format src tests tools package.json biome.json tsconfig.json tsconfig.server.json tsconfig.tests.json vite.config.ts playwright.config.ts index.html",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build:client": "vite build",
+    "build": "pnpm run build:server && pnpm run build:client",
+    "start": "node dist/server/index.js",
+    "dev": "pnpm run build && pnpm start",
+    "test": "tsc -p tsconfig.tests.json && node tools/run-unit-tests.mjs",
+    "test:e2e": "playwright test",
+    "verify:process": "node tools/verify-process.mjs",
+    "audit": "pnpm audit --audit-level=low",
+    "verify": "pnpm run check && pnpm run lint && pnpm run format:check && pnpm run build && pnpm test && pnpm run verify:process && pnpm run test:e2e && pnpm run audit"
+  },
+  "dependencies": {
+    "better-auth": "1.7.7",
+    "better-sqlite3": "13.0.3",
+    "express": "5.2.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "9.6.0",
+    "@types/express": "5.0.6",
+    "@types/node": "24.19.1",
+    "bun-types": "1.4.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.3",
+    "@biomejs/biome": "2.5.15",
+    "@playwright/test": "1.63.0"
+  }
+}

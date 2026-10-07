@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "rootDir": ".",
+    "outDir": ".local/test-build"
+  },
+  "include": [
+    "src/server/**/*.ts",
+    "src/domain/**/*.ts",
+    "src/shared/**/*.ts",
+    "tests/domain/**/*.ts",
+    "tests/server/**/*.ts"
+  ]
+}

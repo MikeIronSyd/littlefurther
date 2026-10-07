@@ -11,3 +11,9 @@ recovery-archives/
 .impeccable/questions/
 .impeccable/config.local.json
 .impeccable/build/
+dist/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+auth-secret
+.impeccable/review/
