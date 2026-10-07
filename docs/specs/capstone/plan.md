@@ -1,0 +1,85 @@
+# Capstone delivery plan
+
+Updated: 7 October 2026, Africa/Lagos. Status: accepted scope recorded; research gate closed at 16:57 after the successful isolated R11 experiment; no production implementation started. Official submission deadline is unannounced. The 14 October date is an internal planning target, not an announced deadline or delivery guarantee.
+
+## Goal
+
+Deliver one demonstrable Track 2 journey containing all five capabilities, with credible content, private two-account peer behavior, English/French access, honest progress and restart semantics. Show Codex's actual contribution across planning, design, implementation, testing, review and documentation; make the required MCPs and reusable skills concrete and evidenced.
+
+## Context Pointers
+
+Use [spec.md](spec.md) for F01–F14 and AC01–AC14; [research.md](research.md) for source evidence and the mandatory gate; [verification.md](verification.md) for actual checks and J1–J4 evidence. Reuse settled D009–D014, the product record and project [AGENTS.md](../../../AGENTS.md). Preserve historical activity/decision/evidence IDs in the [Miva hackathon Sheet](https://docs.google.com/spreadsheets/d/1vuVwhMl6pSkSP36qlg0hDFoGKLfdpAalAkx1juJE7-M/edit) and [Kaneo project](http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board).
+
+## Constraints
+
+No production implementation precedes documented completion of all agreed research needs. The isolated R11 experiment is permitted only to gather feasibility evidence. No frontend code precedes an image mockup. Do not add a new approval gate once the user-approved scope and evidence gates are satisfied. Keep scope local: running loopback server, canonical SQLite, no runtime AI or public deployment. All feature, privacy, language and evidence requirements stay in scope.
+
+### Ordered work and gates
+
+| Step | Work and dependency | Acceptance / concrete output | Current status |
+| --- | --- | --- | --- |
+| P01 — Save and reconcile | Preserve old discovery; save current scope, sources, architecture/quality contract, ordered work and evidence register. Align AGENTS/project-context/product record and D009–D014/E004 trackers. | Spec/plan/research/verification; preserved archive; tracker readback or explicit pending reason. | Local planning records saved in this increment; root integration/readback handled separately. |
+| P02 — Close research | Complete isolated R11 dependency/native SQLite/Better Auth feasibility; inspect exact versions/lockfile and real observations. Resolve failures; update spec/plan before any stack change. | Dated R11 evidence and explicit research gate closure. | Complete 7 Oct, 16:57: frozen install, strict compiler, 35/35 HTTP/SQLite assertions and native-module Vite build passed; [report](experiments/runtime-feasibility/REPORT.md). |
+| P03 — Design from saved truth | After P02, use Impeccable and the product record for the Operate-mode journey. Establish the visual world/surface contract; generate an image mockup before frontend code. Cover next action, progress, restart preview and sharing privacy, including narrow width/French expansion. | Image artifact and reference, UI state map, design decisions consistent with AC11. | Planned; no image or frontend exists. |
+| P04 — Establish runtime and quality tooling | After P02, scaffold the smallest selected stack with locked dependencies, safe local config, data ignore rules, schema/migrations and scripts. Frontend implementation waits for P03. Document local start/stop/reset behavior and loopback origin. | Actual check/lint/format/build/test/e2e/audit commands; local runtime; failure reporting; README draft. | Planned. |
+| P05 — Private study journey | Build identity plus owner-scoped plan/history boundaries. Implement curated/manual TinySteps, editable availability/dates/estimates, personal StudyCircle, FinishLine and flexible consistency with meaningful tests. | AC01–AC05, relevant AC09–AC11; requirement-linked commit/diff and passing applicable tests. | Planned; depends on P03/P04. |
+| P06 — Comeback | Implement revision-bound old/new preview, uniform unfinished-date shift, conflict display, atomic confirmation/cancel and separate five-minute activity. | AC06; persisted history retained; domain/transaction tests and browser journey. | Planned; depends on P05. |
+| P07 — Real peer circle | Build circle ownership/membership, hashed expiring one-use invitations, transactional redemption, explicit sharing copies and canned encouragement. Add invite revocation, own-copy deletion, member leave/removal and explicit owner closure with the specified shared-copy cleanup. Exercise two separate real account sessions. | AC07–AC09; complete authorization/lifecycle matrix, private-field allowlist and invite concurrency/failure evidence. | Planned; depends on P04/P05. |
+| P08 — First integration review | Apply learning-journey-review to the first complete journey, including two accounts, English/French, mobile/desktop and internet-disconnected/server-running behavior. Independent review plus browser MCP observation; record findings and fix priorities. Run capstone-evidence-update on the actual outputs. | First meaningful invocation/output of each skill; acceptance matrix and observed issues; tracker save/readback. | Planned; depends on P06/P07. |
+| P09 — Refine and verify | Fix observed correctness/privacy/usability/access defects; retain requirement links. Run affected tests and required checks. Apply both skills again to the changed journey and new evidence; demonstrate dispositions or real improvement from the first pass. | Second meaningful invocation/output of each skill; AC01–AC11 evidence; blocking findings resolved. | Planned; depends on P08. |
+| P10 — Reuse and proportionate evaluation | Freeze a candidate; another agent follows README from a fresh checkout and rehearses adapting a template/language record. If volunteers are available, run three 15–20 minute sessions without automatic outreach. Fix consequential confusion and recheck affected behavior. | AC12; clean-checkout result, adaptation diff, production-gap register; volunteer outcomes only if actually observed. | Planned; depends on P09. |
+| P11 — Prepare demo and evidence | Prepare the required 3–5 minute walkthrough and evidence index. | AC13/AC14; actual timed recording and source-backed claims. | Actual recording, measured duration, final timestamps and submission/reflection remain separate deliverables. |
+| P12 — Deliver protected source | Review intended changes/secrets/generated data; run applicable checks; commit and use installed physical recovery runtime's Push-WithBackup. Read both remote heads and backup completion. Update both trackers and evidence with actual result. | Both private repositories match intended commit; backup status verified; clear README/release notes and residual gaps. | Planned for each complete increment; final candidate after P11. |
+
+P12 also applies to completed documentation increments before app implementation: publication does not imply the product is built or research is closed. Do not postpone required routine source recovery until the final demo. Keep the running local demo process documented and available for the demonstrated disconnected condition; do not claim persistent hosting or automatic monitoring.
+
+### Verification tied to the increments
+
+- **P05:** invalid input and ownership denial; topic/manual fallback; history after scope edits; same-date activity deduplication; timezone midnight/DST; empty/all-complete plans; current scope versus cumulative work.
+- **P06:** preserved unfinished order/spacing; completed record invariance; cancel; fixed-date/availability conflict; stale revision; duplicate confirmation; five-minute activity without automatic completion.
+- **P07:** owner/member/nonmember matrix for reads and writes; two distinct sessions; invite expiry/hash/revocation/single-use/concurrent redemption; private fields absent from shared responses; explicit copied content; canned encouragement validation; immediate access denial after leave/removal; own-copy/attached-encouragement cleanup; owner closure and subsequent invitation denial.
+- **P08/P09:** English/French complete journey; desktop/mobile jointly; keyboard/focus, zoom/reflow, labels/errors/contrast/targets; safe URL/plain-text injection behavior; refresh/server restart; internet-disconnected/server-running state and save-failure handling. Record exact network-test conditions.
+- **P10/P11:** actual fresh checkout commands and limits, template/language adaptation, honest evidence index, timed 3–5 minute run and every promised demo behavior.
+
+Required scripts remain planned until created and run: `npm run check`, `npm run lint`, `npm run format:check`, `npm run build`, `npm test`, `npm run test:e2e`, `npm run audit` (delegates to `pnpm audit` for the selected pnpm lockfile). Use tests for important behavior and contracts, not assertions that merely repeat implementation. Record baseline/failing/unavailable results and resolve blocking findings. An independent agent's review is evidence, not human approval or proof of defect-free software.
+
+### Concrete Codex, MCP and reusable-skill workflow — J1
+
+| Mechanism | Planned real work | Evidence to retain |
+| --- | --- | --- |
+| Plan/spec + AGENTS | Use the accepted planning record, requirement IDs, researched quality contract and repository instructions to drive increments. Update them before consequential deviations. | Saved plan-mode/plan artifact when available, spec diffs, AGENTS decisions, requirement-linked commits/tests. Do not claim a UI mode interaction without its record. |
+| GitHub MCP | Read accessible repository metadata, implementation commits, changed files/diffs and check status when available to ground independent review and evidence. | Actual repository/ref/tool result and linked commit/review findings. Personal repo access verified; Miva connector access unavailable at planning time. CLI readback is labelled CLI, never MCP. |
+| Browser computer-use MCP | Exercise local learner journeys as two accounts; inspect live results in both languages/screen sizes; update native Miva Sheet and Kaneo and read saved values back. | Actual tool-assisted actions, screenshots/observations, correct-account/target checks and save/readback result. This is browser automation, not a native Sheets/Kaneo connector. |
+| [learning-journey-review](../../../.agents/skills/learning-journey-review/SKILL.md) | At P08 review first complete journey against requirements, privacy, restart/history and inclusion; at P09 review the changed journey and disposition findings. | Two separate dated invocations with input commit/state, findings, exact checks and consequences. Writing SKILL.md alone does not satisfy this. |
+| [capstone-evidence-update](../../../.agents/skills/capstone-evidence-update/SKILL.md) | At P08 record first implementation/check/review evidence in the local index and both trackers; at P09 reconcile changed results, stale claims, limitations and links with actual readback. | Two meaningful dated uses, changed artifacts/rows, retained activity IDs, verified saves or pending reasons. |
+| Independent agent review | Read immutable candidate diff and relevant spec/tests; challenge correctness, privacy and spec fit; review fresh checkout separately. | Findings/dispositions and executed review/rehearsal evidence. No invented test run, user study or human adoption. |
+
+The linked project-packaged skill files exist; read their current instructions before invocation. Tool access is capability-specific. A GitHub MCP 404 for the Miva repo does not establish that the repository is absent; its authenticated CLI visibility must be recorded separately. Keep local protected Git publication and child-scoped GitHub configuration, rather than bypassing the installed recovery workflow.
+
+### Impact and adoption evaluation — J2/J3
+
+The concrete benefit to demonstrate across broad learners is the ability to identify actionable work, resume a displaced plan while retaining history, and control supportive accountability. The output can show that these interactions work; it cannot show months of retention from a short demo.
+
+If three volunteers are available, offer the same 15–20 minute task sequence: choose a supported/supplied-topic goal, find the next action, recover an interrupted plan, explain current versus cumulative progress, and identify what a peer can see. Record each task as unassisted, assisted or failed, plus observed confusion and resulting fixes. Participation remains optional; no agent automatically contacts anyone. If unavailable, mark learner evaluation unavailable and retain the limitation rather than fabricating validation.
+
+The independent fresh-checkout rehearsal must follow the documented prerequisites and commands without relying on uncommitted files, existing DBs or hidden global configuration. Record tool versions, commands, failures and fixes. Demonstrate one safe template or language adaptation using the documented schema. This supports reusability; distinguish it explicitly from human adoption. README and the production-gap register explain what a future maintainer can use now and what needs another month.
+
+### Demo and pitch — J4
+
+The required 3–5 minute video should show the learning problem, working solution, Codex’s contribution and next-month work. Actual recording, timing and submission remain separate deliverables.
+
+### Risks and response
+
+| Risk | Planned response |
+| --- | --- |
+| Native package/auth incompatibility | R11 resolved the selected runtime on this host. Preserve exact pins and narrow official SQLite declaration entrypoint; retest consequential dependency changes. Fixture success is not product verification. |
+| Five capabilities become separate subsystems | Keep one goal/plan/history model and one connected journey; no chat/feed/LMS extras. |
+| Misleading learning/progress claims | Label estimates and self-report; preserve historical work; distinguish current scope from mastery and cumulative effort. |
+| Peer disclosure or invite race | Explicit shared copies, server membership/ownership on every request, hashed single-use transactional redemption and failure/concurrency tests. |
+| “Offline” claim exceeds local capability | State internet disconnected with server running; verify actual condition; no browser-only/server-stopped promise. |
+| Missing judging evidence | Maintain index per increment, repeated useful skill outputs, real MCP results/readback and a timed demo. |
+| Unavailable volunteers/connector/CI capability | Mark unavailable with exact limit; continue independent authorized work; do not substitute simulated evidence or invent approval. |
+
+## Done When
+
+The research and image-first gates are satisfied; AC01–AC14 have actual evidence or explicit authorized scoped exceptions; required tests and review findings are resolved; reuse/demo records are honest; README and production gaps agree with delivered behavior; both trackers reflect actual work; both private remote heads and recovery completion are verified. No material product work is complete at the initial saved-plan stage. Record actual status after each increment rather than converting this plan into a retrospective success claim.

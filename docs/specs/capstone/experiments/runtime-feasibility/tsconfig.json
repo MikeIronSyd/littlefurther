@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noEmitOnError": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "compiled",
+    "types": ["node", "bun-types/sqlite"],
+    "lib": ["ES2023", "DOM"]
+  },
+  "include": ["fixture.ts", "vite.config.ts", "web/main.ts"]
+}

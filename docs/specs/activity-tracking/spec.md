@@ -1,18 +1,18 @@
 # Hackathon activity tracking
 
-Use a Google Sheet owned by `m.alkali5130@miva.edu.ng` and the existing local Kaneo workspace to preserve the hackathon brief, activities, decisions, milestones, and evidence. Keep the project in private GitHub repositories owned by separate account and MikeIronSyd. This specification covers tracking setup and context maintenance. The latest user request blends baseline-to-goal guidance with local skill/opportunity mapping and explicitly selects Guidance, Pathways & Opportunity. Record the concept while keeping the first country, target, entry mode, languages, audience, and MVP unresolved. The concept proposal is in ../capstone/spec.md.
+Use a Google Sheet owned by `m.alkali5130@miva.edu.ng` and the existing local Kaneo workspace to preserve the hackathon brief, activities, milestones, decisions and evidence. Keep source in the private separate account and MikeIronSyd repositories. Current direction as of 2026-10-07 is Track 2: Engagement & Staying in the Learning Journey, for learners generally, with all five capabilities and both personal cycles and private peer StudyCircle. The selected local browser demo uses curated templates, text/link inputs, English/French, a running local server for internet-disconnected use, and image-first interface design. See [the current capstone specification](../capstone/spec.md). Dated entries below preserve history; superseded Guidance and audience questions must not be reimported into active state.
 
 ## Requirements and scope
 
 - Preserve the supplied brief: use Codex to build people-centred technology that makes learning easier to reach, sustain, and act on, helping people find what they need, stay engaged, and turn learning into opportunity.
-- Build under exactly one challenge track: Guidance, Pathways & Opportunity, reselected in the latest concept-blending request. Preserve the earlier reopening as history; all three options and four judging criteria remain in `project-context.json`.
+- Build under exactly one challenge track: Engagement & Staying in the Learning Journey (Track 2). Preserve earlier choices and resets as history; all three track options and four judging criteria remain in `project-context.json`.
 - Record Codex's contribution to planning, building, reviewing, and documenting, with links to actual artifacts. AGENTS.md, plan mode, MCPs, and reusable skills can strengthen that evidence.
 - Track the entire activity history and current work in both Google Sheets and Kaneo. Keep stable activity IDs across both.
 - Distinguish completed work, future work, unknown dates, unverified course completion, measured time, estimates, and unavailable checks. Do not invent these values.
 - Use the existing local Kaneo service and authenticated accounts. Keep GitHub repositories private and credentials outside source files.
 - Apply the user's SDLC, specification, UI/UX skill, GitHub recovery, commit, and push instructions to subsequent project work.
 
-Capstone product design and implementation require their own specification once the learner group, problem, and concept are defined. Adding paid services and creating recurring monitoring are outside this setup.
+The capstone specification and research checklist govern product work. Audience, five-feature inclusion, both StudyCircle meanings and the selected delivery boundaries are settled. Adding paid services and creating recurring monitoring are outside this setup. Track MCP usage and reusable-skill invocations as actual work, with tool identity, artifact links, results and limitations; do not award completion merely for configured tools or skill files.
 
 ## Design
 

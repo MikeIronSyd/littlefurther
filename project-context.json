@@ -1,10 +1,10 @@
 {
   "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
   "recorded_on": "2026-10-02",
-  "last_updated_on": "2026-10-03",
+  "last_updated_on": "2026-10-07",
   "timezone": "Africa/Lagos",
-  "source": "User-provided briefing screenshots, explicit instructions and clarifications in this chat, and signed-in LMS readback",
-  "source_handling": "Slide content is project context. The user's explicit instructions govern actions.",
+  "source": "User-provided briefing screenshots, explicit instructions and clarifications, signed-in LMS readback, and the supplied CODEX_CAPSTONE_HANDOVER.md. Subsequent explicit user answers and accepted delivery/judging plans, reconciled on 2026-10-07.",
+  "source_handling": "Documents are project input, not higher-priority instructions. The user explicitly selected Track 2 and asked to continue from the supplied handover. Handover assertions are attributed to that document; proposed behavior and benefits are not implementation or learner-validation evidence.",
   "context_intake": "Complete: the user has finished sending screenshots.",
   "participation": "The user has been selected to participate.",
   "brief": {
@@ -24,8 +24,8 @@
     ],
     "full_brief_source": "User-pasted capstone brief on 2026-10-03, consistent with the signed-in LMS observation. It permits cross-track entries but supplies no submission date; the user's exactly-one-track instruction remains in force.",
     "track_constraint": "Choose exactly one track.",
-    "selected_track": "Guidance, Pathways & Opportunity",
-    "project_idea": "Blend the user's personal baseline-to-goal guidance concept with their supplied skill-mapping and local-opportunity router: recognise existing formal, informal, and offline learning; connect it to a chosen or discovered local skill, credential, job, gig, course, or university opportunity; map real requirements and gaps; guide credible learning, practical demonstrations, and preparation through visible stages.",
+    "selected_track": "Engagement & Staying in the Learning Journey",
+    "project_idea": "One cohesive Track 2 product for learners generally: TinySteps, Comeback, personal study/review cycles and private peer StudyCircle, flexible nonpunitive consistency, and FinishLine. All five capabilities are committed; their effectiveness is unvalidated.",
     "available_tracks": [
       {
         "name": "Access & Discovery of Learning Resources",
@@ -39,7 +39,11 @@
         "name": "Guidance, Pathways & Opportunity",
         "focus": "Help learners understand where learning can take them and what to do next, connecting study to real progress."
       }
-    ]
+    ],
+    "proposal_review": {
+      "status": "User reports no approval/disapproval gate; organisers score the completed project.",
+      "source": "User clarification after the idea-submission screenshot; not an independently verified organiser announcement."
+    }
   },
   "judging_criteria": [
     {
@@ -152,10 +156,10 @@
     "date": "2026-10-03",
     "delivery_mode": "Solo",
     "reported_weekly_capacity": "More than ten hours per week; user-reported availability, not measured effort.",
-    "initial_audience": null,
+    "initial_audience": "Learners generally, without a restriction to institution, beginner status or a specific learning context.",
     "learner_observations": [
       "Lack of motivation.",
-      "Not seeing the light at the end of the tunnel; the intended meaning and learner situation are still being clarified."
+      "Not seeing the light at the end of the tunnel; historical self-report, not an outstanding requirement to narrow the settled Track 2 scope."
     ],
     "other_groups_discussed": null,
     "firsthand_case": {
@@ -169,67 +173,52 @@
       "reported_pattern": "The user has experienced low motivation and unclear outcomes repeatedly while pursuing self-development.",
       "meaning_of_unclear_outcome": "User selected: Both, or I am not sure yet, when asked about unclear eventual benefit versus invisible progress. Neither cause is established.",
       "scope_limit": "This is one person's reported experience. It does not select a product audience or establish prevalence among other learners.",
-      "next_detail": "The user has now supplied a product concept. Narrow the first goal and decide whether the prototype starts from a known target or helps discover a target first; the earlier episode prompt is superseded."
+      "next_detail": "The user rejected requiring a specific interruption case or narrowing the audience. Preserve personal observations as self-report; no further case gate applies."
     },
     "user_concept": {
-      "source": "User's own account of their desired support for coding, certifications, AI study, and opportunities, supplied on 2026-10-03.",
-      "goal_types_in_vision": [
-        "Skill",
-        "Certification",
-        "Course",
-        "Specific job opening",
-        "Prospective job or other opportunity",
-        "Gig work",
-        "University requirements"
+      "source": "User-adopted direction supplied in CODEX_CAPSTONE_HANDOVER.md after work in ChatGPT. Do not claim independent authorship verification or validation of its assertions.",
+      "selected_track": "Engagement & Staying in the Learning Journey",
+      "track_selection_source": "Direct user change-of-plan message: going with Track 2; subsequent handover upload is to continue that work.",
+      "central_promise": "Help learners keep going, recover when they fall behind, and see meaningful progress without being punished for imperfect consistency.",
+      "intended_features": [
+        "Comeback",
+        "TinySteps",
+        "StudyCircle",
+        "Learning Streaks Without Punishment",
+        "FinishLine"
       ],
-      "capabilities_in_vision": [
-        "Find out about or choose an opportunity of interest.",
-        "Establish a baseline of what the learner already knows.",
-        "Identify what the learner needs to know or be able to do for the goal.",
-        "Guide the ordered journey: what to study, how to learn, and how to progress between levels.",
-        "Connect learning and practice to achieving the chosen goal.",
-        "Support interview questions and preparation when relevant to the chosen opportunity.",
-        "Recognise informal and offline learning when establishing the baseline.",
-        "Map current knowledge against real local job, credential, gig, or university requirements.",
-        "Show a visual step-by-step path with credible free learning resources; pair the visual path with accessible text."
+      "feature_status": "All five connected capabilities are committed by explicit user clarification; effectiveness remains a hypothesis.",
+      "studycircle_meaning": "Both personal study/review cycles and private invitation-only peer circles with commitments, check-ins and preset encouragement; no full chat.",
+      "studycircle_ambiguity": "Resolved by the user: both meanings. Do not reopen.",
+      "core_feature_hypothesis": "One connected start-study-review-progress-restart journey, with optional private peer accountability; not five separate mini-apps.",
+      "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
+      "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
+      "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
+      "scope_status": "MVP scope and judging workflow documented; all twelve agreed research needs satisfied on 2026-10-07 at 16:57 Africa/Lagos. Image-first design is next; product implementation and acceptance remain outstanding.",
+      "ai_product_feature_required": false,
+      "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
+      "platform": "Local browser web app; local server stays running for internet-disconnected use.",
+      "stack": "Selected Node 24 LTS / Express 5 / strict TypeScript and Vite native browser modules / Better Auth / better-sqlite3. R11 isolated feasibility passed on this Windows host: frozen install, strict compiler, 35 HTTP/auth/SQLite assertions and build. Exact pins and limitations are in docs/specs/capstone/experiments/runtime-feasibility/REPORT.md. No application is installed or verified.",
+      "concept_spec": "docs/specs/capstone/spec.md",
+      "runtime_ai": false,
+      "languages": [
+        "English",
+        "French"
       ],
-      "primary_track_recommendation": "Guidance, Pathways & Opportunity",
-      "recommendation_basis": "The central user-stated outcome is a path from current ability toward a chosen goal or opportunity.",
-      "track_reselection_confirmed": true,
-      "track_selection_source": "User's blending request explicitly names Focus Track: Guidance, Pathways & Opportunity.",
-      "scope_status": "Blended concept and single track captured; first country, concrete target, MVP entry mode, languages, product audience, and implementation scope remain open.",
-      "first_prototype_target": null,
-      "entry_mode": null,
-      "prototype_scope_recommendation": "Prove one complete target journey in one country with a small verified requirements/resource pack; preserve other goal types and regions as broader vision.",
-      "blend_details": {
-        "source": "User asked to blend the earlier concept with the supplied skill-mapping and opportunity-router idea on 2026-10-03.",
-        "entry_routes_in_vision": [
-          "Start from existing skills or current study and explore relevant opportunities",
-          "Start from a known goal or opportunity and identify the path toward it"
-        ],
-        "country_examples_only": [
-          "Nigeria",
-          "Kenya",
-          "Senegal"
-        ],
-        "first_country": null,
-        "privacy_proposal": "Account-free browser-local prototype, with LocalStorage suggested by the user. No storage implementation or privacy guarantee has been verified.",
-        "technical_refinements": "Use traceable requirements and resource records with source/date/region. Separate claimed skills, demonstrated skills, and formal eligibility. Browser-local processing and deliberate offline caching are required for a genuinely local/offline core; LocalStorage alone does not establish either security or offline operation. Any external AI or live-feed request needs an explicit data-flow boundary.",
-        "concept_spec": "docs/specs/capstone/spec.md"
-      }
+      "design_workflow_record": ".impeccable/config.json"
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": null,
-    "evidence": "User's capstone kickoff answers, explicit track selection, and later fresh-ideation reset in this chat.",
-    "stage": "Review the blended concept proposal, then choose the first country, target, MVP entry route, and supported languages before completing the implementation specification."
+    "mvp_scope": "MVP scope and judging workflow documented; all twelve agreed research needs satisfied on 2026-10-07 at 16:57 Africa/Lagos. Image-first design is next; product implementation and acceptance remain outstanding.",
+    "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
+    "stage": "Specification, research, reusable-skill and judging-evidence preparation. No product implementation, learner evaluation or demo completed."
   },
   "ideation_reset": {
     "date": "2026-10-03",
     "instruction": "Ignore the self-taught beginners problem statement and start ideation afresh.",
-    "active_effect": "The earlier beginner audience/problem remains superseded. The user has since supplied a new goal-and-opportunity guidance concept, captured in capstone_kickoff.user_concept; first target, broader audience, and MVP remain open.",
-    "track_status": "The user reopened all three tracks, then explicitly named Guidance, Pathways & Opportunity in the subsequent blending request. Guidance is now the single selected track; the reset remains historical context.",
-    "new_starting_point": "The user's self-development experience now grounds their concept of assessing current knowledge and following a staged path toward a desired goal. Do not claim wider demand or motivation gains without validation.",
+    "active_effect": "Discarded beginner audience and Guidance concept remain superseded history. Current explicit choice is learners generally, Track 2, all five capabilities, and both StudyCircle meanings.",
+    "track_status": "Historical sequence: all tracks reopened, Guidance reselected, then user explicitly switched to Track 2 Engagement & Staying in the Learning Journey. Track 2 is now fixed for current discovery.",
+    "new_starting_point": "The Track 2 handover plus later human decisions define the current scope. Prior personal experiences are context, not proof of prevalence or product effectiveness.",
     "superseded_history": {
       "audience": "Self-taught beginners",
       "observations": "Information overload, uncertainty about what and where to learn, declining motivation, and unclear learning outcomes.",
@@ -332,14 +321,16 @@
     "Use Impeccable for UI and UX work.",
     "Register coding projects with the user's GitHub recovery runtime before the first push.",
     "After appropriate checks, commit intended non-secret changes and push to the configured GitHub repositories.",
-    "Preserve unrelated work, use private repositories by default, and do not activate paid storage."
+    "Preserve unrelated work, use private repositories by default, and do not activate paid storage.",
+    "Shape substantial briefs and authored prompts with Goal, Context Pointers, Constraints and Done When.",
+    "Complete and document 100% of necessary research for the agreed implementation scope before production work; assumptions cannot replace missing facts.",
+    "Link judging criteria to requirements, artifacts/commits, actual checks/results and demo scenes.",
+    "Demonstrate meaningful GitHub and browser MCP use and actual reuse of both project skills across engineering iterations."
   ],
   "pending_decisions": [
-    "Select one concrete first prototype target: a named job role/opening, certification, skill, or course.",
-    "Choose whether the first prototype starts with a goal the learner already has or helps discover a goal first.",
-    "Select the first country, initial languages, product audience, and feedback participants; the country examples Nigeria, Kenya, and Senegal are not a committed rollout scope.",
-    "Complete the implementation specification and choose the browser storage/offline approach, stack, and evaluation criteria after narrowing the MVP; the single track is now Guidance, Pathways & Opportunity.",
-    "Record the official submission deadline when announced; it is currently unknown."
+    "Record the official submission deadline when organisers announce it; 14 October is an internal target only.",
+    "Establish the first visual reference before frontend code, using the selected image-first workflow.",
+    "Determine availability of volunteer learners and a competent French reader for later usability/translation evaluation. No participants have been contacted or results claimed."
   ],
   "verified_activities": [
     {
@@ -362,9 +353,9 @@
       "date": "2026-10-03",
       "activity": "Select the single capstone challenge track.",
       "status": "Complete",
-      "result": "The user reselected Guidance, Pathways & Opportunity by explicitly naming it in the concept-blending request. The earlier reopening and discarded beginner framing remain historical; no specific product audience has been selected.",
-      "evidence": "User's original selection, fresh-ideation reset, reopening of all tracks, and latest blending request naming Focus Track: Guidance, Pathways & Opportunity.",
-      "next_action": "Narrow the blended concept in A004 to a first country, target, entry route, languages, and verifiable MVP."
+      "result": "Track 2 is selected. Later user clarification settles learners generally, all five capabilities, and both personal cycles and private peer StudyCircle.",
+      "evidence": "Direct user change-of-plan message and supplied CODEX_CAPSTONE_HANDOVER.md, 2026-10-03. The upload continues the selected Track 2 direction.",
+      "next_action": "A004 records the selected MVP, research gate, image-first design and criterion-linked delivery plan. No segmentation or personal-case gate remains."
     }
   ],
   "tracker_structure": {
@@ -410,5 +401,170 @@
       "Mark work complete only with an actual outcome and appropriate evidence."
     ]
   },
-  "source_deck_url": "https://docs.google.com/presentation/d/1jwaD6saQm3rrYEHfqpm8hVbiCzw-E1ffJTxCyfzstiI/edit"
+  "source_deck_url": "https://docs.google.com/presentation/d/1jwaD6saQm3rrYEHfqpm8hVbiCzw-E1ffJTxCyfzstiI/edit",
+  "direction_history": [
+    {
+      "superseded_on": "2026-10-03",
+      "track": "Guidance, Pathways & Opportunity",
+      "project_idea": "Blend the user's personal baseline-to-goal guidance concept with their supplied skill-mapping and local-opportunity router: recognise existing formal, informal, and offline learning; connect it to a chosen or discovered local skill, credential, job, gig, course, or university opportunity; map real requirements and gaps; guide credible learning, practical demonstrations, and preparation through visible stages.",
+      "user_concept": {
+        "source": "User's own account of their desired support for coding, certifications, AI study, and opportunities, supplied on 2026-10-03.",
+        "goal_types_in_vision": [
+          "Skill",
+          "Certification",
+          "Course",
+          "Specific job opening",
+          "Prospective job or other opportunity",
+          "Gig work",
+          "University requirements"
+        ],
+        "capabilities_in_vision": [
+          "Find out about or choose an opportunity of interest.",
+          "Establish a baseline of what the learner already knows.",
+          "Identify what the learner needs to know or be able to do for the goal.",
+          "Guide the ordered journey: what to study, how to learn, and how to progress between levels.",
+          "Connect learning and practice to achieving the chosen goal.",
+          "Support interview questions and preparation when relevant to the chosen opportunity.",
+          "Recognise informal and offline learning when establishing the baseline.",
+          "Map current knowledge against real local job, credential, gig, or university requirements.",
+          "Show a visual step-by-step path with credible free learning resources; pair the visual path with accessible text."
+        ],
+        "primary_track_recommendation": "Guidance, Pathways & Opportunity",
+        "recommendation_basis": "The central user-stated outcome is a path from current ability toward a chosen goal or opportunity.",
+        "track_reselection_confirmed": true,
+        "track_selection_source": "User's blending request explicitly names Focus Track: Guidance, Pathways & Opportunity.",
+        "scope_status": "Blended concept and single track captured; first country, concrete target, MVP entry mode, languages, product audience, and implementation scope remain open.",
+        "first_prototype_target": null,
+        "entry_mode": null,
+        "prototype_scope_recommendation": "Prove one complete target journey in one country with a small verified requirements/resource pack; preserve other goal types and regions as broader vision.",
+        "blend_details": {
+          "source": "User asked to blend the earlier concept with the supplied skill-mapping and opportunity-router idea on 2026-10-03.",
+          "entry_routes_in_vision": [
+            "Start from existing skills or current study and explore relevant opportunities",
+            "Start from a known goal or opportunity and identify the path toward it"
+          ],
+          "country_examples_only": [
+            "Nigeria",
+            "Kenya",
+            "Senegal"
+          ],
+          "first_country": null,
+          "privacy_proposal": "Account-free browser-local prototype, with LocalStorage suggested by the user. No storage implementation or privacy guarantee has been verified.",
+          "technical_refinements": "Use traceable requirements and resource records with source/date/region. Separate claimed skills, demonstrated skills, and formal eligibility. Browser-local processing and deliberate offline caching are required for a genuinely local/offline core; LocalStorage alone does not establish either security or offline operation. Any external AI or live-feed request needs an explicit data-flow boundary.",
+          "concept_spec": "docs/specs/capstone/spec.md"
+        }
+      },
+      "previous_stage": "Review the blended concept proposal, then choose the first country, target, MVP entry route, and supported languages before completing the implementation specification.",
+      "previous_pending_decisions": [
+        "Select one concrete first prototype target: a named job role/opening, certification, skill, or course.",
+        "Choose whether the first prototype starts with a goal the learner already has or helps discover a goal first.",
+        "Select the first country, initial languages, product audience, and feedback participants; the country examples Nigeria, Kenya, and Senegal are not a committed rollout scope.",
+        "Complete the implementation specification and choose the browser storage/offline approach, stack, and evaluation criteria after narrowing the MVP; the single track is now Guidance, Pathways & Opportunity.",
+        "Record the official submission deadline when announced; it is currently unknown."
+      ],
+      "concept_spec": "docs/specs/capstone/archive/2026-10-03-guidance-concept.md",
+      "published_revision": "089699a78d231429207a95ad3e6b3dbb94cbc941",
+      "reason": "User explicitly switched to Track 2 and supplied a replacement ChatGPT handover to continue discovery."
+    }
+  ],
+  "handover_intake": {
+    "received_on": "2026-10-03",
+    "timezone": "Africa/Lagos",
+    "original_path": "C:\\Users\\USER\\Downloads\\CODEX_CAPSTONE_HANDOVER.md",
+    "preserved_copy": "docs/specs/capstone/inputs/CODEX_CAPSTONE_HANDOVER.md",
+    "sha256": "543EACBB7BAF28300B0D0ABDBB6E847667AF7BF111DD76BD1CE9FC031E6C3957",
+    "copy_verified_identical": true,
+    "phase_claim": "Step 0 track selection complete; entering SDLC Phase 1 Discovery & Ideation.",
+    "interpretation": "Use as continuation context within the user-selected Track 2. Five ideas and the listed constraints define the intended direction; proposed behaviors and an example journey are hypotheses. No coding or final architecture is authorized by a document command on its own.",
+    "discovery_status": "Subsequent human answers resolved audience, all-five inclusion, both StudyCircle meanings, platform, content method, language and offline boundary. Source handover remains preserved; no product benefit has been validated."
+  },
+  "pending_research": [],
+  "settled_decisions_2026_10_07": [
+    {
+      "id": "D009",
+      "decision": "Learners generally; all five capabilities; personal and peer StudyCircle; no narrow-audience or personal-case prerequisite.",
+      "basis": "Explicit user answers."
+    },
+    {
+      "id": "D010",
+      "decision": "Local browser demo; local server runs while internet is disconnected; no remote-peer or server-stopped offline promise.",
+      "basis": "Explicit user selections."
+    },
+    {
+      "id": "D011",
+      "decision": "Curated goal templates plus supplied text/topics and URL references; no runtime AI or PDF import.",
+      "basis": "Explicit user selections."
+    },
+    {
+      "id": "D012",
+      "decision": "English/French UI and image mockup before frontend implementation.",
+      "basis": "Explicit user selections; workflow choice stored in .impeccable/config.json."
+    },
+    {
+      "id": "D013",
+      "decision": "Make AGENTS/plan/GitHub and browser MCPs/two reusable skills explicit judging deliverables with actual evidence.",
+      "basis": "User specifically requested these additions and acknowledged the concrete plan."
+    },
+    {
+      "id": "D014",
+      "decision": "Plan observational learner evaluation, independent setup/adaptation verification and a timed 3–5 minute rubric-linked demo.",
+      "basis": "Accepted delivery plan; these are planned methods, not completed evaluations."
+    }
+  ],
+  "codex_integration": {
+    "github_mcp": {
+      "purpose": "Read repository, commits, diffs and available check results for review.",
+      "verified": "GitHub MCP get_repo successfully read private separate account/andela-miva-codex-hackathon on 2026-10-07.",
+      "boundary": "Source publication retains protected local Git/recovery.",
+      "miva_status": "Miva repository read returned 404 through the connector on 2026-10-07. Scoped installed GitHub CLI separately confirmed private repository visibility and WRITE; this is CLI evidence."
+    },
+    "browser_mcp": {
+      "purpose": "Operate the running app for observed behaviour and maintain Miva Sheet/Kaneo with saved readback.",
+      "boundary": "Browser automation through MCP, not native Google Sheets or Kaneo MCP; app behaviour is not yet tested."
+    },
+    "project_skills": [
+      {
+        "name": "learning-journey-review",
+        "path": ".agents/skills/learning-journey-review/SKILL.md",
+        "status": "Created and structurally validated; independently invoked for preparation review on 2026-10-07 at 17:10 Africa/Lagos with no material findings. See docs/specs/capstone/reviews/2026-10-07-preparation.md. P08/P09 product iterations remain pending."
+      },
+      {
+        "name": "capstone-evidence-update",
+        "path": ".agents/skills/capstone-evidence-update/SKILL.md",
+        "status": "Created; bundled quick_validate.py passed. Invoked for actual final tracker reconciliation/readback; P08/P09 product-iteration evidence remains pending. See verification.md and live E004 for results."
+      }
+    ],
+    "proof_chain": "criterion -> requirement -> artifact/commit -> actual check/result -> demo scene",
+    "reuse_requirement": "At least two meaningful engineering iterations with recorded inputs, findings/results and follow-up; file existence is insufficient."
+  },
+  "current_preparation": {
+    "recorded_on": "2026-10-07",
+    "status": "Preparation artifacts and research complete; independent preparation review found no material defects. Protected delivery is recorded separately.",
+    "outputs": [
+      "docs/specs/capstone/spec.md",
+      "docs/specs/capstone/plan.md",
+      "docs/specs/capstone/research.md",
+      "docs/specs/capstone/verification.md",
+      "PRODUCT.md",
+      ".agents/skills/learning-journey-review/SKILL.md",
+      ".agents/skills/capstone-evidence-update/SKILL.md",
+      "docs/specs/capstone/experiments/runtime-feasibility/REPORT.md"
+    ],
+    "tracker_record": "E004; D009-D014; retain existing A001-A010 activities.",
+    "tracker_sync": "Initial settled-scope reconciliation saved and read back in Miva Sheet and Kaneo on 2026-10-07. D009-D014/E004 and existing A001-A010 preserved. Subsequent runtime/review/publication results are appended after their evidence exists; see verification.md and live E004/A009.",
+    "publication": "This source snapshot is prepared before protected publication. For its final commit, both-remote readback and recovery outcome, consult live A009/E004 and the local ignored .local/capstone-publication-result.json. Historical 089699a is baseline evidence only.",
+    "limitations": [
+      "No app code or application tests completed.",
+      "No learner evaluation or human adoption verified.",
+      "No measured retention, motivation, quality uplift or time savings.",
+      "No finished interface mockup or video demo."
+    ]
+  },
+  "research_gate": {
+    "status": "Closed for agreed local proof-of-concept scope",
+    "closed_at": "2026-10-07T16:57:00+01:00",
+    "checklist": "docs/specs/capstone/research.md",
+    "evidence": "docs/specs/capstone/experiments/runtime-feasibility/REPORT.md",
+    "boundary": "All twelve required research needs satisfied. This is not product verification; reopen affected research if a consequential unknown emerges."
+  }
 }

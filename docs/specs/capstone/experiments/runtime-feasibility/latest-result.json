@@ -1,0 +1,221 @@
+{
+  "kind": "isolated_runtime_research_not_product_verification",
+  "recordedAt": "2026-10-07T15:57:07.656Z",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "checks": [
+    {
+      "check": "migration_has_no_unsafe_changes",
+      "passed": true,
+      "detail": {
+        "count": 0
+      }
+    },
+    {
+      "check": "migration_idempotent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_native_driver_load",
+      "passed": true,
+      "detail": {
+        "version": "3.53.4"
+      }
+    },
+    {
+      "check": "sqlite_wal_enabled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_transaction_committed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_transaction_rolled_back",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "auth_handler_ok",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "anonymous_private_rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "short_password_rejected",
+      "passed": true,
+      "detail": {
+        "status": 400
+      }
+    },
+    {
+      "check": "untrusted_signup_origin_rejected",
+      "passed": true,
+      "detail": {
+        "status": 403
+      }
+    },
+    {
+      "check": "signup_alpha",
+      "passed": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "check": "signin_alpha",
+      "passed": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "check": "cookie_http_only_and_lax",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "session_alpha",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "email_unverified_alpha",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "authenticated_private_alpha",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "signup_bravo",
+      "passed": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "check": "signin_bravo",
+      "passed": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "check": "cookie_http_only_and_lax",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "session_bravo",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "email_unverified_bravo",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "authenticated_private_bravo",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "two_distinct_account_sessions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "wrong_password_rejected",
+      "passed": true,
+      "detail": {
+        "status": 401
+      }
+    },
+    {
+      "check": "untrusted_callback_rejected",
+      "passed": true,
+      "detail": {
+        "status": 403
+      }
+    },
+    {
+      "check": "untrusted_authenticated_origin_rejected",
+      "passed": true,
+      "detail": {
+        "status": 403
+      }
+    },
+    {
+      "check": "rejected_logout_preserves_session",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "migration_has_no_unsafe_changes",
+      "passed": true,
+      "detail": {
+        "count": 0
+      }
+    },
+    {
+      "check": "migration_idempotent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sqlite_close_reopen_persistence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "auth_session_after_server_restart_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "auth_session_after_server_restart_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "logout_succeeds",
+      "passed": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "check": "logout_revokes_original_cookie",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "logout_does_not_revoke_other_user",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "failure": null,
+  "serverStopped": true,
+  "databaseClosed": true,
+  "limitations": [
+    "HTTP-client fixture only; no browser UI, product data model, application authorization or learner outcomes verified",
+    "No email verification or delivery; both synthetic accounts remain unverified",
+    "SQLite close/reopen and server restart in one process, not a machine restart",
+    "Ephemeral auth secret is not persisted; product secret storage still needs implementation"
+  ]
+}

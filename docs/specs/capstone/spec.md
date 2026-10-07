@@ -1,75 +1,163 @@
-# Capstone: blended concept proposal
+# Track 2 capstone specification
 
-Status: concept proposal dated 2026-10-03 (Africa/Lagos). The track and blended vision come from the user's request. Recommendations below are proposed design refinements, not implemented or verified product behavior. This is not yet an implementation-ready specification: first country, target, entry route, languages, audience, stack, and assessment details remain open.
+Updated: 7 October 2026, Africa/Lagos. Status: accepted product scope; specification and delivery plan saved before production implementation. **Research gate closed at 16:57 Africa/Lagos** after [R11's isolated feasibility experiment](research.md#r11-experiment-and-actual-result) satisfied the remaining factual need. No product implementation, app acceptance tests, learner research, production deployment, retention benefit or time saving is claimed.
 
-## Purpose and selected track
+## Goal
 
-Guidance, Pathways & Opportunity is the single selected track. Help a learner understand where their current knowledge can take them, what a relevant local goal requires, and which practical steps connect the two.
+Build a local browser proof of concept for **Engagement & Staying in the Learning Journey (Track 2)**. Help a learner turn an existing goal into editable small actions, study and review privately, see retained progress, optionally involve trusted peers, and restart after interruption without losing evidence of prior effort.
 
-Blend the user's personal guidance concept with the skill-mapping and opportunity-router idea they supplied. Recognise formal, informal, and offline learning; relate it to real skills, courses, credentials, jobs, gigs, or university requirements; create a staged learning and practice path with visible evidence of advancement.
+The intended beneficiaries are **learners generally**, as explicitly chosen by the user. Do not impose a university, certification, beginner, country or personal-case gate. The concrete situation is a learner with material or a supported starter goal whose plan no longer fits their availability, or who needs a manageable next action. Planning, visibility, return and supportive accountability are the intervention; improved retention remains a hypothesis.
 
-The user is the firsthand discovery participant, having described coding, certification preparation, AI development/engineering, and recent BSc AI enrollment at Miva. Enrollment is self-reported. A broader product audience and evidence of demand have not been established. The discarded self-taught-beginner framing is not a requirement.
+All five capabilities are mandatory parts of one journey: **TinySteps, Comeback, StudyCircle, flexible nonpunitive consistency, and FinishLine**. StudyCircle includes **both** a personal study/review cycle and private invitation-only peer circles. Each needs a small working implementation; none can be silently dropped.
 
-## Blended journey
+### Problem, jobs and intended benefit
 
-The wider vision has two entry routes: start with a goal/opportunity, or start with existing knowledge/current study and explore possible opportunities. Choose one entry route for the first prototype.
+The working problem is: *When study is interrupted or a goal feels too large, a learner needs a clear next action and an adjustable route forward that preserves earlier effort.* This is a product hypothesis informed by the supplied concept and relevant study guidance, not a validated population-level finding.
 
-1. **Choose context and destination.** Record the learner's country and goal, or present a small set of relevant sourced opportunities to consider. Nigeria, Kenya, and Senegal are examples from the supplied idea, not selected launch countries.
-2. **Establish the baseline.** Let the learner describe existing knowledge, study, and experience, including offline learning. Proposed refinement: distinguish self-reported ability, demonstrated ability, and unknowns; allow corrections and an accessible way to proceed without uploaded credentials.
-3. **Explain the match and gaps.** Compare the baseline with actual requirements for the chosen opportunity. Show the source, region, and date of the requirement, and explain the mapping. Distinguish learning gaps from formal qualifications, experience, applications, examinations, fees, or other requirements that lessons alone do not satisfy.
-4. **Build the path.** Give ordered milestones with prerequisites, the reason each matters, credible free learning resources, a practical task, and a clear completion criterion. Label any certification or examination cost separately from free learning access.
-5. **Make progress visible.** Pair the visual roadmap with an accessible text checklist. Proposed refinement: completing a resource and demonstrating a skill are separate records. Show what the learner has demonstrated, what remains, and the next action.
-6. **Prepare for the opportunity.** Offer relevant practice or preparation for the selected target, such as an interview response, portfolio exercise, application checklist, or assessment. Feedback should refer to the target's requirements and the learner's evidence.
-
-The motivation hypothesis is that understandable milestones and visible links to a valued outcome help learners continue. This has not been validated. Do not promise employment, admission, certification, or interview success from checklist completion.
-
-## Proposed first proof of concept
-
-Prove one complete journey in one country for one target family, using a small, manually verified pack of requirements and resources. Include a short baseline activity, an explainable gap map, a staged plan, at least one practical demonstration, and saved progress. Keep the wider goal types and country expansion in the vision until scoped.
-
-An account-free browser prototype is proposed by the user. A feasible local-core approach is to bundle a small requirements/resource pack and run the matching and progress logic in the browser. This proposal does not require hosted AI for core operation. AI-assisted development remains evidenced through Codex's actual planning, implementation, review, and documentation work.
-
-Live job feeds, arbitrary institution coverage, automated recognition of credentials, large-scale resource scraping, and a comprehensive career-discovery engine are not committed MVP scope. Choose the precise supported target and data before implementation.
-
-## Operating constraints and proposed verification
-
-| ID | Required consideration | Proposed observable behavior and verification |
+| Learner job / possible difficulty | Required response | Observable PoC benefit and limit |
 | --- | --- | --- |
-| C1 | Quality and credibility | Every opportunity requirement and learning resource has a traceable source, checked date, and region. Distinguish sourced requirements from inferred skill mappings; flag unsupported or outdated items. Verify each item in the pilot pack and each claimed free-access condition. |
-| C2 | Low bandwidth and limited access | After an initial successful load, the saved path, bundled baseline/practice content, and progress remain usable without a connection. Mark external resources that need internet. Test offline reload and progress persistence on the agreed basic-device/browser profile; set transfer budgets after scope is known. |
-| C3 | Accessibility and inclusion | Provide a semantic text equivalent for the visual route, plain-language instructions, keyboard operation, and understandable state/error feedback. Test with the agreed assistive-technology and device coverage. Avoid requiring a CV, formal credential, or a single standard learner profile to start. |
-| C4 | Personalization without exclusion | Learners can correct the baseline and adjust pace or goals. Explain uncertain matches and allow a useful path when evidence is incomplete. Test a learner with informal experience and one with missing baseline information. |
-| C5 | Privacy and security | Proposed core has no required account and stores minimal learner state locally, with export/import and clear-data controls. Disclose shared-device and deletion limitations. Inspect network requests to verify the promised local-data boundary. If an external AI/API feature is added, document the exact data sent and obtain a meaningful opt-in. |
-| C6 | Multilingual access | Choose and state initial supported languages, separate interface text from content, preserve original source provenance, and make fallback/untranslated content explicit. Review important translations and test text expansion and right-to-left behavior when applicable to the selected languages. |
-| C7 | Local relevance | Country/region-specific requirements come from actual employers, credential bodies, or institutions, with dates and applicability. Do not treat a regional name in a prompt as evidence. Test the chosen pilot target against its original source and keep an expired job separate from a reusable role-preparation path. |
+| Decide what to study with limited time | TinySteps with editable availability/estimates | A next action connected to a goal; no guarantee of learning quality or completion time. |
+| Resume after interruption | Comeback preview and five-minute restart | Accept or reject a revised schedule while retaining completed work; no automatic institutional deadline extension. |
+| Understand prior effort and remaining work | FinishLine and flexible consistency | Honest activity/current-plan counts; no inferred mastery. |
+| Reflect and choose the next action | Personal StudyCircle | Private plan → study → review → next-action cycle, with optional reflection. |
+| Ask trusted peers for accountability | Invitation-only StudyCircle | Two real demo accounts exchange deliberately shared commitments/check-ins and canned encouragement; no proven lasting peer effect. |
 
-These checks are planned, not passed. Convert them into concrete acceptance tests after the pilot scope and implementation are defined.
+Calendars, task lists, paper notes, LMS progress displays and study chats are alternatives, not proven inferior products. No comparative study has established their gaps. Time pressure, difficult material, poor connectivity, isolation and unrealistic plans remain distinct possible causes. This PoC addresses controllable planning and return; it cannot establish or solve every cause of disengagement.
 
-## Browser storage and offline boundaries
+## Context Pointers
 
-The user's LocalStorage suggestion can support small browser-local state, but it is not itself a privacy, encryption, or offline-app guarantee. OWASP advises against sensitive data in local storage because scripts executing in the origin can access it and an XSS flaw can expose it. Minimise stored data and treat saved content as untrusted input. [OWASP HTML5 storage guidance](https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html)
+- The [preserved handover](inputs/CODEX_CAPSTONE_HANDOVER.md) supplies the original concept. Later user decisions supersede its audience-narrowing and feature-optional suggestions. Provenance and SHA-256 remain in [project-context.json](../../../project-context.json).
+- The [superseded Track 2 discovery brief](archive/2026-10-07-superseded-track2-discovery.md) preserves earlier hypotheses and questions. The [Guidance concept](archive/2026-10-03-guidance-concept.md) remains historical.
+- [Research](research.md), [delivery plan](plan.md) and [verification/evidence](verification.md) form the implementation record. [AGENTS.md](../../../AGENTS.md) governs lifecycle, four-field briefs, skills, research completion, tracking and protected publication.
+- Use the restricted [Miva hackathon Sheet](https://docs.google.com/spreadsheets/d/1vuVwhMl6pSkSP36qlg0hDFoGKLfdpAalAkx1juJE7-M/edit), owned by `m.alkali5130@miva.edu.ng`, and [local Kaneo project](http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board). Preserve A001-style IDs, including A006/A008/A010 for this work. This capstone Sheet is distinct from the cross-course study tracker.
+- Publish intended source to the private [separate account](https://github.com/MikeIronSyd/littlefurther) and [MikeIronSyd](https://github.com/MikeIronSyd/littlefurther) repositories. Local `origin` publishes to both; `miva` permits direct readback.
 
-LocalStorage normally persists across browser sessions, while private-session data is cleared when the last private tab closes; browser policy can prevent persistence. Its behavior on file URLs is undefined, so do not assume opening a raw HTML file provides dependable storage. Provide clear save-failure handling and export/recovery behavior. [MDN localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+### Settled decisions and evidence authority
 
-Offline reuse requires deliberate availability of the app and the needed data, for example an app cache managed by a service worker plus a bundled requirement pack. Service workers run in a secure context such as HTTPS or localhost. External learning resources, opportunity refreshes, and hosted inference remain online operations unless explicitly provided offline. Browser-local processing and data-flow verification determine what can truthfully be called local. [MDN service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+| ID | Decision and basis | Trade-off / status |
+| --- | --- | --- |
+| D009 | User selected Track 2, learners generally, all five features, and both meanings of StudyCircle. | No segmentation/personal-case gate; real two-account peer behavior is required. Broad benefit remains an intention. |
+| D010 | Local PC browser demo with running local server and canonical SQLite. | Internet-disconnected use while the server runs; no server-stopped/browser-only mode, distributed sync or public hosting. |
+| D011 | Curated templates and supplied topics; editable plans; text/URL references; no runtime AI, PDF ingestion or fetching. | Unsupported goals require supplied/manual actions; no invented curriculum. |
+| D012 | English/French UI and an image mockup before frontend code. | Translation, responsive and accessibility checks are required; no all-language/device claim. |
+| D013 | Concrete AGENTS/plan/spec, GitHub MCP, browser MCP and two reusable skills as delivery evidence. | Tools/skills must produce actual traceable work; installation or a SKILL.md alone is insufficient. |
+| D014 | Proposed impact/adoption evaluation and a 4:30 demo within the required 3–5 minutes. | Volunteer sessions only if available; no outreach, adoption or efficacy claims without evidence. |
 
-Show when the app and selected pack are ready for offline use. Loading a hosted app or refreshing a pack still involves network access even if learner records stay local. Exported files are separate copies and are not removed by clearing browser data.
+Other settled constraints: minimal local email/password identity with no outgoing email or false verification/recovery promise; solo work; user-reported availability above ten hours per week. Official deadline is unannounced; 14 October is internal only. Verified two-of-two accelerator modules and 100% LMS progress on 3 October are separate from capstone delivery. E004 records planning/research/GitHub MCP access; it must not be presented as implemented product evidence.
 
-Final choice of LocalStorage, IndexedDB, cache strategy, and any optional online features remains an implementation decision to specify. Do not claim unsupported encrypted storage, continuous synchronization, durable backup, offline access to linked websites, or local execution of a hosted model.
+## Constraints
 
-## Decisions before implementation
+### Connected journey and scope
 
-- First country, concrete target opportunity/goal, and initial learner group or tester profile.
-- First entry route: a known goal or exploration from current skills/study.
-- Initial supported languages and practical device/accessibility test coverage.
-- Baseline evidence, practical assessment criteria, and the small verified requirements/resource pack.
-- Platform/stack and deployment choices; exact local/offline boundary and any optional external-service budget.
-- Feedback participants and meaningful success measures. Do not infer learning gains or time saved from the existence of the prototype.
+1. Sign into a local demo account, choose English/French and confirm an explicit IANA timezone.
+2. Enter a learning goal; choose a supported template or supply ordered topics/sections; optionally add safe resource links; set availability dates and estimated time.
+3. Review, edit and confirm TinySteps' ordered draft, dates and estimates. A goal title alone cannot generate an unsupported syllabus.
+4. Study a step, record activity, explicitly choose whether to complete it, optionally reflect privately, and choose the next action. This is the personal StudyCircle.
+5. Read FinishLine current-plan counts and retained history, plus distinct activity dates in the last seven calendar days and cumulative work.
+6. Optionally create a private peer circle, deliberately share an expiring one-use invite with a second local account, preview/share a commitment or check-in copy, and receive canned encouragement.
+7. After interruption, choose a restart date, inspect Comeback's unchanged history and proposed unfinished-step dates, then cancel, edit or confirm. A five-minute action can restart activity without completing the full step.
 
-The official submission deadline is unannounced. 14 October 2026 is only an internal planning target. Solo capacity is above ten hours per week as reported by the user; it is not measured effort.
+TinySteps and Comeback are the main starting/return interactions. StudyCircle, consistency and FinishLine are mandatory supporting capabilities. Peer membership is never a prerequisite for studying alone.
 
-## Codex evidence and next increment
+### Functional requirements
 
-Actual evidence so far includes the user's supplied concept, tracker decisions, this synthesis, and a technical review against primary browser/security documentation. Product implementation and learner validation have not occurred.
+| ID | Requirement / acceptance contract |
+| --- | --- |
+| F01 | **Planning:** owner, goal, ordered editable steps, availability dates, optional fixed target date, positive estimated minutes, locale and explicit timezone. Review/add/change/remove future scope before confirming; never silently accept a draft. Show infeasible dates/availability conflicts without moving a real deadline. |
+| F02 | **Credible TinySteps:** each bundled template has stable ID/version, supported outcome, prerequisites, editable ordered actions and source/check date. The supplied-material template requires learner-provided topics/sections. Label suggestions and estimates. Unsupported goals fall back to manual/supplied topics. |
+| F03 | **Personal StudyCircle:** plan → study → review → next action. Activity logging and whole-step completion are separate explicit actions. Reflection is private, optional and skippable; no assessment answer gate. |
+| F04 | **FinishLine:** show completed active steps / all active steps and separate cumulative history. Completion is self-reported work, never mastery/grades/credential. Explain count changes when scope changes. Scope removal archives work and never rewrites historical completion/activity. An empty plan has an empty state, not division by zero or false 100%. |
+| F05 | **Flexible consistency:** convert stored UTC activity timestamps into dates in the learner's selected timezone. Count distinct dates in [today minus six calendar days, today], including today; repeated same-date activity counts once. Show date range/timezone plus cumulative activity and learner-reported studied minutes. Planned estimates are not studied time; do not call minutes measured unless a timer actually measures them. Missing days and planned rest never erase cumulative work or become a failure score. This is not a rolling 168-hour window. |
+| F06 | **Comeback preview:** select unfinished active steps in existing order. Calculate the calendar-day shift from the first unfinished step's scheduled date to the chosen restart date; add the same shift to every unfinished date. Preserve order and relative spacing. Completed dates/history stay fixed. Show availability/target-date conflicts without silently compacting the plan. |
+| F07 | **Comeback confirmation:** preview old/new dates without mutation; cancel changes nothing. Atomically apply only against the preview's plan revision; reject stale previews and regenerate. Empty/all-complete plans have no schedule to move. Five-minute restart logs activity without automatically completing the step. |
+| F08 | **Peer privacy:** members explicitly preview and share a bounded commitment/check-in copy. Peers see only approved shared fields, author display name/time and canned encouragement. Detailed plans, resource lists, reflection and unshared activity remain private. Later private edits never silently change a shared copy. As minimal design defaults, creators can delete their own shared copies, members can leave, and owners can remove members; leaving/removal deletes that member's shared copies and attached encouragement and immediately denies subsequent circle access. Explain that already-seen copies cannot be recalled. An owner exits only through explicit circle closure, without silent role transfer; closure removes access, shared copies and attached encouragement while retaining each learner's private study history. |
+| F09 | **Invites:** only the authorized circle owner creates or revokes unused invites. Persist cryptographic token hash, circle/creator, expiry, revocation and redemption state, never the raw bearer token. Return the raw token only on creation. Authenticated redemption checks active circle, expiry, revocation and single-use state and inserts membership in one transaction. Altered, expired, revoked, repeated or concurrent redemption cannot add extra members. Closing a circle invalidates its unused invitations. Explain that possession permits joining this circle. |
+| F10 | **Identity/authorization:** use Better Auth's maintained hashing/session behavior, with two distinct actual local accounts. Every resource request, including reads, checks session plus ownership/membership server-side. Supplied user IDs are not authority. Sign-out revokes the usable session. No outgoing verification/recovery email or verified-email claim. |
+| F11 | **Text/URLs:** render user text as text, never executable HTML. References allow only absolute http(s) URLs without embedded username/password. Reject malformed/disallowed schemes and credentials; external links open safely. No server preview fetch, metadata scraping or file ingestion. |
+| F12 | **Local persistence:** running loopback server's SQLite is canonical. No browser sync, remote DB or external AI is required. Refresh/server restart retain saved data. Core local journey reloads and works with internet disconnected while the server runs. Failed saves stay visible. Server-stopped use is unavailable and must not be promised. |
+| F13 | **English/French/accessibility:** externalize UI text, validation/accessibility labels and date formatting. Both languages cover the entire agreed journey; learner content is not automatically translated. Semantic controls, keyboard access, visible focus, labels/errors, contrast/targets, reduced motion where relevant and reflow at 320 CSS pixels are required. |
+| F14 | **Control/states:** explicit confirmation for schedule application, scope removal and sharing. Show loading, empty, validation, permission-denied, expired-invite, stale-preview, save-failure and signed-out states. No shaming copy, penalties, rankings, compulsory daily study or countdown pressure. |
 
-Next: narrow the pilot, convert this proposal into an implementation-ready specification and ordered plan, implement one journey, and verify C1-C7 against concrete acceptance criteria. Capture actual Codex contributions in planning, building, independent review, checks, and documentation. A reusable requirements/resource-pack validation skill is a possible project-specific workflow to scope later; it has not been created. Maintain all activity evidence in the existing Miva Sheet and Kaneo tasks.
+Initial curated coverage is proposed as (a) learner-supplied course/reading sections and (b) creating a simple HTML page using MDN's first-website content lesson. MDN assumes basic file/editor/browser skills; no prior web knowledge does not mean no digital prerequisites. Store exact template text and source alignment before shipping; these are starter templates, not universal curriculum coverage.
+
+### Data and interface contract
+
+Use domain IDs independent of ordering, UTC event timestamps, explicit IANA timezones and ISO calendar dates for planned work. Durations are positive whole minutes. Preserve activity and completed-step snapshots when active scope changes; an explicit correction may alter current status but retains the original event. Reject invalid dates/timezones, oversized payloads and invalid references at the HTTP boundary. Document exact field/count limits beside the schema before exposing inputs.
+
+| Boundary | Minimum records / responsibility |
+| --- | --- |
+| Identity | Better Auth user/session/account records; locale/timezone preferences. Secrets, passwords and session tokens never enter source or ordinary logs. |
+| Plan | Owner, title, optional target date, availability, ordered steps/dates/estimates, active/archive state, revision and template provenance. Owner-only access. |
+| Study history | Owner, optional plan/step reference, activity kind/time/minutes, completion/correction snapshot and optional private reflection. Survives active scope edits. |
+| Recovery preview | Owner, plan revision, restart date, unfinished IDs, old/new dates and conflicts. Server-calculated result validated transactionally on confirmation. |
+| Circle | Circle owner/memberships and hashed expiring one-use invites. Tokens and private records cannot leak via shared views. |
+| Shared copy | Circle, author, commitment/check-in type, approved plain-text fields/time. Canned encouragement references a shared item and authenticated sender; no private-plan detail joins. |
+
+Planned HTTP groups: `/api/auth/*splat`, `/api/me`, owner-scoped `/api/plans`, `/api/activities`, `/api/recovery`, and membership-scoped `/api/circles`, `/api/invites`, `/api/shared-items`. Concrete methods/schemas/errors must be documented with implementation; none is claimed to exist now. Return understandable validation/conflict/access errors without internals. Use revision/idempotency protection for retries that could duplicate study activity, completion or invitation redemption.
+
+### Architecture and stack decision
+
+The workload is small local transactional I/O and UI interaction. It needs no distributed service, CPU-specialized runtime, production cluster or runtime AI. Strict TypeScript provides explicit shared contracts; runtime validation remains necessary. SQLite fits one running demo server but is not evidence of production scalability.
+
+| Candidate | Fit and trade-off | Decision |
+| --- | --- | --- |
+| Node 24 LTS + Express 5 + strict TypeScript + native browser modules/Vite + Better Auth + SQLite/better-sqlite3 13.0.3 | Node 24.19.0 on Windows x64 passed R11's frozen install, strict compiler, 35 HTTP/SQLite checks and minimal native browser-module build. Maintained auth and a small same-origin server fit the demo. | Selected with an experimentally verified exact dependency set; preserve its locked inputs and retest consequential changes. |
+| .NET 10 + ASP.NET Core Identity + SQLite | Coherent typed/auth alternative. Needs a new SDK; support-table match for the host's Windows 26H2 remains uncertain. This is a host-specific setup concern, not general unsuitability. | Not selected; reconsider if Node feasibility materially fails. |
+| SvelteKit + TypeScript + Better Auth + SQLite | Can express the same journey; adds routing/build conventions beyond this small native-module interface. | No demonstrated benefit justifies the additional framework here. |
+
+Dependency direction: **HTTP/UI adapters → application use cases → domain**. Persistence and identity adapters implement application interfaces. Domain schedule/progress logic cannot import Express, DOM, Better Auth or SQLite. Application use cases own transactions and authorization policy; HTTP validates/serializes and UI renders state/intent. Separate shared schema types from server secrets. Avoid abstractions with no actual testing or maintenance benefit.
+
+Verified research pins: Express 5.2.1, Better Auth 1.7.7, better-sqlite3 13.0.3 (native SQLite 3.53.4), TypeScript 7.0.2, Vite 8.3.3, @types/node 24.19.1, @types/express 5.0.6, @types/better-sqlite3 9.6.0 and bun-types 1.4.2; pnpm 11.19.0 on Node 24.19.0. [R11's report and reproduction inputs](experiments/runtime-feasibility/REPORT.md) retain versions, commands and hashes. Better Auth declarations import `bun:sqlite`; pin the official `bun-types` declaration package and load only `node` and `bun-types/sqlite` ambient entrypoints. The strict experiment passed without handwritten shims or `skipLibCheck`; Bun is not a runtime dependency. Use the single pnpm lockfile and frozen installs. Dependency auditing uses `pnpm audit` through the planned project audit script rather than creating a second lockfile for `npm audit`.
+
+Verified Better Auth integration requires ESM, Express 5 wildcard routing, and auth handler mounting before body-parsing middleware. Configure the local origin/session/cookie behavior explicitly; do not disable origin/CSRF checks to make integration pass. Library protections do not replace application mutation protection or resource authorization. Bind to loopback only. `http://localhost:4317` is proposed because it was observed free, not reserved; recheck at startup and fail clearly on conflict. Delivered assets and API are same-origin.
+
+Use SQLite foreign keys, migration versions, parameterized statements, bounded busy handling and atomic multi-record changes. Ignore the documented local data directory in Git. Use synthetic demo accounts/content; real learner records are unnecessary. Logs exclude passwords, invite tokens, session cookies and private reflection. No telemetry, paid service or recurring monitoring is introduced.
+
+### Quality and operating constraints
+
+| Constraint | Required implementation/check |
+| --- | --- |
+| C1 Credibility | Trace templates to checked sources; require unsupported topics; label estimates/self-report. AC02/AC05. |
+| C2 Low bandwidth | Text-led bundled same-origin assets; no required CDN/font/runtime AI/fetch. State and verify the exact internet-disconnected/server-running condition. AC10. |
+| C3 Inclusion | WCAG 2.2 AA-informed checks for semantics, keyboard/focus, contrast, labels/status, zoom/reflow and targets; not a certification claim. AC11. |
+| C4 Personalization | Editable pace, availability and scope; optional reflection/peer membership; explicit conflicts. AC01/AC03/AC06. |
+| C5 Privacy/security | Auth, server ownership/membership, safe text/URLs, hashed transactional invites and shared-field allowlists. AC07–AC09. |
+| C6 Language | Complete English/French UI/state copy with date formatting and text expansion checks. No Arabic/RTL commitment. AC11. |
+| C7 Local relevance | Explicit timezone and learner dates; no forced weekday routine or country-specific dataset. AC01/AC04. |
+
+Before frontend code, record product truth and use Impeccable to establish the Operate-mode surface brief, visual direction and **image mockup**. Use the image as implementation reference for next-action, comeback and privacy states; this written specification is not a generated mockup. Preserve settled answers without a new approval gate. Inspect desktop/mobile together in a bounded pass, batch fixes and confirm once, following Impeccable.
+
+Planned commands: `npm run check`, `npm run lint`, `npm run format:check`, `npm run build`, `npm test`, `npm run test:e2e`, `npm run audit` (delegates to `pnpm audit`). These project scripts are not existing or passing checks. Implement strict type checks, appropriate lint/format rules, meaningful domain/HTTP/integration/browser tests and dependency-findings review from the closed research record. Pin reproducible dependencies and appropriate CI; verify provider enforcement before claiming it. Do not suppress findings or weaken assertions merely to pass.
+
+Independent review covers correctness, specification fit, regressions, privacy/security and maintainability; record findings/dispositions. Important test cases: timezone midnight/DST, same-date deduplication, zero/all-complete plans, retained history after edits, restart spacing/conflicts/stale confirmation, account isolation, concurrent/expired/revoked invites, duplicate requests, unsafe URLs/plain-text XSS, save failure, keyboard use and French expansion. Peer tests also cover owner/member leave permissions, explicit owner closure, immediate denial after removal/leave, shared-copy deletion and its attached encouragement, and unused invite rejection after closure.
+
+### Non-goals and production gaps
+
+Exclude full LMS/tutoring/grading, inferred mastery, arbitrary AI curricula, runtime AI, PDF/file ingestion, URL fetching, large libraries, opportunity routing, public communities/chat/feed/rankings, notifications, paid infrastructure, distributed synchronization, server-stopped offline mode and public deployment. No automatic outreach or background monitoring.
+
+Production requires separate evidence/decisions for hosting/HTTPS, secrets, verified identity/recovery, distributed sessions/rate limits, privacy/retention/deletion, abuse/moderation, cross-device peer use, migrations/backups/recovery, broader accessibility/device/language coverage, performance/availability and longer-term learner outcomes. Maintain these as gaps rather than implying the local demo is production-ready.
+
+## Done When
+
+Close the research gate only when every required research item has documented evidence and no consequential fact remains unresolved. Isolated experiments can gather evidence but are not production work. New consequential unknowns reopen research and pause dependent implementation.
+
+The gate is now closed for this agreed scope: all twelve research needs are satisfied. The successful experiment is an HTTP client and minimal DOM/build fixture, not the product. Its persistence check closed/reopened server and DB within one Node process; process/machine restart, product authorization, browser cookie behavior, disconnected operation, accessibility and all application acceptance criteria below still need implementation and verification.
+
+| ID | Observable acceptance criterion | Required evidence |
+| --- | --- | --- |
+| AC01 | Create/edit an approved plan from supported content/supplied topics with availability, valid dates/estimates and visible conflicts. | Input/domain tests and persisted browser walkthrough. |
+| AC02 | Template/source/version/prerequisites are traceable; unsupported goals fall back without invented content. | Content/source review, fallback test, both-language readback. |
+| AC03 | Personal cycle supports study, optional private review and next action; activity differs from whole-step completion. | Behavior test/walkthrough including skipped reflection and five-minute activity. |
+| AC04 | Seven-calendar-day distinct activity counts use explicit timezone/date range and retain cumulative work across missed/rest days. | Deterministic midnight/DST/deduplication tests with expected dates/counts. |
+| AC05 | FinishLine distinguishes current scope, history and self-report from mastery, including scope edits/empty plan. | Domain tests and before/after persistence/UI evidence. |
+| AC06 | Comeback previews/atomically confirms exact unfinished-date shift; preserves order/spacing/history; rejects stale confirmation; five-minute restart never auto-completes a step. | Schedule/transaction tests and cancel/confirm walkthrough. |
+| AC07 | Two real local accounts join a private circle and share copies/encouragement while private details remain inaccessible. Leave/removal immediately denies access and removes the member's shared copies/attached encouragement; own-copy deletion and explicit owner closure obey permissions and preserve private history. | Separate-session journey and server authorization/lifecycle tests for every resource group. |
+| AC08 | Invites are hashed, expiring, revocable, single-use and transactionally reject repeated/concurrent/altered/expired/revoked redemption and closed circles. | Safe storage inspection and concurrency/failure tests. |
+| AC09 | Auth/session handling, ownership/membership, input limits, safe URLs and plain-text rendering hold, including denied requests/sign-out. | HTTP/integration tests, targeted browser check, dependency review and independent review. |
+| AC10 | Saves survive refresh/server restart; core journey works with internet disconnected and server running; failed saves remain honest. | Exact connectivity condition, persistence/restart and external-request/failure evidence. |
+| AC11 | Complete English/French journeys work at desktop/mobile widths, keyboard/zoom/reflow and targeted accessibility checks; mockup predates frontend code. | Dated image, actual screenshots/check log, translation review, bounded Impeccable findings. |
+| AC12 | Fresh checkout runs from README; another agent can adapt a template/language record with documented boundaries. | Actual clean-checkout rehearsal/adaptation diff; not human adoption. |
+| AC13 | Codex/MCP work and two meaningful uses of each reusable project skill are traceable; trackers/publication have actual readback. | Criterion → requirement → artifact/commit → actual check → demo time index. |
+| AC14 | A 3–5 minute walkthrough shows all five capabilities, two accounts, Codex/MCP/skills, real verification and next-month work. | Actual timed recording/rehearsal; required 3–5 minute duration; source-backed claims. |
+
+Completion requires applicable tests/checks and independent review to pass, or an explicit scoped exception from the authorized owner. Publication requires registered recovery protection, intended non-secret commit, protected push, both remote heads read back and backup completion inspected. [Verification](verification.md) records actual failures/unavailable checks/limitations. Proposed usability research is three voluntary 15–20 minute sessions if participants are available, without automatic outreach; record unassisted/assisted/failed tasks and improve observed confusion without claiming retention or adoption from short sessions.

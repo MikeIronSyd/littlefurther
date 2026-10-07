@@ -1,0 +1,4 @@
+# Preserve exact bytes for source material and hashed research evidence.
+docs/specs/capstone/inputs/CODEX_CAPSTONE_HANDOVER.md -text
+docs/specs/capstone/archive/2026-10-07-superseded-track2-discovery.md -text
+docs/specs/capstone/experiments/runtime-feasibility/** -text
