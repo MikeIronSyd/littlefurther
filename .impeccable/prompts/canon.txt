@@ -1,0 +1,27 @@
+## Goal
+Generate one polished desktop web application interface mockup, image only, edge to edge at a 3:2 landscape aspect (target 1536x1024). This is the actual learning workspace, not a landing page, poster, photograph, or browser/device frame. Make the next study action clearly dominant. Use case: ui-mockup.
+
+## Context Pointers
+The user-originated Track 2 concept joins manageable learning steps, gentle return after interruptions, a personal study/review cycle, optional private peer accountability, nonpunitive consistency, and visible completion progress in ONE connected learner experience. The product is for learners generally. This is synthetic illustrative content; no live app exists. No final product name exists: "My learning" is a navigation label, not a logo or invented brand.
+All cards must contain the following same coherent sample, but their layouts and visual systems differ.
+Top navigation: "My learning", "Journeys", "Activity"; language selector "English"; account control "M".
+Page title: "Your next step".
+Goal: "Build a simple web page". Mark "Example journey" discreetly near the goal.
+Progress: "3 of 8 steps complete" and a simple 8-part indicator with exactly 3 filled parts. The three completed step names are "Choose your page purpose", "Set up your file", "Build the page structure".
+Current step: "Add a heading and paragraph". Supporting instruction: "Use one heading and a short paragraph to introduce your page." Time label: "Estimated 10 minutes". Primary button: "Start study session". Secondary text action: "Try a 5-minute restart". A small "Edit step" action.
+Remaining path after the current step: "Add a link and image", "Style your page", "Check a small screen", "Finish and reflect". Display all eight in a single ordered learning path if space allows, or the three completed plus current and four remaining with clear hierarchy. Never show 9 steps.
+Comeback support: "Welcome back. Your completed work is still here." action "Review a lighter plan".
+Personal cycle: a compact quiet row "After studying" with "Add a private reflection, or skip it and choose your next step." This is future/optional, not an active required form before studying.
+Consistency: "3 study days" plus "1–7 October 2026 · Africa/Lagos". A seven-position strip labeled 1 2 3 4 5 6 7 has ONLY the first three marked studied, other four neutral. Copy "Every study day counts." Never punitive streaks, red missed-day failures, flames or leaderboards.
+Optional peer support: "Study together" and "Private circle · Optional". Copy "Choose exactly what you share." Button "Preview a commitment". No fake avatars, messages or peers' claims.
+Subordinate footer note "Design concept · Illustrative data".
+The product will run locally with server running, has English/French UI, and is not a runtime AI tutor. Do not advertise any offline, secure, AI-powered, job-ready or tested-accessibility claim.
+
+## Constraints
+This is an OPERATE-mode interface, with familiar web navigation, buttons, links, clear state and neutral working surfaces. Express the chosen direction through type, accent colors, density and one signature move, never costume a physical object or tool. One dominant action, no five equal feature cards, no generic SaaS KPI dashboard, no nested cards, no huge marketing hero, no photos, no decorative illustrations. Do not add invented features, course recommendations, notifications, chat, points or awards. Use clean readable sans serif UI typography, generous touch targets, high-contrast body copy, comfortable spacing. Small crisp consistent line icons only if helpful; no emoji. All required copy must be spelled clearly. Supporting areas can be flat sections or lists rather than boxes. Maintain calm hierarchy while giving the page a distinctive composition.
+
+## Done When
+The image shows the actual working screen, one next action and an integrated path containing all five mechanisms. Counts and activity markings match. No behavior is implied as verified. It is a finished, carefully composed visual proposal suitable for comparing design directions, not wireframe placeholders.
+
+## Visual Direction
+Execute the familiar category-standard learning dashboard at high craft: narrow left navigation, top account/language bar, white main workspace on light neutral #F6F8FA, dark slate #243044 text, confident blue #285DA8 primary control and #DDE7F4 restrained progress. A central next-action panel is dominant, an adjacent complete eight-step path is compact, and comeback/rhythm/private reflection/optional private circle occupy simple lower sections. Conventional rounded button shapes and straight dividers. It must be equally polished and readable as the alternate proposals, no unfinished gray wireframe. Avoid five equal capability cards, repeated nested cards or giant KPI numbers.

@@ -1,0 +1,230 @@
+{
+  "title": "Choose the learning workspace direction",
+  "question": "Which direction should carry forward? These are visual proposals with illustrative data, before app implementation.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Joined progress",
+      "kicker": "THE ROLL",
+      "lineage": "Patchwork joining and preserved pieces",
+      "thesis": "Previous effort stays visible while one manageable next action takes focus.",
+      "palette": [
+        "#F7F8FC",
+        "#30255B",
+        "#6851BB",
+        "#DCD5F2"
+      ],
+      "materials": [
+        "Neutral light surface",
+        "Crisp joined segments",
+        "Untextured UI"
+      ],
+      "viewport": "A broad next-action area joins a narrow complete learning path through one eight-part progress strip. Quiet return and support areas sit below.",
+      "risk": "The joined-strip motif needs careful restraint so it does not resemble a game board.",
+      "raised": [
+        {
+          "from": "Design annual",
+          "raise": "Use consistent attribution and restrained spacing across every supporting section."
+        },
+        {
+          "from": "Orienteering map",
+          "raise": "Keep completed, current and upcoming states distinct in text as well as color."
+        },
+        {
+          "from": "Reference setting",
+          "raise": "Keep supporting explanation close to the action it explains."
+        },
+        {
+          "from": "Event catalog",
+          "raise": "Keep the entire eight-step scope scannable without shrinking the text."
+        },
+        {
+          "from": "Exposure record",
+          "raise": "Make activity and completion separate, explicitly labeled quantities."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/joined-progress.png"
+    },
+    {
+      "id": "pick",
+      "label": "Open study page",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "A well-annotated personal study notebook",
+      "thesis": "A clear central study action, with progress and support placed in the margins.",
+      "palette": [
+        "#F5F8F7",
+        "#113F3B",
+        "#176D60",
+        "#D8E9E2"
+      ],
+      "materials": [
+        "Clean neutral page",
+        "Deep green ink",
+        "Open margins"
+      ],
+      "viewport": "The next study action sits in the main reading column; a compact left path and right support margin keep the entire journey in view.",
+      "risk": "The familiar notebook hierarchy is easy to understand, but less distinctive than the joined-progress direction.",
+      "comp": ".impeccable/mocks/decision/open-study-page.png"
+    },
+    {
+      "id": "wayfinding-cartography-signage-terminal-yellow-wayfinding",
+      "label": "One clear next turn",
+      "verdict": "competitive",
+      "lineage": "Public transit wayfinding",
+      "thesis": "Make the next decision unmistakable while keeping the full route nearby.",
+      "palette": [
+        "#FAFAF8",
+        "#252720",
+        "#E7B52F",
+        "#F4E8B9"
+      ],
+      "materials": [
+        "Neutral white panels",
+        "Charcoal labels",
+        "Ochre route emphasis"
+      ],
+      "viewport": "A left-aligned next-step band leads into the working area, with the remaining path adjacent and optional support beneath.",
+      "case": "Strong on next-action clarity; less directly associated with personal learning than the assigned direction.",
+      "risk": "Yellow can overpower the learning content unless confined to the current step and primary action.",
+      "hero": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-terminal-yellow-wayfinding-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-terminal-yellow-wayfinding.webp",
+      "comp": ".impeccable/mocks/decision/next-turn.png"
+    },
+    {
+      "id": "design-annual-s-plate-section",
+      "label": "Design annual",
+      "lineage": "Editorial plate sections",
+      "thesis": "Precise hierarchy and attribution.",
+      "kept": "Attribution discipline retained; editorial framing adds less learner recognition and next-action clarity.",
+      "verdict": "declined",
+      "palette": [
+        "#F5F5F2",
+        "#28282A",
+        "#6B6970"
+      ],
+      "materials": [
+        "Catalog inspiration only"
+      ],
+      "viewport": "Not proposed for the first learning workspace.",
+      "risk": "Adds visual decoding without improving the next study action.",
+      "case": "Attribution discipline retained; editorial framing adds less learner recognition and next-action clarity.",
+      "hero": "https://impeccable.style/worlds/cards/design-annual-s-plate-section-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/design-annual-s-plate-section.webp"
+    },
+    {
+      "id": "notation-diagram-systems-orienteering-map",
+      "label": "Orienteering map",
+      "lineage": "Mapped checkpoints",
+      "thesis": "Keep the current point and retained progress legible.",
+      "kept": "State distinctions retained; map conventions add a decoding burden to a daily study action.",
+      "verdict": "declined",
+      "palette": [
+        "#F5F5F2",
+        "#28282A",
+        "#6B6970"
+      ],
+      "materials": [
+        "Catalog inspiration only"
+      ],
+      "viewport": "Not proposed for the first learning workspace.",
+      "risk": "Adds visual decoding without improving the next study action.",
+      "case": "State distinctions retained; map conventions add a decoding burden to a daily study action.",
+      "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-orienteering-map-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/notation-diagram-systems-orienteering-map.webp"
+    },
+    {
+      "id": "rw-centre-rail-reference-setting",
+      "label": "Reference setting",
+      "lineage": "Keyed reference columns",
+      "thesis": "Keep explanations beside their referents.",
+      "kept": "Proximity retained; multiple annotation rails complicate small-screen study.",
+      "verdict": "declined",
+      "palette": [
+        "#F5F5F2",
+        "#28282A",
+        "#6B6970"
+      ],
+      "materials": [
+        "Catalog inspiration only"
+      ],
+      "viewport": "Not proposed for the first learning workspace.",
+      "risk": "Adds visual decoding without improving the next study action.",
+      "case": "Proximity retained; multiple annotation rails complicate small-screen study.",
+      "hero": "https://impeccable.style/worlds/cards/rw-centre-rail-reference-setting-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/rw-centre-rail-reference-setting.webp"
+    },
+    {
+      "id": "pop-culture-shelf-doujin-event-catalog",
+      "label": "Event catalog",
+      "lineage": "Dense catalog indexing",
+      "thesis": "Expose the full scope without hiding entries.",
+      "kept": "Scope visibility retained; tiny index codes weaken readability and learner identification.",
+      "verdict": "declined",
+      "palette": [
+        "#F5F5F2",
+        "#28282A",
+        "#6B6970"
+      ],
+      "materials": [
+        "Catalog inspiration only"
+      ],
+      "viewport": "Not proposed for the first learning workspace.",
+      "risk": "Adds visual decoding without improving the next study action.",
+      "case": "Scope visibility retained; tiny index codes weaken readability and learner identification.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-doujin-event-catalog-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/pop-culture-shelf-doujin-event-catalog.webp"
+    },
+    {
+      "id": "operate-b-exposure-record-zone-sheets",
+      "label": "Exposure record",
+      "lineage": "Tonal technical recording",
+      "thesis": "Make different recorded quantities unmistakable.",
+      "kept": "Quantity labels retained; darkroom conventions are distant from the learner task.",
+      "verdict": "declined",
+      "palette": [
+        "#F5F5F2",
+        "#28282A",
+        "#6B6970"
+      ],
+      "materials": [
+        "Catalog inspiration only"
+      ],
+      "viewport": "Not proposed for the first learning workspace.",
+      "risk": "Adds visual decoding without improving the next study action.",
+      "case": "Quantity labels retained; darkroom conventions are distant from the learner task.",
+      "hero": "https://impeccable.style/worlds/cards/operate-b-exposure-record-zone-sheets-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/operate-b-exposure-record-zone-sheets.webp"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "id": "canon",
+    "label": "Familiar workspace",
+    "thesis": "A conventional learning dashboard with a clear next action and familiar supporting panels.",
+    "palette": [
+      "#F6F8FA",
+      "#243044",
+      "#285DA8",
+      "#DDE7F4"
+    ],
+    "materials": [
+      "White workspace",
+      "Blue action controls",
+      "Plain dividers"
+    ],
+    "viewport": "A standard left navigation and broad main workspace, with progress above the next action and support below.",
+    "risk": "Familiar and easy to scan, but provides less visual distinction.",
+    "comp": ".impeccable/mocks/decision/familiar-workspace.png"
+  },
+  "steer": true
+}

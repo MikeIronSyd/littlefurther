@@ -194,7 +194,7 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "MVP scope and judging workflow documented; all twelve agreed research needs satisfied on 2026-10-07 at 16:57 Africa/Lagos. Image-first design is next; product implementation and acceptance remain outstanding.",
+      "scope_status": "Settled MVP scope; all twelve research needs satisfied on 2026-10-07. Four desktop direction mockups now exist; no direction approved and no product implementation or acceptance verified.",
       "ai_product_feature_required": false,
       "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
@@ -209,9 +209,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "MVP scope and judging workflow documented; all twelve agreed research needs satisfied on 2026-10-07 at 16:57 Africa/Lagos. Image-first design is next; product implementation and acceptance remain outstanding.",
+    "mvp_scope": "Settled MVP scope; all twelve research needs satisfied on 2026-10-07. Four desktop direction mockups now exist; no direction approved and no product implementation or acceptance verified.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "Specification, research, reusable-skill and judging-evidence preparation. No product implementation, learner evaluation or demo completed."
+    "stage": "Image-first design in progress: four desktop direction proposals saved; visual choice, detailed states and frontend implementation pending."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -319,8 +319,8 @@
   "workflow_requirements": [
     "Follow the user's iterative SDLC and spec-driven development instructions for software work.",
     "Use Impeccable for UI and UX work.",
-    "Register coding projects with the user's GitHub recovery runtime before the first push.",
-    "After appropriate checks, commit intended non-secret changes and push to the configured GitHub repositories.",
+    "Under the user's 7 October 2026 policy, CodexRecovery covers only global instructions, skills and essential settings. Never send project files or Git history there; do not register projects, install recovery hooks or use Push-WithBackup for project publication.",
+    "Existing publication authorization for both configured private GitHub repositories remains in force. After appropriate checks, use normal local Git commits and pushes, preserve unrelated hooks, and verify both remote heads against the intended commit.",
     "Preserve unrelated work, use private repositories by default, and do not activate paid storage.",
     "Shape substantial briefs and authored prompts with Goal, Context Pointers, Constraints and Done When.",
     "Complete and document 100% of necessary research for the agreed implementation scope before production work; assumptions cannot replace missing facts.",
@@ -515,7 +515,7 @@
     "github_mcp": {
       "purpose": "Read repository, commits, diffs and available check results for review.",
       "verified": "GitHub MCP get_repo successfully read private separate account/andela-miva-codex-hackathon on 2026-10-07.",
-      "boundary": "Source publication retains protected local Git/recovery.",
+      "boundary": "Source publication uses normal local Git commits and pushes to both authorized private project repositories, preserving unrelated hooks. Global-only CodexRecovery is separate; project files and Git history never go there.",
       "miva_status": "Miva repository read returned 404 through the connector on 2026-10-07. Scoped installed GitHub CLI separately confirmed private repository visibility and WRITE; this is CLI evidence."
     },
     "browser_mcp": {
@@ -539,7 +539,7 @@
   },
   "current_preparation": {
     "recorded_on": "2026-10-07",
-    "status": "Preparation artifacts and research complete; independent preparation review found no material defects. Protected delivery is recorded separately.",
+    "status": "Preparation and research complete; four unapproved desktop direction proposals and state map saved. Normal dual-repository publication is separate from global-only recovery.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -548,16 +548,18 @@
       "PRODUCT.md",
       ".agents/skills/learning-journey-review/SKILL.md",
       ".agents/skills/capstone-evidence-update/SKILL.md",
-      "docs/specs/capstone/experiments/runtime-feasibility/REPORT.md"
+      "docs/specs/capstone/experiments/runtime-feasibility/REPORT.md",
+      "docs/specs/capstone/design.md",
+      ".impeccable/decision-options.json"
     ],
-    "tracker_record": "E004; D009-D014; retain existing A001-A010 activities.",
+    "tracker_record": "E004 preparation; E005 design increment reserved after live uniqueness check; D009-D014 and A001-A010 retained.",
     "tracker_sync": "Initial settled-scope reconciliation saved and read back in Miva Sheet and Kaneo on 2026-10-07. D009-D014/E004 and existing A001-A010 preserved. Subsequent runtime/review/publication results are appended after their evidence exists; see verification.md and live E004/A009.",
-    "publication": "This source snapshot is prepared before protected publication. For its final commit, both-remote readback and recovery outcome, consult live A009/E004 and the local ignored .local/capstone-publication-result.json. Historical 089699a is baseline evidence only.",
+    "publication": "Use normal local Git publication to both authorized private project repositories, without project recovery registration or Push-WithBackup. For the actual final commit and both-remote readback, consult live A009/E004 and the local ignored .local/capstone-publication-result.json. Global-only CodexRecovery is separate. Historical 089699a is baseline evidence only.",
     "limitations": [
       "No app code or application tests completed.",
       "No learner evaluation or human adoption verified.",
       "No measured retention, motivation, quality uplift or time savings.",
-      "No finished interface mockup or video demo."
+      "Four static desktop proposals exist; visual approval, detailed restart/sharing/French-mobile screens and video demo remain pending."
     ]
   },
   "research_gate": {

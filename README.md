@@ -24,7 +24,7 @@ The selected design is a local browser app using Node 24 LTS, Express 5, strict 
 
 Plans use curated templates or supplied topics/text and reference links. English and French are the initial interface languages. There is no runtime AI, PDF import, automatic URL fetching, full chat or public hosting in scope. A reference image precedes frontend code. The official submission deadline is unannounced; 14 October is an internal target only.
 
-Use GitHub MCP for supported repository/commit/check readback and browser MCP for app observations and correct-account tracker interactions. Protect publication through the existing local Git/recovery workflow; never replace it with API writes that bypass hooks. Do not commit secrets, local databases or real learner records.
+Use GitHub MCP for supported repository/commit/check readback and browser MCP for app observations and correct-account tracker interactions. After applicable checks, use normal local Git commits and `git push origin main` to publish intended source to the existing private separate account and MikeIronSyd repositories; verify both remote heads and preserve unrelated Git hooks. CodexRecovery covers only global instructions, skills and essential settings: never register or back up this project's files or Git history through it, and do not use `Push-WithBackup` for project publication. Do not commit secrets, local databases or real learner records.
 
 ### Use the included review workflow
 

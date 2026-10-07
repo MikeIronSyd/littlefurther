@@ -8,3 +8,5 @@ outputs/
 *.pem
 *.pfx
 recovery-archives/
+.impeccable/questions/
+.impeccable/config.local.json

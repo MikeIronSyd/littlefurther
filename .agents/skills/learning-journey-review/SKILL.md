@@ -42,7 +42,7 @@ Discover available tools and inspect package scripts or documented commands befo
 | English and French | Both agreed languages cover affected journeys, validation, empty/error states, and accessible names. Check switching, longer text, keyboard access, and readable progress equivalents against the agreed device/accessibility scope. |
 | Design and research gates | Required research evidence and the image-first design step precede dependent frontend work. The settled audience is learners generally; do not add a narrow-audience or source-case question gate. Flag missing agreed evidence rather than inventing validation or restarting settled intake. |
 
-Do not expand a review into implementation, live tracker edits, publication, external messages, recurring monitoring, paid services, or repository visibility changes. Existing task authorization may permit a review record; otherwise return the review in the conversation. Publishing any subsequently authorized change must follow the project's protected local Git/recovery workflow, never GitHub MCP writes that bypass hooks.
+Do not expand a review into implementation, live tracker edits, publication, external messages, recurring monitoring, paid services, or repository visibility changes. Existing task authorization may permit a review record; otherwise return the review in the conversation. Publish any subsequently authorized change through normal local Git commits and pushes to the project's selected repositories, preserving unrelated hooks and verifying the required remote heads. Global Codex recovery is separate; never register or send project files or Git history there, install recovery hooks, or use `Push-WithBackup` for project publication.
 
 ## Done When
 

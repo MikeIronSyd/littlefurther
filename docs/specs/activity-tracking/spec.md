@@ -10,7 +10,7 @@ Use a Google Sheet owned by `m.alkali5130@miva.edu.ng` and the existing local Ka
 - Track the entire activity history and current work in both Google Sheets and Kaneo. Keep stable activity IDs across both.
 - Distinguish completed work, future work, unknown dates, unverified course completion, measured time, estimates, and unavailable checks. Do not invent these values.
 - Use the existing local Kaneo service and authenticated accounts. Keep GitHub repositories private and credentials outside source files.
-- Apply the user's SDLC, specification, UI/UX skill, GitHub recovery, commit, and push instructions to subsequent project work.
+- Apply the user's SDLC, specification, UI/UX skill and authorized project commit/push instructions to subsequent work. Under the replacement 7 October 2026 policy, global Codex recovery is separate and never captures project files or Git history.
 
 The capstone specification and research checklist govern product work. Audience, five-feature inclusion, both StudyCircle meanings and the selected delivery boundaries are settled. Adding paid services and creating recurring monitoring are outside this setup. Track MCP usage and reusable-skill invocations as actual work, with tool identity, artifact links, results and limitations; do not award completion merely for configured tools or skill files.
 
@@ -20,7 +20,7 @@ The Google Sheet contains Context, Activities, Milestones, Decisions, and Codex 
 
 Kaneo uses the same A001 through A010 prefixes, with To Do, In Progress, In Review, and Done columns. Record LMS module completion separately from the weekly milestones and practical deliverables. A requirement whose completion has not been checked remains explicitly unverified.
 
-The personal repository is the local `origin` fetch remote, with push URLs for both repositories; `miva` also names the Miva repository for direct readback. A normal main-branch push to origin publishes the same history to both accounts. separate account has verified write access to the Miva repository. The project is registered with the installed recovery runtime, preserving original Git hooks and adding a pre-push checkpoint. Use Push-WithBackup for publication and inspect the resulting checkpoint.
+The personal repository is the local `origin` fetch remote, with push URLs for both repositories; `miva` also names the Miva repository for direct readback. A normal main-branch push to origin publishes the same history to both accounts. separate account has verified write access to the Miva repository. Preserve this explicit dual-private-repository publishing authorization, use normal local Git commits and `git push origin main` after applicable checks, preserve unrelated hooks, and verify both remote heads. Do not register projects with CodexRecovery, install recovery hooks or use `Push-WithBackup` for project publication.
 
 Google Sheets was prepared as a verified local workbook. The user explicitly requested the signed-in Miva browser workflow. Browser file upload required an additional extension permission, so the existing editing controls are used to populate the native Sheet instead. Verify the native result separately from the local workbook.
 
@@ -33,7 +33,7 @@ Live execution status and publication evidence belong in the linked Google Sheet
 | AC1 | The context preserves the brief, one-track constraint, three options, four judging criteria, milestones, and confirmed identities. | Parse the context and compare with screenshots and explicit user answers. |
 | AC2 | A native Google Sheet in the Miva account contains five populated, legible tabs with useful scrolling and status controls. | Verify account, title, tab contents, representative cells, formatting, and saved state in the browser. |
 | AC3 | Kaneo contains the hackathon project and ten initial tasks with aligned IDs, descriptions, and honest statuses. | Read back the board and task details. |
-| AC4 | Intended source is committed and pushed to both private GitHub repositories, with successful recovery evidence. | Verify remote main-branch commit hashes against local HEAD and inspect checkpoint completion, source coverage, and warnings. |
+| AC4 | Intended non-secret source is committed and pushed to both authorized private GitHub repositories. | Verify both remote main-branch commit hashes against the intended local commit. Global recovery is separate and does not receive project files or Git history. |
 | AC5 | Records distinguish actual outcomes from planned or unverified work. | Review statuses, dates, evidence, and unresolved fields in all records. |
 
 ## Plan
@@ -41,12 +41,14 @@ Live execution status and publication evidence belong in the linked Google Sheet
 1. Record the brief, milestones, settled constraints, identities, and remaining project decisions.
 2. Build and inspect the workbook, then populate and verify the native Miva Sheet.
 3. Create and verify the Kaneo project and tasks, preserving common IDs.
-4. Register recovery coverage, check intended source for credentials, configure private repositories and account access, then commit and push the same history to both.
+4. Check intended source for credentials and unsuitable generated data, verify the existing private repository destinations and account access, then use normal commits/pushes to publish the same intended source history to both.
 5. Record actual verification and publication evidence in the activity trackers. Keep future project decisions unresolved until they are discussed.
 
-The spreadsheet, Kaneo, and account discovery work can run independently. Source publication depends on recovery registration, intended-source checks, and verified repository access.
+The spreadsheet, Kaneo, and account discovery work can run independently. Source publication depends on intended-source checks and verified access to both authorized repositories; no global-recovery registration or checkpoint is a project-publication prerequisite.
 
 ## Initial setup verification — 2026-10-02
+
+This section preserves the original setup and its then-applicable recovery policy. Historical registration/checkpoint statements below do not reinstate that policy after the user's 7 October globals-only replacement.
 
 - At initial setup, context JSON parsed successfully; it had three track options, four judging criteria, and no selected track.
 - The local workbook contains five populated tabs. Artifact-tool inspection and the formula error scan found no formula errors. Every tab was rendered and checked for clipping. Saved workbook XML confirms tables, filters, frozen panes, and status validation. The bundled Node process returned exit 1 without a diagnostic after exporting; the saved ZIP, XML, content, and rendered views were checked independently.
@@ -85,6 +87,6 @@ Keep the final Sheet and Kaneo board accessible through their links in the conte
 
 Latest concept-blending increment on 2026-10-03: A003 returns to Done because the user explicitly provides Guidance, Pathways & Opportunity as the focus track. A004 remains in progress for MVP scoping. Blend the user's baseline-to-goal journey with informal/offline skill recognition, local opportunity/requirement mapping, credible free resources, and a visual path with an accessible text equivalent. Record local browser storage as a proposal; do not claim it is implemented, secure, or sufficient for offline operation. Capture source-backed technical refinements and the distinction between learning completion, demonstrated competence, and formal eligibility in the capstone concept specification. Preserve original intake and reset decisions as history, along with the unchanged official-deadline clarification and verified LMS evidence.
 
-Before source publication, run JSON parsing, `git diff --check`, and a credential-pattern scan over intended source. Use the installed physical recovery runtime in isolated child processes, keeping its GitHub configuration scoped to those processes. Never commit credentials, recovery configuration, private keys, conversation databases, or recovery archives as project source.
+Before source publication, run JSON parsing, `git diff --check`, and a credential-pattern scan over intended source. When using the installed GitHub CLI profile, keep its GitHub configuration scoped to child processes. Publish through normal local Git, preserving unrelated hooks; do not invoke project recovery wrappers. Never commit credentials, recovery configuration, private keys, conversation databases, or recovery archives as project source.
 
-If a checkpoint fails or is incomplete, preserve the previous successful backup, inspect the error, and retry or resolve it. If Push-WithBackup returns exit 20, the source push already succeeded; retry the checkpoint without repeating that source push. Local files and existing tracker records remain available if an external destination fails.
+If project publication fails or its result is ambiguous, read both remote heads before retrying and keep the pending result explicit. Preserve local source and existing tracker records when an external destination fails. Any independently authorized global checkpoint failure belongs to the separate globals-only recovery workflow, without uploading project files or history.
