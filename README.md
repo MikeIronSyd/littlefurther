@@ -11,6 +11,7 @@ The five connected capabilities are TinySteps, Comeback, StudyCircle (personal s
 - [Product context](PRODUCT.md) captures the selected experience and operating boundaries.
 - [Project instructions](AGENTS.md) and [machine-readable context](project-context.json) preserve decisions, destinations and working rules.
 - [Specification](docs/specs/capstone/spec.md), [research](docs/specs/capstone/research.md), [plan](docs/specs/capstone/plan.md) and [verification](docs/specs/capstone/verification.md) govern implementation and its evidence.
+- [First interface proposals](docs/specs/capstone/design.md) link four desktop mockups, their exact-prompt records and the connected UI state map. The visual choice and detailed states remain pending.
 - [learning-journey-review](.agents/skills/learning-journey-review/SKILL.md) checks changes against the learning journey's acceptance criteria.
 - [capstone-evidence-update](.agents/skills/capstone-evidence-update/SKILL.md) reconciles actual work with the four judging criteria and authorized trackers.
 
@@ -18,7 +19,7 @@ The original handover and superseded concepts remain under `docs/specs/capstone/
 
 ## Constraints
 
-**Current status, 7 October 2026:** product specification, research and reusable-workflow preparation. There is no runnable learner application or completed product test suite yet. An isolated runtime experiment is research, not the prototype. The verification record distinguishes completed preparation from outstanding implementation, evaluation and publication evidence.
+**Current status, 7 October 2026:** specification/research preparation and four unapproved desktop design proposals are saved. There is no runnable learner application or completed product test suite yet. An isolated runtime experiment is research, not the prototype. The verification record distinguishes completed preparation and design artifacts from outstanding implementation, evaluation and detailed state design.
 
 The selected design is a local browser app using Node 24 LTS, Express 5, strict TypeScript/Vite, Better Auth and SQLite. Initial installation will need dependencies; the intended demo runs without internet while its local server remains running. It does not promise remote peer access, offline external learning websites, or operation after the local server stops.
 

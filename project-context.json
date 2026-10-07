@@ -552,9 +552,9 @@
       "docs/specs/capstone/design.md",
       ".impeccable/decision-options.json"
     ],
-    "tracker_record": "E004 preparation; E005 design increment reserved after live uniqueness check; D009-D014 and A001-A010 retained.",
-    "tracker_sync": "Initial settled-scope reconciliation saved and read back in Miva Sheet and Kaneo on 2026-10-07. D009-D014/E004 and existing A001-A010 preserved. Subsequent runtime/review/publication results are appended after their evidence exists; see verification.md and live E004/A009.",
-    "publication": "Use normal local Git publication to both authorized private project repositories, without project recovery registration or Push-WithBackup. For the actual final commit and both-remote readback, consult live A009/E004 and the local ignored .local/capstone-publication-result.json. Global-only CodexRecovery is separate. Historical 089699a is baseline evidence only.",
+    "tracker_record": "E004 preparation; E005 first desktop direction round; D009-D014 and A001-A010 retained.",
+    "tracker_sync": "E005 and publication reconciliation completed on 2026-10-07 through browser MCP in the verified Miva account and Kaneo. Sheet exact readbacks passed for E005 A6:J6, E004 H5:I5, Activities G5:K5/G7:K7/G9:K11 and Context B25:C25. Kaneo A004/A006/A008/A009/A010 passed persisted comparison after navigation, preserving history and statuses. P03 in progress; no visual approval or product acceptance inferred.",
+    "publication": "Design artifact commit c89194b2bd3920c8ef5931cff87a6b5d7b852d3a published with normal Git and read back on both private remotes; personal commit also read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. Global-only CodexRecovery is separate; no project backup invoked.",
     "limitations": [
       "No app code or application tests completed.",
       "No learner evaluation or human adoption verified.",
