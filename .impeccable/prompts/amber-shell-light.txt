@@ -1,0 +1,30 @@
+## Goal
+Refine the selected Amber desktop learning-workspace mockup with the user's newly requested application shell. Produce one polished LIGHT-THEME desktop web app image at1536x1024. Use case ui-mockup. Edge-to-edge app, no browser/device frame.
+
+## Context Pointers
+The input image is the user-selected Amber direction. Preserve its charcoal humanist sans typography, neutral light surfaces, amber current-step band and primary controls, green checked completion, pale-blue return support, and the connected study journey. The user now requires a light/dark mode toggle, collapsible sidebar, top screen menu, and a reserved top-left app name/logo area. All learning records are illustrative.
+
+## Constraints
+Add a persistent full-width top header approximately72px high. At the far left a familiar hamburger/sidebar toggle button, then an UNBRANDED identity placeholder: small outlined square and exact text "App name". This explicitly reserves space and must not become an invented logo. Right header controls: "English", an accessible-looking labelled theme toggle "Dark mode" visibly OFF, and account circle M. Don't repeat the global navigation links in the top bar.
+Below the header add an EXPANDED left sidebar about210px wide with ordinary navigation links "My learning" (active), "Journeys", "Activity". Familiar small line icons accompany text. Sidebar and main content share the same neutral surface family. No separate destinations for five features.
+In the remaining main canvas retain the selected reference's layout: heading "Your next step", goal "Build a simple web page", discreet "Example journey", and "3 of 8 steps complete" above a broad pale-amber next-task band.
+Task band: "Add a heading and paragraph", "Use one heading and a short paragraph to introduce your page.", "Estimated 10 minutes"; dominant amber button black text "Start study session"; secondary "Try a 5-minute restart" and "Edit step". Make these legible at the narrower content width, not cramped.
+Below: complete ordered8-step path on left. Only first THREE carry green completion checks. Row4 is current in amber with NO completion check.
+1 Choose your page purpose
+2 Set up your file
+3 Build the page structure
+4 Add a heading and paragraph
+5 Add a link and image
+6 Style your page
+7 Check a small screen
+8 Finish and reflect
+Right support stack retains:
+"Welcome back." / "Your completed work is still here." / action "Review revised dates". IMPORTANT correction: do not write "Review a lighter plan", because schedule recovery only shifts dates.
+"After studying" / "Add a private reflection, or skip it and choose your next step."
+"3 study days" / "1–7 October2026 · Africa/Lagos" / seven markers1 2 3 4 5 6 7 with only firstTHREE marked / "Every study day counts."
+"Study together" / "Private circle · Optional" / "Choose exactly what you share." / "Preview a commitment".
+Footer: "Design concept · Illustrative data · Branding placeholder".
+No invented product name, learning outcomes, chats, AI/offline/security badges, livenotifications or extra completion. This is light theme with sidebar expanded. Use flat neutral panels, restrained borders, conventional web controls, readable copy, no decorative artwork. Keep Amber's primary-action hierarchy.
+
+## Done When
+The refined desktop makes the requested persistent brandslot, top controls, OFF darkmode toggle and expanded collapsible sidebar immediately visible while preserving all5 connected learning mechanisms and exact3/8 and3day example counts. Static mockup only; no behavior/accessibility or userapproval of this new render claimed.

@@ -10,3 +10,4 @@ outputs/
 recovery-archives/
 .impeccable/questions/
 .impeccable/config.local.json
+.impeccable/build/

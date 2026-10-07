@@ -194,7 +194,7 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "Settled MVP scope; all twelve research needs satisfied on 2026-10-07. Four desktop direction mockups now exist; no direction approved and no product implementation or acceptance verified.",
+      "scope_status": "Amber selected by the user; R01-R14 research satisfied for the expanded local PoC. Six detailed shell/restart/sharing/French-mobile images produced and statically reviewed. No product implementation or acceptance verified.",
       "ai_product_feature_required": false,
       "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
@@ -209,9 +209,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "Settled MVP scope; all twelve research needs satisfied on 2026-10-07. Four desktop direction mockups now exist; no direction approved and no product implementation or acceptance verified.",
+    "mvp_scope": "Amber selected by the user; R01-R14 research satisfied for the expanded local PoC. Six detailed shell/restart/sharing/French-mobile images produced and statically reviewed. No product implementation or acceptance verified.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "Image-first design in progress: four desktop direction proposals saved; visual choice, detailed states and frontend implementation pending."
+    "stage": "Selected Amber design elaborated with light/dark, sidebar/topbar and placeholder branding; static review complete with recorded implementation corrections. P03 in progress; application implementation next."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -329,7 +329,6 @@
   ],
   "pending_decisions": [
     "Record the official submission deadline when organisers announce it; 14 October is an internal target only.",
-    "Establish the first visual reference before frontend code, using the selected image-first workflow.",
     "Determine availability of volunteer learners and a competent French reader for later usability/translation evaluation. No participants have been contacted or results claimed."
   ],
   "verified_activities": [
@@ -509,6 +508,11 @@
       "id": "D014",
       "decision": "Plan observational learner evaluation, independent setup/adaptation verification and a timed 3–5 minute rubric-linked demo.",
       "basis": "Accepted delivery plan; these are planned methods, not completed evaluations."
+    },
+    {
+      "id": "D015",
+      "decision": "User selected Amber, then requested dark/light mode, a collapsible sidebar, top menu and top-left name/logo space. Correct panel-toggle icon is required. No final brand was supplied.",
+      "basis": "Direct user selection: I will go with Amber. Subsequent explicit shell requests. Exact PanelLeftClose/PanelLeftOpen selection is a documented implementation choice."
     }
   ],
   "codex_integration": {
@@ -539,7 +543,7 @@
   },
   "current_preparation": {
     "recorded_on": "2026-10-07",
-    "status": "Preparation and research complete; four unapproved desktop direction proposals and state map saved. Normal dual-repository publication is separate from global-only recovery.",
+    "status": "Amber selected by the user; R01-R14 research satisfied for the expanded local PoC. Six detailed shell/restart/sharing/French-mobile images produced and statically reviewed. No product implementation or acceptance verified.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -550,23 +554,55 @@
       ".agents/skills/capstone-evidence-update/SKILL.md",
       "docs/specs/capstone/experiments/runtime-feasibility/REPORT.md",
       "docs/specs/capstone/design.md",
-      ".impeccable/decision-options.json"
+      ".impeccable/decision-options.json",
+      ".impeccable/mocks/amber/shell-light.png",
+      ".impeccable/mocks/amber/shell-dark.png",
+      ".impeccable/mocks/amber/comeback-preview.png",
+      ".impeccable/mocks/amber/sharing-preview.png",
+      ".impeccable/mocks/amber/mobile-fr-closed.png",
+      ".impeccable/mocks/amber/mobile-fr-open.png",
+      ".impeccable/surfaces/src-client-main-ts.md"
     ],
-    "tracker_record": "E004 preparation; E005 first desktop direction round; D009-D014 and A001-A010 retained.",
-    "tracker_sync": "E005 and publication reconciliation completed on 2026-10-07 through browser MCP in the verified Miva account and Kaneo. Sheet exact readbacks passed for E005 A6:J6, E004 H5:I5, Activities G5:K5/G7:K7/G9:K11 and Context B25:C25. Kaneo A004/A006/A008/A009/A010 passed persisted comparison after navigation, preserving history and statuses. P03 in progress; no visual approval or product acceptance inferred.",
-    "publication": "Design artifact commit c89194b2bd3920c8ef5931cff87a6b5d7b852d3a published with normal Git and read back on both private remotes; personal commit also read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. Global-only CodexRecovery is separate; no project backup invoked.",
+    "tracker_record": "E004 preparation; E005 first direction round; E006 Amber and shell design; D009-D015 and A001-A010 preserved.",
+    "tracker_sync": "E006/D015 pending saved readback. Tracker agent verified correct Miva account and unused Decisions row16/Codex evidence row7 before preparing this increment.",
+    "publication": "E006 increment not yet published; normal Git publication and both-remote readback pending.",
     "limitations": [
       "No app code or application tests completed.",
       "No learner evaluation or human adoption verified.",
       "No measured retention, motivation, quality uplift or time savings.",
-      "Four static desktop proposals exist; visual approval, detailed restart/sharing/French-mobile screens and video demo remain pending."
+      "Six detailed static Amber states reviewed; known desktop/mobile layout corrections are documented for implementation. No functioning controls, native French validation, 320px reflow, accessibility pass or demo video."
+    ],
+    "tracker_sync_history": [
+      "E005 and publication reconciliation completed on 2026-10-07 through browser MCP in the verified Miva account and Kaneo. Sheet exact readbacks passed for E005 A6:J6, E004 H5:I5, Activities G5:K5/G7:K7/G9:K11 and Context B25:C25. Kaneo A004/A006/A008/A009/A010 passed persisted comparison after navigation, preserving history and statuses. P03 in progress; no visual approval or product acceptance inferred."
+    ],
+    "publication_history": [
+      "Design artifact commit c89194b2bd3920c8ef5931cff87a6b5d7b852d3a published with normal Git and read back on both private remotes; personal commit also read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. Global-only CodexRecovery is separate; no project backup invoked."
     ]
   },
   "research_gate": {
     "status": "Closed for agreed local proof-of-concept scope",
-    "closed_at": "2026-10-07T16:57:00+01:00",
+    "closed_at": "2026-10-07T20:14:00+01:00",
     "checklist": "docs/specs/capstone/research.md",
     "evidence": "docs/specs/capstone/experiments/runtime-feasibility/REPORT.md",
-    "boundary": "All twelve required research needs satisfied. This is not product verification; reopen affected research if a consequential unknown emerges."
+    "boundary": "All fourteen scoped research needs satisfied, including R13 theme and R14 navigation; official Lucide sources S23 subsequently support exact panel icons. This is not product verification; reopen affected research for consequential unknowns.",
+    "initial_closed_at": "2026-10-07T16:57:00+01:00"
+  },
+  "design_direction": {
+    "name": "Amber",
+    "user_quote": "I will go with Amber.",
+    "approved_reference": ".impeccable/mocks/decision/next-turn.png",
+    "design_record": "docs/specs/capstone/design.md",
+    "detailed_artifacts": [
+      ".impeccable/mocks/amber/shell-light.png",
+      ".impeccable/mocks/amber/shell-dark.png",
+      ".impeccable/mocks/amber/comeback-preview.png",
+      ".impeccable/mocks/amber/sharing-preview.png",
+      ".impeccable/mocks/amber/mobile-fr-closed.png",
+      ".impeccable/mocks/amber/mobile-fr-open.png"
+    ],
+    "approval_boundary": "The original direction/reference is selected. Detailed state images carry approved:false; no further direction vote required and no product behavior approval inferred.",
+    "shell": "Stable top-left brand placeholder outside sidebar; My learning/Journeys/Activity navigation; top utilities; device-preference theme with explicit light/dark override; proper divided-panel icon with left/right chevron.",
+    "review": "Root and independent agent inspected six static images. Counts, restart date shifts, sharing boundary and icon directions are coherent. Dark collapsed-width gutter and mobile overlay/header/timezone/copy corrections remain implementation requirements.",
+    "behavior_status": "Not implemented or tested."
   }
 }

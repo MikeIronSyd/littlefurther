@@ -30,6 +30,8 @@ The prototype runs in a browser on this PC, with its local server running. Two l
 - StudyCircle means both a personal study/review cycle and private invitation-only peer circles. Peers share commitments, check-ins and preset encouragement; no full chat is in scope.
 - Learners may use curated goal templates or supply topics, study text and source-reference links. Unsupported subject goals use supplied topics or manual steps. No runtime AI, automatic page fetching or PDF extraction is planned.
 - English and French are the initial interface languages. Learner-provided text and external resources are not automatically translated.
+- The user selected the Amber visual direction, then requested light/dark switching, a collapsible sidebar, topbar utilities and a top-left space for the future app name/logo. Keep brand identity outside the collapsing sidebar. Three standard navigation destinations serve the connected journey; topbar controls include theme, language and account. Use directional panel-toggle icons, not a hamburger.
+- Follow the device theme until an explicit light/dark choice. Guard browser storage for non-sensitive theme and desktop sidebar enums only; learner data remains canonical in SQLite. Mobile navigation is a closed-by-default modal drawer with defined keyboard/focus behavior. Detailed requirements and pending checks are F15/F16 and AC11a–AC11f in the specification.
 - Learners can edit availability, pace and suggested plans. Comeback preserves completed work; a short restart activity does not automatically complete its whole task.
 - Consistency counts study days within a defined calendar window while preserving cumulative activity. Completion is self-reported activity, not proven mastery.
 - Private plans, reflections and full histories remain separate from explicit shared commitment/check-in copies.
@@ -39,7 +41,11 @@ The prototype runs in a browser on this PC, with its local server running. Two l
 
 The owner supplied briefing slides and `docs/specs/capstone/inputs/CODEX_CAPSTONE_HANDOVER.md`, then clarified the settled choices above in conversation. Their learning experiences are self-reported. Accelerator LMS completion was verified separately on 2026-10-03.
 
-`docs/specs/capstone/spec.md`, its research record and plan are the product authority. There is currently no delivered app, measured learner benefit, usability study, verified human adoption or finished demo. No final product name, logo or visual identity has been selected.
+`docs/specs/capstone/spec.md`, its research record and plan are the product authority. The original R01–R12 gate closed at 16:57 Africa/Lagos on 7 October 2026; expanded R01–R14 research closed at 20:14 for the requested theme/navigation scope. The user explicitly selected “I will go with Amber.” The original selected image is approved as a direction; detailed state images remain unapproved elaborations, not behavior evidence. All six desktop/mobile state images have provenance and completed static review in the design record; this does not introduce another approval gate.
+
+Implementation must correct known raster limitations: reclaim the dark collapsed sidebar's wide gutter; preserve `Africa/Lagos` rather than the open mobile image's `Afrique/Lagos`; overlay the unchanged mobile page with one French translation catalogue; make outside modal controls inert without duplicate active utility controls; and implement/verify the intended approximately 80% responsive drawer width. Illustrated focus and portrait framing do not establish accessibility, reflow or native-French validation.
+
+There is currently no delivered app, measured learner benefit, usability study, verified human adoption or finished demo. Amber is the selected visual direction. No final product name or logo has been selected.
 
 ## Product Principles
 
@@ -51,4 +57,4 @@ The owner supplied briefing slides and `docs/specs/capstone/inputs/CODEX_CAPSTON
 
 ## Accessibility & Inclusion
 
-Plan semantic controls, full keyboard operation, visible focus, accessible feedback, sufficient contrast, readable text and small-screen reflow. English/French layout and error states require verification; technical localization checks do not prove translation quality. A broad learner audience does not imply universal accessibility or compatibility has been verified.
+Plan semantic controls, full keyboard operation, visible focus, accessible feedback, sufficient contrast, readable text and small-screen reflow. Verify both themes, expanded/collapsed navigation, modal drawer focus/resize cleanup, forced colors and reduced motion. English/French layout and error states require verification; technical localization checks do not prove translation quality. A broad learner audience does not imply universal accessibility or compatibility has been verified.

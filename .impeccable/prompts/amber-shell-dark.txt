@@ -1,0 +1,18 @@
+## Goal
+Show the selected Amber learning workspace in DARK mode with its desktop sidebar COLLAPSED, as a polished1536x1024 app mockup. Use case ui-mockup. No browser/device frame.
+
+## Context Pointers
+The reference is the same workspace in light mode with expanded sidebar. Preserve every learning fact, action, relative hierarchy and the top-left unbranded "App name" plus outlined-square identity placeholder. The user explicitly requests dark/light toggle and collapsible navigation. Dark mode and collapse are visual state variants, not new features or a new product identity.
+
+## Constraints
+Keep header height and branding position stable. Keep the hamburger/sidebar trigger at far left. Header: "App name", "English", "Dark mode" toggle visibly ON with knob right, account M.
+Collapse the210px sidebar to a compact68px icon rail showing the same My learning/Journeys/Activity line icons, active destination still distinguished. Do not claim hover behavior works; a small visible tooltip "My learning" may demonstrate a focused link. No new navigation destinations.
+Use deep neutral charcoal/navy grounds #111820, sidebar #162029, working panels #1A2530, bright neutral text #E9EFF2. Amber #F0BC39 carries primary action and current step, with black primary-button text. Current-step band is dark amber-brown #3B321D; completed greens are muted but readable #73C58E with ticks. Comeback is muted dark blue #1B2B3B. Borders and secondary copy remain visible. Dark theme is not black text placed on dark backgrounds; transform ALL background, label, icon, table, border and native-looking controls coherently. No neon/glow.
+Retain exact goal "Build a simple web page"; "Your next step"; "3 of8 steps complete" with8markers first3filled; current "Add a heading and paragraph"; "Estimated10 minutes"; "Start study session"; "Try a5-minute restart"; "Edit step".
+Retain eight path rows and only three completed ticks exactly as reference. Row4 current, not completed.
+Retain "Welcome back." / "Your completed work is still here." / "Review revised dates"; personal "After studying" and optional private reflection; "3 study days" / "1–7 October2026 · Africa/Lagos" /7markers first3filled; optional "Study together" / "Private circle · Optional" / "Preview a commitment".
+Footer "Design concept · Illustrative data · Branding placeholder".
+Make whitespace/word spacing readable: "3 of 8", "Estimated 10 minutes", "Try a 5-minute restart", "1–7 October 2026". Do not invent app name/logo, activity, notifications, analytics or tested accessibility/security/offline claims.
+
+## Done When
+One finished dark-mode version of the same workspace, stable brand/top controls, clearly ON theme toggle and collapsed icon rail. Counts/content match the light reference; no functioning interaction or new userapproval claimed.

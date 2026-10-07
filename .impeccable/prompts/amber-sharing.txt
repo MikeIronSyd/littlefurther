@@ -1,0 +1,18 @@
+## Goal
+Create a finished desktop web-app screen for explicit private-circle commitment sharing in the selected Amber learning interface. Use case ui-mockup. Same1536x1024 landscape canvas, edge-to-edge app, no device/browser frame.
+
+## Context Pointers
+Use the attached approved Amber screenshot as the visual authority: normal top navigation, charcoal humanist sans, white neutral ground, amber primary actions, green completed checks, pale-blue quiet support, crisp borders and restrained round corners. This adjacent flow connects to the learner's current study plan. All names/data are synthetic example content.
+
+## Constraints
+Inherit the exact reference header with sidebar-toggle, outlined-square plus 'App name' branding placeholder, language English, Dark mode toggle OFF, account M; expanded sidebar My learning/Journeys/Activity. Keep the brand outside the collapsible sidebar. Do not repeat sidebar links across the header. Main content occupies the remaining area beside the sidebar. Link "Back to my learning". Heading "Preview your commitment". A readable subline "Choose exactly what you share." Place the main sharing form on the left two-thirds and the circle audience/privacy summary on the right third; generous whitespace rather than a full-screen chat app.
+Form label "Message". A plain multiline editable field with EXACT message "I plan to study for 10 minutes today." Do not show character-limit numbers. Supporting text "You can edit this message before sharing."
+Show a preview section immediately below, label "What your circle will see". Author "Maya"; text "Posting time added when you share"; same exact commitment message. This is explicitly a preview, not an existing post or successful submission. No invented absolute posting time.
+Right audience area: heading "Study together"; circle name "Evening learners"; "Example circle · Private · 2 members"; member names "Maya" and "Sam", using simple initial circles M/S without photographs or online-status badges. Audience is only this circle.
+Privacy explanation with readable bullets or short paragraphs: "Only this message, your display name and posting time will be shared." "Your plan, resources, private reflections and other activity stay private." "Later changes to your private plan won't update this message." Do not promise end-to-end encryption or claim security was tested.
+A quiet contextual strip can show "Build a simple web page" and "3 of 8 steps complete", without exposing the full private plan inside the shared preview. Label this strip "Your private learning context" so it is clearly outside what gets shared.
+Bottom actions "Cancel" and primary amber "Share commitment". No Send chat box, peer comments, delivered tick, success state, streak or required peer membership for personal study. Footer "Design concept · Illustrative data".
+Exact readable copy, normal web controls, high contrast. Avoid giant empty areas and marketing visuals; this is an actual consent/preview step in an app.
+
+## Done When
+One polished Amber screen clearly identifies the two-member audience, the exact message plus identity/time fields, private fields excluded from sharing, and explicit cancel/share actions. No app privacy, persistence or successful share is claimed.

@@ -1,0 +1,23 @@
+## Goal
+Create a finished desktop web-app screen for the Comeback schedule preview within the user's selected Amber learning interface. Use case ui-mockup. Same 1536x1024 landscape canvas, no device/browser frame, edge-to-edge interface.
+
+## Context Pointers
+The attached image is the selected visual authority. Inherit its top navigation, humanist sans typography, neutral white surfaces, charcoal text, amber action treatment, green completed checks, pale-blue support areas, spacing and subtle rounded outlines. This is an adjacent state of the same app, not a redesign or a promotional page. Keep normal web controls. The learning goal remains "Build a simple web page". Every learner record below is synthetic demo content.
+
+## Constraints
+Replace the main next-step workspace with a well-organized full-page schedule-review state. Inherit the exact reference header with sidebar-toggle, outlined-square plus 'App name' branding placeholder, language English, Dark mode toggle OFF, account M; expanded sidebar My learning/Journeys/Activity. Keep the brand outside the collapsible sidebar. Do not repeat sidebar links across the header. Main content occupies the remaining area beside the sidebar.
+Near the top, a quiet link "Back to my learning", heading "Review your revised schedule", and goal "Build a simple web page" with small "Example journey". Main explanation: "Move your five unfinished steps forward by 3 days. Your completed work stays unchanged."
+Use the main left 70% for a readable comparison table; right 30% for a summary of retained work. ABOVE the table, a normal date control labeled "Restart date" with "7 October 2026", text "Africa/Lagos", and small action "Edit restart date". Under it, table headings exactly "Step", "Current date", "Proposed date", followed by EXACTLY five rows:
+4. Add a heading and paragraph | 4 Oct | 7 Oct
+5. Add a link and image | 6 Oct | 9 Oct
+6. Style your page | 8 Oct | 11 Oct
+7. Check a small screen | 10 Oct | 13 Oct
+8. Finish and reflect | 12 Oct | 15 Oct
+All dates are October 2026. Align dates and make proposed dates easy to scan without color-only meaning.
+Right column title "Your completed work stays". Three green check entries: "Choose your page purpose · 1 Oct", "Set up your file · 2 Oct", "Build the page structure · 3 Oct". Then quiet text "3 of 8 steps complete", "3 study days", "1–7 October 2026 · Africa/Lagos". Do not mark any extra completion or activity.
+Below table show a visibly distinct but calm warning: "Target date conflict" and "The last step would fall after your 13 October target. Your target date stays unchanged." This target is part of this illustrative learner plan, not an event deadline. No false "No conflicts" status. No confirmation checkbox needed.
+Bottom action area: "Preview only. Your plan has not changed.", secondary button "Cancel", dominant amber button with black text "Apply revised plan". This is a preview before application; never say Saved or Success. No five-minute study action on this screen, no automatic step completion.
+Footer "Design concept · Illustrative data". High legibility, no shaming, no confetti, no marketing claims or AI/offline/security badges. Text should be precise and complete.
+
+## Done When
+One polished app screen matches Amber's identity, clearly compares all five exact old/new date pairs, retains three completed items, names a concrete target conflict and offers cancel/explicit apply without claiming any change has happened.
