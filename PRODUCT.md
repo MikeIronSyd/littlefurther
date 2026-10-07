@@ -22,7 +22,7 @@ Help learners identify manageable actions, keep studying, see accumulated progre
 
 Track 2 of the Andela x Miva x OpenAI hackathon. The owner is building solo with reported availability above ten hours per week. The official submission deadline is unannounced; 14 October 2026 is only an internal target. Programme project dates use Africa/Lagos. Learner schedules must respect an explicit local timezone and irregular availability.
 
-The prototype runs in a browser on this PC, with its local server running. Two local accounts can demonstrate genuine persisted peer interactions. Internet-disconnected operation does not imply remote peer access, offline installation, access to external resource sites without internet, or use after the local server stops.
+The prototype runs in a browser on this PC, with its local server running. P07 will add genuine persisted peer interactions between two local accounts; that behavior is not yet implemented. Internet-disconnected operation does not imply remote peer access, offline installation, access to external resource sites without internet, or use after the local server stops.
 
 ## Capabilities and Constraints
 

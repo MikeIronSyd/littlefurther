@@ -194,7 +194,7 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "P04/P05 first private journey implemented and verified within scope:20 unit/HTTP tests,19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. Final source/tracker closeout follows; P06 Comeback schedule recovery and P07 private peers remain required next increments.",
+      "scope_status": "P04/P05 first private journey implemented, verified within scope and published to both private repositories; E007 saved/read back in the Miva Sheet and Kaneo. Evidence: 20 unit/HTTP tests, 19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. P06 Comeback schedule recovery and P07 private peers remain required next increments.",
       "ai_product_feature_required": false,
       "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
@@ -209,9 +209,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "P04/P05 first private journey implemented and verified within scope:20 unit/HTTP tests,19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. Final source/tracker closeout follows; P06 Comeback schedule recovery and P07 private peers remain required next increments.",
+    "mvp_scope": "P04/P05 first private journey implemented, verified within scope and published to both private repositories; E007 saved/read back in the Miva Sheet and Kaneo. Evidence: 20 unit/HTTP tests, 19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. P06 Comeback schedule recovery and P07 private peers remain required next increments.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "P04/P05 first usable increment verification and delivery; full MVP, learner evaluation, reuse rehearsal and video remain open."
+    "stage": "P04/P05 first usable increment delivered; next P06 Comeback and P07 private circles. Full MVP, learner evaluation, reuse rehearsal and video remain open."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -518,7 +518,7 @@
   "codex_integration": {
     "github_mcp": {
       "purpose": "Read repository, commits, diffs and available check results for review.",
-      "verified": "GitHub MCP get_repo successfully read private separate account/andela-miva-codex-hackathon on 2026-10-07.",
+      "verified": "Repository access verified on 2026-10-07; github_fetch_commit independently returned artifact 9d5820bfd8058a951372c2e3be868425e3733df9, message and canonical URL. Both private heads separately verified with normal Git readback.",
       "boundary": "Source publication uses normal local Git commits and pushes to both authorized private project repositories, preserving unrelated hooks. Global-only CodexRecovery is separate; project files and Git history never go there.",
       "miva_status": "Miva repository read returned 404 through the connector on 2026-10-07. Scoped installed GitHub CLI separately confirmed private repository visibility and WRITE; this is CLI evidence."
     },
@@ -530,12 +530,12 @@
       {
         "name": "learning-journey-review",
         "path": ".agents/skills/learning-journey-review/SKILL.md",
-        "status": "Created and structurally validated; independently invoked for preparation review on 2026-10-07 at 17:10 Africa/Lagos with no material findings. See docs/specs/capstone/reviews/2026-10-07-preparation.md. P08/P09 product iterations remain pending."
+        "status": "Created and structurally validated; independent preparation review at 17:10 retained. Applied again to actual P04/P05 source, browser checks, findings and corrections; see docs/specs/capstone/reviews/2026-10-07-first-journey-review.md. Full-journey P08/P09 remain pending."
       },
       {
         "name": "capstone-evidence-update",
         "path": ".agents/skills/capstone-evidence-update/SKILL.md",
-        "status": "Created; bundled quick_validate.py passed. Invoked for actual final tracker reconciliation/readback; P08/P09 product-iteration evidence remains pending. See verification.md and live E004 for results."
+        "status": "Created and structurally validated; earlier E004-E006 invocations retained. Applied to actual E007 implementation/check/review/publication evidence and saved tracker readback; see docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md. Full-journey P08/P09 remain pending."
       }
     ],
     "proof_chain": "criterion -> requirement -> artifact/commit -> actual check/result -> demo scene",
@@ -543,7 +543,7 @@
   },
   "current_preparation": {
     "recorded_on": "2026-10-07",
-    "status": "P04/P05 first private journey implemented and verified within scope:20 unit/HTTP tests,19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. Final source/tracker closeout follows; P06 Comeback schedule recovery and P07 private peers remain required next increments.",
+    "status": "P04/P05 first private journey implemented, verified within scope and published to both private repositories; E007 saved/read back in the Miva Sheet and Kaneo. Evidence: 20 unit/HTTP tests, 19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. P06 Comeback schedule recovery and P07 private peers remain required next increments.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -569,11 +569,15 @@
       "docs/specs/capstone/increments/first-journey.md",
       "docs/specs/capstone/increments/first-journey-verification.md",
       "docs/operations/local-demo.md",
-      "tools/verify-process.mjs"
+      "tools/verify-process.mjs",
+      "docs/specs/capstone/reviews/2026-10-07-first-journey-review.md",
+      "docs/specs/capstone/reviews/2026-10-07-first-journey-visual.md",
+      "docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md",
+      "DESIGN.md"
     ],
-    "tracker_record": "E004 preparation; E005 first direction round; E006 Amber shell design; E007 first private journey reserved after live uniqueness read. D009-D015 and A001-A010 preserved.",
-    "tracker_sync": "E007 final updates pending final verification/publication; both destinations read and account/IDs verified. Prior E006 history preserved in milestone_history. Existing ContextC25 literal undefined will be repaired without discarding saved history.",
-    "publication": "First private journey source publication pending checks/review closeout. Prior artifact1856e4b and closeout707d08e remain published; no recovery wrapper invoked.",
+    "tracker_record": "E004 preparation; E005 first direction round; E006 Amber shell design; E007 first private journey. D009-D015 and A001-A010 preserved.",
+    "tracker_sync": "E007 reconciliation completed on 7 October 2026 through browser MCP under the verified Miva identity. Saved comparisons passed for Codex evidence A8:J8 and E006 H7:I7, Activities G5:K5/G7:K7/G9:K11, Context B25:C25, and Kaneo A004/A006/A008/A009/A010 descriptions. History and statuses retained; A007 submission/reflection remains To do. Context C25 invalid undefined suffix repaired; B25 baseline ending Item preserved. See docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md.",
+    "publication": "First-journey artifact 9d5820bfd8058a951372c2e3be868425e3733df9 published by normal Git to both authorized private repositories; both remote main heads matched. Personal artifact independently read through GitHub MCP. The initial workflow-scope rejection left both old heads intact; the inactive CI template is retained in docs/operations. Final documentation closeout readback is stored in ignored .local/capstone-publication-result.json. No recovery wrapper invoked.",
     "limitations": [
       "P06 schedule recovery and P07 peer circles remain unimplemented; all five capabilities stay required.",
       "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
@@ -581,7 +585,7 @@
       "Physical internet and server egress were not disconnected: browser-only loopback request restriction tested.",
       "Native-French quality, broad devices and full accessibility conformance unverified.",
       "Formal Impeccable pipeline remains at plates awaiting an extra receipt; no phase forcing or invented approval. Manual visual review recorded separately.",
-      "Manual-only GitHub CI has not run and no provider gate enforcement is claimed."
+      "GitHub CI template is inactive because current OAuth access lacks workflow-write scope; no hosted check or provider-gate enforcement is claimed."
     ],
     "tracker_sync_history": [
       "E005 and publication reconciliation completed on 2026-10-07 through browser MCP in the verified Miva account and Kaneo. Sheet exact readbacks passed for E005 A6:J6, E004 H5:I5, Activities G5:K5/G7:K7/G9:K11 and Context B25:C25. Kaneo A004/A006/A008/A009/A010 passed persisted comparison after navigation, preserving history and statuses. P03 in progress; no visual approval or product acceptance inferred."
@@ -628,7 +632,7 @@
     ],
     "approval_boundary": "The original direction/reference is selected. Detailed state images carry approved:false; no further direction vote required and no product behavior approval inferred.",
     "shell": "Stable top-left brand placeholder outside sidebar; My learning/Journeys/Activity navigation; top utilities; device-preference theme with explicit light/dark override; proper divided-panel icon with left/right chevron.",
-    "review": "Fresh independent paired desktop/light-dark/French-mobile review found one mobile priority-order fix; existing semantic/Segoe UI adaptation and selected Amber hierarchy retained. Formal tool fidelity receipts unavailable and not inferred from manual screenshots.",
+    "review": "Fresh independent paired desktop/light-dark/French-mobile review found mobile priority ordering and documentation issues, then marked both scored corrections resolved. Its ship disposition covers those fixes only. Semantic/Segoe UI adaptation retained; formal Impeccable finish refused because earlier phases remain open, and no formal fidelity completion is claimed.",
     "behavior_status": "Private-journey shell checks passed, including final6 affected browser cases after mobile ordering/French accessible-label corrections. Formal Impeccable pipeline remains open; manual visual verdict is separate."
   }
 }

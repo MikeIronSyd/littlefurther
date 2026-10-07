@@ -4,7 +4,7 @@ Updated: 7 October 2026, Africa/Lagos. P04/P05 implementation follows the [first
 
 ## Goal
 
-The desktop proposals and connected state map are recorded in [design.md](design.md). The user selected the **Amber direction**, then requested light/dark switching, a toggled sidebar, top-screen controls and a reserved app-name/logo area. The visual selection is settled; new shell-state compositions remain design work. Static designs are not functioning screens or product-acceptance evidence, and no final product name/logo is selected.
+The desktop proposals and connected state map are recorded in [design.md](design.md). The user selected the **Amber direction**, then requested light/dark switching, a toggled sidebar, top-screen controls and a reserved app-name/logo area. Those controls are implemented in P04/P05; actual behavior checks and remaining limitations are recorded in [first-journey verification](increments/first-journey-verification.md). Static designs remain distinct from product-acceptance evidence, and no final product name/logo is selected.
 
 Build a local browser proof of concept for **Engagement & Staying in the Learning Journey (Track 2)**. Help a learner turn an existing goal into editable small actions, study and review privately, see retained progress, optionally involve trusted peers, and restart after interruption without losing evidence of prior effort.
 
