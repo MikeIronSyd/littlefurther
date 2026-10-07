@@ -564,8 +564,8 @@
       ".impeccable/surfaces/src-client-main-ts.md"
     ],
     "tracker_record": "E004 preparation; E005 first direction round; E006 Amber and shell design; D009-D015 and A001-A010 preserved.",
-    "tracker_sync": "E006/D015 pending saved readback. Tracker agent verified correct Miva account and unused Decisions row16/Codex evidence row7 before preparing this increment.",
-    "publication": "E006 increment not yet published; normal Git publication and both-remote readback pending.",
+    "tracker_sync": "E006/D015 reconciliation completed on 7 October 2026 through browser MCP under the verified Miva account. Saved readbacks passed for Decisions A16:F16, Codex evidence A7:J7 and E005 H6:I6, Activities G5:K5/G7:K7/G9:K11, and Context B25:C25. Kaneo A004/A006/A008/A009/A010 persisted comparisons passed, preserving history/statuses. No failed writes or pending tracker updates. All product behavior remains unverified.",
+    "publication": "Amber artifact commit 486a850bba34d9f9cc8b63599666475764762935 published through normal Git to both authorized private repositories; both remote heads matched. Personal commit independently read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. No project backup or recovery wrapper invoked.",
     "limitations": [
       "No app code or application tests completed.",
       "No learner evaluation or human adoption verified.",
