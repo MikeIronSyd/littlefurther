@@ -55,4 +55,4 @@ Verification is proportional: frozen install, build, strict/lint/format, 56 doma
 
 ## Done When
 
-RU01–RU05 have actual pass/fail/unverified results and no unresolved blocker within this bounded scope. Formal design completion, optional learner evaluation and the timed P11 video remain separate deliverables. Successful agent setup/adaptation is evidence of maintainability and technical reuse potential, not adoption by a person, clean-machine portability, learning effectiveness or production readiness.
+RU01–RU06 have actual pass/fail/unverified results and no unresolved blocker within this bounded scope. Formal design completion, optional learner evaluation and the timed P11 video remain separate deliverables. Successful agent setup/adaptation is evidence of maintainability and technical reuse potential, not adoption by a person, clean-machine portability, learning effectiveness or production readiness.

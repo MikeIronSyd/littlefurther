@@ -1,0 +1,22 @@
+diff --git a/src/domain/templates.ts b/src/domain/templates.ts
+index 1723d2e..bea2490 100644
+--- a/src/domain/templates.ts
++++ b/src/domain/templates.ts
+@@ -41,7 +41,7 @@ export const templates: GoalTemplate[] = [
+         prerequisites:
+           "Basic familiarity with your computer, files, a text editor and a browser. Open the linked lessons when internet is available; this app does not store their content. Purpose, small-screen inspection and reflection are project task suggestions.",
+         steps: [
+-          { title: "Choose your page purpose", estimatedMinutes: 5 },
++          { title: "Choose a purpose for your page", estimatedMinutes: 5 },
+           { title: "Set up your file", estimatedMinutes: 10 },
+           { title: "Build the page structure", estimatedMinutes: 15 },
+           { title: "Add a heading and paragraph", estimatedMinutes: 10 },
+@@ -58,7 +58,7 @@ export const templates: GoalTemplate[] = [
+         prerequisites:
+           "Savoir utiliser son ordinateur, ses fichiers, un éditeur de texte et un navigateur. Ouvrez les leçons liées avec internet ; leur contenu n’est pas conservé ici. Le choix du sujet, la vérification sur petit écran et la réflexion sont des suggestions du projet.",
+         steps: [
+-          { title: "Choisir le but de votre page", estimatedMinutes: 5 },
++          { title: "Choisir un objectif pour votre page", estimatedMinutes: 5 },
+           { title: "Préparer votre fichier", estimatedMinutes: 10 },
+           { title: "Construire la structure de la page", estimatedMinutes: 15 },
+           { title: "Ajouter un titre et un paragraphe", estimatedMinutes: 10 },

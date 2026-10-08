@@ -1,0 +1,51 @@
+# P10 — Setup and reuse verification
+
+Recorded: 8 October 2026, Africa/Lagos. This record distinguishes the initial candidate `0787299f8d335b6bfa433934407289c57c2e0dce`, setup correction `d9a9599b21ac17faefdeeeece5e1ab5da3d847cd`, and the isolated adaptation. Production application source remains at the P08/P09 artifact `4a59c0278fee0dea7c5370f05db2ab4bfe7af34d`.
+
+## Goal
+
+Verify technical setup/adaptation for AC12, correct demonstrated checkout/documentation friction and preserve a credible J3 evidence trail. This is an independent agent rehearsal on the existing Windows PC, not human adoption or a clean-machine trial.
+
+## Context Pointers
+
+The [P10 contract](reuse.md) defines R19 and RU01–RU06. The [setup verification](reuse-verification.md) owns exact commands, isolated paths, browser observations and failures; the [operations review](../reviews/2026-10-08-reuse-operations-review.md) owns source findings, their dispositions and the production-gap register. [Tracker evidence](../reviews/2026-10-08-reuse-tracker.md) distinguishes preparation from saved E011 updates.
+
+### Actual rehearsal evidence
+
+| Criterion | Actual result | Boundary |
+| --- | --- | --- |
+| RU01 | Independent agent cloned exact local candidate without hardlinks, verified clean status, installed126 packages from cache, built and started on4326 with fresh isolated data. Explicit pnpm selection returned11.19.0. | Original launcher returned11.25.0 and omitted recovery guidance was corrected. Local Git clone, preinstalled Node and host cache reused; no remote download/cold-cache/new-machine claim. |
+| RU02 | Fresh synthetic account and8-step plan saved/read back through browser MCP; reload and a genuinely stopped/restarted server retained the account and plan.56 domain/store/HTTP cases, strict/lint and distinct-process fixture passed. | Windows Ctrl+C required batch-termination confirmations; intentional stop exit1 is not a failed build. No machine reboot or physical internet disconnection. |
+| RU03 | Verified isolated [two-string patch](../experiments/reuse/template-wording.patch): a new EN draft shows “Choose a purpose for your page”; EN→FR switching preserves the existing draft's learner goal/actions; a new FR draft shows “Choisir un objectif pour votre page”. Both retain eight steps, five-minute first estimate and sources/prerequisites. The earlier saved plan retains its original first step after corrected-server restart/reload. Adaptation strict/lint/format/build and audit passed; changed-target detector returned `[]`. | Production template remains unchanged. No native-French certification or learning benefit. The detector does not clear prior CSS advisories or formal design phases. |
+| RU04 | Independent operations inspection and prioritized future-release gaps recorded. RO01 version-provenance guidance and RO02 stale integration status corrected and independently reviewed. | Private project has no project-wide license; no distribution decision made. Path/ignore inspection is not a comprehensive secret/security audit. |
+| RU06 | Original untouched clone failed format with44 CRLF errors. Root isolated attributes fixture preserved45 maintained LF files,4 historical files and a binary sentinel. A new corrected checkout atf42c189c passed format44/no-fixes, frozen install and build, with LF attributes and unchanged lockfile. | Updating attributes alone left old checkout files CRLF; the documented separate fresh checkout was actually used. No global setting change, bulk formatter or relaxed check. |
+| RU05 | E011 identity/baseline/ranges prepared; source publication and saved reconciliation pending. | Do not infer saves or publication from preparation/local commits. |
+
+### Research and correction history
+
+R19 initially closed at19:48 after exact-version installation/startup and source/operations findings, then reopened at19:50 when the clean clone failed formatting. The primary Git documentation and isolated checkout experiment established a bounded attributes correction before production configuration changed. The correction commit changes `.gitattributes` and documentation only; production source, tests, package pins and lockfile remain unchanged. Existing history/research `-text` rules are preserved.
+
+The independent reviewer verified the45-file coverage and proposed/actual attribute hash, resolved RO01/RO02 and accepted RU06 from the independently reported fresh-checkout result. This is attributed execution evidence, not a test performed by the reviewer.
+
+The final independent review also accepted RU01–RU04/RU06 and AC12 within the documented boundaries, with no remaining scoped correction/evidence blocker. Root verified the saved patch's two added/two removed lines, applicability using `git apply --check`, and SHA-256 `51e47c79ef074b35bb071d3e10ce98cfc218e49d3a3d892a5ef412c967a55734`. A final attributes entry byte-preserves only this example patch; it does not change the corrected formatter path rules or production source. The [example readme](../experiments/reuse/README.md) makes the isolated status explicit.
+
+The adapted runtime was stopped using Ctrl+C and Windows batch confirmations; port4326 had no listener at19:59. Synthetic data, logs and screenshots remain ignored in the two isolated clones; no data was deleted or uploaded. The final browser discard/tab-close is unverified: the expected unsaved-input confirmation interrupted the browser tool, its dialog lookup returned none, and bounded state/close attempts timed out. The draft was never saved. This is a tool-handling limitation, not a demonstrated product defect or a still-running server.
+
+One minor observed follow-up remains: requesting a curated draft without dates correctly blocks but asks for a topic as well, although the template supplies actions. Entering dates recovers normally. Record this as wording friction for later refinement; no failed data operation or current setup blocker was established.
+
+### Judging trace
+
+| Criterion | Requirement → artifact → actual result → demo use |
+| --- | --- |
+| J1 | AC13 → R19/contract, independent review and actual reusable-skill/MCP work → version/EOL failures preserved and corrected → show one setup failure and its verified correction. |
+| J2 | AC01–AC11 → existing connected journey and P10 stored-plan observations → technically working retained learner data; no educational outcome measured → keep benefit framed as a hypothesis. |
+| J3 | AC12 → clean candidate, exact commands, setup correction, adaptation patch and production-gap register → independent technical setup/adaptation verified, with RU05 delivery tracked separately → show the actual rehearsal and bounded extension. |
+| J4 | AC14 → actual working captures/evidence → no timed recording yet → P11 must produce and check the3–5-minute walkthrough. |
+
+## Constraints
+
+No production UI/behavior/dependency change, public deployment, licensing change, real learner collection, volunteer outreach, runtime AI or recurring monitor. The rehearsal uses synthetic data in an ignored isolated directory. Formal Impeccable review/phase completion remains open; isolated copy inspection cannot supply a user receipt or close those phases. Native-French quality, broad accessibility/device coverage, measured retention and human adoption remain unverified. The unchanged application's earlier48-browser-case result remains historical at its artifact, not a fresh P10 suite execution.
+
+## Done When
+
+RU01–RU04/RU06 and the scoped technical AC12 rehearsal are verified, with the runtime stopped and no unresolved scoped review blocker. RU05 remains: publish intended non-secret configuration/docs/evidence to both private repositories and verify saved E011 in the Miva Sheet and Kaneo. Full capstone completion still requires the separate design and demo deliverables; browser-tab cleanup remains explicitly unverified.
