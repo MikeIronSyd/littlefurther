@@ -1,6 +1,6 @@
 # Capstone verification and judging evidence
 
-Updated: 8 October 2026, Africa/Lagos. P08/P09 now covers the connected five-capability journey and corrects verified session/view, dirty-state, route/hash and profile-write defects. [Integration verification](increments/integration-verification.md) records 56/56 domain/HTTP and 48/48 browser passes, independent review and actual browser MCP observations. Bounded design records are refreshed; formal Impeccable completion remains open. E010 publication/tracker closeout is pending; E004–E009 remain historical evidence. Independent reuse, timed video and learner outcomes are not complete.
+Updated: 8 October 2026, Africa/Lagos. P08/P09 now covers the connected five-capability journey and corrects verified session/view, dirty-state, route/hash and profile-write defects. [Integration verification](increments/integration-verification.md) records 56/56 domain/HTTP and 48/48 browser passes, independent review and actual browser MCP observations. Bounded design records are refreshed; formal Impeccable completion remains open. P08/P09 artifact 4a59c02 is published to both private repositories and E010 is saved/read back in both trackers; E004–E009 remain historical evidence. Independent reuse, timed video and learner outcomes are not complete.
 
 ## Goal
 
@@ -88,9 +88,9 @@ Both project skills must contribute across two meaningful iterations: first comp
 ### Current limitations
 
 - R11/R15 establish this host's selected runtime/tooling feasibility. Product checks now exist; clean-machine installation, machine reboot and broad cross-platform support remain unverified.
-- The private journey, Comeback and private peers are implemented and checked within their recorded scopes. P08/P09 full-journey review/refinement, enforced CI, learner research, independent clean-checkout/adaptation and timed demo remain outstanding. Formal Impeccable build phases remain open despite scoped visual review passes. E006 retains static-design history; E007–E009 record application work.
+- The private journey, Comeback and private peers are implemented and checked within their recorded scopes, including the P08/P09 connected-journey review and corrections. Enforced CI, learner research, independent clean-checkout/adaptation and timed demo remain outstanding. Formal Impeccable build phases remain open despite scoped visual review passes. E006 retains static-design history; E007–E010 distinguish successive application increments.
 - GitHub MCP cannot currently read Miva; scoped CLI can. Browser automation is the Sheet/Kaneo path.
-- Trackers have verified readbacks through E009, with source artifact publication checked separately. Full-journey review, reuse and demo completion remain pending; no global recovery result is implied.
+- Trackers have verified readbacks through E010: 39 intended Sheet cells and five full Kaneo descriptions, preserving historical content, statuses and dates. P08/P09 artifact 4a59c02 is published with both private heads and personal GitHub MCP readback verified. Reuse and demo completion remain pending; no global recovery result is implied.
 - Local email/password does not verify email or provide recovery. Public hosting/HTTPS, distributed peers/sync, operational retention/deletion, abuse/moderation, availability, recovery and wider device/language/learner evaluation are future production work.
 
 ## Done When
