@@ -116,6 +116,7 @@ export function showLearning(
   study: (step: LearningStep, minutes?: number) => void,
   create: () => void,
   recover: () => void,
+  circle: () => void,
 ): void {
   disposeLearningLayout();
   const next = detail.plan.steps.find((step) => step.id === detail.nextStepId);
@@ -236,7 +237,13 @@ export function showLearning(
       "section",
       "support",
       icon("people"),
-      el("div", "support-body", text("h2", "circleTitle"), text("p", "circleCopy", "hint")),
+      el(
+        "div",
+        "support-body",
+        text("h2", "circleTitle"),
+        text("p", "circleCopy", "hint"),
+        button("openCircles", circle, "text-button"),
+      ),
     ),
   );
   const columns = el("div", "journey-columns", pathSection, support);

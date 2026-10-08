@@ -2,13 +2,15 @@
 
 ## Goal
 
-Run the capstone on this PC with local accounts and SQLite. This guide covers the P04/P05 private journey and P06 Comeback implementation. Verification results are recorded separately; commands below do not claim a passing run by themselves.
+Run the capstone on this PC with local accounts and SQLite. This guide covers the P04/P05 private journey, P06 Comeback and P07 private circles. Verification results are recorded separately; commands below do not claim a passing run by themselves.
 
 ## Context Pointers
 
 Use the repository root, package.json, the single pnpm-lock.yaml, and [first-journey contract](../specs/capstone/increments/first-journey.md). Exact tested runtime/tooling is recorded in [R11](../specs/capstone/experiments/runtime-feasibility/REPORT.md) and [R15](../specs/capstone/experiments/quality-tooling.md).
 
 The [Comeback contract](../specs/capstone/increments/comeback.md) and [verification record](../specs/capstone/increments/comeback-verification.md) describe P06 behavior and its actual check status. P06 adds no dependency or schema migration.
+
+The [StudyCircle contract](../specs/capstone/increments/studycircle.md) and [verification](../specs/capstone/increments/studycircle-verification.md) describe P07. It adds an atomic v1→v2 migration for circles, members, hashed invitations, shared copies, encouragement and minimal retry receipts; existing private records remain separate. No dependency was added.
 
 ## Constraints
 
@@ -27,6 +29,12 @@ Keep that terminal running. Open the URL printed by the server (default http://1
 Choose a fresh local account and synthetic demo content. The email is a login identifier, not a verified mailbox. This prototype sends no emails and provides no password-reset service. Confirm an explicit timezone before creating a plan. External learning-reference sites still require internet.
 
 For Comeback, open a plan with unfinished steps and choose **Review restart dates**. Edit the suggested date and explicitly request a preview. Check old/new dates and any conflicts; cancel leaves the plan untouched. Applying a nonzero change moves only unfinished dates, keeping their order/spacing and preserving completed work, private history, availability and fixed targets. The interface requires acknowledgement of visible conflicts; zero-day previews need no application. Five-minute study is logged separately and never completes the step automatically.
+
+For circles, **Open study circles** works with or without a plan. Create a named circle, open **Invitations** and create a code. Copy it while visible; the server stores only a hash and cannot recover the raw code. A second local account in a separate browser session pastes the code under **Join a circle**. Possession permits one new membership before the fixed24-hour expiry; only the owner creates/revokes unused invitations. This demonstrates separate local identities, not remote connectivity.
+
+Members use **Write a shared copy** to type a commitment/check-in and preview the normalized copy, audience and exclusions before explicit sharing. No private text is copied automatically. Current and future members can read retained copies and add one replaceable preset encouragement per copy. Later private-plan edits do not change the shared text. Deleting an own copy removes its attached encouragement. Leaving or owner removal deletes that member's shared copies and attached encouragement, plus encouragement they sent on others' copies. Closing removes all circle membership/copies/encouragement and invalidates unused invites. All retain private study history. Already-seen information cannot be recalled; access is denied on the next request.
+
+Demo bounds: five active circles per account, ten members including owner per circle,100 retained shared copies, ten active unused invitations,80-character names and280-character shared text. No free-text chat or background polling.
 
 ### Local files and configuration
 
@@ -59,12 +67,16 @@ Browser tests use installed Microsoft Edge through Playwright's msedge channel, 
 
 ### Limits and recovery
 
-The current implementation covers private planning/study/progress and Comeback preview/confirmation. Private peer-circle functionality remains P07 work; all five remain capstone requirements. Implementation status does not replace the separate acceptance and review records.
+The current implementation covers private planning/study/progress, Comeback preview/confirmation and optional private StudyCircle peers. All five capabilities remain connected parts of the capstone. Full-journey integration, independent setup/adaptation and the timed demo remain separate gates; implementation status does not replace acceptance and review evidence.
 
 A failed save must remain visible with entered content retained. If a Comeback confirmation loses its response, it may already have saved: use the offered retry with the same request identity or return and refresh. Do not assume cancel can undo an uncertain save. A stale preview requires a new preview against the current revision and is never applied automatically. If the server cannot start, check the printed error and port, and preserve the data directory before any repair. Source rollback uses an earlier reviewed Git revision plus that revision's locked dependencies. Database schema migration/rollback must be checked independently; changing source is not a database restore.
 
 Public hosting, TLS deployment, verified email/recovery, distributed peers, encrypted backups, production observability/moderation and broad device/language validation are outside this local milestone.
 
+For an uncertain circle action, use **Retry the same action** or **Check saved information**. Exact retries reuse the request identity. A lost invitation-creation response cannot reveal the original raw code again: inspect active invitations, revoke the unused one and create another. A known-saved action with failed readback offers GET-only refresh. A missing target during retry refreshes current information without claiming saved action or lost membership. Never treat navigation away as undoing an uncertain write.
+
+The v2 migration is additive and tested for populated-v1 preservation/rollback; newer or noncontiguous schema versions fail clearly. Source rollback to P06 cannot read v2. Before a separately authorized data restore, stop the server and preserve the complete current data directory including auth-secret; restore a matching whole pre-migration directory into a separate location and point the earlier source there. Do not drop circle tables or overwrite live data to roll back. Project databases never go to CodexRecovery or Git.
+
 ## Done When
 
-A user can install from the documented prerequisites, build, start the server, create a local account and reviewed plan, save study/progress, explicitly preview/apply a restart schedule and return after reload/restart with data retained. Actual outcomes, failures and remaining criteria belong in the increment verification record; do not infer them merely from this guide.
+A user can install from the documented prerequisites, build, start the server, create local accounts and a reviewed plan, save study/progress, explicitly preview/apply a restart schedule, voluntarily share a private-circle copy and return after reload/restart with data retained. Actual outcomes, failures and remaining criteria belong in the increment verification record; do not infer them merely from this guide.

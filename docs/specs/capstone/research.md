@@ -1,6 +1,6 @@
 # Capstone research record
 
-Checked: 8 October 2026, Africa/Lagos. **Research gate: closed for R01–R16 before P06 production edits at 09:52.** R16 source/UI integration findings are recorded below and in the Comeback increment contract. The R01–R15 closure at21:02 on7October and earlier R01–R12/14 closures remain historical evidence. R15 resolved compatible quality tooling with Biome2.5.15, Playwright1.63.0 and installed Edge; canonical commands use pnpm run. No required P06 research blocker remains.
+Checked: 8 October 2026, Africa/Lagos. **Research gate: closed for R01–R17 before P07 production edits at 10:55.** R16 source/UI integration findings are recorded below and in the Comeback increment contract. The R01–R15 closure at21:02 on7October and earlier R01–R12/14 closures remain historical evidence. R15 resolved compatible quality tooling with Biome2.5.15, Playwright1.63.0 and installed Edge; canonical commands use pnpm run. R17 closes the scoped P07 integration needs below; no required research blocker remains.
 
 ## Goal
 
@@ -115,3 +115,7 @@ The first implementation increment exposed a narrow quality-tooling prerequisite
 ### R16 — Comeback implementation integration, 8 October 2026
 
 Closed before P06 production edits at 09:52 Africa/Lagos. The [backend source research](reviews/2026-10-08-comeback-backend-research.md) and [UI source/image research](reviews/2026-10-08-comeback-ui-research.md) satisfy every scoped integration need: exact calendar algorithm/bounds, owner/revision/receipt transaction behavior, no-migration feasibility, current UI entry/lifecycle/localization, pre-existing image reference and actual check tooling. Six isolated date assertions passed; root baseline strict compilation and20 domain/HTTP tests passed. Neither is new-feature acceptance. The [Comeback increment contract](increments/comeback.md) records all routine interface/no-op/conflict/retry choices before dependent implementation. No required factual blocker or unanswered consequential user decision remains; preserve existing R01–R15 evidence and reopen research if a new consequential unknown appears.
+
+### R17 — Private StudyCircle integration, 8 October 2026
+
+Closed at10:55 Africa/Lagos before P07 production edits. The [backend research](reviews/2026-10-08-circle-backend-research.md) and [UI research](reviews/2026-10-08-circle-ui-research.md) satisfy all scoped needs: additive migration and rollback/cascades, auth IDs, membership/receipt privacy, cryptographic token generation/hash/expiry, exact bounded DTOs/routes, UI lifecycle/localization/privacy states, pre-existing sharing image and verification tooling. Ten isolated SQLite/crypto assertions passed; root baseline strict compilation and40 existing domain/HTTP tests passed. These are feasibility/baseline results, not P07 acceptance. The [StudyCircle contract](increments/studycircle.md) records exact routine limits, three presets, readback/receipt semantics and source ownership before implementation. No unanswered consequential choice or factual blocker remains. Preserve earlier research history and reopen a need if consequential uncertainty emerges.

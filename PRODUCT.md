@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-The accepted delivery plan selects Node 24 LTS, Express 5, strict TypeScript/native browser modules with Vite, Better Auth, and SQLite through better-sqlite3. Selection followed comparison with SvelteKit and ASP.NET Core. R11 established host feasibility; R15 added verified compatible Biome and Playwright tooling before production code. P04/P05 implements the first private learning journey; P06 adds Comeback schedule recovery on the same stack and schema. Exact versions, implementation boundaries and observed checks are in the research, increment and verification records.
+The accepted delivery plan selects Node 24 LTS, Express 5, strict TypeScript/native browser modules with Vite, Better Auth, and SQLite through better-sqlite3. Selection followed comparison with SvelteKit and ASP.NET Core. R11 established host feasibility; R15 added verified compatible Biome and Playwright tooling before production code. P04/P05 implements the first private learning journey; P06 adds Comeback schedule recovery. P07 adds private circles through an additive v2 SQLite schema on the same stack, with no new dependency. Exact versions, implementation boundaries and observed checks are in the research, increment and verification records.
 
 ## Users
 
@@ -22,7 +22,7 @@ Help learners identify manageable actions, keep studying, see accumulated progre
 
 Track 2 of the Andela x Miva x OpenAI hackathon. The owner is building solo with reported availability above ten hours per week. The official submission deadline is unannounced; 14 October 2026 is only an internal target. Programme project dates use Africa/Lagos. Learner schedules must respect an explicit local timezone and irregular availability.
 
-The prototype runs in a browser on this PC, with its local server running. P07 will add genuine persisted peer interactions between two local accounts; that behavior is not yet implemented. Internet-disconnected operation does not imply remote peer access, offline installation, access to external resource sites without internet, or use after the local server stops.
+The prototype runs in a browser on this PC, with its local server running. P07 implements persisted peer interactions between two real local accounts through voluntary circles and explicit shared copies. Internet-disconnected operation does not imply remote peer access, offline installation, access to external resource sites without internet, or use after the local server stops.
 
 ## Capabilities and Constraints
 
@@ -45,7 +45,7 @@ The owner supplied briefing slides and `docs/specs/capstone/inputs/CODEX_CAPSTON
 
 Implementation must correct known raster limitations: reclaim the dark collapsed sidebar's wide gutter; preserve `Africa/Lagos` rather than the open mobile image's `Afrique/Lagos`; overlay the unchanged mobile page with one French translation catalogue; make outside modal controls inert without duplicate active utility controls; and implement/verify the intended approximately 80% responsive drawer width. Illustrated focus and portrait framing do not establish accessibility, reflow or native-French validation.
 
-The local P04/P05 app supports account/profile, reviewed plans, study/reflection, explicit completion, retained progress and the Amber shell. P06 now implements non-mutating restart previews, explicit atomic confirmation, unchanged-history safeguards and idempotent retries; see the [Comeback contract](docs/specs/capstone/increments/comeback.md) and [increment verification](docs/specs/capstone/increments/comeback-verification.md) for actual checks and outstanding acceptance. Private peer-circle behavior remains P07 work. No measured learner benefit, usability study, verified human adoption or finished demo exists. No final product name or logo has been selected.
+The local P04/P05 app supports account/profile, reviewed plans, study/reflection, explicit completion, retained progress and the Amber shell. P06 implements non-mutating restart previews, explicit atomic confirmation, unchanged-history safeguards and idempotent retries; see the [Comeback contract](docs/specs/capstone/increments/comeback.md) and [increment verification](docs/specs/capstone/increments/comeback-verification.md). P07 adds hash-only, expiring one-use invitations, deliberate immutable commitment/check-in copies, preset encouragement and membership/copy cleanup with private history retained. See [StudyCircle verification](docs/specs/capstone/increments/studycircle-verification.md) for actual checks and outstanding acceptance. P08 full-journey review is next. No measured learner benefit, usability study, verified human adoption or finished video exists. No final product name or logo has been selected.
 
 ## Product Principles
 

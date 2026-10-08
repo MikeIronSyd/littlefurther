@@ -147,7 +147,129 @@ const en = {
     "Your revised dates are saved. Your completed work and earlier effort are unchanged.",
   circleTitle: "Study together",
   circleCopy:
-    "Private peer circles are coming in the next build. You can keep studying on your own.",
+    "Share a small commitment with people you invite. You can always keep studying on your own.",
+  openCircles: "Open study circles",
+  loadingCircles: "Loading your study circles…",
+  circleList: "All my circles",
+  openCircle: "Open circle",
+  circleEmpty:
+    "You haven’t joined a circle. Create one or use an invitation when you want company.",
+  circleOwnerSummary: "Owner · {count} members",
+  circleMemberSummary: "Member · {count} members",
+  createCircle: "Create a circle",
+  circleName: "Circle name",
+  joinCircle: "Join a circle",
+  inviteCode: "Invitation code",
+  circleJoinDisclosure:
+    "Joining makes your display name visible to this circle and lets you see its members’ names and retained shared copies. Current and future members can read the copies you choose to share. Your private learning stays private.",
+  circleAudience: "Your circle audience",
+  circleMemberCount: "Private · {count} members",
+  circleYou: " (you)",
+  circleFutureMembers:
+    "Current and future members of this circle can read its retained shared copies.",
+  circleSharedFields: "What will be shared",
+  circleSharedOnly:
+    "Only the copy type, this message, your display name and posting time are shared. Members can add preset encouragement.",
+  circlePrivateFields: "Your plan, resources, private reflections and other activity stay private.",
+  circleCopyUnchanged: "Later changes to your private plan won’t update this message.",
+  circleRecall:
+    "Deleting a copy removes it here. Information someone has already seen cannot be recalled.",
+  circleUpdates: "Shared commitments and check-ins",
+  circleNoUpdates: "No shared copies yet. Share a commitment or check-in when you are ready.",
+  circleCommitment: "Commitment",
+  circleCheckIn: "Check-in",
+  writeSharedCopy: "Write a shared copy",
+  circleMembership: "Members and circle settings",
+  circleOwner: "Owner",
+  circleMember: "Member",
+  circleInvitations: "Invitations",
+  createInvite: "Create invitation",
+  invitePossession:
+    "Anyone holding a code can join this circle once before its 24-hour expiry. Share it only with someone you want to invite to this local demo.",
+  createdInviteCode: "New invitation code",
+  inviteShownOnce:
+    "Copy this code now. It is shown only in this view and cannot be retrieved later. Paste it into the other local account to join.",
+  inviteExpires: "Expires",
+  circleNoInvites: "No active unused invitations.",
+  inviteCodeLost:
+    "This invitation was created, but its code is no longer available. Revoke the invitation below and create a new one if you need a code.",
+  inviteCodeUncertain:
+    "Check the active invitations below. If the earlier action created one, its code cannot be retrieved. Revoke an unused invitation before creating a replacement.",
+  revokeInvite: "Revoke invitation",
+  revokeInviteHelp:
+    "This unused code will no longer allow anyone to join. Existing members and private learning will stay unchanged.",
+  confirmRevokeInvite: "Confirm revocation",
+  deleteSharedCopy: "Delete my shared copy",
+  deleteSharedCopyHelp:
+    "Delete this copy and all encouragement attached to it? Your private learning history stays. Information already seen cannot be recalled.",
+  confirmDeleteCopy: "Confirm copy deletion",
+  removeMember: "Remove member",
+  removeMemberHelp:
+    "Remove {name}? Their shared copies and attached encouragement, and encouragement they sent, will be deleted. Their private learning stays. They lose access on their next request; already-seen information cannot be recalled.",
+  confirmRemoveMember: "Confirm member removal",
+  leaveCircle: "Leave circle",
+  leaveCircleHelp:
+    "Leave this circle? Your shared copies and attached encouragement, and encouragement you sent, will be deleted. Your private learning stays. You lose circle access; already-seen information cannot be recalled.",
+  confirmLeaveCircle: "Confirm leaving",
+  closeCircle: "Close circle",
+  closeCircleHelp:
+    "Close this circle for everyone? Shared copies and encouragement will be deleted and unused invitations invalidated. Everyone’s private learning stays. Members lose access on their next request; already-seen information cannot be recalled.",
+  confirmCloseCircle: "Confirm circle closure",
+  encouragement: "Preset encouragement",
+  sendEncouragement: "Send encouragement",
+  updateEncouragement: "Update encouragement",
+  encourageKeepGoing: "Keep going",
+  encourageSmallSteps: "Small steps count",
+  encourageReturn: "Glad you returned",
+  backCircle: "Back to circle",
+  circleComposeTitle: "Preview your shared copy",
+  circleComposeHelp: "Choose exactly what you share.",
+  sharedKind: "Copy type",
+  sharedMessage: "Message",
+  sharedMessageHint:
+    "Write up to 280 characters. Review the exact copy before sharing; nothing from your private plan is added automatically.",
+  previewSharedCopy: "Preview copy",
+  circlePreviewTitle: "What your circle will see",
+  circlePreviewHelp: "Write your message, then preview the copy before sharing.",
+  circlePostingTime: "Posting time added when you share",
+  circleNotShared: "This is a preview. It hasn’t been shared yet.",
+  circlePrivateContext: "Your private learning context",
+  shareCommitment: "Share commitment",
+  shareCheckIn: "Share check-in",
+  circleActionSaved: "Your circle action is saved.",
+  circleActionReconciled:
+    "Circle information is up to date. The action could not be confirmed; check the current state before acting again.",
+  circleReconcileFailed:
+    "We could not confirm the action or refresh circle information. Refresh to check the current state before acting again.",
+  circleRefresh: "Refresh circle information",
+  circleAccessLost:
+    "This circle is no longer available to this account. Its previously displayed content has been cleared. Your private learning stays.",
+  circleUncertain:
+    "We could not confirm the response. Your action may have been saved. Retry the same action, or check saved information before doing anything else.",
+  circleRetry: "Retry the same action",
+  circleCheckSaved: "Check saved information",
+  circleSavedRefresh:
+    "Your action was saved, but the latest circle information could not be loaded. Refresh the information; the action will not be sent again.",
+  inviteUnavailable:
+    "This invitation cannot be used. It may be expired, revoked, already used or belong to a closed circle. Ask the owner for a new code.",
+  circleAlreadyMember:
+    "You already belong to this circle. Open it from your circle list; this invitation has not been used.",
+  circleLimit:
+    "You can belong to up to five active circles. Leave a circle or close one you own before adding another.",
+  circleMemberLimit:
+    "This circle already has ten members. The invitation has not been used; the owner can make room before you try again.",
+  circleItemLimit:
+    "This circle has reached 100 shared copies. An author can delete an old copy before another is shared.",
+  circleInviteLimit:
+    "This circle has ten active unused invitations. Revoke an unused invitation before creating another.",
+  circleOwnerMustClose:
+    "The owner must close the circle explicitly instead of leaving or removing themselves.",
+  circleRetryConflict:
+    "This request no longer matches the saved action. Check saved circle information before trying a new action.",
+  circleConflict:
+    "The circle changed before this action could finish. Refresh its information and try again.",
+  circleInvalid:
+    "Check the circle name, invitation code or message. A name needs 1–80 characters; a message needs 1–280 characters.",
   resources: "Your references",
   external: "Opens an external resource; internet may be needed.",
   target: "Fixed target date",
@@ -376,7 +498,132 @@ const fr: Record<MessageKey, string> = {
     "Vos dates révisées sont enregistrées. Votre travail terminé et vos efforts antérieurs restent inchangés.",
   circleTitle: "Étudier ensemble",
   circleCopy:
-    "Les cercles privés arriveront dans la prochaine version. Vous pouvez continuer à étudier en solo.",
+    "Partagez un petit engagement avec les personnes que vous invitez. Vous pouvez toujours continuer à étudier en solo.",
+  openCircles: "Ouvrir les cercles d’étude",
+  loadingCircles: "Chargement de vos cercles d’étude…",
+  circleList: "Tous mes cercles",
+  openCircle: "Ouvrir le cercle",
+  circleEmpty:
+    "Vous n’avez rejoint aucun cercle. Créez-en un ou utilisez une invitation quand vous souhaitez étudier à plusieurs.",
+  circleOwnerSummary: "Propriétaire · {count} membres",
+  circleMemberSummary: "Membre · {count} membres",
+  createCircle: "Créer un cercle",
+  circleName: "Nom du cercle",
+  joinCircle: "Rejoindre un cercle",
+  inviteCode: "Code d’invitation",
+  circleJoinDisclosure:
+    "En rejoignant ce cercle, vous rendez votre nom visible à ses membres et pouvez consulter leurs noms et les copies partagées conservées. Les membres actuels et futurs pourront lire les copies que vous choisissez de partager. Votre apprentissage privé reste privé.",
+  circleAudience: "Les destinataires de votre cercle",
+  circleMemberCount: "Privé · {count} membres",
+  circleYou: " (vous)",
+  circleFutureMembers:
+    "Les membres actuels et futurs de ce cercle peuvent lire les copies partagées qui y sont conservées.",
+  circleSharedFields: "Ce qui sera partagé",
+  circleSharedOnly:
+    "Seuls le type de copie, ce message, votre nom et l’heure de publication sont partagés. Les membres peuvent ajouter un encouragement prédéfini.",
+  circlePrivateFields:
+    "Votre parcours, vos ressources, vos notes privées et vos autres activités restent privés.",
+  circleCopyUnchanged:
+    "Les modifications ultérieures de votre parcours privé ne modifieront pas ce message.",
+  circleRecall:
+    "Supprimer une copie la retire d’ici. Les informations déjà vues par quelqu’un ne peuvent pas être effacées de sa mémoire.",
+  circleUpdates: "Engagements et bilans partagés",
+  circleNoUpdates:
+    "Aucune copie partagée pour le moment. Partagez un engagement ou un bilan quand vous le souhaitez.",
+  circleCommitment: "Engagement",
+  circleCheckIn: "Bilan",
+  writeSharedCopy: "Rédiger une copie à partager",
+  circleMembership: "Membres et paramètres du cercle",
+  circleOwner: "Propriétaire",
+  circleMember: "Membre",
+  circleInvitations: "Invitations",
+  createInvite: "Créer une invitation",
+  invitePossession:
+    "Toute personne qui possède un code peut rejoindre ce cercle une fois avant son expiration sous 24 heures. Transmettez-le uniquement à une personne que vous souhaitez inviter dans cette démonstration locale.",
+  createdInviteCode: "Nouveau code d’invitation",
+  inviteShownOnce:
+    "Copiez ce code maintenant. Il apparaît seulement dans cette vue et ne pourra pas être récupéré ensuite. Collez-le dans l’autre compte local pour rejoindre le cercle.",
+  inviteExpires: "Expire le",
+  circleNoInvites: "Aucune invitation active inutilisée.",
+  inviteCodeLost:
+    "Cette invitation a été créée, mais son code n’est plus disponible. Révoquez l’invitation ci-dessous et créez-en une nouvelle si vous avez besoin d’un code.",
+  inviteCodeUncertain:
+    "Vérifiez les invitations actives ci-dessous. Si l’action précédente en a créé une, son code ne peut pas être récupéré. Révoquez une invitation inutilisée avant d’en créer une nouvelle.",
+  revokeInvite: "Révoquer l’invitation",
+  revokeInviteHelp:
+    "Ce code inutilisé ne permettra plus de rejoindre le cercle. Les membres actuels et l’apprentissage privé resteront inchangés.",
+  confirmRevokeInvite: "Confirmer la révocation",
+  deleteSharedCopy: "Supprimer ma copie partagée",
+  deleteSharedCopyHelp:
+    "Supprimer cette copie et tous les encouragements associés ? Votre historique d’apprentissage privé reste conservé. Les informations déjà vues ne peuvent pas être rappelées.",
+  confirmDeleteCopy: "Confirmer la suppression",
+  removeMember: "Retirer ce membre",
+  removeMemberHelp:
+    "Retirer {name} ? Ses copies partagées, les encouragements associés et ceux envoyés seront supprimés. Son apprentissage privé reste conservé. Son prochain accès sera refusé ; les informations déjà vues ne peuvent pas être rappelées.",
+  confirmRemoveMember: "Confirmer le retrait",
+  leaveCircle: "Quitter le cercle",
+  leaveCircleHelp:
+    "Quitter ce cercle ? Vos copies partagées, les encouragements associés et ceux que vous avez envoyés seront supprimés. Votre apprentissage privé reste conservé. Vous perdez l’accès au cercle ; les informations déjà vues ne peuvent pas être rappelées.",
+  confirmLeaveCircle: "Confirmer le départ",
+  closeCircle: "Fermer le cercle",
+  closeCircleHelp:
+    "Fermer ce cercle pour tout le monde ? Les copies partagées et les encouragements seront supprimés, et les invitations inutilisées seront invalidées. L’apprentissage privé de chacun reste conservé. Le prochain accès des membres sera refusé ; les informations déjà vues ne peuvent pas être rappelées.",
+  confirmCloseCircle: "Confirmer la fermeture",
+  encouragement: "Encouragement prédéfini",
+  sendEncouragement: "Envoyer un encouragement",
+  updateEncouragement: "Modifier l’encouragement",
+  encourageKeepGoing: "Continuez ainsi",
+  encourageSmallSteps: "Chaque petit pas compte",
+  encourageReturn: "Heureux de votre retour",
+  backCircle: "Retour au cercle",
+  circleComposeTitle: "Vérifiez votre copie à partager",
+  circleComposeHelp: "Choisissez exactement ce que vous partagez.",
+  sharedKind: "Type de copie",
+  sharedMessage: "Message",
+  sharedMessageHint:
+    "Rédigez jusqu’à 280 caractères. Vérifiez la copie exacte avant de la partager ; rien de votre parcours privé n’est ajouté automatiquement.",
+  previewSharedCopy: "Aperçu de la copie",
+  circlePreviewTitle: "Ce que votre cercle verra",
+  circlePreviewHelp: "Rédigez votre message, puis vérifiez la copie avant de la partager.",
+  circlePostingTime: "L’heure de publication sera ajoutée lors du partage",
+  circleNotShared: "Ceci est un aperçu. La copie n’a pas encore été partagée.",
+  circlePrivateContext: "Votre contexte d’apprentissage privé",
+  shareCommitment: "Partager l’engagement",
+  shareCheckIn: "Partager le bilan",
+  circleActionSaved: "Votre action dans le cercle est enregistrée.",
+  circleActionReconciled:
+    "Les informations du cercle sont à jour. L’action n’a pas pu être confirmée ; vérifiez l’état actuel avant d’agir à nouveau.",
+  circleReconcileFailed:
+    "Nous n’avons pas pu confirmer l’action ni actualiser les informations du cercle. Actualisez-les pour vérifier l’état actuel avant d’agir à nouveau.",
+  circleRefresh: "Actualiser les informations du cercle",
+  circleAccessLost:
+    "Ce cercle n’est plus accessible à ce compte. Le contenu précédemment affiché a été retiré. Votre apprentissage privé reste conservé.",
+  circleUncertain:
+    "Nous n’avons pas pu confirmer la réponse. Votre action a peut-être été enregistrée. Réessayez la même action ou consultez les informations enregistrées avant de poursuivre.",
+  circleRetry: "Réessayer la même action",
+  circleCheckSaved: "Vérifier les informations enregistrées",
+  circleSavedRefresh:
+    "Votre action a été enregistrée, mais les dernières informations du cercle n’ont pas pu être chargées. Actualisez les informations ; l’action ne sera pas renvoyée.",
+  inviteUnavailable:
+    "Cette invitation ne peut pas être utilisée. Elle a peut-être expiré, a été révoquée ou utilisée, ou appartient à un cercle fermé. Demandez un nouveau code au propriétaire.",
+  circleAlreadyMember:
+    "Vous êtes déjà membre de ce cercle. Ouvrez-le depuis votre liste ; cette invitation n’a pas été utilisée.",
+  circleLimit:
+    "Vous pouvez appartenir à cinq cercles actifs. Quittez un cercle ou fermez l’un des vôtres avant d’en ajouter un autre.",
+  circleMemberLimit:
+    "Ce cercle compte déjà dix membres. L’invitation n’a pas été utilisée ; le propriétaire peut libérer une place avant une nouvelle tentative.",
+  circleItemLimit:
+    "Ce cercle a atteint 100 copies partagées. Un auteur peut supprimer une ancienne copie avant un nouveau partage.",
+  circleInviteLimit:
+    "Ce cercle a dix invitations actives inutilisées. Révoquez-en une avant d’en créer une autre.",
+  circleOwnerMustClose:
+    "Le propriétaire doit fermer le cercle explicitement au lieu de le quitter ou de se retirer.",
+  circleRetryConflict:
+    "Cette requête ne correspond plus à l’action enregistrée. Vérifiez les informations du cercle avant une nouvelle action.",
+  circleConflict:
+    "Le cercle a changé avant la fin de cette action. Actualisez ses informations puis réessayez.",
+  circleInvalid:
+    "Vérifiez le nom du cercle, le code d’invitation ou le message. Un nom doit contenir de 1 à 80 caractères ; un message de 1 à 280 caractères.",
   resources: "Vos références",
   external: "Ouvre une ressource externe ; une connexion peut être nécessaire.",
   target: "Date cible fixe",
@@ -475,6 +722,14 @@ export function message(key: MessageKey, values: Record<string, string | number>
       locale === "fr" ? "1 étape terminée dans l’historique" : "1 completion recorded in history";
   if (key === "planCount" && count === 1)
     result = locale === "fr" ? "1 étape active" : "1 active step";
+  if (
+    (key === "circleOwnerSummary" ||
+      key === "circleMemberSummary" ||
+      key === "circleMemberCount") &&
+    count === 1
+  )
+    result =
+      locale === "fr" ? result.replace("membres", "membre") : result.replace("members", "member");
   if (key === "effort")
     result =
       locale === "fr"

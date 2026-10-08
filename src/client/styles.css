@@ -1039,6 +1039,246 @@ input[type="checkbox"] {
 .drawer-open {
   overflow: hidden;
 }
+.empty-circle-entry {
+  margin-top: 42px;
+  max-width: 600px;
+}
+.empty-circle-entry h2 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+.circle-view {
+  max-width: 1380px;
+}
+.circle-view > .text-button,
+.circle-body > .text-button {
+  margin-bottom: 20px;
+}
+.circle-status:not(:empty) {
+  margin: 18px 0;
+}
+.circle-status > .button {
+  margin: 10px 10px 0 0;
+}
+.circle-body > .subtitle {
+  margin: 10px 0 28px;
+}
+.circle-body > .hint {
+  margin-bottom: 16px;
+}
+.circle-heading {
+  margin-bottom: 16px;
+}
+.circle-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 32px;
+  align-items: start;
+}
+.circle-entry-forms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin-top: 36px;
+  max-width: 1050px;
+}
+.circle-form,
+.circle-compose-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  min-width: 0;
+}
+.circle-form > .button,
+.circle-compose-form > .button {
+  align-self: start;
+}
+.circle-form h2,
+.circle-sidebar h2,
+.circle-updates > h2,
+.circle-preview h2 {
+  font-size: 1.35rem;
+  margin-bottom: 2px;
+}
+.circle-list,
+.circle-member-list {
+  padding: 0;
+  list-style: none;
+}
+.circle-list {
+  margin: 28px 0;
+}
+.circle-list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.circle-list-row h2 {
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+}
+.circle-list-row > div,
+.circle-sidebar,
+.circle-updates {
+  min-width: 0;
+}
+.circle-sidebar > * + * {
+  margin-top: 26px;
+}
+.circle-audience,
+.circle-privacy {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.circle-audience h3,
+.circle-private-context h3 {
+  font-size: 1.15rem;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+.circle-audience-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  padding-left: 20px;
+  margin: 18px 0;
+}
+.circle-privacy ul {
+  padding-left: 20px;
+  margin: 18px 0;
+}
+.circle-privacy :where(li + li) {
+  margin-top: 12px;
+}
+.circle-preview,
+.circle-private-context {
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--blue);
+  color: var(--blue-ink);
+}
+.circle-preview h2,
+.circle-private-context h2,
+.circle-private-context h3,
+.circle-preview .hint {
+  color: inherit;
+}
+.circle-preview-copy {
+  margin: 20px 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--control-line);
+  border-bottom: 1px solid var(--control-line);
+}
+.circle-message {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin-top: 16px;
+}
+.circle-share-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 24px;
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.circle-item {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.circle-item h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+.circle-byline,
+.circle-encouragements {
+  font-size: 0.91rem;
+  color: var(--muted);
+}
+.circle-encouragements {
+  padding-left: 20px;
+  margin: 18px 0;
+}
+.circle-encouragements :where(li + li) {
+  margin-top: 8px;
+}
+.circle-encourage-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+.circle-encourage-form .field {
+  flex: 1 1 220px;
+}
+.circle-management {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.circle-management summary {
+  cursor: pointer;
+  font-weight: 650;
+  min-height: 44px;
+  padding: 10px 0;
+}
+.circle-management > .hint {
+  margin: 12px 0 18px;
+}
+.circle-member-list > li,
+.circle-invite {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.circle-confirmation > .text-button {
+  margin-top: 10px;
+}
+.circle-confirmation > p {
+  margin: 16px 0 12px;
+}
+.circle-token:not(:empty) {
+  margin-top: 20px;
+}
+.circle-token input {
+  font-family: ui-monospace, monospace;
+}
+.circle-invites {
+  margin-top: 18px;
+}
+.circle-body :where(h1, h2, h3, p, li, strong) {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1100px) {
+  .circle-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 799px) {
+  .circle-entry-forms {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .circle-list-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .circle-audience,
+  .circle-privacy,
+  .circle-preview,
+  .circle-private-context {
+    padding: 18px;
+  }
+  .circle-share-actions > .button {
+    flex: 1 1 180px;
+  }
+}
 .comeback-view {
   min-width: 0;
 }

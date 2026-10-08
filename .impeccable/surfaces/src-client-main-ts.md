@@ -70,3 +70,25 @@ FORM: Local extension of the established Operate surface. Existing `.impeccable/
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 Contract: docs/specs/capstone/increments/comeback.md. Existing formal Impeccable phase limitations remain distinct from scoped implementation and manual evidence; no receipt is forced.
+
+## StudyCircle extension direction contract — 8 October 2026
+
+### Goal
+
+THESIS: Voluntary accountability uses one deliberately approved copy while private learning remains private. Extend My learning with circles and an explicit preview, without adding a fourth destination.
+
+### Context Pointers
+
+OWN-WORLD: Preserve Amber, paired semantic light/dark colors, local Segoe UI, the existing divided-panel sidebar icons, top-left brand slot, native forms and quiet dividers. The pre-code sharing reference is `.impeccable/mocks/amber/sharing-preview.png`; it remains an unapproved detailed-state elaboration of the user's selected direction. `docs/specs/capstone/increments/studycircle.md` owns SC01–SC07 and the pre-code research evidence.
+
+### Constraints
+
+STORY: Create or join an optional local circle, compose a commitment/check-in, inspect its exact copy, audience and private exclusions, then explicitly share. Other real local accounts may add preset encouragement. Membership and own-copy controls disclose cleanup before confirmation.
+
+FIRST VIEWPORT: Retain the shell around a focused circle view. Desktop preview places the composer and exact copy beside audience/privacy context. Mobile stacks these in DOM order before the final share action. Current/future-member access is explicit; learner-entered text is preserved across language/theme switching.
+
+FORM: A bounded extension of the existing Operate surface, not a replacement visual identity or new concept round. No raster ships. The original formal comp pipeline remains open at plates; no user approval, hero/final diff or receipt is fabricated.
+
+### Done When
+
+FINISH: Review actual desktop light/dark, French320px and current1280px captures plus the real two-account saved result. Record the independent verdict, mechanical detector and ordinary design-system comparison, preserving DESIGN.md and its sidecar. A scoped verdict does not close the inherited formal pipeline or prove accessibility conformance or learner impact.

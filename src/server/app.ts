@@ -9,6 +9,13 @@ import { getMigrations } from "better-auth/db/migration";
 import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
 import { templates } from "../domain/templates.js";
 import {
+  circleEncouragementInput,
+  circleRequestInput,
+  createCircleInput,
+  redeemCircleInviteInput,
+  shareCircleItemInput,
+} from "../domain/circle-validation.js";
+import {
   activityInput,
   comebackConfirmInput,
   comebackPreviewInput,
@@ -20,6 +27,7 @@ import {
   updatePlanInput,
 } from "../domain/validation.js";
 import { JourneyStore, migrate } from "./store.js";
+import { CircleStore } from "./circles.js";
 
 export interface AppOptions {
   dataDirectory: string;
@@ -98,6 +106,7 @@ export async function createApp(
     migrate(database);
     const auth = betterAuth(authOptions);
     const store = new JourneyStore(database, options.clock ?? (() => new Date()));
+    const circles = new CircleStore(database, options.clock ?? (() => new Date()));
     const app = express();
     app.disable("x-powered-by");
     app.use((request, response, next) => {
@@ -183,6 +192,83 @@ export async function createApp(
     app.post("/api/plans/:id/comeback/confirm", (request, response) => {
       response.json(
         store.confirmComeback(owner(response), planId(request), comebackConfirmInput(request.body)),
+      );
+    });
+    app.get("/api/circles", (_request, response) => {
+      response.json({ circles: circles.list(owner(response)) });
+    });
+    app.post("/api/circles", (request, response) => {
+      response.status(201).json(circles.create(owner(response), createCircleInput(request.body)));
+    });
+    app.get("/api/circles/:id", (request, response) => {
+      response.json(circles.detail(owner(response), planId(request)));
+    });
+    app.get("/api/circles/:id/invites", (request, response) => {
+      response.json({ invites: circles.invites(owner(response), planId(request)) });
+    });
+    app.post("/api/circles/:id/invites", (request, response) => {
+      response
+        .status(201)
+        .json(
+          circles.createInvite(owner(response), planId(request), circleRequestInput(request.body)),
+        );
+    });
+    app.post("/api/circles/:id/invites/:inviteId/revoke", (request, response) => {
+      response.json(
+        circles.revokeInvite(
+          owner(response),
+          planId(request),
+          identifier(request.params.inviteId, "inviteId"),
+          circleRequestInput(request.body),
+        ),
+      );
+    });
+    app.post("/api/circle-invites/redeem", (request, response) => {
+      response.json(circles.redeem(owner(response), redeemCircleInviteInput(request.body)));
+    });
+    app.post("/api/circles/:id/items", (request, response) => {
+      response
+        .status(201)
+        .json(circles.share(owner(response), planId(request), shareCircleItemInput(request.body)));
+    });
+    app.post("/api/circles/:id/items/:itemId/delete", (request, response) => {
+      response.json(
+        circles.deleteItem(
+          owner(response),
+          planId(request),
+          identifier(request.params.itemId, "itemId"),
+          circleRequestInput(request.body),
+        ),
+      );
+    });
+    app.post("/api/circles/:id/items/:itemId/encouragement", (request, response) => {
+      response.json(
+        circles.encourage(
+          owner(response),
+          planId(request),
+          identifier(request.params.itemId, "itemId"),
+          circleEncouragementInput(request.body),
+        ),
+      );
+    });
+    app.post("/api/circles/:id/leave", (request, response) => {
+      response.json(
+        circles.leave(owner(response), planId(request), circleRequestInput(request.body)),
+      );
+    });
+    app.post("/api/circles/:id/members/:memberId/remove", (request, response) => {
+      response.json(
+        circles.remove(
+          owner(response),
+          planId(request),
+          identifier(request.params.memberId, "memberId"),
+          circleRequestInput(request.body),
+        ),
+      );
+    });
+    app.post("/api/circles/:id/close", (request, response) => {
+      response.json(
+        circles.close(owner(response), planId(request), circleRequestInput(request.body)),
       );
     });
     app.use("/api", (_request, response) => {

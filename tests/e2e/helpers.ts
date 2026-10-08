@@ -22,7 +22,10 @@ export async function respectAuthenticationRateLimit(): Promise<void> {
   lastAuthenticationFinished = Date.now();
 }
 
-export async function createAccount(page: Page): Promise<SyntheticAccount> {
+export async function createAccount(
+  page: Page,
+  displayName = "Browser learner",
+): Promise<SyntheticAccount> {
   await respectAuthenticationRateLimit();
   const account = {
     email: `browser-${randomUUID()}@example.test`,
@@ -30,7 +33,7 @@ export async function createAccount(page: Page): Promise<SyntheticAccount> {
   };
   await page.goto("/");
   await page.getByRole("button", { name: "New here? Create an account", exact: true }).click();
-  await page.getByLabel("Display name", { exact: true }).fill("Browser learner");
+  await page.getByLabel("Display name", { exact: true }).fill(displayName);
   await page.getByLabel("Email address", { exact: true }).fill(account.email);
   await page.getByLabel("Password", { exact: true }).fill(account.password);
   await page.getByRole("button", { name: "Create an account", exact: true }).click();

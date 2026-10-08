@@ -1,6 +1,6 @@
 # Capstone verification and judging evidence
 
-Updated: 8 October 2026, Africa/Lagos. P06 adds explicit Comeback schedule recovery to the delivered private learning journey. R16 research preceded production edits. [Comeback verification](increments/comeback-verification.md) records actual checks and limits; E008 tracks this increment. E004–E007 remain historical evidence. P07 peers, full capstone acceptance and learner outcomes remain open.
+Updated: 8 October 2026, Africa/Lagos. P07 adds optional private peers to the delivered private learning and Comeback journey. R17 research preceded production edits. [StudyCircle verification](increments/studycircle-verification.md) records 56/56 domain/HTTP tests, 36/36 browser cases and scoped review/MCP evidence. E009 publication/tracker closeout is pending; E004–E008 remain historical evidence. P08 full-journey review, full capstone acceptance and learner outcomes remain open.
 
 ## Goal
 
@@ -42,7 +42,7 @@ The runtime report retains initial strict-compiler failures (`bun:sqlite` missin
 
 ### Acceptance verification state
 
-The table summarizes current evidence for the P04/P05 milestone. A scoped pass does not complete requirements belonging to later increments or establish learner benefit.
+The table summarizes current evidence through P07. A scoped pass does not complete later review, reuse or demo requirements, or establish learner benefit.
 
 | Criteria | Required verification | Current result |
 | --- | --- | --- |
@@ -50,14 +50,14 @@ The table summarizes current evidence for the P04/P05 milestone. A scoped pass d
 | AC03 | Personal study/review, skipped private reflection, activity distinct from completion. | Verified by HTTP/browser cases and actual saved reflection/completion/reload. |
 | AC04 | Seven-calendar-day distinct dates, explicit timezone, midnight/DST/deduplication; reported study minutes distinct from estimates. | Verified by ten domain cases and HTTP/browser activity observations, including DST and distinct-date accounting. |
 | AC05 | Current scope versus retained history/self-report, empty plan and scope edits. | Verified by scope-removal/empty-state/history domain and HTTP checks, plus browser removal with retained history. |
-| AC06 | Exact unfinished-date shift, order/spacing/history, conflicts, cancel/confirm/stale revision and five-minute activity. | Planned. |
-| AC07 | Two accounts, explicit copies/encouragement, owner/member/nonmember rules, leave/removal/own-copy deletion and owner closure with cleanup/access denial. | Planned; simulation cannot satisfy real peers. |
-| AC08 | Hashed expiring revocable one-use invites; repeated/concurrent/altered/expired/revoked/closed-circle rejection. | Planned. |
-| AC09 | Auth/sign-out, all-request ownership/membership, limits, safe links/text and dependency/review findings. | Private-account ownership, sign-out, input/URL/plain-text protections and dependency audit verified. Peer membership/invite lifecycle remains P07. |
+| AC06 | Exact unfinished-date shift, order/spacing/history, conflicts, cancel/confirm/stale revision and five-minute activity. | P06 domain/HTTP/browser and root MCP checks passed; all eight Comeback browser cases passed again in the P07 regression batch. See Comeback verification for exact limits. |
+| AC07 | Two accounts, explicit copies/encouragement, owner/member/nonmember rules, leave/removal/own-copy deletion and owner closure with cleanup/access denial. | P07 real-session HTTP and browser cases passed, including immutable/private-field boundaries and cleanup. Root MCP used separate IAB/Chrome accounts to join, preview/share and read encouragement. Local accounts, not remote peers or participant evaluation. |
+| AC08 | Hashed expiring revocable one-use invites; repeated/concurrent/altered/expired/revoked/closed-circle rejection. | P07 store/HTTP cases passed lifecycle, capacity, transaction rollback and receipt rules; browser lost-response retry/revocation passed. Raw codes are once returned; retries retain hash-only persistence. |
+| AC09 | Auth/sign-out, all-request ownership/membership, limits, safe links/text and dependency/review findings. | Existing ownership/input checks plus P07 role/resource/receipt authorization and private-copy DTO checks passed. Two client review findings were corrected and browser-verified. Audit reported no known vulnerabilities; this is not a comprehensive security guarantee. |
 | AC10 | Refresh/restart persistence, honest failed saves, reload/use with internet disconnected and local server running, external-request inspection. | Refresh, actual separate-process restart and failed saves verified. Browser loopback-only request routing passed30 local requests/0 external attempts; physical internet and server egress were not disabled. |
 | AC11; AC11a–AC11f | Image before frontend, both languages/states, desktop/mobile, theme/navigation behavior, keyboard/focus, zoom/reflow, contrast/labels/targets. | Image-first evidence preserved. Scoped browser cases pass theme/storage/sidebar/modal/320px/French/forced-colors/reduced-motion checks. Final mobile-priority/label correction and bounded visual review are recorded separately below; full accessibility/native-language certification is not claimed. |
 | AC12 | Independent clean-checkout run and template/language adaptation from README. | Planned; not human adoption. |
-| AC13 | Lifecycle/MCP work, two uses of each skill, tracker readback and verified dual-remote publication. | Actual spec-driven implementation, testing, independent review, root browser MCP and project-skill evidence now exist. E007 tracker/publication readbacks are separate results; full P08/P09 remains pending P06/P07. |
+| AC13 | Lifecycle/MCP work, two uses of each skill, tracker readback and verified dual-remote publication. | Actual spec-driven implementation, testing, independent review, browser MCP and repeated scoped project-skill use exist through P07. E007/E008 publication and tracker readbacks are recorded; E009 closeout pending. Full-journey P08/P09 remains separate. |
 | AC14 | Timed 3–5 minute full walkthrough, true verification and next-month scope. | Planned; 4:30 target is not measured. |
 
 ### Commands and execution policy
@@ -70,10 +70,10 @@ For documentation, run `git diff --check` for tracked changes and a per-file whi
 
 | Criterion | Requirement | Artifact/commit connection | Actual check / status | Video timestamp |
 | --- | --- | --- | --- | --- |
-| J1 — Codex integration | AC13; D013 | Saved spec/plan/research, AGENTS, R11/R15 experiments, P04/P05 contracts/source/tests and independent reviews. | E007 records actual implementation and checks with discovered/fixed defects. Full-capstone P08/P09 remains pending. | Required walkthrough; actual recording pending. |
+| J1 — Codex integration | AC13; D013 | Saved spec/plan/research, AGENTS, experiments, P04–P07 contracts/source/tests and independent reviews. | E007–E009 record actual implementation and checks with discovered/fixed defects. Full-capstone P08/P09 remains pending. | Required walkthrough; actual recording pending. |
 | J1 — MCP contribution | AC07/AC11/AC13 | Personal repository reads and root browser app/Sheet/Kaneo work. | Actual eight-step account-to-progress browser MCP journey and shell checks; tracker/publication readback separately below. Miva connector unavailable, CLI route distinguished. No native Sheets/Kaneo connector claimed. | Required walkthrough; actual recording pending. |
 | J1 — Reusable skills | AC13 | Project learning-journey-review and capstone-evidence-update skills. | Meaningful private-journey review/corrections and evidence reconciliation recorded; full P08/P09 still requires all five capabilities. File existence alone is insufficient. | Required walkthrough; actual recording pending. |
-| J2 — Impact | AC01–AC08; D009/D014 | Actual next action → private study/reflection → retained progress; Comeback/peers remain next increments. | Synthetic scenario checks establish working interactions, not learner benefit. No participants, time saving or retention effect recorded. | Required walkthrough; actual recording pending. |
+| J2 — Impact | AC01–AC08; D009/D014 | Actual next action → private study/reflection → retained progress, Comeback recovery and optional private peer accountability. | Synthetic scenario checks establish working interactions, not learner benefit. No participants, time saving or retention effect recorded. | Required walkthrough; actual recording pending. |
 | J3 — Reuse/adoption potential | AC12 | README/start/stop/configuration, explicit module boundaries, template/language adaptation instructions and executable checks. | Artifacts exist; independent clean-checkout/adaptation rehearsal and human adoption remain unverified. | Required walkthrough; actual recording pending. |
 | J4 — Demo/pitch | AC14 | Required 3–5 minute walkthrough; later actual recording/script with supported claims/limits. | Planned; measured duration and visible working behavior required. | Entire actual 3–5 minute recording pending. |
 
@@ -88,7 +88,7 @@ Both project skills must contribute across two meaningful iterations: first comp
 ### Current limitations
 
 - R11/R15 establish this host's selected runtime/tooling feasibility. Product checks now exist; clean-machine installation, machine reboot and broad cross-platform support remain unverified.
-- The first private journey and shell are implemented. P06/P07, enforced CI, learner research, independent clean-checkout/adaptation and timed demo remain outstanding. E006 retains static-design history; E007 records actual application work.
+- The private journey, Comeback and private peers are implemented and checked within their recorded scopes. P08/P09 full-journey review/refinement, enforced CI, learner research, independent clean-checkout/adaptation and timed demo remain outstanding. Formal Impeccable build phases remain open despite scoped visual review passes. E006 retains static-design history; E007–E009 record application work.
 - GitHub MCP cannot currently read Miva; scoped CLI can. Browser automation is the Sheet/Kaneo path.
 - Trackers have verified scope/R11 readbacks. Subsequent independent-review and project-publication updates are recorded only after their actual results; source snapshot publication remains a separate delivery step. Any independently scoped global recovery result is recorded separately.
 - Local email/password does not verify email or provide recovery. Public hosting/HTTPS, distributed peers/sync, operational retention/deletion, abuse/moderation, availability, recovery and wider device/language/learner evaluation are future production work.
@@ -188,3 +188,13 @@ The independent reusable-skill [behavior review](reviews/2026-10-08-comeback-rev
 Normal Git published artifact `204e227a63c550140ed7b868c1fe76e68b74391b` to both authorized private repositories, with exact remote main readbacks. GitHub MCP independently returned the personal commit SHA, message and canonical URL. The [E008 tracker report](reviews/2026-10-08-comeback-tracker.md) records39 intended Sheet cells with zero mismatches/other changes and five persisted Kaneo comparisons. History/statuses were preserved. A parser correction, a known-state paste reorder and a read timeout are retained in the record. The user explicitly reaffirmed the original Sheet + Kaneo + GitHub arrangement after asking why Sheets was in use. P07 private peers is next; full-capstone acceptance remains open.
 
 Final documentation-only closeout checked six intended files:46 local links resolved, context parsed, no scoped credential-pattern match, unchanged account/task mappings, deadlines and LMS facts, and preserved E007 history. The new tracking reaffirmation is explicitly recorded. No application source changed after the recorded checks; runtime tests were not repeated for documentation-only edits.
+
+### E009 — Private StudyCircle, 8 October 2026
+
+R17 closed at 10:55 before the [P07 contract](increments/studycircle.md) and production edits. Optional private circles now provide real local membership, hash-only expiring one-use invitations, explicit immutable commitment/check-in copies, preset encouragement and controlled shared-data cleanup. Private plans and learning history remain separate.
+
+[Actual verification](increments/studycircle-verification.md) records 56/56 domain/HTTP tests, 36/36 browser cases, strict/lint/format/build/audit and distinct-process persistence. It retains the initial browser fixture failure and the source review corrections for mutation-denial reconciliation and detached invitation input cleanup. Root browser MCP separately demonstrated two accounts joining, previewing/sharing and reading saved encouragement. Synthetic screenshots are local demonstration evidence, not learner outcomes or a video.
+
+The reusable [review](reviews/2026-10-08-circle-review.md) closed with no remaining scoped source blocker. The independent [visual review](reviews/2026-10-08-circle-visual.md) returned ship for six supplied captures, and [system documentation](reviews/2026-10-08-circle-design-system.md) preserved existing design hashes. Formal Impeccable finish explicitly refused ship because plates, hero, sections, motion and responsive remain open. That build is unfinished; local source publication does not imply formal design closure or public deployment.
+
+J1 links real research/specification, parallel implementation, tests, independent reviews, reused skills and MCP observations. J2 demonstrates optional accountability controls without measured learner benefit. J3 supplies documented source boundaries and migration/recovery guidance; independent setup/adaptation remains pending. J4 has working scene material, but recording and measured duration remain pending. Normal dual publication, GitHub MCP artifact readback and E009 tracker saved comparisons will be recorded after execution. P08 is next; full capstone acceptance stays open.

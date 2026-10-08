@@ -149,6 +149,85 @@ export interface ComebackPreview {
 export interface ApiError {
   error: { code: string; field?: string };
 }
+export type CircleRole = "owner" | "member";
+export type CircleItemKind = "commitment" | "check_in";
+export type EncouragementPreset = "keep_going" | "small_steps_count" | "glad_you_returned";
+export type CircleInviteStatus = "active" | "expired" | "revoked" | "redeemed";
+export interface CircleSummary {
+  id: string;
+  name: string;
+  role: CircleRole;
+  memberCount: number;
+  createdAt: string;
+}
+export interface CircleMember {
+  id: string;
+  displayName: string;
+  role: CircleRole;
+  isSelf: boolean;
+  joinedAt: string;
+}
+export interface CircleEncouragement {
+  id: string;
+  senderMemberId: string;
+  senderName: string;
+  preset: EncouragementPreset;
+  createdAt: string;
+}
+export interface CircleItem {
+  id: string;
+  authorMemberId: string;
+  authorName: string;
+  kind: CircleItemKind;
+  text: string;
+  createdAt: string;
+  encouragements: CircleEncouragement[];
+}
+export interface CircleDetail {
+  circle: CircleSummary;
+  members: CircleMember[];
+  items: CircleItem[];
+}
+export interface CircleInvite {
+  id: string;
+  createdAt: string;
+  expiresAt: string;
+  status: CircleInviteStatus;
+}
+export interface CircleInviteCreated {
+  invite: CircleInvite;
+  token: string | null;
+}
+export interface CircleRequestInput {
+  requestId: string;
+}
+export interface CreateCircleInput extends CircleRequestInput {
+  name: string;
+}
+export interface RedeemCircleInviteInput extends CircleRequestInput {
+  token: string;
+}
+export interface ShareCircleItemInput extends CircleRequestInput {
+  kind: CircleItemKind;
+  text: string;
+}
+export interface CircleEncouragementInput extends CircleRequestInput {
+  preset: EncouragementPreset;
+}
+export const CIRCLE_LIMITS = {
+  name: 80,
+  text: 280,
+  circles: 5,
+  members: 10,
+  items: 100,
+  invites: 10,
+  inviteHours: 24,
+} as const;
+export const ENCOURAGEMENT_PRESETS: readonly EncouragementPreset[] = [
+  "keep_going",
+  "small_steps_count",
+  "glad_you_returned",
+];
 export const LIMITS = {
   goal: 160,
   stepTitle: 240,

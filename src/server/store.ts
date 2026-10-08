@@ -37,12 +37,13 @@ export function migrate(database: Database.Database): void {
   const versions = database.prepare("SELECT version FROM app_schema").all() as {
     version: number;
   }[];
-  if (versions.some((row) => row.version !== 1))
+  const ordered = versions.map((row) => row.version).sort((a, b) => a - b);
+  if (ordered.length > 2 || ordered.some((version, index) => version !== index + 1))
     throw new Error("Unsupported application schema version");
-  if (versions.length) return;
-  database
-    .transaction(() => {
-      database.exec(`
+  if (!ordered.includes(1))
+    database
+      .transaction(() => {
+        database.exec(`
       CREATE TABLE learner_profile (owner_id TEXT PRIMARY KEY REFERENCES user(id) ON DELETE CASCADE, locale TEXT NOT NULL, timezone TEXT NOT NULL);
       CREATE TABLE learning_plan (id TEXT PRIMARY KEY, owner_id TEXT NOT NULL REFERENCES user(id) ON DELETE CASCADE, body TEXT NOT NULL);
       CREATE INDEX learning_plan_owner ON learning_plan(owner_id);
@@ -55,8 +56,24 @@ export function migrate(database: Database.Database): void {
       CREATE TABLE request_receipt (owner_id TEXT NOT NULL REFERENCES user(id) ON DELETE CASCADE, request_id TEXT NOT NULL, operation TEXT NOT NULL, digest TEXT NOT NULL, response TEXT NOT NULL, PRIMARY KEY(owner_id, request_id));
       INSERT INTO app_schema (version) VALUES (1);
     `);
-    })
-    .immediate();
+      })
+      .immediate();
+  if (!ordered.includes(2))
+    database
+      .transaction(() => {
+        database.exec(`
+      CREATE TABLE study_circle (id TEXT PRIMARY KEY, owner_id TEXT NOT NULL REFERENCES user(id) ON DELETE CASCADE, name TEXT NOT NULL, created_at TEXT NOT NULL, closed_at TEXT);
+      CREATE TABLE circle_member (id TEXT PRIMARY KEY, circle_id TEXT NOT NULL REFERENCES study_circle(id) ON DELETE CASCADE, user_id TEXT NOT NULL REFERENCES user(id) ON DELETE CASCADE, joined_at TEXT NOT NULL, UNIQUE(circle_id,user_id), UNIQUE(circle_id,id));
+      CREATE INDEX circle_member_user ON circle_member(user_id);
+      CREATE TABLE circle_invite (id TEXT PRIMARY KEY, circle_id TEXT NOT NULL REFERENCES study_circle(id) ON DELETE CASCADE, creator_id TEXT NOT NULL REFERENCES user(id), token_hash TEXT NOT NULL UNIQUE, created_at TEXT NOT NULL, expires_at TEXT NOT NULL, revoked_at TEXT, redeemed_at TEXT, redeemed_member_id TEXT);
+      CREATE INDEX circle_invite_circle ON circle_invite(circle_id);
+      CREATE TABLE circle_item (id TEXT PRIMARY KEY, circle_id TEXT NOT NULL, author_member_id TEXT NOT NULL, kind TEXT NOT NULL CHECK(kind IN ('commitment','check_in')), text TEXT NOT NULL, created_at TEXT NOT NULL, UNIQUE(circle_id,id), FOREIGN KEY(circle_id,author_member_id) REFERENCES circle_member(circle_id,id) ON DELETE CASCADE);
+      CREATE TABLE circle_encouragement (id TEXT PRIMARY KEY, circle_id TEXT NOT NULL, item_id TEXT NOT NULL, sender_member_id TEXT NOT NULL, preset TEXT NOT NULL CHECK(preset IN ('keep_going','small_steps_count','glad_you_returned')), created_at TEXT NOT NULL, UNIQUE(item_id,sender_member_id), FOREIGN KEY(circle_id,item_id) REFERENCES circle_item(circle_id,id) ON DELETE CASCADE, FOREIGN KEY(circle_id,sender_member_id) REFERENCES circle_member(circle_id,id) ON DELETE CASCADE);
+      CREATE TABLE circle_receipt (owner_id TEXT NOT NULL REFERENCES user(id) ON DELETE CASCADE, request_id TEXT NOT NULL, operation TEXT NOT NULL, digest TEXT NOT NULL, circle_id TEXT NOT NULL, member_id TEXT NOT NULL, resource_type TEXT NOT NULL, resource_id TEXT NOT NULL, PRIMARY KEY(owner_id,request_id));
+      INSERT INTO app_schema (version) VALUES (2);
+    `);
+      })
+      .immediate();
 }
 
 export class JourneyStore {

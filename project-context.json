@@ -194,11 +194,11 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "P04/P05 first private journey implemented, verified within scope and published to both private repositories; E007 saved/read back in the Miva Sheet and Kaneo. Evidence: 20 unit/HTTP tests, 19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. P06 Comeback schedule recovery and P07 private peers remain required next increments.",
+      "scope_status": "P07 private StudyCircle implemented and verified after R17 closed at 10:55 on 8 October: real local accounts, hash-only expiring one-use invitations, explicit immutable copies, preset encouragement and shared-data cleanup. All 56 domain/HTTP tests and all 36 browser cases pass, alongside strict/lint/format/build/audit and distinct-process persistence. Root browser MCP observed two-account join/preview/share/encouragement. Independent source review corrected two client issues; scoped visual review returned ship and system documentation preserved existing design hashes. Dual publication and E009 saved readbacks remain pending. Formal Impeccable phases remain open; P08 full connected-journey review is next.",
       "ai_product_feature_required": false,
       "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
-      "stack": "Node24.19.0 / pnpm11.19.0 / Express5.2.1 / strict TypeScript7.0.2 / Vite8.3.3 / Better Auth1.7.7 / better-sqlite3 13.0.3; Biome2.5.15 and Playwright1.63.0. R01-R15 closed before production implementation. Exact pins in package.json and pnpm-lock.yaml. Actual product check results: docs/specs/capstone/increments/first-journey-verification.md.",
+      "stack": "Node24.19.0 / pnpm11.19.0 / Express5.2.1 / strict TypeScript7.0.2 / Vite8.3.3 / Better Auth1.7.7 / better-sqlite3 13.0.3; Biome2.5.15 and Playwright1.63.0. R01-R15 closed before production implementation. Exact pins in package.json and pnpm-lock.yaml. P07 adds an additive v2 SQLite schema without new dependencies. Current results: docs/specs/capstone/increments/studycircle-verification.md.",
       "concept_spec": "docs/specs/capstone/spec.md",
       "runtime_ai": false,
       "languages": [
@@ -209,9 +209,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "P04/P05 first private journey implemented, verified within scope and published to both private repositories; E007 saved/read back in the Miva Sheet and Kaneo. Evidence: 20 unit/HTTP tests, 19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. P06 Comeback schedule recovery and P07 private peers remain required next increments.",
+    "mvp_scope": "P07 private StudyCircle implemented and verified after R17 closed at 10:55 on 8 October: real local accounts, hash-only expiring one-use invitations, explicit immutable copies, preset encouragement and shared-data cleanup. All 56 domain/HTTP tests and all 36 browser cases pass, alongside strict/lint/format/build/audit and distinct-process persistence. Root browser MCP observed two-account join/preview/share/encouragement. Independent source review corrected two client issues; scoped visual review returned ship and system documentation preserved existing design hashes. Dual publication and E009 saved readbacks remain pending. Formal Impeccable phases remain open; P08 full connected-journey review is next.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "P04/P05 first usable increment delivered; next P06 Comeback and P07 private circles. Full MVP, learner evaluation, reuse rehearsal and video remain open."
+    "stage": "P07 implementation verified within recorded scope; close out publication/E009, then P08 full-journey review. Learner evaluation, independent reuse rehearsal and video remain open."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -526,18 +526,18 @@
     },
     "browser_mcp": {
       "purpose": "Operate the running app for observed behaviour and maintain Miva Sheet/Kaneo with saved readback.",
-      "boundary": "Actual IAB account/profile/template/study/reflection/completion/reload and shell observations. Tracker operations use browser MCP, not native Google Sheets/Kaneo connectors. Synthetic demo data; no learner impact inference."
+      "boundary": "Actual IAB account/profile/template/study/reflection/completion/reload and shell observations. Tracker operations use browser MCP, not native Google Sheets/Kaneo connectors. Synthetic demo data; no learner impact inference. P07: separate IAB/Chrome synthetic accounts joined a private circle, explicitly previewed/shared a copy and saved/read back preset encouragement."
     },
     "project_skills": [
       {
         "name": "learning-journey-review",
         "path": ".agents/skills/learning-journey-review/SKILL.md",
-        "status": "Created and structurally validated; independent preparation review at 17:10 retained. Applied again to actual P04/P05 source, browser checks, findings and corrections; see docs/specs/capstone/reviews/2026-10-07-first-journey-review.md. Full-journey P08/P09 remain pending. Applied to P06 actual source/checks on8October; additional network branches and strict fixture correction recorded in 2026-10-08-comeback-review.md."
+        "status": "Created and structurally validated; independent preparation review at 17:10 retained. Applied again to actual P04/P05 source, browser checks, findings and corrections; see docs/specs/capstone/reviews/2026-10-07-first-journey-review.md. Full-journey P08/P09 remain pending. Applied to P06 actual source/checks on8October; additional network branches and strict fixture correction recorded in 2026-10-08-comeback-review.md. P07 review closed on 8 October with both client fixes behavior-verified and no remaining scoped blocker; see 2026-10-08-circle-review.md. Full P08/P09 remain separate."
       },
       {
         "name": "capstone-evidence-update",
         "path": ".agents/skills/capstone-evidence-update/SKILL.md",
-        "status": "Created and structurally validated; earlier E004-E006 invocations retained. Applied to actual E007 implementation/check/review/publication evidence and saved tracker readback; see docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md. Full-journey P08/P09 remain pending. P06/E008 evidence reconciliation and saved readbacks completed on8October; see2026-10-08-comeback-tracker.md."
+        "status": "Created and structurally validated; earlier E004-E006 invocations retained. Applied to actual E007 implementation/check/review/publication evidence and saved tracker readback; see docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md. Full-journey P08/P09 remain pending. P06/E008 evidence reconciliation and saved readbacks completed on8October; see2026-10-08-comeback-tracker.md. P07/E009 reused for verified baseline preparation and current local evidence reconciliation; live tracker readbacks pending artifact publication. See 2026-10-08-circle-tracker.md."
       }
     ],
     "proof_chain": "criterion -> requirement -> artifact/commit -> actual check/result -> demo scene",
@@ -545,7 +545,7 @@
   },
   "current_preparation": {
     "recorded_on": "2026-10-08",
-    "status": "P06 Comeback implemented and behavior-verified after R16 research closure: explicit preview/cancel/confirm, retained completed work, atomic revision/receipt handling and honest failure recovery.40/40 domain/HTTP and27 distinct browser cases pass across recorded batches (final8/8affected). Independent source review found no remaining production blocker; scoped visual review disposition ship. Artifact published and both remote heads verified; E008 saved/read back in the Miva Sheet and Kaneo. P07 private peers remains next.",
+    "status": "P07 private StudyCircle implemented and verified after R17 closed at 10:55 on 8 October: real local accounts, hash-only expiring one-use invitations, explicit immutable copies, preset encouragement and shared-data cleanup. All 56 domain/HTTP tests and all 36 browser cases pass, alongside strict/lint/format/build/audit and distinct-process persistence. Root browser MCP observed two-account join/preview/share/encouragement. Independent source review corrected two client issues; scoped visual review returned ship and system documentation preserved existing design hashes. Dual publication and E009 saved readbacks remain pending. Formal Impeccable phases remain open; P08 full connected-journey review is next.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -585,13 +585,25 @@
       "docs/specs/capstone/reviews/2026-10-08-comeback-design-system.md",
       "docs/specs/capstone/reviews/2026-10-08-comeback-tracker.md",
       "src/client/comeback.ts",
-      "src/domain/comeback.ts"
+      "src/domain/comeback.ts",
+      "docs/specs/capstone/increments/studycircle.md",
+      "docs/specs/capstone/increments/studycircle-verification.md",
+      "docs/specs/capstone/reviews/2026-10-08-circle-backend-research.md",
+      "docs/specs/capstone/reviews/2026-10-08-circle-ui-research.md",
+      "docs/specs/capstone/reviews/2026-10-08-circle-review.md",
+      "docs/specs/capstone/reviews/2026-10-08-circle-visual.md",
+      "docs/specs/capstone/reviews/2026-10-08-circle-design-system.md",
+      "docs/specs/capstone/reviews/2026-10-08-circle-tracker.md",
+      "src/client/circle.ts",
+      "src/domain/circle-validation.ts",
+      "src/server/circles.ts",
+      "tests/e2e/circle.spec.ts"
     ],
-    "tracker_record": "E004 preparation; E005 first direction round; E006 Amber shell design; E007 first private journey; E008 Comeback schedule recovery. D009-D015 and A001-A010 preserved.",
-    "tracker_sync": "E008 reconciled on8October2026 through browser MCP under the verified Miva identity. Exactly39 intended Sheet cells changed with zero mismatches or other changes; five Kaneo descriptions passed persisted comparisons. History/statuses retained; A007 remainsToDo. See2026-10-08-comeback-tracker.md for parser/paste/read retry history. User reaffirmed original Sheet+Kaneo+GitHub workflow.",
-    "publication": "P06 artifact 204e227a63c550140ed7b868c1fe76e68b74391b published through normal Git to both authorized private repositories; both exact remote main heads verified. Personal commit independently read via GitHub MCP. Final documentation closeout readback is stored in ignored .local/comeback-publication-result.json. No recovery wrapper or permission expansion.",
+    "tracker_record": "E004 preparation; E005 first direction round; E006 Amber shell design; E007 first private journey; E008 Comeback; E009 StudyCircle pending verified save. D009-D015 and A001-A010 preserved.",
+    "tracker_sync": "Fresh Miva Sheet and five Kaneo baselines verified through browser MCP; E009 absent and evidence row10 blank. Awaiting final artifact results before bounded live writes. Previous E008 saved readbacks remain in milestone_history.",
+    "publication": "P07 checks and scoped reviews passed; normal dual-private-repository source publication pending. No recovery wrapper, new repository, public hosting or permission expansion.",
     "limitations": [
-      "P07 private peer circles remain unimplemented; all five capabilities stay required.",
+      "P08/P09 full-journey review and refinement remain pending; P07 completion does not establish full capstone acceptance.",
       "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
       "No independent fresh-checkout/adaptation rehearsal or timed video.",
       "Physical internet and server egress were not disconnected: browser-only loopback request restriction tested.",
@@ -634,29 +646,44 @@
           "Formal Impeccable pipeline remains at plates awaiting an extra receipt; no phase forcing or invented approval. Manual visual review recorded separately.",
           "GitHub CI template is inactive because current OAuth access lacks workflow-write scope; no hosted check or provider-gate enforcement is claimed."
         ]
+      },
+      {
+        "id": "E008",
+        "recorded_on": "2026-10-08",
+        "status": "P06 Comeback implemented and behavior-verified after R16 research closure: explicit preview/cancel/confirm, retained completed work, atomic revision/receipt handling and honest failure recovery.40/40 domain/HTTP and27 distinct browser cases pass across recorded batches (final8/8affected). Independent source review found no remaining production blocker; scoped visual review disposition ship. Artifact published and both remote heads verified; E008 saved/read back in the Miva Sheet and Kaneo. P07 private peers remains next.",
+        "tracker_sync": "E008 reconciled on8October2026 through browser MCP under the verified Miva identity. Exactly39 intended Sheet cells changed with zero mismatches or other changes; five Kaneo descriptions passed persisted comparisons. History/statuses retained; A007 remainsToDo. See2026-10-08-comeback-tracker.md for parser/paste/read retry history. User reaffirmed original Sheet+Kaneo+GitHub workflow.",
+        "publication": "P06 artifact 204e227a63c550140ed7b868c1fe76e68b74391b published through normal Git to both authorized private repositories; both exact remote main heads verified. Personal commit independently read via GitHub MCP. Final documentation closeout readback is stored in ignored .local/comeback-publication-result.json. No recovery wrapper or permission expansion.",
+        "limitations": [
+          "P07 private peer circles remain unimplemented; all five capabilities stay required.",
+          "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
+          "No independent fresh-checkout/adaptation rehearsal or timed video.",
+          "Physical internet and server egress were not disconnected: browser-only loopback request restriction tested.",
+          "Native-French quality, broad devices and full accessibility conformance unverified.",
+          "Formal Impeccable pipeline remains at plates awaiting an extra receipt; no phase forcing or invented approval. Manual visual review recorded separately.",
+          "GitHub CI template is inactive because current OAuth access lacks workflow-write scope; no hosted check or provider-gate enforcement is claimed."
+        ]
       }
     ]
   },
   "research_gate": {
-    "status": "Closed for R01-R16 before P06 Comeback production edits",
-    "closed_at": "2026-10-08T09:52:00+01:00",
+    "status": "Closed for R01-R17 before P07 StudyCircle production edits",
+    "closed_at": "2026-10-08T10:55:00+01:00",
     "checklist": "docs/specs/capstone/research.md",
-    "evidence": "docs/specs/capstone/increments/comeback.md and linked backend/UI research; earlier R11/R15 experiment records remain preserved.",
-    "boundary": "All sixteen scoped research needs satisfied. R16 verifies existing calendar, revision/receipt, no-migration and UI integration contracts before P06 changes. No new-feature acceptance inferred; reopen consequential unknowns.",
+    "evidence": "docs/specs/capstone/increments/studycircle.md and linked backend/UI research; earlier R11/R15/R16 evidence preserved.",
+    "boundary": "All seventeen scoped needs satisfied before P07 implementation. Research closure is not product acceptance; reopen consequential unknowns.",
     "initial_closed_at": "2026-10-07T16:57:00+01:00"
   },
   "active_increment": {
-    "id": "P06",
-    "name": "Comeback schedule recovery",
+    "id": "P07",
+    "name": "Private StudyCircle",
     "date": "2026-10-08",
-    "status": "P06 complete within scoped behavior/review evidence, published to both private repositories and reconciled in both trackers. Formal Impeccable and full-capstone acceptance remain open.",
-    "specification": "docs/specs/capstone/increments/comeback.md",
-    "baseline": "e3a682f14f6e9172efe2ec8ef91fc671e77163ba",
-    "baseline_checks": "Strict compilation and all20 existing domain/HTTP tests passed before production edits.",
-    "tracker_preparation": "Preparation verified E008 absent. Final E008 saved readbacks passed in Miva Sheet and Kaneo; report docs/specs/capstone/reviews/2026-10-08-comeback-tracker.md.",
-    "next": "P07 real private StudyCircle peers; all five capabilities remain required.",
-    "verification": "docs/specs/capstone/increments/comeback-verification.md",
-    "artifact_commit": "204e227a63c550140ed7b868c1fe76e68b74391b"
+    "status": "P07 private StudyCircle implemented and verified after R17 closed at 10:55 on 8 October: real local accounts, hash-only expiring one-use invitations, explicit immutable copies, preset encouragement and shared-data cleanup. All 56 domain/HTTP tests and all 36 browser cases pass, alongside strict/lint/format/build/audit and distinct-process persistence. Root browser MCP observed two-account join/preview/share/encouragement. Independent source review corrected two client issues; scoped visual review returned ship and system documentation preserved existing design hashes. Dual publication and E009 saved readbacks remain pending. Formal Impeccable phases remain open; P08 full connected-journey review is next.",
+    "specification": "docs/specs/capstone/increments/studycircle.md",
+    "baseline": "e519d10f0391f8acd06c7d57aad5caf59df58dbf",
+    "baseline_checks": "Strict compilation and all40 existing domain/HTTP tests passed.",
+    "tracker_preparation": "Fresh Miva Sheet and five Kaneo baselines verified through browser MCP; E009 absent and evidence row10 blank. Awaiting final artifact results before bounded live writes. Previous E008 saved readbacks remain in milestone_history.",
+    "next": "P08 full connected-journey review after P07 acceptance.",
+    "verification": "docs/specs/capstone/increments/studycircle-verification.md"
   },
   "design_direction": {
     "name": "Amber",

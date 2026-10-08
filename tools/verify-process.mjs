@@ -126,6 +126,53 @@ try {
   assert.deepEqual(before.activities, completed.activities);
   assert.deepEqual(before.completions, completed.completions);
   assert.equal(before.plan.steps[1].scheduledDate, "2026-10-12");
+  const ownerCookie = cookie;
+  const circle = await (
+    await request("/api/circles", "POST", { requestId: randomUUID(), name: "Restart circle" })
+  ).json();
+  const circleEndpoint = `/api/circles/${circle.circleId}`;
+  const inviteRequest = { requestId: randomUUID() };
+  const invitation = await (
+    await request(`${circleEndpoint}/invites`, "POST", inviteRequest)
+  ).json();
+  assert.equal(typeof invitation.token, "string");
+  const shared = await (
+    await request(`${circleEndpoint}/items`, "POST", {
+      requestId: randomUUID(),
+      kind: "commitment",
+      text: "I will read one section this week.",
+    })
+  ).json();
+  cookie = "";
+  const peerAccount = {
+    email: "restart-peer@example.invalid",
+    password: randomBytes(24).toString("base64url"),
+  };
+  await request("/api/auth/sign-up/email", "POST", {
+    ...peerAccount,
+    name: "Synthetic restart peer",
+  });
+  const peerSession = await request("/api/auth/sign-in/email", "POST", peerAccount);
+  cookie =
+    peerSession.headers
+      .getSetCookie()
+      .find((value) => value.startsWith("better-auth.session_token="))
+      ?.split(";", 1)[0] ?? "";
+  assert.ok(cookie);
+  const peerCookie = cookie;
+  await request("/api/circle-invites/redeem", "POST", {
+    requestId: randomUUID(),
+    token: invitation.token,
+  });
+  await request(`${circleEndpoint}/items/${shared.itemId}/encouragement`, "POST", {
+    requestId: randomUUID(),
+    preset: "small_steps_count",
+  });
+  const circleBefore = await (await request(circleEndpoint)).json();
+  assert.equal(circleBefore.circle.memberCount, 2);
+  assert.equal(circleBefore.items[0].encouragements[0].preset, "small_steps_count");
+  assert.equal(JSON.stringify(circleBefore).includes(before.activities[0].reflection), false);
+  cookie = ownerCookie;
   const secretHash = createHash("sha256")
     .update(await readFile(path.join(directory, "auth-secret")))
     .digest("hex");
@@ -143,6 +190,17 @@ try {
   ).json();
   assert.deepEqual(retried, before);
   assert.deepEqual((await (await request(endpoint)).json()).plan, before.plan);
+  const inviteRetry = await (
+    await request(`${circleEndpoint}/invites`, "POST", inviteRequest)
+  ).json();
+  assert.equal(inviteRetry.token, null);
+  assert.equal(inviteRetry.invite.id, invitation.invite.id);
+  const ownerAfter = await (await request(circleEndpoint)).json();
+  assert.equal(ownerAfter.circle.role, "owner");
+  assert.deepEqual(ownerAfter.items, circleBefore.items);
+  cookie = peerCookie;
+  const peerAfter = await (await request(circleEndpoint)).json();
+  assert.deepEqual(peerAfter, circleBefore);
   assert.equal(
     createHash("sha256")
       .update(await readFile(path.join(directory, "auth-secret")))
@@ -150,7 +208,7 @@ try {
     secretHash,
   );
   console.log(
-    "PASS: distinct Node processes retained session, secret, confirmed Comeback dates/receipt, private reflection, study time and explicit completion.",
+    "PASS: distinct Node processes retained both sessions, secret, Comeback dates/receipt, private study history, circle membership, explicit shared copy, preset encouragement and an invitation retry without the raw token.",
   );
   console.log(
     "Condition: local child-process termination/restart; no machine reboot or physical network-disconnection claim.",

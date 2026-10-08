@@ -6,6 +6,7 @@ import type {
   PlanDetail,
 } from "../shared/contracts.js";
 import { errorKey, RequestError, request } from "./api.js";
+import { showCircles } from "./circle.js";
 import { showComeback } from "./comeback.js";
 import { getLocale, message, setLocale } from "./i18n.js";
 import { showActivity, showLearning, showStudy } from "./journey.js";
@@ -265,8 +266,31 @@ function empty(): void {
       text("h1", "noPlan"),
       text("p", "noPlanCopy", "subtitle"),
       button("createGoal", () => createOrEdit(null), "button primary"),
+      el(
+        "section",
+        "empty-circle-entry",
+        text("h2", "circleTitle"),
+        text("p", "circleCopy", "hint"),
+        button("openCircles", openCircles, "button subtle"),
+      ),
     ),
   );
+}
+function openCircles(): void {
+  if (!me || !canLeave()) return;
+  const circleVersion = ++loadVersion;
+  showCircles(
+    shell.main,
+    me,
+    detail,
+    () => void renderRoute(true),
+    canLeave,
+    (value) => {
+      dirty = value;
+    },
+    () => loadVersion === circleVersion,
+  );
+  focusHeading(shell.main);
 }
 async function renderRoute(focus = false): Promise<void> {
   const version = ++loadVersion;
@@ -371,6 +395,7 @@ async function renderRoute(focus = false): Promise<void> {
           );
           focusHeading(shell.main);
         },
+        openCircles,
       );
     if (plans.length > 1 && route !== "journeys") {
       const select = el("select");
