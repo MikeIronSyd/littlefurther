@@ -10,6 +10,8 @@ Use [PRODUCT.md](../../../PRODUCT.md), [spec.md](spec.md), [plan.md](plan.md), [
 
 ### Current integrated surface — 8 October 2026
 
+Subsequent [dual-agent critique](reviews/2026-10-08-design-critique.md) preserves Amber and records five focused P2 usability/accessibility findings. The six-item formal packet is now captured, served and inspected; decisions remain the user's. The original missing-file failure no longer blocks packet presentation, but later authenticated assembled capture and formal completion remain unresolved. No design token, production source or prior approval was changed.
+
 The delivered [Comeback increment](increments/comeback-verification.md) and [StudyCircle increment](increments/studycircle-verification.md) extend the existing Amber system rather than replacing it. Comeback uses a deliberate date comparison/confirmation; private circles use an exact-copy preview with audience/privacy disclosures, optional preset encouragement and lifecycle controls. Their scoped source, behavior, visual and publication/tracker evidence stays in those records. The P07 visual review covers six supplied states and its detector has 34 advisories; neither result proves formal pipeline completion.
 
 [DESIGN.md](../../../DESIGN.md) and its [sidecar](../../../.impeccable/design.json) were refreshed to remove stale P06/P07 examples while preserving normative frontmatter, all extension tokens and all eight component CSS snippets. The [refresh report](reviews/2026-10-08-integration-design-refresh.md) records exact edits, hashes and record checks. No new identity or token choice was made.

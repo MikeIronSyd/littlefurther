@@ -17,3 +17,4 @@ dist/
 *.sqlite-wal
 auth-secret
 .impeccable/review/
+.impeccable/live/
