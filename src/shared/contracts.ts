@@ -125,6 +125,27 @@ export interface CompletionInput {
   revision: number;
   stepId: string;
 }
+export interface ComebackPreviewInput {
+  revision: number;
+  restartDate: string;
+}
+export interface ComebackConfirmInput extends ComebackPreviewInput {
+  requestId: string;
+}
+export interface ComebackDateChange {
+  stepId: string;
+  title: string;
+  previousDate: string;
+  proposedDate: string;
+}
+export interface ComebackPreview {
+  planId: string;
+  revision: number;
+  restartDate: string;
+  shiftDays: number;
+  changes: ComebackDateChange[];
+  conflicts: PlanConflict[];
+}
 export interface ApiError {
   error: { code: string; field?: string };
 }

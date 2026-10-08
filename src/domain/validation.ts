@@ -1,6 +1,8 @@
 import {
   LIMITS,
   type ActivityInput,
+  type ComebackConfirmInput,
+  type ComebackPreviewInput,
   type CompletionInput,
   type CreatePlanInput,
   type PlanFields,
@@ -166,5 +168,22 @@ export function completionInput(value: unknown): CompletionInput {
     requestId: identifier(input.requestId, "requestId"),
     stepId: identifier(input.stepId, "stepId"),
     revision: integer(input.revision, "revision", 1, Number.MAX_SAFE_INTEGER),
+  };
+}
+export function comebackPreviewInput(value: unknown): ComebackPreviewInput {
+  const input = record(value);
+  keys(input, ["revision", "restartDate"]);
+  return {
+    revision: integer(input.revision, "revision", 1, Number.MAX_SAFE_INTEGER),
+    restartDate: calendarDate(input.restartDate, "restartDate"),
+  };
+}
+export function comebackConfirmInput(value: unknown): ComebackConfirmInput {
+  const input = record(value);
+  keys(input, ["requestId", "revision", "restartDate"]);
+  return {
+    requestId: identifier(input.requestId, "requestId"),
+    revision: integer(input.revision, "revision", 1, Number.MAX_SAFE_INTEGER),
+    restartDate: calendarDate(input.restartDate, "restartDate"),
   };
 }

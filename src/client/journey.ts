@@ -115,6 +115,7 @@ export function showLearning(
   edit: () => void,
   study: (step: LearningStep, minutes?: number) => void,
   create: () => void,
+  recover: () => void,
 ): void {
   disposeLearningLayout();
   const next = detail.plan.steps.find((step) => step.id === detail.nextStepId);
@@ -216,7 +217,9 @@ export function showLearning(
       "support-body",
       text("h2", "returnTitle"),
       text("p", "returnCopy"),
-      text("p", "futureDates", "hint"),
+      next
+        ? button("reviewRestartDates", recover, "text-button")
+        : text("p", "comebackUnavailable", "hint"),
     ),
   );
   const support = el(

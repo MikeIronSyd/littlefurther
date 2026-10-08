@@ -6,6 +6,7 @@ import type {
   PlanDetail,
 } from "../shared/contracts.js";
 import { errorKey, RequestError, request } from "./api.js";
+import { showComeback } from "./comeback.js";
 import { getLocale, message, setLocale } from "./i18n.js";
 import { showActivity, showLearning, showStudy } from "./journey.js";
 import { showPlanEditor } from "./plan-editor.js";
@@ -354,6 +355,22 @@ async function renderRoute(focus = false): Promise<void> {
           focusHeading(shell.main);
         },
         () => createOrEdit(null),
+        () => {
+          const comebackVersion = ++loadVersion;
+          showComeback(
+            shell.main,
+            current,
+            (result) => {
+              detail = result;
+              shell.status("comebackSaved");
+              void renderRoute(true);
+            },
+            () => void renderRoute(true),
+            (result) => createOrEdit(result.plan),
+            () => loadVersion === comebackVersion,
+          );
+          focusHeading(shell.main);
+        },
       );
     if (plans.length > 1 && route !== "journeys") {
       const select = el("select");

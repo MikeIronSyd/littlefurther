@@ -1,6 +1,6 @@
 # Capstone research record
 
-Checked: 7 October 2026, Africa/Lagos. **Research gate: closed for R01–R15 at 21:02 Africa/Lagos before the first production increment.** The earlier R01–R12 closure at 16:57 and R01–R14 closure at 20:14 remain historical evidence. R15 resolves compatible linting/formatting/browser-test tooling and actual command availability for the pinned TypeScript 7 stack. The isolated R15 fixture passed with Biome 2.5.15, Playwright Test 1.63.0 and installed Edge; canonical commands use pnpm run. No required research blocker remains.
+Checked: 8 October 2026, Africa/Lagos. **Research gate: closed for R01–R16 before P06 production edits at 09:52.** R16 source/UI integration findings are recorded below and in the Comeback increment contract. The R01–R15 closure at21:02 on7October and earlier R01–R12/14 closures remain historical evidence. R15 resolved compatible quality tooling with Biome2.5.15, Playwright1.63.0 and installed Edge; canonical commands use pnpm run. No required P06 research blocker remains.
 
 ## Goal
 
@@ -111,3 +111,7 @@ Historical closure: **7 October 2026 at 16:57 Africa/Lagos**, following the orig
 ### R15 closeout — 21:02 Africa/Lagos
 
 The first implementation increment exposed a narrow quality-tooling prerequisite; R15 reopened research while agents prepared the typed interface contract. The isolated tooling report records actual primary-source compatibility and seven expected command outcomes, including one deliberate negative lint result. R01–R15 are now satisfied. Canonical commands are pnpm run check/lint/format:check/build/test:e2e/audit and pnpm test; this changes the launcher spelling, not the required checks. No application behavior is inferred. Production implementation may proceed under existing authorization.
+
+### R16 — Comeback implementation integration, 8 October 2026
+
+Closed before P06 production edits at 09:52 Africa/Lagos. The [backend source research](reviews/2026-10-08-comeback-backend-research.md) and [UI source/image research](reviews/2026-10-08-comeback-ui-research.md) satisfy every scoped integration need: exact calendar algorithm/bounds, owner/revision/receipt transaction behavior, no-migration feasibility, current UI entry/lifecycle/localization, pre-existing image reference and actual check tooling. Six isolated date assertions passed; root baseline strict compilation and20 domain/HTTP tests passed. Neither is new-feature acceptance. The [Comeback increment contract](increments/comeback.md) records all routine interface/no-op/conflict/retry choices before dependent implementation. No required factual blocker or unanswered consequential user decision remains; preserve existing R01–R15 evidence and reopen research if a new consequential unknown appears.

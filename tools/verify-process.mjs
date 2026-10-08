@@ -91,10 +91,13 @@ try {
       requestId: randomUUID(),
       goal: "Verify saved progress",
       templateId: null,
-      availabilityDates: ["2026-10-07"],
+      availabilityDates: ["2026-10-07", "2026-10-09", "2026-10-12"],
       targetDate: null,
       references: [],
-      steps: [{ title: "Read one section", scheduledDate: "2026-10-07", estimatedMinutes: 10 }],
+      steps: [
+        { title: "Read one section", scheduledDate: "2026-10-07", estimatedMinutes: 10 },
+        { title: "Try the next example", scheduledDate: "2026-10-09", estimatedMinutes: 15 },
+      ],
     })
   ).json();
   const endpoint = `/api/plans/${created.plan.id}`;
@@ -109,7 +112,20 @@ try {
     revision: created.plan.revision,
     stepId: created.plan.steps[0].id,
   });
-  const before = await (await request(endpoint)).json();
+  const completed = await (await request(endpoint)).json();
+  const restart = { revision: completed.plan.revision, restartDate: "2026-10-12" };
+  const preview = await (await request(`${endpoint}/comeback/preview`, "POST", restart)).json();
+  assert.equal(preview.shiftDays, 3);
+  assert.equal(preview.changes.length, 1);
+  assert.equal(preview.changes[0].previousDate, "2026-10-09");
+  assert.equal(preview.changes[0].proposedDate, "2026-10-12");
+  const confirmation = { ...restart, requestId: randomUUID() };
+  const before = await (await request(`${endpoint}/comeback/confirm`, "POST", confirmation)).json();
+  assert.equal(before.plan.revision, completed.plan.revision + 1);
+  assert.deepEqual(before.plan.steps[0], completed.plan.steps[0]);
+  assert.deepEqual(before.activities, completed.activities);
+  assert.deepEqual(before.completions, completed.completions);
+  assert.equal(before.plan.steps[1].scheduledDate, "2026-10-12");
   const secretHash = createHash("sha256")
     .update(await readFile(path.join(directory, "auth-secret")))
     .digest("hex");
@@ -122,6 +138,11 @@ try {
   assert.deepEqual(after.completions, before.completions);
   assert.equal(after.progress.completed, 1);
   assert.equal(after.progress.studiedMinutes, 5);
+  const retried = await (
+    await request(`${endpoint}/comeback/confirm`, "POST", confirmation)
+  ).json();
+  assert.deepEqual(retried, before);
+  assert.deepEqual((await (await request(endpoint)).json()).plan, before.plan);
   assert.equal(
     createHash("sha256")
       .update(await readFile(path.join(directory, "auth-secret")))
@@ -129,7 +150,7 @@ try {
     secretHash,
   );
   console.log(
-    "PASS: distinct Node processes retained session, secret, plan, private reflection, study time and explicit completion.",
+    "PASS: distinct Node processes retained session, secret, confirmed Comeback dates/receipt, private reflection, study time and explicit completion.",
   );
   console.log(
     "Condition: local child-process termination/restart; no machine reboot or physical network-disconnection claim.",

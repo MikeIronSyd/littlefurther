@@ -54,3 +54,19 @@ FINISH: Preserve the actual review verdict, token-bearing DESIGN.md and truthful
 ## Done When
 
 The selected direction and provenance remain intact; P04/P05 styling and responsive behavior are documented from actual source. Responsible agents record application checks and the final bounded visual verdict in their evidence files. P06/P07 and remaining full-journey acceptance remain open. No complete capstone, new human approval, learner benefit or universal compatibility pass is inferred.
+
+## Comeback extension direction contract — 8 October 2026
+
+THESIS: A restart makes the next manageable action explicit while preserving earlier effort. Extend the current learning workspace without a new navigation destination.
+
+OWN-WORLD: Inherit Amber, paired light/dark semantic tokens, Segoe UI, standard controls and quiet dividers. Preserve the existing sidebar icons and top-left brand slot.
+
+STORY: Choose a restart date, compare each unfinished old/new date, understand unchanged completed work and conflicts, then cancel or deliberately apply. Study and completion remain separate.
+
+FIRST VIEWPORT: Existing shell surrounds a focused form: title/goal, editable restart date and Preview action, followed by the ordered date comparison and retained-work summary. Desktop aligns date columns;320px stacks them with explicit labels. Conflict acknowledgement precedes confirmation.
+
+FORM: Local extension of the established Operate surface. Existing `.impeccable/mocks/amber/comeback-preview.png` is the pre-implementation reference; no concept seed or replacement identity applies. Its detailed-state approval remains false and is not fabricated. Interaction is explicit preview → confirmation with preserved history, not decorative motion.
+
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+Contract: docs/specs/capstone/increments/comeback.md. Existing formal Impeccable phase limitations remain distinct from scoped implementation and manual evidence; no receipt is forced.

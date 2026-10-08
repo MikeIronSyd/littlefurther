@@ -1,6 +1,6 @@
 # Track 2 capstone specification
 
-Updated: 7 October 2026, Africa/Lagos. P04/P05 implementation follows the [first-journey contract](increments/first-journey.md). The original research gate closed at 16:57 after [R11's isolated feasibility experiment](research.md#r11-experiment-and-actual-result); Amber/theme/navigation research closed at 20:14. R15 then verified maintained quality-tooling compatibility, closing the complete R01–R15 gate at 21:02 before production implementation. See [research.md](research.md) and actual outcomes in [verification.md](verification.md). No learner research, production deployment, retention benefit or time saving is claimed.
+Updated: 8 October 2026, Africa/Lagos. P04/P05 implementation follows the [first-journey contract](increments/first-journey.md); P06 Comeback now implements the [restart contract](increments/comeback.md). On 7 October the original research gate closed at 16:57 after [R11's isolated feasibility experiment](research.md#r11-experiment-and-actual-result); Amber/theme/navigation research closed at 20:14, and R15 closed the complete R01–R15 gate at 21:02 before the first production increment. R16 closed at 09:52 on 8 October before P06 edits. See [research.md](research.md), [verification.md](verification.md) and [Comeback verification](increments/comeback-verification.md) for actual outcomes and remaining acceptance. No learner research, production deployment, retention benefit or time saving is claimed.
 
 ## Goal
 
@@ -61,6 +61,8 @@ Other settled constraints: minimal local email/password identity with no outgoin
 
 TinySteps and Comeback are the main starting/return interactions. StudyCircle, consistency and FinishLine are mandatory supporting capabilities. Peer membership is never a prerequisite for studying alone.
 
+Current implementation includes the P04/P05 private journey and P06 restart preview/confirmation. Private peer circles, including the two-account shared-copy and invitation flows in step 6, remain P07 work. P06 preserves completed history, shifts only unfinished dates, leaves availability and fixed targets unchanged, and uses revision checks plus saved receipts for atomic, repeatable confirmation. A direct zero-day confirmation saves only its receipt; it does not alter the plan revision, timestamps or history. The increment contract and verification record distinguish implementation from completed acceptance.
+
 ### Functional requirements
 
 | ID | Requirement / acceptance contract |
@@ -109,7 +111,7 @@ Use domain IDs independent of ordering, UTC event timestamps, explicit IANA time
 | Shared copy | Circle, author, commitment/check-in type, approved plain-text fields/time. Canned encouragement references a shared item and authenticated sender; no private-plan detail joins. |
 | Non-sensitive shell preferences | Browser-origin theme and desktop sidebar enums only, through guarded storage/current-page memory. F15/F16 do not alter canonical SQLite learner records or identity/session storage. |
 
-Planned HTTP groups: `/api/auth/*splat`, `/api/me`, owner-scoped `/api/plans`, `/api/activities`, `/api/recovery`, and membership-scoped `/api/circles`, `/api/invites`, `/api/shared-items`. Concrete methods/schemas/errors must be documented with implementation; none is claimed to exist now. Return understandable validation/conflict/access errors without internals. Use revision/idempotency protection for retries that could duplicate study activity, completion or invitation redemption.
+Implemented HTTP boundaries are the explicitly exposed identity routes under `/api/auth`, `/api/me`, `/api/templates`, owner-scoped `/api/plans`, and nested plan activity/completion routes in the [first-journey contract](increments/first-journey.md). P06 adds `POST /api/plans/:id/comeback/preview` and `POST /api/plans/:id/comeback/confirm` with strict bodies, owner checks, non-mutating previews and in-transaction revision/date validation as specified in the [Comeback contract](increments/comeback.md). Membership-scoped circle, invite and shared-item routes remain planned P07 work. Return understandable validation/conflict/access errors without internals. Use revision/idempotency protection for retries that could duplicate study activity, completion, schedule confirmation or invitation redemption.
 
 ### Architecture and stack decision
 
@@ -157,7 +159,7 @@ Production requires separate evidence/decisions for hosting/HTTPS, secrets, veri
 
 Close the research gate only when every required research item has documented evidence and no consequential fact remains unresolved. Isolated experiments can gather evidence but are not production work. New consequential unknowns reopen research and pause dependent implementation.
 
-The expanded gate is now closed: all fourteen research needs are satisfied, including the primary-source theme/navigation findings added after the original twelve-item closure. The successful R11 experiment is an HTTP client and minimal DOM/build fixture, not the product. Its persistence check closed/reopened server and DB within one Node process; process/machine restart, product authorization, browser cookie behavior, disconnected operation, theme/navigation behavior, accessibility and all application acceptance criteria below still need implementation and verification.
+Research R01–R16 is closed for the current implementation scope, including theme/navigation, quality tooling and P06 source/date/transaction/UI integration needs. Earlier twelve-, fourteen- and fifteen-item closures remain historical milestones in the research record. R11's successful HTTP/minimal-DOM experiment and its in-process database reopen are feasibility evidence, separate from later application tests. P04/P05 and P06 actual checks, failures and limitations belong in their verification records; remaining P07 behavior and full-capstone acceptance below are not inferred from research closure or implementation alone.
 
 | ID | Observable acceptance criterion | Required evidence |
 | --- | --- | --- |

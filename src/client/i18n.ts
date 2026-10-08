@@ -100,7 +100,51 @@ const en = {
     "Add a private reflection during your session, or skip it and choose your next step.",
   returnTitle: "Your completed work is still here.",
   returnCopy: "You can restart with five minutes whenever you are ready.",
-  futureDates: "Schedule recovery is coming in the next build.",
+  reviewRestartDates: "Review restart dates",
+  comebackTitle: "Review your revised schedule",
+  comebackHelp:
+    "Move unfinished dates together while keeping their spacing. Your completed work and history stay unchanged.",
+  backLearning: "Back to my learning",
+  restartDate: "Restart date",
+  restartDateHint:
+    "Choose the date for your first unfinished step, then preview every proposed date.",
+  previewDates: "Preview revised dates",
+  previewingDates: "Preparing your date preview…",
+  previewHelp: "Choose a restart date and preview the changes. Nothing moves until you apply them.",
+  dateComparison: "Current and proposed dates",
+  currentDate: "Current date",
+  proposedDate: "Proposed date",
+  shiftEarlier: "{count} unfinished steps will move {days} calendar days earlier.",
+  shiftLater: "{count} unfinished steps will move {days} calendar days later.",
+  retainedWork: "Your completed work stays",
+  retainedHelp: "Completed-step dates, private notes and earlier effort remain in your history.",
+  noCompletedSteps: "No active steps are marked complete yet.",
+  acknowledgeConflicts:
+    "I understand these conflicts. My target and availability will stay unchanged.",
+  previewOnly: "Preview only. Your plan has not changed.",
+  applyingDates: "Applying the reviewed dates…",
+  uncertainDates: "The result is unconfirmed. Retry the same change or reload the saved plan.",
+  applyDates: "Apply revised plan",
+  retryComeback: "Retry the same change",
+  returnSavedPlan: "Open saved plan",
+  unchangedDates:
+    "These dates are already in your plan. Choose a different restart date to move them.",
+  comebackUnavailable:
+    "There are no unfinished steps to reschedule. Your earlier work stays recorded.",
+  comebackBounds:
+    "This move would put at least one step outside 2000–2100. Choose another restart date; no dates were changed.",
+  comebackStale:
+    "This plan changed after your preview. Reload the saved plan, then preview again before applying any dates.",
+  comebackRetryConflict:
+    "This request no longer matches its earlier version. Reload the saved plan and make a new preview.",
+  comebackUncertain:
+    "We could not confirm the response. Your dates may have been saved. Retry the same change safely, or reload the saved plan to check.",
+  comebackSavedRefresh:
+    "Your revised dates were saved, but the latest plan could not be loaded. Keep the local server running and open the saved plan again.",
+  comebackReloaded:
+    "Saved plan loaded. Check your restart date and preview again; nothing will be applied automatically.",
+  comebackSaved:
+    "Your revised dates are saved. Your completed work and earlier effort are unchanged.",
   circleTitle: "Study together",
   circleCopy:
     "Private peer circles are coming in the next build. You can keep studying on your own.",
@@ -282,7 +326,54 @@ const fr: Record<MessageKey, string> = {
     "Ajoutez une note privée pendant votre séance, ou passez à l’étape suivante sans en écrire.",
   returnTitle: "Votre travail terminé est conservé.",
   returnCopy: "Vous pouvez reprendre avec cinq minutes quand vous le souhaitez.",
-  futureDates: "La révision des dates arrivera dans la prochaine version.",
+  reviewRestartDates: "Revoir les dates de reprise",
+  comebackTitle: "Vérifiez votre calendrier révisé",
+  comebackHelp:
+    "Déplacez ensemble les dates des étapes restantes en conservant leurs intervalles. Votre travail terminé et votre historique restent inchangés.",
+  backLearning: "Retour à mon parcours",
+  restartDate: "Date de reprise",
+  restartDateHint:
+    "Choisissez la date de votre première étape restante, puis vérifiez toutes les dates proposées.",
+  previewDates: "Prévisualiser les dates révisées",
+  previewingDates: "Préparation de l’aperçu des dates…",
+  previewHelp:
+    "Choisissez une date de reprise et prévisualisez les modifications. Aucune date ne change avant votre confirmation.",
+  dateComparison: "Dates actuelles et proposées",
+  currentDate: "Date actuelle",
+  proposedDate: "Date proposée",
+  shiftEarlier: "{count} étapes restantes seront avancées de {days} jours calendaires.",
+  shiftLater: "{count} étapes restantes seront décalées de {days} jours calendaires.",
+  retainedWork: "Votre travail terminé est conservé",
+  retainedHelp:
+    "Les dates des étapes terminées, vos notes privées et vos efforts antérieurs restent dans l’historique.",
+  noCompletedSteps: "Aucune étape active n’est encore marquée comme terminée.",
+  acknowledgeConflicts:
+    "Je comprends ces conflits. Ma date cible et mes disponibilités restent inchangées.",
+  previewOnly: "Aperçu uniquement. Votre parcours n’a pas changé.",
+  applyingDates: "Application des dates vérifiées…",
+  uncertainDates:
+    "Le résultat n’est pas confirmé. Réessayez la même modification ou rechargez le parcours enregistré.",
+  applyDates: "Appliquer le parcours révisé",
+  retryComeback: "Réessayer la même modification",
+  returnSavedPlan: "Ouvrir le parcours enregistré",
+  unchangedDates:
+    "Ces dates figurent déjà dans votre parcours. Choisissez une autre date de reprise pour les déplacer.",
+  comebackUnavailable:
+    "Il ne reste aucune étape à reprogrammer. Vos efforts antérieurs restent enregistrés.",
+  comebackBounds:
+    "Ce déplacement placerait au moins une étape hors de la période 2000–2100. Choisissez une autre date de reprise ; aucune date n’a changé.",
+  comebackStale:
+    "Ce parcours a changé après votre aperçu. Rechargez le parcours enregistré, puis créez un nouvel aperçu avant d’appliquer des dates.",
+  comebackRetryConflict:
+    "Cette demande ne correspond plus à sa version précédente. Rechargez le parcours enregistré et créez un nouvel aperçu.",
+  comebackUncertain:
+    "Nous n’avons pas pu confirmer la réponse. Vos dates ont peut-être été enregistrées. Réessayez la même modification sans risque de doublon, ou rechargez le parcours pour vérifier.",
+  comebackSavedRefresh:
+    "Vos dates révisées sont enregistrées, mais le dernier parcours n’a pas pu être chargé. Gardez le serveur local actif et rouvrez le parcours enregistré.",
+  comebackReloaded:
+    "Parcours enregistré chargé. Vérifiez la date de reprise et créez un nouvel aperçu ; rien ne sera appliqué automatiquement.",
+  comebackSaved:
+    "Vos dates révisées sont enregistrées. Votre travail terminé et vos efforts antérieurs restent inchangés.",
   circleTitle: "Étudier ensemble",
   circleCopy:
     "Les cercles privés arriveront dans la prochaine version. Vous pouvez continuer à étudier en solo.",
@@ -394,6 +485,13 @@ export function message(key: MessageKey, values: Record<string, string | number>
       locale === "fr"
         ? `{done} étape${Number(values.done) === 1 ? "" : "s"} terminée${Number(values.done) === 1 ? "" : "s"} sur {total}`
         : `{done} of {total} step${Number(values.total) === 1 ? "" : "s"} complete`;
+  if (key === "shiftEarlier" || key === "shiftLater") {
+    const days = Number(values.days);
+    result =
+      locale === "fr"
+        ? `{count} étape${count === 1 ? "" : "s"} restante${count === 1 ? "" : "s"} ${count === 1 ? "sera" : "seront"} ${key === "shiftEarlier" ? `avancée${count === 1 ? "" : "s"}` : `décalée${count === 1 ? "" : "s"}`} de {days} jour${days === 1 ? "" : "s"} calendaire${days === 1 ? "" : "s"}.`
+        : `{count} unfinished step${count === 1 ? "" : "s"} will move {days} calendar day${days === 1 ? "" : "s"} ${key === "shiftEarlier" ? "earlier" : "later"}.`;
+  }
   for (const [name, value] of Object.entries(values))
     result = result.replaceAll(`{${name}}`, String(value));
   return result;

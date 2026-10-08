@@ -1,9 +1,13 @@
 import { createHash, randomUUID } from "node:crypto";
 import type Database from "better-sqlite3";
+import { comebackPreview } from "../domain/comeback.js";
 import { conflictsFor, progressFor } from "../domain/progress.js";
 import { DomainError } from "../domain/validation.js";
 import type {
   ActivityInput,
+  ComebackConfirmInput,
+  ComebackPreview,
+  ComebackPreviewInput,
   CompletionEvent,
   CompletionInput,
   CreatePlanInput,
@@ -300,6 +304,31 @@ export class JourneyStore {
       step.completedAt = now;
       plan.revision++;
       plan.updatedAt = now;
+      this.savePlan(plan, owner);
+      return this.detail(owner, id);
+    });
+  }
+
+  previewComeback(owner: string, id: string, input: ComebackPreviewInput): ComebackPreview {
+    const plan = this.plan(owner, id);
+    if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+    return comebackPreview(plan, input.restartDate);
+  }
+
+  confirmComeback(owner: string, id: string, input: ComebackConfirmInput): PlanDetail {
+    this.plan(owner, id);
+    return this.write(owner, input.requestId, `comeback:${id}`, input, () => {
+      const plan = this.plan(owner, id);
+      if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+      const preview = comebackPreview(plan, input.restartDate);
+      if (preview.shiftDays === 0) return this.detail(owner, id);
+      const dates = new Map(preview.changes.map((change) => [change.stepId, change.proposedDate]));
+      for (const step of plan.steps) {
+        const date = dates.get(step.id);
+        if (date !== undefined) step.scheduledDate = date;
+      }
+      plan.revision++;
+      plan.updatedAt = this.clock().toISOString();
       this.savePlan(plan, owner);
       return this.detail(owner, id);
     });

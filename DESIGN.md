@@ -216,7 +216,7 @@ PanelLeftClose means collapse expanded navigation; PanelLeftOpen means expand it
 
 ### Next action and support panels
 
-The broad amber band owns the primary action: step position, task title, estimate/edit affordance and study button. Blue identifies return support; ordinary support panels use a thin neutral border, outline icon and brief copy. P06 schedule recovery and P07 private circles are explicitly forthcoming.
+The broad amber band owns the primary action: step position, task title, estimate/edit affordance and study button. Blue identifies return support; ordinary support panels use a thin neutral border, outline icon and brief copy. P06 now extends return support with an explicit restart-date preview and confirmation using these existing treatments; P07 private circles remain forthcoming. See the [Comeback design-system comparison](docs/specs/capstone/reviews/2026-10-08-comeback-design-system.md) for the scoped source and capture evidence.
 
 ### Path, rhythm and history
 

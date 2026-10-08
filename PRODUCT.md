@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-The accepted delivery plan selects Node 24 LTS, Express 5, strict TypeScript/native browser modules with Vite, Better Auth, and SQLite through better-sqlite3. Selection followed comparison with SvelteKit and ASP.NET Core. R11 established host feasibility; R15 added verified compatible Biome and Playwright tooling before production code. P04/P05 implements the first private learning journey. Exact versions, implementation boundaries and observed checks are in the research, increment and verification records.
+The accepted delivery plan selects Node 24 LTS, Express 5, strict TypeScript/native browser modules with Vite, Better Auth, and SQLite through better-sqlite3. Selection followed comparison with SvelteKit and ASP.NET Core. R11 established host feasibility; R15 added verified compatible Biome and Playwright tooling before production code. P04/P05 implements the first private learning journey; P06 adds Comeback schedule recovery on the same stack and schema. Exact versions, implementation boundaries and observed checks are in the research, increment and verification records.
 
 ## Users
 
@@ -32,7 +32,7 @@ The prototype runs in a browser on this PC, with its local server running. P07 w
 - English and French are the initial interface languages. Learner-provided text and external resources are not automatically translated.
 - The user selected the Amber visual direction, then requested light/dark switching, a collapsible sidebar, topbar utilities and a top-left space for the future app name/logo. Keep brand identity outside the collapsing sidebar. Three standard navigation destinations serve the connected journey; topbar controls include theme, language and account. Use directional panel-toggle icons, not a hamburger.
 - Follow the device theme until an explicit light/dark choice. Guard browser storage for non-sensitive theme and desktop sidebar enums only; learner data remains canonical in SQLite. Mobile navigation is a closed-by-default modal drawer with defined keyboard/focus behavior. Detailed requirements and pending checks are F15/F16 and AC11a–AC11f in the specification.
-- Learners can edit availability, pace and suggested plans. Comeback preserves completed work; a short restart activity does not automatically complete its whole task.
+- Learners can edit availability, pace and suggested plans. Comeback previews a uniform calendar-day shift of unfinished dates and applies it only after explicit confirmation against the same plan revision. Completed work, private history, availability and fixed targets remain unchanged; visible conflicts require acknowledgement in the interface. A short restart activity does not automatically complete its whole task.
 - Consistency counts study days within a defined calendar window while preserving cumulative activity. Completion is self-reported activity, not proven mastery.
 - Private plans, reflections and full histories remain separate from explicit shared commitment/check-in copies.
 - Low bandwidth, accessibility, personalization without exclusion, privacy, credible sources, multilingual access and local relevance are requirements.
@@ -45,7 +45,7 @@ The owner supplied briefing slides and `docs/specs/capstone/inputs/CODEX_CAPSTON
 
 Implementation must correct known raster limitations: reclaim the dark collapsed sidebar's wide gutter; preserve `Africa/Lagos` rather than the open mobile image's `Afrique/Lagos`; overlay the unchanged mobile page with one French translation catalogue; make outside modal controls inert without duplicate active utility controls; and implement/verify the intended approximately 80% responsive drawer width. Illustrated focus and portrait framing do not establish accessibility, reflow or native-French validation.
 
-The local P04/P05 app supports account/profile, reviewed plans, study/reflection, explicit completion, retained progress and the Amber shell. Comeback schedule recovery and private peer-circle behavior remain P06/P07 work; UI support rows state that boundary. No measured learner benefit, usability study, verified human adoption or finished demo exists. No final product name or logo has been selected.
+The local P04/P05 app supports account/profile, reviewed plans, study/reflection, explicit completion, retained progress and the Amber shell. P06 now implements non-mutating restart previews, explicit atomic confirmation, unchanged-history safeguards and idempotent retries; see the [Comeback contract](docs/specs/capstone/increments/comeback.md) and [increment verification](docs/specs/capstone/increments/comeback-verification.md) for actual checks and outstanding acceptance. Private peer-circle behavior remains P07 work. No measured learner benefit, usability study, verified human adoption or finished demo exists. No final product name or logo has been selected.
 
 ## Product Principles
 

@@ -1,6 +1,6 @@
 # Capstone verification and judging evidence
 
-Updated: 7 October 2026, Africa/Lagos. P04/P05 now implements a running private learning journey and Amber shell. R01–R15 research preceded implementation. [First-journey verification](increments/first-journey-verification.md) records actual checks, failures/corrections, browser MCP and scope limits; E007 records this increment. E004–E006 remain historical preparation/design evidence. Full capstone acceptance and learner outcomes remain open.
+Updated: 8 October 2026, Africa/Lagos. P06 adds explicit Comeback schedule recovery to the delivered private learning journey. R16 research preceded production edits. [Comeback verification](increments/comeback-verification.md) records actual checks and limits; E008 tracks this increment. E004–E007 remain historical evidence. P07 peers, full capstone acceptance and learner outcomes remain open.
 
 ## Goal
 
@@ -176,3 +176,13 @@ Normal `git push origin main` then exited 0 and published artifact `9d5820bfd805
 E007 tracker reconciliation completed through browser MCP under the verified Miva identity. The [saved-readback report](reviews/2026-10-07-first-journey-tracker.md) records exact Sheet ranges, persisted Kaneo description comparisons, preserved statuses/history and any retries. A007 remains To do for submission/reflection. The source artifact is linked independently of this documentation closeout; final dual-remote head checks are retained in the ignored delivery record. P06/P07, full-journey review, independent setup/adaptation, learner evaluation and the timed video remain open.
 
 The documentation-only closeout check passed for seven intended files: one JSON parsed, 57 local links resolved, no scoped credential-pattern match, and unchanged account/task mappings, deadlines and LMS facts. Whitespace checking passed. No application code changed after the recorded checks; those tests were not unnecessarily repeated.
+
+### E008 — Comeback schedule recovery, 8 October 2026
+
+R16 source research closed at09:52 before the [P06 contract](increments/comeback.md) and production changes. Comeback now supports explicit current/proposed-date preview, conflict acknowledgement, cancellation and atomic confirmation of unfinished dates. Completed work, private history, availability and fixed targets remain intact; duplicate requests never shift twice.
+
+[Actual verification](increments/comeback-verification.md) records40/40 domain/HTTP tests,19 existing and8 new browser cases passing across corrected batches, final8/8 affected checks, strict/lint/format/build/audit, and saved dates/receipt surviving a distinct process restart. Root browser MCP observed preview/cancel/apply/refresh on the synthetic eight-step journey. Both failed browser checks were test defects, corrected without changing production validation; their logs and reasons remain recorded.
+
+The independent reusable-skill [behavior review](reviews/2026-10-08-comeback-review.md) found no remaining production blocker. A fresh general agent applied the public Impeccable fallback review contract and returned a scoped [ship disposition](reviews/2026-10-08-comeback-visual.md). The formal finish command refused completion because inherited phases remain open; no full formal fidelity claim is made. J1 is supported by actual research, specification, parallel building, review, tests, skills and browser MCP; J2 by a synthetic recovery scenario, J3 by testable documented boundaries, and J4 by a working scene to record later. Learner impact, independent adoption and the timed video remain unverified.
+
+Normal dual-repository publication and E008 saved tracker readback are pending at this entry's initial save. They will be recorded separately after execution. P07 private peers is next; full-capstone acceptance remains open.

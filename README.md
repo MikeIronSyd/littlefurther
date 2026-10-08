@@ -19,9 +19,9 @@ The original handover and superseded concepts remain under `docs/specs/capstone/
 
 ## Constraints
 
-**Current milestone, 7 October 2026:** a running first private journey implements the selected Amber shell, local accounts, explicit timezone, curated/manual editable plans, study sessions, optional private reflection, separate step completion and retained history. English/French, light/dark mode, the correct divided-panel sidebar icons and a mobile drawer are implemented. Research R01–R15 closed before production work. Actual checks and remaining limits are recorded in [verification](docs/specs/capstone/verification.md); implementation alone is not an acceptance pass.
+**Current milestone, 8 October 2026:** the local private journey implements the selected Amber shell, local accounts, explicit timezone, curated/manual editable plans, study sessions, optional private reflection, separate step completion and retained history. English/French, light/dark mode, the correct divided-panel sidebar icons and a mobile drawer are implemented. P06 adds Comeback's explicit restart-date preview and confirmation, preserving completed work, availability and fixed targets. R01–R15 closed before the first production increment; R16 closed before P06. Actual checks and remaining limits are recorded in [verification](docs/specs/capstone/verification.md) and the [Comeback verification record](docs/specs/capstone/increments/comeback-verification.md); implementation alone is not an acceptance pass.
 
-Comeback schedule previews and private peer circles are the next ordered increments. The interface identifies these as forthcoming; all five capabilities remain requirements for the full capstone. No learner-impact, human adoption or completed-video claim is made.
+Comeback shows old/new unfinished dates and conflicts before applying the same calendar-day shift to each unfinished step. A stale plan requires a fresh preview, and retries reuse their request identity to avoid duplicate changes. The [P06 contract](docs/specs/capstone/increments/comeback.md) defines zero-day, conflict and uncertain-save behavior. Private peer circles remain the next increment, P07; all five capabilities remain requirements for the full capstone. No learner-impact, human adoption or completed-video claim is made.
 
 ### Run locally
 
@@ -34,6 +34,8 @@ pnpm start
 ```
 
 Open **http://127.0.0.1:4317** and keep the server running. Create a local demo account, confirm your timezone, choose a template or supply your own topics, review the draft, and save it explicitly. Stop the server with Ctrl+C. Rebuild and restart after source changes. See [local operations](docs/operations/local-demo.md) for configuration, isolated data, checks and recovery limits.
+
+To revise an interrupted plan, choose **Review restart dates** in the learning view, enter a date and request a preview. Inspect each proposed date and any availability/target conflicts, then cancel, edit the plan or explicitly apply the change. Five-minute study remains a separate action; rescheduling does not log study or complete a step.
 
 `pnpm run verify` runs strict compilation, lint, format, build, domain/HTTP tests, a separate-process persistence check, browser tests and a dependency audit. Browser tests require installed Microsoft Edge. A manual-only CI template is saved under docs/operations; the current GitHub login lacks workflow-write scope, so it is not activated. No paid service or enforced provider gate is implied.
 

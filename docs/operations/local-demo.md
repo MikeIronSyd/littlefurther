@@ -2,11 +2,13 @@
 
 ## Goal
 
-Run the capstone on this PC with local accounts and SQLite. This guide belongs to the P04/P05 increment. Verification results are recorded separately; commands below do not claim a passing run by themselves.
+Run the capstone on this PC with local accounts and SQLite. This guide covers the P04/P05 private journey and P06 Comeback implementation. Verification results are recorded separately; commands below do not claim a passing run by themselves.
 
 ## Context Pointers
 
 Use the repository root, package.json, the single pnpm-lock.yaml, and [first-journey contract](../specs/capstone/increments/first-journey.md). Exact tested runtime/tooling is recorded in [R11](../specs/capstone/experiments/runtime-feasibility/REPORT.md) and [R15](../specs/capstone/experiments/quality-tooling.md).
+
+The [Comeback contract](../specs/capstone/increments/comeback.md) and [verification record](../specs/capstone/increments/comeback-verification.md) describe P06 behavior and its actual check status. P06 adds no dependency or schema migration.
 
 ## Constraints
 
@@ -23,6 +25,8 @@ pnpm start
 Keep that terminal running. Open the URL printed by the server (default http://127.0.0.1:4317). Stop it using Ctrl+C. This serves the built assets; after editing source, stop, rebuild and restart. No browser CDN/font/runtime AI or external database is required.
 
 Choose a fresh local account and synthetic demo content. The email is a login identifier, not a verified mailbox. This prototype sends no emails and provides no password-reset service. Confirm an explicit timezone before creating a plan. External learning-reference sites still require internet.
+
+For Comeback, open a plan with unfinished steps and choose **Review restart dates**. Edit the suggested date and explicitly request a preview. Check old/new dates and any conflicts; cancel leaves the plan untouched. Applying a nonzero change moves only unfinished dates, keeping their order/spacing and preserving completed work, private history, availability and fixed targets. The interface requires acknowledgement of visible conflicts; zero-day previews need no application. Five-minute study is logged separately and never completes the step automatically.
 
 ### Local files and configuration
 
@@ -55,12 +59,12 @@ Browser tests use installed Microsoft Edge through Playwright's msedge channel, 
 
 ### Limits and recovery
 
-The current increment targets private planning/study/progress; Comeback and peer-circle functionality remain later implementation work until their acceptance records say otherwise. All five remain capstone requirements.
+The current implementation covers private planning/study/progress and Comeback preview/confirmation. Private peer-circle functionality remains P07 work; all five remain capstone requirements. Implementation status does not replace the separate acceptance and review records.
 
-A failed save must remain visible with entered content retained. If the server cannot start, check the printed error and port, and preserve the data directory before any repair. Source rollback uses an earlier reviewed Git revision plus that revision's locked dependencies. Database schema migration/rollback must be checked independently; changing source is not a database restore.
+A failed save must remain visible with entered content retained. If a Comeback confirmation loses its response, it may already have saved: use the offered retry with the same request identity or return and refresh. Do not assume cancel can undo an uncertain save. A stale preview requires a new preview against the current revision and is never applied automatically. If the server cannot start, check the printed error and port, and preserve the data directory before any repair. Source rollback uses an earlier reviewed Git revision plus that revision's locked dependencies. Database schema migration/rollback must be checked independently; changing source is not a database restore.
 
 Public hosting, TLS deployment, verified email/recovery, distributed peers, encrypted backups, production observability/moderation and broad device/language validation are outside this local milestone.
 
 ## Done When
 
-A user can install from the documented prerequisites, build, start the server, create a local account and reviewed plan, save study/progress and return after reload/restart with data retained. Actual outcomes, failures and remaining criteria belong in the increment verification record; do not infer them merely from this guide.
+A user can install from the documented prerequisites, build, start the server, create a local account and reviewed plan, save study/progress, explicitly preview/apply a restart schedule and return after reload/restart with data retained. Actual outcomes, failures and remaining criteria belong in the increment verification record; do not infer them merely from this guide.

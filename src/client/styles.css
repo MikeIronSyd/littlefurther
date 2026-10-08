@@ -1039,6 +1039,218 @@ input[type="checkbox"] {
 .drawer-open {
   overflow: hidden;
 }
+.comeback-view {
+  min-width: 0;
+}
+.comeback-view > .text-button {
+  margin-bottom: 24px;
+}
+.comeback-heading {
+  margin-bottom: 16px;
+  align-items: start;
+}
+.comeback-heading .subtitle {
+  margin-top: 12px;
+}
+.comeback-intro {
+  max-width: 72ch;
+  margin-bottom: 28px;
+}
+.comeback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.comeback-date-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  align-items: center;
+}
+.comeback-date-controls .field {
+  max-width: 560px;
+}
+.comeback-date-controls input {
+  max-width: 280px;
+}
+.comeback-preview-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.comeback-status:empty {
+  display: none;
+}
+.comeback-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(230px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.comeback-results,
+.comeback-retained {
+  min-width: 0;
+}
+.comeback-results > h2,
+.comeback-retained h2 {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+.comeback-results > .hint {
+  margin-bottom: 20px;
+}
+.comeback-date-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.comeback-date-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 18px;
+  padding: 18px;
+  align-items: center;
+  background: var(--surface);
+}
+.comeback-date-row + .comeback-date-row {
+  border-top: 1px solid var(--line);
+}
+.comeback-date-row h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
+.comeback-date-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+.comeback-date-pair > div {
+  padding: 8px;
+  min-width: 0;
+}
+.comeback-date-pair dt {
+  font-size: 0.91rem;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+.comeback-date-pair dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.comeback-proposed {
+  background: var(--amber-band);
+  color: var(--amber-ink);
+  border-radius: 6px;
+}
+.comeback-proposed dt {
+  color: inherit;
+}
+.comeback-proposed dd {
+  font-weight: 650;
+}
+.comeback-retained {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.comeback-completed {
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+}
+.comeback-completed li {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  overflow-wrap: anywhere;
+}
+.comeback-completed .icon {
+  color: var(--green);
+  flex: 0 0 24px;
+  margin-top: 2px;
+}
+.comeback-completed time {
+  color: var(--muted);
+  font-size: 0.91rem;
+}
+.comeback-history-summary {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.comeback-history-summary p + p {
+  margin-top: 8px;
+}
+.comeback-conflicts:empty {
+  display: none;
+}
+.comeback-conflicts .notice {
+  margin: 0;
+}
+.comeback-conflicts ul {
+  padding-left: 22px;
+  margin-block: 12px;
+}
+.comeback-conflicts li + li {
+  margin-top: 6px;
+}
+.comeback-target {
+  margin-top: 10px;
+}
+.comeback-acknowledgement {
+  max-width: 72ch;
+}
+.comeback-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  background: var(--blue);
+  color: var(--blue-ink);
+  padding: 20px;
+  border-radius: 12px;
+}
+.comeback-preview-note {
+  flex: 1 1 260px;
+}
+@media (max-width: 1100px) {
+  .comeback-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 799px) {
+  .comeback-date-controls {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+  .comeback-date-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding: 16px;
+  }
+  .comeback-date-pair {
+    gap: 8px;
+  }
+  .comeback-retained,
+  .comeback-actions {
+    padding: 16px;
+  }
+  .comeback-actions > .button {
+    flex: 1 1 100%;
+  }
+}
 @media (min-width: 800px) and (max-width: 1250px) {
   .workspace-heading {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

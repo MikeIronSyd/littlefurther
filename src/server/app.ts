@@ -10,6 +10,8 @@ import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
 import { templates } from "../domain/templates.js";
 import {
   activityInput,
+  comebackConfirmInput,
+  comebackPreviewInput,
   completionInput,
   createPlanInput,
   DomainError,
@@ -171,6 +173,16 @@ export async function createApp(
     app.post("/api/plans/:id/completions", (request, response) => {
       response.json(
         store.complete(owner(response), planId(request), completionInput(request.body)),
+      );
+    });
+    app.post("/api/plans/:id/comeback/preview", (request, response) => {
+      response.json(
+        store.previewComeback(owner(response), planId(request), comebackPreviewInput(request.body)),
+      );
+    });
+    app.post("/api/plans/:id/comeback/confirm", (request, response) => {
+      response.json(
+        store.confirmComeback(owner(response), planId(request), comebackConfirmInput(request.body)),
       );
     });
     app.use("/api", (_request, response) => {
