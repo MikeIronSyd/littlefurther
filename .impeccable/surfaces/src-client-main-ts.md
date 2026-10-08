@@ -9,11 +9,11 @@ related_targets: ["DESIGN.md", "docs/specs/capstone/design.md", "src/client/styl
 
 ## Goal
 
-Carry the user's selected Amber direction into the connected local learning experience, with light/dark switching, collapsible navigation and persistent provisional branding. Mode: Operate. P04/P05 implements the first private journey at src/client/main.ts; P06 schedule recovery and P07 private circles remain later increments.
+Carry the user's selected Amber direction into the connected local learning experience, with light/dark switching, collapsible navigation and persistent provisional branding. Mode: Operate. P04/P05 provides the private journey at src/client/main.ts; P06 Comeback schedule recovery and P07 private circles are implemented and verified within their recorded scopes. P08 complete-journey review and its P09 integration corrections are underway; final corrected-source checks remain pending.
 
 ## Context Pointers
 
-PRODUCT.md, docs/specs/capstone/spec.md and docs/specs/capstone/increments/first-journey.md own product truth. DESIGN.md and .impeccable/design.json now document actual source tokens/components. docs/specs/capstone/verification.md owns application results; reviews/2026-10-07-first-journey-visual.md owns the independent bounded visual verdict.
+PRODUCT.md and docs/specs/capstone/spec.md own product truth, with increments/first-journey.md, comeback.md and studycircle.md under docs/specs/capstone/. The corresponding verification records own observed results. DESIGN.md and .impeccable/design.json document the actual visual system, including the bounded 8 October wording/example refresh with normative tokens preserved. docs/specs/capstone/increments/integration.md governs P08/P09; R18 closed for its bounded correction/refresh scope at 17:36 Africa/Lagos. The existing independent visual reports remain scoped to their respective increments, not a finished full-capstone verdict.
 
 Approved direction reference: .impeccable/mocks/decision/next-turn.png. Exact user selection: "I will go with Amber." Other direction proposals remain unselected. Expanded R01–R14 research closed at 20:14 Africa/Lagos on 7 October 2026; R15 quality-tooling research subsequently closed before production implementation. F15/F16 and AC11a–AC11f define the shell contract. S23 supports the panel icons.
 
@@ -21,7 +21,7 @@ Six detailed references in .impeccable/mocks/amber/ preserve exact prompts and s
 
 ## Constraints
 
-P04/P05 implements local account/profile, curated or manual reviewed plans, study logging, optional private reflection, explicit completion and retained history. All five capabilities remain committed. Comeback schedule recovery and invitation-only peer accountability remain P06/P07, with truthful forthcoming support copy. No runtime AI, chat, remote sync or outcome claims.
+P04/P05 implements local account/profile, curated or manual reviewed plans, study logging, optional private reflection, explicit completion and retained history. P06 adds deliberate schedule recovery without rewriting earlier work. P07 adds invitation-only local circles, exact-copy/audience preview, explicit sharing, preset encouragement and lifecycle cleanup. These five connected capabilities use real local account data. No runtime AI, chat, remote-peer demonstration or outcome claims.
 
 The interface uses semantic HTML/CSS/SVG and local Segoe UI. This system-font substitution is not exact raster lettering or a self-hosted font match. No raster ships. The brand slot remains outside the sidebar; no final name/logo exists.
 
@@ -31,11 +31,11 @@ Expanded/collapsed navigation uses 240px/72px. Below 800px the closed-by-default
 
 The final mobile correction moves existing DOM nodes into goal/introduction → next action → return support → progress/path → optional supports at the 799px breakpoint, retaining focus and restoring desktop order on widening. French uses one catalogue and preserves IANA identifiers such as Africa/Lagos. Learner text is not automatically translated.
 
-The reference's 3/8 completion and three study days are synthetic examples; the app renders actual account state. The future Comeback preview retains its +3-day shift and target conflict; future sharing must identify exact audience/copy and private exclusions.
+The reference's 3/8 completion, three study days and +3-day Comeback scenario are synthetic examples; the app renders each account's actual saved state. Comeback previews current unfinished dates and conflicts before confirmation. Circle sharing identifies the exact copy, current/future audience and private exclusions before confirmation.
 
-Quality-agent handoff confirms the final affected browser batch passed 6/6 at 21:42 Africa/Lagos and 19 distinct browser cases passed across batches; this documenter did not execute those tests. Root separately verified French Langue and mobile order through browser MCP. Current capture inspection and final independent verdict belong to the linked visual review. Source treatments and technical checks do not establish complete accessibility conformance, native-French quality, physical internet-disconnection validation or measured learner outcomes.
+Historical P04/P05 evidence includes the final affected browser batch of 6/6 at 21:42 Africa/Lagos on 7 October and 19 distinct cases across batches. P07 subsequently records 56 domain/HTTP and 36 browser passes, the real two-account MCP walkthrough and a scoped six-capture visual ship verdict in docs/specs/capstone/increments/studycircle-verification.md. These are prior results, not fresh P08 executions. R18c in the integration contract records root's synthetic connected-journey walkthrough, including EN/FR, dark mode and 320px preservation; final integration checks and review remain pending. This documenter did not execute those interactions/tests. No complete accessibility conformance, native-French quality, physical internet-disconnection validation or measured learner outcome follows from the design record.
 
-Formal Impeccable completion remains unavailable: measured spec 32 regions, zero raster plates and eleven measured text regions; comps skipped, plates open and later phases pending. An additional empty-asset acceptance receipt remains unresolved. Hero/final comp-diff reports, QUALITY BAR and detector findings are unavailable. Manual/source/browser evidence does not manufacture a finished pipeline or another user approval.
+Formal Impeccable completion remains unresolved: measured spec 32 regions, zero raster plates and eleven measured text regions; comps skipped, plates open and later phases pending. The generated review packet has six plan items plus 26 code-region entries. A genuine plan/inventory review receipt is still required despite zero raster assets; this is not an empty review. Hero/final comp-diff reports and QUALITY BAR remain unavailable, and authenticated assembled-page capture feasibility is unresolved. The saved P07 detector result exists with 34 advisories; it is not a clean-detector pass. See docs/specs/capstone/reviews/2026-10-08-integration-design-research.md. Manual/source/browser evidence does not manufacture a finished pipeline or user approval.
 
 ## Direction contract
 
@@ -43,7 +43,7 @@ THESIS: One conspicuous next action above a complete path and optional support, 
 
 OWN-WORLD: Neutral light working surfaces with charcoal humanist sans text and a dark equivalent; amber current-action band/buttons, green checked completion and blue return support inherited from the selected pixels.
 
-STORY: The learner sees a goal, takes a manageable step, reviews privately and retains effort. Bounded peer sharing remains forthcoming.
+STORY: The learner sees a goal, takes a manageable step, reviews privately and retains effort; after an interruption they can review revised dates, then optionally share a deliberate copy with their private circle.
 
 FIRST VIEWPORT: Persistent provisional brand and panel toggle; three-link sidebar and topbar utilities. Desktop title, goal and actual progress precede a wide amber task band with study action at right, followed by path and support. Mobile uses the corrected action-first DOM order above.
 
@@ -53,7 +53,7 @@ FINISH: Preserve the actual review verdict, token-bearing DESIGN.md and truthful
 
 ## Done When
 
-The selected direction and provenance remain intact; P04/P05 styling and responsive behavior are documented from actual source. Responsible agents record application checks and the final bounded visual verdict in their evidence files. P06/P07 and remaining full-journey acceptance remain open. No complete capstone, new human approval, learner benefit or universal compatibility pass is inferred.
+The selected direction and provenance remain intact; P04–P07 source, scoped behavior and visual evidence are documented. P08/P09 is complete only when the integration contract's correction, checks, independent review and evidence reconciliation are recorded. Formal design phases and remaining capstone acceptance stay distinct and open. No complete capstone, new human approval, learner benefit or universal compatibility pass is inferred.
 
 ## Comeback extension direction contract — 8 October 2026
 

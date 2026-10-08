@@ -133,7 +133,7 @@ components:
 
 The selected Amber direction puts a conspicuous next action beside evidence of retained effort. Neutral working surfaces, humanist text, connected step markers and restrained outline icons support an operating interface. The dark theme preserves the same hierarchy.
 
-This scan records the P04/P05 implementation on 7 October 2026 (Africa/Lagos), grounded in [styles.css](src/client/styles.css), [journey.ts](src/client/journey.ts), [shell.ts](src/client/shell.ts) and [ui.ts](src/client/ui.ts). [PRODUCT.md](PRODUCT.md) and the [specification](docs/specs/capstone/spec.md) own product behavior. The [selected reference](.impeccable/mocks/decision/next-turn.png) remains the direction authority; detailed state images remain unapproved elaborations. See the [design record](docs/specs/capstone/design.md) for provenance and formal workflow limits.
+The initial P04/P05 scan was recorded on 7 October 2026 (Africa/Lagos). This 8 October refresh retains that visual system and records its P06 Comeback and P07 StudyCircle extensions, grounded in [styles.css](src/client/styles.css), [journey.ts](src/client/journey.ts), [comeback.ts](src/client/comeback.ts), [circle.ts](src/client/circle.ts), [shell.ts](src/client/shell.ts) and [ui.ts](src/client/ui.ts). [PRODUCT.md](PRODUCT.md) and the [specification](docs/specs/capstone/spec.md) own product behavior. The [selected reference](.impeccable/mocks/decision/next-turn.png) remains the direction authority; detailed state images remain unapproved elaborations. See the [design record](docs/specs/capstone/design.md) for provenance and formal workflow limits.
 
 **Key Characteristics:**
 
@@ -216,7 +216,7 @@ PanelLeftClose means collapse expanded navigation; PanelLeftOpen means expand it
 
 ### Next action and support panels
 
-The broad amber band owns the primary action: step position, task title, estimate/edit affordance and study button. Blue identifies return support; ordinary support panels use a thin neutral border, outline icon and brief copy. P06 now extends return support with an explicit restart-date preview and confirmation using these existing treatments; P07 private circles remain forthcoming. See the [Comeback design-system comparison](docs/specs/capstone/reviews/2026-10-08-comeback-design-system.md) for the scoped source and capture evidence.
+The broad amber band owns the primary action: step position, task title, estimate/edit affordance and study button. Blue identifies return support; ordinary support panels use a thin neutral border, outline icon and brief copy. P06 extends return support with an explicit restart-date preview and confirmation. P07 uses the same blue treatment for the exact shared-copy preview and separately labelled private context; audience and privacy disclosures use neutral panels, while saved copies and circle settings use quiet dividers. Both extensions reuse the existing controls and paired theme tokens. See the [Comeback design-system comparison](docs/specs/capstone/reviews/2026-10-08-comeback-design-system.md) and [StudyCircle comparison](docs/specs/capstone/reviews/2026-10-08-circle-design-system.md) for scoped source and capture evidence.
 
 ### Path, rhythm and history
 
@@ -237,5 +237,5 @@ Ordered path rows combine visible status text with numbered or checked markers. 
 - Don't ship reference images as the working interface.
 - Don't claim the local system font exactly matches the approved raster.
 - Don't freeze synthetic sample counts into the product.
-- Don't turn forthcoming Comeback or peer support into fake working controls.
+- Don't present a preview as saved or shared before the learner confirms it.
 - Don't infer native-French quality, physical offline operation, accessibility conformance or learner benefit from these design records.

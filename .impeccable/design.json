@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-07T20:48:01.708Z",
+  "generatedAt": "2026-10-08T16:28:55Z",
   "title": "Design System: Amber learning workspace",
   "extensions": {
     "typographyMeta": {
@@ -104,8 +104,8 @@
       "name": "Return support",
       "kind": "card",
       "refersTo": "return-support",
-      "description": "Quiet blue support group with honest P06 boundary copy.",
-      "html": "<section class=\"ds-support\"><div><h2>Returning after a break?</h2><p>Your completed work stays with you.</p><p>Schedule recovery is coming in the next increment.</p></div></section>",
+      "description": "Excerpt of the blue return support group using current learning-workspace copy; actions remain in the live app.",
+      "html": "<section class=\"ds-support\"><div><h2>Your completed work is still here.</h2><p>You can restart with five minutes whenever you are ready.</p></div></section>",
       "css": ".ds-support{font-family:\"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;font-size:1rem;line-height:1.5;border:1px solid var(--line,#d9e1e9);border-radius:12px;padding:20px 22px;display:flex;gap:18px;align-items:flex-start;background:var(--blue,#edf5ff);color:var(--blue-ink,#173758)}.ds-support h2{font-size:1.25rem;font-weight:650;line-height:1.2;letter-spacing:-.02em;margin:0 0 6px}.ds-support p{margin:0}.ds-support p+p{margin-top:6px}"
     },
     {
@@ -143,7 +143,7 @@
       "Don't ship reference images as the working interface.",
       "Don't claim the local system font exactly matches the approved raster.",
       "Don't freeze synthetic sample counts into the product.",
-      "Don't turn forthcoming Comeback or peer support into fake working controls.",
+      "Don't present a preview as saved or shared before the learner confirms it.",
       "Don't infer native-French quality, physical offline operation, accessibility conformance or learner benefit from these design records."
     ]
   }

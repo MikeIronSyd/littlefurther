@@ -4,6 +4,7 @@ import type {
   Locale,
   MeResponse,
   PlanDetail,
+  Profile,
 } from "../shared/contracts.js";
 import { errorKey, RequestError, request } from "./api.js";
 import { showCircles } from "./circle.js";
@@ -15,8 +16,9 @@ import { createShell, type Route } from "./shell.js";
 import { button, el, field, focusHeading, input, lockForm, notice, text } from "./ui.js";
 import "./styles.css";
 
-const root = document.getElementById("app");
-if (!root) throw new Error("Missing application root");
+const rootElement = document.getElementById("app");
+if (!rootElement) throw new Error("Missing application root");
+const root = rootElement;
 let me: MeResponse | null = null;
 let plans: LearningPlan[] = [];
 let detail: PlanDetail | null = null;
@@ -24,6 +26,10 @@ let templates: GoalTemplate[] = [];
 let dirty = false;
 let route: Route = "learning";
 let loadVersion = 0;
+let sessionVersion = 0;
+let profileVersion = 0;
+let profileWrites: Promise<void> = Promise.resolve();
+let signOutPending = false;
 const shell = createShell(root, {
   onNavigate: (target) => {
     if (canLeave()) {
@@ -42,7 +48,25 @@ const shell = createShell(root, {
     if (canLeave()) showProfile();
   },
 });
+function beginView(): () => boolean {
+  const view = ++loadVersion;
+  const session = sessionVersion;
+  return () => view === loadVersion && session === sessionVersion;
+}
+function clearSession(): void {
+  sessionVersion += 1;
+  loadVersion += 1;
+  profileVersion += 1;
+  profileWrites = Promise.resolve();
+  me = null;
+  detail = null;
+  plans = [];
+  templates = [];
+  dirty = false;
+  shell.setUser(null);
+}
 function canLeave(): boolean {
+  if (signOutPending) return false;
   if (dirty && !window.confirm(message("unsavedLeave"))) return false;
   dirty = false;
   return true;
@@ -50,34 +74,75 @@ function canLeave(): boolean {
 function markDirty(): void {
   dirty = true;
 }
+function saveProfile(patch: Partial<Profile>): Promise<MeResponse | null> {
+  const session = sessionVersion;
+  const userId = me?.user.id;
+  const write = profileWrites.then(async () => {
+    if (session !== sessionVersion || !userId) return null;
+    // Read inside the queue: an earlier response may have been lost even though
+    // its write persisted. Never send a stale timezone with a locale-only edit.
+    const previous = await request<MeResponse>("/api/me");
+    if (session !== sessionVersion) return null;
+    if (previous.user.id !== userId) throw new RequestError("SESSION_CHANGED", 401);
+    const result = await request<MeResponse>("/api/me", "PUT", {
+      ...previous.profile,
+      ...patch,
+    });
+    if (session !== sessionVersion) return null;
+    me = result;
+    return result;
+  });
+  // A failed operation reports to its caller, but does not poison later retries.
+  profileWrites = write.then(
+    () => {},
+    () => {},
+  );
+  return write;
+}
 async function changeLocale(locale: Locale): Promise<void> {
+  if (signOutPending) return;
   setLocale(locale);
   if (me?.profile) {
+    const session = sessionVersion;
+    const operation = ++profileVersion;
+    const view = loadVersion;
     try {
-      me = await request<MeResponse>("/api/me", "PUT", { ...me.profile, locale });
+      const result = await saveProfile({ locale });
+      if (!result || session !== sessionVersion || operation !== profileVersion) return;
       shell.setUser(me);
-      shell.status(null);
+      if (view === loadVersion) shell.status(null);
     } catch (error) {
-      shell.status(errorKey(error));
+      if (session === sessionVersion && operation === profileVersion && view === loadVersion)
+        shell.status(errorKey(error));
     }
   }
 }
 async function signOut(): Promise<void> {
-  if (!canLeave()) return;
+  if (signOutPending || !me) return;
+  if (dirty && !window.confirm(message("unsavedLeave"))) return;
+  const session = sessionVersion;
+  signOutPending = true;
+  // Keep existing forms and their in-flight saves alive until the outcome is
+  // known. Inert prevents new interactions without erasing unsaved input.
+  root.inert = true;
+  root.setAttribute("aria-busy", "true");
+  shell.status("loading");
   try {
     await request("/api/auth/sign-out", "POST", {});
-    me = null;
-    detail = null;
-    plans = [];
-    templates = [];
-    shell.setUser(null);
+    if (session !== sessionVersion) return;
+    clearSession();
     shell.status(null);
     showAuth();
   } catch (error) {
-    shell.status(errorKey(error));
+    if (session === sessionVersion) shell.status(errorKey(error));
+  } finally {
+    signOutPending = false;
+    root.inert = false;
+    root.removeAttribute("aria-busy");
   }
 }
 function showAuth(signUp = false): void {
+  const current = beginView();
   shell.setUser(null);
   const email = input("email", "email");
   email.required = true;
@@ -108,23 +173,28 @@ function showAuth(signUp = false): void {
   );
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
+    if (!current() || signOutPending || !form.reportValidity()) return;
     const unlock = lockForm(form);
     status.replaceChildren(notice("loading"));
     void (async () => {
-      if (signUp)
+      if (signUp) {
         await request("/api/auth/sign-up/email", "POST", {
           name: name.value.trim(),
           email: email.value.trim(),
           password: password.value,
         });
+        if (!current()) return;
+      }
       await request("/api/auth/sign-in/email", "POST", {
         email: email.value.trim(),
         password: password.value,
       });
+      if (!current()) return;
+      clearSession();
       await initialize();
     })()
       .catch((error: unknown) => {
+        if (!current()) return;
         status.replaceChildren(
           notice(
             error instanceof RequestError && error.status === 0
@@ -160,6 +230,7 @@ function showProfile(): void {
     showAuth();
     return;
   }
+  const current = beginView();
   const previous = me.profile;
   const timezone = input(
     "text",
@@ -198,24 +269,27 @@ function showProfile(): void {
     save,
     status,
   );
-  form.addEventListener("input", markDirty);
+  form.addEventListener("input", () => {
+    if (current()) markDirty();
+  });
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
+    if (!current() || signOutPending || !form.reportValidity()) return;
+    profileVersion += 1;
     const unlock = lockForm(form);
     status.replaceChildren(notice("saving"));
-    void request<MeResponse>("/api/me", "PUT", {
+    void saveProfile({
       locale: getLocale(),
       timezone: timezone.value.trim(),
     })
       .then(async (result) => {
-        me = result;
+        if (!result || !current()) return;
         dirty = false;
         shell.status("profileSaved");
         await renderRoute(true);
       })
       .catch((error: unknown) => {
-        status.replaceChildren(notice(errorKey(error), true));
+        if (current()) status.replaceChildren(notice(errorKey(error), true));
       })
       .finally(() => {
         unlock();
@@ -240,21 +314,26 @@ function showProfile(): void {
 }
 function createOrEdit(existing: LearningPlan | null): void {
   if (!canLeave()) return;
+  const current = beginView();
   showPlanEditor(
     shell.main,
     templates,
     existing,
     (result) => {
+      if (!current()) return;
       detail = result;
       dirty = false;
       route = "learning";
+      history.replaceState(null, "", "#learning");
       shell.status("planSaved");
       void renderRoute(true);
     },
     () => {
-      if (canLeave()) void renderRoute(true);
+      if (current() && canLeave()) void renderRoute(true);
     },
-    markDirty,
+    () => {
+      if (current()) markDirty();
+    },
   );
   focusHeading(shell.main);
 }
@@ -278,22 +357,24 @@ function empty(): void {
 }
 function openCircles(): void {
   if (!me || !canLeave()) return;
-  const circleVersion = ++loadVersion;
+  const current = beginView();
   showCircles(
     shell.main,
     me,
     detail,
-    () => void renderRoute(true),
+    () => {
+      if (current()) void renderRoute(true);
+    },
     canLeave,
     (value) => {
-      dirty = value;
+      if (current()) dirty = value;
     },
-    () => loadVersion === circleVersion,
+    current,
   );
   focusHeading(shell.main);
 }
 async function renderRoute(focus = false): Promise<void> {
-  const version = ++loadVersion;
+  const isCurrent = beginView();
   shell.setRoute(route);
   if (!me) {
     showAuth();
@@ -310,7 +391,7 @@ async function renderRoute(focus = false): Promise<void> {
         ? Promise.resolve({ templates })
         : request<{ templates: GoalTemplate[] }>("/api/templates"),
     ]);
-    if (version !== loadVersion) return;
+    if (!isCurrent()) return;
     plans = planResult.plans;
     templates = templateResult.templates;
     const selected = plans.find((plan) => plan.id === detail?.plan.id) ?? plans[0];
@@ -321,12 +402,13 @@ async function renderRoute(focus = false): Promise<void> {
       return;
     }
     const current = await request<PlanDetail>(`/api/plans/${selected.id}`);
-    if (version !== loadVersion) return;
+    if (!isCurrent()) return;
     detail = current;
     if (route === "journeys") {
       const list = el("ul", "journey-list");
       for (const plan of plans) {
         const open = button("goJourney", () => {
+          if (!isCurrent() || !canLeave()) return;
           detail = { ...current, plan };
           route = "learning";
           history.replaceState(null, "", "#learning");
@@ -362,36 +444,47 @@ async function renderRoute(focus = false): Promise<void> {
         current,
         () => createOrEdit(current.plan),
         (step, minutes) => {
+          if (!isCurrent() || !canLeave()) return;
+          const studyCurrent = beginView();
           showStudy(
             shell.main,
             current,
             step,
             minutes,
             (result, studySaved) => {
+              if (!studyCurrent()) return;
               detail = result;
               if (studySaved) dirty = false;
             },
             () => {
-              if (canLeave()) void renderRoute(true);
+              if (studyCurrent() && canLeave()) void renderRoute(true);
             },
-            markDirty,
+            () => {
+              if (studyCurrent()) markDirty();
+            },
           );
           focusHeading(shell.main);
         },
         () => createOrEdit(null),
         () => {
-          const comebackVersion = ++loadVersion;
+          if (!isCurrent() || !canLeave()) return;
+          const comebackCurrent = beginView();
           showComeback(
             shell.main,
             current,
             (result) => {
+              if (!comebackCurrent()) return;
               detail = result;
               shell.status("comebackSaved");
               void renderRoute(true);
             },
-            () => void renderRoute(true),
-            (result) => createOrEdit(result.plan),
-            () => loadVersion === comebackVersion,
+            () => {
+              if (comebackCurrent()) void renderRoute(true);
+            },
+            (result) => {
+              if (comebackCurrent()) createOrEdit(result.plan);
+            },
+            comebackCurrent,
           );
           focusHeading(shell.main);
         },
@@ -407,6 +500,7 @@ async function renderRoute(focus = false): Promise<void> {
       }
       select.value = current.plan.id;
       select.addEventListener("change", () => {
+        if (!isCurrent() || !canLeave()) return;
         const chosen = plans.find((plan) => plan.id === select.value);
         if (chosen) {
           detail = { ...current, plan: chosen };
@@ -417,9 +511,9 @@ async function renderRoute(focus = false): Promise<void> {
     }
     if (focus) focusHeading(shell.main);
   } catch (error) {
-    if (version !== loadVersion) return;
+    if (!isCurrent()) return;
     if (error instanceof RequestError && error.status === 401) {
-      me = null;
+      clearSession();
       shell.status("signedOut");
       showAuth();
     } else
@@ -432,16 +526,23 @@ async function renderRoute(focus = false): Promise<void> {
   }
 }
 async function initialize(): Promise<void> {
+  const current = beginView();
   try {
-    me = await request<MeResponse>("/api/me");
+    const result = await request<MeResponse>("/api/me");
+    if (!current()) return;
+    if (me?.user.id !== result.user.id) clearSession();
+    me = result;
     shell.setUser(me);
     if (me.profile) setLocale(me.profile.locale);
     const hash = location.hash.slice(1);
     route = hash === "journeys" || hash === "activity" ? hash : "learning";
     await renderRoute();
   } catch (error) {
-    if (error instanceof RequestError && error.status === 401) showAuth();
-    else
+    if (!current()) return;
+    if (error instanceof RequestError && error.status === 401) {
+      clearSession();
+      showAuth();
+    } else
       shell.main.replaceChildren(
         notice(errorKey(error), true),
         button("retry", () => {
