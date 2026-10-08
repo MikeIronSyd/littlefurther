@@ -2,7 +2,7 @@
 
 ## Goal
 
-Prepare the existing Miva Sheet and Kaneo records for the P06 Comeback increment, preserving activity history and separating implementation evidence from learner outcomes and whole-MVP completion. The `capstone-evidence-update` and computer-use skills were read and applied. This record currently covers **read-only discovery**; live writes are pending root's final verification and immutable published artifact.
+Reconcile the P06 Comeback increment while preserving activity history and separating implementation evidence from learner outcomes and whole-MVP completion. The `capstone-evidence-update` and computer-use skills were read and applied. Initial read-only discovery is preserved below; final saved outcomes and the later tracking-policy change follow it.
 
 ## Context Pointers
 
@@ -36,12 +36,45 @@ The exported schema confirms Activities G–K are Next action, Output or evidenc
 
 ## Constraints
 
-- No live tracker content, status, due date, title, assignee, sharing setting, invitation or comment has been changed during this preparation. Separate temporary browser tabs avoid competing with the user's existing tracker tabs.
+- During the initial preparation, no live tracker content, status, due date, title, assignee, sharing setting, invitation or comment was changed. Separate temporary browser tabs avoided competing with the user's existing tracker tabs.
 - Preserve all existing statuses, including A009's initial-setup Done and A007's To Do; preserve source and historical recovery records while clearly following the current global-only recovery policy. This task does not publish source or invoke recovery.
-- Root has not supplied a final P06 artifact or check results. No P06 pass, research completion, publication, learner benefit, human adoption, measured time saving, full MVP or demo completion is claimed here.
+- At the initial preparation, root had not supplied a final P06 artifact or check results. Final implementation/publication evidence below supersedes that preparation limit; learner benefit, human adoption, measured time saving, full MVP and demo completion remain unclaimed.
 - J1 will require actual P06 lifecycle/skill/MCP artifacts and results; J2 will describe observed recovery behavior with synthetic-test/learner-study limits; J3 will distinguish repeatable implementation from still-unexecuted independent setup/adoption; J4 remains a planned scene until a real timed recording exists.
 - Official submission deadline remains unannounced. The 14 October date is an internal target only. No course-completion or milestone status change is proposed.
 
 ## Done When
 
-**Preparation complete; reconciliation pending.** Both destinations and the intended Miva identity are verified. Exact update ranges and task IDs are established. Once root supplies final results and a published artifact, reread the affected cells/descriptions, reconcile only the authorized scope, and compare each saved field after reload. Record failed, pending and verified results independently; do not infer a successful save from an input action. Preserve this initial baseline and append final saved outcomes and J1–J4 traceability below.
+The initial preparation established both destinations, the intended Miva identity, exact ranges and task IDs. Authorized reconciliation requires rereading affected records, retaining history, and comparing saved values after reload. A successful input action alone is not completion. The user's latest clarification **reaffirms the original Google Sheets, Kaneo and GitHub workflow**; the short-lived request to stop Sheet updates is superseded.
+
+### Final evidence inputs
+
+The [Comeback verification](../increments/comeback-verification.md), [independent source review](2026-10-08-comeback-review.md) and [scoped visual review](2026-10-08-comeback-visual.md) were read before live reconciliation. Root supplied actual results and artifact `204e227a63c550140ed7b868c1fe76e68b74391b`: [separate account](https://github.com/MikeIronSyd/littlefurther/commit/204e227a63c550140ed7b868c1fe76e68b74391b), [MikeIronSyd](https://github.com/MikeIronSyd/littlefurther/commit/204e227a63c550140ed7b868c1fe76e68b74391b). Normal Git push exited 0 and root read both remote main heads as the exact SHA. GitHub MCP `github_fetch_commit` independently returned the matching personal SHA, title and canonical URL; Miva readback remains Git CLI evidence. This tracker agent did not run product checks or publish source.
+
+### Sheet result and subsequent user clarifications
+
+The Miva identity was reverified and every affected field matched its fresh baseline before mutation. Browser MCP wrote `Codex evidence!A9:J9`, `H8:I8`, `Activities!G5:K5`, `G7:K7`, `G9:K11`, and `Context!B25:C25`; all immediate comparisons passed. After Saved to Drive and reload, an exact browser-exported XLSX comparison confirmed **39 intended cells changed, zero value mismatches and no other cell changes**. A separate Python ZIP/XML comparison exited 0 with the same exact 39-cell set and all activity statuses preserved. E001–E006, untouched E007 fields, Decisions, Milestones, unrelated rows and prior text remain intact. E008 was absent before writing and created once.
+
+These edits and saved readbacks **completed before the user briefly asked to stop Sheet updates during this increment**. On receipt of that steering, the tracker agent stopped all Sheet writes and inspections immediately. Before a Kaneo-only note was written, the user explicitly reversed that preference: “You can continue with the Google Sheet and everything we were doing before. It's okay.” The original Sheet + Kaneo + GitHub workflow is therefore current. A brief dated clarification was added to A010, preserving this chronology. No undo, deletion, permission change, duplicate evidence row or redundant Sheet write was performed.
+
+The initial local XLSX comparator mishandled self-closing empty cells and reported 20 false additional differences using shared-string indices. The parser was corrected to handle self-closing cells; the corrected exact-value comparison and independent XML parser agree. No unintended Sheet change or failed live write resulted.
+
+### Kaneo result
+
+E008 was added above the existing descriptions of A004/CAH-5, A006/CAH-7, A008/CAH-9, A009/CAH-3 and A010/CAH-10. Every original description was reread and matched its baseline before mutation. Each complete intended result then passed reload-and-readback comparison with rendered whitespace normalized. Prior histories were preserved; no status, title, due date, assignee, invitation, comment or sharing change was made.
+
+One A006 paste landed after the previous history rather than above it. Inspection and reload established the exact known state: one complete E008 block appended, original history intact. A focused replacement restored the intended block order, and the subsequent persisted comparison passed. No duplicate E008 block remained. A later A009 read timed out during reload; a fresh DOM observation and read succeeded without another write. These attempts are not counted as first-pass success.
+
+The final A010 three-destination clarification passed its own reload-and-readback comparison. The final board still shows ten tasks: one To Do, five In Progress, zero In Review and four Done. A007 remains To Do and A009 remains Done for initial setup. All five E008 descriptions and the policy clarification are saved; no live reconciliation is pending.
+
+Proof screenshots were saved and visually inspected at ignored `outputs/comeback/sheet-e008.png` and `outputs/comeback/kaneo-e008.png`. They show the saved E008 Sheet row and the actual A010 clarification/E008 heading. Two attempts through the lower-level browser screenshot method produced unusable black captures; the supported CUA screenshot returned the actual rendered Kaneo view and replaced the unusable file. Screenshot presence is supplementary; exact comparison evidence above establishes saved fields. Temporary duplicate tabs may close; the user's original tracker tabs and stable URLs remain available.
+
+### Judging traceability
+
+| Criterion | Requirement → artifact at `204e227` → actual result | Demo boundary |
+| --- | --- | --- |
+| J1 — Codex integration | AC13/D013 and CB01–CB06; pre-code research/contract, parallel implementation, actual second product review-skill iteration, this evidence-skill reuse, independent reviews, browser MCP and GitHub MCP. | Show the real contract, review finding/fix and observed recovery. No plan-mode use or measured time saving inferred. |
+| J2 — Impact | AC06/CB01/CB05; 40/40 domain/HTTP tests; 19 existing plus eight Comeback browser cases passed across recorded runs, final affected eight/eight. Root's synthetic eight-step browser journey preserved completed 7 October, 1/8 completion and five reported minutes while seven unfinished dates moved 8–14 to 11–17 October. | Working preview/cancel/confirm/reload scene; no learner study, mastery, retention or causal benefit. No single 27-case run is claimed. |
+| J3 — Reuse/adoption | Pure calendar rule, shared contracts, owned transaction, client module, tests and local setup/operations. Strict/lint/format/build/audit and distinct-process restart passed; receipt/dates/private work persisted. | Independent clean-checkout/adaptation and human adoption remain pending. Local checks do not establish production readiness. |
+| J4 — Demo/pitch | Working Comeback scenario and actual browser captures are available. | Recording, measured 3–5 minute duration and timecodes remain pending; A007 remains To Do. |
+
+P07 private invitation-only peer circles remains required next work. The visual `ship` verdict covers the scoped P06 extension; formal Impeccable completion remains refused/open at plates, with missing formal phase/QUALITY BAR/comp-diff evidence. CI remains an inactive template. Native-French review, real-device testing and full accessibility conformance are unverified. The local server must run. Official submission deadline remains unannounced and 14 October is internal only.

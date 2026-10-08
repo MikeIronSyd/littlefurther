@@ -314,7 +314,9 @@
       "miva_account_email": "m.alkali5130@miva.edu.ng"
     },
     "continuity": "Maintain the whole activity history, decisions, current state, next actions, and supporting evidence across the agreed trackers.",
-    "updates": "Update records as authorized project work progresses. Recurring monitoring has not been requested."
+    "updates": "Update records as authorized project work progresses. Recurring monitoring has not been requested.",
+    "reaffirmed_on": "2026-10-08",
+    "reaffirmation": "After questioning whether Sheets was needed, the user explicitly asked to continue with the Google Sheet and everything previously in use. The original Miva Sheet + Kaneo + both private GitHub repositories remain active. A brief proposed pause was superseded before any destination was deleted or changed."
   },
   "workflow_requirements": [
     "Follow the user's iterative SDLC and spec-driven development instructions for software work.",
@@ -535,7 +537,7 @@
       {
         "name": "capstone-evidence-update",
         "path": ".agents/skills/capstone-evidence-update/SKILL.md",
-        "status": "Created and structurally validated; earlier E004-E006 invocations retained. Applied to actual E007 implementation/check/review/publication evidence and saved tracker readback; see docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md. Full-journey P08/P09 remain pending. P06/E008 evidence reconciliation in progress on8October; live saved readbacks tracked separately."
+        "status": "Created and structurally validated; earlier E004-E006 invocations retained. Applied to actual E007 implementation/check/review/publication evidence and saved tracker readback; see docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md. Full-journey P08/P09 remain pending. P06/E008 evidence reconciliation and saved readbacks completed on8October; see2026-10-08-comeback-tracker.md."
       }
     ],
     "proof_chain": "criterion -> requirement -> artifact/commit -> actual check/result -> demo scene",
@@ -543,7 +545,7 @@
   },
   "current_preparation": {
     "recorded_on": "2026-10-08",
-    "status": "P06 Comeback implemented and behavior-verified after R16 research closure: explicit preview/cancel/confirm, retained completed work, atomic revision/receipt handling and honest failure recovery.40/40 domain/HTTP and27 distinct browser cases pass across recorded batches (final8/8affected). Independent source review found no remaining production blocker; scoped visual review disposition ship. Publication/tracker closeout pending.",
+    "status": "P06 Comeback implemented and behavior-verified after R16 research closure: explicit preview/cancel/confirm, retained completed work, atomic revision/receipt handling and honest failure recovery.40/40 domain/HTTP and27 distinct browser cases pass across recorded batches (final8/8affected). Independent source review found no remaining production blocker; scoped visual review disposition ship. Artifact published and both remote heads verified; E008 saved/read back in the Miva Sheet and Kaneo. P07 private peers remains next.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -585,9 +587,9 @@
       "src/client/comeback.ts",
       "src/domain/comeback.ts"
     ],
-    "tracker_record": "E004 preparation; E005 first direction round; E006 Amber shell design; E007 first private journey; E008 Comeback increment prepared. D009-D015 and A001-A010 preserved.",
-    "tracker_sync": "E008 pending live reconciliation; correct Miva Sheet and Kaneo inspected, E008 absent. See 2026-10-08-comeback-tracker.md.",
-    "publication": "P06 artifact publication pending normal Git dual-private-repository push and readbacks; earlier E007 publication retained in milestone history.",
+    "tracker_record": "E004 preparation; E005 first direction round; E006 Amber shell design; E007 first private journey; E008 Comeback schedule recovery. D009-D015 and A001-A010 preserved.",
+    "tracker_sync": "E008 reconciled on8October2026 through browser MCP under the verified Miva identity. Exactly39 intended Sheet cells changed with zero mismatches or other changes; five Kaneo descriptions passed persisted comparisons. History/statuses retained; A007 remainsToDo. See2026-10-08-comeback-tracker.md for parser/paste/read retry history. User reaffirmed original Sheet+Kaneo+GitHub workflow.",
+    "publication": "P06 artifact 204e227a63c550140ed7b868c1fe76e68b74391b published through normal Git to both authorized private repositories; both exact remote main heads verified. Personal commit independently read via GitHub MCP. Final documentation closeout readback is stored in ignored .local/comeback-publication-result.json. No recovery wrapper or permission expansion.",
     "limitations": [
       "P07 private peer circles remain unimplemented; all five capabilities stay required.",
       "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
@@ -647,13 +649,14 @@
     "id": "P06",
     "name": "Comeback schedule recovery",
     "date": "2026-10-08",
-    "status": "Implemented and behavior-verified; independent source/visual review and ordinary-extension design-system comparison complete at scoped level. Publication and E008 tracker saved readback pending.",
+    "status": "P06 complete within scoped behavior/review evidence, published to both private repositories and reconciled in both trackers. Formal Impeccable and full-capstone acceptance remain open.",
     "specification": "docs/specs/capstone/increments/comeback.md",
     "baseline": "e3a682f14f6e9172efe2ec8ef91fc671e77163ba",
     "baseline_checks": "Strict compilation and all20 existing domain/HTTP tests passed before production edits.",
-    "tracker_preparation": "Both destinations read through browser MCP under the verified Miva identity. E008 absent and evidence A9:J9 available; no live writes yet. See docs/specs/capstone/reviews/2026-10-08-comeback-tracker.md.",
+    "tracker_preparation": "Preparation verified E008 absent. Final E008 saved readbacks passed in Miva Sheet and Kaneo; report docs/specs/capstone/reviews/2026-10-08-comeback-tracker.md.",
     "next": "P07 real private StudyCircle peers; all five capabilities remain required.",
-    "verification": "docs/specs/capstone/increments/comeback-verification.md"
+    "verification": "docs/specs/capstone/increments/comeback-verification.md",
+    "artifact_commit": "204e227a63c550140ed7b868c1fe76e68b74391b"
   },
   "design_direction": {
     "name": "Amber",
