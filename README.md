@@ -25,15 +25,19 @@ Comeback shows old/new unfinished dates and conflicts before applying the same c
 
 ### Run locally
 
-Prerequisites: Node **24.19.0**, pnpm **11.19.0**. Install from the repository root:
+Prerequisites: Node **24.19.0**, pnpm **11.19.0**. Check the versions from the repository root before installing. The explicit pnpm option selects the version pinned in package.json even when a host-provided pnpm 11 launcher disables automatic version selection:
 
 ```powershell
-pnpm install --frozen-lockfile --ignore-scripts
-pnpm run build
-pnpm start
+node --version
+pnpm --pm-on-fail=download --version
+pnpm --pm-on-fail=download install --frozen-lockfile --ignore-scripts
+pnpm --pm-on-fail=download run build
+pnpm --pm-on-fail=download start
 ```
 
 Open **http://127.0.0.1:4317** and keep the server running. Create a local demo account, confirm your timezone, choose a template or supply your own topics, review the draft, and save it explicitly. Stop the server with Ctrl+C. Rebuild and restart after source changes. See [local operations](docs/operations/local-demo.md) for configuration, isolated data, checks and recovery limits.
+
+The version checks must report `v24.19.0` and `11.19.0`. Exact-version provisioning may need internet or a compatible package cache; it does not alter the project pin or global launcher. Use the same `--pm-on-fail=download` prefix for later pnpm commands if your launcher otherwise selects another version. Repository attributes retain LF for maintained formatter inputs on Windows; no global Git setting change or whole-tree formatting is needed. The [P10 contract](docs/specs/capstone/increments/reuse.md) records the setup issues and their verification boundaries.
 
 To revise an interrupted plan, choose **Review restart dates** in the learning view, enter a date and request a preview. Inspect each proposed date and any availability/target conflicts, then cancel, edit the plan or explicitly apply the change. Five-minute study remains a separate action; rescheduling does not log study or complete a step.
 
@@ -45,7 +49,9 @@ For private accountability, choose **Open study circles**, create a circle, and 
 
 The boundaries are deliberately small: serializable types in `src/shared`, pure business rules and curated metadata in `src/domain`, auth/SQLite/HTTP in `src/server`, and semantic browser UI in `src/client`. Canonical records stay in ignored `.local/data`; never commit that folder or the generated auth secret.
 
-For a local template wording adaptation, edit both locale entries and source/prerequisite records in `src/domain/templates.ts`, preserving stable IDs and version semantics; run the required checks and review the draft in both languages. Changed supported outcomes or new template IDs also require corresponding validator/contract updates. UI translations live in `src/client/i18n.ts` and use matching typed keys. Preserve learner-authored content when switching language. These are adaptation instructions, not evidence of an independent fresh-checkout rehearsal.
+For a meaning-preserving wording adaptation, edit the corresponding English/French entries in `src/domain/templates.ts`; keep the existing ID/version, estimates, supported outcome, prerequisites and source records unchanged. Run affected checks, review new drafts in both languages and verify a previously saved plan retains its own content. Changed outcomes, new IDs or new versions require separate research and coordinated metadata, `src/domain/validation.ts`, shared contracts, persisted provenance in `src/server/store.ts`, and associated tests. The current validator permits only `html-first-page@1` or manual input, and the store records version1 for that template; adding metadata alone does not extend this contract. UI translations live in `src/client/i18n.ts` and use matching typed keys. Preserve learner-authored content when switching language. Actual independent rehearsal results are recorded separately from these instructions.
+
+The repositories remain private and no project-wide license has been selected. [Third-party notices](THIRD_PARTY_NOTICES.md) cover vendored icons. Wider distribution is a future owner decision. The [operations review](docs/specs/capstone/reviews/2026-10-08-reuse-operations-review.md) orders the remaining hosting, identity/data lifecycle, recovery, licensing/CI, remote-peer and broader evaluation work before the corresponding production claims.
 
 The selected design is a local browser app using Node 24 LTS, Express 5, strict TypeScript/Vite, Better Auth and SQLite. Initial installation will need dependencies; the intended demo runs without internet while its local server remains running. It does not promise remote peer access, offline external learning websites, or operation after the local server stops.
 

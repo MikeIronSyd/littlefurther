@@ -16,15 +16,21 @@ The [StudyCircle contract](../specs/capstone/increments/studycircle.md) and [ver
 
 ### Prerequisites and start
 
-Use Node24.19.0 and pnpm11.19.0. Installation needs internet or an already populated compatible package cache. Commands use pnpm because npm is not installed in this Codex runtime.
+Use Node24.19.0 and pnpm11.19.0. Installation and exact-version provisioning need internet or an already populated compatible package cache. Commands use pnpm because npm is not installed in this Codex runtime. Check both versions from the repository root; a bundled pnpm 11 launcher may disable package-manager selection, so these commands explicitly request the package.json pin:
 
 ```powershell
-pnpm install --frozen-lockfile --ignore-scripts
-pnpm run build
-pnpm start
+node --version
+pnpm --pm-on-fail=download --version
+pnpm --pm-on-fail=download install --frozen-lockfile --ignore-scripts
+pnpm --pm-on-fail=download run build
+pnpm --pm-on-fail=download start
 ```
 
 Keep that terminal running. Open the URL printed by the server (default http://127.0.0.1:4317). Stop it using Ctrl+C. This serves the built assets; after editing source, stop, rebuild and restart. No browser CDN/font/runtime AI or external database is required.
+
+Expected versions are `v24.19.0` and `11.19.0`. The pnpm option changes only that invocation; it does not edit global wrappers/settings or package.json. On this Windows host the unqualified bundled launcher reported11.25.0; the explicit option provisioned and ran11.19.0. See [pnpm's documented selection behavior](https://pnpm.io/settings/cli#pmonfail) and the [P10 rehearsal contract](../specs/capstone/increments/reuse.md). Use this prefix for subsequent pnpm commands when required. If Ctrl+C prompts to terminate a Windows batch job, confirm termination, then verify the printed port has no listener before starting a replacement.
+
+The repository's `.gitattributes` fixes maintained formatter inputs to LF even when Windows Git uses `core.autocrlf=true`; preserved source/history retains its existing `-text` rules. A fresh checkout should pass format without editing files. If an older checkout fails solely on CRLF, first preserve all local changes and inspect `git ls-files --eol`; verify the corrected revision in a separate fresh checkout. Do not change global Git settings or bulk-format historical material to conceal the failure.
 
 Choose a fresh local account and synthetic demo content. The email is a login identifier, not a verified mailbox. This prototype sends no emails and provides no password-reset service. Confirm an explicit timezone before creating a plan. External learning-reference sites still require internet.
 
@@ -67,7 +73,7 @@ Browser tests use installed Microsoft Edge through Playwright's msedge channel, 
 
 ### Limits and recovery
 
-The current implementation covers private planning/study/progress, Comeback preview/confirmation and optional private StudyCircle peers. All five capabilities remain connected parts of the capstone. Full-journey integration, independent setup/adaptation and the timed demo remain separate gates; implementation status does not replace acceptance and review evidence.
+The current implementation covers private planning/study/progress, Comeback preview/confirmation and optional private StudyCircle peers. All five capabilities remain connected parts of the capstone. The [P08/P09 integration review and corrections](../specs/capstone/increments/integration-verification.md) passed their scoped checks. Independent setup/adaptation, formal design completion and the timed demo remain separately recorded gates; implementation status does not replace acceptance and review evidence.
 
 A failed save must remain visible with entered content retained. If a Comeback confirmation loses its response, it may already have saved: use the offered retry with the same request identity or return and refresh. Do not assume cancel can undo an uncertain save. A stale preview requires a new preview against the current revision and is never applied automatically. If the server cannot start, check the printed error and port, and preserve the data directory before any repair. Source rollback uses an earlier reviewed Git revision plus that revision's locked dependencies. Database schema migration/rollback must be checked independently; changing source is not a database restore.
 
