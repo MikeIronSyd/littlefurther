@@ -902,7 +902,7 @@
       "source": "User explicitly requests removing local account/demo paragraph and global local-demo footer, includingFrench equivalents.",
       "research": "R23 satisfied/documented before code at19:02:42Africa/Lagos.",
       "verification": "Strict/lint/format/build pass, existing AS01 appearance2/2pass8.8seconds, independent source review no blocker, paired ENdesktop/FR320browserMCP zero notice/scaffold nodes and noDOMoverflow. Full63suite not rerun for staticcopydeletion.",
-      "delivery": "Private source publication and E015 saved tracker readback pending."
+      "delivery": "Artifactab5317ba0d2dbdac6e4d5b5754ec335c687ee3a0 published normally to both private repositories; exact GitCLI heads verified2026-10-09T19:05:55.1356667+01:00. E015 saved/read back atA16, exactly10Sheetcells/zeroextra/mismatch; A010 full saved string/entire priorhistory/title/status/date exact. One known new-prefix link separator difference corrected explicitly to native paragraph spacing; no prior-history normalization. Documentation closeout follows."
     }
   },
   "design_direction": {
