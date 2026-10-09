@@ -1,0 +1,11 @@
+{
+  "generator": "image_gen.imagegen",
+  "generated_on": "2026-10-09T14:07:04.8133975+01:00",
+  "source_image": "C:/Users/USER/.codex/generated_images/01a0fd8c-ebb2-7da3-a219-fed96c5f3c06/exec-6fbb8fd2-ae80-4f4e-ba01-6f0041d0fa13.png",
+  "reference_image": "C:/Users/USER/AppData/Local/Temp/codex-clipboard-c16f6b69-1225-4a4d-ae87-bdaf897771d5.png",
+  "sha256": "7065f927d3dea7ebeabe77fe9a826e3a14be5390868597053e82be4d3aeb815c",
+  "approved": false,
+  "role": "Pre-implementation signed-out desktop/light and mobile/dark reference within selected Amber",
+  "prompt_summary": "Preserve brand/welcome/auth forms and Amber; remove signed-out navigation/gutter; moon/sun icon only; mobile wraps and stacks. Full generation prompt recorded in the tool invocation.",
+  "limitations": "Static contact sheet, not pixel-exact layout or verified behaviour. Generated gradients/softness are incidental and must not replace flat existing tokens. No new human approval."
+}

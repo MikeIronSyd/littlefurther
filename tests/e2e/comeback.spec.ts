@@ -127,11 +127,11 @@ test("CB03: Amber preview retains dates in light, dark and French mobile layouts
     page.getByRole("heading", { name: "Current and proposed dates", exact: true }),
   ).toBeFocused();
   await capture(page, "comeback-desktop-light");
-  await page.getByRole("button", { name: "Dark mode", exact: true }).click();
+  await page.getByRole("button", { name: "Switch to dark mode", exact: true }).click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expect(page.getByLabel("Restart date", { exact: true })).toHaveValue("2026-10-13");
   await capture(page, "comeback-desktop-dark");
-  await page.getByRole("button", { name: "Dark mode", exact: true }).click();
+  await page.getByRole("button", { name: "Switch to light mode", exact: true }).click();
   await page.getByLabel("Language", { exact: true }).selectOption("fr");
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(page.getByLabel("Date de reprise", { exact: true })).toHaveValue("2026-10-13");

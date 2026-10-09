@@ -243,40 +243,36 @@ p {
   padding: 10px 6px;
   min-height: 44px;
 }
+.theme-control {
+  position: relative;
+  flex: 0 0 auto;
+}
 .theme-button {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 0;
-  padding: 8px 0;
-  background: transparent;
-  min-height: 44px;
-  white-space: nowrap;
-}
-.toggle-track {
-  display: block;
+  display: grid;
+  place-items: center;
   width: 44px;
-  height: 27px;
-  border: 1px solid var(--control-line);
-  border-radius: 20px;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+}
+.theme-button:hover {
   background: var(--sidebar);
-  padding: 3px;
 }
-.toggle-knob {
-  display: block;
-  width: 19px;
-  height: 19px;
+.theme-tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  width: max-content;
+  max-width: min(280px, calc(100vw - 24px));
+  padding: 8px 12px;
+  border-radius: 6px;
   background: var(--ink);
-  border-radius: 50%;
-  transition: transform 160ms ease-out;
-}
-.theme-button[aria-pressed="true"] .toggle-track {
-  background: var(--amber);
-  border-color: var(--amber);
-}
-.theme-button[aria-pressed="true"] .toggle-knob {
-  background: #19232c;
-  transform: translateX(17px);
+  color: var(--surface);
+  font-size: 0.91rem;
+  line-height: 1.5;
 }
 .account-menu {
   position: relative;
@@ -333,6 +329,9 @@ p {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr);
   min-height: calc(100dvh - 73px);
+}
+.app-frame.signed-out {
+  grid-template-columns: minmax(0, 1fr);
 }
 .sidebar {
   border-right: 1px solid var(--line);
@@ -1575,13 +1574,6 @@ input[type="checkbox"] {
     padding-inline: 5px;
     font-size: 0.9rem;
   }
-  .theme-button {
-    gap: 8px;
-    font-size: 0.88rem;
-  }
-  .toggle-track {
-    flex: 0 0 44px;
-  }
   .account-name {
     display: none;
   }
@@ -1734,17 +1726,6 @@ input[type="checkbox"] {
   .utilities .language-select {
     max-width: 102px;
   }
-  .theme-button {
-    gap: 6px;
-    font-size: 0.8rem;
-  }
-  .toggle-track {
-    width: 38px;
-    flex-basis: 38px;
-  }
-  .theme-button[aria-pressed="true"] .toggle-knob {
-    transform: translateX(11px);
-  }
   .workspace {
     padding-inline: 12px;
   }
@@ -1757,9 +1738,6 @@ input[type="checkbox"] {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .toggle-knob {
-    transition: none;
-  }
   *,
   *::before,
   *::after {
@@ -1776,15 +1754,16 @@ input[type="checkbox"] {
   .path-marker,
   .progress-dot,
   .rhythm-dot,
-  .toggle-track,
-  .toggle-knob {
+  .theme-button,
+  .theme-tooltip {
     border: 1px solid ButtonText;
   }
   .path-step.current {
     outline: 2px solid Highlight;
   }
-  .theme-button[aria-pressed="true"] .toggle-knob {
-    background: Highlight;
+  .theme-tooltip {
+    background: Canvas;
+    color: CanvasText;
   }
   .progress-strip .done .progress-dot,
   .studied .rhythm-dot {

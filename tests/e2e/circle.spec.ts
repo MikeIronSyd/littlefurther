@@ -420,7 +420,7 @@ test("SC03/05: explicit preview survives theme/language changes and reflows in F
   await expect(page.locator(".circle-preview-copy img")).toHaveCount(0);
   await expectNoHorizontalOverflow(page);
   await capture(page, "circle-desktop-light");
-  await page.getByRole("button", { name: "Dark mode", exact: true }).click();
+  await page.getByRole("button", { name: "Switch to dark mode", exact: true }).click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expect(page.getByLabel("Message", { exact: true })).toHaveValue(literal);
   await capture(page, "circle-desktop-dark");
@@ -432,7 +432,7 @@ test("SC03/05: explicit preview survives theme/language changes and reflows in F
   await expect(page.getByLabel("Message", { exact: true })).toHaveValue(literal);
   await expectNoHorizontalOverflow(page);
   await capture(page, "circle-mobile-fr-320-dark");
-  await page.getByRole("button", { name: "Mode sombre", exact: true }).click();
+  await page.getByRole("button", { name: "Passer en mode clair", exact: true }).click();
   await capture(page, "circle-mobile-fr-320-light");
   await page.getByLabel("Message", { exact: true }).fill("Je vais lire une section.");
   await expect(

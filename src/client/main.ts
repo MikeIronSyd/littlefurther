@@ -224,6 +224,11 @@ function showAuth(signUp = false): void {
       form,
     ),
   );
+  // Sign-out renders this view while root is inert. Focus only after its
+  // finally block unlocks the page, and never focus a superseded auth view.
+  queueMicrotask(() => {
+    if (current()) focusHeading(shell.main);
+  });
 }
 function showProfile(): void {
   if (!me) {

@@ -92,3 +92,21 @@ FORM: A bounded extension of the existing Operate surface, not a replacement vis
 ### Done When
 
 FINISH: Review actual desktop light/dark, French320px and current1280px captures plus the real two-account saved result. Record the independent verdict, mechanical detector and ordinary design-system comparison, preserving DESIGN.md and its sidecar. A scoped verdict does not close the inherited formal pipeline or prove accessibility conformance or learner impact.
+
+## Sign-in and theme refinement — 9 October2026
+
+### Goal
+
+Focus entry on authentication and preserve one clear next action after sign-in.
+
+### Context Pointers
+
+Preserve the Amber Operate world and existing welcome/forms. Pre-code reference: .impeccable/mocks/amber/auth-shell-reference.png plus provenance. Contract: docs/specs/capstone/increments/auth-shell.md, AS01-AS06.
+
+### Constraints
+
+Signed out: brand/language/44px moon-sun action only, no sidebar/trigger/account/gutter. Signed in: saved navigation/account returns. Localized next-action tooltip and button names, no aria-pressed; preserve input/focus and safe drawer/session cleanup. No shipping raster, identity change or separate formal approval implied.
+
+### Done When
+
+Use actual scoped checks and bounded desktop/mobile observations in auth-shell-verification.md. Keep formal receipt/capture and final video separate.

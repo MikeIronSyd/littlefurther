@@ -378,6 +378,7 @@ test("RF04: French mobile Edit step follows the selected stable step and preserv
 test("RF05: study exposes localized template and learner references without fetching or changing private inputs", async ({
   page,
 }) => {
+  await page.emulateMedia({ colorScheme: "light" });
   // Rendering-only catalog fixture exercises duplicate display URLs without changing the server catalog.
   await page.route("**/api/templates", async (route) => {
     const response = await route.fetch();
@@ -449,7 +450,7 @@ test("RF05: study exposes localized template and learner references without fetc
       exact: true,
     }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Mode sombre", exact: true }).click();
+  await page.getByRole("button", { name: "Passer en mode sombre", exact: true }).click();
   await expect(page.getByLabel("Minutes étudiées", { exact: true })).toHaveValue("9");
   await expect(page.getByLabel("Note privée (facultative)", { exact: true })).toHaveValue(
     "My private reflection stays in my words",

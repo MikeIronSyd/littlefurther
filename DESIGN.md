@@ -174,7 +174,7 @@ Body paragraphs have a 72ch maximum width. Labels use weight 600; supporting cop
 
 ## Layout
 
-The desktop header has a 72px minimum height. The application grid reserves 240px for expanded navigation or 72px for the compact rail, reclaiming the remaining width. Branding stays outside the sidebar. The workspace is centered, at most 1600px wide, with 30px 28px 42px padding.
+The desktop header has a 72px minimum height. The signed-in application grid reserves 240px for expanded navigation or 72px for the compact rail, reclaiming the remaining width. Signed-out sign-in/sign-up uses a full-width single column with no sidebar, navigation trigger or account menu. Branding stays outside the sidebar. The workspace is centered, at most 1600px wide, with 30px 28px 42px padding.
 
 The wide workspace heading has three columns with ratios 1.3:1:0.75, a 210px progress minimum and 24px gaps. The next-action band combines a flexible text column with an action column of 345px flex basis. Below it, path/support columns use a 0.95:1.05 ratio and 24px gap. At 800–1250px the heading has two columns with progress below, and path/support stack.
 
@@ -186,7 +186,7 @@ The mobile journey uses actual DOM order: goal/introduction → next action → 
 
 Resting workspace surfaces are flat. Color changes and thin rules provide grouping. Only the account dropdown uses the theme-specific soft shadow recorded in the sidecar. The mobile drawer uses native modal layering and a translucent backdrop.
 
-The theme knob is the only authored transition: 160ms ease-out. Reduced-motion rules remove transitions and animations; behavior never depends on animation completion.
+The9October theme action replaces the switch knob with a moon/sun icon button. No authored transition is required for it; existing reduced-motion rules remove nonessential transitions and animations.
 
 ## Shapes
 
@@ -213,6 +213,8 @@ Focus-visible elements receive a 3px focus outline at 3px offset. Forced-color r
 Three ordinary links serve My learning, Journeys and Activity. Active navigation uses the amber band, weight 650 and a thin leading marker. Compact-rail labels appear on hover/focus while accessible names remain available. Topbar utilities contain language, theme and account.
 
 PanelLeftClose means collapse expanded navigation; PanelLeftOpen means expand it or open the closed mobile drawer. The native modal has a named Close action, focus containment, Escape/focus return and resize cleanup. Theme follows the device until explicitly chosen; guarded storage saves only non-sensitive theme/sidebar preferences.
+
+The9October sign-in refinement shows brand, language and theme while signed out; authentication restores the existing navigation/account and saved rail preference. The44px theme action shows a decorative Lucide moon in light mode and sun in dark, with a localized next-action name and hover/focus tooltip, dismissible with Escape. It has no aria-pressed or visible switch text. Session clear closes the modal/account state and clears the page lock before guarded auth-heading focus. The pre-code reference/provenance and AS01–AS06 are in [auth-shell.md](docs/specs/capstone/increments/auth-shell.md); actual results are separate from formal approval.
 
 ### Next action and support panels
 

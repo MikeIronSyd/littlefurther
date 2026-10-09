@@ -92,12 +92,14 @@ export function focusStatus(host: HTMLElement, key: MessageKey): void {
   status.focus();
 }
 
-// Lucide panel icons, ISC license. Exact upstream geometry:
-// https://lucide.dev/icons/panel-left-close and https://lucide.dev/icons/panel-left-open
+// Lucide panel and theme icons, ISC license. Exact upstream geometry:
+// https://lucide.dev/icons/{panel-left-close,panel-left-open,moon,sun}
 export function icon(
   kind:
     | "panel-close"
     | "panel-open"
+    | "moon"
+    | "sun"
     | "home"
     | "path"
     | "activity"
@@ -142,6 +144,30 @@ export function icon(
     svg.append(rect);
     path("M9 3v18");
     path(kind === "panel-close" ? "m16 15-3-3 3-3" : "m14 9 3 3-3 3");
+  } else if (kind === "moon" || kind === "sun") {
+    svg.setAttribute("stroke-width", "2");
+    if (kind === "moon") {
+      path(
+        "M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401",
+      );
+    } else {
+      const circle = document.createElementNS(ns, "circle");
+      circle.setAttribute("cx", "12");
+      circle.setAttribute("cy", "12");
+      circle.setAttribute("r", "4");
+      svg.append(circle);
+      for (const d of [
+        "M12 2v2",
+        "M12 20v2",
+        "m4.93 4.93 1.41 1.41",
+        "m17.66 17.66 1.41 1.41",
+        "M2 12h2",
+        "M20 12h2",
+        "m6.34 17.66-1.41 1.41",
+        "m19.07 4.93-1.41 1.41",
+      ])
+        path(d);
+    }
   } else {
     const paths = {
       home: "m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9",

@@ -34,6 +34,7 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
   let explicitTheme: Theme | null =
     storedTheme === "light" || storedTheme === "dark" ? storedTheme : null;
   let collapsed = read(SIDEBAR_KEY) === "collapsed";
+  let signedIn = false;
   let route: Route = "learning";
   const skip = text("a", "skip", "skip-link");
   skip.href = "#main-content";
@@ -57,15 +58,43 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
   language.addEventListener("change", () =>
     options.onLocale(language.value === "fr" ? "fr" : "en"),
   );
-  const themeText = text("span", "darkMode");
-  const themeButton = el(
-    "button",
-    "theme-button",
-    themeText,
-    el("span", "toggle-track", el("span", "toggle-knob")),
-  );
+  const themeButton = el("button", "theme-button");
   themeButton.type = "button";
-  named(themeButton, "darkMode");
+  const themeTooltip = el("span", "theme-tooltip");
+  themeTooltip.id = "theme-tooltip";
+  themeTooltip.setAttribute("role", "tooltip");
+  themeTooltip.hidden = true;
+  const themeControl = el("div", "theme-control", themeButton, themeTooltip);
+  let themeHovered = false;
+  let themeFocused = false;
+  let tooltipDismissed = false;
+  const paintTooltip = (): void => {
+    themeTooltip.hidden = tooltipDismissed || !(themeHovered || themeFocused);
+  };
+  themeControl.addEventListener("pointerenter", () => {
+    themeHovered = true;
+    tooltipDismissed = false;
+    paintTooltip();
+  });
+  themeControl.addEventListener("pointerleave", () => {
+    themeHovered = false;
+    paintTooltip();
+  });
+  themeButton.addEventListener("focus", () => {
+    themeFocused = true;
+    tooltipDismissed = false;
+    paintTooltip();
+  });
+  themeButton.addEventListener("blur", () => {
+    themeFocused = false;
+    paintTooltip();
+  });
+  root.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !themeTooltip.hidden) {
+      tooltipDismissed = true;
+      paintTooltip();
+    }
+  });
   const account = el("details", "account-menu");
   const accountSummary = el("summary", "account-summary");
   named(accountSummary, "account");
@@ -95,7 +124,7 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
   );
   account.append(accountSummary, accountItems);
   account.hidden = true;
-  const utilities = el("div", "utilities", language, themeButton, account);
+  const utilities = el("div", "utilities", language, themeControl, account);
   const header = el("header", "app-header", brandGroup, utilities);
   const sidebar = el("aside", "sidebar");
   sidebar.id = "desktop-navigation";
@@ -149,11 +178,18 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
   const paintTheme = (): void => {
     const value = effectiveTheme();
     document.documentElement.dataset.theme = value;
-    themeButton.setAttribute("aria-pressed", String(value === "dark"));
+    themeButton.replaceChildren(icon(value === "dark" ? "sun" : "moon"));
+    const action = message(value === "dark" ? "switchToLight" : "switchToDark");
+    themeButton.setAttribute("aria-label", action);
+    themeTooltip.textContent = action;
   };
   const paintNavigation = (): void => {
     const mobile = mobileQuery.matches;
+    frame.classList.toggle("signed-out", !signedIn);
     frame.classList.toggle("sidebar-collapsed", collapsed);
+    navTrigger.hidden = !signedIn;
+    sidebar.hidden = !signedIn;
+    drawer.hidden = !signedIn;
     navTrigger.replaceChildren(
       icon(
         mobile
@@ -176,6 +212,7 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
       else link.removeAttribute("aria-current");
     }
   };
+  bind(themeButton, paintTheme);
   bind(navTrigger, paintNavigation);
   themeButton.addEventListener("click", () => {
     explicitTheme = effectiveTheme() === "dark" ? "light" : "dark";
@@ -186,6 +223,7 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
     if (!explicitTheme) paintTheme();
   });
   navTrigger.addEventListener("click", () => {
+    if (!signedIn) return;
     if (mobileQuery.matches) {
       returningFocus = true;
       drawer.showModal();
@@ -201,7 +239,7 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
   drawer.addEventListener("close", () => {
     document.body.classList.remove("drawer-open");
     paintNavigation();
-    if (returningFocus) navTrigger.focus();
+    if (returningFocus && signedIn) navTrigger.focus();
     returningFocus = true;
   });
   drawer.addEventListener("keydown", (event) => {
@@ -246,9 +284,19 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
       paintNavigation();
     },
     setUser(value: MeResponse | null): void {
+      signedIn = Boolean(value);
+      if (!signedIn) {
+        account.open = false;
+        if (drawer.open) {
+          returningFocus = false;
+          drawer.close();
+        }
+        document.body.classList.remove("drawer-open");
+      }
       account.hidden = !value;
       avatar.textContent = value?.user.name.slice(0, 1).toLocaleUpperCase() ?? "?";
       accountName.textContent = value?.user.name ?? "";
+      paintNavigation();
     },
     status(key: Parameters<typeof message>[0] | null): void {
       liveStatus.replaceChildren(...(key ? [text("span", key)] : []));

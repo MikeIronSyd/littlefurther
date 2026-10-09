@@ -2,7 +2,7 @@
 
 ## Lucide / Feather icon geometry
 
-The panel toggle icons in `src/client/ui.ts` vendor Lucide's PanelLeftClose and PanelLeftOpen SVG geometry. Supporting geometric UI icons follow the same vocabulary; this notice also retains the upstream Feather attribution for derived icons.
+The panel toggle icons in `src/client/ui.ts` vendor Lucide's PanelLeftClose and PanelLeftOpen SVG geometry. The theme action adds upstream Moon and Sun geometry, checked9October2026 at https://lucide.dev/icons/moon and https://lucide.dev/icons/sun. Supporting geometric UI icons follow the same vocabulary; this notice also retains the upstream Feather attribution for derived icons.
 
 Sources checked 7 October 2026:
 

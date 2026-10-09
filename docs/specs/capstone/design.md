@@ -1,5 +1,9 @@
 # Amber learning-workspace design record
 
+## Signed-out refinement — 9 October2026
+
+The user retained sign-in and selected localized moon/sun icon actions. R22 and the [focused contract](increments/auth-shell.md) precede implementation, with the generated [desktop/mobile reference](../../../.impeccable/mocks/amber/auth-shell-reference.png) and adjacent provenance. Signed-out entry has brand/language/theme with no navigation/account/gutter; signed-in navigation and saved sidebar preference return. Actual checks, paired browser observations, one detector scan and capture limitations are in [verification](increments/auth-shell-verification.md). Amber colors, typography, copy and auth forms are preserved. This scope does not complete or fabricate the separate formal design approval/capture.
+
 ## Goal
 
 Carry the user's selected Amber direction into one connected learning journey. P04/P05 provides the local private journey and shell; P06 Comeback schedule recovery and P07 private circles are implemented and verified within their recorded scopes. P08 complete-journey review and its P09 integration corrections passed the recorded checks and independent scoped reviews. This record distinguishes current implementation from the preserved image-first design history below. A final product name/logo remains undecided.

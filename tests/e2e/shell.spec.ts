@@ -51,20 +51,25 @@ test("AC11a/c: device theme changes until an explicit choice, which survives rel
 }) => {
   await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/");
-  const darkMode = page.getByRole("button", { name: "Dark mode", exact: true });
-  await expect(darkMode).toHaveAttribute("aria-pressed", "true");
+  const themeButton = page.locator(".theme-button");
+  await expect(themeButton).toHaveAccessibleName("Switch to light mode");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expect
     .poll(() => page.evaluate(() => getComputedStyle(document.documentElement).colorScheme))
     .toBe("dark");
   await page.emulateMedia({ colorScheme: "light" });
-  await expect(darkMode).toHaveAttribute("aria-pressed", "false");
-  await darkMode.click();
-  await expect(darkMode).toHaveAttribute("aria-pressed", "true");
+  await expect(themeButton).toHaveAccessibleName("Switch to dark mode");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await themeButton.click();
+  await expect(themeButton).toHaveAccessibleName("Switch to light mode");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await page.emulateMedia({ colorScheme: "dark" });
   await page.emulateMedia({ colorScheme: "light" });
-  await expect(darkMode).toHaveAttribute("aria-pressed", "true");
+  await expect(themeButton).toHaveAccessibleName("Switch to light mode");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await page.reload();
-  await expect(darkMode).toHaveAttribute("aria-pressed", "true");
+  await expect(themeButton).toHaveAccessibleName("Switch to light mode");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expectOnlyUiStorage(page);
 });
 
@@ -74,15 +79,15 @@ test("AC11a: invalid saved theme follows device preference instead of applying c
   await page.addInitScript(() => localStorage.setItem("capstone.ui.theme", "invalid-preference"));
   await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/");
-  await expect(page.getByRole("button", { name: "Dark mode", exact: true })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
+  await expect(
+    page.getByRole("button", { name: "Switch to light mode", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await page.emulateMedia({ colorScheme: "light" });
-  await expect(page.getByRole("button", { name: "Dark mode", exact: true })).toHaveAttribute(
-    "aria-pressed",
-    "false",
-  );
+  await expect(
+    page.getByRole("button", { name: "Switch to dark mode", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
 });
 
 test("AC11b/c: blocked preference storage leaves both toggles usable and preserves the draft", async ({
@@ -101,11 +106,17 @@ test("AC11b/c: blocked preference storage leaves both toggles usable and preserv
   const action = page.getByLabel("Action", { exact: true }).first();
   await action.fill("An unsaved action");
   const route = page.url();
-  const darkMode = page.getByRole("button", { name: "Dark mode", exact: true });
-  const before = await darkMode.getAttribute("aria-pressed");
-  await darkMode.click();
-  await expect(darkMode).toHaveAttribute("aria-pressed", before === "true" ? "false" : "true");
-  await expect(darkMode).toBeFocused();
+  const themeButton = page.locator(".theme-button");
+  const before = await page.locator("html").getAttribute("data-theme");
+  await themeButton.click();
+  await expect(page.locator("html")).toHaveAttribute(
+    "data-theme",
+    before === "dark" ? "light" : "dark",
+  );
+  await expect(themeButton).toHaveAccessibleName(
+    before === "dark" ? "Switch to dark mode" : "Switch to light mode",
+  );
+  await expect(themeButton).toBeFocused();
   await page.getByRole("button", { name: "Collapse sidebar", exact: true }).click();
   const collapsed = page.getByRole("button", { name: "Expand sidebar", exact: true });
   await expect(collapsed).toHaveAttribute("aria-expanded", "false");
@@ -149,6 +160,7 @@ test("AC11c: desktop sidebar uses directional panel icons, retains links and sav
 test("AC11d/e: French 320px drawer contains focus, restores it, and cleans up across resizing", async ({
   page,
 }) => {
+  await page.emulateMedia({ colorScheme: "light" });
   await createAccount(page);
   await openManualDraft(page, "Mon objectif conservé");
   await page.getByLabel("Action", { exact: true }).first().fill("Mon action conservée");
@@ -158,7 +170,7 @@ test("AC11d/e: French 320px drawer contains focus, restores it, and cleans up ac
   await expect(page.getByRole("combobox", { name: "Langue", exact: true })).toBeVisible();
   await expectNoHorizontalOverflow(page);
   await expect(page.getByText("Nom de l’app", { exact: true })).toBeVisible();
-  await page.getByRole("button", { name: "Mode sombre", exact: true }).click();
+  await page.getByRole("button", { name: "Passer en mode sombre", exact: true }).click();
   const opener = page.getByRole("button", { name: "Ouvrir la navigation", exact: true });
   await expect(opener).toHaveAttribute("aria-expanded", "false");
   await opener.click();

@@ -189,7 +189,11 @@ test("AC11: French mobile journey supports saving study and explicit completion"
 test("AC11f: forced colours and reduced motion preserve keyboard-operated navigation", async ({
   page,
 }) => {
-  await page.emulateMedia({ forcedColors: "active", reducedMotion: "reduce" });
+  await page.emulateMedia({
+    colorScheme: "light",
+    forcedColors: "active",
+    reducedMotion: "reduce",
+  });
   await createAccount(page);
   await page.setViewportSize({ width: 320, height: 720 });
   const opener = page.getByRole("button", { name: "Open navigation", exact: true });
@@ -199,10 +203,10 @@ test("AC11f: forced colours and reduced motion preserve keyboard-operated naviga
   await expect(drawer).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(opener).toBeFocused();
-  await page.getByRole("button", { name: "Dark mode", exact: true }).click();
-  await expect(page.getByRole("button", { name: "Dark mode", exact: true })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
+  await page.getByRole("button", { name: "Switch to dark mode", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Switch to light mode", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expectNoHorizontalOverflow(page);
 });

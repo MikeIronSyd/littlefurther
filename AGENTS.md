@@ -4,6 +4,8 @@ This is the Andela x Miva x OpenAI Codex Accelerator Hackathon workspace. The us
 
 ## Resume with context
 
+The9October signed-out shell/theme decision retains real sign-in, hides navigation/account until authenticated, reclaims the full entry width and uses localized moon/sun next-action buttons with hover/focus tooltips. Consult `docs/specs/capstone/increments/auth-shell.md` and its verification for the latest AS01–AS06 results, lifecycle cleanup and delivery status; do not reinstate the superseded text/switch theme control or infer formal design approval.
+
 Read `project-context.json` and the applicable specification under `docs/specs/` before starting or resuming work. Consult the linked Miva Google Sheet and local Kaneo project for current activities, decisions, evidence, and next actions. Use the account and destination identities in the context; do not substitute another Google account.
 
 The brief is to use Codex to build people-centred technology that makes learning easier to reach, sustain, and act on. Track 2 is the single selected track. Keep real-world beneficiaries and impact specific, and do not reuse the discarded beginner audience as a requirement. The user is building solo and reports availability above ten hours per week; distinguish this capacity from measured work. Country-specific opportunity routing and the earlier local-only storage proposal are superseded, not requirements for this engagement product.

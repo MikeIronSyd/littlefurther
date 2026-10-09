@@ -1,0 +1,292 @@
+import { expect, type Page, test } from "@playwright/test";
+import {
+  createAccount,
+  expectNoHorizontalOverflow,
+  expectOnlyUiStorage,
+  respectAuthenticationRateLimit,
+} from "./helpers.js";
+
+// A failed test replaces the worker and its helper clock. Preserve the real
+// authentication cooldown rather than cascading rate-limit fixture failures.
+test.afterEach(async ({ page: _page }, testInfo) => {
+  if (testInfo.status !== testInfo.expectedStatus) await respectAuthenticationRateLimit();
+});
+
+async function expectSignedOutShell(page: Page): Promise<void> {
+  await expect(page.locator(".sidebar")).toBeHidden();
+  await expect(page.locator(".nav-trigger")).toBeHidden();
+  await expect(page.locator(".account-menu")).toBeHidden();
+  await expect(page.locator(".mobile-drawer")).toBeHidden();
+  await expect(page.getByRole("navigation")).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "My learning", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Journeys", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Activity", exact: true })).toHaveCount(0);
+  const width = page.viewportSize()?.width;
+  const column = await page.locator(".main-column").boundingBox();
+  expect(column).not.toBeNull();
+  expect(column?.x, "The main column begins at the viewport edge without an empty rail").toBe(0);
+  expect(column?.width, "The signed-out frame reclaims the whole available width").toBe(width);
+  await expectNoHorizontalOverflow(page);
+}
+
+for (const width of [1440, 320]) {
+  test(`AS01: sign-in and sign-up have a focused full-width shell at ${width}px`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ colorScheme: "light" });
+    await page.setViewportSize({ width, height: width === 320 ? 720 : 1000 });
+    await page.goto("/");
+    await expect(page.getByRole("button", { name: "Sign in", exact: true })).toBeVisible();
+    await expect(page.getByText("App name", { exact: true })).toBeVisible();
+    await expect(page.getByRole("combobox", { name: "Language", exact: true })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Switch to dark mode", exact: true }),
+    ).toBeVisible();
+    await expect(page.getByLabel("Email address", { exact: true })).toBeVisible();
+    await expect(page.getByLabel("Password", { exact: true })).toBeVisible();
+    await expectSignedOutShell(page);
+    await page.getByRole("button", { name: "New here? Create an account", exact: true }).click();
+    await expect(
+      page.getByRole("button", { name: "Create an account", exact: true }),
+    ).toBeVisible();
+    await expect(page.getByLabel("Display name", { exact: true })).toBeVisible();
+    await expectSignedOutShell(page);
+  });
+}
+
+test("AS03/04: moon and sun actions have keyboard semantics and localized dismissible tooltips", async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto("/");
+  await expect(page.getByRole("button", { name: "Sign in", exact: true })).toBeVisible();
+  const theme = page.locator(".theme-button");
+  const tooltip = page.getByRole("tooltip");
+  await expect(theme).toHaveAccessibleName("Switch to dark mode");
+  await expect(theme).toHaveAttribute("type", "button");
+  await expect(theme).not.toHaveAttribute("aria-pressed", /.*/);
+  await expect(theme.locator("svg")).toHaveAttribute("aria-hidden", "true");
+  await expect(theme.locator("svg")).toHaveAttribute("focusable", "false");
+  await expect(theme.locator("svg circle")).toHaveCount(0);
+  const moon = await theme.locator("svg").innerHTML();
+  const target = await theme.boundingBox();
+  expect(target).not.toBeNull();
+  expect(target?.width ?? 0).toBeGreaterThanOrEqual(44);
+  expect(target?.height ?? 0).toBeGreaterThanOrEqual(44);
+  await expect(page.locator(".toggle-track, .toggle-knob")).toHaveCount(0);
+  await expect(page.getByText("Dark mode", { exact: true })).toHaveCount(0);
+
+  await theme.hover();
+  await expect(tooltip).toBeVisible();
+  await expect(tooltip).toHaveText("Switch to dark mode");
+  await page.keyboard.press("Escape");
+  await expect(tooltip).not.toBeVisible();
+  await page.mouse.move(0, 0);
+  await page.getByLabel("Email address", { exact: true }).focus();
+  await page.keyboard.press("Shift+Tab");
+  await expect(theme).toBeFocused();
+  await expect(tooltip).toBeVisible();
+  await expect(tooltip).toHaveText("Switch to dark mode");
+  expect(
+    await theme.evaluate((element) => Number.parseFloat(getComputedStyle(element).outlineWidth)),
+  ).toBeGreaterThanOrEqual(2);
+  await page.keyboard.press("Enter");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(theme).toHaveAccessibleName("Switch to light mode");
+  await expect(theme).toBeFocused();
+  await expect(theme).not.toHaveAttribute("aria-pressed", /.*/);
+  await expect(theme.locator("svg circle")).toHaveCount(1);
+  expect(await theme.locator("svg").innerHTML()).not.toBe(moon);
+  await expect(tooltip).toHaveText("Switch to light mode");
+  await page.keyboard.press("Space");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(theme).toHaveAccessibleName("Switch to dark mode");
+  await expect(theme).toBeFocused();
+  await expect(theme.locator("svg")).toHaveJSProperty("innerHTML", moon);
+
+  const language = page.locator(".language-select");
+  await expect(language).toHaveAccessibleName("Language");
+  await language.focus();
+  await language.selectOption("fr");
+  await expect(language).toHaveAccessibleName("Langue");
+  await expect(language).toBeFocused();
+  await expect(theme).toHaveAccessibleName("Passer en mode sombre");
+  await page.keyboard.press("Tab");
+  await expect(theme).toBeFocused();
+  await expect(tooltip).toBeVisible();
+  await expect(tooltip).toHaveText("Passer en mode sombre");
+  await page.keyboard.press("Enter");
+  await expect(theme).toHaveAccessibleName("Passer en mode clair");
+  await expect(tooltip).toHaveText("Passer en mode clair");
+  await expect(theme).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(tooltip).not.toBeVisible();
+  await expect(theme).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(page.getByLabel("Adresse e-mail", { exact: true })).toBeFocused();
+  await expectOnlyUiStorage(page);
+});
+
+test("AS04/05: theme and locale retain sign-in and sign-up input and control focus", async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto("/");
+  const email = page.locator('input[name="email"]');
+  const password = page.locator('input[name="password"]');
+  const theme = page.locator(".theme-button");
+  const language = page.locator(".language-select");
+  await email.fill("my-private-auth-input@example.test");
+  await password.fill("Unsaved-auth-password");
+  const originalEmail = await email.elementHandle();
+  const originalPassword = await password.elementHandle();
+  await theme.focus();
+  await page.keyboard.press("Enter");
+  await expect(theme).toBeFocused();
+  await language.focus();
+  await language.selectOption("fr");
+  await expect(language).toBeFocused();
+  await expect(email).toHaveValue("my-private-auth-input@example.test");
+  await expect(password).toHaveValue("Unsaved-auth-password");
+  expect(await originalEmail?.evaluate((element) => element.isConnected)).toBe(true);
+  expect(await originalPassword?.evaluate((element) => element.isConnected)).toBe(true);
+  await originalEmail?.dispose();
+  await originalPassword?.dispose();
+  await page
+    .getByRole("button", { name: "Première visite ? Créer un compte", exact: true })
+    .click();
+  const name = page.locator('input[name="name"]');
+  await name.fill("My chosen learner name");
+  await email.fill("signup-input@example.test");
+  await password.fill("Signup-unsaved-password");
+  await theme.focus();
+  await page.keyboard.press("Space");
+  await expect(theme).toBeFocused();
+  await language.focus();
+  await language.selectOption("en");
+  await expect(language).toBeFocused();
+  await expect(name).toHaveValue("My chosen learner name");
+  await expect(email).toHaveValue("signup-input@example.test");
+  await expect(password).toHaveValue("Signup-unsaved-password");
+  await expectSignedOutShell(page);
+  await expectOnlyUiStorage(page);
+});
+
+test("AS02: sign-out focuses authentication and sign-in restores the saved sidebar", async ({
+  page,
+}) => {
+  const account = await createAccount(page);
+  await page.getByRole("button", { name: "Collapse sidebar", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Expand sidebar", exact: true })).toHaveAttribute(
+    "aria-expanded",
+    "false",
+  );
+  await page.getByLabel("Account", { exact: true }).click();
+  await page.getByRole("button", { name: "Sign out", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Sign in", exact: true })).toBeVisible();
+  await expectSignedOutShell(page);
+  await expect(page.locator("main h1")).toBeFocused();
+  await expect(page.locator("#app")).not.toHaveAttribute("inert", /.*/);
+  await expect(page.locator(".account-menu")).not.toHaveAttribute("open", /.*/);
+  expect((await page.request.get("/api/me")).status()).toBe(401);
+  expect(await page.evaluate(() => localStorage.getItem("capstone.ui.sidebar"))).toBe("collapsed");
+  await page.getByLabel("Email address", { exact: true }).fill(account.email);
+  await page.getByLabel("Password", { exact: true }).fill(account.password);
+  await respectAuthenticationRateLimit();
+  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Create a learning plan", exact: true }),
+  ).toBeVisible();
+  const restored = page.getByRole("button", { name: "Expand sidebar", exact: true });
+  await expect(restored).toBeVisible();
+  await expect(restored).toHaveAttribute("aria-expanded", "false");
+  await expect(restored.locator('svg path[d="m14 9 3 3-3 3"]')).toHaveCount(1);
+  await expect(page.locator(".sidebar")).toBeVisible();
+  await expect(page.getByRole("link", { name: "My learning", exact: true })).toBeVisible();
+  await expect(page.getByLabel("Account", { exact: true })).toBeVisible();
+  await expectOnlyUiStorage(page);
+});
+
+test("AS02: real session expiry closes an open mobile drawer and clears its page lock", async ({
+  page,
+}) => {
+  await createAccount(page);
+  let release: () => void = () => {};
+  let captured: () => void = () => {};
+  const gate = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  const ready = new Promise<void>((resolve) => {
+    captured = resolve;
+  });
+  await page.route("**/api/plans", async (route) => {
+    captured();
+    await gate;
+    // The original token is sent to the real server only after its session has
+    // been revoked. This is an actual401, not a fabricated expiry response.
+    const response = await route.fetch();
+    await route.fulfill({ response });
+  });
+  try {
+    await page.getByRole("link", { name: "Activity", exact: true }).click();
+    await ready;
+    await page.setViewportSize({ width: 320, height: 720 });
+    await page.getByRole("button", { name: "Open navigation", exact: true }).click();
+    const drawer = page.getByRole("dialog", { name: "Navigation", exact: true });
+    await expect(drawer).toBeVisible();
+    await expect(page.locator("body")).toHaveClass(/drawer-open/);
+    const response = await page.request.post("/api/auth/sign-out", {
+      headers: { origin: new URL(page.url()).origin },
+      data: {},
+    });
+    expect(response.ok()).toBe(true);
+    expect((await page.request.get("/api/me")).status()).toBe(401);
+    const expiry = page.waitForResponse(
+      (response) => new URL(response.url()).pathname === "/api/plans",
+    );
+    release();
+    expect((await expiry).status()).toBe(401);
+    await expect(page.getByRole("button", { name: "Sign in", exact: true })).toBeVisible();
+    await expectSignedOutShell(page);
+    await expect(page.locator("body")).not.toHaveClass(/drawer-open/);
+    await expect(page.locator(".mobile-drawer")).not.toHaveAttribute("open", /.*/);
+    await expect(page.locator("main h1")).toBeFocused();
+    await page.getByLabel("Email address", { exact: true }).fill("Returning-learner@example.test");
+    await expect(page.getByLabel("Email address", { exact: true })).toBeFocused();
+    await expectNoHorizontalOverflow(page);
+  } finally {
+    release();
+  }
+});
+
+test("AS05: blocked storage keeps signed-out theme actions and private input usable", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(window, "localStorage", {
+      configurable: true,
+      get() {
+        throw new DOMException("Blocked by acceptance test", "SecurityError");
+      },
+    });
+  });
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.goto("/");
+  const email = page.getByLabel("Email address", { exact: true });
+  await email.fill("Preserved-with-blocked-storage@example.test");
+  const theme = page.locator(".theme-button");
+  await expect(theme).toHaveAccessibleName("Switch to light mode");
+  await theme.focus();
+  await page.keyboard.press("Enter");
+  await expect(theme).toHaveAccessibleName("Switch to dark mode");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(theme).toBeFocused();
+  await expect(email).toHaveValue("Preserved-with-blocked-storage@example.test");
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.emulateMedia({ colorScheme: "dark" });
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await page.reload();
+  await expect(theme).toHaveAccessibleName("Switch to light mode");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expectSignedOutShell(page);
+});

@@ -194,7 +194,7 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. Artifact2209bd2 is published to both private repositories with exact Git head readback; E013 saved comparisons passed39 Sheet cells and five entire Kaneo descriptions with all histories/statuses/dates preserved. GitHub MCP is currently unavailable; no provider-MCP success inferred.",
+      "scope_status": "Signed-out sign-in/sign-up now shows brand, language and localized moon/sun theme actions with no navigation/account/gutter. Authentication restores saved navigation; session clear closes drawer/popover/body lock and guards auth focus after unlock. R22/reference preceded production edits. Focused13browser cases,56domain/store/HTTP cases and strict/lint/format/build/process/audit passed. Full63-case regression passed in11.6minutes; E014 saved reconciliation and dual-source publication are pending actual delivery/readback. Initial two fixture locator failures and one test-line formatter failure were corrected without relaxed checks. Independent source/fixture review has no scoped blocker; paired browser MCP confirms desktopEN/light and320pxFR/dark. Formal design approval/capture, comprehensive accessibility/native-French quality, learner outcomes and video remain open.",
       "ai_product_feature_required": false,
       "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
@@ -209,9 +209,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. Artifact2209bd2 is published to both private repositories with exact Git head readback; E013 saved comparisons passed39 Sheet cells and five entire Kaneo descriptions with all histories/statuses/dates preserved. GitHub MCP is currently unavailable; no provider-MCP success inferred.",
+    "mvp_scope": "Signed-out sign-in/sign-up now shows brand, language and localized moon/sun theme actions with no navigation/account/gutter. Authentication restores saved navigation; session clear closes drawer/popover/body lock and guards auth focus after unlock. R22/reference preceded production edits. Focused13browser cases,56domain/store/HTTP cases and strict/lint/format/build/process/audit passed. Full63-case regression passed in11.6minutes; E014 saved reconciliation and dual-source publication are pending actual delivery/readback. Initial two fixture locator failures and one test-line formatter failure were corrected without relaxed checks. Independent source/fixture review has no scoped blocker; paired browser MCP confirms desktopEN/light and320pxFR/dark. Formal design approval/capture, comprehensive accessibility/native-French quality, learner outcomes and video remain open.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "Five focused corrections and E013 delivery complete within scope. Next timed3-5-minute demo/evidence index; formal design approval/capture and learner outcomes remain open."
+    "stage": "Complete E014 saved reconciliation and dual-private publication; then prepare timed3-5-minute demo/evidence index. Formal decisions/capture and learner outcomes stay separate."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -523,7 +523,7 @@
       "verified": "GitHub MCP github_fetch_commit returned P04/P05 artifact 9d5820b, P06 artifact 204e227 and now P07 artifact 134997605a02885dbd5181f0cee01e0aca5fe9ea, its message, canonical URL and diff. Both private heads were separately verified through normal Git readback; Miva connector availability remains distinct. P08/P09 artifact 4a59c0278fee0dea7c5370f05db2ab4bfe7af34d was also independently read through GitHub MCP on 8 October after both remote heads matched through Git. P10 artifactf3ca0494dc09fbd114d66dbabe056d7c70324984 was also read through GitHub MCP after both private heads matched at20:05 Africa/Lagos on8October. Integrated design-review artifacte83ab8c6e7b4d04eaffcdea42e45dee59bc026d5 was read through GitHub MCP after both private heads matched at20:44Africa/Lagos on8October.",
       "boundary": "Source publication uses normal local Git commits and pushes to both authorized private project repositories, preserving unrelated hooks. Global-only CodexRecovery is separate; project files and Git history never go there.",
       "miva_status": "Miva repository read returned 404 through the connector on 2026-10-07. Scoped installed GitHub CLI separately confirmed private repository visibility and WRITE; this is CLI evidence.",
-      "current_availability": "9October2026: no GitHub repository/commit read tool or tool-search route exposed in current inventory. E013 provider MCP readback unavailable; both heads verified through normal Git ls-remote. Prior successful MCP results remain historical."
+      "current_availability": "9October2026 auth-shell: GitHub repository/commit read tools and tool-search route are not exposed. Actual dual-source publication/readback will use normal GitCLI. Preserve prior providerMCP evidence separately."
     },
     "browser_mcp": {
       "purpose": "Operate the running app for observed behaviour and maintain Miva Sheet/Kaneo with saved readback.",
@@ -546,7 +546,7 @@
   },
   "current_preparation": {
     "recorded_on": "2026-10-09",
-    "status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. Artifact2209bd2 is published to both private repositories with exact Git head readback; E013 saved comparisons passed39 Sheet cells and five entire Kaneo descriptions with all histories/statuses/dates preserved. GitHub MCP is currently unavailable; no provider-MCP success inferred.",
+    "status": "Signed-out sign-in/sign-up now shows brand, language and localized moon/sun theme actions with no navigation/account/gutter. Authentication restores saved navigation; session clear closes drawer/popover/body lock and guards auth focus after unlock. R22/reference preceded production edits. Focused13browser cases,56domain/store/HTTP cases and strict/lint/format/build/process/audit passed. Full63-case regression passed in11.6minutes; E014 saved reconciliation and dual-source publication are pending actual delivery/readback. Initial two fixture locator failures and one test-line formatter failure were corrected without relaxed checks. Independent source/fixture review has no scoped blocker; paired browser MCP confirms desktopEN/light and320pxFR/dark. Formal design approval/capture, comprehensive accessibility/native-French quality, learner outcomes and video remain open.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -628,11 +628,17 @@
       "docs/specs/capstone/reviews/2026-10-09-refinement-review.md",
       "docs/specs/capstone/reviews/2026-10-09-refinement-final-review.md",
       "docs/specs/capstone/reviews/2026-10-09-refinement-tracker.md",
-      "tests/e2e/design-refinement.spec.ts"
+      "tests/e2e/design-refinement.spec.ts",
+      "docs/specs/capstone/increments/auth-shell.md",
+      "docs/specs/capstone/increments/auth-shell-verification.md",
+      "docs/specs/capstone/reviews/2026-10-09-auth-shell-review.md",
+      "docs/specs/capstone/reviews/2026-10-09-auth-shell-tracker.md",
+      ".impeccable/mocks/amber/auth-shell-reference.png",
+      "tests/e2e/auth-shell.spec.ts"
     ],
     "tracker_record": "E004-E012 retained as dated history; E013 correction/results saved and verified in both trackers. D009-D015 and A001-A010 preserved.",
-    "tracker_sync": "E013 saved/read back in the correct Miva Sheet and five Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, unique rowA14; five full persisted descriptions exactly match intended text and preserve entire prior histories, statuses and No date. A007 and board10tasks unchanged. See2026-10-09-refinement-tracker.md.",
-    "publication": "Artifact2209bd2d4ae161c5dd2fe45bac1c4641d7aec2cb published by normal git push origin main to both private repositories, exact heads verified12:15Africa/Lagos. GitHub MCP unavailable in current tool inventory; actual readback is GitCLI. E013 saved/read back in both trackers. Final documentation closeout records actual delivery separately; no hosted CI/deployment/global recovery claim.",
+    "tracker_sync": "E014 live baselines verified in correct Miva account and Kaneo; saved updates pending final verified ledger/artifact.",
+    "publication": "Auth-shell intended source publication is pending required checks and final review; both private heads still match prior774f587. No source/recovery/public hosting publication inferred.",
     "limitations": [
       "All five focused corrections, required checks, independent source review and E013 artifact/saved delivery are verified within scope; full capstone/formal design and video acceptance remain open.",
       "No real learner evaluation, retention/mastery gain, time-saving measurement or human adoption.",
@@ -821,15 +827,22 @@
           "GitHub CI template remains inactive because current OAuth access lacks workflow-write scope; no hosted check/gate enforcement.",
           "Timed video remains pending. Review-only server4329 stopped and normal4317 retained; review helper intentionally available for user decisions with30-minute idle expiry. Earlier P10 test-tab cleanup uncertainty remains historical."
         ]
+      },
+      {
+        "recorded_on": "2026-10-09",
+        "stage": "E013 focused corrections delivered before auth-shell scope",
+        "status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. Artifact2209bd2 is published to both private repositories with exact Git head readback; E013 saved comparisons passed39 Sheet cells and five entire Kaneo descriptions with all histories/statuses/dates preserved. GitHub MCP is currently unavailable; no provider-MCP success inferred.",
+        "tracker_sync": "E013 saved/read back in the correct Miva Sheet and five Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, unique rowA14; five full persisted descriptions exactly match intended text and preserve entire prior histories, statuses and No date. A007 and board10tasks unchanged. See2026-10-09-refinement-tracker.md.",
+        "publication": "Artifact2209bd2d4ae161c5dd2fe45bac1c4641d7aec2cb published by normal git push origin main to both private repositories, exact heads verified12:15Africa/Lagos. GitHub MCP unavailable in current tool inventory; actual readback is GitCLI. E013 saved/read back in both trackers. Final documentation closeout records actual delivery separately; no hosted CI/deployment/global recovery claim."
       }
     ]
   },
   "research_gate": {
-    "status": "Closed for R21 five focused design corrections",
-    "closed_at": "2026-10-09T11:41:00+01:00",
+    "status": "Closed for R22 sign-in shell and theme actions",
+    "closed_at": "2026-10-09T14:07:00+01:00",
     "checklist": "docs/specs/capstone/research.md",
-    "evidence": "R21a-d in increments/design-refinement.md; independent editor/test research and root source/locale/version/reference trace.",
-    "boundary": "All research needs for focused corrections satisfied before production edits. Formal receipt/capture and broad outcomes remain separate open deliverables.",
+    "evidence": "R22a-e in increments/auth-shell.md, independent test research, existing session/theme source traces, official W3C/Lucide sources and pre-code reference.",
+    "boundary": "All required scoped research documented before production edits; separate formal receipt/capture and broader outcomes stay open.",
     "initial_closed_at": "2026-10-07T16:57:00+01:00",
     "design_review": {
       "checklist": "docs/specs/capstone/increments/design-review.md",
@@ -838,20 +851,13 @@
     }
   },
   "active_increment": {
-    "id": "P11-design-refinement",
-    "name": "Five focused learner-flow corrections",
+    "id": "P11-auth-shell",
+    "name": "Focused sign-in shell and moon/sun theme actions",
     "date": "2026-10-09",
-    "status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. Artifact2209bd2 is published to both private repositories with exact Git head readback; E013 saved comparisons passed39 Sheet cells and five entire Kaneo descriptions with all histories/statuses/dates preserved. GitHub MCP is currently unavailable; no provider-MCP success inferred.",
-    "specification": "docs/specs/capstone/increments/design-refinement.md",
-    "verification": "docs/specs/capstone/increments/design-refinement-verification.md",
-    "baseline": "526ec3402c09e2e098e83dc44cd658428830f2cb",
-    "findings": {
-      "D01": "Resolved within RF01 tested scope; focused/full browser evidence passed",
-      "D02": "Resolved within RF02 tested scope; focused/full browser evidence passed",
-      "D03": "Resolved within RF03 tested scope; focused/full browser evidence passed",
-      "D04": "Resolved within RF04 tested scope; focused/full browser evidence passed",
-      "D05": "Resolved within RF05 tested scope; focused/full browser evidence passed"
-    },
+    "status": "Signed-out sign-in/sign-up now shows brand, language and localized moon/sun theme actions with no navigation/account/gutter. Authentication restores saved navigation; session clear closes drawer/popover/body lock and guards auth focus after unlock. R22/reference preceded production edits. Focused13browser cases,56domain/store/HTTP cases and strict/lint/format/build/process/audit passed. Full63-case regression passed in11.6minutes; E014 saved reconciliation and dual-source publication are pending actual delivery/readback. Initial two fixture locator failures and one test-line formatter failure were corrected without relaxed checks. Independent source/fixture review has no scoped blocker; paired browser MCP confirms desktopEN/light and320pxFR/dark. Formal design approval/capture, comprehensive accessibility/native-French quality, learner outcomes and video remain open.",
+    "specification": "docs/specs/capstone/increments/auth-shell.md",
+    "verification": "docs/specs/capstone/increments/auth-shell-verification.md",
+    "baseline": "08231721b5c844fccb160292a7c7edcf286f8818",
     "formal_review": {
       "status": "Awaiting real user decisions",
       "session": "3958725ad218c4dfdda608b6a34055a5ffe63efeda72a7fea9cf00bea8b9d626",
@@ -860,10 +866,8 @@
       "idle_limit": "30 minutes; resume same session if expired",
       "report": "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md"
     },
-    "tracker_sync": "E013 saved/read back in the correct Miva Sheet and five Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, unique rowA14; five full persisted descriptions exactly match intended text and preserve entire prior histories, statuses and No date. A007 and board10tasks unchanged. See2026-10-09-refinement-tracker.md.",
-    "next": "Prepare the timed3-5-minute demo and criteria/timecode evidence index. Formal human receipt/capture and any available learner evaluation remain separate; no automatic outreach.",
-    "artifact_commit": "e53210745e82fafbcd7ce59b8e306f64285a8338",
-    "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/e53210745e82fafbcd7ce59b8e306f64285a8338"
+    "tracker_sync": "E014 live baselines verified in correct Miva account and Kaneo; saved updates pending final verified ledger/artifact.",
+    "next": "Complete E014 saved reconciliation and dual-private publication; then prepare timed3-5-minute demo/evidence index. Formal decisions/capture and learner outcomes stay separate."
   },
   "design_direction": {
     "name": "Amber",
@@ -882,5 +886,52 @@
     "shell": "Stable top-left brand placeholder outside sidebar; My learning/Journeys/Activity navigation; top utilities; device-preference theme with explicit light/dark override; proper divided-panel icon with left/right chevron.",
     "review": "Fresh independent paired desktop/light-dark/French-mobile review found mobile priority ordering and documentation issues, then marked both scored corrections resolved. Its ship disposition covers those fixes only. Semantic/Segoe UI adaptation retained; formal Impeccable finish refused because earlier phases remain open, and no formal fidelity completion is claimed.",
     "behavior_status": "Private-journey shell checks passed, including final6 affected browser cases after mobile ordering/French accessible-label corrections. Formal Impeccable pipeline remains open; manual visual verdict is separate."
-  }
+  },
+  "increment_history": [
+    {
+      "id": "P11-design-refinement",
+      "name": "Five focused learner-flow corrections",
+      "date": "2026-10-09",
+      "status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. Artifact2209bd2 is published to both private repositories with exact Git head readback; E013 saved comparisons passed39 Sheet cells and five entire Kaneo descriptions with all histories/statuses/dates preserved. GitHub MCP is currently unavailable; no provider-MCP success inferred.",
+      "specification": "docs/specs/capstone/increments/design-refinement.md",
+      "verification": "docs/specs/capstone/increments/design-refinement-verification.md",
+      "baseline": "526ec3402c09e2e098e83dc44cd658428830f2cb",
+      "findings": {
+        "D01": "Resolved within RF01 tested scope; focused/full browser evidence passed",
+        "D02": "Resolved within RF02 tested scope; focused/full browser evidence passed",
+        "D03": "Resolved within RF03 tested scope; focused/full browser evidence passed",
+        "D04": "Resolved within RF04 tested scope; focused/full browser evidence passed",
+        "D05": "Resolved within RF05 tested scope; focused/full browser evidence passed"
+      },
+      "formal_review": {
+        "status": "Awaiting real user decisions",
+        "session": "3958725ad218c4dfdda608b6a34055a5ffe63efeda72a7fea9cf00bea8b9d626",
+        "revision": "87f3b74ffc5f6bd5211066384d046fa6841f06173a3bcb6856a929a1791242fa",
+        "observed_url": "http://127.0.0.1:61603/",
+        "idle_limit": "30 minutes; resume same session if expired",
+        "report": "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md"
+      },
+      "tracker_sync": "E013 saved/read back in the correct Miva Sheet and five Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, unique rowA14; five full persisted descriptions exactly match intended text and preserve entire prior histories, statuses and No date. A007 and board10tasks unchanged. See2026-10-09-refinement-tracker.md.",
+      "next": "Prepare the timed3-5-minute demo and criteria/timecode evidence index. Formal human receipt/capture and any available learner evaluation remain separate; no automatic outreach.",
+      "artifact_commit": "e53210745e82fafbcd7ce59b8e306f64285a8338",
+      "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/e53210745e82fafbcd7ce59b8e306f64285a8338"
+    }
+  ],
+  "evidence_invocations": [
+    {
+      "date": "2026-10-09",
+      "increment": "P11-auth-shell",
+      "skills": [
+        "impeccable",
+        "learning-journey-review",
+        "capstone-evidence-update"
+      ],
+      "inputs": [
+        "increments/auth-shell.md AS01-AS06",
+        "working source/tests and root command logs",
+        "correct live E014 tracker baselines"
+      ],
+      "results": "Research/reference precede edits; actual independent source/fixture review and root/browser checks recorded. E014 saved write/readback pending; skill existence alone is not success."
+    }
+  ]
 }
