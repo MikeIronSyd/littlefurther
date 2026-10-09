@@ -169,3 +169,7 @@ The [password-control contract](increments/password-control.md) records four sat
 ### R25 — Clearer welcome promise, 9 October2026
 
 The [welcome-copy contract](increments/welcome-copy.md) records all three satisfied needs before catalogue edits: exact user-approved EN/FR copy/claims, shared renderer/test coupling, and existing responsive layout/static reference. Independent source research supports the bounded change; no unresolved requirement or new approval gate. Actual enlarged/bilingual layout and authentication results remain verification work.
+
+### R26 — LittleFurther brand reference, 9 October 2026
+
+The [brand-reference contract](increments/littlefurther-brand.md) records five satisfied needs before artwork: explicit name/joined-LF/reference-only decisions; bounded indexed existing-use screening; read-only .com/.app registry results with availability limits; incumbent header/typography/icon geometry; and installed native SVG/HTML/Edge rendering tooling. The .com is registered; .app registrar availability is unconfirmed and is not required for the local demo. No unresolved factual need blocks this reference. Artwork recognition/reflow/contrast, independent review and delivery remain actual verification work; user artwork selection and application integration remain separate.

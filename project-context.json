@@ -877,6 +877,14 @@
     }
   },
   "active_increment": {
+    "littlefurther_brand": {
+      "date": "2026-10-09",
+      "specification": "docs/specs/capstone/increments/littlefurther-brand.md",
+      "source": "User selected LittleFurther unchanged EN/FR and joined LF, then explicitly requested a reference-only artwork increment before application integration.",
+      "research": "R26 satisfied before artwork: settled decisions, bounded exact/spaced indexed existing-use screen, .com registered/.app registry404 with registrar availability unconfirmed, current header/font/icon truth and installed native rendering route.",
+      "verification": "32 isolated synthetic header combinations passed (1440/320, light/dark, EN/FR,100/200% root text, signed-in/out layout); SVG/sizes/no-overflow/exact-name/no-external checks pass. Contrast15.28/13.2/8.71/21/6.19. Independent skill review no artwork blocker; malformed viewer URL and README wording findings corrected/confirmed. Native syntax, same-rules isolated Biome and GET/HEAD/400/404/405 viewer checks pass. Detector no findings; both PNG provenance records present. BrowserMCP frame measurements/capture inspected. No production source/app behavior changed or tested; human recognition, artwork selection, formal approval and trademark clearance unverified.",
+      "delivery": "E018/A010 live baselines verified; actual artifact publication, provider readback and saved tracker reconciliation pending."
+    },
     "id": "P11-auth-shell",
     "name": "Focused sign-in shell and moon/sun theme actions",
     "date": "2026-10-09",
@@ -920,6 +928,15 @@
       "verification": "Strict/lint/format/build pass, existing AS01 appearance2/2pass8.8seconds, independent source review no blocker, paired ENdesktop/FR320browserMCP zero notice/scaffold nodes and noDOMoverflow. Full63suite not rerun for staticcopydeletion.",
       "delivery": "Artifactab5317ba0d2dbdac6e4d5b5754ec335c687ee3a0 published normally to both private repositories; exact GitCLI heads verified2026-10-09T19:05:55.1356667+01:00. E015 saved/read back atA16, exactly10Sheetcells/zeroextra/mismatch; A010 full saved string/entire priorhistory/title/status/date exact. One known new-prefix link separator difference corrected explicitly to native paragraph spacing; no prior-history normalization. Documentation closeout follows."
     }
+  },
+  "product_identity": {
+    "name": "LittleFurther",
+    "name_status": "User-selected on 9 October 2026; same spelling in English and French",
+    "logo_concept": "User-selected joined LF: L on left, F on right, connected baseline and softly rounded strokes",
+    "reference": "docs/specs/capstone/designs/littlefurther/reference.png",
+    "artwork_selection": "Pending user review of finished reference",
+    "application_integration": "Not started in the design-reference increment; app still has its provisional branding",
+    "availability": "Preliminary indexed screen found no obvious exact learning-product conflict. littlefurther.com is registered; .app registry404 is not registrar availability or legal clearance. No domain purchase or hosting."
   },
   "design_direction": {
     "name": "Amber",

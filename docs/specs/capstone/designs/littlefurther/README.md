@@ -1,0 +1,26 @@
+# LittleFurther artwork reference
+
+## Goal
+
+Review the selected joined LF concept before applying branding to the app. The name and concept are user-selected; these finished assets await artwork selection. Overall formal design approval remains separate.
+
+## Context Pointers
+
+- `mark.svg` is the original editable master. ViewBox 32×32; L left and F right share a baseline. One 4-unit rounded path; no font, bitmap, link or script.
+- `reference.html` is a self-contained browser reference with synthetic header layouts, live Segoe UI/system wordmark and 100/200% text specimens. It does not import or modify production code. Serve this directory locally so same-origin iframe height messages work.
+- `reference.png` is its installed-Edge browser rendering. It is a design reference, not an application screenshot, interactive demo or human recognition study.
+- The acceptance/research/actual-verification record is [littlefurther-brand.md](../../increments/littlefurther-brand.md).
+
+From the repository root with the existing Node runtime, run `node docs/specs/capstone/designs/littlefurther/preview.mjs`, then open `http://127.0.0.1:4320/`. Stop with Ctrl+C. The optional viewer binds loopback only, serves five allowlisted routes for four design files and has no learner data or product API. No installation or build is needed. The PNG board can also be viewed directly; its specimens were captured at declared widths. Other hosts may render the system-font fallback differently.
+
+## Constraints
+
+Keep **LittleFurther** unchanged in both languages. Wordmark uses the existing system font at weight650; no font file is redistributed. The optional word break is between Little and Further, preserving the exact text. The promise remains in the welcome panel, outside the header.
+
+The SVG uses `currentColor` with an ink default. Change its root colour or inline CSS for monochrome/reverse treatments: ink `#14263d` on white, amber `#f2b52d` on dark `#15232e`, white/black as needed. A separately loaded image cannot inherit page `currentColor`; inline the SVG or explicitly change the file colour for a future integration. Mark it decorative when adjacent to the readable name; its standalone title/description provide a label when viewed alone. Do not make this noninteractive reference mark look like a clickable home control.
+
+Sample sidebar/theme geometry reuses the existing Lucide icon vocabulary; its ISC attribution remains in [THIRD_PARTY_NOTICES.md](../../../../../THIRD_PARTY_NOTICES.md). All LF geometry is newly authored for this reference; independent originality or trademark clearance is not established. Source provenance for the browser-rendered PNG is `reference.html` plus the installed Segoe UI stack, not image generation.
+
+## Done When
+
+Inspect the board and mark at16/29/32/64px, then select or revise the artwork. App integration is a separate increment. The running app, its authentication, data, browser title and provisional brand remain unchanged by this reference.

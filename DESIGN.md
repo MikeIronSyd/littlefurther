@@ -135,6 +135,8 @@ The selected Amber direction puts a conspicuous next action beside evidence of r
 
 The initial P04/P05 scan was recorded on 7 October 2026 (Africa/Lagos). This 8 October refresh retains that visual system and records its P06 Comeback and P07 StudyCircle extensions, grounded in [styles.css](src/client/styles.css), [journey.ts](src/client/journey.ts), [comeback.ts](src/client/comeback.ts), [circle.ts](src/client/circle.ts), [shell.ts](src/client/shell.ts) and [ui.ts](src/client/ui.ts). [PRODUCT.md](PRODUCT.md) and the [specification](docs/specs/capstone/spec.md) own product behavior. The [selected reference](.impeccable/mocks/decision/next-turn.png) remains the direction authority; detailed state images remain unapproved elaborations. See the [design record](docs/specs/capstone/design.md) for provenance and formal workflow limits.
 
+On 9 October 2026, the user selected **LittleFurther**, unchanged in English/French, and the joined LF concept. The [reference-only artwork](docs/specs/capstone/designs/littlefurther/README.md) retains Amber and the existing Segoe UI/system wordmark at weight 650, outside the sidebar. Final artwork selection, application integration and overall formal design approval remain pending. The running app still uses its provisional name and outlined-square mark; this reference does not replace the implemented visual system.
+
 **Key Characteristics:**
 
 - One dominant amber study action.
