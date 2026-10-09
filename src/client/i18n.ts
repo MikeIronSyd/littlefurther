@@ -30,9 +30,9 @@ const en = {
   saving: "Saving…",
   signIn: "Sign in",
   signUp: "Create an account",
-  welcome: "Make room for your next step.",
+  welcome: "Keep learning, even when life interrupts.",
   welcomeCopy:
-    "Build a manageable plan. Keep a record of your effort. Return whenever you are ready.",
+    "Build a flexible study plan, study and reflect in small steps, and see your progress. Return after a break with your earlier effort intact, and invite trusted peers for private support when you want it.",
   email: "Email address",
   password: "Password",
   showPassword: "Show password",
@@ -389,9 +389,9 @@ const fr: Record<MessageKey, string> = {
   saving: "Enregistrement…",
   signIn: "Se connecter",
   signUp: "Créer un compte",
-  welcome: "Faites place à votre prochaine étape.",
+  welcome: "Continuez à apprendre, malgré les imprévus.",
   welcomeCopy:
-    "Préparez un parcours à votre rythme. Gardez une trace de vos efforts. Reprenez quand vous le souhaitez.",
+    "Créez un programme d’étude souple, étudiez par petites étapes, faites le point et suivez vos progrès. Reprenez après une pause en conservant la trace de vos efforts, et invitez des personnes de confiance dans un cercle privé pour vous soutenir, si vous le souhaitez.",
   email: "Adresse e-mail",
   password: "Mot de passe",
   showPassword: "Afficher le mot de passe",

@@ -51,6 +51,47 @@ for (const width of [1440, 320]) {
     ).toBeVisible();
     await expect(page.getByLabel("Display name", { exact: true })).toBeVisible();
     await expectSignedOutShell(page);
+
+    for (const locale of ["en", "fr"]) {
+      await page.locator(".language-select").selectOption(locale);
+      const heading =
+        locale === "en"
+          ? "Keep learning, even when life interrupts."
+          : "Continuez à apprendre, malgré les imprévus.";
+      const copy =
+        locale === "en"
+          ? "Build a flexible study plan, study and reflect in small steps, and see your progress. Return after a break with your earlier effort intact, and invite trusted peers for private support when you want it."
+          : "Créez un programme d’étude souple, étudiez par petites étapes, faites le point et suivez vos progrès. Reprenez après une pause en conservant la trace de vos efforts, et invitez des personnes de confiance dans un cercle privé pour vous soutenir, si vous le souhaitez.";
+      for (const size of ["100%", "200%"]) {
+        await page.evaluate((value) => {
+          document.documentElement.style.fontSize = value;
+        }, size);
+        for (let form = 0; form < 2; form++) {
+          await expect(page.locator(".auth-intro h1")).toHaveText(heading);
+          await expect(page.locator(".auth-intro .subtitle")).toHaveText(copy);
+          const bounds = await page.locator(".auth-intro").evaluate((element) => {
+            const panel = element.getBoundingClientRect();
+            return [...element.querySelectorAll("h1, p")].every((child) => {
+              const box = child.getBoundingClientRect();
+              return (
+                box.left >= panel.left &&
+                box.right <= panel.right &&
+                box.bottom <= panel.bottom &&
+                child.scrollWidth <= child.clientWidth
+              );
+            });
+          });
+          expect(bounds, "Both welcome strings remain inside their auto-height panel").toBe(true);
+          await expectNoHorizontalOverflow(page);
+          const submit = page.locator('.auth-form button[type="submit"]');
+          await submit.scrollIntoViewIfNeeded();
+          await expect(submit).toBeInViewport();
+          await expect(submit).toBeEnabled();
+          await expect(page.locator(".password-reveal")).toBeEnabled();
+          await page.locator(".auth-form .text-button").click();
+        }
+      }
+    }
   });
 }
 

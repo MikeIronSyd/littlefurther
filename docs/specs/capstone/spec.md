@@ -4,6 +4,8 @@ Updated: 9 October 2026, Africa/Lagos. P04/P05 implements the [private journey](
 
 ## Goal
 
+The9October [welcome-copy increment](increments/welcome-copy.md) applies the user's exact EN/FR encouraging promise to both authentication forms. WC01–WC03 cover text fidelity, responsive/enlarged presentation and unchanged authentication.
+
 The9October [password visibility increment](increments/password-control.md) adds a localized eye action to both authentication forms under PV01–PV04, preserving the shared field and authentication contracts. Its record distinguishes implementation, verification and delivery.
 
 The9October [auth-shell contract](increments/auth-shell.md) supersedes the earlier switch UI and always-visible signed-out navigation under F15/F16. The user retains sign-in and selects moon/sun actions. [Verification](increments/auth-shell-verification.md) records actual checks and separate delivery/formal-approval boundaries.

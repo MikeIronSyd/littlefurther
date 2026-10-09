@@ -153,7 +153,7 @@ test("AC09: sign out removes access to the saved private journey", async ({ page
   await page.keyboard.press("Enter");
   await page.getByRole("button", { name: "Sign out", exact: true }).click();
   await expect(
-    page.getByRole("heading", { name: "Make room for your next step.", exact: true }),
+    page.getByRole("heading", { name: "Keep learning, even when life interrupts.", exact: true }),
   ).toBeVisible();
   expect((await page.request.get("/api/plans")).status()).toBe(401);
   await page.getByLabel("Email address", { exact: true }).fill(account.email);

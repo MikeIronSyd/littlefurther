@@ -234,3 +234,7 @@ The [dual-agent critique](reviews/2026-10-08-design-critique.md) records five op
 ### Password visibility — 9 October2026
 
 [PV01–PV04](increments/password-control.md) records pre-code R24/reference, the shared show/hide field,11focused Edge browser passes,56domain/store/HTTP passes and successful required static/build/process/audit checks. Independent source review has no blocker; paired browserMCP observed keyboard/locale/layout behavior. Failed/cancelled initial verification attempts and capture limits remain explicit. E016/A010 tracker and publication status is recorded in the same increment; formal approval, video and learning outcomes remain separate.
+
+### Clearer welcome promise — 9 October2026
+
+[WC01–WC03](increments/welcome-copy.md) records exact approved bilingual text on both forms, pre-code R25/reference, successful strict/lint/format/build,11auth-shell/password browser and2AC09 passes. Existing AS01 additionally checks bilingual1440/320 normal/200% root-text reflow and reachable controls. Independent source review has no blocker; paired actual browserMCP captures preserve Amber. Scope limits and E017/A010 delivery are in the increment, with formal approval/video/outcomes separate.

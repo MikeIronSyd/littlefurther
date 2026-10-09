@@ -165,3 +165,7 @@ All three required research needs are satisfied before source edits at 2026-10-0
 ### R24 — Password reveal, 9 October 2026
 
 The [password-control contract](increments/password-control.md) records four satisfied needs: shared input/form-lock/auth trace, native button and selection guidance, upstream icon/Edge behavior, and incumbent visual/locale/lifecycle boundaries. Its focused image reference is produced and inspected before production edits. All scoped research is satisfied; validation and delivery remain pending. No new approval gate or product scope follows.
+
+### R25 — Clearer welcome promise, 9 October2026
+
+The [welcome-copy contract](increments/welcome-copy.md) records all three satisfied needs before catalogue edits: exact user-approved EN/FR copy/claims, shared renderer/test coupling, and existing responsive layout/static reference. Independent source research supports the bounded change; no unresolved requirement or new approval gate. Actual enlarged/bilingual layout and authentication results remain verification work.

@@ -897,6 +897,14 @@
     "next": "Prepare timed3-5-minute demo/evidence index. Formal human decisions/capture and learner outcomes remain separate; no automatic outreach.",
     "artifact_commit": "8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
     "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
+    "welcome_copy": {
+      "date": "2026-10-09",
+      "specification": "docs/specs/capstone/increments/welcome-copy.md",
+      "source": "User approved encouraging/specific direction and supplied exact EN/FR welcome-copy implementation plan for both forms.",
+      "research": "R25 exactcopy/claims, shared renderer/test coupling and responsive/static-reference needs satisfied before catalogue edits.",
+      "verification": "Four catalogue values only in production; strict/lint/format/build exit0.11auth-shell/password cases pass53.2s plus2AC09cases27.4s. AS01 covers bothforms/EN-FR/1440-320/100-200%root-text panelbounds/nooverflow/reachablecontrols. Independent review no blocker; paired browserMCP desktopENlight/mobileFRdark actualcopy/captures/noDOMoverflow. No fullsuite/backend/audit rerun claimed; root-text enlargement notbrowserzoom; no nativeFrench/humancomprehension/outcomes/formalapproval inference.",
+      "delivery": "E017/A010 baselines verified; saved tracker and dual-private publication readbacks pending at artifact preparation."
+    },
     "password_control": {
       "date": "2026-10-09",
       "specification": "docs/specs/capstone/increments/password-control.md",
