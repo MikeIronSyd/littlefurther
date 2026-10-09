@@ -312,10 +312,10 @@ function showProfile(): void {
   );
   focusHeading(shell.main);
 }
-function createOrEdit(existing: LearningPlan | null): void {
+function createOrEdit(existing: LearningPlan | null, selectedStepId?: string): void {
   if (!canLeave()) return;
   const current = beginView();
-  showPlanEditor(
+  const focusSelectedStep = showPlanEditor(
     shell.main,
     templates,
     existing,
@@ -334,8 +334,10 @@ function createOrEdit(existing: LearningPlan | null): void {
     () => {
       if (current()) markDirty();
     },
+    selectedStepId === undefined ? {} : { selectedStepId },
   );
   focusHeading(shell.main);
+  focusSelectedStep();
 }
 function empty(): void {
   shell.main.replaceChildren(
@@ -442,7 +444,7 @@ async function renderRoute(focus = false): Promise<void> {
       showLearning(
         shell.main,
         current,
-        () => createOrEdit(current.plan),
+        (selectedStepId) => createOrEdit(current.plan, selectedStepId),
         (step, minutes) => {
           if (!isCurrent() || !canLeave()) return;
           const studyCurrent = beginView();
@@ -462,6 +464,7 @@ async function renderRoute(focus = false): Promise<void> {
             () => {
               if (studyCurrent()) markDirty();
             },
+            templates,
           );
           focusHeading(shell.main);
         },

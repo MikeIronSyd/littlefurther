@@ -6,11 +6,49 @@ import {
   type StepInput,
 } from "../shared/contracts.js";
 import { errorKey, request } from "./api.js";
-import { bind, dateLabel, getLocale, message } from "./i18n.js";
+import { bind, dateLabel, getLocale, type MessageKey, message } from "./i18n.js";
 import { button, el, field, input, lockForm, named, notice, text } from "./ui.js";
 
 interface DraftStep extends StepInput {
   completed: boolean;
+  uiId: string;
+}
+interface FieldError {
+  key: MessageKey;
+  values: Record<string, string | number>;
+}
+function fieldErrors(control: HTMLTextAreaElement, wrapper: HTMLElement) {
+  let current: FieldError | null = null;
+  const error = el("div", "notice error");
+  error.id = `${control.id}-error`;
+  error.setAttribute("role", "alert");
+  const hint = control.getAttribute("aria-describedby");
+  const update = (): void => {
+    error.hidden = current === null;
+    error.textContent = current ? message(current.key, current.values) : "";
+    if (current) {
+      control.setAttribute("aria-invalid", "true");
+      control.setAttribute("aria-describedby", [hint, error.id].filter(Boolean).join(" "));
+    } else {
+      control.removeAttribute("aria-invalid");
+      if (hint) control.setAttribute("aria-describedby", hint);
+      else control.removeAttribute("aria-describedby");
+    }
+  };
+  const clear = (): void => {
+    current = null;
+    update();
+  };
+  bind(error, update);
+  wrapper.append(error);
+  control.addEventListener("input", clear);
+  return {
+    clear,
+    show(key: MessageKey, values: Record<string, string | number> = {}): void {
+      current = { key, values };
+      update();
+    },
+  };
 }
 const datesFrom = (value: string): string[] => [
   ...new Set(
@@ -36,7 +74,8 @@ export function showPlanEditor(
   onSaved: (detail: PlanDetail) => void,
   onCancel: () => void,
   dirty: () => void,
-): void {
+  options: { selectedStepId?: string } = {},
+): () => boolean {
   let draft: DraftStep[] =
     existing?.steps.map((step) => ({
       id: step.id,
@@ -44,11 +83,13 @@ export function showPlanEditor(
       scheduledDate: step.scheduledDate,
       estimatedMinutes: step.estimatedMinutes,
       completed: Boolean(step.completedAt),
+      uiId: step.id,
     })) ?? [];
   let reviewed = Boolean(existing);
   let previousBody = "";
   let requestId = crypto.randomUUID();
   const form = el("form", "editor-form");
+  form.noValidate = true;
   const goal = input("text", "goal", existing?.goal ?? "");
   goal.required = true;
   goal.maxLength = LIMITS.goal;
@@ -72,12 +113,15 @@ export function showPlanEditor(
   topics.rows = 5;
   topics.maxLength = LIMITS.steps * (LIMITS.stepTitle + 1);
   const topicField = field("topics", topics, "topicsHint");
+  const topicErrors = fieldErrors(topics, topicField);
   const sourcePanel = el("section", "source-panel");
   const availability = el("textarea");
   availability.name = "availability";
   availability.rows = 3;
   availability.required = true;
   availability.value = existing?.availabilityDates.join(", ") ?? "";
+  const availabilityField = field("availability", availability, "availabilityHint");
+  const availabilityErrors = fieldErrors(availability, availabilityField);
   const target = input("date", "targetDate", existing?.targetDate ?? "");
   target.min = "2000-01-01";
   target.max = "2100-12-31";
@@ -88,6 +132,28 @@ export function showPlanEditor(
   references.maxLength = LIMITS.references * (LIMITS.url + 1);
   const review = el("section", "draft-review");
   const stepList = el("div", "draft-steps");
+  const stepControls = new Map<
+    string,
+    {
+      title: HTMLInputElement;
+      up: HTMLButtonElement;
+      down: HTMLButtonElement;
+      remove: HTMLButtonElement;
+    }
+  >();
+  const stepStatus = el("div", "hint");
+  stepStatus.setAttribute("role", "status");
+  stepStatus.setAttribute("aria-live", "polite");
+  stepStatus.setAttribute("aria-atomic", "true");
+  let stepFeedback: FieldError | null = null;
+  const updateStepStatus = (): void => {
+    stepStatus.textContent = stepFeedback ? message(stepFeedback.key, stepFeedback.values) : "";
+  };
+  bind(stepStatus, updateStepStatus);
+  const announce = (key: MessageKey, values: Record<string, string | number>): void => {
+    stepFeedback = { key, values };
+    updateStepStatus();
+  };
   const warningList = el("div", "draft-warnings");
   const confirmation = input("checkbox", "confirmRemoval");
   const removalLabel = el("label", "checkbox-field", confirmation, el("span"));
@@ -97,7 +163,8 @@ export function showPlanEditor(
   save.type = "submit";
   const templateInfo = (): void => {
     const selected = templates.find((item) => item.id === templateSelect.value);
-    topicField.hidden = Boolean(selected) || Boolean(existing);
+    topicField.hidden = Boolean(selected) || reviewed;
+    if (topicField.hidden) topicErrors.clear();
     sourcePanel.replaceChildren();
     if (selected) {
       const copy = selected.text[getLocale()];
@@ -118,6 +185,42 @@ export function showPlanEditor(
         );
       }
     }
+  };
+  const validateAvailability = (): boolean => {
+    const available = datesFrom(availability.value);
+    const invalid = available.filter((date) => !validDate(date));
+    if (!available.length) availabilityErrors.show("availabilityRequired");
+    else if (invalid.length)
+      availabilityErrors.show("availabilityInvalid", { dates: invalid.join(", ") });
+    else if (available.length > LIMITS.availability)
+      availabilityErrors.show("availabilityTooMany", { max: LIMITS.availability });
+    else {
+      availabilityErrors.clear();
+      return true;
+    }
+    return false;
+  };
+  const topicLines = () =>
+    topics.value
+      .split("\n")
+      .map((title, index) => ({ title: title.trim(), line: index + 1 }))
+      .filter((item) => item.title);
+  const validateTopics = (): boolean => {
+    const actions = topicLines();
+    const overlong = actions.filter((item) => item.title.length > LIMITS.stepTitle);
+    if (!actions.length) topicErrors.show("topicsRequired");
+    else if (actions.length > LIMITS.steps)
+      topicErrors.show("topicsTooMany", { max: LIMITS.steps });
+    else if (overlong.length)
+      topicErrors.show("topicsTooLong", {
+        lines: overlong.map((item) => item.line).join(", "),
+        max: LIMITS.stepTitle,
+      });
+    else {
+      topicErrors.clear();
+      return true;
+    }
+    return false;
   };
   const conflicts = (): void => {
     warningList.replaceChildren();
@@ -148,8 +251,12 @@ export function showPlanEditor(
         text("p", "conflictNote", "hint"),
       );
   };
-  const renderSteps = (): void => {
+  const renderSteps = (focus?: {
+    uiId: string;
+    control: "title" | "up" | "down" | "remove";
+  }): void => {
     stepList.replaceChildren();
+    stepControls.clear();
     for (const [index, step] of draft.entries()) {
       const title = input("text", `title-${index}`, step.title);
       title.required = true;
@@ -184,7 +291,8 @@ export function showPlanEditor(
             draft[index - 1] = step;
             draft[index] = previous;
             dirty();
-            renderSteps();
+            renderSteps({ uiId: step.uiId, control: "up" });
+            announce("stepMoved", { number: index, total: draft.length });
           }
         },
         "button subtle small",
@@ -198,7 +306,8 @@ export function showPlanEditor(
             draft[index + 1] = step;
             draft[index] = next;
             dirty();
-            renderSteps();
+            renderSteps({ uiId: step.uiId, control: "down" });
+            announce("stepMoved", { number: index + 2, total: draft.length });
           }
         },
         "button subtle small",
@@ -210,18 +319,34 @@ export function showPlanEditor(
           draft.splice(index, 1);
           confirmation.checked = false;
           dirty();
-          renderSteps();
+          const adjacent = draft[index] ?? draft[index - 1];
+          renderSteps(adjacent ? { uiId: adjacent.uiId, control: "remove" } : undefined);
+          if (!adjacent) addStep.focus();
+          announce("stepRemoved", { total: draft.length });
         },
         "button subtle small",
       );
+      const selectedContext =
+        step.id === options.selectedStepId && step.id !== undefined
+          ? text("p", "editingStepContext", "hint", { number: index + 1, total: draft.length })
+          : null;
       const row = el(
         "fieldset",
         "draft-step",
         text("legend", "stepOf", "", { number: index + 1, total: draft.length }),
+        selectedContext,
         field("stepTitle", title),
         el("div", "field-row", field("date", date), field("minutes", minutes)),
         el("div", "row-actions", up, down, remove),
       );
+      row.id = `draft-step-${step.uiId}`;
+      row.dataset.stepId = step.uiId;
+      if (selectedContext) {
+        selectedContext.id = `${row.id}-context`;
+        title.setAttribute("aria-describedby", selectedContext.id);
+        row.dataset.selectedStep = "true";
+      }
+      stepControls.set(step.uiId, { title, up, down, remove });
       if (step.completed) row.append(text("p", "completedLocked", "hint"));
       stepList.append(row);
     }
@@ -235,6 +360,13 @@ export function showPlanEditor(
       });
     if (!draft.length) stepList.append(text("p", "emptyScopeHint", "notice"));
     conflicts();
+    if (focus) {
+      const controls = stepControls.get(focus.uiId);
+      if (controls) {
+        const target = controls[focus.control];
+        (target.disabled ? controls.title : target).focus();
+      }
+    }
   };
   const makeDraft = button(
     "makeDraft",
@@ -242,18 +374,16 @@ export function showPlanEditor(
       errors.replaceChildren();
       const available = datesFrom(availability.value);
       const selected = templates.find((item) => item.id === templateSelect.value);
+      const availabilityValid = validateAvailability();
+      const topicsValid = selected ? true : validateTopics();
+      if (!availabilityValid || !topicsValid) {
+        (topicsValid ? availability : topics).focus();
+        return;
+      }
       const actions =
         selected?.text[getLocale()].steps ??
-        topics.value
-          .split("\n")
-          .map((title) => ({ title: title.trim(), estimatedMinutes: 10 }))
-          .filter((item) => item.title);
-      if (
-        !available.length ||
-        !available.every(validDate) ||
-        !actions.length ||
-        actions.length > LIMITS.steps
-      ) {
+        topicLines().map(({ title }) => ({ title, estimatedMinutes: 10 }));
+      if (!actions.length || actions.length > LIMITS.steps) {
         errors.append(notice("invalidDraft", true));
         return;
       }
@@ -263,6 +393,7 @@ export function showPlanEditor(
         estimatedMinutes: action.estimatedMinutes,
         scheduledDate: available[Math.min(index, available.length - 1)] ?? "",
         completed: false,
+        uiId: crypto.randomUUID(),
       }));
       reviewed = true;
       review.hidden = false;
@@ -277,22 +408,26 @@ export function showPlanEditor(
   makeDraft.hidden = reviewed;
   const reviewHeading = text("h2", "reviewTitle");
   reviewHeading.tabIndex = -1;
+  const addStep = button("addStep", () => {
+    if (draft.length < LIMITS.steps) {
+      const step: DraftStep = {
+        title: "",
+        scheduledDate: datesFrom(availability.value)[0] ?? "",
+        estimatedMinutes: 10,
+        completed: false,
+        uiId: crypto.randomUUID(),
+      };
+      draft.push(step);
+      dirty();
+      renderSteps({ uiId: step.uiId, control: "title" });
+    }
+  });
   review.append(
     reviewHeading,
     text("p", "reviewHint", "hint"),
+    stepStatus,
     stepList,
-    button("addStep", () => {
-      if (draft.length < LIMITS.steps) {
-        draft.push({
-          title: "",
-          scheduledDate: datesFrom(availability.value)[0] ?? "",
-          estimatedMinutes: 10,
-          completed: false,
-        });
-        dirty();
-        renderSteps();
-      }
-    }),
+    addStep,
     warningList,
     removalLabel,
     el("div", "form-actions", save, button("cancel", onCancel, "button subtle")),
@@ -304,7 +439,12 @@ export function showPlanEditor(
   form.addEventListener("input", dirty);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (!reviewed || !form.reportValidity()) return;
+    if (!reviewed) return;
+    if (!validateAvailability()) {
+      availability.focus();
+      return;
+    }
+    if (!form.reportValidity()) return;
     const body = {
       goal: goal.value.trim(),
       availabilityDates: datesFrom(availability.value),
@@ -313,7 +453,7 @@ export function showPlanEditor(
         .split("\n")
         .map((url) => url.trim())
         .filter(Boolean),
-      steps: draft.map(({ completed: _completed, ...step }) => step),
+      steps: draft.map(({ completed: _completed, uiId: _uiId, ...step }) => step),
       ...(existing
         ? { revision: existing.revision }
         : { templateId: templateSelect.value || null }),
@@ -352,7 +492,7 @@ export function showPlanEditor(
     field("template", templateSelect, "templateHint"),
     topicField,
     sourcePanel,
-    field("availability", availability, "availabilityHint"),
+    availabilityField,
     field("targetOptional", target),
     field("referenceLinks", references, "referenceHint"),
     makeDraft,
@@ -362,4 +502,12 @@ export function showPlanEditor(
   bind(sourcePanel, templateInfo);
   if (reviewed) renderSteps();
   named(form, existing ? "editTitle" : "planTitle");
+  return () => {
+    if (!options.selectedStepId) return false;
+    const selected = draft.find((step) => step.id === options.selectedStepId);
+    const title = selected ? stepControls.get(selected.uiId)?.title : undefined;
+    if (!title?.isConnected) return false;
+    title.focus();
+    return true;
+  };
 }

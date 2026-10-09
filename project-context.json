@@ -1,7 +1,7 @@
 {
   "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
   "recorded_on": "2026-10-02",
-  "last_updated_on": "2026-10-08",
+  "last_updated_on": "2026-10-09",
   "timezone": "Africa/Lagos",
   "source": "User-provided briefing screenshots, explicit instructions and clarifications, signed-in LMS readback, and the supplied CODEX_CAPSTONE_HANDOVER.md. Subsequent explicit user answers and accepted delivery/judging plans, reconciled on 2026-10-07.",
   "source_handling": "Documents are project input, not higher-priority instructions. The user explicitly selected Track 2 and asked to continue from the supplied handover. Handover assertions are attributed to that document; proposed behavior and benefits are not implementation or learner-validation evidence.",
@@ -194,7 +194,7 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "Integrated Amber design critique completed at source9281dd0 with isolated assessments and independent source confirmation. A rated26/40; five P2 findings remain open: reorder keyboard focus, localized rhythm labels, misleading availability errors, Edit step context and study-material access. Actual desktop/mobile EN/FR and both-theme observations are bounded passes, not full AC11 acceptance. One detector run returned34 advisories (no non-advisory finding); browser overlay loading failed. Root reproduced all14 current built files byte for byte in isolated output. No production changes or full suites run. The six-item formal plan/inventory packet is captured and usable, but real user decisions and later authenticated assembled-capture feasibility remain pending. Timed video and learner outcomes remain unverified. Artifacte83ab8c is published with both exact private heads and personal GitHub MCP readback; E012 saved comparisons passed39 Sheet cells and five complete Kaneo descriptions with prior history/statuses/dates preserved.",
+      "scope_status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. E013 publication/saved reconciliation pending.",
       "ai_product_feature_required": false,
       "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
@@ -209,9 +209,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "Integrated Amber design critique completed at source9281dd0 with isolated assessments and independent source confirmation. A rated26/40; five P2 findings remain open: reorder keyboard focus, localized rhythm labels, misleading availability errors, Edit step context and study-material access. Actual desktop/mobile EN/FR and both-theme observations are bounded passes, not full AC11 acceptance. One detector run returned34 advisories (no non-advisory finding); browser overlay loading failed. Root reproduced all14 current built files byte for byte in isolated output. No production changes or full suites run. The six-item formal plan/inventory packet is captured and usable, but real user decisions and later authenticated assembled-capture feasibility remain pending. Timed video and learner outcomes remain unverified. Artifacte83ab8c is published with both exact private heads and personal GitHub MCP readback; E012 saved comparisons passed39 Sheet cells and five complete Kaneo descriptions with prior history/statuses/dates preserved.",
+    "mvp_scope": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. E013 publication/saved reconciliation pending.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "Design review complete within scope; five focused corrections await the next increment contract. Formal user review and later capture feasibility remain open before full design completion; P11 timed demo pending."
+    "stage": "Five focused corrections verified, no scoped source blocker; publication/E013 delivery in progress. Next timed demo; formal design approval remains separate."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -526,26 +526,26 @@
     },
     "browser_mcp": {
       "purpose": "Operate the running app for observed behaviour and maintain Miva Sheet/Kaneo with saved readback.",
-      "boundary": "Actual IAB account/profile/template/study/reflection/completion/reload and shell observations. Tracker operations use browser MCP, not native Google Sheets/Kaneo connectors. Synthetic demo data; no learner impact inference. P07: separate IAB/Chrome synthetic accounts joined a private circle, explicitly previewed/shared a copy and saved/read back preset encouragement. P08: root observed a fresh synthetic connected five-capability journey, exact share preview, peer encouragement and retained private history with English/French and theme/mobile checks. No remote learners were involved. P10 independent browser MCP used synthetic local data for saved-plan/restart and EN/FR adaptation observations. Server4326 stopped; final test-tab close unverified due tool dialog handling. E011 actual browser MCP saves and independent saved comparisons verified39 intended Sheet cells and five whole Kaneo descriptions; no native tracker connector claim. Integrated design review used fresh synthetic tabs/accounts for desktop/mobile EN/FR light/dark observations. Actual accessible-name/focus issues remain open. Formal review packet only navigated, with no user decisions entered."
+      "boundary": "Actual IAB account/profile/template/study/reflection/completion/reload and shell observations. Tracker operations use browser MCP, not native Google Sheets/Kaneo connectors. Synthetic demo data; no learner impact inference. P07: separate IAB/Chrome synthetic accounts joined a private circle, explicitly previewed/shared a copy and saved/read back preset encouragement. P08: root observed a fresh synthetic connected five-capability journey, exact share preview, peer encouragement and retained private history with English/French and theme/mobile checks. No remote learners were involved. P10 independent browser MCP used synthetic local data for saved-plan/restart and EN/FR adaptation observations. Server4326 stopped; final test-tab close unverified due tool dialog handling. E011 actual browser MCP saves and independent saved comparisons verified39 intended Sheet cells and five whole Kaneo descriptions; no native tracker connector claim. Integrated design review used fresh synthetic tabs/accounts for desktop/mobile EN/FR light/dark observations. Actual accessible-name/focus issues remain open. Formal review packet only navigated, with no user decisions entered. RF01-RF05 root observed synthetic error/recovery, Enter focus, EN/FR sources/input retention and mobile selected-step focus in one bounded pass plus a spacing confirmation. No outcome or formal approval inferred."
     },
     "project_skills": [
       {
         "name": "learning-journey-review",
         "path": ".agents/skills/learning-journey-review/SKILL.md",
-        "status": "Created and structurally validated; independent preparation review at 17:10 retained. Applied again to actual P04/P05 source, browser checks, findings and corrections; see docs/specs/capstone/reviews/2026-10-07-first-journey-review.md. Applied to P06 actual source/checks on8October; additional network branches and strict fixture correction recorded in 2026-10-08-comeback-review.md. P07 review closed on 8 October with both client fixes behavior-verified and no remaining scoped blocker; see 2026-10-08-circle-review.md. P08 baseline review and P09 corrective review invoked the skill on actual connected-journey source, reproduced failures, specification, final checks and dispositions. IR01-IR03/CR01 resolved within scope; see the two integration review reports. P10 independent setup/adaptation and operations correction review reused the skill; RO01-RO03 resolved with preserved failed/passed evidence. See the two reuse review reports. Integrated design review invoked the skill in isolated A/B assessments and independent source confirmation; five open P2 findings and actual bounded browser results recorded in2026-10-08-design-critique.md."
+        "status": "Created and structurally validated; independent preparation review at 17:10 retained. Applied again to actual P04/P05 source, browser checks, findings and corrections; see docs/specs/capstone/reviews/2026-10-07-first-journey-review.md. Applied to P06 actual source/checks on8October; additional network branches and strict fixture correction recorded in 2026-10-08-comeback-review.md. P07 review closed on 8 October with both client fixes behavior-verified and no remaining scoped blocker; see 2026-10-08-circle-review.md. P08 baseline review and P09 corrective review invoked the skill on actual connected-journey source, reproduced failures, specification, final checks and dispositions. IR01-IR03/CR01 resolved within scope; see the two integration review reports. P10 independent setup/adaptation and operations correction review reused the skill; RO01-RO03 resolved with preserved failed/passed evidence. See the two reuse review reports. Integrated design review invoked the skill in isolated A/B assessments and independent source confirmation; five open P2 findings and actual bounded browser results recorded in2026-10-08-design-critique.md. RF01-RF05 actual source review applied the skill; earlier reviewer interrupted after source checks, new final reviewer independently reports no scoped blocker. Final result/actual runner evidence in2026-10-09-refinement-final-review.md."
       },
       {
         "name": "capstone-evidence-update",
         "path": ".agents/skills/capstone-evidence-update/SKILL.md",
-        "status": "Created and structurally validated; earlier E004-E006 invocations retained. Applied to actual E007 implementation/check/review/publication evidence and saved tracker readback; see docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md. P06/E008 evidence reconciliation and saved readbacks completed on8October; see2026-10-08-comeback-tracker.md. P07/E009 reused for baseline preparation, actual implementation/check/review/publication reconciliation and verified Sheet/Kaneo saved readbacks. See 2026-10-08-circle-tracker.md. P08/P09 E010 preparation and final reconciliation reused the skill against artifact 4a59c02 and actual checks/reviews, followed by 39-cell Sheet and five full Kaneo persisted comparisons. See 2026-10-08-integration-tracker.md for methods, retry and limitations. P10/E011 reused the skill for preparation, actual setup/adaptation/publication reconciliation and saved39-cell/five-description comparisons; complete histories and statuses preserved. See2026-10-08-reuse-tracker.md. Root reconciled final verified delivery into active context, plan and verification without relabelling historical results. E012 reused the skill for live baseline preparation, actual review/publication reconciliation and exact39-cell/five-description saved comparisons; five open P2 findings and pending formal human decisions preserved. See2026-10-08-design-tracker.md."
+        "status": "Created and structurally validated; earlier E004-E006 invocations retained. Applied to actual E007 implementation/check/review/publication evidence and saved tracker readback; see docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md. P06/E008 evidence reconciliation and saved readbacks completed on8October; see2026-10-08-comeback-tracker.md. P07/E009 reused for baseline preparation, actual implementation/check/review/publication reconciliation and verified Sheet/Kaneo saved readbacks. See 2026-10-08-circle-tracker.md. P08/P09 E010 preparation and final reconciliation reused the skill against artifact 4a59c02 and actual checks/reviews, followed by 39-cell Sheet and five full Kaneo persisted comparisons. See 2026-10-08-integration-tracker.md for methods, retry and limitations. P10/E011 reused the skill for preparation, actual setup/adaptation/publication reconciliation and saved39-cell/five-description comparisons; complete histories and statuses preserved. See2026-10-08-reuse-tracker.md. Root reconciled final verified delivery into active context, plan and verification without relabelling historical results. E012 reused the skill for live baseline preparation, actual review/publication reconciliation and exact39-cell/five-description saved comparisons; five open P2 findings and pending formal human decisions preserved. See2026-10-08-design-tracker.md. E013 preparation invoked the skill against correct accounts, whole saved histories and absent new ID; final verified correction/publication reconciliation pending."
       }
     ],
     "proof_chain": "criterion -> requirement -> artifact/commit -> actual check/result -> demo scene",
     "reuse_requirement": "At least two meaningful engineering iterations with recorded inputs, findings/results and follow-up; file existence is insufficient."
   },
   "current_preparation": {
-    "recorded_on": "2026-10-08",
-    "status": "Integrated Amber design critique completed at source9281dd0 with isolated assessments and independent source confirmation. A rated26/40; five P2 findings remain open: reorder keyboard focus, localized rhythm labels, misleading availability errors, Edit step context and study-material access. Actual desktop/mobile EN/FR and both-theme observations are bounded passes, not full AC11 acceptance. One detector run returned34 advisories (no non-advisory finding); browser overlay loading failed. Root reproduced all14 current built files byte for byte in isolated output. No production changes or full suites run. The six-item formal plan/inventory packet is captured and usable, but real user decisions and later authenticated assembled-capture feasibility remain pending. Timed video and learner outcomes remain unverified. Artifacte83ab8c is published with both exact private heads and personal GitHub MCP readback; E012 saved comparisons passed39 Sheet cells and five complete Kaneo descriptions with prior history/statuses/dates preserved.",
+    "recorded_on": "2026-10-09",
+    "status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. E013 publication/saved reconciliation pending.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -619,20 +619,27 @@
       "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md",
       "docs/specs/capstone/reviews/2026-10-08-design-critique.md",
       "docs/specs/capstone/reviews/2026-10-08-design-tracker.md",
-      ".impeccable/critique/2026-10-08T19-41-12Z__src-client-main-ts.md"
+      ".impeccable/critique/2026-10-08T19-41-12Z__src-client-main-ts.md",
+      "docs/specs/capstone/increments/design-refinement.md",
+      "docs/specs/capstone/increments/design-refinement-verification.md",
+      "docs/specs/capstone/reviews/2026-10-09-refinement-editor-research.md",
+      "docs/specs/capstone/reviews/2026-10-09-refinement-test-research.md",
+      "docs/specs/capstone/reviews/2026-10-09-refinement-review.md",
+      "docs/specs/capstone/reviews/2026-10-09-refinement-final-review.md",
+      "docs/specs/capstone/reviews/2026-10-09-refinement-tracker.md",
+      "tests/e2e/design-refinement.spec.ts"
     ],
-    "tracker_record": "E004-E011 retained as dated history; E012 design review saved and verified in both trackers. D009-D015 and A001-A010 preserved.",
-    "tracker_sync": "E012 saved/read back in the correct Miva Sheet and five existing Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, one E012 evidence row atA13; five full descriptions match with prior histories, statuses and No date preserved. See2026-10-08-design-tracker.md. Five P2 findings and genuine formal decisions remain open.",
-    "publication": "Design-review artifacte83ab8c6e7b4d04eaffcdea42e45dee59bc026d5 published by normal git push origin main to both private repositories; both exact heads verified20:44Africa/Lagos and personal GitHub MCP returned SHA/title/URL/diff. E012 links stay pinned to this artifact; later documentation closeout records saved outcomes. No deployment, hosted CI or global recovery claim.",
+    "tracker_record": "E004-E012 retained as dated history. E013 refinement prepared; final saved comparisons pending. D009-D015 and A001-A010 preserved.",
+    "tracker_sync": "E013 preparation verified correct Miva identity, E012 workbook/full five Kaneo descriptions unchanged, E013 absent and row14 empty. Root independently confirmed fresh all-cell export before final delivery. Final39-cell/five-description saves pending artifact.",
+    "publication": "All required correction checks passed, full56browser result and independent no-blocker review recorded. Normal dual-private publication/readback follows; no deployment or global recovery action.",
     "limitations": [
-      "Five P2 design findings remain open. Bounded critique does not establish full capstone acceptance or implemented fixes.",
-      "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
-      "Prior independent setup/adaptation passed on this Windows PC with cached dependencies; no clean-machine/cold-cache claim.",
-      "No new physical internet-disconnection, comprehensive security, real browser zoom, full screen-reader or native-French verification.",
-      "Formal six-item plan/inventory packet is ready but user decisions/receipt are pending; later authenticated assembled-capture feasibility and compSha256 semantics remain unresolved. No forced phases, hero/final diff, QUALITY BAR or approval claim.",
-      "Detector34 entries are advisories, largely structured-document alignment; no reliable browser overlay after cross-origin script-load failure.",
-      "GitHub CI template remains inactive because current OAuth access lacks workflow-write scope; no hosted check/gate enforcement.",
-      "Timed video remains pending. Review-only server4329 stopped and normal4317 retained; review helper intentionally available for user decisions with30-minute idle expiry. Earlier P10 test-tab cleanup uncertainty remains historical."
+      "Focused correction acceptance and required checks passed; E013 publication/saved delivery still pending. Full capstone/formal design and video acceptance remain open.",
+      "No real learner evaluation, retention/mastery gain, time-saving measurement or human adoption.",
+      "Formal six-item user receipt, authenticated assembled capture, historical comp-hash semantics and QUALITY BAR remain open.",
+      "No broad accessibility/native-French certification, physical disconnected network, real machine reboot or remote peer verification.",
+      "The34 detector entries remain advisories about structured design documentation; no general clean-detector claim.",
+      "Hosted CI remains inactive under current provider scope; no enforced gate inferred.",
+      "Timed3-5-minute demo unrecorded. Review-only4330 server stopped and test tab/viewport cleaned; final ordinary demo availability checked at delivery."
     ],
     "tracker_sync_history": [
       "E005 and publication reconciliation completed on 2026-10-07 through browser MCP in the verified Miva account and Kaneo. Sheet exact readbacks passed for E005 A6:J6, E004 H5:I5, Activities G5:K5/G7:K7/G9:K11 and Context B25:C25. Kaneo A004/A006/A008/A009/A010 passed persisted comparison after navigation, preserving history and statuses. P03 in progress; no visual approval or product acceptance inferred."
@@ -768,15 +775,60 @@
           "GitHub CI template is inactive because current OAuth access lacks workflow-write scope; no hosted check or provider-gate enforcement is claimed.",
           "Timed video remains pending. The isolated rehearsal server is stopped; its unsaved-draft/tab cleanup is unverified after browser-tool confirmation handling failed."
         ]
+      },
+      {
+        "id": "E012",
+        "recorded_on": "2026-10-08",
+        "active_increment": {
+          "id": "P11-design-review",
+          "name": "Integrated Amber design readiness review",
+          "date": "2026-10-08",
+          "status": "Integrated Amber design critique completed at source9281dd0 with isolated assessments and independent source confirmation. A rated26/40; five P2 findings remain open: reorder keyboard focus, localized rhythm labels, misleading availability errors, Edit step context and study-material access. Actual desktop/mobile EN/FR and both-theme observations are bounded passes, not full AC11 acceptance. One detector run returned34 advisories (no non-advisory finding); browser overlay loading failed. Root reproduced all14 current built files byte for byte in isolated output. No production changes or full suites run. The six-item formal plan/inventory packet is captured and usable, but real user decisions and later authenticated assembled-capture feasibility remain pending. Timed video and learner outcomes remain unverified. Artifacte83ab8c is published with both exact private heads and personal GitHub MCP readback; E012 saved comparisons passed39 Sheet cells and five complete Kaneo descriptions with prior history/statuses/dates preserved.",
+          "specification": "docs/specs/capstone/increments/design-review.md",
+          "verification": "docs/specs/capstone/reviews/2026-10-08-design-critique.md",
+          "baseline": "0e3968f104f92ba0b2fe329156c494ad104f4568",
+          "open_findings": [
+            "D01 reorder focus",
+            "D02 localized activity labels",
+            "D03 availability errors",
+            "D04 selected-step edit context",
+            "D05 study material links"
+          ],
+          "formal_review": {
+            "status": "Awaiting real user decisions",
+            "session": "3958725ad218c4dfdda608b6a34055a5ffe63efeda72a7fea9cf00bea8b9d626",
+            "revision": "87f3b74ffc5f6bd5211066384d046fa6841f06173a3bcb6856a929a1791242fa",
+            "observed_url": "http://127.0.0.1:61603/",
+            "idle_limit": "30 minutes; resume same session if expired",
+            "report": "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md"
+          },
+          "tracker_sync": "E012 saved/read back in the correct Miva Sheet and five existing Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, one E012 evidence row atA13; five full descriptions match with prior histories, statuses and No date preserved. See2026-10-08-design-tracker.md. Five P2 findings and genuine formal decisions remain open.",
+          "next": "Deliver review and real six-item packet; choose focused refinement scope, satisfy its research/specification before production corrections, then affected checks and timed demo.",
+          "artifact_commit": "de508eb4e13ab42842aa8f81c481ecca0fb8a2bd",
+          "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/de508eb4e13ab42842aa8f81c481ecca0fb8a2bd"
+        },
+        "status": "Integrated Amber design critique completed at source9281dd0 with isolated assessments and independent source confirmation. A rated26/40; five P2 findings remain open: reorder keyboard focus, localized rhythm labels, misleading availability errors, Edit step context and study-material access. Actual desktop/mobile EN/FR and both-theme observations are bounded passes, not full AC11 acceptance. One detector run returned34 advisories (no non-advisory finding); browser overlay loading failed. Root reproduced all14 current built files byte for byte in isolated output. No production changes or full suites run. The six-item formal plan/inventory packet is captured and usable, but real user decisions and later authenticated assembled-capture feasibility remain pending. Timed video and learner outcomes remain unverified. Artifacte83ab8c is published with both exact private heads and personal GitHub MCP readback; E012 saved comparisons passed39 Sheet cells and five complete Kaneo descriptions with prior history/statuses/dates preserved.",
+        "tracker_sync": "E012 saved/read back in the correct Miva Sheet and five existing Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, one E012 evidence row atA13; five full descriptions match with prior histories, statuses and No date preserved. See2026-10-08-design-tracker.md. Five P2 findings and genuine formal decisions remain open.",
+        "publication": "Design-review artifacte83ab8c6e7b4d04eaffcdea42e45dee59bc026d5 published by normal git push origin main to both private repositories; both exact heads verified20:44Africa/Lagos and personal GitHub MCP returned SHA/title/URL/diff. E012 links stay pinned to this artifact; later documentation closeout records saved outcomes. No deployment, hosted CI or global recovery claim.",
+        "limitations": [
+          "Five P2 design findings remain open. Bounded critique does not establish full capstone acceptance or implemented fixes.",
+          "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
+          "Prior independent setup/adaptation passed on this Windows PC with cached dependencies; no clean-machine/cold-cache claim.",
+          "No new physical internet-disconnection, comprehensive security, real browser zoom, full screen-reader or native-French verification.",
+          "Formal six-item plan/inventory packet is ready but user decisions/receipt are pending; later authenticated assembled-capture feasibility and compSha256 semantics remain unresolved. No forced phases, hero/final diff, QUALITY BAR or approval claim.",
+          "Detector34 entries are advisories, largely structured-document alignment; no reliable browser overlay after cross-origin script-load failure.",
+          "GitHub CI template remains inactive because current OAuth access lacks workflow-write scope; no hosted check/gate enforcement.",
+          "Timed video remains pending. Review-only server4329 stopped and normal4317 retained; review helper intentionally available for user decisions with30-minute idle expiry. Earlier P10 test-tab cleanup uncertainty remains historical."
+        ]
       }
     ]
   },
   "research_gate": {
-    "status": "Closed for R19 setup/documentation and isolated adaptation; EOL need reopened and reclosed before configuration correction",
-    "closed_at": "2026-10-08T19:53:15+01:00",
+    "status": "Closed for R21 five focused design corrections",
+    "closed_at": "2026-10-09T11:41:00+01:00",
     "checklist": "docs/specs/capstone/research.md",
-    "evidence": "R19a-d in increments/reuse.md: independent clone/tool/native startup, version/storage boundaries, operations review and isolated Git-attributes fixture; research.md preserves initial closure/reopening.",
-    "boundary": "All required facts for scoped attributes/docs correction and isolated wording fixture satisfied before dependent edits. Final acceptance, publication/trackers, formal design and demo remain distinct.",
+    "evidence": "R21a-d in increments/design-refinement.md; independent editor/test research and root source/locale/version/reference trace.",
+    "boundary": "All research needs for focused corrections satisfied before production edits. Formal receipt/capture and broad outcomes remain separate open deliverables.",
     "initial_closed_at": "2026-10-07T16:57:00+01:00",
     "design_review": {
       "checklist": "docs/specs/capstone/increments/design-review.md",
@@ -785,20 +837,20 @@
     }
   },
   "active_increment": {
-    "id": "P11-design-review",
-    "name": "Integrated Amber design readiness review",
-    "date": "2026-10-08",
-    "status": "Integrated Amber design critique completed at source9281dd0 with isolated assessments and independent source confirmation. A rated26/40; five P2 findings remain open: reorder keyboard focus, localized rhythm labels, misleading availability errors, Edit step context and study-material access. Actual desktop/mobile EN/FR and both-theme observations are bounded passes, not full AC11 acceptance. One detector run returned34 advisories (no non-advisory finding); browser overlay loading failed. Root reproduced all14 current built files byte for byte in isolated output. No production changes or full suites run. The six-item formal plan/inventory packet is captured and usable, but real user decisions and later authenticated assembled-capture feasibility remain pending. Timed video and learner outcomes remain unverified. Artifacte83ab8c is published with both exact private heads and personal GitHub MCP readback; E012 saved comparisons passed39 Sheet cells and five complete Kaneo descriptions with prior history/statuses/dates preserved.",
-    "specification": "docs/specs/capstone/increments/design-review.md",
-    "verification": "docs/specs/capstone/reviews/2026-10-08-design-critique.md",
-    "baseline": "0e3968f104f92ba0b2fe329156c494ad104f4568",
-    "open_findings": [
-      "D01 reorder focus",
-      "D02 localized activity labels",
-      "D03 availability errors",
-      "D04 selected-step edit context",
-      "D05 study material links"
-    ],
+    "id": "P11-design-refinement",
+    "name": "Five focused learner-flow corrections",
+    "date": "2026-10-09",
+    "status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. E013 publication/saved reconciliation pending.",
+    "specification": "docs/specs/capstone/increments/design-refinement.md",
+    "verification": "docs/specs/capstone/increments/design-refinement-verification.md",
+    "baseline": "526ec3402c09e2e098e83dc44cd658428830f2cb",
+    "findings": {
+      "D01": "Resolved within RF01 tested scope; focused/full browser evidence passed",
+      "D02": "Resolved within RF02 tested scope; focused/full browser evidence passed",
+      "D03": "Resolved within RF03 tested scope; focused/full browser evidence passed",
+      "D04": "Resolved within RF04 tested scope; focused/full browser evidence passed",
+      "D05": "Resolved within RF05 tested scope; focused/full browser evidence passed"
+    },
     "formal_review": {
       "status": "Awaiting real user decisions",
       "session": "3958725ad218c4dfdda608b6a34055a5ffe63efeda72a7fea9cf00bea8b9d626",
@@ -807,10 +859,8 @@
       "idle_limit": "30 minutes; resume same session if expired",
       "report": "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md"
     },
-    "tracker_sync": "E012 saved/read back in the correct Miva Sheet and five existing Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, one E012 evidence row atA13; five full descriptions match with prior histories, statuses and No date preserved. See2026-10-08-design-tracker.md. Five P2 findings and genuine formal decisions remain open.",
-    "next": "Deliver review and real six-item packet; choose focused refinement scope, satisfy its research/specification before production corrections, then affected checks and timed demo.",
-    "artifact_commit": "de508eb4e13ab42842aa8f81c481ecca0fb8a2bd",
-    "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/de508eb4e13ab42842aa8f81c481ecca0fb8a2bd"
+    "tracker_sync": "E013 preparation verified correct Miva identity, E012 workbook/full five Kaneo descriptions unchanged, E013 absent and row14 empty. Root independently confirmed fresh all-cell export before final delivery. Final39-cell/five-description saves pending artifact.",
+    "next": "Publish verified increment and save/read back E013; then timed3-5-minute demo. Genuine formal decisions/capture remain separate."
   },
   "design_direction": {
     "name": "Amber",

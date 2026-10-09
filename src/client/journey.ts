@@ -1,6 +1,11 @@
-import { type LearningStep, LIMITS, type PlanDetail } from "../shared/contracts.js";
+import {
+  type GoalTemplate,
+  type LearningStep,
+  LIMITS,
+  type PlanDetail,
+} from "../shared/contracts.js";
 import { errorKey, request } from "./api.js";
-import { bind, dateLabel, getLocale } from "./i18n.js";
+import { bind, dateLabel, getLocale, message } from "./i18n.js";
 import { button, el, field, focusStatus, icon, input, lockForm, notice, text } from "./ui.js";
 
 let disposeLearningLayout = (): void => {};
@@ -80,10 +85,12 @@ function rhythm(detail: PlanDetail): HTMLElement {
       el("span", "rhythm-dot", studied ? icon("check") : null),
       label,
     );
-    marker.setAttribute(
-      "aria-label",
-      `${iso}: ${studied ? (progress.activityCount > 0 ? "✓" : "") : "—"}`,
-    );
+    bind(marker, () => {
+      marker.setAttribute(
+        "aria-label",
+        `${dateLabel(iso)}: ${message(studied ? "studyRecorded" : "noStudyRecorded")}`,
+      );
+    });
     markers.append(marker);
   }
   return el(
@@ -112,7 +119,7 @@ function rhythm(detail: PlanDetail): HTMLElement {
 export function showLearning(
   host: HTMLElement,
   detail: PlanDetail,
-  edit: () => void,
+  edit: (selectedStepId?: string) => void,
   study: (step: LearningStep, minutes?: number) => void,
   create: () => void,
   recover: () => void,
@@ -125,7 +132,7 @@ export function showLearning(
     "div",
     "goal-heading",
     el("h2", "", detail.plan.goal),
-    button("editPlan", edit, "text-button"),
+    button("editPlan", () => edit(), "text-button"),
   );
   const progress = progressStrip(detail);
   const heading = el("div", "workspace-heading");
@@ -151,7 +158,7 @@ export function showLearning(
             icon("clock"),
             text("span", "estimated", "", { minutes: next.estimatedMinutes }),
           ),
-          button("editStep", edit, "text-button"),
+          button("editStep", () => edit(next.id), "text-button"),
         ),
       ),
       el(
@@ -171,7 +178,7 @@ export function showLearning(
       ),
       button(
         detail.plan.steps.length ? "createGoal" : "addStep",
-        detail.plan.steps.length ? create : edit,
+        detail.plan.steps.length ? create : () => edit(),
         "button primary",
       ),
     );
@@ -314,9 +321,44 @@ export function showStudy(
   update: (detail: PlanDetail, studySaved: boolean) => void,
   done: () => void,
   dirty: () => void,
+  templates: GoalTemplate[] = [],
 ): void {
   let detail = initial;
   let savedSignature = "";
+  const resources = el("section", "references study-resources");
+  bind(resources, () => {
+    resources.replaceChildren();
+    resources.setAttribute("aria-label", message("resources"));
+    const template = templates.find(
+      (item) =>
+        item.id === initial.plan.templateId && item.version === initial.plan.templateVersion,
+    );
+    if (template || initial.plan.templateId || initial.plan.references.length) {
+      resources.hidden = false;
+      resources.append(text("h2", "resources"), text("p", "external", "hint"));
+      if (template) {
+        resources.append(text("h3", "templateSources"));
+        const seen = new Set<string>();
+        for (const source of template.sources[getLocale()]) {
+          if (seen.has(source.url)) continue;
+          seen.add(source.url);
+          const link = el("a", "resource-link", source.label);
+          link.href = source.url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          resources.append(link, text("p", "checked", "source-date", { date: source.checkedOn }));
+        }
+      } else if (initial.plan.templateId)
+        resources.append(text("p", "templateSourcesUnavailable", "hint"));
+      for (const url of new Set(initial.plan.references)) {
+        const link = el("a", "resource-link", url);
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        resources.append(link);
+      }
+    } else resources.hidden = true;
+  });
   let activityRequest = crypto.randomUUID();
   const completionRequest = crypto.randomUUID();
   const form = el("form", "study-form");
@@ -410,6 +452,7 @@ export function showStudy(
   host.replaceChildren(
     el("div", "page-heading", text("h1", "sessionTitle"), button("back", done, "button subtle")),
     el("section", "study-summary", el("h2", "", step.title), text("p", "sessionHelp")),
+    resources,
     form,
     el(
       "section",

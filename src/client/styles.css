@@ -1008,6 +1008,13 @@ input[type="checkbox"] {
   margin-top: 10px;
   overflow-wrap: anywhere;
 }
+.study-resources {
+  max-width: 780px;
+  margin-bottom: 28px;
+}
+.study-resources h3 {
+  margin-block: 18px 8px;
+}
 .mobile-drawer {
   margin: 0;
   height: 100dvh;

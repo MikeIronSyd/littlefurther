@@ -87,7 +87,7 @@ Both project skills must contribute across two meaningful iterations: first comp
 
 ### Current limitations
 
-- The current integrated design review has five open P2 findings: reorder focus, localized activity labels, availability errors, selected-step editing context and study resource access. Actual bounded layout/theme/drawer checks do not close all of AC11. E012 review delivery is tracked separately; no production fix is inferred.
+- The design review's five P2 findings were subsequently implemented under [RF01-RF05](increments/design-refinement-verification.md), with8 focused/56fullbrowser cases and all required checks passed; publication/saved delivery is recorded separately. E012 preserves the original open-finding history. No full AC11/formal acceptance or improved heuristic score is inferred.
 
 - R11/R15 establish this host's selected runtime/tooling feasibility. Product checks now exist; clean-machine installation, machine reboot and broad cross-platform support remain unverified.
 - The private journey, Comeback and private peers are implemented and checked within their recorded scopes, including the P08/P09 connected-journey review and corrections. P10 technical setup/adaptation is verified with existing-host/cache limits. Enforced CI, learner research and timed demo remain outstanding. Formal Impeccable build phases remain open despite scoped visual review passes. E006 retains static-design history; E007–E010 distinguish successive application increments.
