@@ -816,6 +816,36 @@ textarea {
 textarea {
   resize: vertical;
 }
+.password-control {
+  position: relative;
+}
+.password-control input {
+  min-height: 48px;
+  padding-inline-end: 56px;
+}
+.password-control input::-ms-reveal {
+  display: none;
+}
+.password-reveal {
+  position: absolute;
+  inset-inline-end: 2px;
+  top: 2px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+}
+.password-reveal:hover:not(:disabled) {
+  background: var(--sidebar);
+}
+.password-reveal:focus-visible {
+  outline-offset: -3px;
+}
 input[readonly],
 textarea[readonly] {
   background: var(--sidebar);

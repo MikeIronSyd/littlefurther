@@ -58,6 +58,33 @@ export function input(type: string, name: string, value = ""): HTMLInputElement 
   control.value = value;
   return control;
 }
+export function passwordField(control: HTMLInputElement): HTMLDivElement {
+  const wrapper = field("password", control, "passwordHint");
+  control.spellcheck = false;
+  control.autocapitalize = "none";
+  const reveal = el("button", "password-reveal");
+  reveal.type = "button";
+  reveal.setAttribute("aria-controls", control.id);
+  const update = (): void => {
+    const visible = control.type === "text";
+    const label = message(visible ? "hidePassword" : "showPassword");
+    reveal.setAttribute("aria-label", label);
+    reveal.title = label;
+    reveal.replaceChildren(icon(visible ? "eye-off" : "eye"));
+  };
+  bind(reveal, update);
+  reveal.addEventListener("click", () => {
+    const { selectionStart, selectionEnd, selectionDirection } = control;
+    control.type = control.type === "password" ? "text" : "password";
+    if (selectionStart !== null && selectionEnd !== null)
+      control.setSelectionRange(selectionStart, selectionEnd, selectionDirection ?? "none");
+    update();
+  });
+  const group = el("div", "password-control");
+  control.replaceWith(group);
+  group.append(control, reveal);
+  return wrapper;
+}
 export function notice(key: MessageKey, danger = false): HTMLDivElement {
   const node = text("div", key, danger ? "notice error" : "notice");
   node.setAttribute("role", danger ? "alert" : "status");
@@ -92,14 +119,16 @@ export function focusStatus(host: HTMLElement, key: MessageKey): void {
   status.focus();
 }
 
-// Lucide panel and theme icons, ISC license. Exact upstream geometry:
-// https://lucide.dev/icons/{panel-left-close,panel-left-open,moon,sun}
+// Lucide panel, theme and password icons, ISC license. Exact upstream geometry:
+// https://lucide.dev/icons/{panel-left-close,panel-left-open,moon,sun,eye,eye-off}
 export function icon(
   kind:
     | "panel-close"
     | "panel-open"
     | "moon"
     | "sun"
+    | "eye"
+    | "eye-off"
     | "home"
     | "path"
     | "activity"
@@ -144,6 +173,26 @@ export function icon(
     svg.append(rect);
     path("M9 3v18");
     path(kind === "panel-close" ? "m16 15-3-3 3-3" : "m14 9 3 3-3 3");
+  } else if (kind === "eye" || kind === "eye-off") {
+    svg.setAttribute("stroke-width", "2");
+    if (kind === "eye") {
+      path(
+        "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
+      );
+      const circle = document.createElementNS(ns, "circle");
+      circle.setAttribute("cx", "12");
+      circle.setAttribute("cy", "12");
+      circle.setAttribute("r", "3");
+      svg.append(circle);
+    } else {
+      for (const d of [
+        "M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49",
+        "M14.084 14.158a3 3 0 0 1-4.242-4.242",
+        "M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143",
+        "m2 2 20 20",
+      ])
+        path(d);
+    }
   } else if (kind === "moon" || kind === "sun") {
     svg.setAttribute("stroke-width", "2");
     if (kind === "moon") {

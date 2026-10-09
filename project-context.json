@@ -897,6 +897,14 @@
     "next": "Prepare timed3-5-minute demo/evidence index. Formal human decisions/capture and learner outcomes remain separate; no automatic outreach.",
     "artifact_commit": "8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
     "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
+    "password_control": {
+      "date": "2026-10-09",
+      "specification": "docs/specs/capstone/increments/password-control.md",
+      "source": "User explicitly requested eye/reveal action; shared sign-in and account-creation implementation.",
+      "research": "R24 source/primary guidance/icon/visual needs satisfied and focused reference inspected before code.",
+      "verification": "PV01-PV04:11focused Edge browser passes52.3s (4new/7auth-shell),56domain/store/HTTP, strict/lint/finalformat/build/process/audit pass; independent source review no blocker; paired browserMCP observed44pxkeyboard/EN-FR/theme/layout. Initial formatter failure fixed; unintended all-suite selection cancelled and correct scoped command passed. No full67suite claim.",
+      "delivery": "Pending E016/A010 saved comparisons and normal dual-private publication at artifact preparation."
+    },
     "notice_removal": {
       "date": "2026-10-09",
       "source": "User explicitly requests removing local account/demo paragraph and global local-demo footer, includingFrench equivalents.",

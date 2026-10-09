@@ -12,6 +12,8 @@ Sources checked 7 October 2026:
 
 No Lucide runtime package or external icon request is required. The upstream license text follows verbatim.
 
+The password visibility action also vendors upstream Eye and EyeOff geometry, checked 9 October 2026 at https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/eye.svg and https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/eye-off.svg under the same ISC license.
+
 ```text
 ISC License
 

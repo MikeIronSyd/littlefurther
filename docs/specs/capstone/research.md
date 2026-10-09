@@ -161,3 +161,7 @@ The user explicitly requested implementation of the settled sign-in/moon-sun pla
 ### R23 — Explicit notice deletion, 9 October2026
 
 All three required research needs are satisfied before source edits at 2026-10-09T19:02:42.6550576+01:00. The concise appendix in increments/auth-shell.md records exact renderer/catalogue/style coupling, independent research, incumbent visual reference and proportional verification. This user-requested static copy deletion does not change capabilities or resolve formal design/video/outcome gates.
+
+### R24 — Password reveal, 9 October 2026
+
+The [password-control contract](increments/password-control.md) records four satisfied needs: shared input/form-lock/auth trace, native button and selection guidance, upstream icon/Edge behavior, and incumbent visual/locale/lifecycle boundaries. Its focused image reference is produced and inspected before production edits. All scoped research is satisfied; validation and delivery remain pending. No new approval gate or product scope follows.

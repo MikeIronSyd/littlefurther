@@ -13,7 +13,17 @@ import { getLocale, message, setLocale } from "./i18n.js";
 import { showActivity, showLearning, showStudy } from "./journey.js";
 import { showPlanEditor } from "./plan-editor.js";
 import { createShell, type Route } from "./shell.js";
-import { button, el, field, focusHeading, input, lockForm, notice, text } from "./ui.js";
+import {
+  button,
+  el,
+  field,
+  focusHeading,
+  input,
+  lockForm,
+  notice,
+  passwordField,
+  text,
+} from "./ui.js";
 import "./styles.css";
 
 const rootElement = document.getElementById("app");
@@ -166,7 +176,7 @@ function showAuth(signUp = false): void {
     text("h2", signUp ? "signUp" : "signIn"),
     ...(signUp ? [field("name", name)] : []),
     field("email", email),
-    field("password", password, "passwordHint"),
+    passwordField(password),
     submit,
     status,
     button(signUp ? "haveAccount" : "needAccount", () => showAuth(!signUp), "text-button"),

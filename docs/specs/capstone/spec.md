@@ -4,6 +4,8 @@ Updated: 9 October 2026, Africa/Lagos. P04/P05 implements the [private journey](
 
 ## Goal
 
+The9October [password visibility increment](increments/password-control.md) adds a localized eye action to both authentication forms under PV01–PV04, preserving the shared field and authentication contracts. Its record distinguishes implementation, verification and delivery.
+
 The9October [auth-shell contract](increments/auth-shell.md) supersedes the earlier switch UI and always-visible signed-out navigation under F15/F16. The user retains sign-in and selects moon/sun actions. [Verification](increments/auth-shell-verification.md) records actual checks and separate delivery/formal-approval boundaries.
 
 The desktop proposals and connected state map are recorded in [design.md](design.md). The user selected the **Amber direction**, then requested light/dark switching, a toggled sidebar, top-screen controls and a reserved app-name/logo area. Those controls are implemented in P04/P05; actual behavior checks and remaining limitations are recorded in [first-journey verification](increments/first-journey-verification.md). Static designs remain distinct from product-acceptance evidence, and no final product name/logo is selected.
