@@ -214,13 +214,7 @@ function showAuth(signUp = false): void {
     el(
       "div",
       "auth-layout",
-      el(
-        "section",
-        "auth-intro",
-        text("h1", "welcome"),
-        text("p", "welcomeCopy", "subtitle"),
-        text("p", "localAccount", "hint"),
-      ),
+      el("section", "auth-intro", text("h1", "welcome"), text("p", "welcomeCopy", "subtitle")),
       form,
     ),
   );

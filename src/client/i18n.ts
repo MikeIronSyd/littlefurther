@@ -16,7 +16,6 @@ const en = {
   language: "Language",
   account: "Account",
   signOut: "Sign out",
-  localDemo: "Local learning demo · Keep the local server running",
   loading: "Loading your learning…",
   retry: "Try again",
   save: "Save",
@@ -34,8 +33,6 @@ const en = {
   welcome: "Make room for your next step.",
   welcomeCopy:
     "Build a manageable plan. Keep a record of your effort. Return whenever you are ready.",
-  localAccount:
-    "Your account and study records stay on this local server. Email verification and password recovery are unavailable in this demo.",
   email: "Email address",
   password: "Password",
   name: "Display name",
@@ -376,7 +373,6 @@ const fr: Record<MessageKey, string> = {
   language: "Langue",
   account: "Compte",
   signOut: "Se déconnecter",
-  localDemo: "Démo d’apprentissage locale · Gardez le serveur local en marche",
   loading: "Chargement de votre parcours…",
   retry: "Réessayer",
   save: "Enregistrer",
@@ -394,8 +390,6 @@ const fr: Record<MessageKey, string> = {
   welcome: "Faites place à votre prochaine étape.",
   welcomeCopy:
     "Préparez un parcours à votre rythme. Gardez une trace de vos efforts. Reprenez quand vous le souhaitez.",
-  localAccount:
-    "Votre compte et vos données restent sur ce serveur local. Cette démo ne propose ni vérification d’adresse e-mail ni récupération de mot de passe.",
   email: "Adresse e-mail",
   password: "Mot de passe",
   name: "Nom affiché",

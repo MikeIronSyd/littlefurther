@@ -140,8 +140,7 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
   const liveStatus = el("div", "global-status");
   liveStatus.setAttribute("role", "status");
   liveStatus.setAttribute("aria-live", "polite");
-  const footer = text("footer", "localDemo", "app-footer");
-  const frame = el("div", "app-frame", sidebar, el("div", "main-column", liveStatus, main, footer));
+  const frame = el("div", "app-frame", sidebar, el("div", "main-column", liveStatus, main));
   const navLinks: HTMLAnchorElement[] = [];
   const createNavigation = (): HTMLElement => {
     const nav = el("nav", "nav-links");

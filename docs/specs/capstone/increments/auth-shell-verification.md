@@ -68,3 +68,13 @@ Normal git push origin main published artifact[8e3d2604aed972e4855ce3e92f378e7db
 ### E014 saved delivery and scoped completion
 
 E014 saved/read back in correct Miva Sheet and Kaneo:37intended/actual cells,0mismatch/extra, uniqueA15; all five full descriptions exactlymatch intended E014 prefix plus complete previous history. Titles/statuses/No date and10-task board/A007 retained. See2026-10-09-auth-shell-tracker.md. Browser automation through MCP, not native Sheets/Kaneo connectors. The [tracker report](../reviews/2026-10-09-auth-shell-tracker.md) records identity, saved comparisons and proof images. The [final independent review](../reviews/2026-10-09-auth-shell-review.md) has no scoped blocker and attributes actual test/browser execution to root. AS01-AS06 is complete within this technical prototype scope. This subsequent documentation records actual saved delivery; final normal dual-private documentation publication is verified separately through its local receipt. Formal design approval and broader capstone deliverables remain open.
+
+### Requested notice deletion verification — 9 October2026
+
+Goal: NR01-NR02 remove the two requested UI notices without replacement copy, empty scaffolding or unrelated behavior changes.
+
+Context Pointers: R23 appendix/research closure at19:02:42Africa/Lagos predates code. Source removed only the auth paragraph/global footer, EN/FR keys and four exclusive CSS blocks. Independent learning-journey-review source check found no scoped blocker; shared hints/password hint/live status/handlers remain. Operational limitations remain in documentation.
+
+Constraints: actual strict/lint/build exited0. Initial format check requested compressing the now-shorter auth section call; formatting only main.ts then full format check exited0. Existing `pnpm --pm-on-fail=download exec playwright test tests/e2e/auth-shell.spec.ts -g AS01` passed2/2 in8.8seconds, exit0, covering desktop1440/mobile320 sign-in/sign-up. No new tests, no full63-case rerun and no new broad security/behavior pass claimed for this static deletion. Root browser MCP observed EN/light desktop1440 and FR/dark320 with zero notice/scaffold nodes, the remaining welcome/form content and no DOMoverflow. Paired saved captures are .local/notice-removal-desktop.png and notice-removal-mobile.png; mobile raster has the same right-edge capture crop recorded earlier, distinct from no-overflow DOM readback. Temporary viewport reset; updated normal server continues running.
+
+Done When: scoped source/appearance/browser verification passes. Authorized private publication and concise E015 saved tracker readback are recorded after actual execution; no formal design/video/learner-effect approval implied.

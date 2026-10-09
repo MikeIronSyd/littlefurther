@@ -896,7 +896,14 @@
     "tracker_sync": "E014 saved/read back in correct Miva Sheet and Kaneo:37intended/actual cells,0mismatch/extra, uniqueA15; all five full descriptions exactlymatch intended E014 prefix plus complete previous history. Titles/statuses/No date and10-task board/A007 retained. See2026-10-09-auth-shell-tracker.md.",
     "next": "Prepare timed3-5-minute demo/evidence index. Formal human decisions/capture and learner outcomes remain separate; no automatic outreach.",
     "artifact_commit": "8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
-    "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/8e3d2604aed972e4855ce3e92f378e7db5aeac8d"
+    "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
+    "notice_removal": {
+      "date": "2026-10-09",
+      "source": "User explicitly requests removing local account/demo paragraph and global local-demo footer, includingFrench equivalents.",
+      "research": "R23 satisfied/documented before code at19:02:42Africa/Lagos.",
+      "verification": "Strict/lint/format/build pass, existing AS01 appearance2/2pass8.8seconds, independent source review no blocker, paired ENdesktop/FR320browserMCP zero notice/scaffold nodes and noDOMoverflow. Full63suite not rerun for staticcopydeletion.",
+      "delivery": "Private source publication and E015 saved tracker readback pending."
+    }
   },
   "design_direction": {
     "name": "Amber",

@@ -157,3 +157,7 @@ Closed for the bounded correction scope at11:41 Africa/Lagos on9October2026, bef
 ### R22 — Signed-out shell and icon theme control, 9 October 2026
 
 The user explicitly requested implementation of the settled sign-in/moon-sun plan. [Auth-shell contract](increments/auth-shell.md) records all five satisfied needs, source traces, independent test research, primary W3C/Lucide sources and the pre-code generated desktop/mobile reference. Gate closed at14:07 Africa/Lagos before production edits; no required scope unknown remains. Auth-focus deferral after inert removal and guarded drawer focus return are factual lifecycle requirements. Formal design receipt/capture and final capstone deliverables remain separate; this closure does not invent their approval or completion.
+
+### R23 — Explicit notice deletion, 9 October2026
+
+All three required research needs are satisfied before source edits at 2026-10-09T19:02:42.6550576+01:00. The concise appendix in increments/auth-shell.md records exact renderer/catalogue/style coupling, independent research, incumbent visual reference and proportional verification. This user-requested static copy deletion does not change capabilities or resolve formal design/video/outcome gates.

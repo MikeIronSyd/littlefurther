@@ -750,12 +750,6 @@ p {
   background: var(--blue);
   color: var(--blue-ink);
 }
-.app-footer {
-  padding: 12px 28px 24px;
-  text-align: right;
-  color: var(--muted);
-  font-size: 0.8rem;
-}
 .page-heading {
   display: flex;
   align-items: center;
@@ -781,10 +775,6 @@ p {
 .auth-intro h1 {
   font-size: 3rem;
   color: inherit;
-}
-.auth-intro .hint {
-  color: inherit;
-  margin-top: 36px;
 }
 .auth-form,
 .settings-form,
@@ -1673,9 +1663,6 @@ input[type="checkbox"] {
   .auth-intro h1 {
     font-size: 2.25rem;
   }
-  .auth-intro .hint {
-    margin-top: 20px;
-  }
   .auth-form {
     width: 100%;
   }
@@ -1705,10 +1692,6 @@ input[type="checkbox"] {
     gap: 14px;
   }
   .global-status:not(:empty) {
-    padding-inline: 16px;
-  }
-  .app-footer {
-    text-align: left;
     padding-inline: 16px;
   }
   .page-heading {

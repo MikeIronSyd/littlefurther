@@ -45,3 +45,23 @@ No migration is required. Rollback restores prior source/build and retains uncha
 ## Done When
 
 AS01–AS06 have actual verification and no scoped blocking review finding; both correct trackers have saved readback and both private remote heads match intended publication. Describe any unverified destination separately. No human design approval, educational benefit, production readiness or completed video follows from this change.
+
+## Requested notice deletion — 9 October2026 (R23)
+
+### Goal
+
+Remove exactly the local account/demo paragraph from sign-in/sign-up and the global local-demo footer, including French equivalents, as explicitly requested by the user.
+
+### Context Pointers
+
+Baseline 3f0440ff6c52ed323d680ce6e9c6a67679ea0579. Existing pre-code visual reference and actual final-entry capture establish Amber/form composition; this is explicit copy deletion within that reference, with no new visual concept. Source/independent research confirms one localAccount renderer in main.ts, one localDemo footer in shell.ts, both EN/FR keys and four exclusive style blocks. Shared hints, fields, theme/native navigation and live-status nodes are independent. No tests address these notices. Operations documentation retains actual server/email/recovery limitations.
+
+### Constraints
+
+R23a renderer/catalogue coupling, R23b exclusive versus shared styling and R23c proportional verification are all satisfied by source inspection and independent learning-journey-review research before code. No factual unknown or unanswered decision remains. NR01: neither notice nor its empty scaffold appears in either language. NR02: welcome/form labels, theme and navigation remain usable at desktop/320px. Remove only rendered nodes, orphaned EN/FR keys and exclusive CSS. This does not add email recovery or server-stopped operation. Existing reference guides this tiny correction; no additional approval or image-concept gate.
+
+Plan: delete the two renderers/keys/exclusive styles; run check/lint/format/build and the two existing AS01 desktop/mobile sign-in/sign-up cases; observe actual EN desktop/FR mobile once, then record outcomes/publish and reconcile concise E015 evidence. No new tests or full63-case rerun is warranted for static copy deletion. Preserve all operational truth and historical verification/approval boundaries.
+
+### Done When
+
+NR01-NR02 have source, existing appearance-case and actual browser evidence; scoped independent review has no blocker; current build is available, intended source published to both private repositories, and concise E015 saved record readback is separate and accurate.
