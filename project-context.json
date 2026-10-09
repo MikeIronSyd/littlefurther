@@ -194,7 +194,7 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "Signed-out sign-in/sign-up now shows brand, language and localized moon/sun theme actions with no navigation/account/gutter. Authentication restores saved navigation; session clear closes drawer/popover/body lock and guards auth focus after unlock. R22/reference preceded production edits. Focused13browser cases,56domain/store/HTTP cases and strict/lint/format/build/process/audit passed. Full63-case regression passed in11.6minutes; E014 saved reconciliation and dual-source publication are pending actual delivery/readback. Initial two fixture locator failures and one test-line formatter failure were corrected without relaxed checks. Independent source/fixture review has no scoped blocker; paired browser MCP confirms desktopEN/light and320pxFR/dark. Formal design approval/capture, comprehensive accessibility/native-French quality, learner outcomes and video remain open.",
+      "scope_status": "AS01-AS06 sign-in shell/moon-sun increment delivered within scoped technical acceptance. R22/reference preceded code; all required checks passed, including13focused/63fullbrowser and56domain/store/HTTP. Independent stabilized source/fixture review has no blocker. Actual paired browserMCP preserves Amber/EN-FR input and full-width signed-out layout; detector32advisories and mobile capture crop remain documented. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 is published to both private repositories with exact GitCLI head readback; E014 saved comparisons pass37Sheet cells and five entire Kaneo descriptions with histories/statuses/dates preserved. Initial fixture/format failures and agent interruptions retained. Formal user design decisions/capture/QUALITY BAR, comprehensive accessibility/native-French quality, learner outcomes and timedvideo remain separate and open.",
       "ai_product_feature_required": false,
       "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
@@ -209,9 +209,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "Signed-out sign-in/sign-up now shows brand, language and localized moon/sun theme actions with no navigation/account/gutter. Authentication restores saved navigation; session clear closes drawer/popover/body lock and guards auth focus after unlock. R22/reference preceded production edits. Focused13browser cases,56domain/store/HTTP cases and strict/lint/format/build/process/audit passed. Full63-case regression passed in11.6minutes; E014 saved reconciliation and dual-source publication are pending actual delivery/readback. Initial two fixture locator failures and one test-line formatter failure were corrected without relaxed checks. Independent source/fixture review has no scoped blocker; paired browser MCP confirms desktopEN/light and320pxFR/dark. Formal design approval/capture, comprehensive accessibility/native-French quality, learner outcomes and video remain open.",
+    "mvp_scope": "AS01-AS06 sign-in shell/moon-sun increment delivered within scoped technical acceptance. R22/reference preceded code; all required checks passed, including13focused/63fullbrowser and56domain/store/HTTP. Independent stabilized source/fixture review has no blocker. Actual paired browserMCP preserves Amber/EN-FR input and full-width signed-out layout; detector32advisories and mobile capture crop remain documented. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 is published to both private repositories with exact GitCLI head readback; E014 saved comparisons pass37Sheet cells and five entire Kaneo descriptions with histories/statuses/dates preserved. Initial fixture/format failures and agent interruptions retained. Formal user design decisions/capture/QUALITY BAR, comprehensive accessibility/native-French quality, learner outcomes and timedvideo remain separate and open.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "Complete E014 saved reconciliation and dual-private publication; then prepare timed3-5-minute demo/evidence index. Formal decisions/capture and learner outcomes stay separate."
+    "stage": "Prepare timed3-5-minute demo/evidence index. Formal human decisions/capture and learner outcomes remain separate; no automatic outreach."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -546,7 +546,7 @@
   },
   "current_preparation": {
     "recorded_on": "2026-10-09",
-    "status": "Signed-out sign-in/sign-up now shows brand, language and localized moon/sun theme actions with no navigation/account/gutter. Authentication restores saved navigation; session clear closes drawer/popover/body lock and guards auth focus after unlock. R22/reference preceded production edits. Focused13browser cases,56domain/store/HTTP cases and strict/lint/format/build/process/audit passed. Full63-case regression passed in11.6minutes; E014 saved reconciliation and dual-source publication are pending actual delivery/readback. Initial two fixture locator failures and one test-line formatter failure were corrected without relaxed checks. Independent source/fixture review has no scoped blocker; paired browser MCP confirms desktopEN/light and320pxFR/dark. Formal design approval/capture, comprehensive accessibility/native-French quality, learner outcomes and video remain open.",
+    "status": "AS01-AS06 sign-in shell/moon-sun increment delivered within scoped technical acceptance. R22/reference preceded code; all required checks passed, including13focused/63fullbrowser and56domain/store/HTTP. Independent stabilized source/fixture review has no blocker. Actual paired browserMCP preserves Amber/EN-FR input and full-width signed-out layout; detector32advisories and mobile capture crop remain documented. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 is published to both private repositories with exact GitCLI head readback; E014 saved comparisons pass37Sheet cells and five entire Kaneo descriptions with histories/statuses/dates preserved. Initial fixture/format failures and agent interruptions retained. Formal user design decisions/capture/QUALITY BAR, comprehensive accessibility/native-French quality, learner outcomes and timedvideo remain separate and open.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -637,22 +637,33 @@
       "tests/e2e/auth-shell.spec.ts"
     ],
     "tracker_record": "E004-E012 retained as dated history; E013 correction/results saved and verified in both trackers. D009-D015 and A001-A010 preserved.",
-    "tracker_sync": "E014 live baselines verified in correct Miva account and Kaneo; saved updates pending final verified ledger/artifact.",
-    "publication": "Auth-shell intended source publication is pending required checks and final review; both private heads still match prior774f587. No source/recovery/public hosting publication inferred.",
+    "tracker_sync": "E014 saved/read back in correct Miva Sheet and Kaneo:37intended/actual cells,0mismatch/extra, uniqueA15; all five full descriptions exactlymatch intended E014 prefix plus complete previous history. Titles/statuses/No date and10-task board/A007 retained. See2026-10-09-auth-shell-tracker.md.",
+    "publication": "Auth-shell artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 published normally to both private repositories; both exact main heads verified2026-10-09T17:37:21.4642469+01:00 through GitCLI. GitHub MCP unavailable. E014 saved comparisons complete in both trackers; final documentation closeout follows with a separate local exact-head receipt. No project recovery/public deployment/hosted-CI claim.",
     "limitations": [
-      "All five focused corrections, required checks, independent source review and E013 artifact/saved delivery are verified within scope; full capstone/formal design and video acceptance remain open.",
-      "No real learner evaluation, retention/mastery gain, time-saving measurement or human adoption.",
-      "Formal six-item user receipt, authenticated assembled capture, historical comp-hash semantics and QUALITY BAR remain open.",
-      "No broad accessibility/native-French certification, physical disconnected network, real machine reboot or remote peer verification.",
-      "The34 detector entries remain advisories about structured design documentation; no general clean-detector claim.",
-      "Hosted CI remains inactive under current provider scope; no enforced gate inferred.",
-      "Timed3-5-minute demo unrecorded. Review-only4330 server stopped and test tab/viewport cleaned; final ordinary demo availability checked at delivery."
+      "Scoped synthetic/local technical verification, not measured retention/mastery/motivation, time saving or human adoption.",
+      "Formal human design decisions/receipt, authenticated capture and QUALITY BAR remain separate and open.",
+      "Native-French quality, comprehensive accessibility/security and physical-device verification are not inferred from current checks.",
+      "Mobile full-page capture cropped16px; actual320px DOM geometry showed no overflow. Detector32advisories are retained without quality-score inference.",
+      "Local app requires running server. Prior P10 setup/adaptation is distinct historical evidence; no clean-machine/cold-cache or remote-peer/server-stopped promise.",
+      "Current GitHub MCP repository/commit read tools unavailable; actual dual-private publication/readback GitCLI. No hosted-CI enforcement or global-project recovery claim.",
+      "Final3-5-minute recording/timecodes/playback and learner evaluation remain open. Official deadline unannounced;14October internal only."
     ],
     "tracker_sync_history": [
-      "E005 and publication reconciliation completed on 2026-10-07 through browser MCP in the verified Miva account and Kaneo. Sheet exact readbacks passed for E005 A6:J6, E004 H5:I5, Activities G5:K5/G7:K7/G9:K11 and Context B25:C25. Kaneo A004/A006/A008/A009/A010 passed persisted comparison after navigation, preserving history and statuses. P03 in progress; no visual approval or product acceptance inferred."
+      "E005 and publication reconciliation completed on 2026-10-07 through browser MCP in the verified Miva account and Kaneo. Sheet exact readbacks passed for E005 A6:J6, E004 H5:I5, Activities G5:K5/G7:K7/G9:K11 and Context B25:C25. Kaneo A004/A006/A008/A009/A010 passed persisted comparison after navigation, preserving history and statuses. P03 in progress; no visual approval or product acceptance inferred.",
+      {
+        "date": "2026-10-09",
+        "increment": "P11-auth-shell",
+        "status_before_saved_readback": "E014 live baselines verified in correct Miva account and Kaneo; saved updates pending final verified ledger/artifact."
+      }
     ],
     "publication_history": [
-      "Design artifact commit c89194b2bd3920c8ef5931cff87a6b5d7b852d3a published with normal Git and read back on both private remotes; personal commit also read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. Global-only CodexRecovery is separate; no project backup invoked."
+      "Design artifact commit c89194b2bd3920c8ef5931cff87a6b5d7b852d3a published with normal Git and read back on both private remotes; personal commit also read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. Global-only CodexRecovery is separate; no project backup invoked.",
+      {
+        "date": "2026-10-09",
+        "increment": "P11-auth-shell",
+        "artifact": "8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
+        "status_before_documentation_closeout": "Auth-shell artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 published normally to both private repositories; both exact heads verified2026-10-09T17:37:21.4642469+01:00. GitHub MCP unavailable, actual readback GitCLI. E014 saved comparisons/documentation closeout pending. No project recovery or public deployment."
+      }
     ],
     "milestone_history": [
       {
@@ -835,6 +846,21 @@
         "tracker_sync": "E013 saved/read back in the correct Miva Sheet and five Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, unique rowA14; five full persisted descriptions exactly match intended text and preserve entire prior histories, statuses and No date. A007 and board10tasks unchanged. See2026-10-09-refinement-tracker.md.",
         "publication": "Artifact2209bd2d4ae161c5dd2fe45bac1c4641d7aec2cb published by normal git push origin main to both private repositories, exact heads verified12:15Africa/Lagos. GitHub MCP unavailable in current tool inventory; actual readback is GitCLI. E013 saved/read back in both trackers. Final documentation closeout records actual delivery separately; no hosted CI/deployment/global recovery claim."
       }
+    ],
+    "limitation_history": [
+      {
+        "date": "2026-10-09",
+        "before": "auth-shell documentation closeout",
+        "limitations": [
+          "All five focused corrections, required checks, independent source review and E013 artifact/saved delivery are verified within scope; full capstone/formal design and video acceptance remain open.",
+          "No real learner evaluation, retention/mastery gain, time-saving measurement or human adoption.",
+          "Formal six-item user receipt, authenticated assembled capture, historical comp-hash semantics and QUALITY BAR remain open.",
+          "No broad accessibility/native-French certification, physical disconnected network, real machine reboot or remote peer verification.",
+          "The34 detector entries remain advisories about structured design documentation; no general clean-detector claim.",
+          "Hosted CI remains inactive under current provider scope; no enforced gate inferred.",
+          "Timed3-5-minute demo unrecorded. Review-only4330 server stopped and test tab/viewport cleaned; final ordinary demo availability checked at delivery."
+        ]
+      }
     ]
   },
   "research_gate": {
@@ -854,7 +880,7 @@
     "id": "P11-auth-shell",
     "name": "Focused sign-in shell and moon/sun theme actions",
     "date": "2026-10-09",
-    "status": "Signed-out sign-in/sign-up now shows brand, language and localized moon/sun theme actions with no navigation/account/gutter. Authentication restores saved navigation; session clear closes drawer/popover/body lock and guards auth focus after unlock. R22/reference preceded production edits. Focused13browser cases,56domain/store/HTTP cases and strict/lint/format/build/process/audit passed. Full63-case regression passed in11.6minutes; E014 saved reconciliation and dual-source publication are pending actual delivery/readback. Initial two fixture locator failures and one test-line formatter failure were corrected without relaxed checks. Independent source/fixture review has no scoped blocker; paired browser MCP confirms desktopEN/light and320pxFR/dark. Formal design approval/capture, comprehensive accessibility/native-French quality, learner outcomes and video remain open.",
+    "status": "AS01-AS06 sign-in shell/moon-sun increment delivered within scoped technical acceptance. R22/reference preceded code; all required checks passed, including13focused/63fullbrowser and56domain/store/HTTP. Independent stabilized source/fixture review has no blocker. Actual paired browserMCP preserves Amber/EN-FR input and full-width signed-out layout; detector32advisories and mobile capture crop remain documented. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 is published to both private repositories with exact GitCLI head readback; E014 saved comparisons pass37Sheet cells and five entire Kaneo descriptions with histories/statuses/dates preserved. Initial fixture/format failures and agent interruptions retained. Formal user design decisions/capture/QUALITY BAR, comprehensive accessibility/native-French quality, learner outcomes and timedvideo remain separate and open.",
     "specification": "docs/specs/capstone/increments/auth-shell.md",
     "verification": "docs/specs/capstone/increments/auth-shell-verification.md",
     "baseline": "08231721b5c844fccb160292a7c7edcf286f8818",
@@ -864,10 +890,13 @@
       "revision": "87f3b74ffc5f6bd5211066384d046fa6841f06173a3bcb6856a929a1791242fa",
       "observed_url": "http://127.0.0.1:61603/",
       "idle_limit": "30 minutes; resume same session if expired",
-      "report": "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md"
+      "report": "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md",
+      "url_status": "Historical observed helper URL; live availability not verified in auth-shell work. Same packet awaits real user decisions."
     },
-    "tracker_sync": "E014 live baselines verified in correct Miva account and Kaneo; saved updates pending final verified ledger/artifact.",
-    "next": "Complete E014 saved reconciliation and dual-private publication; then prepare timed3-5-minute demo/evidence index. Formal decisions/capture and learner outcomes stay separate."
+    "tracker_sync": "E014 saved/read back in correct Miva Sheet and Kaneo:37intended/actual cells,0mismatch/extra, uniqueA15; all five full descriptions exactlymatch intended E014 prefix plus complete previous history. Titles/statuses/No date and10-task board/A007 retained. See2026-10-09-auth-shell-tracker.md.",
+    "next": "Prepare timed3-5-minute demo/evidence index. Formal human decisions/capture and learner outcomes remain separate; no automatic outreach.",
+    "artifact_commit": "8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
+    "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/8e3d2604aed972e4855ce3e92f378e7db5aeac8d"
   },
   "design_direction": {
     "name": "Amber",
@@ -931,7 +960,7 @@
         "working source/tests and root command logs",
         "correct live E014 tracker baselines"
       ],
-      "results": "Research/reference precede edits; actual independent source/fixture review and root/browser checks recorded. E014 saved write/readback pending; skill existence alone is not success."
+      "results": "Actual independent source/fixture review, root checks/browserMCP and capstone-evidence-update E014 reconciliation completed;37Sheet fields and five full Kaneo descriptions exactly saved/read back. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 exact dual-head publication checked through GitCLI. Skills are invoked/reused, not inferred from file presence."
     }
   ]
 }

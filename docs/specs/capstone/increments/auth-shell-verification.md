@@ -38,7 +38,7 @@ The first focused run's two reported failures were fixture errors: a role locato
 | AS02 | Actual account sign-out/re-sign-in restores saved collapsed sidebar/exact icon; held real request after real session revocation returns401 with modal open, then closes modal/lock and focuses auth h1 | Verified focused pass; failed/delayed-sign-out regressions also passed in the full suite. |
 | AS03–AS04 |44px decorative moon/sun native actions, exact localized labels/no pressed attribute, Enter/Space/focus outline, hover/focus/current-action tooltip/Escape | Verified focused pass; no broad screen-reader or accessibility certification. |
 | AS05 | Auth input and node identity retained through in-place locale/theme changes; invalid/blocked storage, device changes and explicit reload precedence; existing learner draft preservation | Verified focused pass; only guarded non-sensitive enums stored, no persistence promise when blocked. |
-| AS06 | Required checks above, independent scoped review, paired browser evidence, reference/provenance and reused skills | Implementation/checks verified pass; tracker and publication remain separately recorded delivery gates. Formal human approval remains open. |
+| AS06 | Required checks above, independent scoped review, paired browser evidence, reference/provenance and reused skills | Verified scoped delivery: required checks, independent review, E014 saved comparisons and source publication complete. Formal human design approval remains separate. |
 
 ## Constraints
 
@@ -60,3 +60,11 @@ One `impeccable.cmd detect --json src/client/shell.ts src/client/main.ts src/cli
 ## Done When
 
 Full regression is complete, with63/63passes11.6minutes and exit0. Final independent review and authorized E014 saved tracker comparisons/publication are recorded separately before scoped delivery is complete. A local commit is not publication; both private remote heads require readback. The app remains a local server-running proof of concept, with unchanged private learner database. Formal design approval, native-French quality, full accessibility, learner outcomes and timed video remain open independently.
+
+### Verified source publication
+
+Normal git push origin main published artifact[8e3d2604aed972e4855ce3e92f378e7db5aeac8d](https://github.com/MikeIronSyd/littlefurther/commit/8e3d2604aed972e4855ce3e92f378e7db5aeac8d) to both private repositories. Both exact main heads matched at2026-10-09T17:37:21.4642469+01:00 through GitCLI. Current GitHub MCP read tools are unavailable, not passed. E014 saved reconciliation and later documentation closeout remain separately recorded.
+
+### E014 saved delivery and scoped completion
+
+E014 saved/read back in correct Miva Sheet and Kaneo:37intended/actual cells,0mismatch/extra, uniqueA15; all five full descriptions exactlymatch intended E014 prefix plus complete previous history. Titles/statuses/No date and10-task board/A007 retained. See2026-10-09-auth-shell-tracker.md. Browser automation through MCP, not native Sheets/Kaneo connectors. The [tracker report](../reviews/2026-10-09-auth-shell-tracker.md) records identity, saved comparisons and proof images. The [final independent review](../reviews/2026-10-09-auth-shell-review.md) has no scoped blocker and attributes actual test/browser execution to root. AS01-AS06 is complete within this technical prototype scope. This subsequent documentation records actual saved delivery; final normal dual-private documentation publication is verified separately through its local receipt. Formal design approval and broader capstone deliverables remain open.
