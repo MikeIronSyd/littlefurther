@@ -903,7 +903,7 @@
       "source": "User explicitly requested eye/reveal action; shared sign-in and account-creation implementation.",
       "research": "R24 source/primary guidance/icon/visual needs satisfied and focused reference inspected before code.",
       "verification": "PV01-PV04:11focused Edge browser passes52.3s (4new/7auth-shell),56domain/store/HTTP, strict/lint/finalformat/build/process/audit pass; independent source review no blocker; paired browserMCP observed44pxkeyboard/EN-FR/theme/layout. Initial formatter failure fixed; unintended all-suite selection cancelled and correct scoped command passed. No full67suite claim.",
-      "delivery": "Pending E016/A010 saved comparisons and normal dual-private publication at artifact preparation."
+      "delivery": "Artifact2e424b038b9d047de913047ea89b7c0d11db2ee8 normalpush published bothprivate main heads exact19:51:07Africa/Lagos. Personal GitHubMCP metadata/diffreadbackpass; empty statuses/PR-filteredworkflow lists notCIpass. Miva MCP404,CLIexactheadpass. E016A17:J17 savedcomparison10cells/zeroextra/mismatch acrossfiveSheet tabs correctMivaowner. A010full69800characters exact; prior65979character suffix/title/status/date preserved. Initial localhelperCRLFprefixoffset corrected onlyinhelper; root independently verifiedexacthistory. See password-control.md for complete evidence/limits; documentationcloseout follows."
     },
     "notice_removal": {
       "date": "2026-10-09",
