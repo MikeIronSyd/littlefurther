@@ -9,7 +9,7 @@ related_targets: ["DESIGN.md", "docs/specs/capstone/design.md", "src/client/styl
 
 ## Goal
 
-Carry the user's selected Amber direction into the connected local learning experience, with light/dark switching, collapsible navigation and persistent provisional branding. Mode: Operate. P04/P05 provides the private journey at src/client/main.ts; P06 Comeback schedule recovery and P07 private circles are implemented and verified within their recorded scopes. P08 complete-journey review and its P09 integration corrections passed final corrected-source checks and independent scoped review; delivery evidence belongs to the integration verification record.
+Carry the user's selected Amber direction into the connected local learning experience, with light/dark switching, collapsible navigation and the persistent LittleFurther identity. Mode: Operate. P04/P05 provides the private journey at src/client/main.ts; P06 Comeback schedule recovery and P07 private circles are implemented and verified within their recorded scopes. P08 complete-journey review and its P09 integration corrections passed final corrected-source checks and independent scoped review; delivery evidence belongs to the integration verification record.
 
 ## Context Pointers
 
@@ -23,7 +23,7 @@ Six detailed references in .impeccable/mocks/amber/ preserve exact prompts and s
 
 P04/P05 implements local account/profile, curated or manual reviewed plans, study logging, optional private reflection, explicit completion and retained history. P06 adds deliberate schedule recovery without rewriting earlier work. P07 adds invitation-only local circles, exact-copy/audience preview, explicit sharing, preset encouragement and lifecycle cleanup. These five connected capabilities use real local account data. No runtime AI, chat, remote-peer demonstration or outcome claims.
 
-The interface uses semantic HTML/CSS/SVG and local Segoe UI. This system-font substitution is not exact raster lettering or a self-hosted font match. No raster ships. The brand slot remains outside the sidebar; no final name/logo exists.
+The interface uses semantic HTML/CSS/SVG and local Segoe UI. This system-font substitution is not exact raster lettering or a self-hosted font match. No raster ships. The selected LittleFurther name and A joined-LF artwork remain outside the sidebar, unchanged in English/French; the browser title uses the same name. The 10 October integration is governed by docs/specs/capstone/increments/littlefurther-integration.md, with overall formal design approval still separate.
 
 Three ordinary navigation links organize the journey; topbar controls contain theme, language and account. Expanded desktop uses PanelLeftClose; collapsed desktop and the closed mobile trigger use PanelLeftOpen. Decorative SVGs have independently localized controls with aria-expanded/aria-controls. THIRD_PARTY_NOTICES.md retains attribution.
 
@@ -45,7 +45,7 @@ OWN-WORLD: Neutral light working surfaces with charcoal humanist sans text and a
 
 STORY: The learner sees a goal, takes a manageable step, reviews privately and retains effort; after an interruption they can review revised dates, then optionally share a deliberate copy with their private circle.
 
-FIRST VIEWPORT: Persistent provisional brand and panel toggle; three-link sidebar and topbar utilities. Desktop title, goal and actual progress precede a wide amber task band with study action at right, followed by path and support. Mobile uses the corrected action-first DOM order above.
+FIRST VIEWPORT: Persistent LittleFurther identity and panel toggle; three-link sidebar and topbar utilities. Desktop title, goal and actual progress precede a wide amber task band with study action at right, followed by path and support. Mobile uses the corrected action-first DOM order above.
 
 FORM: User-selected wayfinding challenger "One clear next turn"; seed30b46385 assigned candidate7, but the user explicitly chose Amber. Original approved comp: 1536×1024.
 
@@ -110,3 +110,21 @@ Signed out: brand/language/44px moon-sun action only, no sidebar/trigger/account
 ### Done When
 
 Use actual scoped checks and bounded desktop/mobile observations in auth-shell-verification.md. Keep formal receipt/capture and final video separate.
+
+## LittleFurther A integration — 10 October 2026
+
+### Goal
+
+Apply the user's selected A joined-LF artwork and exact LittleFurther name to the persistent header and browser title within the existing Amber Operate surface.
+
+### Context Pointers
+
+Contract: docs/specs/capstone/increments/littlefurther-integration.md, BI01–BI04. The original mark.svg and reference.png under docs/specs/capstone/designs/littlefurther precede production integration. The same directory's app-desktop.png and app-mobile.png are actual app captures. src/client/branding.ts supplies the shared name and trusted native DOM/SVG factory; shell.ts, i18n.ts and styles.css retain the existing state/control boundaries.
+
+### Constraints
+
+Preserve original A geometry in a 32×32 viewBox with a 4-unit rounded stroke, decorative semantics and a complete system wordmark at weight 650, with its only optional break at Little/Further. Mark sizes are 32px desktop/29px mobile; light ink/dark Amber applies to the mark while text retains theme ink. Keep identity outside navigation, with existing auth/input/focus/theme/locale/sidebar/account/session behavior. No new font, raster, dependency, data/API or overall formal approval is implied.
+
+### Done When
+
+The integration record contains actual BI01–BI04 checks, bounded app observations, independent scoped review and delivery readbacks. Keep the selected A decision distinct from overall formal design approval and preserve the original reference evidence.

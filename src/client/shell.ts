@@ -1,4 +1,5 @@
 import type { Locale, MeResponse } from "../shared/contracts.js";
+import { createBrand } from "./branding.js";
 import { bind, getLocale, message } from "./i18n.js";
 import { button, el, icon, named, text } from "./ui.js";
 
@@ -40,7 +41,7 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
   skip.href = "#main-content";
   const navTrigger = el("button", "nav-trigger");
   navTrigger.type = "button";
-  const brand = el("div", "brand", el("span", "brand-mark"), text("span", "appName"));
+  const brand = createBrand();
   const brandGroup = el("div", "brand-group", navTrigger, brand);
   const language = el("select", "language-select");
   for (const [value, label] of [

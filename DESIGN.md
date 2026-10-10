@@ -135,15 +135,15 @@ The selected Amber direction puts a conspicuous next action beside evidence of r
 
 The initial P04/P05 scan was recorded on 7 October 2026 (Africa/Lagos). This 8 October refresh retains that visual system and records its P06 Comeback and P07 StudyCircle extensions, grounded in [styles.css](src/client/styles.css), [journey.ts](src/client/journey.ts), [comeback.ts](src/client/comeback.ts), [circle.ts](src/client/circle.ts), [shell.ts](src/client/shell.ts) and [ui.ts](src/client/ui.ts). [PRODUCT.md](PRODUCT.md) and the [specification](docs/specs/capstone/spec.md) own product behavior. The [selected reference](.impeccable/mocks/decision/next-turn.png) remains the direction authority; detailed state images remain unapproved elaborations. See the [design record](docs/specs/capstone/design.md) for provenance and formal workflow limits.
 
-On 9 October 2026, the user selected **LittleFurther**, unchanged in English/French, and the joined LF concept. The [reference-only artwork](docs/specs/capstone/designs/littlefurther/README.md) retains Amber and the existing Segoe UI/system wordmark at weight 650, outside the sidebar. Final artwork selection, application integration and overall formal design approval remain pending. The running app still uses its provisional name and outlined-square mark; this reference does not replace the implemented visual system.
+On 9 October 2026, the user selected **LittleFurther**, unchanged in English/French, and the joined LF concept. The [original artwork reference](docs/specs/capstone/designs/littlefurther/README.md) retains Amber and the existing Segoe UI/system wordmark at weight 650, outside the sidebar. That synthetic board preceded application integration and remains reference evidence.
 
-The 10 October [three-option comparison](docs/specs/capstone/designs/littlefurther/options.png), governed by the [options contract](docs/specs/capstone/increments/littlefurther-options.md), adds B (Stepped) and C (Solid) beside unchanged A (Original). These reference alternatives await artwork selection and leave the Amber tokens, system typography and implemented visual authority unchanged. App integration and overall formal design approval remain pending.
+The 10 October [three-option comparison](docs/specs/capstone/designs/littlefurther/options.png), governed by the [options contract](docs/specs/capstone/increments/littlefurther-options.md), adds B (Stepped) and C (Solid) beside unchanged A (Original). The user subsequently selected A. The [integration increment](docs/specs/capstone/increments/littlefurther-integration.md) now applies that original joined LF and the LittleFurther name to the persistent header and browser title, preserving Amber tokens and system typography. Actual [desktop](docs/specs/capstone/designs/littlefurther/app-desktop.png) and [mobile](docs/specs/capstone/designs/littlefurther/app-mobile.png) app captures are separate from the preimplementation references. Overall formal design approval remains pending.
 
 **Key Characteristics:**
 
 - One dominant amber study action.
 - Flat surfaces, quiet borders and connected progress markers.
-- A persistent provisional brand and compact utility controls.
+- The persistent LittleFurther identity and compact utility controls.
 - Semantic HTML, CSS and SVG with no shipping raster or downloaded font.
 
 ## Colors
@@ -172,6 +172,8 @@ Page, surface and sidebar distinguish working area, controls/header and navigati
 
 Every role uses the local Segoe UI stack recorded above. This is a system-font substitution under the local-demo constraint, not exact raster lettering, a self-hosted font match or a newly chosen brand typeface.
 
+The LittleFurther wordmark uses weight 650, 1.35rem on desktop and 1.2rem below 800px, with a 1.1 line height. The complete name is unchanged in English/French. Its only optional word break is between Little and Further; the shrinking brand container preserves both words at enlarged text sizes.
+
 Workspace display text reduces to 2.6rem at 800–1250px and 2rem below 800px. Authentication display text reduces from 3rem to 2.25rem on mobile. Task titles use 1.95rem on wide screens and 1.65rem at narrower widths. Goal titles use 1.65rem, reduced to 1.55rem on mobile; support titles use 1.25rem, reduced to 1.15rem.
 
 Body paragraphs have a 72ch maximum width. Labels use weight 600; supporting copy uses muted ink. Numbered markers use tabular numerals. Learner text wraps without automatic translation.
@@ -194,7 +196,7 @@ The9October theme action replaces the switch knob with a moon/sun icon button. N
 
 ## Shapes
 
-Controls use the control radius; navigation is slightly rounder; content panels use the larger panel radius. Current path rows use the intermediate radius. Step and rhythm markers are circular, connected by rules. The provisional brand mark is a plain outlined square, not a finalized logo.
+Controls use the control radius; navigation is slightly rounder; content panels use the larger panel radius. Current path rows use the intermediate radius. Step and rhythm markers are circular, connected by rules. The selected A brand mark joins an L on the left to an F on the right using the original 32×32 SVG geometry and a 4-unit rounded stroke. It renders at 32px on desktop and 29px below 800px, in ink for light mode and Amber for dark mode; the wordmark retains each theme's ink colour. The mark is decorative beside readable text, with no additional focus target.
 
 Icons are normally 24px square, panel toggles 29px and support icons 34px (27px on mobile). Decorative SVGs never replace independently named controls. Exact PanelLeftClose/PanelLeftOpen geometry and attribution are retained in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 

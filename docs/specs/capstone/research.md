@@ -177,3 +177,7 @@ The [brand-reference contract](increments/littlefurther-brand.md) records five s
 ### R27 — Two additional LF alternatives, 10 October 2026
 
 The [options contract](increments/littlefurther-options.md) records four satisfied needs before artwork: explicit additive two-more/three-total request within the settled LF family; unchanged original source/display/header patterns; installed native SVG/Edge/tool and fixed-loopback-viewer boundary; and matched-size geometric/reflow evaluation with independent scope confirmation. No essential external research or consequential pre-artwork decision is missing. Final artwork selection waits for the actual three-option comparison; application integration and formal design approval remain separate.
+
+### R28 — Selected A app integration, 10 October 2026
+
+The user selected A. The [integration contract](increments/littlefurther-integration.md) closes four scoped needs before production edits: actual choice and preceding A image reference; native brand/locale/title dependency trace; responsive/theme geometry; independent affected-test coverage and verified local/E2E runtime/data boundaries. No new stack/API/auth/data/dependency or factual blocker. Artwork selection is settled; application verification/delivery and overall formal approval remain distinct.

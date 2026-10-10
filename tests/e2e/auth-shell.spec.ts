@@ -12,6 +12,126 @@ test.afterEach(async ({ page: _page }, testInfo) => {
   if (testInfo.status !== testInfo.expectedStatus) await respectAuthenticationRateLimit();
 });
 
+async function expectLittleFurtherBrand(page: Page): Promise<void> {
+  const brand = page.locator(".brand");
+  const name = brand.locator(".brand-name");
+  const mark = brand.locator("svg.brand-mark");
+  const path = mark.locator("path");
+  const dark = (await page.locator("html").getAttribute("data-theme")) === "dark";
+  await expect(page).toHaveTitle("LittleFurther");
+  await expect(brand).toHaveCount(1);
+  await expect(name).toBeVisible();
+  await expect(name).toHaveText("LittleFurther");
+  await expect(name).toHaveCSS("font-weight", "650");
+  await expect(name).toHaveCSS("color", dark ? "rgb(226, 234, 244)" : "rgb(20, 38, 61)");
+  await expect(mark).toHaveAttribute("viewBox", "0 0 32 32");
+  await expect(mark).toHaveAttribute("aria-hidden", "true");
+  await expect(mark).toHaveAttribute("focusable", "false");
+  await expect(path).toHaveCount(1);
+  await expect(path).toHaveAttribute("d", "M5 7V25H17V7H27M17 15H25");
+  await expect(path).toHaveCSS("fill", "none");
+  await expect(path).toHaveCSS("stroke-width", "4px");
+  await expect(path).toHaveCSS("stroke-linecap", "round");
+  await expect(path).toHaveCSS("stroke-linejoin", "round");
+  await expect(path).toHaveCSS("stroke", dark ? "rgb(242, 181, 45)" : "rgb(20, 38, 61)");
+  await expect(brand.locator("a, button, input, select, textarea, [tabindex]")).toHaveCount(0);
+
+  const layout = await brand.evaluate((element) => {
+    const header = element.closest("header");
+    const wordmark = element.querySelector<HTMLElement>(".brand-name");
+    const svg = element.querySelector<SVGSVGElement>("svg.brand-mark");
+    if (!header || !wordmark || !svg) throw new Error("The complete header brand is missing");
+    const bounds = element.getBoundingClientRect();
+    const headerBounds = header.getBoundingClientRect();
+    const within = (child: DOMRect, parent: DOMRect): boolean =>
+      child.left >= parent.left - 0.5 &&
+      child.right <= parent.right + 0.5 &&
+      child.top >= parent.top - 0.5 &&
+      child.bottom <= parent.bottom + 0.5;
+    const inViewport = (box: DOMRect): boolean =>
+      box.left >= 0 && box.right <= document.documentElement.clientWidth + 0.5;
+    const markBounds = svg.getBoundingClientRect();
+    const walker = document.createTreeWalker(wordmark, NodeFilter.SHOW_TEXT);
+    const nodes: Text[] = [];
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) nodes.push(node as Text);
+    const wordsRemainWhole = (
+      [
+        [0, 6],
+        [6, 13],
+      ] as const
+    ).every(([start, end]) => {
+      const range = document.createRange();
+      let offset = 0;
+      for (const node of nodes) {
+        if (start >= offset && start < offset + node.length) range.setStart(node, start - offset);
+        if (end > offset && end <= offset + node.length) range.setEnd(node, end - offset);
+        offset += node.length;
+      }
+      const rectangles = [...range.getClientRects()].filter((box) => box.width > 0);
+      const first = rectangles[0];
+      return (
+        Boolean(first) && rectangles.every((box) => box.top === first?.top && within(box, bounds))
+      );
+    });
+    const opportunity = wordmark.querySelector("wbr");
+    const beforeBreak = document.createRange();
+    beforeBreak.selectNodeContents(wordmark);
+    if (opportunity) beforeBreak.setEndBefore(opportunity);
+    const controls = [
+      ...header.querySelectorAll<HTMLElement>(
+        ".nav-trigger, .language-select, .theme-button, .account-summary",
+      ),
+    ].filter((control) => control.getClientRects().length > 0);
+    return {
+      outsideNavigation: !element.closest("aside, nav"),
+      contained:
+        within(bounds, headerBounds) &&
+        within(markBounds, bounds) &&
+        within(wordmark.getBoundingClientRect(), bounds) &&
+        inViewport(bounds) &&
+        wordmark.scrollWidth <= wordmark.clientWidth + 1,
+      wordsRemainWhole,
+      breakAtBoundary:
+        wordmark.querySelectorAll("wbr").length <= 1 &&
+        (!opportunity || beforeBreak.toString() === "Little"),
+      controlsFit: controls.every((control) => {
+        const box = control.getBoundingClientRect();
+        const overlaps =
+          bounds.left < box.right &&
+          bounds.right > box.left &&
+          bounds.top < box.bottom &&
+          bounds.bottom > box.top;
+        return within(box, headerBounds) && inViewport(box) && !overlaps;
+      }),
+      markWidth: markBounds.width,
+      markHeight: markBounds.height,
+    };
+  });
+  expect(layout.outsideNavigation, "The identity remains outside collapsible navigation").toBe(
+    true,
+  );
+  expect(layout.contained, "The complete name and mark remain inside the visible header").toBe(
+    true,
+  );
+  expect(layout.wordsRemainWhole, "Little and Further are individually readable on one line").toBe(
+    true,
+  );
+  expect(layout.breakAtBoundary, "An optional word break occurs only after Little").toBe(true);
+  expect(layout.controlsFit, "The brand and visible header controls do not overlap").toBe(true);
+  const markSize = (page.viewportSize()?.width ?? 0) < 800 ? 29 : 32;
+  expect(layout.markWidth).toBe(markSize);
+  expect(layout.markHeight).toBe(markSize);
+}
+
+async function expectBrandInBothThemes(page: Page): Promise<void> {
+  for (const theme of ["light", "dark"]) {
+    if ((await page.locator("html").getAttribute("data-theme")) !== theme)
+      await page.locator(".theme-button").click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
+    await expectLittleFurtherBrand(page);
+  }
+}
+
 async function expectSignedOutShell(page: Page): Promise<void> {
   await expect(page.locator(".sidebar")).toBeHidden();
   await expect(page.locator(".nav-trigger")).toBeHidden();
@@ -37,7 +157,7 @@ for (const width of [1440, 320]) {
     await page.setViewportSize({ width, height: width === 320 ? 720 : 1000 });
     await page.goto("/");
     await expect(page.getByRole("button", { name: "Sign in", exact: true })).toBeVisible();
-    await expect(page.getByText("App name", { exact: true })).toBeVisible();
+    await expectLittleFurtherBrand(page);
     await expect(page.getByRole("combobox", { name: "Language", exact: true })).toBeVisible();
     await expect(
       page.getByRole("button", { name: "Switch to dark mode", exact: true }),
@@ -67,6 +187,7 @@ for (const width of [1440, 320]) {
           document.documentElement.style.fontSize = value;
         }, size);
         for (let form = 0; form < 2; form++) {
+          await expectBrandInBothThemes(page);
           await expect(page.locator(".auth-intro h1")).toHaveText(heading);
           await expect(page.locator(".auth-intro .subtitle")).toHaveText(copy);
           const bounds = await page.locator(".auth-intro").evaluate((element) => {
@@ -216,7 +337,28 @@ test("AS04/05: theme and locale retain sign-in and sign-up input and control foc
 test("AS02: sign-out focuses authentication and sign-in restores the saved sidebar", async ({
   page,
 }) => {
+  await page.emulateMedia({ colorScheme: "light" });
   const account = await createAccount(page);
+  await expectLittleFurtherBrand(page);
+  await page.setViewportSize({ width: 320, height: 720 });
+  for (const locale of ["en", "fr"]) {
+    await page.locator(".language-select").selectOption(locale);
+    for (const size of ["100%", "200%"]) {
+      await page.evaluate((value) => {
+        document.documentElement.style.fontSize = value;
+      }, size);
+      await expectBrandInBothThemes(page);
+      await expectNoHorizontalOverflow(page);
+      await expect(page.locator(".nav-trigger")).toBeVisible();
+      await expect(page.locator(".account-summary")).toBeVisible();
+    }
+  }
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = "100%";
+  });
+  await page.locator(".language-select").selectOption("en");
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.locator(".theme-button").click();
   await page.getByRole("button", { name: "Collapse sidebar", exact: true }).click();
   await expect(page.getByRole("button", { name: "Expand sidebar", exact: true })).toHaveAttribute(
     "aria-expanded",
@@ -225,6 +367,7 @@ test("AS02: sign-out focuses authentication and sign-in restores the saved sideb
   await page.getByLabel("Account", { exact: true }).click();
   await page.getByRole("button", { name: "Sign out", exact: true }).click();
   await expect(page.getByRole("button", { name: "Sign in", exact: true })).toBeVisible();
+  await expectLittleFurtherBrand(page);
   await expectSignedOutShell(page);
   await expect(page.locator("main h1")).toBeFocused();
   await expect(page.locator("#app")).not.toHaveAttribute("inert", /.*/);
@@ -245,6 +388,7 @@ test("AS02: sign-out focuses authentication and sign-in restores the saved sideb
   await expect(page.locator(".sidebar")).toBeVisible();
   await expect(page.getByRole("link", { name: "My learning", exact: true })).toBeVisible();
   await expect(page.getByLabel("Account", { exact: true })).toBeVisible();
+  await expectLittleFurtherBrand(page);
   await expectOnlyUiStorage(page);
 });
 

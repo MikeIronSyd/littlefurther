@@ -121,7 +121,7 @@ test("AC11b/c: blocked preference storage leaves both toggles usable and preserv
   const collapsed = page.getByRole("button", { name: "Expand sidebar", exact: true });
   await expect(collapsed).toHaveAttribute("aria-expanded", "false");
   await expect(collapsed).toBeFocused();
-  await expect(page.getByText("App name", { exact: true })).toBeVisible();
+  await expect(page.getByText("LittleFurther", { exact: true })).toBeVisible();
   await expect(action).toHaveValue("An unsaved action");
   await expect(page.getByLabel("Learning goal", { exact: true })).toHaveValue(
     "This unsaved goal must stay",
@@ -169,7 +169,7 @@ test("AC11d/e: French 320px drawer contains focus, restores it, and cleans up ac
   await page.setViewportSize({ width: 320, height: 720 });
   await expect(page.getByRole("combobox", { name: "Langue", exact: true })).toBeVisible();
   await expectNoHorizontalOverflow(page);
-  await expect(page.getByText("Nom de l’app", { exact: true })).toBeVisible();
+  await expect(page.getByText("LittleFurther", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Passer en mode sombre", exact: true }).click();
   const opener = page.getByRole("button", { name: "Ouvrir la navigation", exact: true });
   await expect(opener).toHaveAttribute("aria-expanded", "false");

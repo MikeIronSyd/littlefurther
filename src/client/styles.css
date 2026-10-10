@@ -200,17 +200,25 @@ p {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 0 22px;
-  white-space: nowrap;
+  padding: 16px 22px;
+  min-width: 0;
+  white-space: normal;
   font-size: 1.35rem;
   font-weight: 650;
+}
+.brand-name {
+  min-width: 0;
+  line-height: 1.1;
 }
 .brand-mark {
   display: block;
   width: 32px;
   height: 32px;
-  border: 2px solid var(--ink);
+  color: var(--ink);
   flex: 0 0 auto;
+}
+:root[data-theme="dark"] .brand-mark {
+  color: var(--amber);
 }
 .nav-trigger {
   display: grid;
@@ -1568,6 +1576,7 @@ input[type="checkbox"] {
     min-height: 64px;
   }
   .brand {
+    flex: 1;
     padding-inline: 16px;
     gap: 12px;
     font-size: 1.2rem;

@@ -935,6 +935,14 @@
       "research": "R23 satisfied/documented before code at19:02:42Africa/Lagos.",
       "verification": "Strict/lint/format/build pass, existing AS01 appearance2/2pass8.8seconds, independent source review no blocker, paired ENdesktop/FR320browserMCP zero notice/scaffold nodes and noDOMoverflow. Full63suite not rerun for staticcopydeletion.",
       "delivery": "Artifactab5317ba0d2dbdac6e4d5b5754ec335c687ee3a0 published normally to both private repositories; exact GitCLI heads verified2026-10-09T19:05:55.1356667+01:00. E015 saved/read back atA16, exactly10Sheetcells/zeroextra/mismatch; A010 full saved string/entire priorhistory/title/status/date exact. One known new-prefix link separator difference corrected explicitly to native paragraph spacing; no prior-history normalization. Documentation closeout follows."
+    },
+    "littlefurther_integration": {
+      "date": "2026-10-10",
+      "specification": "docs/specs/capstone/increments/littlefurther-integration.md",
+      "source": "Direct user A selection after three-option comparison; user continue retains integration/delivery authorization. Artwork selection is distinct from overall formal design approval.",
+      "research": "R28 four needs satisfied before production: exact choice/precode A reference, renderer/locale/title dependencies, responsive/theme geometry, independent affected-test coverage and actual runtime/data boundaries. No unresolved factual requirement.",
+      "verification": "Strict/lint43/format48/build pass. Final17affected browser cases pass1.7minutes, both authforms/locales/themes/1440-320/100-200roottext, real signout401/sidebar/expiry/storage/inputfocus/password reveal retained. Initial14pass3fail inherited-SVG fixture mismatch corrected to computed paint; geometry/semantics/lifecycle assertions retained. Independent skill source/visual review no remaining code blocker. Actual browserMCP ENlightdesktop and correctedFRdark320viewport captures inspected; mobileDOMinner320/client-scroll305, no horizontaloverflow. Earlier cropped export/skipoverlay corrected once with native screenshot; lowerform outsideviewport coveredbytests. One detector31unchangedCSSadvisories, noignore/overlay; two originembeds/scan6rasters0missing. No new fullsuite/backend/audit/CIpass, browserzoom/nativeFrench/accessibilityconformance/outcome/adoption claim.",
+      "delivery": "Artifact publication and E020/A010 saved tracker readback pending; actual final results will supersede this field."
     }
   },
   "product_identity": {
@@ -943,9 +951,10 @@
     "logo_concept": "User-selected joined LF: L on left, F on right, connected baseline and softly rounded strokes",
     "reference": "docs/specs/capstone/designs/littlefurther/options.png",
     "logo_options": "A Original (unchanged mark.svg); B Stepped (mark-b.svg); C Solid (mark-c.svg). User requested two additions on10October2026; three total, fair matched comparison in choices.png/options.html.",
-    "artwork_selection": "Pending user choice among A/B/C; no winner inferred",
-    "application_integration": "Not started in the design-reference increment; app still has its provisional branding",
-    "availability": "Preliminary indexed screen found no obvious exact learning-product conflict. littlefurther.com is registered; .app registry404 is not registrar availability or legal clearance. No domain purchase or hosting."
+    "artwork_selection": "User selected A Original on10October2026: “A is okay”. Original mark.svg geometry unchanged; B/C remain unused alternatives.",
+    "application_integration": "A/LittleFurther now implemented in persistent application header and initial/locale-updated browser title. BI01–BI03 affected checks passed; BI04 tracker/publication closeout recorded in the integration contract. Overall formal design approval remains separate.",
+    "availability": "Preliminary indexed screen found no obvious exact learning-product conflict. littlefurther.com is registered; .app registry404 is not registrar availability or legal clearance. No domain purchase or hosting.",
+    "application_reference": "docs/specs/capstone/designs/littlefurther/app-desktop.png"
   },
   "design_direction": {
     "name": "Amber",
@@ -961,7 +970,7 @@
       ".impeccable/mocks/amber/mobile-fr-open.png"
     ],
     "approval_boundary": "The original direction/reference is selected. Detailed state images carry approved:false; no further direction vote required and no product behavior approval inferred.",
-    "shell": "Stable top-left brand placeholder outside sidebar; My learning/Journeys/Activity navigation; top utilities; device-preference theme with explicit light/dark override; proper divided-panel icon with left/right chevron.",
+    "shell": "Stable top-left A Original/LittleFurther outside sidebar; complete EN/FR name and title, native decorative32/29mark in ink/light and Amber/dark, existing system650 with Little/Further optional wrap. Existing signed-in navigation/account/panel icons and signed-out language/moon-sun utilities retained.",
     "review": "Fresh independent paired desktop/light-dark/French-mobile review found mobile priority ordering and documentation issues, then marked both scored corrections resolved. Its ship disposition covers those fixes only. Semantic/Segoe UI adaptation retained; formal Impeccable finish refused because earlier phases remain open, and no formal fidelity completion is claimed.",
     "behavior_status": "Private-journey shell checks passed, including final6 affected browser cases after mobile ordering/French accessible-label corrections. Formal Impeccable pipeline remains open; manual visual verdict is separate."
   },
@@ -1010,6 +1019,21 @@
         "correct live E014 tracker baselines"
       ],
       "results": "Actual independent source/fixture review, root checks/browserMCP and capstone-evidence-update E014 reconciliation completed;37Sheet fields and five full Kaneo descriptions exactly saved/read back. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 exact dual-head publication checked through GitCLI. Skills are invoked/reused, not inferred from file presence."
+    },
+    {
+      "date": "2026-10-10",
+      "increment": "LittleFurther-A-integration",
+      "skills": [
+        "impeccable",
+        "learning-journey-review",
+        "capstone-evidence-update"
+      ],
+      "inputs": [
+        "R28/BI01–BI04 specification and precode A reference",
+        "working source/tests and root actual command/capture results",
+        "independent review and correct live E019 tracker baselines"
+      ],
+      "results": "Actual research/design/build/test/review/documentation contributions recorded; interrupted agents resumed after continue. Evidence skill reconciliation and normal dual-private source delivery remain pending until readback."
     }
   ]
 }

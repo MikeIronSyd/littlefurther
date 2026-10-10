@@ -1,12 +1,18 @@
 # Amber learning-workspace design record
 
+## LittleFurther A integration — 10 October 2026
+
+The user selected **A (Original)** after the three-option comparison: “'A' is okay”. The [integration increment](increments/littlefurther-integration.md) applies its original joined-LF geometry and the exact LittleFurther name to the persistent app header and browser title, unchanged in English/French. The mark renders at 32px desktop/29px mobile, using ink in light mode and Amber in dark mode; the system wordmark at weight 650 retains theme ink and permits a break only between Little and Further. The identity remains outside collapsible navigation, with the existing authentication, utilities and panel icons preserved.
+
+Actual [desktop](designs/littlefurther/app-desktop.png) and [mobile](designs/littlefurther/app-mobile.png) app captures are separate from the original synthetic boards. The integration record owns actual static/build/affected-browser checks, scoped review and publication/tracker readbacks. This selected-artwork implementation does not close the pending overall formal design approval, timed demo or learner-outcome evidence.
+
 ## LittleFurther reference — 9 October 2026
 
-The user selected **LittleFurther**, unchanged in English/French, and the joined LF concept. The [reference increment](increments/littlefurther-brand.md) and [editable mark, HTML board and PNG reference](designs/littlefurther/README.md) retain Amber, the existing Segoe UI/system typography and brand placement outside the sidebar. Final artwork selection, app integration and overall formal design approval remain pending. The running app retains its provisional name and outlined-square mark; the board is a synthetic layout reference, not an app screenshot.
+The user selected **LittleFurther**, unchanged in English/French, and the joined LF concept. The [reference increment](increments/littlefurther-brand.md) and [editable mark, HTML board and PNG reference](designs/littlefurther/README.md) retain Amber, the existing Segoe UI/system typography and brand placement outside the sidebar. At that reference stage, final artwork selection and app integration were pending and the running app retained its provisional name and outlined-square mark. The board remains a synthetic layout reference, not an app screenshot.
 
 ## LittleFurther artwork options — 10 October 2026
 
-The user requested two more designs for three total. The [comparison board](designs/littlefurther/options.png) and [options contract](increments/littlefurther-options.md) present unchanged A (Original), B (Stepped) and C (Solid) with matched display sizes, colours and system wordmark. The original reference above is preserved. Artwork selection, app integration and overall formal design approval remain pending; these synthetic references do not change the Amber visual authority.
+The user requested two more designs for three total. The [comparison board](designs/littlefurther/options.png) and [options contract](increments/littlefurther-options.md) present unchanged A (Original), B (Stepped) and C (Solid) with matched display sizes, colours and system wordmark. Artwork selection and app integration were pending when the comparison was produced; the subsequent A selection/integration is recorded above. The original references remain preserved and do not change the Amber visual authority or imply overall formal design approval.
 
 ## Signed-out refinement — 9 October2026
 
@@ -50,7 +56,7 @@ The user explicitly selected **“I will go with Amber.”** The approved direct
 
 The subsequent user requests add a dark/light toggle, a collapsible sidebar, a top-screen menu and space for the future app identity at top left. The later correction requires a proper sidebar-toggle icon. The shell contract uses standard navigation and utility controls, not five feature destinations:
 
-- A persistent top-left brand slot sits outside the collapsible sidebar, alongside the sidebar control. The slot is provisional; no final name or logo exists.
+- A persistent top-left brand slot sits outside the collapsible sidebar, alongside the sidebar control. At this 7 October reference stage, the slot was provisional and no final name or logo had been selected.
 - Three sidebar destinations organize the journey. The topbar carries theme, language and account controls. The main work area remains centered on the next useful study action and supporting path/history.
 - Expanded desktop navigation uses `PanelLeftClose`; collapsed navigation and the closed mobile trigger use `PanelLeftOpen`. Decorative SVGs do not replace independent localized accessible names, expanded state or controls references. The mobile drawer retains a labelled Close control.
 - Theme follows the device until a learner explicitly chooses light/dark. Only validated non-sensitive shell preferences may use guarded browser storage; learner records remain in SQLite. Narrow navigation is a closed-by-default modal drawer with specified focus and resize behavior. [F15/F16 and AC11a–AC11f](spec.md) define the full contract.

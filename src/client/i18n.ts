@@ -1,7 +1,8 @@
 import type { Locale } from "../shared/contracts.js";
+import { APP_NAME } from "./branding.js";
 
 const en = {
-  appName: "App name",
+  appName: APP_NAME,
   learning: "My learning",
   journeys: "Journeys",
   activity: "Activity",
@@ -360,7 +361,7 @@ const en = {
 
 type MessageKey = keyof typeof en;
 const fr: Record<MessageKey, string> = {
-  appName: "Nom de l’app",
+  appName: APP_NAME,
   learning: "Mon apprentissage",
   journeys: "Parcours",
   activity: "Activité",
@@ -785,7 +786,7 @@ export function bind(node: Node, update: () => void): void {
 export function setLocale(value: Locale): void {
   locale = value;
   document.documentElement.lang = value;
-  document.title = message("learning");
+  document.title = message("appName");
   for (const [node, update] of bindings) {
     if (node.isConnected) update();
     else bindings.delete(node);
