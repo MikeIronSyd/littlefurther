@@ -38,4 +38,4 @@ On 10 October 2026, three independent source/prose reviews found no omitted curr
 
 Root ran `node .local/user-guide-check.mjs`: passed all 27 sequential sections, 45 current control labels, 34 relative documentation links and context JSON parsing. `git diff --check` passed. These are documentation checks, not application tests; no app build/static/browser suite was rerun for prose-only changes. No product source, tests, database, dependency or API changes.
 
-UG01–UG03 are satisfied within current source-documentation scope. UG04 publication and E021/A010 saved readback remain pending actual delivery; no human usability, learner outcome, formal design approval or finished video is inferred.
+UG01–UG03 are satisfied within current source-documentation scope. UG04 artifact publication and E021/A010 saved readback are complete; [delivery verification](user-guide-verification.md) records exact results. No human usability, learner outcome, formal design approval or finished video is inferred. Final documentation closeout is published separately through normal dual-repository delivery.

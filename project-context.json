@@ -944,6 +944,17 @@
       "verification": "Strict/lint43/format48/build pass. Final17affected browser cases pass1.7minutes, both authforms/locales/themes/1440-320/100-200roottext, real signout401/sidebar/expiry/storage/inputfocus/password reveal retained. Initial14pass3fail inherited-SVG fixture mismatch corrected to computed paint; geometry/semantics/lifecycle assertions retained. Independent skill source/visual review no remaining code blocker. Actual browserMCP ENlightdesktop and correctedFRdark320viewport captures inspected; mobileDOMinner320/client-scroll305, no horizontaloverflow. Earlier cropped export/skipoverlay corrected once with native screenshot; lowerform outsideviewport coveredbytests. One detector31unchangedCSSadvisories, noignore/overlay; two originembeds/scan6rasters0missing. No new fullsuite/backend/audit/CIpass, browserzoom/nativeFrench/accessibilityconformance/outcome/adoption claim.",
       "delivery": "Artifact2486cb865a42e19ba3ea62c1bf993372b2830c19 published normally to bothprivate main heads exact13:44:06Africa/Lagos10October2026; installedGitHubCLI bothprivate:true/exactmetadata/all21paths, MCPabsent/noCIclaim. E020/A010 saved13:46:56: correctMivaOwner/Restricted/Saved; all5Sheet tabs exactly10changesA21:J21/uniqueE020/zeroextra-mismatch. FullKaneo91473=6643prefix+exact84830history; title/IP/nodate/10taskboard/A007 unchanged, one mutationeach/noambiguousretry. Receipt.local/lf-brand-tracker-final-receipt.json independently readbyroot. BI01–BI04 complete for scopedintegration/check/review/source/tracker delivery; finaldocumentationcloseoutpublication follows. Overallformalapproval/timedvideo/learneroutcomes remainseparate.",
       "artifact_commit": "39e8ee2bc33418db083bf36ce99bba6cc98667bf"
+    },
+    "user_guide": {
+      "date": "2026-10-10",
+      "specification": "docs/specs/capstone/increments/user-guide.md",
+      "guide": "docs/USER_GUIDE.md",
+      "verification": "docs/specs/capstone/increments/user-guide-verification.md",
+      "baseline": "e2b6fae7e0c34a8d7563850f3e75c95e267b36f2",
+      "artifact_commit": "b2232e3b4ecbdc8c6d16e9c17b1e12edb6a66c19",
+      "status": "UG01–UG04 complete within source-documentation scope: 27 sections, three independent inventories/reviews, five wording corrections, local link/control/structure checks, dual-private artifact publication and exact E021/A010 saved readback. No product change or new app/usability/outcome claim.",
+      "tracker_sync": "E021 A22:J22 exactly 10 changes across all 5 tabs, no mismatch or extra; correct Miva owner/Restricted/Saved. A010 exactly 97,246 = 5,773 prefix + all 91,473 prior characters. Title/IP/no date/ten-task board/A007 preserved; single mutation each. Verified 2026-10-10T14:26:55.875546+01:00.",
+      "next": "Deliver the complete conversational walkthrough; formal design approval, timed demo/timecodes and learner evidence remain separate."
     }
   },
   "product_identity": {
@@ -1035,6 +1046,20 @@
         "independent review and correct live E019 tracker baselines"
       ],
       "results": "Actual R28/precode A reference/native build/17affected browser passes/independent source-pixel review/document reconciliation and capstone-evidence-update reuse complete. BrowserMCP saved exact E02010cells/all5tabs and fullA01091473characters with exactprior84830/title/status/date/board preserved. Artifact exactdual-private heads and installedCLIprivacy/metadata/21paths verified; no providerMCP/CI or planmode/outcome inferred."
+    },
+    {
+      "date": "2026-10-10",
+      "increment": "Complete-user-guide",
+      "skills": [
+        "learning-journey-review",
+        "capstone-evidence-update"
+      ],
+      "inputs": [
+        "R29/UG01–UG04 and baseline source e2b6fae",
+        "27-section manual and three independent feature inventories/reviews",
+        "actual local documentation checks, dual-private artifact readback and E020 tracker baselines"
+      ],
+      "results": "Actual source-based guide review, five corrected documentary findings and evidence-skill reuse completed. Browser MCP saved/read back unique E021, 10 cells across all 5 tabs, and exact A010 of 97,246 characters with all 91,473 prior characters preserved. No new app test, learner observation, plan-mode or CI claim."
     }
   ]
 }
