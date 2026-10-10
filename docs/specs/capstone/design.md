@@ -4,6 +4,10 @@
 
 The user selected **LittleFurther**, unchanged in English/French, and the joined LF concept. The [reference increment](increments/littlefurther-brand.md) and [editable mark, HTML board and PNG reference](designs/littlefurther/README.md) retain Amber, the existing Segoe UI/system typography and brand placement outside the sidebar. Final artwork selection, app integration and overall formal design approval remain pending. The running app retains its provisional name and outlined-square mark; the board is a synthetic layout reference, not an app screenshot.
 
+## LittleFurther artwork options — 10 October 2026
+
+The user requested two more designs for three total. The [comparison board](designs/littlefurther/options.png) and [options contract](increments/littlefurther-options.md) present unchanged A (Original), B (Stepped) and C (Solid) with matched display sizes, colours and system wordmark. The original reference above is preserved. Artwork selection, app integration and overall formal design approval remain pending; these synthetic references do not change the Amber visual authority.
+
 ## Signed-out refinement — 9 October2026
 
 The user retained sign-in and selected localized moon/sun icon actions. R22 and the [focused contract](increments/auth-shell.md) precede implementation, with the generated [desktop/mobile reference](../../../.impeccable/mocks/amber/auth-shell-reference.png) and adjacent provenance. Signed-out entry has brand/language/theme with no navigation/account/gutter; signed-in navigation and saved sidebar preference return. Actual checks, paired browser observations, one detector scan and capture limitations are in [verification](increments/auth-shell-verification.md). Amber colors, typography, copy and auth forms are preserved. This scope does not complete or fabricate the separate formal design approval/capture.

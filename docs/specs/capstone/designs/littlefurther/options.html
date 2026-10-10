@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LittleFurther — three logo options</title>
+    <style>
+      :root { font-family: "Segoe UI", system-ui, sans-serif; color: #14263d; background: #fbfcfd; font-size: 16px; }
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      main { max-width: 1600px; margin: auto; padding: 56px; }
+      h1, h2, p { margin: 0; }
+      h1 { font-size: 64px; line-height: 1.12; font-weight: 650; letter-spacing: -.025em; }
+      h2 { font-size: 28px; font-weight: 650; margin: 0 0 24px; }
+      section { margin-top: 48px; }
+      .intro { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid #d9e1e9; }
+      .intro .promise { font-size: 27px; margin-top: 20px; max-width: 36ch; color: #392a0c; }
+      .intro .note { margin-top: 24px; max-width: 68ch; font-size: 17px; color: #4e6178; }
+      .hero-mark { width: 176px; height: 176px; color: #14263d; flex: 0 0 auto; }
+      .specimens { display: flex; align-items: flex-end; gap: 76px; padding: 0 24px; }
+      .specimen { display: flex; min-width: 72px; align-items: center; flex-direction: column; gap: 16px; font-size: 16px; color: #4e6178; }
+      .specimen svg { color: #14263d; flex: 0 0 auto; }
+      .support { font-size: 17px; line-height: 1.55; color: #4e6178; margin-top: 20px; }
+      .treatments { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .treatment { padding: 28px; border: 1px solid #d9e1e9; background: #fff; min-width: 0; }
+      .treatment.dark { color: #e2eaf4; background: #15232e; border-color: #344859; }
+      .treatment.mono { color: #000; }
+      .lockup { display: flex; align-items: center; gap: 16px; }
+      .lockup svg { width: 40px; height: 40px; flex: 0 0 auto; }
+      .lockup .wordmark { font-size: 29px; font-weight: 650; line-height: 1.15; }
+      .dark .lockup svg { color: #f2b52d; }
+      .treatment p { font-size: 16px; margin-top: 20px; }
+      .desktop-examples { display: grid; gap: 20px; }
+      figure { margin: 0; min-width: 0; }
+      figcaption { font-size: 16px; color: #4e6178; line-height: 1.5; margin-bottom: 8px; }
+      iframe { display: block; border: 0; outline: 1px solid #d9e1e9; background: #fff; }
+      .desktop-examples iframe { width: 1440px; height: 74px; }
+      .mobile-examples { display: grid; grid-template-columns: repeat(4, 320px); gap: 28px 32px; }
+      .mobile-examples iframe { width: 320px; height: 122px; }
+      .footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid #d9e1e9; font-size: 16px; color: #4e6178; line-height: 1.6; }
+      .header-body { color: var(--ink); background: var(--surface); }
+      .header { --ink: #14263d; --surface: #fff; --line: #d9e1e9; --mark: #14263d; display: flex; align-items: center; justify-content: space-between; width: 100%; background: var(--surface); color: var(--ink); border-bottom: 1px solid var(--line); }
+      .header.dark { --ink: #e2eaf4; --surface: #15232e; --line: #344859; --mark: #f2b52d; }
+      .header-brand-group { display: flex; align-items: center; min-width: 0; }
+      .brand { display: flex; align-items: center; gap: 16px; padding: 16px 22px; min-width: 0; }
+      .brand .mark { width: 32px; height: 32px; flex: 0 0 auto; color: var(--mark); }
+      .brand .wordmark { min-width: 0; font-size: 1.35rem; font-weight: 650; line-height: 1.1; }
+      .panel { display: grid; place-items: center; width: 72px; min-height: 72px; flex: 0 0 72px; border-right: 1px solid var(--line); }
+      .panel svg { width: 29px; height: 29px; }
+      .utilities { display: flex; align-items: center; gap: 24px; padding: 8px 24px; min-width: 0; }
+      .language { display: flex; align-items: center; gap: 12px; font-size: 1rem; line-height: 1.5; }
+      .language svg { width: 16px; height: 16px; flex: 0 0 auto; }
+      .theme { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; }
+      .theme svg { width: 24px; height: 24px; }
+      .account { display: flex; align-items: center; gap: 12px; font-size: 1rem; }
+      .avatar { display: grid; place-items: center; width: 32px; height: 32px; flex: 0 0 auto; background: #fff2d0; color: #392a0c; border-radius: 50%; font-size: 14px; font-weight: 650; }
+      @media (max-width: 799px) {
+        .header { flex-wrap: wrap; }
+        .header-brand-group { width: 100%; min-height: 64px; }
+        .brand { flex: 1; gap: 12px; padding: 16px; }
+        .brand .mark { width: 29px; height: 29px; }
+        .brand .wordmark { font-size: 1.2rem; }
+        .panel { width: 64px; min-height: 64px; flex-basis: 64px; }
+        .utilities { width: 100%; border-top: 1px solid var(--line); padding: 4px 16px; justify-content: space-between; gap: 14px; }
+        .language { font-size: .9rem; }
+        .account-name { display: none; }
+      }
+
+      main { padding: 48px 56px; }
+      h1 { font-size: 48px; }
+      .lead { font-size: 20px; line-height: 1.55; color: #4e6178; max-width: 70ch; margin-top: 16px; }
+      .choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 48px; margin-top: 44px; }
+      .option { min-width: 0; padding-bottom: 28px; border-bottom: 1px solid #d9e1e9; }
+      .option h2 { font-size: 26px; margin-bottom: 24px; }
+      .large-mark { display: block; width: 128px; height: 128px; margin-bottom: 24px; color: #14263d; }
+      .option .wordmark { font-size: 36px; line-height: 1.15; font-weight: 650; }
+      .option .description { min-height: 54px; font-size: 17px; line-height: 1.55; color: #4e6178; margin-top: 16px; }
+      .sizes { display: flex; align-items: flex-end; gap: 24px; margin-top: 28px; }
+      .size { display: flex; align-items: center; flex-direction: column; gap: 12px; color: #4e6178; font-size: 14px; }
+      .size svg { color: #14263d; }
+      .treatment h3 { font-size: 20px; font-weight: 650; margin: 0 0 20px; }
+      .treatment .wordmark { font-size: 27px; }
+      .mobile-examples { grid-template-columns: repeat(3, 320px); gap: 28px 48px; }
+      .desktop-examples { overflow-x: auto; padding: 1px; }
+      @media (max-width: 799px) {
+        main { padding: 28px 20px; }
+        h1 { font-size: 32px; }
+        .choices, .treatments, .mobile-examples { grid-template-columns: minmax(0, 1fr); row-gap: 36px; }
+        .option .wordmark { font-size: 29px; }
+        .sizes { gap: 20px; }
+        .mobile-examples { overflow-x: auto; padding: 1px; }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const choices = [{"id":"A","file":"mark.svg","name":"Original","description":"A straight shared baseline and simple rounded strokes.","path":"<path d=\"M5 7V25H17V7H27M17 15H25\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"},{"id":"B","file":"mark-b.svg","name":"Stepped","description":"A rising connection gives the F a shorter lower stem.","path":"<path d=\"M5 8V25H12Q14 25 14 23V22Q14 20 16 20H18V7H27M18 14H25\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"},{"id":"C","file":"mark-c.svg","name":"Solid","description":"Filled letterforms give the mark a compact, firmer silhouette.","path":"<path d=\"M6 5Q4 5 4 7V25Q4 27 6 27H19Q21 27 21 25V18H27Q29 18 29 16Q29 14 27 14H21V10H28Q30 10 30 8V7Q30 5 28 5H19Q17 5 17 7V23H8V7Q8 5 6 5Z\" fill=\"currentColor\"/>"}];
+      function mark(size, cls = "", id = new URLSearchParams(location.search).get("option") || "A") {
+        const choice = choices.find(item => item.id === id) || choices[0];
+        return `<svg class="${cls}" width="${size}" height="${size}" viewBox="0 0 32 32" aria-hidden="true" focusable="false">${choice.path}</svg>`;
+      }
+      const wordmark = '<span class="wordmark">Little<wbr>Further</span>';
+      function symbol(kind) {
+        const contents = {
+          panel: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M14 9l3 3-3 3"/>',
+          close: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18m7-6-3-3 3-3"/>',
+          chevron: '<path d="m6 9 6 6 6-6"/>',
+          moon: '<path d="M20.9 13.3A9 9 0 0 1 10.7 3.1a9 9 0 1 0 10.2 10.2Z"/>',
+          sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>'
+        };
+        return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${contents[kind]}</svg>`;
+      }
+      const params = new URLSearchParams(location.search);
+      if (params.has("header")) {
+        const signed = params.get("signed") === "1";
+        const dark = params.get("theme") === "dark";
+        const french = params.get("locale") === "fr";
+        const scale = params.get("size") === "200" ? 200 : 100;
+        document.documentElement.lang = french ? "fr" : "en";
+        document.documentElement.style.fontSize = `${scale}%`;
+        document.body.className = "header-body";
+        document.body.innerHTML = `<header class="header ${dark ? "dark" : ""}" aria-label="Synthetic header layout reference"><div class="header-brand-group">${signed ? `<span class="panel" aria-label="Sidebar icon reference">${symbol(innerWidth < 800 ? "panel" : "close")}</span>` : ""}<div class="brand">${mark(32, "mark")}${wordmark}</div></div><div class="utilities"><span class="language">${french ? "Français" : "English"}${symbol("chevron")}</span><span class="theme" aria-label="Theme icon reference">${symbol(dark ? "sun" : "moon")}</span>${signed ? '<span class="account" aria-label="Synthetic account reference"><span class="avatar">M</span><span class="account-name">Michael</span></span>' : ""}</div></header>`;
+        const sendHeight = () => parent.postMessage({ littlefurtherHeader: true, height: document.querySelector("header").offsetHeight }, location.origin);
+        new ResizeObserver(sendHeight).observe(document.querySelector("header"));
+        sendHeight();
+
+      } else {
+        function example(id, width, theme, locale, size, signed) {
+          const caption = `Option ${id} · ${width}px · ${locale.toUpperCase()} · ${theme} · ${signed ? "signed in" : "signed out"} · ${size}% text`;
+          return `<figure><figcaption>${caption}</figcaption><iframe title="${caption}" src="?header&option=${id}&theme=${theme}&locale=${locale}&size=${size}&signed=${signed ? 1 : 0}" width="${width}" height="74"></iframe></figure>`;
+        }
+        function treatment(id, colourClass, label) {
+          return `<div class="treatment ${colourClass}"><h3>${id} · ${label}</h3><div class="lockup">${mark(40, "", id)}${wordmark}</div></div>`;
+        }
+        document.body.innerHTML = `<main><h1>Three LittleFurther logo options</h1><p class="lead">Choose A, B or C. Each uses the same name, type, colour and display size. These are artwork references; the app has not been changed.</p><div class="choices">${choices.map(choice => `<article class="option" data-option="${choice.id}"><h2>${choice.id} · ${choice.name}</h2>${mark(128, "large-mark", choice.id)}${wordmark}<p class="description">${choice.description}</p><div class="sizes">${[16,29,32,64].map(size => `<div class="size">${mark(size,"",choice.id)}<span>${size}px</span></div>`).join("")}</div></article>`).join("")}</div><section><h2>Amber on dark</h2><div class="treatments">${choices.map(choice => treatment(choice.id,"dark",choice.name)).join("")}</div></section><section><h2>Monochrome</h2><div class="treatments">${choices.map(choice => treatment(choice.id,"mono",choice.name)).join("")}</div></section><section><h2>Desktop header comparison</h2><div class="desktop-examples">${choices.map(choice => example(choice.id,1440,"light","en",100,true)).join("")}</div></section><section><h2>320px header comparison</h2><div class="mobile-examples">${choices.map(choice => example(choice.id,320,"light","en",100,true)).join("")}${choices.map(choice => example(choice.id,320,"dark","fr",200,true)).join("")}</div><p class="support">At enlarged text sizes the complete name may wrap between Little and Further. Language/theme/account/sidebar shapes are synthetic references. The welcome promise stays outside the header.</p></section><p class="footer">A preserves the original artwork. B and C are newly authored SVG alternatives. No external fonts, images or dependencies. Finished-artwork selection, application integration and overall formal design approval remain separate.</p></main>`;
+        addEventListener("message", event => {
+          if (event.origin !== location.origin || !event.data?.littlefurtherHeader) return;
+          const frame = [...document.querySelectorAll("iframe")].find(item => item.contentWindow === event.source);
+          if (frame) frame.style.height = `${event.data.height}px`;
+        });
+      }
+    </script>
+  </body>
+</html>

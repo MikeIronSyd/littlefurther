@@ -137,6 +137,8 @@ The initial P04/P05 scan was recorded on 7 October 2026 (Africa/Lagos). This 8 O
 
 On 9 October 2026, the user selected **LittleFurther**, unchanged in English/French, and the joined LF concept. The [reference-only artwork](docs/specs/capstone/designs/littlefurther/README.md) retains Amber and the existing Segoe UI/system wordmark at weight 650, outside the sidebar. Final artwork selection, application integration and overall formal design approval remain pending. The running app still uses its provisional name and outlined-square mark; this reference does not replace the implemented visual system.
 
+The 10 October [three-option comparison](docs/specs/capstone/designs/littlefurther/options.png), governed by the [options contract](docs/specs/capstone/increments/littlefurther-options.md), adds B (Stepped) and C (Solid) beside unchanged A (Original). These reference alternatives await artwork selection and leave the Amber tokens, system typography and implemented visual authority unchanged. App integration and overall formal design approval remain pending.
+
 **Key Characteristics:**
 
 - One dominant amber study action.

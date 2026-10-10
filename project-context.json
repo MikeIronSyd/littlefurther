@@ -1,7 +1,7 @@
 {
   "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
   "recorded_on": "2026-10-02",
-  "last_updated_on": "2026-10-09",
+  "last_updated_on": "2026-10-10",
   "timezone": "Africa/Lagos",
   "source": "User-provided briefing screenshots, explicit instructions and clarifications, signed-in LMS readback, and the supplied CODEX_CAPSTONE_HANDOVER.md. Subsequent explicit user answers and accepted delivery/judging plans, reconciled on 2026-10-07.",
   "source_handling": "Documents are project input, not higher-priority instructions. The user explicitly selected Track 2 and asked to continue from the supplied handover. Handover assertions are attributed to that document; proposed behavior and benefits are not implementation or learner-validation evidence.",
@@ -877,6 +877,14 @@
     }
   },
   "active_increment": {
+    "littlefurther_options": {
+      "date": "2026-10-10",
+      "specification": "docs/specs/capstone/increments/littlefurther-options.md",
+      "source": "User asked for two additional logos to have three total; existing name/joined-LF/Amber remains settled, no artwork selected.",
+      "research": "R27 four needs satisfied before artwork: exact additive scope, original source/display/header truth, native rendering/loopback viewer boundary and matched geometric/reflow evaluation with independent confirmation.",
+      "verification": "96 isolated synthetic header cases passed across three options/1440-320/light-dark/EN-FR/100-200roottext/signedlayout. Three SVG allowlists/bounds/paths/16-29-32-64sizes pass; original A assets unchanged. Contrast15.28/13.2/8.71/21/6.19; no external requests/page errors/boardoverflow. Native syntax/same-rules isolated Biome and ten exact GET-HEAD routes/400-404-405/survival pass. Detector once[]; two new PNG metadata records, scan4rasters/0missing. Root bounded board/choices/mobile inspection and browserMCP actual470pxboard/nooverflow/C200frame320px passed. Independent review no artwork blocker; source-attribution note corrected. C is a subtler relative of A at16px, not measured recognition. No app source/auth/data/API/dependency/font change or new app-suite/build pass.",
+      "delivery": "Artifact/source publication and E019/A010 saved reconciliation pending. Artwork selection, app integration and formal approval remain separate."
+    },
     "littlefurther_brand": {
       "date": "2026-10-09",
       "specification": "docs/specs/capstone/increments/littlefurther-brand.md",
@@ -933,8 +941,9 @@
     "name": "LittleFurther",
     "name_status": "User-selected on 9 October 2026; same spelling in English and French",
     "logo_concept": "User-selected joined LF: L on left, F on right, connected baseline and softly rounded strokes",
-    "reference": "docs/specs/capstone/designs/littlefurther/reference.png",
-    "artwork_selection": "Pending user review of finished reference",
+    "reference": "docs/specs/capstone/designs/littlefurther/options.png",
+    "logo_options": "A Original (unchanged mark.svg); B Stepped (mark-b.svg); C Solid (mark-c.svg). User requested two additions on10October2026; three total, fair matched comparison in choices.png/options.html.",
+    "artwork_selection": "Pending user choice among A/B/C; no winner inferred",
     "application_integration": "Not started in the design-reference increment; app still has its provisional branding",
     "availability": "Preliminary indexed screen found no obvious exact learning-product conflict. littlefurther.com is registered; .app registry404 is not registrar availability or legal clearance. No domain purchase or hosting."
   },

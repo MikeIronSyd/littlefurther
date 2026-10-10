@@ -50,6 +50,8 @@ The local P04/P05 app supports account/profile, reviewed plans, study/reflection
 
 On 9 October 2026, the user selected **LittleFurther**, unchanged in English/French, and the joined LF concept. The [brand reference increment](docs/specs/capstone/increments/littlefurther-brand.md) and [editable artwork/reference](docs/specs/capstone/designs/littlefurther/README.md) preserve Amber and the existing system typography. Final artwork selection, application integration and overall formal design approval remain pending; the running app retains its provisional name and outlined-square mark.
 
+On 10 October 2026, the user requested two more artwork designs. The [three-option comparison](docs/specs/capstone/designs/littlefurther/options.png) and [options contract](docs/specs/capstone/increments/littlefurther-options.md) present A (Original), B (Stepped) and C (Solid), with the original reference preserved. Artwork selection, app integration and overall formal design approval remain pending.
+
 ## Product Principles
 
 1. Preserve evidence of previous effort when life interrupts study.

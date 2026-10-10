@@ -173,3 +173,7 @@ The [welcome-copy contract](increments/welcome-copy.md) records all three satisf
 ### R26 — LittleFurther brand reference, 9 October 2026
 
 The [brand-reference contract](increments/littlefurther-brand.md) records five satisfied needs before artwork: explicit name/joined-LF/reference-only decisions; bounded indexed existing-use screening; read-only .com/.app registry results with availability limits; incumbent header/typography/icon geometry; and installed native SVG/HTML/Edge rendering tooling. The .com is registered; .app registrar availability is unconfirmed and is not required for the local demo. No unresolved factual need blocks this reference. Artwork recognition/reflow/contrast, independent review and delivery remain actual verification work; user artwork selection and application integration remain separate.
+
+### R27 — Two additional LF alternatives, 10 October 2026
+
+The [options contract](increments/littlefurther-options.md) records four satisfied needs before artwork: explicit additive two-more/three-total request within the settled LF family; unchanged original source/display/header patterns; installed native SVG/Edge/tool and fixed-loopback-viewer boundary; and matched-size geometric/reflow evaluation with independent scope confirmation. No essential external research or consequential pre-artwork decision is missing. Final artwork selection waits for the actual three-option comparison; application integration and formal design approval remain separate.

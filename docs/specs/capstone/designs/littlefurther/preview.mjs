@@ -8,6 +8,11 @@ const files = new Map([
   ["/mark.svg", ["mark.svg", "image/svg+xml"]],
   ["/reference.png", ["reference.png", "image/png"]],
   ["/wordmark-preview.png", ["wordmark-preview.png", "image/png"]],
+  ["/options.html", ["options.html", "text/html; charset=utf-8"]],
+  ["/mark-b.svg", ["mark-b.svg", "image/svg+xml"]],
+  ["/mark-c.svg", ["mark-c.svg", "image/svg+xml"]],
+  ["/options.png", ["options.png", "image/png"]],
+  ["/choices.png", ["choices.png", "image/png"]],
 ]);
 const server = createServer(async (request, response) => {
   if (request.method !== "GET" && request.method !== "HEAD") {

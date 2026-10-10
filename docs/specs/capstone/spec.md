@@ -4,6 +4,8 @@ Updated: 9 October 2026, Africa/Lagos. P04/P05 implements the [private journey](
 
 ## Goal
 
+The10October [three-option reference](increments/littlefurther-options.md) adds B Stepped and C Solid beside unchanged A Original. The user requested two alternatives before choosing finished artwork; [comparison](designs/littlefurther/options.png) retains LittleFurther/Amber/system type. No artwork selection or application integration is inferred.
+
 The 9 October [brand reference increment](increments/littlefurther-brand.md) records the user's selected **LittleFurther** name, unchanged in English/French, and joined LF concept. Its [editable artwork and reference board](designs/littlefurther/README.md) preserve Amber and existing system typography. Final artwork selection, application integration and overall formal design approval remain pending; production branding remains provisional.
 
 The9October [welcome-copy increment](increments/welcome-copy.md) applies the user's exact EN/FR encouraging promise to both authentication forms. WC01–WC03 cover text fidelity, responsive/enlarged presentation and unchanged authentication.

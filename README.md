@@ -61,6 +61,8 @@ The shell keeps the provisional brand slot visible outside the sidebar, uses thr
 
 On 9 October 2026, the user selected **LittleFurther**, unchanged in English/French, and the joined LF concept. The [editable mark and reference board](docs/specs/capstone/designs/littlefurther/README.md) are governed by the [brand reference contract](docs/specs/capstone/increments/littlefurther-brand.md). Final artwork selection, app integration and overall formal design approval remain pending. The running app, including its browser title, retains provisional branding.
 
+The 10 October [three-option comparison](docs/specs/capstone/designs/littlefurther/options.png) presents A (Original), B (Stepped) and C (Solid) under the [options contract](docs/specs/capstone/increments/littlefurther-options.md). The original reference is preserved; artwork selection, app integration and overall formal design approval remain pending.
+
 Use GitHub MCP for supported repository/commit/check readback and browser MCP for app observations and correct-account tracker interactions. After applicable checks, use normal local Git commits and `git push origin main` to publish intended source to the existing private separate account and MikeIronSyd repositories; verify both remote heads and preserve unrelated Git hooks. CodexRecovery covers only global instructions, skills and essential settings: never register or back up this project's files or Git history through it, and do not use `Push-WithBackup` for project publication. Do not commit secrets, local databases or real learner records.
 
 ### Use the included review workflow
