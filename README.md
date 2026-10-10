@@ -8,6 +8,7 @@ The five connected capabilities are TinySteps, Comeback, StudyCircle (personal s
 
 ## Context Pointers
 
+- [Complete LittleFurther user guide](docs/USER_GUIDE.md) walks through every current screen and feature, including validation, privacy and recovery.
 - [Product context](PRODUCT.md) captures the selected experience and operating boundaries.
 - [Project instructions](AGENTS.md) and [machine-readable context](project-context.json) preserve decisions, destinations and working rules.
 - [Specification](docs/specs/capstone/spec.md), [research](docs/specs/capstone/research.md), [plan](docs/specs/capstone/plan.md) and [verification](docs/specs/capstone/verification.md) govern implementation and its evidence.

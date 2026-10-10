@@ -181,3 +181,7 @@ The [options contract](increments/littlefurther-options.md) records four satisfi
 ### R28 — Selected A app integration, 10 October 2026
 
 The user selected A. The [integration contract](increments/littlefurther-integration.md) closes four scoped needs before production edits: actual choice and preceding A image reference; native brand/locale/title dependency trace; responsive/theme geometry; independent affected-test coverage and verified local/E2E runtime/data boundaries. No new stack/API/auth/data/dependency or factual blocker. Artwork selection is settled; application verification/delivery and overall formal approval remain distinct.
+
+### R29 — Complete usage guide, 10 October 2026
+
+The [guide contract](increments/user-guide.md) records four satisfied source-research needs before authoring: account/shell/profile/local operation; complete journey/editor/study/progress/history controls; Comeback/private-circle lifecycle; and unsupported-control/claim boundaries. Three parallel inventories and root source crosschecks resolve current behavior rather than inferring controls from translation keys. This is documentation work with no production/data/API change. Independent guide completeness and local link/content checks remain verification, not learner usability evidence.
