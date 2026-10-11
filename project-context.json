@@ -863,7 +863,7 @@
       }
     ],
     "latest_increment": "control-readability",
-    "latest_status": "CR01–CR04 verified within documented scope, CR05 technical portion verified. Finalrequired strict/lint44/format49/build,56domain/server tests, process persistence,72browser cases in11.9minutes and audit pass. Final5affected cases pass29.9s; four nativeFR320/100-200root-text states pass; independent source/pixel/log review has no scoped blocker. Dual-private publication and exact E022/A010 saved readbacks pending."
+    "latest_status": "CR01–CR05 complete within documented increment scope: precode R30/reference, shared control/readability changes, corrected enlarged skip link, final56domain/server+72browser/process/audit/static/build checks, independent source/pixel/log review, dual-private artifact heads and exact E022/A010 saves verified. Final documentation closeout publication follows separately; overall formal design approval/video/learner outcomes remain open."
   },
   "research_gate": {
     "status": "Closed for R30 control visibility and readability",
@@ -971,12 +971,15 @@
       "baseline": "ee40f7f4dc2e03c415afb4b52af207bed6a9a29f",
       "source": "User explicitly requested implementation of the settled broader interface review, soft outlined secondary actions and compact welcome-first mobile authentication.",
       "research": "R30 five needs and six inspected synthetic references satisfied before production at09:57 Africa/Lagos. Reopened/reclosed before the reproduced enlarged skip-link correction; own-height hiding addresses measured cause without changing keyboard destination.",
-      "status": "CR01–CR04 verified within documented scope, CR05 technical portion verified. Finalrequired strict/lint44/format49/build,56domain/server tests, process persistence,72browser cases in11.9minutes and audit pass. Final5affected cases pass29.9s; four nativeFR320/100-200root-text states pass; independent source/pixel/log review has no scoped blocker. Dual-private publication and exact E022/A010 saved readbacks pending.",
+      "status": "CR01–CR05 complete within documented increment scope: precode R30/reference, shared control/readability changes, corrected enlarged skip link, final56domain/server+72browser/process/audit/static/build checks, independent source/pixel/log review, dual-private artifact heads and exact E022/A010 saves verified. Final documentation closeout publication follows separately; overall formal design approval/video/learner outcomes remain open.",
       "evidence": "Six synthetic reference PNGs, five actual browserMCP JPEG viewport captures, two actual Edge/Playwright200% control crops and four-state non-secret measurements. Finaldetector31advisories, no conformance claim. Initial fixture failures, deliberately interrupted38-case full run and capture correction retained in verification.",
       "limitations": "No browserzoom/nativeFrenchOS/cross-engine/accessibility conformance, learner outcome, adoption, formal design approval or timedvideo claim. No auth/API/schema/dependency/copy/data change. User4317 health200/newCSS verified; isolated4319 helper stopped and listener absence verified.",
-      "tracker_sync": "E022/A010 prepared from verified correct Miva/Kaneo baselines; no external write yet.",
-      "publication": "Intended non-secret source publication pending. Both repository private flags verified through installed GitHub CLI. GitHub MCP was temporarily unavailable, then returned before publication; actual provider readback pending."
-    }
+      "tracker_sync": "E022 uniquelyA23, exactly10intended cellsA23:J23 across all5Sheet tabs, zero mismatch/extra, correct Miva identity/Restricted/Saved. A010 saved103551=6305correctedprefix+entire exact97246history; title/IP/no date/10taskboard/A007 unchanged. Unsupported Plan Mode inference removed by known E23/H23 corrections; initial appended Kaneo block corrected once to prefix before exacthistory. Sheet1rowwrite+2cellcorrections; Kaneo1append+1known-state replacement. BrowserMCP saved/readback proofs and report retained; no native connector claim.",
+      "publication": "Artifact 56af4356bbe1419dd77615c822ffc52df4994a61 published normally to both private repositories; exact Git heads and installed GitHubCLI private flags/metadata/all36paths verified at10:35:18Africa/Lagos. GitHubMCP returned404 for both exact-SHA reads; CLI fallback succeeded. Combined statuses pending with0entries; no hostedCI success claim. Final documentation closeout follows tracker saved comparisons.",
+      "artifact_commit": "56af4356bbe1419dd77615c822ffc52df4994a61",
+      "tracker_review": "docs/specs/capstone/reviews/2026-10-11-control-readability-tracker.md"
+    },
+    "latest_increment": "control_readability"
   },
   "product_identity": {
     "name": "LittleFurther",
@@ -1095,7 +1098,7 @@
         "working source/test diff and actual focused/full/native check logs",
         "independent source/pixel review and correct Miva/Kaneo live baselines"
       ],
-      "results": "Actual precode research/reference, source/test implementation, required56domain/server+72browser/process/audit checks, final5affected cases and four native-field states passed; independent source/pixel/log review no blocker. Root/tracker agent actually reuse capstone-evidence-update for ledger/E022 preparation. Saved tracker comparisons and publication pending; no new plan-mode/outcome/CI claim."
+      "results": "Actual precode R30/native references, source/test implementation, fullrequired56domain/server+72browser/process/audit/static/build checks, final5affected cases/four native states and independent source/pixel/log review passed. capstone-evidence-update/browserMCP reuse saves exactE02210cells/all5tabs and103551-character A010 with exact97246prior history/title/status/date/board retained. Root caught unsupported mode attribution and ordering error; known-state corrections/operation counts documented. Dual-private artifact heads/private flags/36paths verified; GitHubMCP404/CLI fallback and absent CIstatuses retained. No new actual Plan Mode, learner outcome, adoption, formal approval or timedvideo claim."
     }
   ]
 }
