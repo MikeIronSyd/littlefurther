@@ -264,7 +264,7 @@ export function showCircles(
         area.replaceChildren(warning, el("div", "form-actions", cancel, button(confirm, run)));
         warning.focus();
       },
-      "text-button",
+      "button subtle",
     );
     area.append(trigger);
     return area;
@@ -514,7 +514,7 @@ export function showCircles(
         button("writeSharedCopy", () => navigate(() => compose(detail)), "button primary"),
       ),
       text("p", "circleFutureMembers", "hint"),
-      button("circleRefresh", () => navigate(() => void read(reload)), "text-button"),
+      button("circleRefresh", () => navigate(() => void read(reload)), "button subtle"),
       el("div", "circle-columns", feed, sidebar),
     );
     focusHeading(view);

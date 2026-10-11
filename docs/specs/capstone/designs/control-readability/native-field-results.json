@@ -1,0 +1,342 @@
+{
+  "origin": "http://127.0.0.1:4319",
+  "viewport": {
+    "width": 320,
+    "height": 800
+  },
+  "locale": "fr",
+  "measurements": [
+    {
+      "state": "signed-in-header",
+      "scale": 100,
+      "language": {
+        "kind": "select",
+        "text": "Français",
+        "dateText": null,
+        "navigatorLanguage": "en-US",
+        "fontSize": "14.4px",
+        "width": 98,
+        "height": 44,
+        "left": 10,
+        "right": 108,
+        "clientWidth": 96,
+        "scrollWidth": 96,
+        "paddingInline": 24,
+        "measuredTextWidth": 51.08900451660156,
+        "approximateNativeDateTextWidth": null,
+        "contentWidthAfterPadding": 72,
+        "remainingForNativeArrow": 20.910995483398438,
+        "indicatorComputed": null,
+        "dateEditComputed": null,
+        "inViewport": true
+      },
+      "header": {
+        "bounds": [
+          {
+            "name": "nav-trigger",
+            "box": {
+              "x": 10,
+              "y": -108,
+              "width": 44,
+              "height": 44,
+              "top": -108,
+              "right": 54,
+              "bottom": -64,
+              "left": 10
+            }
+          },
+          {
+            "name": "brand",
+            "box": {
+              "x": 64,
+              "y": -116.5,
+              "width": 256,
+              "height": 61,
+              "top": -116.5,
+              "right": 320,
+              "bottom": -55.5,
+              "left": 64
+            }
+          },
+          {
+            "name": "language-select",
+            "box": {
+              "x": 10,
+              "y": -49,
+              "width": 98,
+              "height": 44,
+              "top": -49,
+              "right": 108,
+              "bottom": -5,
+              "left": 10
+            }
+          },
+          {
+            "name": "theme-button",
+            "box": {
+              "x": 149.5,
+              "y": -49,
+              "width": 44,
+              "height": 44,
+              "top": -49,
+              "right": 193.5,
+              "bottom": -5,
+              "left": 149.5
+            }
+          },
+          {
+            "name": "account-summary",
+            "box": {
+              "x": 235,
+              "y": -49,
+              "width": 75,
+              "height": 44,
+              "top": -49,
+              "right": 310,
+              "bottom": -5,
+              "left": 235
+            }
+          }
+        ],
+        "overflow": false,
+        "allInViewport": true
+      },
+      "skip": {
+        "top": -46.375,
+        "bottom": 0,
+        "height": 46.375,
+        "active": false
+      }
+    },
+    {
+      "state": "signed-in-header",
+      "scale": 200,
+      "language": {
+        "kind": "select",
+        "text": "Français",
+        "dateText": null,
+        "navigatorLanguage": "en-US",
+        "fontSize": "28.8px",
+        "width": 149,
+        "height": 62,
+        "left": 10,
+        "right": 159,
+        "clientWidth": 147,
+        "scrollWidth": 147,
+        "paddingInline": 24,
+        "measuredTextWidth": 102.17808532714844,
+        "approximateNativeDateTextWidth": null,
+        "contentWidthAfterPadding": 123,
+        "remainingForNativeArrow": 20.821914672851562,
+        "indicatorComputed": null,
+        "dateEditComputed": null,
+        "inViewport": true
+      },
+      "header": {
+        "bounds": [
+          {
+            "name": "nav-trigger",
+            "box": {
+              "x": 10,
+              "y": 36.234375,
+              "width": 44,
+              "height": 44,
+              "top": 36.234375,
+              "right": 54,
+              "bottom": 80.234375,
+              "left": 10
+            }
+          },
+          {
+            "name": "brand",
+            "box": {
+              "x": 64,
+              "y": 0,
+              "width": 256,
+              "height": 116.46875,
+              "top": 0,
+              "right": 320,
+              "bottom": 116.46875,
+              "left": 64
+            }
+          },
+          {
+            "name": "language-select",
+            "box": {
+              "x": 10,
+              "y": 121.46875,
+              "width": 149,
+              "height": 62,
+              "top": 121.46875,
+              "right": 159,
+              "bottom": 183.46875,
+              "left": 10
+            }
+          },
+          {
+            "name": "theme-button",
+            "box": {
+              "x": 175,
+              "y": 130.46875,
+              "width": 44,
+              "height": 44,
+              "top": 130.46875,
+              "right": 219,
+              "bottom": 174.46875,
+              "left": 175
+            }
+          },
+          {
+            "name": "account-summary",
+            "box": {
+              "x": 235,
+              "y": 130.46875,
+              "width": 75,
+              "height": 44,
+              "top": 130.46875,
+              "right": 310,
+              "bottom": 174.46875,
+              "left": 235
+            }
+          }
+        ],
+        "overflow": false,
+        "allInViewport": true
+      },
+      "skip": {
+        "top": -140.78125,
+        "bottom": 0,
+        "height": 140.78125,
+        "active": false
+      }
+    },
+    {
+      "state": "comeback-date-preview",
+      "scale": 100,
+      "date": {
+        "kind": "date",
+        "text": "2026-10-13",
+        "dateText": "10/13/2026",
+        "navigatorLanguage": "en-US",
+        "fontSize": "16px",
+        "width": 262,
+        "height": 48,
+        "left": 29,
+        "right": 291,
+        "clientWidth": 260,
+        "scrollWidth": 260,
+        "paddingInline": 24,
+        "measuredTextWidth": 81.796875,
+        "approximateNativeDateTextWidth": 81.46875,
+        "contentWidthAfterPadding": 236,
+        "remainingForNativeArrow": 154.53125,
+        "indicatorComputed": {
+          "width": "262px",
+          "height": "48px",
+          "padding": "10px 12px",
+          "display": "block"
+        },
+        "dateEditComputed": {
+          "width": "262px",
+          "fontSize": "16px",
+          "overflow": "clip"
+        },
+        "inViewport": true
+      },
+      "language": {
+        "kind": "select",
+        "text": "Français",
+        "dateText": null,
+        "navigatorLanguage": "en-US",
+        "fontSize": "14.4px",
+        "width": 98,
+        "height": 44,
+        "left": 10,
+        "right": 108,
+        "clientWidth": 96,
+        "scrollWidth": 96,
+        "paddingInline": 24,
+        "measuredTextWidth": 51.08900451660156,
+        "approximateNativeDateTextWidth": null,
+        "contentWidthAfterPadding": 72,
+        "remainingForNativeArrow": 20.910995483398438,
+        "indicatorComputed": null,
+        "dateEditComputed": null,
+        "inViewport": true
+      },
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "previewReachable": true
+    },
+    {
+      "state": "comeback-date-preview",
+      "scale": 200,
+      "date": {
+        "kind": "date",
+        "text": "2026-10-13",
+        "dateText": "10/13/2026",
+        "navigatorLanguage": "en-US",
+        "fontSize": "32px",
+        "width": 262,
+        "height": 72,
+        "left": 29,
+        "right": 291,
+        "clientWidth": 260,
+        "scrollWidth": 260,
+        "paddingInline": 24,
+        "measuredTextWidth": 163.59375,
+        "approximateNativeDateTextWidth": 162.9375,
+        "contentWidthAfterPadding": 236,
+        "remainingForNativeArrow": 73.0625,
+        "indicatorComputed": {
+          "width": "262px",
+          "height": "72px",
+          "padding": "10px 12px",
+          "display": "block"
+        },
+        "dateEditComputed": {
+          "width": "262px",
+          "fontSize": "32px",
+          "overflow": "clip"
+        },
+        "inViewport": true
+      },
+      "language": {
+        "kind": "select",
+        "text": "Français",
+        "dateText": null,
+        "navigatorLanguage": "en-US",
+        "fontSize": "28.8px",
+        "width": 149,
+        "height": 62,
+        "left": 10,
+        "right": 159,
+        "clientWidth": 147,
+        "scrollWidth": 147,
+        "paddingInline": 24,
+        "measuredTextWidth": 102.17808532714844,
+        "approximateNativeDateTextWidth": null,
+        "contentWidthAfterPadding": 123,
+        "remainingForNativeArrow": 20.821914672851562,
+        "indicatorComputed": null,
+        "dateEditComputed": null,
+        "inViewport": true
+      },
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "previewReachable": true
+    }
+  ],
+  "limitations": [
+    "Root-font enlargement is not browser zoom.",
+    "Native select and date controls are Chromium/installed Edge rendering in an isolated synthetic account; OS popup and screen-reader behavior were not tested.",
+    "Native closed-shadow date segments do not expose DOM geometry; rendered screenshot plus available computed pseudo styles and text measurement are recorded without claiming segment internals were inspected."
+  ],
+  "status": "passed"
+}

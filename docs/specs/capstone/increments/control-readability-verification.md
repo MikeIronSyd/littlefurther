@@ -1,0 +1,85 @@
+# Control/readability verification — 11 October 2026
+
+## Goal
+
+Record actual CR01–CR05 evidence for [the increment](control-readability.md), separating synthetic reference checks, product verification, review and delivery. Baseline `ee40f7f4dc2e03c415afb4b52af207bed6a9a29f`.
+
+## Context Pointers
+
+The user approved the bounded plan. R30 source/browser/primary-guidance research is satisfied before production edits. The reference is editable native HTML/CSS/SVG and uses illustrative content, not real learner records. Original A geometry and welcome copy remain exact. Impeccable context was already loaded by root in this task; this reference agent reused the settled authority rather than rerunning context.
+
+## Constraints
+
+No product pass, learner outcome, formal approval, CI success, tracker save or publication can be inferred from a synthetic screenshot or plan. Root owns final product/check/review/delivery entries. The reference agent changes only this increment's records/reference and appends research.md; no production/test/tracker/context/evidence changes or commits.
+
+## Done When
+
+| Criterion | Actual evidence | Status |
+| --- | --- | --- |
+| CR01 | Shared secondary/path actions have an opaque soft fill and control outline at rest. Affected tests measure inside/outside border contrast, text contrast, hover/focus/disabled exceptions and native semantics across the connected journey. Actual desktop learning/circle captures independently inspected. | Verified within recorded scope |
+| CR02 | Header utilities retain exact icons and native semantics with visible boundaries and minimum targets. Actual French mobile account measured74.33×44px. Chevron is decorative; password stays contained. | Verified within recorded scope |
+| CR03 | Important small text is at least14px, editor gaps10px, Activity content grouped into named sections with exact wording/order/records retained. Actual Activity capture independently inspected. | Verified within recorded scope |
+| CR04 | Compact bilingual authentication passes normal/200% root-text checks. Native French language/date fields passed four isolated states; enlarged skip-link defect corrected with passing keyboard/geometry regression and final crop inspection. | Verified within recorded scope |
+| CR05 | R30/specification/reference preceded source. Full required checks and independent technical review passed; both exact tracker/publication readbacks remain delivery work. | Technical portion verified; delivery pending |
+
+### Pre-implementation reference
+
+At09:57Africa/Lagos, before production edits, the reference agent completed one paired pixel-inspection batch of all six intended PNGs: desktopEN/light andEN/dark at1440px; mobileFR/light andFR/dark at320px; mobileauthFR/light andFR/dark at320px. Outlines and soft fills are visible without hover; primary Amber, completed static rows, distinct LF/panel geometry, account chevron,14px action/metadata, editor gaps and section separation are clear. Compact welcome copy remains readable with the form following it. All six synthetic document widths equal their viewport widths and every present account target is at least44×44px; `reference-results.json` preserves measured geometry. This is not an app pass, root-text enlargement or browser zoom result.
+
+The native HTML contains illustrative dashboard/editor/Activity specimens to demonstrate presentation, not newly proposed product panels. Edit-plan and five-minute specimen placement is a pattern composition rather than a new information architecture: production control positions stay unchanged except the explicitly approved Activity grouping and mobile auth metrics. No learner account, preference or application data was mutated during rendering.
+
+Initial renderer path conversion retained percent-encoded spaces and wrote six PNGs to a parallel encoded-name directory. This was corrected to Node `fileURLToPath`, then the six intended PNGs were rendered and inspected. Only the six exact stray files were removed after verifying the absolute unintended destination; no recursive delete, app data or other files were involved. Final native render command exited0 and `git diff --check` exited0; Git reported the existing research.md checkout CRLF warning. This evidence correction did not alter production source.
+
+**Pre-implementation gate satisfied at09:57Africa/Lagos on11October2026:** R30, implementation-ready acceptance/quality contract and inspected synthetic references precede dependent source edits. No research blocker remains for the approved scope. Product tests/review/delivery remain pending.
+
+All six PNGs have embedded523-character origins describing synthetic native rendering, source file, user-approved direction and claim boundaries. Supported `impeccable embed-prompt --scan docs/specs/capstone/designs/control-readability` exited0 with6rasters/0missing. No reference raster is shipped by the product. An initial unsupported `embed-prompt --help` returned only “image file required”; it established no check result and did not mutate files.
+
+### Product checks, independent review and delivery
+
+Shared CSS implements persistent soft outlines, hover/focus enhancement,44px header controls, an account disclosure chevron, outlined unfinished path actions,14px small type,10px editor gaps, wrapping headings and compact welcome-first mobile authentication. Operational class changes retain their existing callbacks. Activity gains two named semantic sections around existing content; wording, order and records remain unchanged. Structural dividers, Amber primaries, intended underlined links, completed static path rows and password field containment are preserved. `DESIGN.md` and only the affected neutral/subtle sidecar entries now describe actual resting controls.
+
+| Command / observation | Actual result |
+| --- | --- |
+| Initial affected browser run | 1passed/4failed in46.1seconds: ambiguous Cancel locator and mistaken16px expectation for the existing16.8px mobile paragraph. Test fixtures/specification were corrected; product body type was preserved. |
+| Corrected affected run before skip-link correction | `pnpm --pm-on-fail=download exec playwright test tests/e2e/control-readability.spec.ts`:5/5 passed in29.5seconds. Pointer is parked before idle measurements; enabled border cues meet3:1 against inside/outside adjacent surfaces and ordinary sampled text meets4.5:1. |
+| Initial required `pnpm --pm-on-fail=download run verify` | Strict check, lint44files, format49files, build,56/56 domain/store/HTTP tests and distinct-process persistence passed.38 browser cases passed before root deliberately interrupted the run for the independently reproduced enlarged skip-link defect. This interrupted run is not a full verification or audit pass. |
+| Final required `pnpm --pm-on-fail=download run verify` after correction | Exit0: strict check, lint44files, format49files, server/client build,56/56 domain/store/HTTP tests, distinct-process persistence,72/72 browser cases in11.9minutes and audit at low severity with no known vulnerabilities. The five affected cases are included in72, not additional unique tests. No production/test changes followed this run. |
+| Postimplementation Impeccable detector | Exit0,31 advisory findings:26typography,4colour,1radius; no non-advisory entries. Intentional scale/Amber/backdrop/nav marker values remain contextualized; no new ignore rules or claim of a clean detector/accessibility conformance. This single postimplementation detector preceded the later minimal skip-link geometry correction; it was not rerun. |
+
+Root browser MCP reviewed synthetic4319 data, separate from the user4317 server and Playwright4318 fixtures. Three EN/light desktop viewport captures cover learning, Activity and circle detail at1440×1000. Two FR/dark mobile captures cover learning and signed-out compact authentication at320×800. Retained JPEGs, precise native-capture/correction limits and synthetic reference PNGs are in the [reference README](../designs/control-readability/README.md). Document client/scroll widths matched1425 desktop and305 mobile (native scrollbar space); this is observed absence of horizontal page overflow in those states, not all-screen conformance. Header/account/icon hierarchy and text spacing were independently inspected.
+
+The additional isolated native-field check measured French select/date content at100/200% root text. Language width98/149px left20.91/20.82px after selected text/padding for the arrow. Date width262px left approximately154.53/73.06px after formatted date text/padding for the native calendar affordance. The latter text calculation is approximate because native date segments are browser-rendered; screenshots and reachable Preview action supplement geometry. Browser locale was en-US while product UI was French; neither native French OS formatting nor other device engines is inferred.
+
+That check found an actual unfocused skip link extending40.78px into the viewport at200% text size. R30/CR04 were reopened and updated before the correction: hide with own-height transform, reveal on focus, constrain focused width. The regression asserts full hiding, in-viewport keyboard focus and activation of the unchanged main destination. This was the single consolidated visual defect correction; final confirmation and full required run remain to be recorded.
+
+Final affected run with that regression passed5/5 in29.9seconds; the original five cases were extended, not added to the total. Final isolated native confirmation passed all four100/200% French header/date states. The unfocused skip link's bottom is0 at both scales. Root inspected the corrected200% header and date crops: no skip-link overlay, complete wrapped LittleFurther name, legible Français/arrow and date/calendar. Non-secret measurements and the two origin-labelled actual PNG crops are retained alongside the reference. Full required verification was restarted after this final production/test change; the interrupted run is not reused as a complete pass.
+
+### Coverage and limits
+
+| Surface / condition | Executed evidence |
+| --- | --- |
+| Empty/populated learning, paths, preferences, plan editor, study, Activity, Journeys, Comeback, circle list/detail/compose/confirmation | New connected-flow cases in both themes measure idle fill/border/composite contrast, header/path targets, completed-row exceptions, disabled editor order,14px important text,10px gaps, Activity spacing/history, saved study versus completion and deliberate circle preview. Desktop1440; editor/account320. |
+| Authentication | Both forms, both languages and both themes at320, normal/200% root text; exact unchanged promise, panel metrics/order, underlined account links, password show/hide/input retention, keyboard skip-link geometry/destination. Existing auth-shell/password cases in the full run add desktop1440, session-expiry/sign-out/drawer cleanup and selection/focus/storage behavior. |
+| Native/enlarged signed-in controls | French320 header and Comeback date/preview at100/200% root text on isolated4319. Four measured states and two corrected actual control crops. Browser-native locale remains en-US. |
+| Forced colours / keyboard | New forced-colour mobile boundary/keyboard case. Existing inclusion/shell suites add reduced motion, navigation/drawer focus trapping/restoration and selected theme/sidebar state. |
+| Error and lifecycle handling | Full existing refinement/integration/journey/Comeback/circle suites exercise validation, input retention, dirty-state protection, stale/pending routes, uncertain saves/retries, privacy authorizations and lifecycle confirmations. These are behavioral regression checks, not a claim that every error pixel was manually reviewed. |
+| Actual bounded visual review | Five browser MCP viewport images and two actual enlarged native-control crops independently inspected. Synthetic six-image precode reference packet separately inspected. No exhaustive theme×language×screen×text-size cross-product, other-engine/device, OS popup, real browser zoom, full screen-reader or accessibility-conformance claim. |
+
+All13 retained rasters have embedded origins; final metadata scan reports13rasters/0missing. Native reference renderer syntax check and local documentation/source checks passed. The initial local documentation pass checked34intended files/100relative links/3JSONs, then35files/4JSONs after context reconciliation; no forbidden runtime paths or scoped credential patterns. Later closeout checks report their own final counts. Context preserves Track2, four judging criteria and the unannounced official deadline;14October remains an internal target.
+
+[Independent review](../reviews/2026-10-11-control-readability-review.md) actually invokes `learning-journey-review` and Impeccable against source, tests, logs and the five actual captures. Root/tracking agent invoke `capstone-evidence-update` for the local ledger and eventual E022 saved reconciliation; skill presence alone is not evidence. The reviewer independently inspected the final skip regression/native results/corrected crops and complete required verification log, closing CR01–CR04 and CR05's technical portion within recorded limits with no blocker. Delivery remains pending. Formal design approval remains a real human decision outside this increment.
+
+### Judging evidence ledger
+
+| Criterion | Requirement / artifact | Actual check and result | Demo scene / limit |
+| --- | --- | --- | --- |
+| J1 | R30, CR01–CR05, precode native reference, shared source changes, affected tests, independent review and this ledger | Actual Codex research/specification, build, test, review and documentation; browser MCP app observations and reusable-skill reuse. Final tracker/GitHub MCP readbacks pending. | Show a control issue traced through specification → code → test → independent review. Current turn uses Default mode; a plan file does not prove plan-mode use. |
+| J2 | Recognizable study/recovery/circle actions and readable bilingual layouts for learners generally | Synthetic connected-flow checks and bounded actual UI observations establish working controls; no learner interviews, longitudinal retention or causal benefit measured. | Demonstrate finding a next action and returning to study without hover-dependent cues. Video scene/timecode pending. |
+| J3 | Shared control tokens and patterns, semantic Activity sections, design/specification/test documentation | Maintained existing stack and constraints; final required checks passed. Prior setup/adaptation evidence remains dated history, without a new fresh-checkout/adoption claim. | Show reusable patterns and documented limitations; no public hosting or production identity claim. |
+| J4 | Actual representative captures and acceptance-linked evidence | Visual preparation exists; no timed recording, duration, playback or final submission completed by this increment. | Planned connected journey plus Codex evidence in3–5minutes; recording/timecodes remain pending. |
+
+Delivery remains pending: publish only intended non-secret source/artifacts through normal dual-private Git publication, verify each remote head, then reconcile E022/A010 with exact saved comparisons under the Miva identity. The user4317 server stays running; temporary4319 verification server is cleaned up separately. No project files go to CodexRecovery.
+
+This is a presentation-only increment with no migration/configuration change. Reload the running local app to load the built assets. If a regression requires rollback, revert the published increment commit through normal Git, rerun the required verification and rebuild before reloading; retain learner databases and account/session data. Source publication is not public hosting, deployment or provider-CI enforcement. GitHub MCP disappeared from the resumed tool inventory; planned provider readback uses the installed CLI and is labelled accordingly.
+
+The isolated4319 visual helper was stopped after final confirmation; listener readback shows only the user's4317 app among those two ports. Its ignored synthetic database is retained separately from real learner data. The normal app returned health200, titleLittleFurther and the newly built CSS containing the own-height skip transform and persistent control tokens. An inline PowerShell/JavaScript availability command first failed at shell parsing without executing; the standalone local helper then produced the actual successful readback. GitHub MCP later returned to the tool inventory; provider readback will be attempted after publication, with actual results recorded separately.

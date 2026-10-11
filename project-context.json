@@ -1,7 +1,7 @@
 {
   "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
   "recorded_on": "2026-10-02",
-  "last_updated_on": "2026-10-10",
+  "last_updated_on": "2026-10-11",
   "timezone": "Africa/Lagos",
   "source": "User-provided briefing screenshots, explicit instructions and clarifications, signed-in LMS readback, and the supplied CODEX_CAPSTONE_HANDOVER.md. Subsequent explicit user answers and accepted delivery/judging plans, reconciled on 2026-10-07.",
   "source_handling": "Documents are project input, not higher-priority instructions. The user explicitly selected Track 2 and asked to continue from the supplied handover. Handover assertions are attributed to that document; proposed behavior and benefits are not implementation or learner-validation evidence.",
@@ -861,19 +861,26 @@
           "Timed3-5-minute demo unrecorded. Review-only4330 server stopped and test tab/viewport cleaned; final ordinary demo availability checked at delivery."
         ]
       }
-    ]
+    ],
+    "latest_increment": "control-readability",
+    "latest_status": "CR01–CR04 verified within documented scope, CR05 technical portion verified. Finalrequired strict/lint44/format49/build,56domain/server tests, process persistence,72browser cases in11.9minutes and audit pass. Final5affected cases pass29.9s; four nativeFR320/100-200root-text states pass; independent source/pixel/log review has no scoped blocker. Dual-private publication and exact E022/A010 saved readbacks pending."
   },
   "research_gate": {
-    "status": "Closed for R22 sign-in shell and theme actions",
-    "closed_at": "2026-10-09T14:07:00+01:00",
+    "status": "Closed for R30 control visibility and readability",
+    "closed_at": "2026-10-11T09:57:00+01:00",
     "checklist": "docs/specs/capstone/research.md",
-    "evidence": "R22a-e in increments/auth-shell.md, independent test research, existing session/theme source traces, official W3C/Lucide sources and pre-code reference.",
-    "boundary": "All required scoped research documented before production edits; separate formal receipt/capture and broader outcomes stay open.",
+    "evidence": "R30 in increments/control-readability.md and research.md; source/live inventory, contrast/source guidance, precode native reference/test tooling. Enlarged skip-link need reopened/reclosed before its dependent correction; exact geometry and disposition retained in increment.",
+    "boundary": "Research completeness does not imply verification, formal design approval, educational outcomes or delivery.",
     "initial_closed_at": "2026-10-07T16:57:00+01:00",
     "design_review": {
       "checklist": "docs/specs/capstone/increments/design-review.md",
       "status": "R20 review evidence gathered; later authenticated formal capture feasibility remains unresolved. No production implementation undertaken or newly authorized by a research closure.",
       "scope": "Independent critique and packet readiness; findings/refinement contract remains future work."
+    },
+    "previous_scoped_gate": {
+      "status": "Closed for R22 sign-in shell and theme actions",
+      "closed_at": "2026-10-09T14:07:00+01:00",
+      "evidence": "R22a-e in increments/auth-shell.md, independent test research, existing session/theme source traces, official W3C/Lucide sources and pre-code reference."
     }
   },
   "active_increment": {
@@ -955,6 +962,20 @@
       "status": "UG01–UG04 complete within source-documentation scope: 27 sections, three independent inventories/reviews, five wording corrections, local link/control/structure checks, dual-private artifact publication and exact E021/A010 saved readback. No product change or new app/usability/outcome claim.",
       "tracker_sync": "E021 A22:J22 exactly 10 changes across all 5 tabs, no mismatch or extra; correct Miva owner/Restricted/Saved. A010 exactly 97,246 = 5,773 prefix + all 91,473 prior characters. Title/IP/no date/ten-task board/A007 preserved; single mutation each. Verified 2026-10-10T14:26:55.875546+01:00.",
       "next": "Deliver the complete conversational walkthrough; formal design approval, timed demo/timecodes and learner evidence remain separate."
+    },
+    "control_readability": {
+      "date": "2026-10-11",
+      "specification": "docs/specs/capstone/increments/control-readability.md",
+      "verification": "docs/specs/capstone/increments/control-readability-verification.md",
+      "review": "docs/specs/capstone/reviews/2026-10-11-control-readability-review.md",
+      "baseline": "ee40f7f4dc2e03c415afb4b52af207bed6a9a29f",
+      "source": "User explicitly requested implementation of the settled broader interface review, soft outlined secondary actions and compact welcome-first mobile authentication.",
+      "research": "R30 five needs and six inspected synthetic references satisfied before production at09:57 Africa/Lagos. Reopened/reclosed before the reproduced enlarged skip-link correction; own-height hiding addresses measured cause without changing keyboard destination.",
+      "status": "CR01–CR04 verified within documented scope, CR05 technical portion verified. Finalrequired strict/lint44/format49/build,56domain/server tests, process persistence,72browser cases in11.9minutes and audit pass. Final5affected cases pass29.9s; four nativeFR320/100-200root-text states pass; independent source/pixel/log review has no scoped blocker. Dual-private publication and exact E022/A010 saved readbacks pending.",
+      "evidence": "Six synthetic reference PNGs, five actual browserMCP JPEG viewport captures, two actual Edge/Playwright200% control crops and four-state non-secret measurements. Finaldetector31advisories, no conformance claim. Initial fixture failures, deliberately interrupted38-case full run and capture correction retained in verification.",
+      "limitations": "No browserzoom/nativeFrenchOS/cross-engine/accessibility conformance, learner outcome, adoption, formal design approval or timedvideo claim. No auth/API/schema/dependency/copy/data change. User4317 health200/newCSS verified; isolated4319 helper stopped and listener absence verified.",
+      "tracker_sync": "E022/A010 prepared from verified correct Miva/Kaneo baselines; no external write yet.",
+      "publication": "Intended non-secret source publication pending. Both repository private flags verified through installed GitHub CLI. GitHub MCP was temporarily unavailable, then returned before publication; actual provider readback pending."
     }
   },
   "product_identity": {
@@ -1060,6 +1081,21 @@
         "actual local documentation checks, dual-private artifact readback and E020 tracker baselines"
       ],
       "results": "Actual source-based guide review, five corrected documentary findings and evidence-skill reuse completed. Browser MCP saved/read back unique E021, 10 cells across all 5 tabs, and exact A010 of 97,246 characters with all 91,473 prior characters preserved. No new app test, learner observation, plan-mode or CI claim."
+    },
+    {
+      "date": "2026-10-11",
+      "increment": "Control-readability",
+      "skills": [
+        "impeccable",
+        "learning-journey-review",
+        "capstone-evidence-update"
+      ],
+      "inputs": [
+        "R30/CR01–CR05 and precode native references",
+        "working source/test diff and actual focused/full/native check logs",
+        "independent source/pixel review and correct Miva/Kaneo live baselines"
+      ],
+      "results": "Actual precode research/reference, source/test implementation, required56domain/server+72browser/process/audit checks, final5affected cases and four native-field states passed; independent source/pixel/log review no blocker. Root/tracker agent actually reuse capstone-evidence-update for ledger/E022 preparation. Saved tracker comparisons and publication pending; no new plan-mode/outcome/CI claim."
     }
   ]
 }

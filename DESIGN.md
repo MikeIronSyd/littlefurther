@@ -86,7 +86,7 @@ spacing:
   column-gap: "24px"
 components:
   button:
-    backgroundColor: "{colors.surface}"
+    backgroundColor: "{colors.sidebar}"
     textColor: "{colors.ink}"
     rounded: "{rounded.control}"
     padding: "10px 18px"
@@ -98,7 +98,7 @@ components:
   button-primary-hover:
     backgroundColor: "{colors.amber-hover}"
   button-subtle:
-    backgroundColor: "transparent"
+    backgroundColor: "{colors.sidebar}"
     textColor: "{colors.ink}"
     rounded: "{rounded.control}"
     padding: "10px 18px"
@@ -204,7 +204,7 @@ Icons are normally 24px square, panel toggles 29px and support icons 34px (27px 
 
 ### Buttons
 
-Buttons have a 44px minimum height, control-line border and weight 600. Primary buttons pair amber/action-ink with the stronger action border and amber-hover. Neutral buttons use surface with sidebar hover. Subtle buttons have transparent borders until hover. Disabled buttons use opacity 0.55 and native disabled semantics.
+Buttons have a 44px minimum height, control-line border and weight 600. Primary buttons pair amber/action-ink with the stronger action border and amber-hover. Neutral and subtle secondary actions use a persistent sidebar soft fill and control-line outline; hover/focus strengthens the outline to ink. Small actions use at least .875rem text and wrap with 10px gaps. Disabled buttons use opacity 0.55 and native disabled semantics. Intentional Back/authentication/resource links stay underlined; operational Edit, restart, Refresh and circle actions use the outlined button treatment.
 
 The study button spans its action column, with 60px minimum height and 1.2rem text; mobile uses 52px and 1rem. A separate understated action opens a five-minute session. Logging activity and marking the whole step complete remain distinct actions.
 
@@ -218,6 +218,8 @@ Focus-visible elements receive a 3px focus outline at 3px offset. Forced-color r
 
 Three ordinary links serve My learning, Journeys and Activity. Active navigation uses the amber band, weight 650 and a thin leading marker. Compact-rail labels appear on hover/focus while accessible names remain available. Topbar utilities contain language, theme and account.
 
+The11October control refinement gives sidebar/theme/language/account controls persistent soft fills and outlines. The44px sidebar button retains its72/64px occupied header slot through14/10px margins. Account remains native details/summary, has at least44px in both dimensions and a decorative disclosure chevron. Utility rows wrap for enlarged text; language selection has no fixed pixel cap. Password reveal remains a44px action inside its existing input boundary, and dropdown items remain menu rows.
+
 PanelLeftClose means collapse expanded navigation; PanelLeftOpen means expand it or open the closed mobile drawer. The native modal has a named Close action, focus containment, Escape/focus return and resize cleanup. Theme follows the device until explicitly chosen; guarded storage saves only non-sensitive theme/sidebar preferences.
 
 The9October sign-in refinement shows brand, language and theme while signed out; authentication restores the existing navigation/account and saved rail preference. The44px theme action shows a decorative Lucide moon in light mode and sun in dark, with a localized next-action name and hover/focus tooltip, dismissible with Escape. It has no aria-pressed or visible switch text. Session clear closes the modal/account state and clears the page lock before guarded auth-heading focus. The pre-code reference/provenance and AS01–AS06 are in [auth-shell.md](docs/specs/capstone/increments/auth-shell.md); actual results are separate from formal approval.
@@ -229,6 +231,8 @@ The broad amber band owns the primary action: step position, task title, estimat
 ### Path, rhythm and history
 
 Ordered path rows combine visible status text with numbered or checked markers. Completed markers are green, current amber and upcoming neutral. The seven-date rhythm distinguishes recorded study days without punitive missed-day styling. Counts come from stored activity and completion, not reference-image samples. Reflection is private; self-reported completion does not prove mastery.
+
+Unfinished path actions have persistent soft fills, control-line outlines and44px minimum height; current-row Amber remains outside the button and completed rows stay static. Small path/progress/source metadata is at least .875rem. Activity groups existing content into named semantic sections with24px between groups and12–16px within them, retaining wording/order/history. Workspace headings wrap at every width. Below800px, the welcome-first auth panel uses a1.75rem headline,16px padding and20px form separation; exact bilingual copy and body text remain unchanged. See the [control/readability increment](docs/specs/capstone/increments/control-readability.md) for precode references and separately recorded actual checks.
 
 ## Do's and Don'ts
 

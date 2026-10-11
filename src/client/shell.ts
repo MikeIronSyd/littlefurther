@@ -102,7 +102,9 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
   const accountName = el("span", "account-name");
   const avatar = el("span", "avatar", "?");
   avatar.setAttribute("aria-hidden", "true");
-  accountSummary.append(avatar, accountName);
+  const accountChevron = icon("chevron");
+  accountChevron.classList.add("account-chevron");
+  accountSummary.append(avatar, accountName, accountChevron);
   const accountItems = el(
     "div",
     "account-items",

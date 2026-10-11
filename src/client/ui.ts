@@ -138,7 +138,8 @@ export function icon(
     | "edit"
     | "calendar"
     | "people"
-    | "review",
+    | "review"
+    | "chevron",
 ): SVGSVGElement {
   const ns = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(ns, "svg");
@@ -230,6 +231,7 @@ export function icon(
       people:
         "M15 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M2 21v-2a7 7 0 0 1 14 0v2ZM18 4a4 4 0 0 1 0 8M18 15a5 5 0 0 1 4 5v1",
       review: "M5 3h14v18H5ZM9 7h6M9 11h6M9 15h4",
+      chevron: "m6 9 6 6 6-6",
     };
     path(paths[kind]);
   }

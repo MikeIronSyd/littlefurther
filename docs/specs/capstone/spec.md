@@ -4,6 +4,8 @@ Updated: 9 October 2026, Africa/Lagos. P04/P05 implements the [private journey](
 
 ## Goal
 
+The11October [control/readability increment](increments/control-readability.md) records R30 and CR01–CR05: persistent soft outlined controls, clear header disclosures and44px targets, readable metadata/editor actions, grouped Activity content and compact mobile welcome-first authentication. Existing behavior/copy/Amber/identity stay authoritative. [Verification](increments/control-readability-verification.md) separates the precode synthetic reference from actual checks, review, trackers and dual-private publication.
+
 The10October [three-option reference](increments/littlefurther-options.md) added B Stepped and C Solid beside unchanged A Original. The user then selected **A Original**. The subsequent [integration contract](increments/littlefurther-integration.md) records R28, the actual header/browser-title implementation, BI01–BI04 verification and delivery. The [comparison](designs/littlefurther/options.png) remains historical selection evidence.
 
 The 9 October [brand reference increment](increments/littlefurther-brand.md) records the user's selected **LittleFurther** name, unchanged in English/French, and joined LF concept. Its [editable artwork and reference board](designs/littlefurther/README.md) preserve Amber and existing system typography. A is now selected and integrated; overall formal design approval remains separate. Original boards are synthetic references; app-desktop/app-mobile captures show actual application states with documented viewport limits.

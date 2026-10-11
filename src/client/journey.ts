@@ -132,7 +132,7 @@ export function showLearning(
     "div",
     "goal-heading",
     el("h2", "", detail.plan.goal),
-    button("editPlan", () => edit(), "text-button"),
+    button("editPlan", () => edit(), "button subtle"),
   );
   const progress = progressStrip(detail);
   const heading = el("div", "workspace-heading");
@@ -158,14 +158,14 @@ export function showLearning(
             icon("clock"),
             text("span", "estimated", "", { minutes: next.estimatedMinutes }),
           ),
-          button("editStep", () => edit(next.id), "text-button"),
+          button("editStep", () => edit(next.id), "button subtle"),
         ),
       ),
       el(
         "div",
         "next-actions",
         start,
-        button("shortStart", () => study(next, 5), "text-button"),
+        button("shortStart", () => study(next, 5), "button subtle"),
       ),
     );
   } else
@@ -226,7 +226,7 @@ export function showLearning(
       text("h2", "returnTitle"),
       text("p", "returnCopy"),
       next
-        ? button("reviewRestartDates", recover, "text-button")
+        ? button("reviewRestartDates", recover, "button subtle")
         : text("p", "comebackUnavailable", "hint"),
     ),
   );
@@ -249,7 +249,7 @@ export function showLearning(
         "support-body",
         text("h2", "circleTitle"),
         text("p", "circleCopy", "hint"),
-        button("openCircles", circle, "text-button"),
+        button("openCircles", circle, "button subtle"),
       ),
     ),
   );
@@ -509,16 +509,36 @@ export function showActivity(host: HTMLElement, detail: PlanDetail): void {
         dated(event.createdAt, detail.progress.timezone),
       ),
     );
-  host.replaceChildren(
-    el("div", "page-heading", text("h1", "activity")),
-    el("h2", "", detail.plan.goal),
+  const goal = el("h2", "", detail.plan.goal);
+  goal.id = "activity-goal";
+  const history = text("h2", "history");
+  history.id = "activity-history-title";
+  const overview = el(
+    "section",
+    "activity-overview",
+    goal,
     text("p", "historyCopy", "hint"),
     rhythm(detail),
-    text("h2", "history"),
+  );
+  overview.setAttribute("aria-labelledby", goal.id);
+  const retained = el(
+    "section",
+    "activity-history",
+    history,
     text("p", "pastCompletions", "", { count: detail.progress.cumulativeCompletions }),
     text("h3", "sessionCount", "", { count: detail.activities.length }),
     detail.activities.length ? list : text("p", "noActivity", "empty-copy"),
     completions,
     changes,
+  );
+  retained.setAttribute("aria-labelledby", history.id);
+  host.replaceChildren(
+    el(
+      "div",
+      "activity-layout",
+      el("div", "page-heading", text("h1", "activity")),
+      overview,
+      retained,
+    ),
   );
 }

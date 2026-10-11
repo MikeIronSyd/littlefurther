@@ -43,7 +43,7 @@ export function showComeback(
   );
   const back = button("backLearning", onCancel, "text-button");
   const cancel = button("cancel", onCancel, "button subtle");
-  const edit = button("editPlan", () => onEdit(detail), "text-button");
+  const edit = button("editPlan", () => onEdit(detail), "button subtle");
   const apply = button("applyDates", () => void confirm(), "button primary");
   const refresh = button("reloadPlan", () => void reload(), "button");
   const unchanged = text("p", "previewOnly", "comeback-preview-note");

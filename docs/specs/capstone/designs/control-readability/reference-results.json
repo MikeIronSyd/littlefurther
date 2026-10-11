@@ -1,0 +1,294 @@
+{
+  "synthetic": true,
+  "recordedAt": "2026-10-11T08:57:04.395Z",
+  "specimens": [
+    {
+      "name": "desktop-light",
+      "width": 1440,
+      "height": 1060,
+      "locale": "en",
+      "theme": "light",
+      "view": "learning",
+      "geometry": {
+        "client": 1440,
+        "scroll": 1440,
+        "account": {
+          "x": 1298.171875,
+          "y": 52,
+          "width": 117.828125,
+          "height": 44,
+          "top": 52,
+          "right": 1416,
+          "bottom": 96,
+          "left": 1298.171875
+        },
+        "heading": null,
+        "secondary": [
+          {
+            "text": "Edit this step",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Edit plan",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Try five minutes",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Review restart dates",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Open study circles",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Move down",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Remove",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop-dark",
+      "width": 1440,
+      "height": 1060,
+      "locale": "en",
+      "theme": "dark",
+      "view": "learning",
+      "geometry": {
+        "client": 1440,
+        "scroll": 1440,
+        "account": {
+          "x": 1298.171875,
+          "y": 52,
+          "width": 117.828125,
+          "height": 44,
+          "top": 52,
+          "right": 1416,
+          "bottom": 96,
+          "left": 1298.171875
+        },
+        "heading": null,
+        "secondary": [
+          {
+            "text": "Edit this step",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Edit plan",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Try five minutes",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Review restart dates",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Open study circles",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Move down",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Remove",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile-light",
+      "width": 320,
+      "height": 900,
+      "locale": "fr",
+      "theme": "light",
+      "view": "learning",
+      "geometry": {
+        "client": 320,
+        "scroll": 320,
+        "account": {
+          "x": 250,
+          "y": 128,
+          "width": 54,
+          "height": 44,
+          "top": 128,
+          "right": 304,
+          "bottom": 172,
+          "left": 250
+        },
+        "heading": null,
+        "secondary": [
+          {
+            "text": "Modifier cette étape",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Modifier le programme",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Essayer cinq minutes",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Revoir les dates de reprise",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Descendre",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Retirer",
+            "border": "rgb(122, 138, 159)",
+            "background": "rgb(246, 248, 250)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile-dark",
+      "width": 320,
+      "height": 900,
+      "locale": "fr",
+      "theme": "dark",
+      "view": "learning",
+      "geometry": {
+        "client": 320,
+        "scroll": 320,
+        "account": {
+          "x": 250,
+          "y": 128,
+          "width": 54,
+          "height": 44,
+          "top": 128,
+          "right": 304,
+          "bottom": 172,
+          "left": 250
+        },
+        "heading": null,
+        "secondary": [
+          {
+            "text": "Modifier cette étape",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Modifier le programme",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Essayer cinq minutes",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Revoir les dates de reprise",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Descendre",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Retirer",
+            "border": "rgb(130, 152, 175)",
+            "background": "rgb(18, 33, 44)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile-auth-light",
+      "width": 320,
+      "height": 900,
+      "locale": "fr",
+      "theme": "light",
+      "view": "auth",
+      "geometry": {
+        "client": 320,
+        "scroll": 320,
+        "welcome": {
+          "x": 16,
+          "y": 204,
+          "width": 288,
+          "height": 344.78125,
+          "top": 204,
+          "right": 304,
+          "bottom": 548.78125,
+          "left": 16
+        },
+        "heading": "28px",
+        "secondary": []
+      }
+    },
+    {
+      "name": "mobile-auth-dark",
+      "width": 320,
+      "height": 900,
+      "locale": "fr",
+      "theme": "dark",
+      "view": "auth",
+      "geometry": {
+        "client": 320,
+        "scroll": 320,
+        "welcome": {
+          "x": 16,
+          "y": 204,
+          "width": 288,
+          "height": 344.78125,
+          "top": 204,
+          "right": 304,
+          "bottom": 548.78125,
+          "left": 16
+        },
+        "heading": "28px",
+        "secondary": []
+      }
+    }
+  ]
+}
