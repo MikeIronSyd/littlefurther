@@ -1,0 +1,81 @@
+[
+  {
+    "height": 900,
+    "intro": "28px",
+    "overflow": false,
+    "screen": "learning-desktop-light-en",
+    "step": "31.2px",
+    "width": 1280
+  },
+  {
+    "actionTop": 522.4166870117188,
+    "height": 800,
+    "intro": "24px",
+    "overflow": false,
+    "screen": "learning-mobile-light-en",
+    "step": "26.4px",
+    "width": 320
+  },
+  {
+    "actionTop": 522.4166870117188,
+    "height": 800,
+    "overflow": false,
+    "screen": "learning-mobile-dark-fr",
+    "width": 320
+  },
+  {
+    "estimated": "Durée estimée : 20 minutes",
+    "minutes": "5",
+    "overflow": false,
+    "screen": "study-five-minute-dark-fr"
+  },
+  {
+    "client": 305,
+    "overflow": false,
+    "screen": "activity-mobile-dark-fr",
+    "scroll": 305,
+    "sections": [
+      "1 séance d’étude",
+      "Étapes terminées"
+    ],
+    "width": 320
+  },
+  {
+    "buttons": [
+      {
+        "height": 44,
+        "text": "Back to my learning",
+        "x": 268,
+        "y": 102.66667175292967
+      },
+      {
+        "height": 44,
+        "text": "All my circles",
+        "x": 427.4791870117187,
+        "y": 102.66667175292967
+      }
+    ],
+    "client": 1280,
+    "screen": "circle-desktop-light-en",
+    "scroll": 1280
+  },
+  {
+    "buttons": [
+      {
+        "height": 44,
+        "text": "Retour à mon parcours",
+        "x": 12,
+        "y": 141.33334350585938
+      },
+      {
+        "height": 44,
+        "text": "Tous mes cercles",
+        "x": 12,
+        "y": 193.33334350585935
+      }
+    ],
+    "client": 305,
+    "screen": "circle-mobile-dark-fr",
+    "scroll": 305
+  }
+]

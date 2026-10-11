@@ -862,8 +862,8 @@
         ]
       }
     ],
-    "latest_increment": "ui-specialist-review",
-    "latest_status": "Whole-interface specialist review and E023 delivery complete within documented review scope. Four confirmed field/focus/limit/target defects and UR04–UR10 proposals remain open; no app fixes, new fullsuite pass or formal approval. User chose usability+layout next plan with existing form behavior and clearer hints. Review artifact dual-private heads/16paths and both exact saved trackers verified; final documentation publication follows."
+    "latest_increment": "usability-layout",
+    "latest_status": "R32/precode references complete; implementation and verification in progress; no delivery pass inferred."
   },
   "research_gate": {
     "status": "Closed for R30 control visibility and readability",
@@ -886,6 +886,12 @@
       "status": "R31 closed for review findings only",
       "implementation_status": "Open for any selected future corrections/proposals",
       "evidence": "docs/specs/capstone/reviews/2026-10-11-ui-specialist-review.md"
+    },
+    "usability_layout": {
+      "status": "Satisfied for selected implementation scope before production edits",
+      "ledger": "docs/specs/capstone/increments/usability-layout.md R32",
+      "evidence": "Existing source/contracts, partial independent research, primary W3C sources, six inspected synthetic references, one precode layout detector exit0 with empty findings.",
+      "boundary": "Actual app tests/review/trackers/publication remain pending; no outcomes/formal approval or Plan Mode invocation claim."
     }
   },
   "active_increment": {
@@ -984,7 +990,7 @@
       "artifact_commit": "56af4356bbe1419dd77615c822ffc52df4994a61",
       "tracker_review": "docs/specs/capstone/reviews/2026-10-11-control-readability-tracker.md"
     },
-    "latest_increment": "ui_specialist_review",
+    "latest_increment": "usability_layout",
     "ui_specialist_review": {
       "date": "2026-10-11",
       "baseline": "c7ddff22a5756aaa2a979f7ca0b2a5fca19024a7",
@@ -1015,6 +1021,20 @@
       "artifact_commit": "d752f69c4ffff1088eabd2f64f23dcab94f496f1",
       "publication": "Review artifact published normally to both private repositories. Exact Git main heads, installedCLI private flags/metadata/all16paths verified at19:11:23Africa/Lagos. GitHubMCP exact-SHA reads404 for both; CLI fallback succeeded, no CI success claim. Later decision/delivery documentation closeout follows saved E023 comparisons.",
       "tracker_review": "docs/specs/capstone/reviews/2026-10-11-ui-specialist-tracker.md"
+    },
+    "usability_layout": {
+      "date": "2026-10-11",
+      "baseline": "5f222238b2dceb1027db745d8fdd1b4c10b53b3e",
+      "status": "UL01–UL07 implementation and technical verification complete; full required pipeline passed. Independent final synthesis, E024 tracker saves and dual-private publication pending.",
+      "specification": "docs/specs/capstone/increments/usability-layout.md",
+      "verification": "docs/specs/capstone/increments/usability-layout-verification.md",
+      "scope": "UR01a/b,UR02–07 and presentation/hints UR09. Metadata UR08 and unrelated drift UR10 deferred. Preserve date/timezone/minute behavior.",
+      "tracker_sync": "E024 prepared from exact live E023 comparison; writes pending published artifact and final review.",
+      "review": "docs/specs/capstone/reviews/2026-10-11-usability-layout-review.md",
+      "research": "R32 bounded scope and six inspected precode references satisfied before production edits. Focused verification researched and fixed restored confirmation-trigger language binding; durable addendum honestly recorded after that correction.",
+      "checks": "Final pnpm --pm-on-fail=download run verify exit0: strict compiler/lint/format/build,56domain/server tests, separate-process restart/persistence,87browser cases14.3minutes and audit with no known vulnerabilities.15new cases included in87. Initial failed/interrupted attempts and exact fixture corrections retained.",
+      "evidence": "Six synthetic native references;11actual browserMCP JPEGs with origin/native bounds and two viewport replacements; isolated CSS geometry and real invalid-timezone rejection. Full suite includes EN/FR, desktop/320px,200%root-text, forced colours, keyboard, lifetimes/privacy/dirty-state regressions. No normal4317 learner records changed; review4319 stopped and review browser viewport/tab cleaned up.",
+      "limitations": "Bounded synthetic/Edge evidence, not exhaustive assistive-technology or native-French validation, learner outcomes, adoption, time saved, Plan Mode invocation, formal design approval or completed video. Metadata UR08 and unrelated drift UR10 deferred; no dependency/server/API/schema change."
     }
   },
   "product_identity": {
@@ -1151,6 +1171,22 @@
         "independent A/B/specialist outputs and fresh root browserMCP diagnosis"
       ],
       "results": "Actual specialist/independent/source/browser review identifies four confirmed defects and separate proposals; subjective27/40 and one31-advisory scan contextualized. Eight actualJPEG origins/measurements/snapshot, sourceimmutability and localdocchecks passed. Review286c4b1 exactdual-private heads/16paths verified throughGit/CLI; GitHubMCP404 retained. Evidence skill/browserMCP reuse saved exactE023ten cells/all5tabs and111555-character A010 with entire103551prior text/120594HTML/status/date/board retained. Lateexplicituserchoices recorded; no app fixes, actual PlanMode claim, compliance/outcomes/adoption/time-saving/video/formalapproval inferred."
+    },
+    {
+      "date": "2026-10-11",
+      "increment": "Usability-layout",
+      "skills": [
+        "impeccable",
+        "ui-ux-resources",
+        "learning-journey-review",
+        "capstone-evidence-update"
+      ],
+      "inputs": [
+        "R32/UL01–UL08 and baselineb5eb433; six inspected precode references",
+        "Scoped native frontend/test diff and actual full verify exit0",
+        "Independent source/pixel review; actual isolated browserMCP geometry/error evidence and exact E023 tracker baselines"
+      ],
+      "results": "Actual research/specification/reference/build/test/review/evidence reuse. Final56domain/server+87browser/process/static/build/audit passed; no production edits afterward. Independent final synthesis, exact E024 saves and dual-private publication pending; no Plan Mode/outcome/approval/video claim."
     }
   ]
 }

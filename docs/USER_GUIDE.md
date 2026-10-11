@@ -138,7 +138,7 @@ In **Review every step**, each **Step N of M** contains:
 - **Move step up / Move step down**: move it one position. The first/last row disables the corresponding direction.
 - **Remove**: remove that row from the unsaved active draft.
 
-Choose **Add a step** to append an empty action. It initially uses the first available date and 10 minutes; fill in its title and adjust the defaults. The maximum is 50 active rows. At the maximum, Add a step adds nothing.
+Choose **Add a step** to append an empty action. It initially uses the first available date and 10 minutes; fill in its title and adjust the defaults. The visible count shows the maximum of 50 active rows. At the maximum, Add a step is disabled; remove a row before adding another.
 
 Review **Review your schedule** warnings for dates outside availability or beyond your fixed target. These are warnings, not automatic corrections; ordinary saving is allowed. Invalid dates, empty required fields or invalid minutes are validation errors instead.
 
@@ -160,7 +160,7 @@ You can work out of order. The highlighted next action continues to follow your 
 
 1. Open a study action. The screen is **A little study is still study**.
 2. Use your learning material. **Your references** can contain your own URLs and version-matched **Template sources**, with checked dates.
-3. Set **Minutes you studied** to the actual whole minutes you want to report. It initially contains the action estimate.
+3. Set **Minutes you studied** to the actual whole minutes you want to report. It initially contains the action estimate (or five minutes when using the restart action). The estimate remains separately visible; the app does not time your study automatically.
 4. Optionally enter **Private reflection (optional)**, for example what you understood or what to revisit.
 5. Choose **Save study session**.
 6. Wait for **Your study session is saved.**
@@ -323,7 +323,7 @@ Access changes are enforced on the next request. Already-seen information cannot
 | Failed initial/route loading | Choose **Try again** after resolving the server issue |
 | Incorrect sign-in / repeated attempts | Check credentials, then wait before retrying if you made rapid attempts. There is rate limiting without a countdown; the generic credentials message does not prove only the password is wrong |
 | Creation failed | Check details or try Sign in before repeatedly creating; creation may have succeeded while subsequent sign-in failed |
-| Invalid input | Correct highlighted fields/limits. Some server rejections, including timezone/URLs, use the general dates/minutes/HTTP(S) validation message |
+| Invalid input | Correct the identified field while retaining your draft. Timezone, reference and known single-field errors retain their hints and recover focus after the form unlocks. Repeated-row or unknown errors use the form message rather than guessing a row |
 | Ordinary editor/study says plan changed in another window | Preserve wanted unsaved text separately, then deliberately reopen/reload the saved journey and reconcile edits. Those screens do not have a Reload saved plan button; reloading discards unsaved input |
 | Comeback stale/uncertain response | Use its explicit **Reload saved plan / Retry the same change / Open saved plan** controls as offered |
 | Circle uncertain action | Use **Retry the same action** or **Check saved information**; avoid sending a new equivalent action blindly |

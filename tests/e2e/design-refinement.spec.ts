@@ -83,6 +83,9 @@ test("RF01: keyboard moves retain authored row values, position feedback and log
   await page.getByLabel("Estimated minutes", { exact: true }).first().fill("17");
   await page.getByLabel("Study date", { exact: true }).first().fill("2026-10-09");
   const form = page.locator("form.editor-form");
+  const reorderStatus = form
+    .getByRole("status")
+    .filter({ hasText: /^(Step moved|Étape déplacée)/ });
   await expect(form).toHaveAccessibleName("Shape a plan you can return to");
   const firstDown = page
     .getByRole("group", { name: "Step 1 of 3", exact: true })
@@ -94,8 +97,8 @@ test("RF01: keyboard moves retain authored row values, position feedback and log
   await expect(middle.getByLabel("Study date", { exact: true })).toHaveValue("2026-10-09");
   await expect(middle.getByLabel("Estimated minutes", { exact: true })).toHaveValue("17");
   await expect(middle.getByRole("button", { name: "Move step down", exact: true })).toBeFocused();
-  await expect(form.getByRole("status")).toHaveText("Step moved to position 2 of 3.");
-  await expect(form.getByRole("status")).toHaveAttribute("aria-live", "polite");
+  await expect(reorderStatus).toHaveText("Step moved to position 2 of 3.");
+  await expect(reorderStatus).toHaveAttribute("aria-live", "polite");
   await page.keyboard.press("Tab");
   await expect(middle.getByRole("button", { name: "Remove", exact: true })).toBeFocused();
   await middle.getByRole("button", { name: "Move step down", exact: true }).focus();
@@ -110,7 +113,7 @@ test("RF01: keyboard moves retain authored row values, position feedback and log
       .evaluateAll((controls) => controls.map((control) => (control as HTMLInputElement).value)),
   ).toEqual(["Bravo action", "Charlie action", "Alpha action"]);
   await changeLocale(page, "fr");
-  await expect(form.getByRole("status")).toHaveText("Étape déplacée à la position 3 sur 3.");
+  await expect(reorderStatus).toHaveText("Étape déplacée à la position 3 sur 3.");
   await page
     .getByRole("group", { name: "Étape 3 sur 3", exact: true })
     .getByRole("button", { name: "Monter l’étape", exact: true })
@@ -126,7 +129,7 @@ test("RF01: keyboard moves retain authored row values, position feedback and log
   await expect(
     firstFrench.getByRole("button", { name: "Monter l’étape", exact: true }),
   ).toBeDisabled();
-  await expect(form.getByRole("status")).toHaveText("Étape déplacée à la position 1 sur 3.");
+  await expect(reorderStatus).toHaveText("Étape déplacée à la position 1 sur 3.");
   await expect(page.getByLabel("Objectif d’apprentissage", { exact: true })).toHaveValue(
     "My retained goal",
   );

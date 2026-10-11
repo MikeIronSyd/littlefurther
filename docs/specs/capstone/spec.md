@@ -199,3 +199,7 @@ Research R01–R19 is closed for the current scoped increments, including theme/
 | AC14 | A 3–5 minute walkthrough shows all five capabilities, two accounts, Codex/MCP/skills, real verification and next-month work. | Actual timed recording/rehearsal; required 3–5 minute duration; source-backed claims. |
 
 Completion requires applicable tests/checks and independent review to pass, or an explicit scoped exception from the authorized owner. Publication requires an intended non-secret commit, normal local Git push to both authorized private repositories, preservation of unrelated Git hooks, and both remote heads read back against the intended commit. Global-only CodexRecovery does not receive project files or Git history and is not a project-publication gate. [Verification](verification.md) records actual failures/unavailable checks/limitations. Proposed usability research is three voluntary 15–20 minute sessions if participants are available, without automatic outreach; record unassisted/assisted/failed tasks and improve observed confusion without claiming retention or adoption from short sessions.
+
+## Active usability/layout refinement — 11 October 2026
+
+The user's combined usability/layout direction is specified in [UL01–08](increments/usability-layout.md). R32 and precode native references precede implementation. Preserve existing date/timezone/minute behavior, privacy and view lifetimes. See [actual verification](increments/usability-layout-verification.md); review findings are not automatically repaired or approved by this pointer.

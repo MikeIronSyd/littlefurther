@@ -5,9 +5,20 @@ import {
   type PlanDetail,
   type StepInput,
 } from "../shared/contracts.js";
-import { errorKey, request } from "./api.js";
+import { errorKey, RequestError, request } from "./api.js";
 import { bind, dateLabel, getLocale, type MessageKey, message } from "./i18n.js";
-import { button, el, field, input, lockForm, named, notice, text } from "./ui.js";
+import {
+  button,
+  el,
+  field,
+  fieldErrors,
+  focusFailure,
+  input,
+  lockForm,
+  named,
+  notice,
+  text,
+} from "./ui.js";
 
 interface DraftStep extends StepInput {
   completed: boolean;
@@ -16,39 +27,6 @@ interface DraftStep extends StepInput {
 interface FieldError {
   key: MessageKey;
   values: Record<string, string | number>;
-}
-function fieldErrors(control: HTMLTextAreaElement, wrapper: HTMLElement) {
-  let current: FieldError | null = null;
-  const error = el("div", "notice error");
-  error.id = `${control.id}-error`;
-  error.setAttribute("role", "alert");
-  const hint = control.getAttribute("aria-describedby");
-  const update = (): void => {
-    error.hidden = current === null;
-    error.textContent = current ? message(current.key, current.values) : "";
-    if (current) {
-      control.setAttribute("aria-invalid", "true");
-      control.setAttribute("aria-describedby", [hint, error.id].filter(Boolean).join(" "));
-    } else {
-      control.removeAttribute("aria-invalid");
-      if (hint) control.setAttribute("aria-describedby", hint);
-      else control.removeAttribute("aria-describedby");
-    }
-  };
-  const clear = (): void => {
-    current = null;
-    update();
-  };
-  bind(error, update);
-  wrapper.append(error);
-  control.addEventListener("input", clear);
-  return {
-    clear,
-    show(key: MessageKey, values: Record<string, string | number> = {}): void {
-      current = { key, values };
-      update();
-    },
-  };
 }
 const datesFrom = (value: string): string[] => [
   ...new Set(
@@ -74,7 +52,7 @@ export function showPlanEditor(
   onSaved: (detail: PlanDetail) => void,
   onCancel: () => void,
   dirty: () => void,
-  options: { selectedStepId?: string } = {},
+  options: { selectedStepId?: string; isCurrent?: () => boolean } = {},
 ): () => boolean {
   let draft: DraftStep[] =
     existing?.steps.map((step) => ({
@@ -89,10 +67,13 @@ export function showPlanEditor(
   let previousBody = "";
   let requestId = crypto.randomUUID();
   const form = el("form", "editor-form");
+  const active = (): boolean => form.isConnected && (options.isCurrent?.() ?? true);
   form.noValidate = true;
   const goal = input("text", "goal", existing?.goal ?? "");
   goal.required = true;
   goal.maxLength = LIMITS.goal;
+  const goalField = field("goal", goal);
+  const goalErrors = fieldErrors(goal, goalField);
   const templateSelect = el("select");
   templateSelect.name = "template";
   const manual = text("option", "manual");
@@ -125,11 +106,15 @@ export function showPlanEditor(
   const target = input("date", "targetDate", existing?.targetDate ?? "");
   target.min = "2000-01-01";
   target.max = "2100-12-31";
+  const targetField = field("targetOptional", target);
+  const targetErrors = fieldErrors(target, targetField);
   const references = el("textarea");
   references.name = "references";
   references.rows = 3;
   references.value = existing?.references.join("\n") ?? "";
   references.maxLength = LIMITS.references * (LIMITS.url + 1);
+  const referenceField = field("referenceLinks", references, "referenceHint");
+  const referenceErrors = fieldErrors(references, referenceField);
   const review = el("section", "draft-review");
   const stepList = el("div", "draft-steps");
   const stepControls = new Map<
@@ -145,6 +130,15 @@ export function showPlanEditor(
   stepStatus.setAttribute("role", "status");
   stepStatus.setAttribute("aria-live", "polite");
   stepStatus.setAttribute("aria-atomic", "true");
+  const stepLimit = el("p", "hint");
+  stepLimit.id = `step-limit-${crypto.randomUUID()}`;
+  stepLimit.setAttribute("role", "status");
+  stepLimit.setAttribute("aria-live", "polite");
+  stepLimit.setAttribute("aria-atomic", "true");
+  const updateStepLimit = (): void => {
+    stepLimit.textContent = message("stepLimit", { count: draft.length, max: LIMITS.steps });
+  };
+  bind(stepLimit, updateStepLimit);
   let stepFeedback: FieldError | null = null;
   const updateStepStatus = (): void => {
     stepStatus.textContent = stepFeedback ? message(stepFeedback.key, stepFeedback.values) : "";
@@ -218,6 +212,45 @@ export function showPlanEditor(
       });
     else {
       topicErrors.clear();
+      return true;
+    }
+    return false;
+  };
+  const referenceLines = (): string[] =>
+    references.value
+      .split("\n")
+      .map((url) => url.trim())
+      .filter(Boolean);
+  const validateReferences = (): boolean => {
+    const links = referenceLines();
+    if (links.length > LIMITS.references)
+      referenceErrors.show("referencesTooMany", { max: LIMITS.references });
+    else if (links.some((url) => url.length > LIMITS.url))
+      referenceErrors.show("referencesTooLong", { max: LIMITS.url });
+    else if (
+      links.some((url) => {
+        if (
+          [...url].some((character) => {
+            const code = character.charCodeAt(0);
+            return code < 32 && code !== 9 && code !== 10 && code !== 13;
+          })
+        )
+          return true;
+        try {
+          const parsed = new URL(url);
+          return (
+            !/^https?:\/\//iu.test(url) ||
+            !["http:", "https:"].includes(parsed.protocol) ||
+            Boolean(parsed.username || parsed.password)
+          );
+        } catch {
+          return true;
+        }
+      })
+    )
+      referenceErrors.show("invalidLink");
+    else {
+      referenceErrors.clear();
       return true;
     }
     return false;
@@ -359,6 +392,8 @@ export function showPlanEditor(
         removalText.textContent = message("removeConfirm", { count: removed });
       });
     if (!draft.length) stepList.append(text("p", "emptyScopeHint", "notice"));
+    addStep.disabled = draft.length >= LIMITS.steps;
+    updateStepLimit();
     conflicts();
     if (focus) {
       const controls = stepControls.get(focus.uiId);
@@ -422,12 +457,14 @@ export function showPlanEditor(
       renderSteps({ uiId: step.uiId, control: "title" });
     }
   });
+  addStep.setAttribute("aria-describedby", stepLimit.id);
   review.append(
     reviewHeading,
     text("p", "reviewHint", "hint"),
     stepStatus,
     stepList,
     addStep,
+    stepLimit,
     warningList,
     removalLabel,
     el("div", "form-actions", save, button("cancel", onCancel, "button subtle")),
@@ -439,9 +476,13 @@ export function showPlanEditor(
   form.addEventListener("input", dirty);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (!reviewed) return;
+    if (!active() || !reviewed) return;
     if (!validateAvailability()) {
       availability.focus();
+      return;
+    }
+    if (!validateReferences()) {
+      references.focus();
       return;
     }
     if (!form.reportValidity()) return;
@@ -449,10 +490,7 @@ export function showPlanEditor(
       goal: goal.value.trim(),
       availabilityDates: datesFrom(availability.value),
       targetDate: target.value || null,
-      references: references.value
-        .split("\n")
-        .map((url) => url.trim())
-        .filter(Boolean),
+      references: referenceLines(),
       steps: draft.map(({ completed: _completed, uiId: _uiId, ...step }) => step),
       ...(existing
         ? { revision: existing.revision }
@@ -464,18 +502,43 @@ export function showPlanEditor(
       previousBody = signature;
     }
     const unlock = lockForm(form);
+    let failed = false;
+    let failedControl: HTMLElement | undefined;
     errors.replaceChildren(notice("saving"));
     void request<PlanDetail>(
       existing ? `/api/plans/${existing.id}` : "/api/plans",
       existing ? "PUT" : "POST",
       { ...body, requestId },
     )
-      .then(onSaved)
+      .then((result) => {
+        if (active()) onSaved(result);
+      })
       .catch((error: unknown) => {
-        errors.replaceChildren(notice(errorKey(error), true));
+        if (!active()) return;
+        failed = true;
+        const knownFields = {
+          goal: { control: goal, error: goalErrors },
+          availabilityDates: { control: availability, error: availabilityErrors },
+          targetDate: { control: target, error: targetErrors },
+          references: { control: references, error: referenceErrors },
+        };
+        const known =
+          error instanceof RequestError &&
+          error.status === 400 &&
+          error.code === "invalid_input" &&
+          error.field &&
+          Object.hasOwn(knownFields, error.field)
+            ? knownFields[error.field as keyof typeof knownFields]
+            : undefined;
+        if (known) {
+          known.error.show(errorKey(error));
+          errors.replaceChildren();
+          failedControl = known.control;
+        } else errors.replaceChildren(notice(errorKey(error), true));
       })
       .finally(() => {
         unlock();
+        if (failed) focusFailure(errors, active, failedControl);
       });
   });
   host.replaceChildren(
@@ -488,13 +551,13 @@ export function showPlanEditor(
     form,
   );
   form.append(
-    field("goal", goal),
+    goalField,
     field("template", templateSelect, "templateHint"),
     topicField,
     sourcePanel,
     availabilityField,
-    field("targetOptional", target),
-    field("referenceLinks", references, "referenceHint"),
+    targetField,
+    referenceField,
     makeDraft,
     errors,
     review,

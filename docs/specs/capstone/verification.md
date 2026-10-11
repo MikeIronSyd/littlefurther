@@ -247,6 +247,12 @@ The final full required checks passed: strict/lint/format/build,56domain/server 
 
 Actual browser MCP viewport JPEGs and Edge/Playwright enlarged-control PNGs have distinct provenance/coverage. J1 links real specification/build/test/review/documentation/MCP/skill work; J2 establishes synthetic working controls without learner outcomes; J3 maintains reusable patterns without a new setup/adoption claim; J4 provides scene material without a timed video. Formal human design approval remains separate.
 
+### Usability and layout refinement — 11October2026
+
+[UL01–UL08 verification](increments/usability-layout-verification.md) records R32 and six inspected precode references, known field-error association/focus recovery, explicit50-step limit feedback,44px consent labels, contextual circle actions and guarded shared navigation, compact learning hierarchy, semantic Activity record types and clearer existing form hints. The final required pipeline passed56domain/server tests, separate-process persistence,87browser cases in14.3minutes, strict/lint/format/build and dependency audit. The15new cases are included in87. Earlier failures and their corrections remain explicit; no assertions were weakened.
+
+Eleven actual browserMCP JPEGs and bounded CSS measurements are distinct from synthetic references and automated enlarged/forced-colour evidence. Normal learner data is untouched; temporary review runtime and browser tab were closed. Independent review synthesis, E024 tracker reconciliation and source publication are recorded separately in the increment. Formal human design approval, learner evaluation and the timed3–5-minute video remain open.
+
 ### Whole UI specialist review — 11October2026
 
 The [R31/UR01–UR10 report](reviews/2026-10-11-ui-specialist-review.md) uses Impeccable and the new UI Skills/reference companion, with independent unanchored A before B detector synthesis, accessibility/metadata/motion source checks and bounded actual browser diagnosis. Four confirmed field/focus/limit/target defects remain open alongside distinct hierarchy/context/form/metadata proposals. Subjective27/40 and31advisories are not compliance/outcome scores. Eight actual origin-labelled JPEGs and selected measurements support the review; no app fixes or new full-suite pass are claimed.

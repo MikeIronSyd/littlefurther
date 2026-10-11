@@ -4,6 +4,7 @@ export class RequestError extends Error {
   constructor(
     public readonly code: string,
     public readonly status: number,
+    public readonly field?: string,
   ) {
     super(code);
   }
@@ -31,7 +32,11 @@ export async function request<T>(path: string, method = "GET", body?: unknown): 
   }
   if (!response.ok) {
     const result = data as Partial<ApiError> & { code?: string };
-    throw new RequestError(result.error?.code ?? result.code ?? "UNEXPECTED", response.status);
+    throw new RequestError(
+      result.error?.code ?? result.code ?? "UNEXPECTED",
+      response.status,
+      typeof result.error?.field === "string" ? result.error.field : undefined,
+    );
   }
   return data as T;
 }
@@ -42,6 +47,17 @@ export function errorKey(error: unknown): MessageKey {
   if (error.status === 409) return "stale";
   if (error.status === 403 || error.status === 404) return "forbidden";
   if (error.status === 413) return "limitError";
+  if (error.status === 400 && error.code === "invalid_input") {
+    if (error.field === "timezone") return "invalidTimezone";
+    if (error.field === "references") return "invalidLink";
+    if (["availabilityDates", "targetDate", "scheduledDate"].includes(error.field ?? ""))
+      return "invalidDate";
+    if (error.field === "goal") return "invalidGoal";
+    if (error.field === "stepTitle") return "invalidStepTitle";
+    if (error.field === "steps") return "invalidSteps";
+    if (error.field === "estimatedMinutes" || error.field === "minutes") return "invalidMinutes";
+    if (error.field === "reflection") return "invalidReflection";
+  }
   if (error.code.includes("TIMEZONE")) return "invalidTimezone";
   if (error.code.includes("URL") || error.code.includes("REFERENCE")) return "invalidLink";
   if (error.code.includes("DATE")) return "invalidDate";

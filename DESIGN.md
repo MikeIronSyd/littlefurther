@@ -251,3 +251,7 @@ Unfinished path actions have persistent soft fills, control-line outlines and44p
 - Don't freeze synthetic sample counts into the product.
 - Don't present a preview as saved or shared before the learner confirms it.
 - Don't infer native-French quality, physical offline operation, accessibility conformance or learner benefit from these design records.
+
+### Usability/layout refinement — 11 October 2026
+
+The scoped learning introduction uses1.75rem desktop/1.5rem mobile and1rem supporting text, subordinated to the existing1.95/1.65rem actual next-step heading. The mobile goal heading is1.2rem. Mobile heading gaps12px/bottom16px retain goal → introduction → action ordering. Activity is a75ch reading column; its rhythm is capped40rem. Explicit session/completion/change sections group retained history without new metric cards. Existing circle Back controls share one wrapping row with20px horizontal/8px vertical gaps and44px native targets. Full consent labels are minimum44px high with6px vertical padding, retaining the22px native glyph. Field errors append to existing hints and recover keyboard focus after unlocking. These are implementation decisions under UL01–08; formal approval and actual verification are separate.

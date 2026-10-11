@@ -1,0 +1,138 @@
+{
+  "synthetic": true,
+  "recordedAt": "2026-10-11T20:20:08.412Z",
+  "specimens": [
+    {
+      "name": "learning-desktop-light-en",
+      "view": "learning",
+      "width": 1440,
+      "height": 1000,
+      "locale": "en",
+      "theme": "light",
+      "geometry": {
+        "client": 1440,
+        "scroll": 1440,
+        "study": {
+          "x": 1058,
+          "y": 286,
+          "width": 320,
+          "height": 60,
+          "top": 286,
+          "right": 1378,
+          "bottom": 346,
+          "left": 1058
+        },
+        "checkbox": {
+          "x": 851,
+          "y": 869.78125,
+          "width": 561,
+          "height": 44,
+          "top": 869.78125,
+          "right": 1412,
+          "bottom": 913.78125,
+          "left": 851
+        }
+      }
+    },
+    {
+      "name": "learning-mobile-dark-fr",
+      "view": "learning",
+      "width": 320,
+      "height": 800,
+      "locale": "fr",
+      "theme": "dark",
+      "geometry": {
+        "client": 320,
+        "scroll": 320,
+        "study": {
+          "x": 36,
+          "y": 565.59375,
+          "width": 248,
+          "height": 60,
+          "top": 565.59375,
+          "right": 284,
+          "bottom": 625.59375,
+          "left": 36
+        },
+        "checkbox": {
+          "x": 16,
+          "y": 1899.328125,
+          "width": 288,
+          "height": 60,
+          "top": 1899.328125,
+          "right": 304,
+          "bottom": 1959.328125,
+          "left": 16
+        }
+      }
+    },
+    {
+      "name": "activity-desktop-light-en",
+      "view": "activity",
+      "width": 1440,
+      "height": 1000,
+      "locale": "en",
+      "theme": "light",
+      "geometry": {
+        "client": 1440,
+        "scroll": 1440,
+        "history": {
+          "x": 258,
+          "y": 141,
+          "width": 646.875,
+          "height": 843.1875,
+          "top": 141,
+          "right": 904.875,
+          "bottom": 984.1875,
+          "left": 258
+        }
+      }
+    },
+    {
+      "name": "activity-mobile-dark-fr",
+      "view": "activity",
+      "width": 320,
+      "height": 800,
+      "locale": "fr",
+      "theme": "dark",
+      "geometry": {
+        "client": 320,
+        "scroll": 320,
+        "history": {
+          "x": 16,
+          "y": 200,
+          "width": 288,
+          "height": 980.984375,
+          "top": 200,
+          "right": 304,
+          "bottom": 1180.984375,
+          "left": 16
+        }
+      }
+    },
+    {
+      "name": "circle-desktop-light-en",
+      "view": "circle",
+      "width": 1440,
+      "height": 1000,
+      "locale": "en",
+      "theme": "light",
+      "geometry": {
+        "client": 1440,
+        "scroll": 1440
+      }
+    },
+    {
+      "name": "circle-mobile-dark-fr",
+      "view": "circle",
+      "width": 320,
+      "height": 800,
+      "locale": "fr",
+      "theme": "dark",
+      "geometry": {
+        "client": 320,
+        "scroll": 320
+      }
+    }
+  ]
+}

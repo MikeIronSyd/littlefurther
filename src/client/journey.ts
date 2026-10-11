@@ -4,9 +4,21 @@ import {
   LIMITS,
   type PlanDetail,
 } from "../shared/contracts.js";
-import { errorKey, request } from "./api.js";
+import { errorKey, RequestError, request } from "./api.js";
 import { bind, dateLabel, getLocale, message } from "./i18n.js";
-import { button, el, field, focusStatus, icon, input, lockForm, notice, text } from "./ui.js";
+import {
+  button,
+  el,
+  field,
+  fieldErrors,
+  focusFailure,
+  focusStatus,
+  icon,
+  input,
+  lockForm,
+  notice,
+  text,
+} from "./ui.js";
 
 let disposeLearningLayout = (): void => {};
 
@@ -127,7 +139,12 @@ export function showLearning(
 ): void {
   disposeLearningLayout();
   const next = detail.plan.steps.find((step) => step.id === detail.nextStepId);
-  const introduction = el("div", "", text("h1", "nextTitle"), text("p", "keepGoing", "subtitle"));
+  const introduction = el(
+    "div",
+    "learning-introduction",
+    text("h1", "nextTitle"),
+    text("p", "keepGoing", "subtitle"),
+  );
   const goalHeading = el(
     "div",
     "goal-heading",
@@ -322,6 +339,7 @@ export function showStudy(
   done: () => void,
   dirty: () => void,
   templates: GoalTemplate[] = [],
+  isCurrent: () => boolean = () => host.isConnected,
 ): void {
   let detail = initial;
   let savedSignature = "";
@@ -362,6 +380,7 @@ export function showStudy(
   let activityRequest = crypto.randomUUID();
   const completionRequest = crypto.randomUUID();
   const form = el("form", "study-form");
+  const active = (): boolean => isCurrent() && form.isConnected;
   const minutes = input(
     "number",
     "studiedMinutes",
@@ -379,43 +398,50 @@ export function showStudy(
   save.type = "submit";
   const status = el("div");
   const completionStatus = el("div");
+  const minutesField = field("studiedMinutes", minutes, "studyMinutesHint");
+  const minutesErrors = fieldErrors(minutes, minutesField);
+  const reflectionField = field("reflection", reflection, "reflectionHint");
+  const reflectionErrors = fieldErrors(reflection, reflectionField);
   const completeButton = button(
     "completeStep",
     () => {
+      if (!active()) return;
       const unlock = lockForm(form);
       completeButton.disabled = true;
       completionStatus.replaceChildren(notice("saving"));
+      let failed = false;
       void request<PlanDetail>(`/api/plans/${detail.plan.id}/completions`, "POST", {
         requestId: completionRequest,
         revision: detail.plan.revision,
         stepId: step.id,
       })
         .then((result) => {
+          if (!active()) return;
           detail = result;
           update(result, false);
           completeButton.hidden = true;
           focusStatus(completionStatus, "completionSaved");
         })
         .catch((error: unknown) => {
+          if (!active()) return;
+          failed = true;
           completionStatus.replaceChildren(notice(errorKey(error), true));
         })
         .finally(() => {
           unlock();
           completeButton.disabled = false;
+          if (failed) focusFailure(completionStatus, active);
         });
     },
     "button",
   );
-  form.append(
-    field("studiedMinutes", minutes),
-    field("reflection", reflection, "reflectionHint"),
-    save,
-    status,
-  );
+  form.append(minutesField, reflectionField, save, status);
   form.addEventListener("input", dirty);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
+    if (!active() || !form.reportValidity()) return;
+    minutesErrors.clear();
+    reflectionErrors.clear();
     const body = {
       stepId: step.id,
       minutes: Number(minutes.value),
@@ -429,11 +455,14 @@ export function showStudy(
     const unlock = lockForm(form);
     completeButton.disabled = true;
     status.replaceChildren(notice("saving"));
+    let failed = false;
+    let invalid: HTMLElement | undefined;
     void request<PlanDetail>(`/api/plans/${detail.plan.id}/activities`, "POST", {
       ...body,
       requestId: activityRequest,
     })
       .then((result) => {
+        if (!active()) return;
         detail = result;
         update(result, true);
         minutes.readOnly = true;
@@ -442,16 +471,43 @@ export function showStudy(
         focusStatus(status, "sessionSaved");
       })
       .catch((error: unknown) => {
-        status.replaceChildren(notice(errorKey(error), true));
+        if (!active()) return;
+        failed = true;
+        if (
+          error instanceof RequestError &&
+          error.status === 400 &&
+          error.code === "invalid_input" &&
+          error.field === "minutes"
+        ) {
+          minutesErrors.show("invalidMinutes");
+          invalid = minutes;
+          status.replaceChildren();
+        } else if (
+          error instanceof RequestError &&
+          error.status === 400 &&
+          error.code === "invalid_input" &&
+          error.field === "reflection"
+        ) {
+          reflectionErrors.show("invalidReflection");
+          invalid = reflection;
+          status.replaceChildren();
+        } else status.replaceChildren(notice(errorKey(error), true));
       })
       .finally(() => {
         unlock();
         completeButton.disabled = false;
+        if (failed) focusFailure(invalid ? form : status, active, invalid);
       });
   });
   host.replaceChildren(
     el("div", "page-heading", text("h1", "sessionTitle"), button("back", done, "button subtle")),
-    el("section", "study-summary", el("h2", "", step.title), text("p", "sessionHelp")),
+    el(
+      "section",
+      "study-summary",
+      el("h2", "", step.title),
+      text("p", "estimated", "hint", { minutes: step.estimatedMinutes }),
+      text("p", "sessionHelp"),
+    ),
     resources,
     form,
     el(
@@ -471,7 +527,7 @@ export function showActivity(host: HTMLElement, detail: PlanDetail): void {
     const row = el(
       "li",
       "history-entry",
-      el("h3", "", activity.stepTitle),
+      el("h4", "", activity.stepTitle),
       el(
         "p",
         "hint",
@@ -480,7 +536,10 @@ export function showActivity(host: HTMLElement, detail: PlanDetail): void {
       ),
     );
     if (activity.reflection)
-      row.append(text("h4", "privateNote"), el("p", "reflection-text", activity.reflection));
+      row.append(
+        text("p", "privateNote", "reflection-label"),
+        el("p", "reflection-text", activity.reflection),
+      );
     list.append(row);
   }
   const completions = el("ol", "history-list");
@@ -489,7 +548,7 @@ export function showActivity(host: HTMLElement, detail: PlanDetail): void {
       el(
         "li",
         "history-entry",
-        el("h3", "", completion.stepTitle),
+        el("h4", "", completion.stepTitle),
         text("span", "complete", "completed-label"),
         " · ",
         dated(completion.createdAt, detail.progress.timezone),
@@ -526,10 +585,18 @@ export function showActivity(host: HTMLElement, detail: PlanDetail): void {
     "activity-history",
     history,
     text("p", "pastCompletions", "", { count: detail.progress.cumulativeCompletions }),
-    text("h3", "sessionCount", "", { count: detail.activities.length }),
-    detail.activities.length ? list : text("p", "noActivity", "empty-copy"),
-    completions,
-    changes,
+    el(
+      "section",
+      "activity-records",
+      text("h3", "sessionCount", "", { count: detail.activities.length }),
+      detail.activities.length ? list : text("p", "noActivity", "empty-copy"),
+    ),
+    detail.completions.length
+      ? el("section", "activity-records", text("h3", "activityCompletions"), completions)
+      : null,
+    detail.scopeEvents.length
+      ? el("section", "activity-records", text("h3", "activityChanges"), changes)
+      : null,
   );
   retained.setAttribute("aria-labelledby", history.id);
   host.replaceChildren(

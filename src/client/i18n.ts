@@ -57,7 +57,8 @@ const en = {
   profileCopy:
     "Confirm the timezone used for your study dates. Your device’s timezone is only a suggestion.",
   timezone: "Timezone",
-  timezoneHint: "An IANA name, for example Africa/Lagos or Europe/Paris.",
+  timezoneHint:
+    "Choose a suggestion or type a timezone such as Africa/Lagos, Europe/Paris or UTC. Your device’s suggestion can be changed.",
   confirmProfile: "Save preferences and continue",
   preferences: "Preferences",
   profileSaved: "Preferences saved.",
@@ -97,6 +98,8 @@ const en = {
     "Earlier activity and completed work stay in your history when the active plan changes.",
   pastCompletions: "{count} completions recorded in history",
   sessionCount: "{count} study sessions",
+  activityCompletions: "Completed steps",
+  activityChanges: "Scope changes",
   noActivity: "No study activity yet. Your first session can be a small one.",
   afterStudy: "After studying",
   reflectionCopy:
@@ -300,10 +303,10 @@ const en = {
   checked: "Checked {date}",
   availability: "Dates you are available",
   availabilityHint:
-    "Enter dates as YYYY-MM-DD, separated by commas or new lines. You can study at your own pace.",
+    "Use year-month-day, for example 2026-10-14. Separate dates with commas or new lines: 2026-10-14, 2026-10-16. You can study at your own pace.",
   referenceLinks: "Reference links (optional)",
   referenceHint:
-    "One absolute http or https URL per line. Links are saved without fetching their content.",
+    "Up to 10 links, one per line, starting with http:// or https://. Links are saved without fetching their content.",
   reviewTitle: "Review every step",
   reviewHint:
     "Edit the order, dates and estimates. Saving confirms this plan; nothing is saved before that.",
@@ -311,6 +314,7 @@ const en = {
   date: "Study date",
   minutes: "Estimated minutes",
   addStep: "Add a step",
+  stepLimit: "{count} of {max} steps. At the limit, remove a step before adding another.",
   moveUp: "Move step up",
   moveDown: "Move step down",
   stepMoved: "Step moved to position {number} of {total}.",
@@ -335,6 +339,8 @@ const en = {
   sessionHelp:
     "Use your learning material, then record the minutes you studied. A session does not automatically complete a step.",
   studiedMinutes: "Minutes you studied",
+  studyMinutesHint:
+    "This starts with the suggested duration. Change it to the whole minutes you actually studied (1–480). Time is not measured automatically.",
   reflection: "Private reflection (optional)",
   reflectionHint: "A note for yourself. This is never shared with peers.",
   saveSession: "Save study session",
@@ -354,6 +360,13 @@ const en = {
   unsavedLeave: "Leave this form and discard your unsaved input?",
   profileRequired: "Confirm your timezone before creating a plan.",
   invalidLink: "Use absolute http or https links without a username or password.",
+  referencesTooMany: "Use at most {max} reference links, one per line.",
+  referencesTooLong: "Shorten each reference link to at most {max} characters.",
+  invalidGoal: "Enter a learning goal of 1–160 characters.",
+  invalidStepTitle: "Check that every action has 1–240 characters.",
+  invalidSteps: "Use at most 50 steps; a new plan needs at least one step.",
+  invalidMinutes: "Enter whole minutes from 1 to 480.",
+  invalidReflection: "Keep your private reflection to at most 2,000 characters.",
   invalidDate: "Use valid calendar dates between 2000 and 2100.",
   limitError: "One or more values exceed the allowed size. Shorten your input and try again.",
   genericError: "That action could not be completed. Your input is preserved; please try again.",
@@ -417,7 +430,8 @@ const fr: Record<MessageKey, string> = {
   profileCopy:
     "Confirmez le fuseau horaire de vos journées d’étude. Celui de votre appareil n’est qu’une suggestion.",
   timezone: "Fuseau horaire",
-  timezoneHint: "Un nom IANA, par exemple Africa/Lagos ou Europe/Paris.",
+  timezoneHint:
+    "Choisissez une suggestion ou saisissez un fuseau comme Africa/Lagos, Europe/Paris ou UTC. Vous pouvez modifier la suggestion de l’appareil.",
   confirmProfile: "Enregistrer et continuer",
   preferences: "Préférences",
   profileSaved: "Préférences enregistrées.",
@@ -458,6 +472,8 @@ const fr: Record<MessageKey, string> = {
     "Vos activités et votre travail terminé restent dans l’historique lorsque le parcours actif change.",
   pastCompletions: "{count} étapes terminées dans l’historique",
   sessionCount: "{count} séances d’étude",
+  activityCompletions: "Étapes terminées",
+  activityChanges: "Modifications du parcours",
   noActivity: "Aucune activité pour le moment. Votre première séance peut être courte.",
   afterStudy: "Après la séance",
   reflectionCopy:
@@ -667,10 +683,10 @@ const fr: Record<MessageKey, string> = {
   checked: "Vérifié le {date}",
   availability: "Vos dates disponibles",
   availabilityHint:
-    "Saisissez des dates au format AAAA-MM-JJ, séparées par des virgules ou des sauts de ligne. Avancez à votre rythme.",
+    "Utilisez année-mois-jour, par exemple 2026-10-14. Séparez les dates par des virgules ou des sauts de ligne : 2026-10-14, 2026-10-16. Avancez à votre rythme.",
   referenceLinks: "Liens de référence (facultatifs)",
   referenceHint:
-    "Une URL absolue http ou https par ligne. Les liens sont conservés sans télécharger leur contenu.",
+    "Jusqu’à 10 liens, un par ligne, commençant par http:// ou https://. Les liens sont conservés sans télécharger leur contenu.",
   reviewTitle: "Vérifiez chaque étape",
   reviewHint:
     "Modifiez l’ordre, les dates et les durées. Rien n’est conservé avant votre confirmation.",
@@ -678,6 +694,8 @@ const fr: Record<MessageKey, string> = {
   date: "Date d’étude",
   minutes: "Minutes estimées",
   addStep: "Ajouter une étape",
+  stepLimit:
+    "{count} étapes sur {max}. À la limite, retirez une étape avant d’en ajouter une autre.",
   moveUp: "Monter l’étape",
   moveDown: "Descendre l’étape",
   stepMoved: "Étape déplacée à la position {number} sur {total}.",
@@ -706,6 +724,8 @@ const fr: Record<MessageKey, string> = {
   sessionHelp:
     "Étudiez avec votre matériel, puis indiquez les minutes étudiées. Une séance ne termine pas automatiquement l’étape.",
   studiedMinutes: "Minutes étudiées",
+  studyMinutesHint:
+    "Ce champ commence par la durée suggérée. Indiquez les minutes entières réellement étudiées (1–480). Le temps n’est pas mesuré automatiquement.",
   reflection: "Note privée (facultative)",
   reflectionHint: "Une note pour vous. Elle n’est jamais partagée avec les autres.",
   saveSession: "Enregistrer la séance",
@@ -725,6 +745,13 @@ const fr: Record<MessageKey, string> = {
   unsavedLeave: "Quitter ce formulaire et abandonner la saisie non enregistrée ?",
   profileRequired: "Confirmez votre fuseau horaire avant de créer un parcours.",
   invalidLink: "Utilisez des liens absolus http ou https, sans identifiant ni mot de passe.",
+  referencesTooMany: "Utilisez au maximum {max} liens de référence, un par ligne.",
+  referencesTooLong: "Limitez chaque lien de référence à {max} caractères.",
+  invalidGoal: "Saisissez un objectif d’apprentissage de 1 à 160 caractères.",
+  invalidStepTitle: "Vérifiez que chaque action contient de 1 à 240 caractères.",
+  invalidSteps: "Utilisez au maximum 50 étapes ; un nouveau parcours nécessite au moins une étape.",
+  invalidMinutes: "Saisissez un nombre entier de minutes, de 1 à 480.",
+  invalidReflection: "Limitez votre note privée à 2 000 caractères.",
   invalidDate: "Utilisez des dates valides entre 2000 et 2100.",
   limitError:
     "Certaines valeurs dépassent la taille autorisée. Raccourcissez la saisie et réessayez.",

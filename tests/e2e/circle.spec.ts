@@ -172,9 +172,12 @@ test("SC02/03/06: two real accounts deliberately share copies and encouragement 
     await expect(peer.locator(".circle-item")).toHaveCount(2);
     await expectOnlyUiStorage(peer);
     await page.getByRole("button", { name: "Refresh circle information", exact: true }).click();
-    await page.getByRole("button", { name: "Delete my shared copy", exact: true }).click();
+    const ownedCopy = page
+      .locator(".circle-item")
+      .filter({ has: page.getByText(commitment, { exact: true }) });
+    await ownedCopy.getByRole("button", { name: /^Delete my shared copy / }).click();
     expect((await detail(peer, id)).items).toHaveLength(2);
-    await page.getByRole("button", { name: "Confirm copy deletion", exact: true }).click();
+    await ownedCopy.getByRole("button", { name: /^Confirm copy deletion / }).click();
     await expect(page.locator(".circle-item")).toHaveCount(1);
     const remaining = await detail(peer, id);
     expect(remaining.items[0]?.text).toBe("I studied for five minutes today.");
@@ -204,9 +207,16 @@ test("SC04/05: owner removal clears denied peer content and owner closure preser
     );
     await page.getByRole("button", { name: "Refresh circle information", exact: true }).click();
     await page.getByText("Members and circle settings", { exact: true }).click();
-    await page.getByRole("button", { name: "Remove member", exact: true }).click();
+    const peerMember = page
+      .locator(".circle-member-list > li")
+      .filter({ has: page.getByText("Circle peer", { exact: true }) });
+    await peerMember
+      .getByRole("button", { name: "Remove member Circle peer", exact: true })
+      .click();
     expect((await detail(peer, id)).circle.memberCount).toBe(2);
-    await page.getByRole("button", { name: "Confirm member removal", exact: true }).click();
+    await peerMember
+      .getByRole("button", { name: "Confirm member removal Circle peer", exact: true })
+      .click();
     await expect(page.locator(".circle-item")).toHaveCount(0);
     await peer.getByRole("button", { name: "Refresh circle information", exact: true }).click();
     await expect(peer.getByRole("alert")).toContainText(
@@ -252,10 +262,11 @@ test("SC02/05: lost invitation response returns no raw code on retry and can be 
   await expect(page.getByLabel("New invitation code", { exact: true })).toHaveCount(0);
   expect(requests).toHaveLength(2);
   expect(requests[1]).toEqual(requests[0]);
-  await page.getByRole("button", { name: "Revoke invitation", exact: true }).click();
+  const invitationRow = page.locator(".circle-invite");
+  await invitationRow.getByRole("button", { name: /^Revoke invitation Expires / }).click();
   const before = await (await page.request.get(`/api/circles/${id}/invites`)).json();
   expect(before.invites).toHaveLength(1);
-  await page.getByRole("button", { name: "Confirm revocation", exact: true }).click();
+  await invitationRow.getByRole("button", { name: /^Confirm revocation Expires / }).click();
   await expect(page.getByText("No active unused invitations.", { exact: true })).toBeVisible();
   await page.unroute(endpoint);
 });
@@ -330,8 +341,11 @@ test("SC05: a missing copy on deletion retry reconciles without falsely reportin
       await route.abort("failed");
     } else await route.continue();
   });
-  await page.getByRole("button", { name: "Delete my shared copy", exact: true }).click();
-  await page.getByRole("button", { name: "Confirm copy deletion", exact: true }).click();
+  const ownedCopy = page
+    .locator(".circle-item")
+    .filter({ has: page.getByText(commitment, { exact: true }) });
+  await ownedCopy.getByRole("button", { name: /^Delete my shared copy / }).click();
+  await ownedCopy.getByRole("button", { name: /^Confirm copy deletion / }).click();
   await expect(page.getByRole("alert")).toContainText("may have been saved");
   await page.getByRole("button", { name: "Retry the same action", exact: true }).click();
   await expect(page.locator(".circle-item")).toHaveCount(0);

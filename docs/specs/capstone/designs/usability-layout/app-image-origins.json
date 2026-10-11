@@ -1,0 +1,79 @@
+[
+  {
+    "file": "app-activity-desktop-light-en.jpg",
+    "width": 1265,
+    "height": 864,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 58197
+  },
+  {
+    "file": "app-activity-mobile-dark-fr.jpg",
+    "width": 304,
+    "height": 1068,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 48593
+  },
+  {
+    "file": "app-activity-viewport-mobile-dark-fr.jpg",
+    "width": 305,
+    "height": 763,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 36586
+  },
+  {
+    "file": "app-circle-desktop-light-en.jpg",
+    "width": 1280,
+    "height": 875,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 60801
+  },
+  {
+    "file": "app-circle-mobile-dark-fr.jpg",
+    "width": 305,
+    "height": 763,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 37189
+  },
+  {
+    "file": "app-learning-desktop-light-en.jpg",
+    "width": 1265,
+    "height": 864,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 92460
+  },
+  {
+    "file": "app-learning-mobile-dark-fr.jpg",
+    "width": 305,
+    "height": 763,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 37406
+  },
+  {
+    "file": "app-learning-mobile-light-en.jpg",
+    "width": 305,
+    "height": 763,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 34177
+  },
+  {
+    "file": "app-preferences-error-mobile-dark-fr.jpg",
+    "width": 320,
+    "height": 800,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 39339
+  },
+  {
+    "file": "app-study-five-mobile-dark-fr.jpg",
+    "width": 305,
+    "height": 763,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 38828
+  },
+  {
+    "file": "app-study-mobile-dark-fr.jpg",
+    "width": 304,
+    "height": 1437,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 70678
+  }
+]

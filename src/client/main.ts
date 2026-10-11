@@ -17,6 +17,8 @@ import {
   button,
   el,
   field,
+  fieldErrors,
+  focusFailure,
   focusHeading,
   input,
   lockForm,
@@ -185,6 +187,7 @@ function showAuth(signUp = false): void {
     event.preventDefault();
     if (!current() || signOutPending || !form.reportValidity()) return;
     const unlock = lockForm(form);
+    let failed = false;
     status.replaceChildren(notice("loading"));
     void (async () => {
       if (signUp) {
@@ -205,6 +208,7 @@ function showAuth(signUp = false): void {
     })()
       .catch((error: unknown) => {
         if (!current()) return;
+        failed = true;
         status.replaceChildren(
           notice(
             error instanceof RequestError && error.status === 0
@@ -218,6 +222,7 @@ function showAuth(signUp = false): void {
       })
       .finally(() => {
         unlock();
+        if (failed) focusFailure(status, current);
       });
   });
   shell.main.replaceChildren(
@@ -269,11 +274,13 @@ function showProfile(): void {
   const save = text("button", "confirmProfile", "button primary");
   save.type = "submit";
   const status = el("div");
+  const timezoneField = field("timezone", timezone, "timezoneHint");
+  const timezoneErrors = fieldErrors(timezone, timezoneField);
   const form = el(
     "form",
     "settings-form",
     text("p", "profileCopy"),
-    field("timezone", timezone, "timezoneHint"),
+    timezoneField,
     list,
     save,
     status,
@@ -286,6 +293,8 @@ function showProfile(): void {
     if (!current() || signOutPending || !form.reportValidity()) return;
     profileVersion += 1;
     const unlock = lockForm(form);
+    let failed = false;
+    let failedControl: HTMLElement | undefined;
     status.replaceChildren(notice("saving"));
     void saveProfile({
       locale: getLocale(),
@@ -298,10 +307,22 @@ function showProfile(): void {
         await renderRoute(true);
       })
       .catch((error: unknown) => {
-        if (current()) status.replaceChildren(notice(errorKey(error), true));
+        if (!current()) return;
+        failed = true;
+        if (
+          error instanceof RequestError &&
+          error.status === 400 &&
+          error.code === "invalid_input" &&
+          error.field === "timezone"
+        ) {
+          timezoneErrors.show(errorKey(error));
+          status.replaceChildren();
+          failedControl = timezone;
+        } else status.replaceChildren(notice(errorKey(error), true));
       })
       .finally(() => {
         unlock();
+        if (failed) focusFailure(status, current, failedControl);
       });
   });
   shell.main.replaceChildren(
@@ -343,7 +364,7 @@ function createOrEdit(existing: LearningPlan | null, selectedStepId?: string): v
     () => {
       if (current()) markDirty();
     },
-    selectedStepId === undefined ? {} : { selectedStepId },
+    { ...(selectedStepId === undefined ? {} : { selectedStepId }), isCurrent: current },
   );
   focusHeading(shell.main);
   focusSelectedStep();
@@ -474,6 +495,7 @@ async function renderRoute(focus = false): Promise<void> {
               if (studyCurrent()) markDirty();
             },
             templates,
+            studyCurrent,
           );
           focusHeading(shell.main);
         },

@@ -51,6 +51,42 @@ export function field(
   }
   return wrapper;
 }
+export function fieldErrors(
+  control: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
+  wrapper: HTMLElement,
+) {
+  let current: { key: MessageKey; values: Record<string, string | number> } | null = null;
+  const error = el("div", "notice error");
+  error.id = `${control.id}-error`;
+  error.setAttribute("role", "alert");
+  const hint = control.getAttribute("aria-describedby");
+  const update = (): void => {
+    error.hidden = current === null;
+    error.textContent = current ? message(current.key, current.values) : "";
+    if (current) {
+      control.setAttribute("aria-invalid", "true");
+      control.setAttribute("aria-describedby", [hint, error.id].filter(Boolean).join(" "));
+    } else {
+      control.removeAttribute("aria-invalid");
+      if (hint) control.setAttribute("aria-describedby", hint);
+      else control.removeAttribute("aria-describedby");
+    }
+  };
+  const clear = (): void => {
+    current = null;
+    update();
+  };
+  bind(error, update);
+  wrapper.append(error);
+  control.addEventListener("input", clear);
+  return {
+    clear,
+    show(key: MessageKey, values: Record<string, string | number> = {}): void {
+      current = { key, values };
+      update();
+    },
+  };
+}
 export function input(type: string, name: string, value = ""): HTMLInputElement {
   const control = el("input");
   control.type = type;
@@ -110,6 +146,24 @@ export function lockForm(form: HTMLFormElement): () => void {
     for (const { control, disabled } of controls) control.disabled = disabled;
     form.removeAttribute("aria-busy");
   };
+}
+
+// Recovery runs after controls unlock and cannot move focus out of a newer view.
+export function focusFailure(
+  host: HTMLElement,
+  current: () => boolean,
+  control?: HTMLElement,
+): void {
+  if (!current() || !host.isConnected) return;
+  if (control?.isConnected) {
+    control.focus();
+    return;
+  }
+  const error = host.querySelector<HTMLElement>('[role="alert"]');
+  if (error) {
+    error.tabIndex = -1;
+    error.focus();
+  }
 }
 
 export function focusStatus(host: HTMLElement, key: MessageKey): void {

@@ -57,6 +57,8 @@ export function showCircles(
   const status = el("div", "circle-status");
   const body = el("div", "circle-body");
   const back = button("backLearning", () => navigate(onBack), "text-button");
+  const navigation = el("nav", "circle-navigation", back);
+  named(navigation, "circleTitle");
   let busy = false;
   let generation = 0;
   let pending: WriteOperation | null = null;
@@ -69,9 +71,18 @@ export function showCircles(
   let tokenNode: HTMLInputElement | null = null;
   let joinTokenNode: HTMLInputElement | null = null;
   const active = (): boolean => view.isConnected && isCurrent();
+  const syncNavigation = (): void => {
+    for (const control of navigation.querySelectorAll("button"))
+      control.disabled = busy || lockedControls !== null;
+  };
+  const setNavigation = (destination?: HTMLButtonElement): void => {
+    navigation.replaceChildren(back, ...(destination ? [destination] : []));
+    syncNavigation();
+  };
   const unlock = (): void => {
     for (const { control, disabled } of lockedControls ?? []) control.disabled = disabled;
     lockedControls = null;
+    syncNavigation();
   };
   const time = (value: string): HTMLElement => {
     const node = el("time");
@@ -92,7 +103,7 @@ export function showCircles(
     joinTokenNode = null;
   };
   function navigate(action: () => void): void {
-    if (busy || !canLeave()) return;
+    if (busy || lockedControls !== null || !canLeave()) return;
     forgetToken();
     pending = null;
     generation += 1;
@@ -112,6 +123,8 @@ export function showCircles(
       forgetToken();
       pending = null;
       setDirty(false);
+      unlock();
+      setNavigation();
       body.replaceChildren(
         text("h1", "circleTitle"),
         notice(error.status === 401 ? "signedOut" : "circleAccessLost", true),
@@ -129,7 +142,7 @@ export function showCircles(
   ): Promise<void> {
     if (busy) return;
     busy = true;
-    back.disabled = true;
+    syncNavigation();
     status.replaceChildren(notice("loadingCircles"));
     try {
       await action();
@@ -157,20 +170,20 @@ export function showCircles(
       }
     } finally {
       busy = false;
-      if (active()) back.disabled = false;
+      if (active()) syncNavigation();
     }
   }
   async function write(operation: WriteOperation): Promise<void> {
     if (busy) return;
     busy = true;
     pending = operation;
-    back.disabled = true;
     lockedControls ??= [
       ...body.querySelectorAll<
         HTMLInputElement | HTMLButtonElement | HTMLSelectElement | HTMLTextAreaElement
       >("input,button,select,textarea"),
     ].map((control) => ({ control, disabled: control.disabled }));
     for (const { control } of lockedControls) control.disabled = true;
+    syncNavigation();
     body.setAttribute("aria-busy", "true");
     status.replaceChildren(notice("saving"));
     let saved = false;
@@ -232,8 +245,8 @@ export function showCircles(
       busy = false;
       if (active()) {
         body.removeAttribute("aria-busy");
-        back.disabled = false;
         if (!uncertain && (!saved || completed)) unlock();
+        syncNavigation();
       }
     }
   }
@@ -246,27 +259,46 @@ export function showCircles(
     confirm: MessageKey,
     run: () => void,
     values: Record<string, string | number> = {},
+    context: HTMLElement[] = [],
   ): HTMLElement {
     const area = el("div", "circle-confirmation");
+    const contextual = (control: HTMLButtonElement): HTMLButtonElement => {
+      if (context.length) {
+        control.id = `circle-action-${crypto.randomUUID()}`;
+        control.setAttribute(
+          "aria-labelledby",
+          [control.id, ...context.map((node) => node.id)].join(" "),
+        );
+      }
+      return control;
+    };
     const trigger = button(
       action,
       () => {
-        const cancel = button(
-          "cancel",
-          () => {
-            area.replaceChildren(trigger);
-            trigger.focus();
-          },
-          "button subtle",
+        const cancel = contextual(
+          button(
+            "cancel",
+            () => {
+              bind(trigger, () => {
+                trigger.textContent = message(action);
+              });
+              area.replaceChildren(trigger);
+              trigger.focus();
+            },
+            "button subtle",
+          ),
         );
         const warning = text("p", explanation, "", values);
         warning.tabIndex = -1;
-        area.replaceChildren(warning, el("div", "form-actions", cancel, button(confirm, run)));
+        area.replaceChildren(
+          warning,
+          el("div", "form-actions", cancel, contextual(button(confirm, run))),
+        );
         warning.focus();
       },
       "button subtle",
     );
-    area.append(trigger);
+    area.append(contextual(trigger));
     return area;
   }
   function audience(detail: CircleDetail): HTMLElement {
@@ -310,6 +342,7 @@ export function showCircles(
     const result = await request<{ circles: CircleSummary[] }>("/api/circles");
     if (!active() || version !== generation) return;
     forgetToken();
+    setNavigation();
     const list = el("ul", "circle-list");
     for (const circle of result.circles)
       list.append(
@@ -408,10 +441,20 @@ export function showCircles(
     for (const item of detail.items) {
       const row = el("article", "circle-item");
       row.dataset.itemId = item.id;
+      const copy = el("p", "circle-message", item.text);
+      copy.id = `circle-item-${item.id}-message`;
+      const byline = el(
+        "p",
+        "circle-byline",
+        el("strong", "", item.authorName),
+        " · ",
+        time(item.createdAt),
+      );
+      byline.id = `circle-item-${item.id}-byline`;
       row.append(
         text("h3", item.kind === "commitment" ? "circleCommitment" : "circleCheckIn"),
-        el("p", "circle-byline", el("strong", "", item.authorName), " · ", time(item.createdAt)),
-        el("p", "circle-message", item.text),
+        byline,
+        copy,
       );
       if (item.encouragements.length) {
         const encouragements = el("ul", "circle-encouragements");
@@ -431,8 +474,13 @@ export function showCircles(
       }
       if (item.authorMemberId === self?.id)
         row.append(
-          confirmation("deleteSharedCopy", "deleteSharedCopyHelp", "confirmDeleteCopy", () =>
-            mutate(`/api/circles/${id}/items/${item.id}/delete`, reload),
+          confirmation(
+            "deleteSharedCopy",
+            "deleteSharedCopyHelp",
+            "confirmDeleteCopy",
+            () => mutate(`/api/circles/${id}/items/${item.id}/delete`, reload),
+            {},
+            [copy, byline],
           ),
         );
       else {
@@ -470,13 +518,15 @@ export function showCircles(
     const membership = el("details", "circle-management", text("summary", "circleMembership"));
     const memberList = el("ul", "circle-member-list");
     for (const member of detail.members) {
+      const name = el("strong", "", member.displayName);
+      name.id = `circle-member-${member.id}-name`;
       const row = el(
         "li",
         "",
         el(
           "div",
           "",
-          el("strong", "", member.displayName),
+          name,
           " · ",
           text("span", member.role === "owner" ? "circleOwner" : "circleMember", "hint"),
         ),
@@ -489,6 +539,7 @@ export function showCircles(
             "confirmRemoveMember",
             () => mutate(`/api/circles/${id}/members/${member.id}/remove`, reload),
             { name: member.displayName },
+            [name],
           ),
         );
       memberList.append(row);
@@ -505,8 +556,8 @@ export function showCircles(
     );
     sidebar.append(membership);
     if (detail.circle.role === "owner") sidebar.append(invitationPanel(detail));
+    setNavigation(button("circleList", () => navigate(() => void read(loadList)), "text-button"));
     body.replaceChildren(
-      button("circleList", () => navigate(() => void read(loadList)), "text-button"),
       el(
         "div",
         "page-heading circle-heading",
@@ -530,16 +581,24 @@ export function showCircles(
       if (!active() || !panel.isConnected || version !== generation) return;
       list.replaceChildren();
       for (const invite of result.invites) {
+        const expiry = el("p", "hint", text("span", "inviteExpires"), " ", time(invite.expiresAt));
+        expiry.id = `circle-invite-${invite.id}-expiry`;
         const row = el(
           "div",
           "circle-invite",
-          el("p", "hint", text("span", "inviteExpires"), " ", time(invite.expiresAt)),
-          confirmation("revokeInvite", "revokeInviteHelp", "confirmRevokeInvite", () =>
-            mutate(`/api/circles/${id}/invites/${invite.id}/revoke`, async () => {
-              forgetToken();
-              output.replaceChildren();
-              await reload();
-            }),
+          expiry,
+          confirmation(
+            "revokeInvite",
+            "revokeInviteHelp",
+            "confirmRevokeInvite",
+            () =>
+              mutate(`/api/circles/${id}/invites/${invite.id}/revoke`, async () => {
+                forgetToken();
+                output.replaceChildren();
+                await reload();
+              }),
+            {},
+            [expiry],
           ),
         );
         list.append(row);
@@ -691,12 +750,14 @@ export function showCircles(
         ),
       );
     sidebar.append(audience(detail), privacy());
-    body.replaceChildren(
+    setNavigation(
       button(
         "backCircle",
         () => navigate(() => void read(() => loadCircle(detail.circle.id))),
         "text-button",
       ),
+    );
+    body.replaceChildren(
       text("h1", "circleComposeTitle"),
       text("p", "circleComposeHelp", "subtitle"),
       el("div", "circle-columns circle-compose", form, sidebar),
@@ -715,7 +776,7 @@ export function showCircles(
     invalidate();
     focusHeading(view);
   }
-  view.append(back, status, body);
+  view.append(navigation, status, body);
   host.replaceChildren(view);
   body.append(text("h1", "circleTitle"), text("p", "loadingCircles", "loading-state"));
   // Shell navigation destroys this view. Clear any visible bearer value promptly.
