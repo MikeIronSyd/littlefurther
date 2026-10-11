@@ -4,6 +4,8 @@ Updated: 9 October 2026, Africa/Lagos. P04/P05 implements the [private journey](
 
 ## Goal
 
+The11October [whole-interface specialist review](reviews/2026-10-11-ui-specialist-review.md) applies the new UI resource sets alongside Impeccable and records R31/UR01–UR10. It identifies current field/focus/limit/target defects and distinct hierarchy/form/metadata proposals. These are review findings, not silently adopted requirements or completed fixes; subsequent implementation needs a selected contract and precode reference.
+
 The11October [control/readability increment](increments/control-readability.md) records R30 and CR01–CR05: persistent soft outlined controls, clear header disclosures and44px targets, readable metadata/editor actions, grouped Activity content and compact mobile welcome-first authentication. Existing behavior/copy/Amber/identity stay authoritative. [Verification](increments/control-readability-verification.md) separates the precode synthetic reference from actual checks, review, trackers and dual-private publication.
 
 The10October [three-option reference](increments/littlefurther-options.md) added B Stepped and C Solid beside unchanged A Original. The user then selected **A Original**. The subsequent [integration contract](increments/littlefurther-integration.md) records R28, the actual header/browser-title implementation, BI01–BI04 verification and delivery. The [comparison](designs/littlefurther/options.png) remains historical selection evidence.

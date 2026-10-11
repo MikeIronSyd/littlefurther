@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-11",
+  "timezone": "Africa/Lagos",
+  "revision": "c7ddff22a5756aaa2a979f7ca0b2a5fca19024a7",
+  "origin": "http://127.0.0.1:4319",
+  "synthetic": true,
+  "facts": [
+    {
+      "id": "UR03",
+      "method": "browserMCP",
+      "state": "French dark desktop Comeback conflict preview",
+      "viewport": 1280,
+      "checkboxLabel": {
+        "width": 621,
+        "height": 24
+      },
+      "nativeGlyph": {
+        "width": 22,
+        "height": 22
+      },
+      "limitation": "Project44px target comparison; not a blanket WCAG failure."
+    },
+    {
+      "id": "UR01",
+      "method": "browserMCP",
+      "state": "French invalid timezone rejected",
+      "active": "BODY",
+      "activeText": "BODY",
+      "alert": "Vérifiez les champs, les dates, les minutes entières et les liens http ou https.",
+      "busy": null,
+      "describedby": "field-c64381c3-e763-4a11-9fd6-2c96248a9fbb-hint",
+      "inputValue": "Not/A_Timezone",
+      "invalid": null
+    },
+    {
+      "id": "UR02",
+      "method": "browserMCP",
+      "state": "French50-step unsaved draft",
+      "stepGroups": 50,
+      "addEnabled": true,
+      "afterAdd": "Still50 groups and no announcement; no plan saved."
+    },
+    {
+      "id": "UR05",
+      "method": "browserMCP",
+      "state": "French dark320 learning",
+      "client": 305,
+      "scroll": 305,
+      "scrollY": 0,
+      "studyDocumentTop": 603.9375,
+      "studyHeight": 69.33333587646484,
+      "studyViewportTop": 603.9375,
+      "width": 320
+    },
+    {
+      "id": "UR07",
+      "method": "browserMCP",
+      "state": "French dark desktop circle",
+      "heading": {
+        "bottom": 278.6666717529297,
+        "height": 48,
+        "left": 268,
+        "right": 648.9270935058594,
+        "top": 230.6666717529297,
+        "width": 380.9270935058594,
+        "x": 268,
+        "y": 230.6666717529297
+      },
+      "nav": [
+        {
+          "rect": {
+            "bottom": 146.6666717529297,
+            "height": 44,
+            "left": 268,
+            "right": 429.6666717529297,
+            "top": 102.66667175292967,
+            "width": 161.6666717529297,
+            "x": 268,
+            "y": 102.66667175292967
+          },
+          "text": "Retour à mon parcours"
+        },
+        {
+          "rect": {
+            "bottom": 210.6666717529297,
+            "height": 44,
+            "left": 268,
+            "right": 385.4895858764648,
+            "top": 166.6666717529297,
+            "width": 117.48958587646484,
+            "x": 268,
+            "y": 166.6666717529297
+          },
+          "text": "Tous mes cercles"
+        }
+      ],
+      "scrollY": 0,
+      "width": 1280
+    }
+  ],
+  "limits": [
+    "Sampled browserMCP review, not exhaustive cross-product or accessibility conformance.",
+    "No learning plan, activity, completion, circle membership, invitation or shared copy saved.",
+    "Invalid timezone rejected; scratch drafts/previews only; synthetic language/theme tested and restored.",
+    "Browser interrupted mid-review; fresh IAB observation resumed after helper/server restart."
+  ]
+}

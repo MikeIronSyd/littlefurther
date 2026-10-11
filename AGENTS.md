@@ -26,6 +26,8 @@ The selected delivery is a local browser demo with the local server running when
 
 Automatically use Impeccable for all UI and UX planning, implementation, refinement, and review. Preserve project constraints and apply other relevant skills.
 
+Alongside it, use the installed `ui-ux-resources` companion at `C:/Users/USER/.agents/skills/ui-ux-resources/SKILL.md`: load only relevant UI Skills accessibility/metadata/motion checklists and evidence-qualified references through the ecommerce recommended index. Preserve the incumbent stack/Amber/A identity, research gate and verification workflow; do not import the catalog or baseline-ui as global defaults. The11October whole-interface specialist review in `docs/specs/capstone/reviews/2026-10-11-ui-specialist-review.md` records open findings and proposals, not implemented fixes or formal approval.
+
 ## Keep evidence and trackers current
 
 Maintain the whole activity history in both the Miva Google Sheet and Kaneo. Preserve stable A001-style activity IDs and record decisions, outcomes, output links, verification, limitations, and next actions. If a destination is unavailable, record the pending update and its reason.
