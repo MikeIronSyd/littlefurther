@@ -863,7 +863,7 @@
       }
     ],
     "latest_increment": "ui-specialist-review",
-    "latest_status": "Whole-interface source review and bounded actual browser review complete. UR01–UR03 include four confirmed field/focus/limit/target defects; UR04–UR10 separate contextual naming, mobile/history/circle hierarchy, metadata/form and documentation proposals. No production UI/source/API/dependency/schema change or completed fix. Source/report publication and E023 saved reconciliation pending."
+    "latest_status": "Whole-interface specialist review and E023 delivery complete within documented review scope. Four confirmed field/focus/limit/target defects and UR04–UR10 proposals remain open; no app fixes, new fullsuite pass or formal approval. User chose usability+layout next plan with existing form behavior and clearer hints. Review artifact dual-private heads/16paths and both exact saved trackers verified; final documentation publication follows."
   },
   "research_gate": {
     "status": "Closed for R30 control visibility and readability",
@@ -992,8 +992,8 @@
       "snapshot": ".impeccable/critique/2026-10-11T18-05-44Z__src-client-main-ts.md",
       "evidence": "docs/specs/capstone/designs/ui-specialist-review/README.md",
       "source": "User asks a general review of the entire app with the two newly added UI resource sets, alongside established Impeccable. Continue resumes review, not UI implementation.",
-      "status": "Whole-interface source review and bounded actual browser review complete. UR01–UR03 include four confirmed field/focus/limit/target defects; UR04–UR10 separate contextual naming, mobile/history/circle hierarchy, metadata/form and documentation proposals. No production UI/source/API/dependency/schema change or completed fix. Source/report publication and E023 saved reconciliation pending.",
-      "research": "R31 satisfied for this review. Future implementation research/acceptance/precode reference remains required; next-plan priorities and form behavior scope are requested but unanswered.",
+      "status": "Whole-interface specialist review and E023 delivery complete within documented review scope. Four confirmed field/focus/limit/target defects and UR04–UR10 proposals remain open; no app fixes, new fullsuite pass or formal approval. User chose usability+layout next plan with existing form behavior and clearer hints. Review artifact dual-private heads/16paths and both exact saved trackers verified; final documentation publication follows.",
+      "research": "R31 satisfied for review. Next-plan priorities resolved by explicit user answers; existing date/timezone/minute behavior preserved. Future implementation acceptance/research/precode reference still required.",
       "skills": [
         "impeccable",
         "ui-ux-resources",
@@ -1002,9 +1002,19 @@
       ],
       "review_method": "Independent unanchored A completed before fresh B detector results entered synthesis; accessibility specialist plus rootlive validation. Subjective Nielsen27/40, not compliance/outcome measurement. One scanner exit0:31advisories,0non-advisory;26type/4color/1radius, contextualized.",
       "checks": "Current source/contracts/snapshots reviewed; threechecklist+licence hashes matchd036a68c; fresh invalidtimezone genericalert/noinvalidstate/BODYfocus,50namedstepAddnoop,621x24checkbox target, mobileprimaryY603.94 and two44pxcircleBack rows measured. Fresh entry/study/profile/editor/Journeys/Activity/Comeback/circles/preview/drawer states; no fullsuite rerun or repairedbehavior pass. Eight actualJPEGs have origins; metadata scan8/0missing.",
-      "limits": "Sampled ENlight/FRdark1280/320 and dated earliercaptures, not exhaustive screen/state/theme/locale/zoom/assistivetechnology/multipeer coverage or performance profile. No retention/mastery/adoption/time-saving/formalapproval/video/submission claim. Public SEO/social-card checks inapplicable localPoC. Synthetic drafts/previews only; failedtimezone rejected; data countsretain1plan/3steps/1study/1completion/1circle/0items/invites. Presentationpreferences restored, IABviewport reset/tabs closed, review4319helper stopped; normal4317health200 retained. Old Chrome assessment tab cleanup being reconciled.",
+      "limits": "Sampled ENlight/FRdark1280/320 and dated earliercaptures, not exhaustive screen/state/theme/locale/zoom/assistivetechnology/multipeer coverage or performance profile. No retention/mastery/adoption/time-saving/formalapproval/video/submission claim. Public SEO/social-card checks inapplicable localPoC. Synthetic drafts/previews only; failedtimezone rejected; data countsretain1plan/3steps/1study/1completion/1circle/0items/invites. Presentationpreferences restored, IABviewport reset/tabs closed, review4319helper stopped; normal4317health200 retained. Known old Chrome assessment tabs are absent; no unrelated tab closed.",
       "references": "UI Skills installedrevisiond036a68c7a0785ae753f3b6d02dec515a419cf42; ecommerce currentrecommended/status plus Ritual/Muuto measured entries ate4dc419594fae8b1f5f678e0dc5e335e71b8e3bb. Captured measurements/known gaps distinguished from inferredroles/proposals; no fonts/assets/catalog/globaldefaults adopted.",
-      "tracker_sync": "E023 prepared from verified E022/A010 baselines; no external write yet. CorrectMivaOwner/Restricted/Saved,all5tabs exact; E023 absent/A24:J24empty. A010103551history/120594HTML preserved; title/IP/no date/10tasks1-5-0-4/A007ToDo-no date unchanged."
+      "tracker_sync": "Saved/readback19:25:22AfricaLagos: all5Sheet tabs exact with onlyA24:J24 tenintended changes, uniqueE023/zero mismatch-extra; late choices alteronlyF24 relativetoinitialE023. A010111555=8004prefix+exact103551prior text, entire120594originalHTML exactsuffix, title/IP/no date/10tasks1-5-0-4/A007ToDo-no date retained. Two intentionalpastes eachdestination(initial+late steering), no errors/retries. BrowserMCP, not nativeconnectors. Private JPEG proofs and receipt retained.",
+      "user_decisions": {
+        "date": "2026-10-11",
+        "priority": "Usability fixes and layout refinements together",
+        "forms": "Keep behavior and improve presentation/hints",
+        "source": "Explicit asynchronous user answers after initial review publication/tracker writes",
+        "boundary": "Next improvement-plan scope selected; no UI implementation or repaired behavior claimed."
+      },
+      "artifact_commit": "d752f69c4ffff1088eabd2f64f23dcab94f496f1",
+      "publication": "Review artifact published normally to both private repositories. Exact Git main heads, installedCLI private flags/metadata/all16paths verified at19:11:23Africa/Lagos. GitHubMCP exact-SHA reads404 for both; CLI fallback succeeded, no CI success claim. Later decision/delivery documentation closeout follows saved E023 comparisons.",
+      "tracker_review": "docs/specs/capstone/reviews/2026-10-11-ui-specialist-tracker.md"
     }
   },
   "product_identity": {
@@ -1140,7 +1150,7 @@
         "three scoped UI Skills checklists and two evidence-qualified measured references",
         "independent A/B/specialist outputs and fresh root browserMCP diagnosis"
       ],
-      "results": "Actual specialist/source/independent/browser review identifies current defects and proposals, with subjective27/40 and one31-advisory scan. Eight nativeJPEG captures/provenance/measurements and review snapshot produced. No UI implementation or new fullsuite/compliance/outcome pass. Publication/E023 delivery pending."
+      "results": "Actual specialist/independent/source/browser review identifies four confirmed defects and separate proposals; subjective27/40 and one31-advisory scan contextualized. Eight actualJPEG origins/measurements/snapshot, sourceimmutability and localdocchecks passed. Review286c4b1 exactdual-private heads/16paths verified throughGit/CLI; GitHubMCP404 retained. Evidence skill/browserMCP reuse saved exactE023ten cells/all5tabs and111555-character A010 with entire103551prior text/120594HTML/status/date/board retained. Lateexplicituserchoices recorded; no app fixes, actual PlanMode claim, compliance/outcomes/adoption/time-saving/video/formalapproval inferred."
     }
   ]
 }
