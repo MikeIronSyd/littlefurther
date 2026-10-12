@@ -1,5 +1,23 @@
 # Amber learning-workspace design record
 
+## Overall design approval — 12 October 2026
+
+### Goal
+
+**Approved by Michael.** After clarification that overall design approval meant his acceptance of how the current app looks and feels, the user explicitly stated: **“okay, it's approved now”**. This is decision **D016**, recorded on 12 October 2026, Africa/Lagos.
+
+### Context Pointers
+
+The approved baseline is `a768c98e3d0cd9db13670a57ba625e6c435f0aa6`: LittleFurther's current implemented overall visual design, including Amber, A Original joined LF branding, light/dark themes, responsive layouts and the latest [HB01–HB06 control treatment](increments/hover-borders.md). This supersedes the earlier pending overall human design approval for this baseline. Original dated records and reference-image sidecars retain their historical states.
+
+### Constraints
+
+This records explicit human visual approval. It does not certify educational outcomes, production readiness, exhaustive accessibility or language validation, complete the older Impeccable packet/tool workflow, approve unbuilt future changes or establish a finished demo/submission. No application code or behavior changes are required. The decision follows actual user authorization, not an inference from implementation requests or passing tests.
+
+### Done When
+
+The current specification/design/context identify this approval; D016 is saved and read back in the existing Miva Sheet Decisions tab and Kaneo A010 with prior history preserved. Documentation-only checks and authorized dual-private publication are verified separately. No product test rerun is needed for recording this decision. Saved browser MCP readbacks passed: D016 occurs once at Decisions A17:F17 with exactly six intended cell changes across all five tabs and zero mismatches. Kaneo A010 equals the intended 131,175 characters, retaining all 130,197 prior text characters and the exact 153,367-character prior HTML suffix; title, In Progress status and No date remain unchanged. One content write per destination, with no normalization or corrective repaste. The initial indexed Sheet paste reported no input sent; the focused-range paste then saved successfully. Private exports and proof remain local. Independent read-only review confirmed the approval scope and historical boundaries; no new app verification claim. Native browser proof capture timed out on the initial screenshot and one documented recovery attempt; no new approval screenshot is claimed. Saved full-value/text/HTML comparisons remain verified.
+
 ## LittleFurther A integration — 10 October 2026
 
 The user selected **A (Original)** after the three-option comparison: “'A' is okay”. The [integration increment](increments/littlefurther-integration.md) applies its original joined-LF geometry and the exact LittleFurther name to the persistent app header and browser title, unchanged in English/French. The mark renders at 32px desktop/29px mobile, using ink in light mode and Amber in dark mode; the system wordmark at weight 650 retains theme ink and permits a break only between Little and Further. The identity remains outside collapsible navigation, with the existing authentication, utilities and panel icons preserved.

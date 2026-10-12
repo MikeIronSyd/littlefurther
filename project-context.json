@@ -863,7 +863,7 @@
       }
     ],
     "latest_increment": "hover-borders",
-    "latest_status": "HB01–HB06 implemented and verified within bounded scope: R33/four precode references, CSS-only increment, full required56domain/server+90browser/process/static/build/audit pass and no-blocker independent review; exact E025 saved in both trackers and dual-private implementation publication verified. Documentation-only closeout follows; formal approval separate."
+    "latest_status": "HB01–HB06 implemented and verified within bounded scope: R33/four precode references, CSS-only increment, full required56domain/server+90browser/process/static/build/audit pass and no-blocker independent review; exact E025 saved in both trackers and dual-private implementation publication verified. Documentation-only closeout follows; Current overall visual design approved by Michael on12October2026 underD016; demo/outcome evidence remains separate."
   },
   "research_gate": {
     "status": "Closed for R30 control visibility and readability",
@@ -1063,7 +1063,7 @@
       "tracker_review": "docs/specs/capstone/reviews/2026-10-12-hover-borders-tracker.md",
       "artifact_commit": "4e9cd327693626fbaf6a3fd741fd64ab36ed6211",
       "publication": "Normal git push origin main exit0 to both private repositories. Exact Git main heads and installed authenticated GitHubCLI private flags/commitmetadata/all30paths matched12October14:11:24Africa/Lagos. Current GitHubMCP exact-SHA bothrepos/status/workflow reads returned404; CLI fallback verified delivery, no providerMCP/hostedCIpass inferred. Separate documentation-only closeout follows saved tracker comparisons.",
-      "next": "Refresh/review the delivered controls and record formal design decisions separately. Continue capstone demo/criteria evidence preparation when requested; no automatic outreach/submission."
+      "next": "Current overall design approved by Michael on12October2026 underD016. Prepare timed3–5minute demo/criteria evidence next when requested; no automatic outreach/submission."
     }
   },
   "product_identity": {
@@ -1090,7 +1090,7 @@
       ".impeccable/mocks/amber/mobile-fr-closed.png",
       ".impeccable/mocks/amber/mobile-fr-open.png"
     ],
-    "approval_boundary": "The original direction/reference is selected. Detailed state images carry approved:false; no further direction vote required and no product behavior approval inferred.",
+    "approval_boundary": "Amber direction selected historically; Michael explicitly approved the current overall implemented visual design on12October2026 at10d8ca0. D016/design.md records this decision; historical detailed-image sidecars remain unchanged.",
     "shell": "Stable top-left A Original/LittleFurther outside sidebar; complete EN/FR name and title, native decorative32/29mark in ink/light and Amber/dark, existing system650 with Little/Further optional wrap. Existing signed-in navigation/account/panel icons and signed-out language/moon-sun utilities retained.",
     "review": "Fresh independent paired desktop/light-dark/French-mobile review found mobile priority ordering and documentation issues, then marked both scored corrections resolved. Its ship disposition covers those fixes only. Semantic/Segoe UI adaptation retained; formal Impeccable finish refused because earlier phases remain open, and no formal fidelity completion is claimed.",
     "behavior_status": "Private-journey shell checks passed, including final6 affected browser cases after mobile ordering/French accessible-label corrections. Formal Impeccable pipeline remains open; manual visual verdict is separate."
@@ -1234,5 +1234,18 @@
       ],
       "results": "Actual conversational Plan Mode planning/approvedscope/R33/precode/CSS/tests/review/evidence skill reuse. Final56domain/server+90browser/process/static/build/audit passed; no-blocker source/test/8actualpixel review. Touchinput/harness cleanup corrected without app change. Implementation0c49b93 exactdual-private heads/privateflags/metadata/all30paths verified throughGit/CLI; currentGitHubMCP404explicit. BrowserMCP E025savedexact10cells/all5tabs and130197-characterA010 retaining all120923prior text/141732priorHTML, metadata/board/A007. Root resumed saved comparisons with zero duplicate writes. No GUI mode/outcome/approval/video claim."
     }
-  ]
+  ],
+  "overall_design_approval": {
+    "status": "Approved",
+    "date": "2026-10-12",
+    "timezone": "Africa/Lagos",
+    "approved_by": "Michael",
+    "user_quote": "okay, it's approved now",
+    "baseline": "a768c98e3d0cd9db13670a57ba625e6c435f0aa6",
+    "decision_id": "D016",
+    "record": "docs/specs/capstone/design.md#overall-design-approval--12-october-2026",
+    "scope": "Current implemented overall LittleFurther visual design, including Amber, A Original LF identity, light/dark themes, responsive layouts and latest HB01-HB06 controls.",
+    "boundary": "Human visual approval; historical mock sidecars/tool-workflow states retained. Does not establish educational outcomes, production readiness, exhaustive accessibility/language conformance, completed older Impeccable workflow, future design approval or demo/submission.",
+    "tracker_sync": "Verified browser MCP saved readback: D016 unique at Decisions A17:F17, exactly6intended values/all5tabs/0mismatches. A010 exactly131175characters (978new+130197prior), exact153367priorHTML suffix and title/In Progress/No date preserved. One content write per destination; no corrective repaste."
+  }
 }
