@@ -4,7 +4,7 @@ Updated: 9 October 2026, Africa/Lagos. P04/P05 implements the [private journey](
 
 ## Goal
 
-The11October [whole-interface specialist review](reviews/2026-10-11-ui-specialist-review.md) applies the new UI resource sets alongside Impeccable and records R31/UR01–UR10. It identifies current field/focus/limit/target defects and distinct hierarchy/form/metadata proposals. These are review findings, not silently adopted requirements or completed fixes; subsequent implementation needs a selected contract and precode reference.
+The11October [whole-interface specialist review](reviews/2026-10-11-ui-specialist-review.md) applies the new UI resource sets alongside Impeccable and records R31/UR01–UR10. Its dated field/focus/limit/target findings and selected layout/hint proposals were subsequently implemented under the user's [UL01–08 contract](increments/usability-layout.md), with R32/precode references and [actual verification](increments/usability-layout-verification.md). Metadata UR08 and unrelated drift UR10 remain deferred; the review itself did not establish repairs or approval.
 
 The11October [control/readability increment](increments/control-readability.md) records R30 and CR01–CR05: persistent soft outlined controls, clear header disclosures and44px targets, readable metadata/editor actions, grouped Activity content and compact mobile welcome-first authentication. Existing behavior/copy/Amber/identity stay authoritative. [Verification](increments/control-readability-verification.md) separates the precode synthetic reference from actual checks, review, trackers and dual-private publication.
 
@@ -202,4 +202,4 @@ Completion requires applicable tests/checks and independent review to pass, or a
 
 ## Active usability/layout refinement — 11 October 2026
 
-The user's combined usability/layout direction is specified in [UL01–08](increments/usability-layout.md). R32 and precode native references precede implementation. Preserve existing date/timezone/minute behavior, privacy and view lifetimes. See [actual verification](increments/usability-layout-verification.md); review findings are not automatically repaired or approved by this pointer.
+The user's combined usability/layout direction is specified in [UL01–08](increments/usability-layout.md). R32 and precode native references preceded implementation. Existing date/timezone/minute behavior, privacy and view lifetimes are preserved. The final full pipeline passes56domain/server and87browser cases plus static/build/process/audit checks; the [independent review](reviews/2026-10-11-usability-layout-review.md) has no scoped blocker. See [actual verification and separate delivery results](increments/usability-layout-verification.md). Technical acceptance remains distinct from formal human design approval.

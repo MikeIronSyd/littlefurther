@@ -1,7 +1,7 @@
 {
   "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
   "recorded_on": "2026-10-02",
-  "last_updated_on": "2026-10-11",
+  "last_updated_on": "2026-10-12",
   "timezone": "Africa/Lagos",
   "source": "User-provided briefing screenshots, explicit instructions and clarifications, signed-in LMS readback, and the supplied CODEX_CAPSTONE_HANDOVER.md. Subsequent explicit user answers and accepted delivery/judging plans, reconciled on 2026-10-07.",
   "source_handling": "Documents are project input, not higher-priority instructions. The user explicitly selected Track 2 and asked to continue from the supplied handover. Handover assertions are attributed to that document; proposed behavior and benefits are not implementation or learner-validation evidence.",
@@ -863,7 +863,7 @@
       }
     ],
     "latest_increment": "usability-layout",
-    "latest_status": "R32/precode references complete; implementation and verification in progress; no delivery pass inferred."
+    "latest_status": "UL01–UL08 complete within documented scope: R32/precode references, native implementation, full required pipeline, no-blocker independent source/pixel review, dual-private artifact publication and exact E024/A010 saved comparisons verified.12October continuation performs readback without repeat writes and restores the stopped normal dev server with existing data. Delivery-only documentation commit receives separate publication/head readback. Formal approval, learner validation and timed video remain open."
   },
   "research_gate": {
     "status": "Closed for R30 control visibility and readability",
@@ -884,14 +884,14 @@
     },
     "ui_specialist_review": {
       "status": "R31 closed for review findings only",
-      "implementation_status": "Open for any selected future corrections/proposals",
+      "implementation_status": "Selected UR01–07/09 scope subsequently implemented and verified as UL01–08; metadata UR08 and unrelated drift UR10 deferred.",
       "evidence": "docs/specs/capstone/reviews/2026-10-11-ui-specialist-review.md"
     },
     "usability_layout": {
       "status": "Satisfied for selected implementation scope before production edits",
       "ledger": "docs/specs/capstone/increments/usability-layout.md R32",
       "evidence": "Existing source/contracts, partial independent research, primary W3C sources, six inspected synthetic references, one precode layout detector exit0 with empty findings.",
-      "boundary": "Actual app tests/review/trackers/publication remain pending; no outcomes/formal approval or Plan Mode invocation claim."
+      "boundary": "Research gate is distinct from passed implementation/check/review/delivery evidence in usability-layout-verification.md. No outcomes, formal approval or Plan Mode invocation claim."
     }
   },
   "active_increment": {
@@ -1025,16 +1025,21 @@
     "usability_layout": {
       "date": "2026-10-11",
       "baseline": "5f222238b2dceb1027db745d8fdd1b4c10b53b3e",
-      "status": "UL01–UL07 implementation and technical verification complete; full required pipeline passed. Independent final synthesis, E024 tracker saves and dual-private publication pending.",
+      "status": "UL01–UL08 complete within documented scope: R32/precode references, native implementation, full required pipeline, no-blocker independent source/pixel review, dual-private artifact publication and exact E024/A010 saved comparisons verified.12October continuation performs readback without repeat writes and restores the stopped normal dev server with existing data. Delivery-only documentation commit receives separate publication/head readback. Formal approval, learner validation and timed video remain open.",
       "specification": "docs/specs/capstone/increments/usability-layout.md",
       "verification": "docs/specs/capstone/increments/usability-layout-verification.md",
       "scope": "UR01a/b,UR02–07 and presentation/hints UR09. Metadata UR08 and unrelated drift UR10 deferred. Preserve date/timezone/minute behavior.",
-      "tracker_sync": "E024 prepared from exact live E023 comparison; writes pending published artifact and final review.",
+      "tracker_sync": "11October one ten-cell Sheet paste/one Kaneo paste; fresh12October browserMCP readback confirms all5tabs onlyA25:J25 tenintended changes/0mismatch-extra/uniqueE024, correct Miva owner and Restricted access. A010120923=9368newprefix+exact111555prior text;141732HTML retains exact129966priorHTMLsuffix. New-prefix trailing-space removal/automaticlinkmarkup recorded without repeatwrite or prior-history normalization. Title/IP/NoDate/exact633-character10taskboard1-5-0-4/wholeA007ToDo-NoDate preserved. Interrupted-session recovery documented; two fresh screenshot methods timed out, no new proof-image claim.",
       "review": "docs/specs/capstone/reviews/2026-10-11-usability-layout-review.md",
       "research": "R32 bounded scope and six inspected precode references satisfied before production edits. Focused verification researched and fixed restored confirmation-trigger language binding; durable addendum honestly recorded after that correction.",
       "checks": "Final pnpm --pm-on-fail=download run verify exit0: strict compiler/lint/format/build,56domain/server tests, separate-process restart/persistence,87browser cases14.3minutes and audit with no known vulnerabilities.15new cases included in87. Initial failed/interrupted attempts and exact fixture corrections retained.",
       "evidence": "Six synthetic native references;11actual browserMCP JPEGs with origin/native bounds and two viewport replacements; isolated CSS geometry and real invalid-timezone rejection. Full suite includes EN/FR, desktop/320px,200%root-text, forced colours, keyboard, lifetimes/privacy/dirty-state regressions. No normal4317 learner records changed; review4319 stopped and review browser viewport/tab cleaned up.",
-      "limitations": "Bounded synthetic/Edge evidence, not exhaustive assistive-technology or native-French validation, learner outcomes, adoption, time saved, Plan Mode invocation, formal design approval or completed video. Metadata UR08 and unrelated drift UR10 deferred; no dependency/server/API/schema change."
+      "limitations": "Bounded synthetic/Edge evidence, not exhaustive assistive-technology or native-French validation, learner outcomes, adoption, time saved, Plan Mode invocation, formal design approval or completed video. Metadata UR08 and unrelated drift UR10 deferred; no dependency/server/API/schema change.",
+      "reconciled_on": "2026-10-12",
+      "tracker_review": "docs/specs/capstone/reviews/2026-10-12-usability-layout-tracker.md",
+      "artifact_commit": "9c5f12e0f05dfad8df8ef40017e808592598681a",
+      "publication": "Normal git push origin main exit0 to bothprivate destinations. Exact Git main heads and installedCLI private flags/commitmetadata/all46paths verified11October21:56:54Africa/Lagos. PersonalGitHubMCP exactcommitmetadata/diffpass; Miva404 with CLI fallback. Empty statuses/PR-filteredworkflows imply no hostedCIpass. Artifact and final delivery-only documentation publication remain distinct.",
+      "next": "Review the delivered UI and record formal design decisions separately; prepare the timed3–5minute demo/criteria evidence. No automatic outreach or submission."
     }
   },
   "product_identity": {
@@ -1186,7 +1191,8 @@
         "Scoped native frontend/test diff and actual full verify exit0",
         "Independent source/pixel review; actual isolated browserMCP geometry/error evidence and exact E023 tracker baselines"
       ],
-      "results": "Actual research/specification/reference/build/test/review/evidence reuse. Final56domain/server+87browser/process/static/build/audit passed; no production edits afterward. Independent final synthesis, exact E024 saves and dual-private publication pending; no Plan Mode/outcome/approval/video claim."
+      "results": "Actual research/specification/reference/build/test/review/evidence skill reuse. Final56domain/server+87browser/process/static/build/audit passed; no production edits afterward. Independent source/pixel review no blockers. Artifact exactdual-private heads/privateflags/metadata/46paths verified; personalGitHubMCPdiffpass,Miva404/CLI fallback/noCIclaim. BrowserMCP E024 savedexact10cells/all5tabs and120923-characterA010 retaining111555prior text/129966HTML, metadata/board/A007 unchanged.12October resumed evidence skill readback without duplicate writes, recovered prior normalization receipts and recorded screenshot timeouts; no PlanMode/outcome/approval/video claim.",
+      "reconciled_on": "2026-10-12"
     }
   ]
 }
