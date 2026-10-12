@@ -4,6 +4,8 @@ Updated: 9 October 2026, Africa/Lagos. P04/P05 implements the [private journey](
 
 ## Goal
 
+The12October [hover-border contract](increments/hover-borders.md) implements the user's explicit all-secondary refinement. It supersedes CR01/CR02 resting outlines for secondary/header/disclosure controls, retains primary/path/field exceptions and makes the sidebar toggle borderless. R33/four-reference inspection preceded CSS edits. The final required pipeline passes56domain/server and90browser cases plus static/build/process/audit checks; [actual review and delivery results](increments/hover-borders-verification.md) remain distinct from formal design approval.
+
 The11October [whole-interface specialist review](reviews/2026-10-11-ui-specialist-review.md) applies the new UI resource sets alongside Impeccable and records R31/UR01–UR10. Its dated field/focus/limit/target findings and selected layout/hint proposals were subsequently implemented under the user's [UL01–08 contract](increments/usability-layout.md), with R32/precode references and [actual verification](increments/usability-layout-verification.md). Metadata UR08 and unrelated drift UR10 remain deferred; the review itself did not establish repairs or approval.
 
 The11October [control/readability increment](increments/control-readability.md) records R30 and CR01–CR05: persistent soft outlined controls, clear header disclosures and44px targets, readable metadata/editor actions, grouped Activity content and compact mobile welcome-first authentication. Existing behavior/copy/Amber/identity stay authoritative. [Verification](increments/control-readability-verification.md) separates the precode synthetic reference from actual checks, review, trackers and dual-private publication.

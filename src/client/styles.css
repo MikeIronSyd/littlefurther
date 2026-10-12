@@ -5,6 +5,9 @@
   --surface: #ffffff;
   --sidebar: #f6f8fa;
   --ink: #14263d;
+  --brand-accent: var(--ink);
+  --secondary-border: transparent;
+  --interaction-border: var(--brand-accent);
   --heading: #111820;
   --muted: #4e6178;
   --line: #d9e1e9;
@@ -29,6 +32,7 @@
   --surface: #15232e;
   --sidebar: #12212c;
   --ink: #e2eaf4;
+  --brand-accent: var(--amber);
   --heading: #f5f7fa;
   --muted: #b4c5d8;
   --line: #344859;
@@ -217,11 +221,8 @@ p {
   display: block;
   width: 32px;
   height: 32px;
-  color: var(--ink);
+  color: var(--brand-accent);
   flex: 0 0 auto;
-}
-:root[data-theme="dark"] .brand-mark {
-  color: var(--amber);
 }
 .nav-trigger {
   display: grid;
@@ -231,17 +232,16 @@ p {
   flex: 0 0 44px;
   margin: 14px;
   padding: 6px;
-  border: 1px solid var(--control-line);
+  border: 0;
   border-radius: 6px;
-  background: var(--sidebar);
+  background: transparent;
 }
 .nav-trigger .icon {
   width: 29px;
   height: 29px;
 }
-.nav-trigger:hover,
-.nav-trigger:focus-visible {
-  border-color: var(--ink);
+.nav-trigger:active:not(:disabled) {
+  background: var(--sidebar);
 }
 .utilities {
   display: flex;
@@ -252,7 +252,7 @@ p {
   min-width: 0;
 }
 .language-select {
-  border: 1px solid var(--control-line);
+  border: 1px solid var(--secondary-border);
   border-radius: 6px;
   background: var(--sidebar);
   width: auto;
@@ -260,10 +260,6 @@ p {
   flex: 0 0 auto;
   padding: 10px 12px;
   min-height: 44px;
-}
-.language-select:hover,
-.language-select:focus-visible {
-  border-color: var(--ink);
 }
 .theme-control {
   position: relative;
@@ -275,13 +271,9 @@ p {
   width: 44px;
   min-height: 44px;
   padding: 8px;
-  border: 1px solid var(--control-line);
+  border: 1px solid var(--secondary-border);
   border-radius: 6px;
   background: var(--sidebar);
-}
-.theme-button:hover,
-.theme-button:focus-visible {
-  border-color: var(--ink);
 }
 .theme-tooltip {
   position: absolute;
@@ -309,14 +301,10 @@ p {
   min-width: 44px;
   min-height: 44px;
   padding: 4px 8px;
-  border: 1px solid var(--control-line);
+  border: 1px solid var(--secondary-border);
   border-radius: 6px;
   background: var(--sidebar);
   list-style: none;
-}
-.account-summary:hover,
-.account-summary:focus-visible {
-  border-color: var(--ink);
 }
 .account-chevron {
   width: 18px;
@@ -578,7 +566,7 @@ p {
   align-items: center;
 }
 .button {
-  border: 1px solid var(--control-line);
+  border: 1px solid var(--secondary-border);
   background: var(--sidebar);
   color: var(--ink);
   border-radius: 6px;
@@ -586,12 +574,6 @@ p {
   min-height: 44px;
   font-weight: 600;
   text-align: center;
-}
-.button:hover:not(:disabled) {
-  border-color: var(--ink);
-}
-.button:focus-visible {
-  border-color: var(--ink);
 }
 .button.primary {
   background: var(--amber);
@@ -1346,13 +1328,36 @@ input[type="checkbox"] {
   font-weight: 650;
   min-height: 44px;
   padding: 10px 12px;
-  border: 1px solid var(--control-line);
+  border: 1px solid var(--secondary-border);
   border-radius: 6px;
   background: var(--sidebar);
 }
-.circle-management summary:hover,
-.circle-management summary:focus-visible {
-  border-color: var(--ink);
+.button:not(.primary),
+.language-select,
+.theme-button,
+.account-summary,
+.circle-management summary {
+  transition: border-color 150ms ease-out;
+}
+.button:not(.primary):is(:focus-visible, :active):not(:disabled),
+.language-select:is(:focus-visible, :active):not(:disabled),
+.theme-button:is(:focus-visible, :active):not(:disabled),
+.account-summary:is(:focus-visible, :active),
+.circle-management summary:is(:focus-visible, :active) {
+  border-color: var(--interaction-border);
+  transition: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .button:not(.primary):hover:not(:disabled),
+  .language-select:hover:not(:disabled),
+  .theme-button:hover:not(:disabled),
+  .account-summary:hover,
+  .circle-management summary:hover {
+    border-color: var(--interaction-border);
+  }
+  .nav-trigger:hover:not(:disabled) {
+    background: var(--sidebar);
+  }
 }
 .circle-management > .hint {
   margin: 12px 0 18px;
@@ -1855,6 +1860,13 @@ input[type="checkbox"] {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .button:not(.primary),
+  .language-select,
+  .theme-button,
+  .account-summary,
+  .circle-management summary {
+    transition: none;
+  }
   *,
   *::before,
   *::after {
@@ -1864,6 +1876,13 @@ input[type="checkbox"] {
   }
 }
 @media (forced-colors: active) {
+  :root {
+    --secondary-border: ButtonText;
+    --interaction-border: ButtonText;
+  }
+  .nav-trigger:focus-visible {
+    outline-color: Highlight;
+  }
   .button,
   .nav-link[aria-current="page"],
   .next-band,
@@ -1872,7 +1891,6 @@ input[type="checkbox"] {
   .progress-dot,
   .rhythm-dot,
   .theme-button,
-  .nav-trigger,
   .language-select,
   .account-summary,
   .path-action,

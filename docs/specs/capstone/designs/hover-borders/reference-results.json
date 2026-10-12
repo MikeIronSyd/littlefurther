@@ -1,0 +1,1654 @@
+{
+  "synthetic": true,
+  "recordedAt": "2026-10-12T12:36:09.683Z",
+  "specimens": [
+    {
+      "name": "desktop-light-en",
+      "width": 1280,
+      "height": 900,
+      "locale": "en",
+      "theme": "light",
+      "nativeImage": {
+        "width": 1280,
+        "height": 900
+      },
+      "imageOrigin": "Synthetic: native installed Edge rendering of editable reference.html; no app server or learner data. desktop-light-en; viewport 1280x900; deviceScaleFactor 1. Illustrative state classes; no formal approval.",
+      "geometry": {
+        "client": 1280,
+        "scroll": 1280,
+        "fullHeight": 900,
+        "brandColour": "rgb(20, 38, 61)",
+        "header": [
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 14,
+              "y": 14,
+              "width": 44,
+              "height": 44,
+              "top": 14,
+              "right": 58,
+              "bottom": 58,
+              "left": 14
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Language",
+            "rect": {
+              "x": 945.171875,
+              "y": 13.5,
+              "width": 97,
+              "height": 45,
+              "top": 13.5,
+              "right": 1042.171875,
+              "bottom": 58.5,
+              "left": 945.171875
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Switch to dark mode",
+            "rect": {
+              "x": 1062.171875,
+              "y": 14,
+              "width": 44,
+              "height": 44,
+              "top": 14,
+              "right": 1106.171875,
+              "bottom": 58,
+              "left": 1062.171875
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Account",
+            "rect": {
+              "x": 1126.171875,
+              "y": 13,
+              "width": 129.828125,
+              "height": 46,
+              "top": 13,
+              "right": 1256,
+              "bottom": 59,
+              "left": 1126.171875
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          }
+        ],
+        "stateSamples": [
+          {
+            "text": "Open study circles",
+            "rect": {
+              "x": 100,
+              "y": 260.59375,
+              "width": 270,
+              "height": 46,
+              "top": 260.59375,
+              "right": 370,
+              "bottom": 306.59375,
+              "left": 100
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 100,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 144,
+              "bottom": 366.59375,
+              "left": 100
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Switch to dark mode",
+            "rect": {
+              "x": 156,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 200,
+              "bottom": 366.59375,
+              "left": 156
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Open study circles",
+            "rect": {
+              "x": 394,
+              "y": 260.59375,
+              "width": 270,
+              "height": 46,
+              "top": 260.59375,
+              "right": 664,
+              "bottom": 306.59375,
+              "left": 394
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 394,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 438,
+              "bottom": 366.59375,
+              "left": 394
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Switch to dark mode",
+            "rect": {
+              "x": 450,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 494,
+              "bottom": 366.59375,
+              "left": 450
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Open study circles",
+            "rect": {
+              "x": 688,
+              "y": 260.59375,
+              "width": 270,
+              "height": 46,
+              "top": 260.59375,
+              "right": 958,
+              "bottom": 306.59375,
+              "left": 688
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 688,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 732,
+              "bottom": 366.59375,
+              "left": 688
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Switch to dark mode",
+            "rect": {
+              "x": 744,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 788,
+              "bottom": 366.59375,
+              "left": 744
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Open study circles",
+            "rect": {
+              "x": 982,
+              "y": 260.59375,
+              "width": 270,
+              "height": 46,
+              "top": 260.59375,
+              "right": 1252,
+              "bottom": 306.59375,
+              "left": 982
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 982,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 1026,
+              "bottom": 366.59375,
+              "left": 982
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Switch to dark mode",
+            "rect": {
+              "x": 1038,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 1082,
+              "bottom": 366.59375,
+              "left": 1038
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "Start studying",
+            "rect": {
+              "x": 100,
+              "y": 562.78125,
+              "width": 368,
+              "height": 46,
+              "top": 562.78125,
+              "right": 468,
+              "bottom": 608.78125,
+              "left": 100
+            },
+            "border": "rgb(163, 108, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(242, 181, 45)"
+          },
+          {
+            "text": "Review the page",
+            "rect": {
+              "x": 100,
+              "y": 620.78125,
+              "width": 368,
+              "height": 44,
+              "top": 620.78125,
+              "right": 468,
+              "bottom": 664.78125,
+              "left": 100
+            },
+            "border": "rgb(122, 138, 159)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Edit plan",
+            "rect": {
+              "x": 492,
+              "y": 562.78125,
+              "width": 368,
+              "height": 46,
+              "top": 562.78125,
+              "right": 860,
+              "bottom": 608.78125,
+              "left": 492
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Circle settings",
+            "rect": {
+              "x": 492,
+              "y": 620.78125,
+              "width": 368,
+              "height": 46,
+              "top": 620.78125,
+              "right": 860,
+              "bottom": 666.78125,
+              "left": 492
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "",
+            "rect": {
+              "x": 884,
+              "y": 598.78125,
+              "width": 368,
+              "height": 48,
+              "top": 598.78125,
+              "right": 1252,
+              "bottom": 646.78125,
+              "left": 884
+            },
+            "border": "rgb(122, 138, 159)",
+            "borderWidth": "1px",
+            "background": "rgb(255, 255, 255)"
+          },
+          {
+            "text": "Show password",
+            "rect": {
+              "x": 1206,
+              "y": 600.78125,
+              "width": 44,
+              "height": 44,
+              "top": 600.78125,
+              "right": 1250,
+              "bottom": 644.78125,
+              "left": 1206
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ]
+      },
+      "measuredInteraction": {
+        "before": {
+          "x": 492,
+          "y": 562.78125,
+          "width": 368,
+          "height": 46
+        },
+        "hovered": {
+          "rect": {
+            "x": 492,
+            "y": 562.78125,
+            "width": 368,
+            "height": 46,
+            "top": 562.78125,
+            "right": 860,
+            "bottom": 608.78125,
+            "left": 492
+          },
+          "border": "rgb(20, 38, 61)"
+        },
+        "rested": {
+          "rect": {
+            "x": 492,
+            "y": 562.78125,
+            "width": 368,
+            "height": 46,
+            "top": 562.78125,
+            "right": 860,
+            "bottom": 608.78125,
+            "left": 492
+          },
+          "border": "rgba(0, 0, 0, 0)"
+        },
+        "transitionWaitMs": 180,
+        "noGeometryShift": true
+      }
+    },
+    {
+      "name": "desktop-dark-en",
+      "width": 1280,
+      "height": 900,
+      "locale": "en",
+      "theme": "dark",
+      "nativeImage": {
+        "width": 1280,
+        "height": 900
+      },
+      "imageOrigin": "Synthetic: native installed Edge rendering of editable reference.html; no app server or learner data. desktop-dark-en; viewport 1280x900; deviceScaleFactor 1. Illustrative state classes; no formal approval.",
+      "geometry": {
+        "client": 1280,
+        "scroll": 1280,
+        "fullHeight": 900,
+        "brandColour": "rgb(242, 181, 45)",
+        "header": [
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 14,
+              "y": 14,
+              "width": 44,
+              "height": 44,
+              "top": 14,
+              "right": 58,
+              "bottom": 58,
+              "left": 14
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Language",
+            "rect": {
+              "x": 945.171875,
+              "y": 13.5,
+              "width": 97,
+              "height": 45,
+              "top": 13.5,
+              "right": 1042.171875,
+              "bottom": 58.5,
+              "left": 945.171875
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Switch to light mode",
+            "rect": {
+              "x": 1062.171875,
+              "y": 14,
+              "width": 44,
+              "height": 44,
+              "top": 14,
+              "right": 1106.171875,
+              "bottom": 58,
+              "left": 1062.171875
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Account",
+            "rect": {
+              "x": 1126.171875,
+              "y": 13,
+              "width": 129.828125,
+              "height": 46,
+              "top": 13,
+              "right": 1256,
+              "bottom": 59,
+              "left": 1126.171875
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          }
+        ],
+        "stateSamples": [
+          {
+            "text": "Open study circles",
+            "rect": {
+              "x": 100,
+              "y": 260.59375,
+              "width": 270,
+              "height": 46,
+              "top": 260.59375,
+              "right": 370,
+              "bottom": 306.59375,
+              "left": 100
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 100,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 144,
+              "bottom": 366.59375,
+              "left": 100
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Switch to light mode",
+            "rect": {
+              "x": 156,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 200,
+              "bottom": 366.59375,
+              "left": 156
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Open study circles",
+            "rect": {
+              "x": 394,
+              "y": 260.59375,
+              "width": 270,
+              "height": 46,
+              "top": 260.59375,
+              "right": 664,
+              "bottom": 306.59375,
+              "left": 394
+            },
+            "border": "rgb(242, 181, 45)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 394,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 438,
+              "bottom": 366.59375,
+              "left": 394
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Switch to light mode",
+            "rect": {
+              "x": 450,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 494,
+              "bottom": 366.59375,
+              "left": 450
+            },
+            "border": "rgb(242, 181, 45)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Open study circles",
+            "rect": {
+              "x": 688,
+              "y": 260.59375,
+              "width": 270,
+              "height": 46,
+              "top": 260.59375,
+              "right": 958,
+              "bottom": 306.59375,
+              "left": 688
+            },
+            "border": "rgb(242, 181, 45)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 688,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 732,
+              "bottom": 366.59375,
+              "left": 688
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Switch to light mode",
+            "rect": {
+              "x": 744,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 788,
+              "bottom": 366.59375,
+              "left": 744
+            },
+            "border": "rgb(242, 181, 45)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Open study circles",
+            "rect": {
+              "x": 982,
+              "y": 260.59375,
+              "width": 270,
+              "height": 46,
+              "top": 260.59375,
+              "right": 1252,
+              "bottom": 306.59375,
+              "left": 982
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Expand navigation",
+            "rect": {
+              "x": 982,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 1026,
+              "bottom": 366.59375,
+              "left": 982
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Switch to light mode",
+            "rect": {
+              "x": 1038,
+              "y": 322.59375,
+              "width": 44,
+              "height": 44,
+              "top": 322.59375,
+              "right": 1082,
+              "bottom": 366.59375,
+              "left": 1038
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "Start studying",
+            "rect": {
+              "x": 100,
+              "y": 562.78125,
+              "width": 368,
+              "height": 46,
+              "top": 562.78125,
+              "right": 468,
+              "bottom": 608.78125,
+              "left": 100
+            },
+            "border": "rgb(163, 108, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(242, 181, 45)"
+          },
+          {
+            "text": "Review the page",
+            "rect": {
+              "x": 100,
+              "y": 620.78125,
+              "width": 368,
+              "height": 44,
+              "top": 620.78125,
+              "right": 468,
+              "bottom": 664.78125,
+              "left": 100
+            },
+            "border": "rgb(130, 152, 175)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Edit plan",
+            "rect": {
+              "x": 492,
+              "y": 562.78125,
+              "width": 368,
+              "height": 46,
+              "top": 562.78125,
+              "right": 860,
+              "bottom": 608.78125,
+              "left": 492
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Circle settings",
+            "rect": {
+              "x": 492,
+              "y": 620.78125,
+              "width": 368,
+              "height": 46,
+              "top": 620.78125,
+              "right": 860,
+              "bottom": 666.78125,
+              "left": 492
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "",
+            "rect": {
+              "x": 884,
+              "y": 598.78125,
+              "width": 368,
+              "height": 48,
+              "top": 598.78125,
+              "right": 1252,
+              "bottom": 646.78125,
+              "left": 884
+            },
+            "border": "rgb(130, 152, 175)",
+            "borderWidth": "1px",
+            "background": "rgb(21, 35, 46)"
+          },
+          {
+            "text": "Show password",
+            "rect": {
+              "x": 1206,
+              "y": 600.78125,
+              "width": 44,
+              "height": 44,
+              "top": 600.78125,
+              "right": 1250,
+              "bottom": 644.78125,
+              "left": 1206
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ]
+      },
+      "measuredInteraction": {
+        "before": {
+          "x": 492,
+          "y": 562.78125,
+          "width": 368,
+          "height": 46
+        },
+        "hovered": {
+          "rect": {
+            "x": 492,
+            "y": 562.78125,
+            "width": 368,
+            "height": 46,
+            "top": 562.78125,
+            "right": 860,
+            "bottom": 608.78125,
+            "left": 492
+          },
+          "border": "rgb(242, 181, 45)"
+        },
+        "rested": {
+          "rect": {
+            "x": 492,
+            "y": 562.78125,
+            "width": 368,
+            "height": 46,
+            "top": 562.78125,
+            "right": 860,
+            "bottom": 608.78125,
+            "left": 492
+          },
+          "border": "rgba(0, 0, 0, 0)"
+        },
+        "transitionWaitMs": 180,
+        "noGeometryShift": true
+      }
+    },
+    {
+      "name": "mobile-light-fr",
+      "width": 320,
+      "height": 900,
+      "locale": "fr",
+      "theme": "light",
+      "nativeImage": {
+        "width": 320,
+        "height": 1970
+      },
+      "imageOrigin": "Synthetic: native installed Edge rendering of editable reference.html; no app server or learner data. mobile-light-fr; viewport 320x900; deviceScaleFactor 1. Illustrative state classes; no formal approval.",
+      "geometry": {
+        "client": 320,
+        "scroll": 320,
+        "fullHeight": 1970,
+        "brandColour": "rgb(20, 38, 61)",
+        "header": [
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 10,
+              "y": 10,
+              "width": 44,
+              "height": 44,
+              "top": 10,
+              "right": 54,
+              "bottom": 54,
+              "left": 10
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Langue",
+            "rect": {
+              "x": 52,
+              "y": 64.5,
+              "width": 103,
+              "height": 45,
+              "top": 64.5,
+              "right": 155,
+              "bottom": 109.5,
+              "left": 52
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Passer au mode sombre",
+            "rect": {
+              "x": 169,
+              "y": 65,
+              "width": 44,
+              "height": 44,
+              "top": 65,
+              "right": 213,
+              "bottom": 109,
+              "left": 169
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Compte",
+            "rect": {
+              "x": 227,
+              "y": 64,
+              "width": 81,
+              "height": 46,
+              "top": 64,
+              "right": 308,
+              "bottom": 110,
+              "left": 227
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          }
+        ],
+        "stateSamples": [
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "rect": {
+              "x": 12,
+              "y": 372.59375,
+              "width": 296,
+              "height": 46,
+              "top": 372.59375,
+              "right": 308,
+              "bottom": 418.59375,
+              "left": 12
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 12,
+              "y": 430.59375,
+              "width": 44,
+              "height": 44,
+              "top": 430.59375,
+              "right": 56,
+              "bottom": 474.59375,
+              "left": 12
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Passer au mode sombre",
+            "rect": {
+              "x": 68,
+              "y": 430.59375,
+              "width": 44,
+              "height": 44,
+              "top": 430.59375,
+              "right": 112,
+              "bottom": 474.59375,
+              "left": 68
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "rect": {
+              "x": 12,
+              "y": 571.59375,
+              "width": 296,
+              "height": 46,
+              "top": 571.59375,
+              "right": 308,
+              "bottom": 617.59375,
+              "left": 12
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 12,
+              "y": 629.59375,
+              "width": 44,
+              "height": 44,
+              "top": 629.59375,
+              "right": 56,
+              "bottom": 673.59375,
+              "left": 12
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Passer au mode sombre",
+            "rect": {
+              "x": 68,
+              "y": 629.59375,
+              "width": 44,
+              "height": 44,
+              "top": 629.59375,
+              "right": 112,
+              "bottom": 673.59375,
+              "left": 68
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "rect": {
+              "x": 12,
+              "y": 791.59375,
+              "width": 296,
+              "height": 46,
+              "top": 791.59375,
+              "right": 308,
+              "bottom": 837.59375,
+              "left": 12
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 12,
+              "y": 849.59375,
+              "width": 44,
+              "height": 44,
+              "top": 849.59375,
+              "right": 56,
+              "bottom": 893.59375,
+              "left": 12
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Passer au mode sombre",
+            "rect": {
+              "x": 68,
+              "y": 849.59375,
+              "width": 44,
+              "height": 44,
+              "top": 849.59375,
+              "right": 112,
+              "bottom": 893.59375,
+              "left": 68
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "rect": {
+              "x": 12,
+              "y": 1011.59375,
+              "width": 296,
+              "height": 46,
+              "top": 1011.59375,
+              "right": 308,
+              "bottom": 1057.59375,
+              "left": 12
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 12,
+              "y": 1069.59375,
+              "width": 44,
+              "height": 44,
+              "top": 1069.59375,
+              "right": 56,
+              "bottom": 1113.59375,
+              "left": 12
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Passer au mode sombre",
+            "rect": {
+              "x": 68,
+              "y": 1069.59375,
+              "width": 44,
+              "height": 44,
+              "top": 1069.59375,
+              "right": 112,
+              "bottom": 1113.59375,
+              "left": 68
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "Commencer à étudier",
+            "rect": {
+              "x": 12,
+              "y": 1308.78125,
+              "width": 296,
+              "height": 46,
+              "top": 1308.78125,
+              "right": 308,
+              "bottom": 1354.78125,
+              "left": 12
+            },
+            "border": "rgb(163, 108, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(242, 181, 45)"
+          },
+          {
+            "text": "Relire la page",
+            "rect": {
+              "x": 12,
+              "y": 1366.78125,
+              "width": 296,
+              "height": 44,
+              "top": 1366.78125,
+              "right": 308,
+              "bottom": 1410.78125,
+              "left": 12
+            },
+            "border": "rgb(122, 138, 159)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Modifier le programme",
+            "rect": {
+              "x": 12,
+              "y": 1505.96875,
+              "width": 296,
+              "height": 46,
+              "top": 1505.96875,
+              "right": 308,
+              "bottom": 1551.96875,
+              "left": 12
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "Paramètres du cercle",
+            "rect": {
+              "x": 12,
+              "y": 1563.96875,
+              "width": 296,
+              "height": 46,
+              "top": 1563.96875,
+              "right": 308,
+              "bottom": 1609.96875,
+              "left": 12
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(246, 248, 250)"
+          },
+          {
+            "text": "",
+            "rect": {
+              "x": 12,
+              "y": 1705.15625,
+              "width": 296,
+              "height": 48,
+              "top": 1705.15625,
+              "right": 308,
+              "bottom": 1753.15625,
+              "left": 12
+            },
+            "border": "rgb(122, 138, 159)",
+            "borderWidth": "1px",
+            "background": "rgb(255, 255, 255)"
+          },
+          {
+            "text": "Afficher le mot de passe",
+            "rect": {
+              "x": 262,
+              "y": 1707.15625,
+              "width": 44,
+              "height": 44,
+              "top": 1707.15625,
+              "right": 306,
+              "bottom": 1751.15625,
+              "left": 262
+            },
+            "border": "rgb(20, 38, 61)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ]
+      },
+      "measuredInteraction": {
+        "before": {
+          "x": 12,
+          "y": 435.96875,
+          "width": 296,
+          "height": 46
+        },
+        "hovered": {
+          "rect": {
+            "x": 12,
+            "y": 435.96875,
+            "width": 296,
+            "height": 46,
+            "top": 435.96875,
+            "right": 308,
+            "bottom": 481.96875,
+            "left": 12
+          },
+          "border": "rgb(20, 38, 61)"
+        },
+        "rested": {
+          "rect": {
+            "x": 12,
+            "y": 435.96875,
+            "width": 296,
+            "height": 46,
+            "top": 435.96875,
+            "right": 308,
+            "bottom": 481.96875,
+            "left": 12
+          },
+          "border": "rgba(0, 0, 0, 0)"
+        },
+        "transitionWaitMs": 180,
+        "noGeometryShift": true
+      }
+    },
+    {
+      "name": "mobile-dark-fr",
+      "width": 320,
+      "height": 900,
+      "locale": "fr",
+      "theme": "dark",
+      "nativeImage": {
+        "width": 320,
+        "height": 1970
+      },
+      "imageOrigin": "Synthetic: native installed Edge rendering of editable reference.html; no app server or learner data. mobile-dark-fr; viewport 320x900; deviceScaleFactor 1. Illustrative state classes; no formal approval.",
+      "geometry": {
+        "client": 320,
+        "scroll": 320,
+        "fullHeight": 1970,
+        "brandColour": "rgb(242, 181, 45)",
+        "header": [
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 10,
+              "y": 10,
+              "width": 44,
+              "height": 44,
+              "top": 10,
+              "right": 54,
+              "bottom": 54,
+              "left": 10
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Langue",
+            "rect": {
+              "x": 52,
+              "y": 64.5,
+              "width": 103,
+              "height": 45,
+              "top": 64.5,
+              "right": 155,
+              "bottom": 109.5,
+              "left": 52
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Passer au mode clair",
+            "rect": {
+              "x": 169,
+              "y": 65,
+              "width": 44,
+              "height": 44,
+              "top": 65,
+              "right": 213,
+              "bottom": 109,
+              "left": 169
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Compte",
+            "rect": {
+              "x": 227,
+              "y": 64,
+              "width": 81,
+              "height": 46,
+              "top": 64,
+              "right": 308,
+              "bottom": 110,
+              "left": 227
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          }
+        ],
+        "stateSamples": [
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "rect": {
+              "x": 12,
+              "y": 372.59375,
+              "width": 296,
+              "height": 46,
+              "top": 372.59375,
+              "right": 308,
+              "bottom": 418.59375,
+              "left": 12
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 12,
+              "y": 430.59375,
+              "width": 44,
+              "height": 44,
+              "top": 430.59375,
+              "right": 56,
+              "bottom": 474.59375,
+              "left": 12
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Passer au mode clair",
+            "rect": {
+              "x": 68,
+              "y": 430.59375,
+              "width": 44,
+              "height": 44,
+              "top": 430.59375,
+              "right": 112,
+              "bottom": 474.59375,
+              "left": 68
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "rect": {
+              "x": 12,
+              "y": 571.59375,
+              "width": 296,
+              "height": 46,
+              "top": 571.59375,
+              "right": 308,
+              "bottom": 617.59375,
+              "left": 12
+            },
+            "border": "rgb(242, 181, 45)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 12,
+              "y": 629.59375,
+              "width": 44,
+              "height": 44,
+              "top": 629.59375,
+              "right": 56,
+              "bottom": 673.59375,
+              "left": 12
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Passer au mode clair",
+            "rect": {
+              "x": 68,
+              "y": 629.59375,
+              "width": 44,
+              "height": 44,
+              "top": 629.59375,
+              "right": 112,
+              "bottom": 673.59375,
+              "left": 68
+            },
+            "border": "rgb(242, 181, 45)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "rect": {
+              "x": 12,
+              "y": 791.59375,
+              "width": 296,
+              "height": 46,
+              "top": 791.59375,
+              "right": 308,
+              "bottom": 837.59375,
+              "left": 12
+            },
+            "border": "rgb(242, 181, 45)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 12,
+              "y": 849.59375,
+              "width": 44,
+              "height": 44,
+              "top": 849.59375,
+              "right": 56,
+              "bottom": 893.59375,
+              "left": 12
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Passer au mode clair",
+            "rect": {
+              "x": 68,
+              "y": 849.59375,
+              "width": 44,
+              "height": 44,
+              "top": 849.59375,
+              "right": 112,
+              "bottom": 893.59375,
+              "left": 68
+            },
+            "border": "rgb(242, 181, 45)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Ouvrir les cercles d’étude",
+            "rect": {
+              "x": 12,
+              "y": 1011.59375,
+              "width": 296,
+              "height": 46,
+              "top": 1011.59375,
+              "right": 308,
+              "bottom": 1057.59375,
+              "left": 12
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Ouvrir la navigation",
+            "rect": {
+              "x": 12,
+              "y": 1069.59375,
+              "width": 44,
+              "height": 44,
+              "top": 1069.59375,
+              "right": 56,
+              "bottom": 1113.59375,
+              "left": 12
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "text": "Passer au mode clair",
+            "rect": {
+              "x": 68,
+              "y": 1069.59375,
+              "width": 44,
+              "height": 44,
+              "top": 1069.59375,
+              "right": 112,
+              "bottom": 1113.59375,
+              "left": 68
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "Commencer à étudier",
+            "rect": {
+              "x": 12,
+              "y": 1308.78125,
+              "width": 296,
+              "height": 46,
+              "top": 1308.78125,
+              "right": 308,
+              "bottom": 1354.78125,
+              "left": 12
+            },
+            "border": "rgb(163, 108, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(242, 181, 45)"
+          },
+          {
+            "text": "Relire la page",
+            "rect": {
+              "x": 12,
+              "y": 1366.78125,
+              "width": 296,
+              "height": 44,
+              "top": 1366.78125,
+              "right": 308,
+              "bottom": 1410.78125,
+              "left": 12
+            },
+            "border": "rgb(130, 152, 175)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Modifier le programme",
+            "rect": {
+              "x": 12,
+              "y": 1505.96875,
+              "width": 296,
+              "height": 46,
+              "top": 1505.96875,
+              "right": 308,
+              "bottom": 1551.96875,
+              "left": 12
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "Paramètres du cercle",
+            "rect": {
+              "x": 12,
+              "y": 1563.96875,
+              "width": 296,
+              "height": 46,
+              "top": 1563.96875,
+              "right": 308,
+              "bottom": 1609.96875,
+              "left": 12
+            },
+            "border": "rgba(0, 0, 0, 0)",
+            "borderWidth": "1px",
+            "background": "rgb(18, 33, 44)"
+          },
+          {
+            "text": "",
+            "rect": {
+              "x": 12,
+              "y": 1705.15625,
+              "width": 296,
+              "height": 48,
+              "top": 1705.15625,
+              "right": 308,
+              "bottom": 1753.15625,
+              "left": 12
+            },
+            "border": "rgb(130, 152, 175)",
+            "borderWidth": "1px",
+            "background": "rgb(21, 35, 46)"
+          },
+          {
+            "text": "Afficher le mot de passe",
+            "rect": {
+              "x": 262,
+              "y": 1707.15625,
+              "width": 44,
+              "height": 44,
+              "top": 1707.15625,
+              "right": 306,
+              "bottom": 1751.15625,
+              "left": 262
+            },
+            "border": "rgb(226, 234, 244)",
+            "borderWidth": "0px",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ]
+      },
+      "measuredInteraction": {
+        "before": {
+          "x": 12,
+          "y": 435.96875,
+          "width": 296,
+          "height": 46
+        },
+        "hovered": {
+          "rect": {
+            "x": 12,
+            "y": 435.96875,
+            "width": 296,
+            "height": 46,
+            "top": 435.96875,
+            "right": 308,
+            "bottom": 481.96875,
+            "left": 12
+          },
+          "border": "rgb(242, 181, 45)"
+        },
+        "rested": {
+          "rect": {
+            "x": 12,
+            "y": 435.96875,
+            "width": 296,
+            "height": 46,
+            "top": 435.96875,
+            "right": 308,
+            "bottom": 481.96875,
+            "left": 12
+          },
+          "border": "rgba(0, 0, 0, 0)"
+        },
+        "transitionWaitMs": 180,
+        "noGeometryShift": true
+      }
+    }
+  ]
+}

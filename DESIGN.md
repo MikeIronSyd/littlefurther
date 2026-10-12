@@ -6,6 +6,7 @@ colors:
   surface: "#ffffff"
   sidebar: "#f6f8fa"
   ink: "#14263d"
+  brand-accent: "#14263d"
   heading: "#111820"
   muted: "#4e6178"
   line: "#d9e1e9"
@@ -28,6 +29,7 @@ colors:
   dark-surface: "#15232e"
   dark-sidebar: "#12212c"
   dark-ink: "#e2eaf4"
+  dark-brand-accent: "#f2b52d"
   dark-heading: "#f5f7fa"
   dark-muted: "#b4c5d8"
   dark-line: "#344859"
@@ -192,7 +194,7 @@ The mobile journey uses actual DOM order: goal/introduction → next action → 
 
 Resting workspace surfaces are flat. Color changes and thin rules provide grouping. Only the account dropdown uses the theme-specific soft shadow recorded in the sidecar. The mobile drawer uses native modal layering and a translucent backdrop.
 
-The9October theme action replaces the switch knob with a moon/sun icon button. No authored transition is required for it; existing reduced-motion rules remove nonessential transitions and animations.
+The9October theme action replaces the switch knob with a moon/sun icon button. The12October border refinement adds only the150ms border-colour fade described below; reduced-motion rules remove it. Icon replacement and focus outlines remain immediate.
 
 ## Shapes
 
@@ -204,7 +206,9 @@ Icons are normally 24px square, panel toggles 29px and support icons 34px (27px 
 
 ### Buttons
 
-Buttons have a 44px minimum height, control-line border and weight 600. Primary buttons pair amber/action-ink with the stronger action border and amber-hover. Neutral and subtle secondary actions use a persistent sidebar soft fill and control-line outline; hover/focus strengthens the outline to ink. Small actions use at least .875rem text and wrap with 10px gaps. Disabled buttons use opacity 0.55 and native disabled semantics. Intentional Back/authentication/resource links stay underlined; operational Edit, restart, Refresh and circle actions use the outlined button treatment.
+Buttons have a44px minimum height and weight600. Primary buttons retain amber/action-ink, their stronger action border and amber-hover. Secondary/default/subtle/small actions and circle-management disclosures retain sidebar soft fill and rounded corners, reserving a1px transparent resting border. Enabled fine-pointer hover fades it to the existing logo colour over150ms ease-out: ink light, Amber dark. Press/keyboard focus show that border immediately; the separate3px focus outline remains immediate. Hover exit fades back to transparent unless pressed or keyboard-focused. Small actions use at least.875rem text and wrap with10px gaps. Disabled buttons retain opacity0.55 and native semantics without interaction emphasis. Intentional Back/authentication/resource links remain underlined; contained menu rows, fields, password reveal and persistent path outlines are separate unchanged treatments.
+
+The private brand-accent token aliases existing ink/Amber and styles the unchanged SVG and interaction borders. Secondary-border is transparent normally, ButtonText in forced colours; interaction-border aliases brand-accent normally, ButtonText in forced colours. This preserves system boundaries through higher-specificity interaction states. Reduced motion disables fades. No dimensions, inherited animation variables, JavaScript animation or persistent layers are animated.
 
 The study button spans its action column, with 60px minimum height and 1.2rem text; mobile uses 52px and 1rem. A separate understated action opens a five-minute session. Logging activity and marking the whole step complete remain distinct actions.
 
@@ -218,7 +222,7 @@ Focus-visible elements receive a 3px focus outline at 3px offset. Forced-color r
 
 Three ordinary links serve My learning, Journeys and Activity. Active navigation uses the amber band, weight 650 and a thin leading marker. Compact-rail labels appear on hover/focus while accessible names remain available. Topbar utilities contain language, theme and account.
 
-The11October control refinement gives sidebar/theme/language/account controls persistent soft fills and outlines. The44px sidebar button retains its72/64px occupied header slot through14/10px margins. Account remains native details/summary, has at least44px in both dimensions and a decorative disclosure chevron. Utility rows wrap for enlarged text; language selection has no fixed pixel cap. Password reveal remains a44px action inside its existing input boundary, and dropdown items remain menu rows.
+The11October control refinement introduced persistent outlines; the user's12October [hover-border contract](docs/specs/capstone/increments/hover-borders.md) supersedes that resting-border choice for affected controls. Theme/language/account use the secondary interaction treatment above. Sidebar toggle has no border in any state, including forced colours; resting background is transparent and supported hover/press uses the soft sidebar fill. Its immediate keyboard-focus outline remains (Highlight in forced colours). The44px sidebar button retains its72/64px occupied header slot through14/10px margins and correct29px directional panel icon. Account remains native details/summary, at least44px in both dimensions with decorative chevron; opening alone does not pin its cosmetic border. Utility wrapping, language select, native menu behavior, labels/tooltips and session cleanup remain unchanged. Password reveal remains44px inside its existing input boundary; dropdown items remain menu rows.
 
 PanelLeftClose means collapse expanded navigation; PanelLeftOpen means expand it or open the closed mobile drawer. The native modal has a named Close action, focus containment, Escape/focus return and resize cleanup. Theme follows the device until explicitly chosen; guarded storage saves only non-sensitive theme/sidebar preferences.
 

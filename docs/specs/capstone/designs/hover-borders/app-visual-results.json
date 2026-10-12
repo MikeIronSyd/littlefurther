@@ -1,0 +1,119 @@
+{
+  "recordedAt": "2026-10-12T12:46:19.469Z",
+  "fixture": "Existing isolated4319 synthetic records;3steps/1study/1completion/1emptyprivatecircle",
+  "method": "BrowserMCP native viewport captures; presentation-only EN/light then FR/dark restored; no study or sharing changes",
+  "samples": [
+    {
+      "border": "rgb(242, 181, 45)",
+      "brand": "rgb(242, 181, 45)",
+      "height": 900,
+      "overflow": false,
+      "state": "desktop-dark-hover",
+      "width": 1280
+    },
+    {
+      "border": "rgb(242, 181, 45)",
+      "focus": true,
+      "outline": "rgb(145, 197, 255) solid 2.66667px",
+      "state": "desktop-dark-keyboard",
+      "transition": "none"
+    },
+    {
+      "client": 305,
+      "controls": [
+        {
+          "border": "rgb(226, 234, 244)",
+          "borderWidth": "0px",
+          "box": {
+            "bottom": 54,
+            "height": 44,
+            "left": 10,
+            "right": 54,
+            "top": 10,
+            "width": 44,
+            "x": 10,
+            "y": 10
+          },
+          "name": "Ouvrir la navigation"
+        },
+        {
+          "border": "rgba(0, 0, 0, 0)",
+          "borderWidth": "0.666667px",
+          "box": {
+            "bottom": 112.66667175292967,
+            "height": 44,
+            "left": 10,
+            "right": 106.66667175292967,
+            "top": 68.66667175292969,
+            "width": 96.66667175292967,
+            "x": 10,
+            "y": 68.66667175292969
+          },
+          "name": "Langue"
+        },
+        {
+          "border": "rgba(0, 0, 0, 0)",
+          "borderWidth": "0.666667px",
+          "box": {
+            "bottom": 112.66667175292967,
+            "height": 44,
+            "left": 141.5,
+            "right": 185.5,
+            "top": 68.66667175292969,
+            "width": 44,
+            "x": 141.5,
+            "y": 68.66667175292969
+          },
+          "name": "Passer en mode clair"
+        },
+        {
+          "border": "rgba(0, 0, 0, 0)",
+          "borderWidth": "0.666667px",
+          "box": {
+            "bottom": 112.66667175292967,
+            "height": 44,
+            "left": 220.33334350585935,
+            "right": 294.6666793823242,
+            "top": 68.66667175292969,
+            "width": 74.33333587646484,
+            "x": 220.33334350585935,
+            "y": 68.66667175292969
+          },
+          "name": "Compte"
+        }
+      ],
+      "height": 800,
+      "scroll": 305,
+      "state": "mobile-dark-rest",
+      "width": 320
+    },
+    {
+      "brand": "rgb(20, 38, 61)",
+      "client": 305,
+      "height": 800,
+      "rest": "rgba(0, 0, 0, 0)",
+      "scroll": 305,
+      "state": "mobile-light-rest",
+      "width": 320
+    },
+    {
+      "client": 305,
+      "disclosures": [
+        {
+          "border": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(246, 248, 250)",
+          "height": 69.33333587646484,
+          "name": "Membres et paramètres du cercle"
+        },
+        {
+          "border": "rgba(0, 0, 0, 0)",
+          "fill": "rgb(246, 248, 250)",
+          "height": 45.33333587646485,
+          "name": "Invitations"
+        }
+      ],
+      "scroll": 305,
+      "state": "mobile-light-circle"
+    }
+  ]
+}

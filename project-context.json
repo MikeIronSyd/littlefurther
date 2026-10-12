@@ -862,8 +862,8 @@
         ]
       }
     ],
-    "latest_increment": "usability-layout",
-    "latest_status": "UL01–UL08 complete within documented scope: R32/precode references, native implementation, full required pipeline, no-blocker independent source/pixel review, dual-private artifact publication and exact E024/A010 saved comparisons verified.12October continuation performs readback without repeat writes and restores the stopped normal dev server with existing data. Delivery-only documentation commit receives separate publication/head readback. Formal approval, learner validation and timed video remain open."
+    "latest_increment": "hover-borders",
+    "latest_status": "HB01–HB05 technically verified: R33/fourprecode references, CSS-only implementation, fullrequired56domain/server+90browser/process/static/build/audit pass, no-blocker independent source/test/pixel review. E025 saves and dual-private source delivery pending."
   },
   "research_gate": {
     "status": "Closed for R30 control visibility and readability",
@@ -892,6 +892,11 @@
       "ledger": "docs/specs/capstone/increments/usability-layout.md R32",
       "evidence": "Existing source/contracts, partial independent research, primary W3C sources, six inspected synthetic references, one precode layout detector exit0 with empty findings.",
       "boundary": "Research gate is distinct from passed implementation/check/review/delivery evidence in usability-layout-verification.md. No outcomes, formal approval or Plan Mode invocation claim."
+    },
+    "hover_borders": {
+      "status": "Closed for R33before production; bounded touch-input verification need reopened/reclosed before test correction",
+      "ledger": "docs/specs/capstone/increments/hover-borders.md R33",
+      "boundary": "No source edit before documented image/reference closure; research is distinct from implementation/check/review/delivery."
     }
   },
   "active_increment": {
@@ -990,7 +995,7 @@
       "artifact_commit": "56af4356bbe1419dd77615c822ffc52df4994a61",
       "tracker_review": "docs/specs/capstone/reviews/2026-10-11-control-readability-tracker.md"
     },
-    "latest_increment": "usability_layout",
+    "latest_increment": "hover_borders",
     "ui_specialist_review": {
       "date": "2026-10-11",
       "baseline": "c7ddff22a5756aaa2a979f7ca0b2a5fca19024a7",
@@ -1040,6 +1045,21 @@
       "artifact_commit": "9c5f12e0f05dfad8df8ef40017e808592598681a",
       "publication": "Normal git push origin main exit0 to bothprivate destinations. Exact Git main heads and installedCLI private flags/commitmetadata/all46paths verified11October21:56:54Africa/Lagos. PersonalGitHubMCP exactcommitmetadata/diffpass; Miva404 with CLI fallback. Empty statuses/PR-filteredworkflows imply no hostedCIpass. Artifact and final delivery-only documentation publication remain distinct.",
       "next": "Review the delivered UI and record formal design decisions separately; prepare the timed3–5minute demo/criteria evidence. No automatic outreach or submission."
+    },
+    "hover_borders": {
+      "date": "2026-10-12",
+      "baseline": "1b1698b3cd7b1ec091f854dfedbc70ae70fc03cc",
+      "source": "Direct user approved implementation plan after selecting all secondary actions; supersedes only relevant CR01/02 resting outlines.",
+      "specification": "docs/specs/capstone/increments/hover-borders.md",
+      "verification": "docs/specs/capstone/increments/hover-borders-verification.md",
+      "status": "HB01–HB05 technically verified: R33/fourprecode references, CSS-only implementation, fullrequired56domain/server+90browser/process/static/build/audit pass, no-blocker independent source/test/pixel review. E025 saves and dual-private source delivery pending.",
+      "scope": "Secondary/header/circle-disclosure transparent resting borders and existing-brand interaction borders; borderless sidebar. Preserve primary/path/field/password/menu/link exceptions, behavior and data.",
+      "tracker_sync": "E025reserved A26:J26 from exact5tab/E024/A010baseline; livewritesheld until artifactpublication/readback. No pass inferred yet.",
+      "research": "All6bounded R33needs satisfied before source edit, four synthetic references inspected. R33 reopened/reclosed for trusted native Edge activation sampling before dependent test correction; no app fix needed.",
+      "evidence": "Four synthetic reference PNGs and8actual browserMCP JPEGs with native origins/dimensions. ActualENdesktop light/dark resting/hover/darkkeyboard andFR320light/dark/rest/circle; no sampledoverflow. FRdarkrestored,viewportreset/rootreviewtabclosed,isolated4319stopped; ordinary4317healthok and recordsuntouched.",
+      "limitations": "Bounded native/Edge synthetic fixtures and synthesized touch; not physical touch/full browserzoom/nativeFrench/screenreader/fullconformance/outcomes/formalapproval/video. Partial fade/cropped viewport samples documented. No auth/API/schema/dependency/newfeature/copy change.",
+      "review": "docs/specs/capstone/reviews/2026-10-12-hover-borders-review.md",
+      "checks": "Final pnpm --pm-on-fail=download run verify80269 exit0: strict/lint/format/build,56domain/server,distinctprocesspersistence,90browser16.3minutes incl3new/5updatedCR, auditlow no knownvulnerabilities. Initial7/8focused and touchcleanup failure retained; corrected native activation singlecasepass10.0s. No assertions suppressed/no productionedit afterfinalfullrun."
     }
   },
   "product_identity": {
@@ -1193,6 +1213,22 @@
       ],
       "results": "Actual research/specification/reference/build/test/review/evidence skill reuse. Final56domain/server+87browser/process/static/build/audit passed; no production edits afterward. Independent source/pixel review no blockers. Artifact exactdual-private heads/privateflags/metadata/46paths verified; personalGitHubMCPdiffpass,Miva404/CLI fallback/noCIclaim. BrowserMCP E024 savedexact10cells/all5tabs and120923-characterA010 retaining111555prior text/129966HTML, metadata/board/A007 unchanged.12October resumed evidence skill readback without duplicate writes, recovered prior normalization receipts and recorded screenshot timeouts; no PlanMode/outcome/approval/video claim.",
       "reconciled_on": "2026-10-12"
+    },
+    {
+      "date": "2026-10-12",
+      "increment": "Hover-borders",
+      "skills": [
+        "impeccable",
+        "ui-ux-resources",
+        "learning-journey-review",
+        "capstone-evidence-update"
+      ],
+      "inputs": [
+        "User-approved all-secondary plan after conversational Plan Mode exploration and settled selector/brand/input research",
+        "R33/HB01–06; four inspected synthetic precode references; working CSS/test diff over92d7070",
+        "Root actual8-image browserMCP batch; independent source/test/pixel review; exact E024tracker baseline and guardedE025draft"
+      ],
+      "results": "Actual conversationalPlanMode planning/approvedscope/R33/precode/CSS/tests/review/evidence skill reuse. Final56domain/server+90browser/process/static/build/audit passed; no-blocker independent source/test/8actualpixel review. Touchinput probes/harnesscleanup corrected without app change. Both tracker livewrites and dual-private publication pending; no GUI mode/outcome/approval/video claim."
     }
   ]
 }

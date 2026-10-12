@@ -1,0 +1,58 @@
+[
+  {
+    "file": "app-desktop-dark-focus.jpg",
+    "width": 1265,
+    "height": 864,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 94046
+  },
+  {
+    "file": "app-desktop-dark-hover.jpg",
+    "width": 1265,
+    "height": 864,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 92954
+  },
+  {
+    "file": "app-desktop-dark-rest.jpg",
+    "width": 1265,
+    "height": 864,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 90872
+  },
+  {
+    "file": "app-desktop-light-hover.jpg",
+    "width": 1265,
+    "height": 864,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 89999
+  },
+  {
+    "file": "app-desktop-light-rest.jpg",
+    "width": 1265,
+    "height": 864,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 87751
+  },
+  {
+    "file": "app-mobile-dark-rest.jpg",
+    "width": 305,
+    "height": 763,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 35380
+  },
+  {
+    "file": "app-mobile-light-circle.jpg",
+    "width": 305,
+    "height": 763,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 34532
+  },
+  {
+    "file": "app-mobile-light-rest.jpg",
+    "width": 305,
+    "height": 763,
+    "origin": "Actual browser MCP capture; isolated synthetic data",
+    "bytes": 34365
+  }
+]

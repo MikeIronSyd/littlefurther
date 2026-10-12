@@ -11,11 +11,16 @@ test.afterEach(async ({ page: _page }, testInfo) => {
   if (testInfo.status !== testInfo.expectedStatus) await respectAuthenticationRateLimit();
 });
 
-async function idleBoundary(page: Page, control: Locator): Promise<void> {
+async function idleBoundary(
+  page: Page,
+  control: Locator,
+  persistentBoundary = true,
+): Promise<void> {
   await expect(control).toBeVisible();
   await expect(control).toBeEnabled();
   await page.mouse.move(0, 0);
   await page.locator("main").focus();
+  if (!persistentBoundary) await expect(control).toHaveCSS("border-top-color", "rgba(0, 0, 0, 0)");
   const cue = await control.evaluate((element) => {
     const canvas = document.createElement("canvas");
     canvas.width = canvas.height = 1;
@@ -72,14 +77,34 @@ async function idleBoundary(page: Page, control: Locator): Promise<void> {
   expect(cue.width).toBeGreaterThanOrEqual(1);
   expect(cue.style).toBe("solid");
   expect(cue.fillAlpha, "A persistent soft fill is present").toBe(1);
-  expect(cue.borderAlpha, "The persistent boundary is opaque").toBe(1);
-  expect(cue.insideContrast, "Boundary contrasts with its own fill").toBeGreaterThanOrEqual(3);
-  expect(cue.outsideContrast, "Boundary contrasts with surrounding surface").toBeGreaterThanOrEqual(
-    3,
-  );
+  if (persistentBoundary) {
+    expect(cue.borderAlpha, "The persistent boundary is opaque").toBe(1);
+    expect(cue.insideContrast, "Boundary contrasts with its own fill").toBeGreaterThanOrEqual(3);
+    expect(
+      cue.outsideContrast,
+      "Boundary contrasts with surrounding surface",
+    ).toBeGreaterThanOrEqual(3);
+  } else expect(cue.borderAlpha, "The interaction boundary is transparent at rest").toBe(0);
   expect(cue.textContrast, "Ordinary control text or icon remains distinct").toBeGreaterThanOrEqual(
     4.5,
   );
+}
+
+async function softBoundary(page: Page, control: Locator): Promise<void> {
+  await idleBoundary(page, control, false);
+}
+
+async function borderlessSidebar(page: Page): Promise<void> {
+  const control = page.locator(".nav-trigger");
+  await page.mouse.move(0, 0);
+  await page.locator("main").focus();
+  await expect(control).toBeVisible();
+  for (const side of ["top", "right", "bottom", "left"])
+    await expect(control).toHaveCSS(`border-${side}-width`, "0px");
+  await expect(control).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+  await target(control);
+  await expect(control.locator("svg")).toHaveCSS("width", "29px");
+  await expect(control.locator("svg")).toHaveCSS("height", "29px");
 }
 
 async function target(control: Locator): Promise<void> {
@@ -104,32 +129,32 @@ async function readable(locator: Locator): Promise<void> {
 }
 
 for (const theme of ["light", "dark"] as const) {
-  test(`CR01–04: connected actions have resting cues and readable structure in ${theme} mode`, async ({
+  test(`CR01–04/HB01–05: connected actions retain soft cues and readable structure in ${theme} mode`, async ({
     page,
   }) => {
     test.setTimeout(90_000);
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.emulateMedia({ colorScheme: theme });
     await createAccount(page);
-    for (const selector of [
-      ".nav-trigger",
-      ".theme-button",
-      ".language-select",
-      ".account-summary",
-    ]) {
-      await idleBoundary(page, page.locator(selector));
+    for (const selector of [".theme-button", ".language-select", ".account-summary"]) {
+      await softBoundary(page, page.locator(selector));
       await target(page.locator(selector));
     }
+    await borderlessSidebar(page);
     const chevron = page.locator(".account-chevron");
     await expect(chevron).toHaveAttribute("aria-hidden", "true");
     await expect(chevron).toHaveAttribute("focusable", "false");
     await expect(chevron.locator("path")).toHaveAttribute("d", "m6 9 6 6 6-6");
     const circleEntry = page.getByRole("button", { name: "Open study circles", exact: true });
-    await idleBoundary(page, circleEntry);
+    await softBoundary(page, circleEntry);
     const idleBorder = await circleEntry.evaluate(
       (element) => getComputedStyle(element).borderTopColor,
     );
     await circleEntry.hover();
+    await expect(circleEntry).toHaveCSS(
+      "border-top-color",
+      await page.locator(".brand-mark").evaluate((element) => getComputedStyle(element).color),
+    );
     expect(
       await circleEntry.evaluate((element) => getComputedStyle(element).borderTopColor),
     ).not.toBe(idleBorder);
@@ -145,7 +170,7 @@ for (const theme of ["light", "dark"] as const) {
     ).toBeGreaterThanOrEqual(2);
     await page.getByLabel("Account", { exact: true }).click();
     await page.getByRole("button", { name: "Preferences", exact: true }).click();
-    await idleBoundary(page, page.getByRole("button", { name: "Cancel", exact: true }));
+    await softBoundary(page, page.getByRole("button", { name: "Cancel", exact: true }));
     await page.getByRole("button", { name: "Cancel", exact: true }).click();
     await openManualDraft(page);
     await page
@@ -160,7 +185,7 @@ for (const theme of ["light", "dark"] as const) {
       "Review restart dates",
       "Open study circles",
     ])
-      await idleBoundary(page, page.getByRole("button", { name, exact: true }));
+      await softBoundary(page, page.getByRole("button", { name, exact: true }));
     const path = page.locator(".path-action");
     await expect(path).toHaveCount(2);
     for (const row of await path.all()) {
@@ -189,11 +214,11 @@ for (const theme of ["light", "dark"] as const) {
         return [Number.parseFloat(style.columnGap), Number.parseFloat(style.rowGap)];
       });
     expect(gaps.every((gap) => gap >= 10)).toBe(true);
-    await idleBoundary(
+    await softBoundary(
       page,
       page.getByRole("button", { name: "Move step down", exact: true }).first(),
     );
-    await idleBoundary(page, page.getByRole("button", { name: "Remove", exact: true }).first());
+    await softBoundary(page, page.getByRole("button", { name: "Remove", exact: true }).first());
     await expectNoHorizontalOverflow(page);
     await page
       .getByRole("form", { name: "Adjust your learning plan", exact: true })
@@ -202,11 +227,11 @@ for (const theme of ["light", "dark"] as const) {
     await target(page.locator(".account-summary"));
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.getByRole("button", { name: "Start study session", exact: true }).click();
-    await idleBoundary(page, page.getByRole("button", { name: "Back", exact: true }));
+    await softBoundary(page, page.getByRole("button", { name: "Back", exact: true }));
     await underlined(
       page.getByRole("link", { name: "https://example.test/reference", exact: true }),
     );
-    await idleBoundary(
+    await softBoundary(
       page,
       page.getByRole("button", { name: "Mark this step complete", exact: true }),
     );
@@ -236,12 +261,12 @@ for (const theme of ["light", "dark"] as const) {
     ).toBeGreaterThanOrEqual(24);
     await capture(page, `control-readability-activity-${theme}`);
     await page.getByRole("link", { name: "Journeys", exact: true }).click();
-    await idleBoundary(page, page.getByRole("button", { name: "Open journey", exact: true }));
+    await softBoundary(page, page.getByRole("button", { name: "Open journey", exact: true }));
     await page.getByRole("button", { name: "Open journey", exact: true }).click();
     await page.getByRole("button", { name: "Review restart dates", exact: true }).click();
     await underlined(page.getByRole("button", { name: "Back to my learning", exact: true }));
-    await idleBoundary(page, page.getByRole("button", { name: "Edit plan", exact: true }));
-    await idleBoundary(
+    await softBoundary(page, page.getByRole("button", { name: "Edit plan", exact: true }));
+    await softBoundary(
       page,
       page.getByRole("button", { name: "Preview revised dates", exact: true }),
     );
@@ -250,41 +275,43 @@ for (const theme of ["light", "dark"] as const) {
     await expect(
       page.getByRole("button", { name: "Apply revised plan", exact: true }),
     ).toBeDisabled();
-    await idleBoundary(page, page.getByRole("button", { name: "Cancel", exact: true }));
+    await softBoundary(page, page.getByRole("button", { name: "Cancel", exact: true }));
     await page.getByRole("button", { name: "Cancel", exact: true }).click();
     await page.getByRole("button", { name: "Open study circles", exact: true }).click();
     await underlined(page.getByRole("button", { name: "Back to my learning", exact: true }));
-    await idleBoundary(page, page.getByRole("button", { name: "Create a circle", exact: true }));
-    await idleBoundary(page, page.getByRole("button", { name: "Join a circle", exact: true }));
+    await softBoundary(page, page.getByRole("button", { name: "Create a circle", exact: true }));
+    await softBoundary(page, page.getByRole("button", { name: "Join a circle", exact: true }));
     await page.getByLabel("Circle name", { exact: true }).fill("Control review circle");
     await page.getByRole("button", { name: "Create a circle", exact: true }).click();
     await expect(
       page.getByRole("heading", { name: "Control review circle", exact: true }).first(),
     ).toBeVisible();
     await underlined(page.getByRole("button", { name: "All my circles", exact: true }));
-    await idleBoundary(
+    await softBoundary(
       page,
       page.getByRole("button", { name: "Refresh circle information", exact: true }),
     );
+    await softBoundary(page, page.locator(".circle-management > summary").first());
     await page.getByText("Members and circle settings", { exact: true }).click();
-    await idleBoundary(page, page.getByRole("button", { name: "Close circle", exact: true }));
+    await softBoundary(page, page.locator(".circle-management > summary").first());
+    await softBoundary(page, page.getByRole("button", { name: "Close circle", exact: true }));
     await page.getByRole("button", { name: "Close circle", exact: true }).click();
-    await idleBoundary(
+    await softBoundary(
       page,
       page.getByRole("button", { name: "Confirm circle closure", exact: true }),
     );
-    await idleBoundary(page, page.getByRole("button", { name: "Cancel", exact: true }));
+    await softBoundary(page, page.getByRole("button", { name: "Cancel", exact: true }));
     await page.getByRole("button", { name: "Cancel", exact: true }).click();
     await page.getByRole("button", { name: "Write a shared copy", exact: true }).click();
     await underlined(page.getByRole("button", { name: "Back to circle", exact: true }));
     await page.getByLabel("Message", { exact: true }).fill("A deliberate synthetic commitment.");
-    await idleBoundary(page, page.getByRole("button", { name: "Preview copy", exact: true }));
+    await softBoundary(page, page.getByRole("button", { name: "Preview copy", exact: true }));
     await page.getByRole("button", { name: "Preview copy", exact: true }).click();
     await expect(
       page.getByText("This is a preview. It hasn’t been shared yet.", { exact: true }),
     ).toBeVisible();
     await expect(page.getByRole("button", { name: "Share commitment", exact: true })).toBeVisible();
-    await idleBoundary(page, page.getByRole("button", { name: "Cancel", exact: true }));
+    await softBoundary(page, page.getByRole("button", { name: "Cancel", exact: true }));
     await capture(page, `control-readability-circle-preview-${theme}`);
   });
 }
@@ -337,8 +364,8 @@ for (const locale of ["en", "fr"] as const) {
         expect((formBox?.y ?? 0) - (panelBox?.y ?? 0) - (panelBox?.height ?? 0)).toBeCloseTo(20, 0);
         for (const selector of [".nav-trigger", ".account-menu", ".sidebar"])
           await expect(page.locator(selector)).toBeHidden();
-        await idleBoundary(page, page.locator(".theme-button"));
-        await idleBoundary(page, page.locator(".language-select"));
+        await softBoundary(page, page.locator(".theme-button"));
+        await softBoundary(page, page.locator(".language-select"));
         await target(page.locator(".theme-button"));
         const password = page.getByLabel(copy.password, { exact: true });
         await password.fill("Synthetic-visible-password");
@@ -397,7 +424,7 @@ for (const locale of ["en", "fr"] as const) {
   });
 }
 
-test("CR01/02: forced colours retain persistent boundaries and keyboard navigation", async ({
+test("CR01/02/HB02/04: forced colours retain system boundaries and borderless sidebar navigation", async ({
   page,
 }) => {
   await page.emulateMedia({
@@ -407,12 +434,7 @@ test("CR01/02: forced colours retain persistent boundaries and keyboard navigati
   });
   await createAccount(page);
   await page.setViewportSize({ width: 320, height: 800 });
-  for (const selector of [
-    ".theme-button",
-    ".nav-trigger",
-    ".language-select",
-    ".account-summary",
-  ]) {
+  for (const selector of [".theme-button", ".language-select", ".account-summary"]) {
     const control = page.locator(selector);
     await target(control);
     await expect(control).toHaveCSS("border-top-style", "solid");
@@ -423,7 +445,17 @@ test("CR01/02: forced colours retain persistent boundaries and keyboard navigati
     ).toBeGreaterThanOrEqual(1);
   }
   const opener = page.getByRole("button", { name: "Open navigation", exact: true });
+  await target(opener);
+  await expect(opener).toHaveCSS("border-top-width", "0px");
   await opener.focus();
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Shift+Tab");
+  expect(await opener.evaluate((element) => element.matches(":focus-visible"))).toBe(true);
+  await expect(opener).toHaveCSS("border-top-width", "0px");
+  await expect(opener).toHaveCSS("outline-style", "solid");
+  expect(
+    await opener.evaluate((element) => Number.parseFloat(getComputedStyle(element).outlineWidth)),
+  ).toBeGreaterThanOrEqual(3);
   await page.keyboard.press("Enter");
   await expect(page.getByRole("dialog", { name: "Navigation", exact: true })).toBeVisible();
   await page.keyboard.press("Escape");

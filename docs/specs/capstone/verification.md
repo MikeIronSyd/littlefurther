@@ -247,6 +247,12 @@ The final full required checks passed: strict/lint/format/build,56domain/server 
 
 Actual browser MCP viewport JPEGs and Edge/Playwright enlarged-control PNGs have distinct provenance/coverage. J1 links real specification/build/test/review/documentation/MCP/skill work; J2 establishes synthetic working controls without learner outcomes; J3 maintains reusable patterns without a new setup/adoption claim; J4 provides scene material without a timed video. Formal human design approval remains separate.
 
+### Brand-colour interaction borders — 12October2026
+
+[HB01–HB06](increments/hover-borders-verification.md) records R33, four inspected precode references, CSS-only secondary/header/disclosure interaction borders and the borderless sidebar, retaining primary/path/field/password/menu/link contracts. The final required pipeline passed56domain/server tests, separate-process persistence,90browser cases in16.3minutes and static/build/audit checks. The3new cases are included in90. A premature synthesized-touch activation sample and cleanup error were researched/corrected without changing app behavior or weakening assertions; actual native trusted compatibility-event evidence is recorded.
+
+Eight origin-labelled actual browserMCP JPEGs are separate from the synthetic boards. Native viewport bounds/partial fades and below-frame circle content are explicit; Edge/synthesized-touch/root-text evidence is bounded. [Independent source/test/pixel review](reviews/2026-10-12-hover-borders-review.md) has no scoped blocker. E025 saved reconciliation and dual-private publication are recorded separately in the increment. Formal human design approval, full accessibility/language/physical-device validation, learner outcomes and timed video remain separate.
+
 ### Usability and layout refinement — 11October2026
 
 [UL01–UL08 verification](increments/usability-layout-verification.md) records R32 and six inspected precode references, known field-error association/focus recovery, explicit50-step limit feedback,44px consent labels, contextual circle actions and guarded shared navigation, compact learning hierarchy, semantic Activity record types and clearer existing form hints. The final required pipeline passed56domain/server tests, separate-process persistence,87browser cases in14.3minutes, strict/lint/format/build and dependency audit. The15new cases are included in87. Earlier failures and their corrections remain explicit; no assertions were weakened.
