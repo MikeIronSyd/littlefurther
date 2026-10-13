@@ -1,5 +1,9 @@
 # Capstone research record
 
+### R35 — Repository presentation, 13 October 2026
+
+Research is complete for the accepted documentation/presentation scope before artifact implementation. The [contract](increments/repository-presentation.md#r35-research-gate--satisfied-before-presentation-implementation) records seven satisfied needs: current source/status, original brand/asset provenance, actual architecture/privacy, isolated capture feasibility, official GitHub rendering/rename rules, owner access/name checks, and settled scope/destinations. Starting revision is `3e81617e7ad41fa240bd7deeb42ff316e08cd5a5`. Recheck names before rename; no production app change or live AI call is part of this scope. Actual checks and delivery remain separate in [verification](increments/repository-presentation-verification.md).
+
 Checked: 8 October 2026, Africa/Lagos. **Research gate: closed for R01–R17 before P07 production edits at 10:55.** R16 source/UI integration findings are recorded below and in the Comeback increment contract. The R01–R15 closure at21:02 on7October and earlier R01–R12/14 closures remain historical evidence. R15 resolved compatible quality tooling with Biome2.5.15, Playwright1.63.0 and installed Edge; canonical commands use pnpm run. R17 closes the scoped P07 integration needs below; no required research blocker remains.
 
 ## Goal

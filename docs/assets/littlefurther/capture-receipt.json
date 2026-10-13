@@ -1,0 +1,120 @@
+{
+  "capturedAt": "2026-10-13T16:30:22.570Z",
+  "sourceRevision": "3e81617e7ad41fa240bd7deeb42ff316e08cd5a5",
+  "productRevision": "98372ac41150dc50ad66dc08ecde289794aa3169",
+  "browser": "Microsoft Edge via Playwright 1.63.0",
+  "data": "fresh ignored .local/repository-presentation/capture-* SQLite directory",
+  "ordinaryDataAccessed": false,
+  "providerCredentialLoaded": false,
+  "liveProviderRequests": 0,
+  "blockedBrowserExternalRequests": 0,
+  "syntheticProviderRequests": [
+    {
+      "action": "plan_search",
+      "locale": "en",
+      "synthetic": true
+    },
+    {
+      "action": "plan_draft",
+      "locale": "en",
+      "synthetic": true
+    },
+    {
+      "action": "study_reflection",
+      "locale": "en",
+      "synthetic": true
+    },
+    {
+      "action": "comeback_help",
+      "locale": "en",
+      "synthetic": true
+    },
+    {
+      "action": "circle_draft",
+      "locale": "en",
+      "synthetic": true
+    }
+  ],
+  "captures": [
+    {
+      "file": "planning.png",
+      "width": 780,
+      "height": 1758,
+      "viewport": 1280,
+      "sourceRevision": "3e81617e7ad41fa240bd7deeb42ff316e08cd5a5",
+      "classification": "actual application interface; synthetic demo data; mocked AI/search responses",
+      "note": "Focused plan suggestion with one mocked MDN source and three reviewable steps; not yet saved.",
+      "sha256": "6d19c5c312914317f23ec024452baf79fcbc9afa736831076226e397ab7096be"
+    },
+    {
+      "file": "study.png",
+      "width": 780,
+      "height": 1034,
+      "viewport": 1280,
+      "sourceRevision": "3e81617e7ad41fa240bd7deeb42ff316e08cd5a5",
+      "classification": "actual application interface; synthetic demo data; mocked AI/search responses",
+      "note": "Focused study/reflection form; mocked guidance and explicit Save, with completion a separate action.",
+      "sha256": "eda8602a735498b6632acbc11d4122ae049d85bd8167073c881273794ccdc553"
+    },
+    {
+      "file": "dashboard-light.png",
+      "width": 1280,
+      "height": 1729,
+      "viewport": 1280,
+      "sourceRevision": "3e81617e7ad41fa240bd7deeb42ff316e08cd5a5",
+      "classification": "actual application interface; synthetic demo data; mocked AI/search responses",
+      "note": "Dashboard after separately saving one study session and completing the first step.",
+      "sha256": "5654511b9aceab16fea638347de9cbda8b9ba4bae82959c0c458ddc53b8f4786"
+    },
+    {
+      "file": "dashboard-dark.png",
+      "width": 1280,
+      "height": 1681,
+      "viewport": 1280,
+      "sourceRevision": "3e81617e7ad41fa240bd7deeb42ff316e08cd5a5",
+      "classification": "actual application interface; synthetic demo data; mocked AI/search responses",
+      "note": "Same saved dashboard in dark mode; no data difference.",
+      "sha256": "b2592053eb19f859e52312b1a4e6b0dc10cb74f9f97341e7ac218149a7b20cb4"
+    },
+    {
+      "file": "comeback.png",
+      "width": 1040,
+      "height": 1420,
+      "viewport": 1280,
+      "sourceRevision": "3e81617e7ad41fa240bd7deeb42ff316e08cd5a5",
+      "classification": "actual application interface; synthetic demo data; mocked AI/search responses",
+      "note": "Restart guidance and date controls; no date confirmation performed.",
+      "sha256": "8fda3b6c8b50da0ed24c3a05a44e80156852b625e8b8833d91e14642c7eb7f35"
+    },
+    {
+      "file": "circle.png",
+      "width": 1040,
+      "height": 887,
+      "viewport": 1280,
+      "sourceRevision": "3e81617e7ad41fa240bd7deeb42ff316e08cd5a5",
+      "classification": "actual application interface; synthetic demo data; mocked AI/search responses",
+      "note": "Two synthetic local members, explicitly shared commitment and preset encouragement; no remote-peer claim.",
+      "sha256": "6687ed942d351f0af978b1a2bf838a16bf2f47654276721e15882d6807321989"
+    },
+    {
+      "file": "journey-mobile-fr.png",
+      "width": 320,
+      "height": 2838,
+      "viewport": 320,
+      "sourceRevision": "3e81617e7ad41fa240bd7deeb42ff316e08cd5a5",
+      "classification": "actual application interface; synthetic demo data; mocked AI/search responses",
+      "note": "Successful saved French 320px dashboard; learner-authored step titles remain English.",
+      "sha256": "31d6ba062df02aa8806f7174f9fb9c6f1314bc5a5e0394fff571103d0b8b7d7a"
+    },
+    {
+      "file": "finishline.png",
+      "width": 1280,
+      "height": 1685,
+      "viewport": 1280,
+      "sourceRevision": "3e81617e7ad41fa240bd7deeb42ff316e08cd5a5",
+      "classification": "actual application interface; synthetic demo data; mocked AI/search responses",
+      "note": "All active steps marked complete by the synthetic learner; self-reported completion, not a certificate or mastery assessment.",
+      "sha256": "ace198a18cc99b654d4eb43054199500fd04d3775e4720985844c7191aef7601"
+    }
+  ]
+}

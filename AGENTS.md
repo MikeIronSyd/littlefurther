@@ -4,6 +4,8 @@ This is the Andela x Miva x OpenAI Codex Accelerator Hackathon workspace. The us
 
 ## Resume with context
 
+The13October repository presentation supplies LittleFurther branding, current synthetic-data screenshots and developer/judge guides. This fresh private MikeIronSyd/littlefurther repository preserves equivalent application source through a school-specific history. See the identity specification for original-backup and actual replacement evidence.
+
 On12October2026 Michael explicitly approved the current overall implemented LittleFurther visual design: “okay, it's approved now”. D016 in `docs/specs/capstone/design.md` records baseline10d8ca0, scope and limits. Overall human visual approval is settled for that baseline; retain historical pending statements/mock sidecars/tool-workflow receipts without treating them as a new approval gate. This decision does not establish outcomes, production readiness, exhaustive accessibility conformance, future-design approval or demo completion.
 
 The9October signed-out shell/theme decision retains real sign-in, hides navigation/account until authenticated, reclaims the full entry width and uses localized moon/sun next-action buttons with hover/focus tooltips. Consult `docs/specs/capstone/increments/auth-shell.md` and its verification for the latest AS01–AS06 results, lifecycle cleanup and delivery status; do not reinstate the superseded text/switch theme control or infer formal design approval.

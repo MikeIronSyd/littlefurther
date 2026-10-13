@@ -2,7 +2,7 @@
 
 ## Goal
 
-Run the capstone on this PC with local accounts and SQLite. This guide covers the P04/P05 private journey, P06 Comeback and P07 private circles. Verification results are recorded separately; commands below do not claim a passing run by themselves.
+Run LittleFurther on this PC with local accounts and SQLite. This guide covers the connected private journey, Comeback, circles and optional OpenAI assistance. Verification is recorded separately; commands here do not establish a passing run.
 
 ## Context Pointers
 
@@ -38,7 +38,7 @@ pnpm --pm-on-fail=download run build
 pnpm --pm-on-fail=download start
 ```
 
-Keep that terminal running. Open the URL printed by the server (default http://127.0.0.1:4317). Stop it using Ctrl+C. This serves the built assets; after editing source, stop, rebuild and restart. No browser CDN/font/runtime AI or external database is required.
+Keep that terminal running. Open the URL printed by the server (default http://127.0.0.1:4317). Stop it using Ctrl+C. This serves built assets; after source edits, stop, rebuild and restart. The manual core needs no browser CDN/font, provider connection or external database. Optional AI/search requires internet and configured server access.
 
 Expected versions are `v24.19.0` and `11.19.0`. The pnpm option changes only that invocation; it does not edit global wrappers/settings or package.json. On this Windows host the unqualified bundled launcher reported11.25.0; the explicit option provisioned and ran11.19.0. See [pnpm's documented selection behavior](https://pnpm.io/settings/cli#pmonfail) and the [P10 rehearsal contract](../specs/capstone/increments/reuse.md). Use this prefix for subsequent pnpm commands when required. If Ctrl+C prompts to terminate a Windows batch job, confirm termination, then verify the printed port has no listener before starting a replacement.
 
@@ -85,7 +85,7 @@ Browser tests use installed Microsoft Edge through Playwright's msedge channel, 
 
 ### Limits and recovery
 
-The current implementation covers private planning/study/progress, Comeback preview/confirmation and optional private StudyCircle peers. All five capabilities remain connected parts of the capstone. The [P08/P09 integration review and corrections](../specs/capstone/increments/integration-verification.md) passed their scoped checks. The [P10 independent setup/adaptation rehearsal](../specs/capstone/increments/reuse-verification.md) has scoped evidence on the existing Windows host; formal design completion and the timed demo remain open; implementation status does not replace acceptance and review evidence.
+The current implementation covers private planning/study/progress, Comeback, circles and six optional AI actions. All five capabilities remain connected. [P08/P09](../specs/capstone/increments/integration-verification.md), [P10](../specs/capstone/increments/reuse-verification.md) and [13 October AI verification](../specs/capstone/increments/ai-assistance-verification.md) retain their dated results and limits. Michael approved the overall implemented visual baseline in [D016](../specs/capstone/design.md#overall-design-approval--12-october-2026) on12October at `a768c98`; later AI-surface review and the timed demo are separate. Implementation and approval do not establish outcomes or production readiness.
 
 A failed save must remain visible with entered content retained. If a Comeback confirmation loses its response, it may already have saved: use the offered retry with the same request identity or return and refresh. Do not assume cancel can undo an uncertain save. A stale preview requires a new preview against the current revision and is never applied automatically. If the server cannot start, check the printed error and port, and preserve the data directory before any repair. Source rollback uses an earlier reviewed Git revision plus that revision's locked dependencies. Database schema migration/rollback must be checked independently; changing source is not a database restore.
 
