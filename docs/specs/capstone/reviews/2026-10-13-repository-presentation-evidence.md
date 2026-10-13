@@ -28,3 +28,21 @@ The earlier D016 approval is settled for baseline `a768c98`; future AI surfaces,
 ## Done When
 
 The ignored tracker payload is prepared and baseline-preservation inputs are verified. At this checkpoint local evidence preparation is complete, but actual GitHub render/redirect checks, Sheet/Kaneo writes and saved comparisons, and any documentary-closeout publication remain pending under root ownership. Root must resolve the payload's explicit finalization fields before saving, compare only intended Sheet fields plus untouched-history/formatting invariants, verify Kaneo's exact retained suffix/status/date/board state, and record the final dual heads separately.
+
+## Root saved reconciliation — 13 October 2026
+
+### Goal
+
+The preceding agent record is preparation history. Root finalized and saved E028 using actual native GitHub/render/redirect results, then verified both authorized trackers.
+
+### Context Pointers
+
+See [delivery verification](../increments/repository-presentation-verification.md#delivery-and-saved-evidence--13-october-2026). Initial artifact 566ac55 and reviewed render correction 351b07c were published with matching private heads. Native Miva Google Drive MCP updated/read the Sheet; browser MCP inspected it and edited Kaneo. GitHub MCP returned404; CLI and native Miva web evidence are accurately separated.
+
+### Constraints
+
+Sheet final comparison:12intended changed values, zero mismatches, unchanged formats/history, uniqueE028 and exact19,789-character Context suffix. Two native content writes include one actual-route wording correction. Browser paste was unsuccessful and no browser Sheet write is credited. Kaneo one prefix write, Saved/reload, exact prior147,327text/172,813HTMLsuffixes; new wording matches despite separator normalization. Saved record152,692text/180,413HTML. Title/status/date and ten-card board unchanged. Personal web proof unavailable; legacyAPI/Git and Mivaweb redirects checked. No learner outcome/newfullsuite or completedvideo claim.
+
+### Done When
+
+The final documentary closeout is published normally and both exact heads checked. Private before/after receipts stay ignored; no further tracker write is needed to record that documentation-only final commit.

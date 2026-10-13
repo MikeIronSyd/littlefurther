@@ -9,6 +9,9 @@ const files = [
   'docs/operations/local-demo.md', 'docs/assets/littlefurther/provenance.md',
   'docs/specs/capstone/increments/repository-presentation.md',
   'docs/specs/capstone/increments/repository-presentation-verification.md',
+  'AGENTS.md', '.impeccable/surfaces/readme-md.md',
+  'docs/specs/capstone/reviews/2026-10-13-repository-presentation-review.md',
+  'docs/specs/capstone/reviews/2026-10-13-repository-presentation-evidence.md',
 ];
 const issues = [];
 let checkedLinks = 0;

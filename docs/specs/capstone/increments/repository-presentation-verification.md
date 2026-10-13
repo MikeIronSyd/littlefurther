@@ -19,8 +19,9 @@ All results start pending. Captures use separate synthetic data and mocked provi
 | RP03 | Passed locally | Three guides and active PRODUCT/operations summaries corrected. Independent review confirmed actual folders, local circle preview, source staging versus explicit saved snapshots, D016/AI/video boundaries. |
 | RP04 | Passed scoped capture | Eight successful current Edge captures with isolated synthetic SQLite/accounts and5mock responses,0live provider calls. Final dark reload clears transient notice, preserving data. Receipt records dimensions/hashes; full-page/cropped limits explicit. |
 | RP05 | Passed locally | `node docs/assets/littlefurther/validate.mjs`: exit0,107relative links/anchors,8PNGhash/dimension matches,2valid exact-geometry SVGs with fitting wordmark. `git diff --check` passes. Independent review has no remaining scoped local blocker. |
-| RP06 | Metadata/remotes passed; redirects pending | Existing IDs1402125626/1402126097 preserved after CLI personal/owner-browser Miva rename; exact description/topics/private/empty homepage read back. origin fetch/two pushes and miva updated. Context changes only2active destination URLs, preserving historical commit links. |
-| RP07–RP08 | Pending | Actual GitHub rendering, redirect checks, saved tracker reconciliation and dual publication follow. |
+| RP06 | Passed with browser limitation | IDs1402125626/1402126097 preserved; exact metadata/private/empty homepage and remotes read back. Both legacy Git/API paths resolve preserved SHA/canonical new repositories. Miva web redirect observed; personal browser access unavailable. |
+| RP07 | Passed bounded native review | Miva owner page: light/dark assets, loaded gallery,320px README reflow and native learning/system/corrected AI SVG labels. Wide diagrams use native zoom/pan. Both published copies identical; personal browser render unavailable. |
+| RP08 | Artifacts and saved trackers passed | Normal dual artifact/correction publication and exact heads; E028/Context:12intended value changes, zero mismatches, formatting/history retained. Saved/reloaded Kaneo retains exact earlier text/HTML. Final documentary closeout publishes/checks separately. |
 
 ### Actual preparation, review and limitations
 
@@ -37,3 +38,35 @@ Personal rename/metadata used installed GitHub CLI with profile scoped to the ch
 ## Done When
 
 Record actual artifact checks, independent findings, names/metadata, render observations, saved tracker comparisons and dual head readbacks with their scope.
+
+## Delivery and saved evidence — 13 October 2026
+
+### Goal
+
+RP01–RP08 are verified within the explicit scope/limits below. This documentary closeout records actual artifact publication, native rendering and E028 saves; its final dual publication/head check follows normally.
+
+### Context Pointers
+
+Presentation artifact **566ac5570c58caee043217b010cb62fecee6a971** contains30intended non-secret files; normal dual push and both exact heads passed. Independently reviewed native-sequence correction **351b07c3749616a0619f2dc27a79f48ba43d9207** also pushed normally with matching heads. Final README count is703after replacing the skipped tagline heading level with a paragraph; earlier704counts are preparation results. Validator passes110relative links,8PNGhashes/dimensions and2SVG parsing/geometry/text-fit checks, plus the unsafe-message guard. Guard6case evidence is independent; it is not a full Mermaid parser.
+
+Actual Miva GitHub browser review confirmed expected native SVG actor/action labels after the three-comma fix, including24-hour metadata staging, local circle preview and separate Share. Initial paint/loading captures were followed by valid loaded-view proof; private images remain ignored. Desktop light/dark and320px README asset selection/navigation reflow passed (page305px/pictures239px). Architecture diagrams rendered in light/dark; narrow page geometry had no page overflow. Native zoom/pan supports wide diagrams on narrow displays. Temporary media/metrics/viewport overrides were restored.
+
+GitHub MCP new-slug reads returned404 for both private copies, including full-SHA attempts. Authenticated CLI returned exact30-file artifact and current metadata; Git returned matching main heads. Both old-slug APIs returned preserved 98372ac/canonical new names/IDs and both old Git URLs resolved current heads. Miva's old web commit visibly redirected. Personal Chrome was signed out and Miva lacked private personal access, so personal web/render proof was unavailable. No auth/permission changes were made. Miva native display evidence and identical source/personal CLI metadata remain distinct.
+
+### Constraints
+
+Actually reused capstone-evidence-update with [independent preparation](../reviews/2026-10-13-repository-presentation-evidence.md), then finalized its payload from observed results. The newly available native Google Drive MCP profile matched the required Miva address; metadata grounded all five tabs/bounds. A browser Sheet paste failed without changing content; full prewrite native comparison matched the baseline before any write.
+
+One native atomic batch wrote **Context!B22**, **Context!B25** and **Codex evidence!A29:J29**. One subsequent **E29** correction names the actual native-write/browser-inspection route. Final native readback at18:10Africa/Lagos verified **exactly12intended value changes, zero mismatches**, unchanged formatting/validation/notes, unaffected Activities/Milestones/Decisions and E001–E027, and unique E028. Context retains its exact19,789-character earlier-state suffix. Browser confirmed Miva identity/Saved state and normal-zoom layout. Long fields retain the existing clipped-row presentation; full values are verified through readback/formula bar, without broad restyling.
+
+Kaneo prewrite matched **147,327text/172,813HTMLcharacters**. One browser HTML-prefix paste updated A010; Saved state and reload established **152,692text/180,413HTMLcharacters**, retaining both exact prior suffixes. All new words match the intended prefix after paragraph-whitespace normalization. Reload changed6separator characters/90HTMLcharacters only within the new prefix; no corrective repaste or history normalization occurred. Title/InProgress/NoDate and ten-card board (1ToDo/5InProgress/0InReview/4Done; A007ToDo) were observed unchanged. Receipts/proofs remain ignored; no native Kaneo connector claim.
+
+J1 maps actual planning/research/reference/source helpers, Impeccable/companion, independent reusable review/evidence invocations and native/browser/CLI/MCP-attempt routes. J2 uses qualified synthetic learner states without measured benefit. J3 uses navigable guides/actual architecture/pinned setup/provenance, with prior P10 rehearsal separately dated. J4 prepares visual demo material; recording/timecodes/outcomes remain pending. No new full application suite, provider call, ordinary-data use, hosting/CI/license/avatar/workspace change, exhaustive conformance or production-readiness claim follows.
+
+### Done When
+
+Artifacts, corrected native render and saved tracker comparisons pass; the final documentation-only commit is published normally and checked against both renamed heads. No additional tracker/provider/test action is required by this closeout. Final head evidence belongs to the delivery tool result/user report rather than a self-referential commit hash in this file.
+
+Final closeout validation at18:17Africa/Lagos expanded to all13affected/current authored documents and passed **122relative links/anchors**,703READMEwords,8PNGhash/dimension checks,2SVGXML/geometry/text-fit checks and the sequence guard, zeroissues. Both documentation helper syntax checks and git diff --check pass. No product source/tests/dependency changes are present; this remains documentation-only verification.
+
+Independent final reconciliation review compared the actual saved snapshots to the finalized payload:12intended values match, no extra value/format/validation/note change, E028unique and prior history intact. Kaneo exact prior suffixes and saved hash match; all new words/order match, with only new separators normalized. The reviewer read the local proof for title/Saved/InProgress/NoDate; board counts remain root-observed evidence. No blocking inconsistency; ready for final normal publication.
