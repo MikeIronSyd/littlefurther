@@ -15,6 +15,13 @@ let checkedLinks = 0;
 const slug = value => value.replace(/<[^>]+>/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*`_]/g, '').toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, '').replace(/ /g, '-');
 for (const file of files) {
   const text = await fs.readFile(file, 'utf8');
+  for (const block of text.matchAll(/```mermaid\s*\n([\s\S]*?)```/g)) {
+    if (block[1].trimStart().startsWith('sequenceDiagram')) {
+      for (const line of block[1].split('\n')) {
+        if (/[-=]>>?.*:.*;/.test(line)) issues.push(`${file}: unescaped sequence message semicolon`);
+      }
+    }
+  }
   const withoutFences = text.replace(/```[\s\S]*?```/g, '');
   const links = [...withoutFences.matchAll(/!?(?:\[[^\]]*\])\(([^\s)]+)\)/g)].map(m => m[1]);
   links.push(...[...withoutFences.matchAll(/(?:src|srcset|href)="([^"]+)"/g)].map(m => m[1]));

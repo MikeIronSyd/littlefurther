@@ -65,15 +65,15 @@ sequenceDiagram
   end
   S->>O: Strict generation / tools disabled / store:false
   O-->>S: Suggestion or failure
-  S->>S: Recheck original session and current data; validate output
+  S->>S: Recheck original session and current data, validate output
   opt Valid plan sources
     S->>D: Automatically stage owner metadata for 24 hours
   end
   S-->>L: Reviewable suggestion and source information
-  L->>L: Review or discard; optionally apply to draft
+  L->>L: Review or discard, optionally apply to draft
   L->>L: Preview a circle copy locally before sharing
   L->>S: Separate Save / Complete / confirm dates / Share
-  S->>D: Authorized write; plan save retains source snapshots
+  S->>D: Authorized write, plan save retains source snapshots
 ```
 
 Six actions cover plans, smaller steps, study/reflection, Comeback, progress recap and circle wording. Search is available only for deliberate plan discovery. There is one generation request and at most one bounded search request, without automatic retries or provider/model fallback.

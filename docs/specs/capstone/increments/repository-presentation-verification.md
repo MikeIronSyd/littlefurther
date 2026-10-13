@@ -24,6 +24,8 @@ All results start pending. Captures use separate synthetic data and mocked provi
 
 ### Actual preparation, review and limitations
 
+Post-publication GitHub review found a real sequence-diagram parse failure on unescaped prose semicolons. RP07 remains open until corrected native rendering. R35's bounded syntax need was reopened/reclosed with the observed error and official Mermaid separator guidance before the documentation correction; local link/SVG checks had not tested Mermaid parsing. Learning/system flowcharts rendered, including native zoom/pan controls. No passing diagram claim is inferred from code fences alone.
+
 [Independent review](../reviews/2026-10-13-repository-presentation-review.md) invoked learning-journey-review, Impeccable and ui-ux-resources against uncommitted candidate/source baseline9402a64. Initial transient dark/light capture text loss was corrected in the documentation harness with software rendering, font/frame/transition completion and dark reload. Local-preview diagram, source module responsibility, historical/current PRODUCT wording and provenance were corrected. No app code changed.
 
 Final complete capture exited0,8images/5mock responses/0live calls. [Provenance](../../../assets/littlefurther/provenance.md) and [receipt](../../../assets/littlefurther/capture-receipt.json) distinguish focused crops, actual UI and fixtures. Earlier missing-Origin/locator/plural harness failures are retained as failures, not product defects or passing app tests. Own port4320 server closed; ordinary4317 data/server was not used.

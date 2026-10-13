@@ -53,3 +53,13 @@ The 85 domain/server and 94 browser results are explicitly prior 13 October chec
 ## Done When
 
 Local document/pixel findings are corrected and read back; RP01–RP05's scoped local candidate is ready. Continue RP06–RP08 within existing user authorization: rename/metadata/remotes, actual provider render in the agreed themes/narrow layout, saved authorized tracker comparisons, ordinary dual publication and exact head verification. Keep their actual results in the presentation verification record. No additional user approval gate is introduced by this review.
+
+## Addendum — native sequence-render correction, 13 October 2026
+
+**Goal:** Review the focused uncommitted correction after root's actual GitHub observation at `566ac55` found a sequence parse failure. No scoped source/document blocker remains; **RP07 stays pending corrected native GitHub rendering**.
+
+**Context Pointers:** Read current `docs/ARCHITECTURE.md`, `docs/assets/littlefurther/validate.mjs`, reopened/reclosed R35 in `research.md`, and the presentation verification record. Exactly three message labels replace prose semicolons with commas: post-I/O recheck/output validation, learner review/draft application, and authorized write/source retention. Restoring only those three semicolons in memory reproduces the previous reviewed architecture SHA256 `7ed0b696ba9331bacf5d0a51bb497373808c453f8e2cd3c50f9e62e486de3ac2`; corrected SHA256 is `18eb0bc6eac8be42e477bf8aaaceb6bedf35662ba3f74b09323b5c4f9dff4940`. This independently confirms the smallest syntax-only document change. R35 records the observed error and official Mermaid separator guidance before correction.
+
+**Constraints:** All participants, arrows, opt blocks, source staging, provider/privacy limits, local Preview and separate authorized actions remain intact. Validator source adds a guard for raw semicolons in the sequence message forms used here; existing link/anchor, word-count, PNG hash/dimension and SVG assertions remain unchanged. An in-memory `node -` probe passed six cases: all three old labels are rejected and all three corrected labels are accepted. This guard is scoped regression detection, not a complete Mermaid parser. Reviewer used read-only source/hash inspection and that in-memory probe; did not run the receipt-writing validator, browser, app suite, provider, ordinary data or Git actions. Only this addendum was authored.
+
+**Done When:** Root publishes and observes the corrected sequence in GitHub's native renderer, recording actual outcome/limitations. Earlier local document passes did not cover Mermaid parsing; no corrected native-render pass or new full application test result is inferred here.
