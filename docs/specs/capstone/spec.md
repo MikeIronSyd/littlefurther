@@ -50,7 +50,7 @@ Calendars, task lists, paper notes, LMS progress displays and study chats are al
 - The [superseded Track 2 discovery brief](archive/2026-10-07-superseded-track2-discovery.md) preserves earlier hypotheses and questions. The [Guidance concept](archive/2026-10-03-guidance-concept.md) remains historical.
 - [Research](research.md), [delivery plan](plan.md) and [verification/evidence](verification.md) form the implementation record. [AGENTS.md](../../../AGENTS.md) governs lifecycle, four-field briefs, skills, research completion, tracking and authorized project publication.
 - Use the restricted [Miva hackathon Sheet](https://docs.google.com/spreadsheets/d/1vuVwhMl6pSkSP36qlg0hDFoGKLfdpAalAkx1juJE7-M/edit), owned by `m.alkali5130@miva.edu.ng`, and [local Kaneo project](http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board). Preserve A001-style IDs, including A006/A008/A010 for this work. This capstone Sheet is distinct from the cross-course study tracker.
-- Publish intended source to the private [separate account](https://github.com/MikeIronSyd/littlefurther) and [MikeIronSyd](https://github.com/MikeIronSyd/littlefurther) repositories. Local `origin` publishes to both; `miva` permits direct readback.
+- Publish intended source to the two authorized private repositories using separate owner identities, authentication and histories; see [publication](../../operations/repository-publication.md). Equal-head and dual-push requirements are superseded by the13October user decision.
 
 ### Settled decisions and evidence authority
 
