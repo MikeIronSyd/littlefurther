@@ -32,12 +32,14 @@ Two consequential user clarifications arrived during tracker execution and were 
 
 | Criterion | Requirement and artifact | Revision/check/result | Demo and limitation |
 | --- | --- | --- | --- |
-| J1 | Actual conversational Plan Mode planning, Default-mode preparation, R34/AI contract, Impeccable/companion use, independent planning review and this evidence-skill/browser MCP reconciliation | Baseline `bd8dac9`; supplied preparation results and independently executed saved tracker comparisons | Codex-role scene planned. A skill's presence is not used as invocation evidence. No AI product implementation or acceptance pass. |
+| J1 | Accepted written planning/specification, Default-mode preparation, R34/AI contract, Impeccable/companion use, independent planning review and this evidence-skill/browser MCP reconciliation | Baseline `bd8dac9`; supplied preparation results and independently executed saved tracker comparisons | Codex-role scene planned. Written plans do not establish an actual Plan Mode invocation; that earlier attribution is unverified. A skill's presence is not used as invocation evidence. No AI product implementation or acceptance pass. |
 | J2 | Intended learners generally; contextual help across all five capabilities with explicit manual/save/completion/schedule/share boundaries | Requirements and hypotheses retained; no learner observation or outcome study in this increment | Problem/solution scene planned. No motivation, mastery or retention benefit established. |
 | J3 | Existing-stack provenance/lifetime design and synthetic feasibility receipt | 13 isolated checks passed; product migration/API/validator acceptance remains pending | Reuse explanation planned. No new fresh-checkout, production migration or human-adoption result. |
 | J4 | Preparation artifacts support the proposed problem/solution/Codex-role story | No recorded video, duration, timecodes or playback result | Timed 3–5 minute demo and submission remain pending. |
 
 ## Constraints
+
+**13October closeout correction:** root found unsupported actual-Plan-Mode wording in this preparation mapping and later E027 reconciliation. The local mapping is corrected above. Historical E026/A010 text is preserved; the current E027 entry explicitly supersedes that mode attribution with the verified written-plan/specification, Default implementation, MCP and skill evidence. No denial or invented confirmation of an earlier mode invocation follows from missing evidence. The original tracker saves/counts below remain dated operational history.
 
 ### Saved-state verification
 
