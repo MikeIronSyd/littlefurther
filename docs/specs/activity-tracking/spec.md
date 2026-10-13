@@ -41,7 +41,7 @@ Live execution status and publication evidence belong in the linked Google Sheet
 1. Record the brief, milestones, settled constraints, identities, and remaining project decisions.
 2. Build and inspect the workbook, then populate and verify the native Miva Sheet.
 3. Create and verify the Kaneo project and tasks, preserving common IDs.
-4. Check intended source for credentials and unsuitable generated data, verify the existing private repository destinations and account access, then use normal commits/pushes to publish the same intended source history to both.
+4. Check intended source for credentials and unsuitable generated data, verify the existing private repository destinations and account access, then use separate owner identities, authentication, commits and normal pushes to deliver equivalent application source to each independent history.
 5. Record actual verification and publication evidence in the activity trackers. Keep future project decisions unresolved until they are discussed.
 
 The spreadsheet, Kaneo, and account discovery work can run independently. Source publication depends on intended-source checks and verified access to both authorized repositories; no global-recovery registration or checkpoint is a project-publication prerequisite.
