@@ -1,6 +1,7 @@
 import type { ComebackConfirmInput, ComebackPreview, PlanDetail } from "../shared/contracts.js";
 import { errorKey, RequestError, request } from "./api.js";
-import { bind, dateLabel, type MessageKey, message } from "./i18n.js";
+import { aiPanel, cancelAiOperations } from "./ai-assistance.js";
+import { bind, dateLabel, getLocale, type MessageKey, message } from "./i18n.js";
 import { dated } from "./journey.js";
 import { button, el, field, icon, input, named, notice, text } from "./ui.js";
 
@@ -50,6 +51,33 @@ export function showComeback(
   const actions = el("div", "comeback-actions", unchanged, cancel, apply);
   const hasUnfinished = (): boolean => detail.plan.steps.some((step) => !step.completedAt);
   const active = (): boolean => view.isConnected && isCurrent();
+  const capacity = input("number", "aiComebackMinutes", "5");
+  capacity.min = "1";
+  capacity.max = "480";
+  capacity.required = true;
+  const help = aiPanel({
+    title: "aiComebackTitle",
+    action: "aiComebackAction",
+    disclosure: "aiComebackDisclosure",
+    controls: [field("aiCapacity", capacity)],
+    current: active,
+    watch: [capacity, restart],
+    signature: () => JSON.stringify([detail.plan.revision, capacity.value, restart.value, saved]),
+    build: () => {
+      if (!capacity.reportValidity()) {
+        capacity.focus();
+        return null;
+      }
+      if (!hasUnfinished() || saved) return null;
+      return {
+        action: "comeback_help",
+        locale: getLocale(),
+        planId: detail.plan.id,
+        revision: detail.plan.revision,
+        minutes: Number(capacity.value),
+      };
+    },
+  });
   const controls = (): void => {
     previewButton.disabled = busy || needsRefresh || saved || !hasUnfinished();
     restart.disabled = busy || saved || !hasUnfinished();
@@ -260,6 +288,7 @@ export function showComeback(
   }
   async function confirm(): Promise<void> {
     if (busy || apply.disabled || !preview || !confirmation) return;
+    cancelAiOperations();
     busy = true;
     applying = true;
     controls();
@@ -296,6 +325,7 @@ export function showComeback(
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     if (busy || previewButton.disabled || !form.reportValidity()) return;
+    cancelAiOperations();
     const body = { revision: detail.plan.revision, restartDate: restart.value };
     invalidate();
     busy = true;
@@ -338,6 +368,7 @@ export function showComeback(
       edit,
     ),
     text("p", "comebackHelp", "comeback-intro"),
+    help,
     form,
   );
   host.replaceChildren(view);

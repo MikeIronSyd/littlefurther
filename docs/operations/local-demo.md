@@ -14,6 +14,18 @@ The [StudyCircle contract](../specs/capstone/increments/studycircle.md) and [ver
 
 ## Constraints
 
+### Optional OpenAI configuration and v3 recovery
+
+The contextual AI increment uses one operator-managed OpenAI key; learners do not enter personal keys. The local server reads `OPENAI_API_KEY` from the process environment first, otherwise from the ignored `.local/ai-provider.env` file. Never use a `VITE_` variable, browser storage, a tracked file, command-line argument or chat to store the key. No OpenRouter/Firecrawl/model fallback exists. No key is created or credits purchased by startup. `CAPSTONE_AI_DISABLED=1` disables AI before credential loading; automated process/browser checks set this flag and inject synthetic responses where needed.
+
+The initial model is pinned to `gpt-5.4-mini-2026-03-17`. New AI assistance/search requires internet and usable provider access; the manual app starts and works when AI is disabled or unavailable. Missing configuration, provider refusals, incomplete/malformed results, exhausted credits, rate limits and cancellation retain the learner's input. No automatic retry, top-up, background generation or account billing change occurs. Cancellation may not prevent already-started provider processing or charges. The supplied support key's sponsor balance/settings are unavailable; do not infer them from the user's separate personal OpenAI account.
+
+Requests use `store:false`, which is not a zero-retention promise. Search uses a separate bounded request and is available only in plan drafting; reflections and circle drafting have no search tool. Source labels/citations describe actual returned evidence and URL language hints, not guaranteed accuracy, free access or translated materials.
+
+Schema v3 adds only the transient owner-scoped source-draft table/indexes/version row. Saved plans copy exact bounded source metadata into their existing JSON; legacy records/history/receipts remain intact. Expired drafts are cleaned at startup/staging; saved provenance is not deleted by that cleanup. Test migration/rollback/repeated startup before opening ordinary learner data. Before first v3 startup, stop the current server, preserve a complete local copy of its data directory (including `auth-secret`, SQLite and any WAL/SHM files) outside Git, then start the new version. For source rollback, restore the complete matching pre-v3 directory into a separate directory and point the old source there. Never downgrade schema in place, drop tables or overwrite current records to roll back. No project data enters CodexRecovery.
+
+Implementation/check status is recorded in [AI verification](../specs/capstone/increments/ai-assistance-verification.md); these instructions alone do not establish a successful migration or delivered AI behavior.
+
 ### Prerequisites and start
 
 Use Node24.19.0 and pnpm11.19.0. Installation and exact-version provisioning need internet or an already populated compatible package cache. Commands use pnpm because npm is not installed in this Codex runtime. Check both versions from the repository root; a bundled pnpm 11 launcher may disable package-manager selection, so these commands explicitly request the package.json pin:

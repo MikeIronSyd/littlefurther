@@ -1918,3 +1918,109 @@ input[type="checkbox"] {
     opacity: 0.7;
   }
 }
+
+.ai-assistance {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  max-width: 780px;
+  padding: 20px;
+  margin-block: 20px;
+  border-radius: 12px;
+  background: var(--amber-band);
+  color: var(--amber-ink);
+}
+.support-column > .ai-assistance {
+  margin-block: 0;
+}
+.ai-assistance :where(h2, h3, p, li) {
+  overflow-wrap: anywhere;
+}
+.ai-assistance h2 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+.ai-assistance h3 {
+  margin-block: 12px 6px;
+  font-size: 1.0625rem;
+}
+.ai-assistance :where(.hint, .resource-link) {
+  color: inherit;
+}
+.ai-result:empty,
+.ai-status:empty,
+.ai-original-reflection:empty {
+  display: none;
+}
+.ai-result > :where(p, ol, ul) {
+  margin-block: 12px;
+}
+.ai-prose,
+.ai-original-reflection .reflection-text {
+  white-space: pre-wrap;
+}
+.ai-source-list {
+  padding-inline-start: 20px;
+  margin-block: 12px;
+}
+.ai-source-list > li + li {
+  margin-top: 16px;
+}
+.ai-source-list .hint {
+  margin-block: 4px;
+  font-size: 0.875rem;
+}
+.ai-source-list .resource-link {
+  display: inline;
+}
+.ai-saved-sources {
+  padding-block: 18px;
+}
+.ai-source-action {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 10px;
+  flex-wrap: wrap;
+}
+.ai-source-action > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  flex: 1 1 180px;
+}
+.path-source-body {
+  flex: 1;
+  min-width: 0;
+}
+.path-source-body > .path-action {
+  width: 100%;
+}
+.path-source-links {
+  margin-block: 4px 12px;
+  padding-inline-start: 20px;
+  font-size: 0.875rem;
+}
+.ai-original-reflection {
+  padding-block: 12px;
+}
+@media (max-width: 799px) {
+  .ai-assistance {
+    padding: 16px;
+  }
+  .ai-assistance .form-actions {
+    align-items: stretch;
+  }
+  .ai-assistance .form-actions > .button {
+    flex: 1 1 180px;
+    max-width: 100%;
+  }
+}
+@media (forced-colors: active) {
+  .ai-assistance {
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid CanvasText;
+  }
+}

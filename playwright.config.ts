@@ -22,6 +22,6 @@ export default defineConfig({
     url: "http://127.0.0.1:4318/api/health",
     timeout: 120_000,
     reuseExistingServer: false,
-    env: { CAPSTONE_PORT: "4318", CAPSTONE_DATA_DIR: ".local/e2e-data" },
+    env: { CAPSTONE_PORT: "4318", CAPSTONE_DATA_DIR: ".local/e2e-data", CAPSTONE_AI_DISABLED: "1" },
   },
 });

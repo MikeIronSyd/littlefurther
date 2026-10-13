@@ -1,6 +1,6 @@
 # LittleFurther: complete user guide
 
-Current app documented on **10 October 2026**, Africa/Lagos, against source revision `e2b6fae`. This guide uses the **English button and field names**. Selecting **Français** changes interface labels; the same features remain available. It describes the implemented local prototype, including its limits.
+Core app documented on **10 October 2026**, Africa/Lagos, against source revision `e2b6fae`; optional contextual AI added **13 October 2026** in section 28. This guide uses the **English button and field names**. Selecting **Français** changes interface labels; the same features remain available. It describes the local prototype, including its limits. Actual verification and delivery are recorded in the [AI increment record](specs/capstone/increments/ai-assistance-verification.md).
 
 ## 1. What the app does and where each feature lives
 
@@ -365,7 +365,7 @@ Saved accounts, plans, sessions, reflections and circles live in the local serve
 
 The installed/built core can work without internet while its local server runs. External resources may still need internet. There is no server-stopped offline app.
 
-The current interface has no guest mode, email verification/delivery/password reset/change, account name/email editing or deletion, learner-data import/export, session/device manager, completion undo, study-log/reflection editing/deletion, whole-journey deletion, browsable archive/restore, automatic curriculum generation, resource fetching/PDF import, quiz/grading/mastery assessment, certificate, study timer, reminders/push notifications, free-text chat, circle rename/ownership transfer/reopen, or remote-peer/public-hosting flow. It has English/French UI, without automatic translation of saved learner content. These are limits of this version, not extra controls to find.
+The current interface has no guest mode, email verification/delivery/password reset/change, account name/email editing or deletion, learner-data import/export, session/device manager, completion undo, study-log/reflection editing/deletion, whole-journey deletion, browsable archive/restore, PDF import, arbitrary app-side resource fetching, quiz/grading/mastery assessment, certificate, study timer, reminders/push notifications, free-text chat, circle rename/ownership transfer/reopen, or remote-peer/public-hosting flow. Optional AI drafts and deliberate web-search discovery are described in section 28. It has English/French UI, without automatic translation of saved learner content. These are limits of this version, not extra controls to find.
 
 ## 26. Optional PC-owner appendix: start, stop and restart
 
@@ -398,3 +398,57 @@ For the complete prerequisites/install/build procedure, use [local operations](o
 13. Save your work, sign out, sign back in and return to the saved journey.
 
 This route exercises the connected product without requiring peer participation. It demonstrates recorded actions, not verified learning mastery or long-term motivation.
+
+## 28. Optional AI help throughout your journey
+
+AI uses the app's server-managed OpenAI credential. There is no personal-key field or user quota setting. Internet and usable provider allocation are required for AI; the ordinary local app remains available when AI is unavailable. Each panel explains what will leave the local server. Select an AI action deliberately and review its result. Nothing is saved, completed, rescheduled or shared automatically.
+
+### Draft a learning plan
+
+1. Open **Create a learning plan**, enter your goal and at least one available study date. The existing manual/template controls still work.
+2. In **Get help drafting your plan**, optionally describe **What you already know** or **Paste learning material**. Paste only material you are comfortable sending to OpenAI. Supplied reference links are included as links; their pages are not automatically read.
+3. Review **Search the web for credible learning resources**, which starts selected; clear it if you do not want discovery. Search runs only when you request the draft and may consult pages. Discovery currently favors a bounded set of primary learning sites and cannot guarantee resources for every subject or language.
+4. Select **Draft my plan with AI**. Use **Cancel AI request** to stop waiting, or continue manually. Cancellation cannot undo a request already processed by OpenAI.
+5. Review the proposed outcome, prerequisites, small steps and clickable sources. Source records show publisher, observation date, URL language hint and whether the link was supplied, listed, cited or opened in search. A listing/citation does not establish that the full page was read. Accuracy, current availability, free access and language suitability still need your review.
+6. Choose **Use this draft for review** or **Discard suggestion**. Using it populates editable draft steps; it does not save a journey. Review titles, minutes, dates, references and source associations, then use the existing **Save** action when ready.
+7. Keep each retained source's reference link, or select **Remove source** to remove its association. Invalid partially typed links remain editable. Sources linked to completed work cannot be removed through the draft editor. Source staging expires after 24 hours; if an unsaved draft expires, request a new draft rather than treating old source IDs as saved evidence.
+
+The AI drafts an initial segment of up to ten steps, not a guaranteed complete curriculum. If evidence is insufficient, provide relevant material, deliberately search, or use manual planning. AI does not certify job readiness, mastery or completion.
+
+### Make a step smaller
+
+1. On the selected journey, open **Start study session** and find **Make room for a smaller step**.
+2. Set **Minutes available for a small session** and select **Make this step smaller**.
+3. Read the suggested next action and small activities. Your original learning step, plan scope and completion count remain intact. Use the normal study controls to record work and complete the parent step separately when appropriate.
+
+### Study and reflect
+
+1. Open **Start study session**, then **Help with studying and reflection**.
+2. Select **Include this reflection draft in study help** only if you want the current typed draft sent. It starts unselected. Saved reflections and other people's records are not included.
+3. Select **Help me study and reflect**. The disclosed goal, selected step, source metadata and plan reference links support the advice; search is not used here.
+4. Review the advice. If useful, choose **Use this suggestion in my reflection**. Earlier typed reflection is retained visibly for comparison. Edit your reflection and actual study minutes, then **Save** deliberately. Completing the learning step remains a separate action.
+
+### Return after a break
+
+1. Open the existing Comeback/restart screen.
+2. Enter available minutes and select **Help me restart** for advisory help based on unfinished work and schedule facts.
+3. Review the suggestion, then take a small study action or use the separate date preview and confirmation controls. AI advice cannot apply dates or rewrite earlier effort.
+
+### Review consistency and FinishLine progress
+
+1. Open the selected journey's progress/Activity area and find **Reflect on your recorded effort**.
+2. Select **Summarize my progress**.
+3. Read the recap alongside the app's recorded counts and retained history. The recorded numbers remain authoritative. Private saved reflections are not sent. A recap recognizes recorded actions; it does not assess mastery or prove improved motivation.
+
+### Phrase a private-circle draft
+
+1. Open a circle you belong to, select a commitment or check-in, and type your own draft.
+2. Select **Help me phrase this**. Only that draft, its message kind and interface language are sent; your plan, reflections, circle identity and other members' posts are excluded.
+3. Review the result and choose **Use this wording** if wanted. This replaces the editable wording and invalidates any earlier sharing preview.
+4. Edit if needed, then **Preview** and **Share** separately. AI never posts on your behalf. Peer participation remains optional, and these circles are not a free-text chat.
+
+### Cancelling, changing input and recovering from errors
+
+Changing relevant input, language, journey or view invalidates pending advice; signing out or losing access also prevents late results from applying. Ordinary Save/Share operations cancel competing AI work. A refused, malformed, stale, timed-out or unavailable response leaves manual work available. Provider credit/network errors retain inputs; no automatic retry or alternative model/provider is used. You may explicitly try again when ready, but sufficient funding is not guaranteed.
+
+OpenAI requests use `store:false`; this does not mean zero provider retention. Do not send sensitive material that you do not intend to disclose. Server credentials are excluded from source, browser storage and learner controls. This prototype offers contextual help rather than a general chatbot.

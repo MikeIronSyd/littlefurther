@@ -23,7 +23,12 @@ let child;
 async function start() {
   child = spawn(process.execPath, ["dist/server/index.js"], {
     cwd: process.cwd(),
-    env: { ...process.env, CAPSTONE_PORT: String(port), CAPSTONE_DATA_DIR: directory },
+    env: {
+      ...process.env,
+      CAPSTONE_PORT: String(port),
+      CAPSTONE_DATA_DIR: directory,
+      CAPSTONE_AI_DISABLED: "1",
+    },
     windowsHide: true,
     stdio: ["ignore", "pipe", "pipe"],
   });

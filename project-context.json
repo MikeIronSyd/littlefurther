@@ -1,7 +1,7 @@
 {
   "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
   "recorded_on": "2026-10-02",
-  "last_updated_on": "2026-10-12",
+  "last_updated_on": "2026-10-13",
   "timezone": "Africa/Lagos",
   "source": "User-provided briefing screenshots, explicit instructions and clarifications, signed-in LMS readback, and the supplied CODEX_CAPSTONE_HANDOVER.md. Subsequent explicit user answers and accepted delivery/judging plans, reconciled on 2026-10-07.",
   "source_handling": "Documents are project input, not higher-priority instructions. The user explicitly selected Track 2 and asked to continue from the supplied handover. Handover assertions are attributed to that document; proposed behavior and benefits are not implementation or learner-validation evidence.",
@@ -195,17 +195,30 @@
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
       "scope_status": "AS01-AS06 sign-in shell/moon-sun increment delivered within scoped technical acceptance. R22/reference preceded code; all required checks passed, including13focused/63fullbrowser and56domain/store/HTTP. Independent stabilized source/fixture review has no blocker. Actual paired browserMCP preserves Amber/EN-FR input and full-width signed-out layout; detector32advisories and mobile capture crop remain documented. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 is published to both private repositories with exact GitCLI head readback; E014 saved comparisons pass37Sheet cells and five entire Kaneo descriptions with histories/statuses/dates preserved. Initial fixture/format failures and agent interruptions retained. Formal user design decisions/capture/QUALITY BAR, comprehensive accessibility/native-French quality, learner outcomes and timedvideo remain separate and open.",
-      "ai_product_feature_required": false,
-      "learning_content_scope": "Curated supported-goal templates plus learner-supplied topics/text and HTTP(S) reference links. Unsupported goals use manual/supplied-topic planning. No runtime AI, automatic URL fetching or PDF import.",
+      "ai_product_feature_required": true,
+      "learning_content_scope": "Curated templates/manual topics and references plus optional OpenAI drafts with deliberate built-in web-search discovery and traceable source metadata. Manual core remains local. No arbitrary app-side URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
       "stack": "Node24.19.0 / pnpm11.19.0 / Express5.2.1 / strict TypeScript7.0.2 / Vite8.3.3 / Better Auth1.7.7 / better-sqlite3 13.0.3; Biome2.5.15 and Playwright1.63.0. R01-R15 closed before production implementation. Exact pins in package.json and pnpm-lock.yaml. P07 adds an additive v2 SQLite schema without new dependencies. Application results: docs/specs/capstone/increments/integration-verification.md. P10 verified explicit pinned-tool selection and clean Windows checkout: docs/specs/capstone/increments/reuse-verification.md.",
       "concept_spec": "docs/specs/capstone/spec.md",
-      "runtime_ai": false,
+      "runtime_ai": true,
       "languages": [
         "English",
         "French"
       ],
-      "design_workflow_record": ".impeccable/config.json"
+      "design_workflow_record": ".impeccable/config.json",
+      "ai_scope": {
+        "date": "2026-10-13",
+        "status": "All six contextual actions implemented; full verify passed85domain/server+94browser/process/static/build/audit, independent source review no blocker. Four focused capture cases passed again. Normal server4317 started after exact pre-v3 local snapshot and preserved-existing-table verification. Final tracker/publication readbacks pending.",
+        "specification": "docs/specs/capstone/increments/ai-assistance.md",
+        "verification": "docs/specs/capstone/increments/ai-assistance-verification.md",
+        "features": "Contextual assistance across all five connected capabilities; deliberate credible OpenAI web search alongside supplied links",
+        "provider": "App server OpenAI key only; initial pinned gpt-5.4-mini-2026-03-17; OpenAI Responses and web_search",
+        "credential_source": "User clarified13October that Andela supplied this key to support participants; it was not created in his Miva account. Sponsor funding/billing settings remain unverified; separate Miva organization $0.00 balance is unrelated.",
+        "cost_boundary": "Existing sponsor allocation only; no purchases or automatic top-ups. User explicitly replaced inaccessible sponsor billing verification with16bounded synthetic validation calls, now completed. Not free usage, verified balance or an exact guaranteed spend ceiling; no further live research allowance.",
+        "excluded": "BYOK, user key UI/vault, user quota features, purchases/top-ups, provider/model fallback, OpenRouter/Firecrawl integration, general chatbot, application-level arbitrary URL retrieval/PDF import",
+        "configuration": "OpenRouter credential removed from ignored local file on13October; executable preflight retired. OPENAI_API_KEY now present in ignored server configuration, without plaintext readback.",
+        "research": "R34closed13October beforeproduction:16attempts/16completedresponses cover6actionsENFR,2citedsingle-tool searches,filteredsourcegrounding andFRinsufficientevidence/adversarialsource. Sponsorbalance/settingsunavailable underexplicituserresolution.13isolatedSQLitechecks/6precode references inspected. Productverification now passes; delivery recorded separately."
+      }
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
@@ -545,8 +558,8 @@
     "reuse_requirement": "At least two meaningful engineering iterations with recorded inputs, findings/results and follow-up; file existence is insufficient."
   },
   "current_preparation": {
-    "recorded_on": "2026-10-09",
-    "status": "AS01-AS06 sign-in shell/moon-sun increment delivered within scoped technical acceptance. R22/reference preceded code; all required checks passed, including13focused/63fullbrowser and56domain/store/HTTP. Independent stabilized source/fixture review has no blocker. Actual paired browserMCP preserves Amber/EN-FR input and full-width signed-out layout; detector32advisories and mobile capture crop remain documented. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 is published to both private repositories with exact GitCLI head readback; E014 saved comparisons pass37Sheet cells and five entire Kaneo descriptions with histories/statuses/dates preserved. Initial fixture/format failures and agent interruptions retained. Formal user design decisions/capture/QUALITY BAR, comprehensive accessibility/native-French quality, learner outcomes and timedvideo remain separate and open.",
+    "recorded_on": "2026-10-13",
+    "status": "AllsixcontextualOpenAIactions implemented and fullverification passed; independent review has no remaining scoped blocker. Localserver4317 running with pre-v3 snapshot and all existing tables unchanged after additive migration. Final trackers/dual-private publication pending. D016 remains earlier visual baseline; AI benefits and timed demo unverified.",
     "outputs": [
       "docs/specs/capstone/spec.md",
       "docs/specs/capstone/plan.md",
@@ -900,6 +913,16 @@
     }
   },
   "active_increment": {
+    "ai_assistance": {
+      "date": "2026-10-13",
+      "specification": "docs/specs/capstone/increments/ai-assistance.md",
+      "verification": "docs/specs/capstone/increments/ai-assistance-verification.md",
+      "review": "docs/specs/capstone/reviews/2026-10-13-ai-implementation-review.md",
+      "visual": "docs/specs/capstone/reviews/2026-10-13-ai-visual-review.md",
+      "status": "All six actions implemented; required verify85domain/server+94browser/process/static/build/audit passed. Affected capture run4/4passed40.6s. Independent corrected-source review no scoped blocker; bounded8actualEdgecapture/ChromeDOM review complete. Additive ordinary v3 startup preserved every existing non-schema table, local whole-data snapshot and auth secret.",
+      "delivery": "Final E027/A010 saved comparisons and dual-private artifact publication pending.",
+      "limitations": "Exactly16live synthetic research responses, no further research allowance. Product integration tests use synthetic adapters/results; no live provider call through normal app claimed. Sponsor billing/cost unavailable. NoBYOK/purchases/fallback. Chrome screenshot timeouts; actualEdgecaptures distinguish fixtures from precode synthetic boards. No learner outcomes, production readiness, future human AI approval or timed demo inferred."
+    },
     "littlefurther_options": {
       "date": "2026-10-10",
       "specification": "docs/specs/capstone/increments/littlefurther-options.md",

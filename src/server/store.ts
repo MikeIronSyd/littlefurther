@@ -1,6 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
 import type Database from "better-sqlite3";
 import { comebackPreview } from "../domain/comeback.js";
+import { normalizedSourceUrl } from "../domain/ai-validation.js";
 import { conflictsFor, progressFor } from "../domain/progress.js";
 import { DomainError } from "../domain/validation.js";
 import type {
@@ -12,12 +13,15 @@ import type {
   CompletionInput,
   CreatePlanInput,
   LearningPlan,
+  LearningSource,
+  PlanFields,
   PlanDetail,
   Profile,
   ScopeEvent,
   StudyActivity,
   UpdatePlanInput,
 } from "../shared/contracts.js";
+import { AiSourceStore } from "./ai-sources.js";
 
 interface PlanRow {
   owner_id: string;
@@ -38,7 +42,7 @@ export function migrate(database: Database.Database): void {
     version: number;
   }[];
   const ordered = versions.map((row) => row.version).sort((a, b) => a - b);
-  if (ordered.length > 2 || ordered.some((version, index) => version !== index + 1))
+  if (ordered.length > 3 || ordered.some((version, index) => version !== index + 1))
     throw new Error("Unsupported application schema version");
   if (!ordered.includes(1))
     database
@@ -74,13 +78,46 @@ export function migrate(database: Database.Database): void {
     `);
       })
       .immediate();
+  if (!ordered.includes(3))
+    database
+      .transaction(() => {
+        database.exec(`
+      CREATE TABLE ai_source_draft (id TEXT PRIMARY KEY, owner_id TEXT NOT NULL REFERENCES user(id) ON DELETE CASCADE, body TEXT NOT NULL CHECK(length(body) <= 4096), created_at TEXT NOT NULL, expires_at TEXT NOT NULL CHECK(expires_at > created_at));
+      CREATE INDEX ai_source_draft_owner ON ai_source_draft(owner_id, expires_at);
+      CREATE INDEX ai_source_draft_expiry ON ai_source_draft(expires_at);
+      INSERT INTO app_schema (version) VALUES (3);
+    `);
+      })
+      .immediate();
 }
 
 export class JourneyStore {
+  private readonly sources: AiSourceStore;
   constructor(
     private readonly database: Database.Database,
     private readonly clock: () => Date,
-  ) {}
+  ) {
+    this.sources = new AiSourceStore(database, clock);
+  }
+
+  private resolveSources(
+    owner: string,
+    input: PlanFields,
+    current?: LearningPlan,
+  ): LearningSource[] {
+    const ids = input.sourceIds ?? current?.sources?.map((source) => source.id) ?? [];
+    const sources = this.sources.resolve(owner, ids, current?.sources);
+    const references = new Set(input.references.map(normalizedSourceUrl));
+    if (sources.some((source) => !references.has(normalizedSourceUrl(source.url))))
+      throw new DomainError("source_unavailable", 409, "references");
+    return sources;
+  }
+
+  private associations(ids: string[] | undefined, sources: readonly LearningSource[]): void {
+    const permitted = new Set(sources.map((source) => source.id));
+    if (ids?.some((id) => !permitted.has(id)))
+      throw new DomainError("source_unavailable", 409, "sourceIds");
+  }
 
   profile(owner: string): Profile | null {
     return (
@@ -195,6 +232,7 @@ export class JourneyStore {
       const profile = this.profile(owner);
       if (!profile) throw new DomainError("profile_required", 409);
       const now = this.clock().toISOString();
+      const sources = this.resolveSources(owner, input);
       const plan: LearningPlan = {
         id: randomUUID(),
         goal: input.goal,
@@ -206,19 +244,28 @@ export class JourneyStore {
         availabilityDates: input.availabilityDates,
         targetDate: input.targetDate,
         references: input.references,
-        steps: input.steps.map((step) => ({
-          id: randomUUID(),
-          title: step.title,
-          scheduledDate: step.scheduledDate,
-          estimatedMinutes: step.estimatedMinutes,
-          completedAt: null,
-        })),
+        steps: input.steps.map((step) => {
+          this.associations(step.sourceIds, sources);
+          return {
+            id: randomUUID(),
+            title: step.title,
+            scheduledDate: step.scheduledDate,
+            estimatedMinutes: step.estimatedMinutes,
+            completedAt: null,
+            ...(step.sourceIds === undefined ? {} : { sourceIds: step.sourceIds }),
+          };
+        }),
         createdAt: now,
         updatedAt: now,
+        ...(input.sourceIds === undefined ? {} : { sources }),
       };
       this.database
         .prepare("INSERT INTO learning_plan (id, owner_id, body) VALUES (?, ?, ?)")
         .run(plan.id, owner, JSON.stringify(plan));
+      this.sources.consume(
+        owner,
+        sources.map((source) => source.id),
+      );
       return this.detail(owner, plan.id);
     });
   }
@@ -228,22 +275,30 @@ export class JourneyStore {
     return this.write(owner, input.requestId, `update:${id}`, input, () => {
       const plan = this.plan(owner, id);
       if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+      const sources = this.resolveSources(owner, input, plan);
       const nextSteps = input.steps.map((step) => {
-        if (!step.id)
+        if (!step.id) {
+          this.associations(step.sourceIds, sources);
           return {
             id: randomUUID(),
             title: step.title,
             scheduledDate: step.scheduledDate,
             estimatedMinutes: step.estimatedMinutes,
             completedAt: null,
+            ...(step.sourceIds === undefined ? {} : { sourceIds: step.sourceIds }),
           };
+        }
         const previous = plan.steps.find((item) => item.id === step.id);
         if (!previous) throw new DomainError("invalid_step", 400, "stepId");
+        const ids = step.sourceIds ?? previous.sourceIds;
+        this.associations(ids, sources);
         if (
           previous.completedAt !== null &&
           (previous.title !== step.title ||
             previous.scheduledDate !== step.scheduledDate ||
-            previous.estimatedMinutes !== step.estimatedMinutes)
+            previous.estimatedMinutes !== step.estimatedMinutes ||
+            (ids?.length ?? 0) !== (previous.sourceIds?.length ?? 0) ||
+            ids?.some((sourceId) => !previous.sourceIds?.includes(sourceId)))
         )
           throw new DomainError("completed_step_immutable", 409, "stepId");
         return {
@@ -251,6 +306,7 @@ export class JourneyStore {
           title: step.title,
           scheduledDate: step.scheduledDate,
           estimatedMinutes: step.estimatedMinutes,
+          ...(ids === undefined ? {} : { sourceIds: ids }),
         };
       });
       const now = this.clock().toISOString();
@@ -272,8 +328,13 @@ export class JourneyStore {
         steps: nextSteps,
         revision: plan.revision + 1,
         updatedAt: now,
+        ...(input.sourceIds === undefined && plan.sources === undefined ? {} : { sources }),
       };
       this.savePlan(updated, owner);
+      this.sources.consume(
+        owner,
+        sources.map((source) => source.id),
+      );
       return this.detail(owner, id);
     });
   }

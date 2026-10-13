@@ -5,6 +5,7 @@ import {
   type PlanDetail,
 } from "../shared/contracts.js";
 import { errorKey, RequestError, request } from "./api.js";
+import { aiPanel, cancelAiOperations, sourceList } from "./ai-assistance.js";
 import { bind, dateLabel, getLocale, message } from "./i18n.js";
 import {
   button,
@@ -136,6 +137,7 @@ export function showLearning(
   create: () => void,
   recover: () => void,
   circle: () => void,
+  isCurrent: () => boolean = () => host.isConnected,
 ): void {
   disposeLearningLayout();
   const next = detail.plan.steps.find((step) => step.id === detail.nextStepId);
@@ -224,6 +226,22 @@ export function showLearning(
       control.addEventListener("click", () => study(step));
       row.lastElementChild?.replaceWith(control);
     }
+    const associated =
+      detail.plan.sources?.filter((source) => step.sourceIds?.includes(source.id)) ?? [];
+    if (associated.length) {
+      const action = row.lastElementChild;
+      const copy = el("div", "path-source-body");
+      const links = el("ul", "path-source-links");
+      for (const source of associated) {
+        const link = el("a", "resource-link", source.title ?? source.publisher);
+        link.href = source.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        links.append(el("li", "", link));
+      }
+      action?.replaceWith(copy);
+      copy.append(...(action ? [action] : []), text("p", "aiAssociatedSources", "hint"), links);
+    }
     path.append(row);
   }
   const pathSection = el(
@@ -269,6 +287,21 @@ export function showLearning(
         button("openCircles", circle, "button subtle"),
       ),
     ),
+  );
+  support.append(
+    aiPanel({
+      title: "aiProgressTitle",
+      action: "aiProgressAction",
+      disclosure: "aiProgressDisclosure",
+      current: isCurrent,
+      signature: () => String(detail.plan.revision),
+      build: () => ({
+        action: "progress_recap",
+        locale: getLocale(),
+        planId: detail.plan.id,
+        revision: detail.plan.revision,
+      }),
+    }),
   );
   const columns = el("div", "journey-columns", pathSection, support);
   const layout = el("div", "journey-layout");
@@ -320,12 +353,15 @@ export function showLearning(
       text("p", "external", "hint"),
     );
     for (const url of detail.plan.references) {
+      if (detail.plan.sources?.some((source) => source.url === new URL(url).href)) continue;
       const link = el("a", "resource-link", url);
       link.href = url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       section.append(link);
     }
+    if (detail.plan.sources?.length)
+      section.append(sourceList(detail.plan.sources), text("p", "aiSourceLimits", "hint"));
     host.append(section);
   }
 }
@@ -369,12 +405,23 @@ export function showStudy(
       } else if (initial.plan.templateId)
         resources.append(text("p", "templateSourcesUnavailable", "hint"));
       for (const url of new Set(initial.plan.references)) {
+        if (initial.plan.sources?.some((source) => source.url === new URL(url).href)) continue;
         const link = el("a", "resource-link", url);
         link.href = url;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
         resources.append(link);
       }
+      const associated =
+        initial.plan.sources?.filter((source) => step.sourceIds?.includes(source.id)) ?? [];
+      if (associated.length)
+        resources.append(text("h3", "aiAssociatedSources"), sourceList(associated));
+      const others =
+        initial.plan.sources?.filter(
+          (source) => !associated.some((item) => item.id === source.id),
+        ) ?? [];
+      if (others.length) resources.append(text("h3", "aiOtherSources"), sourceList(others));
+      if (initial.plan.sources?.length) resources.append(text("p", "aiSourceLimits", "hint"));
     } else resources.hidden = true;
   });
   let activityRequest = crypto.randomUUID();
@@ -402,10 +449,94 @@ export function showStudy(
   const minutesErrors = fieldErrors(minutes, minutesField);
   const reflectionField = field("reflection", reflection, "reflectionHint");
   const reflectionErrors = fieldErrors(reflection, reflectionField);
+  const smallMinutes = input("number", "aiMinutes", String(initialMinutes ?? 5));
+  smallMinutes.min = "1";
+  smallMinutes.max = String(LIMITS.minutes);
+  smallMinutes.required = true;
+  const stepHelp = aiPanel({
+    title: "aiStepTitle",
+    action: "aiStepAction",
+    disclosure: "aiStepDisclosure",
+    controls: [field("aiCapacity", smallMinutes)],
+    current: active,
+    watch: [smallMinutes],
+    signature: () =>
+      JSON.stringify([
+        detail.plan.revision,
+        smallMinutes.value,
+        Boolean(detail.plan.steps.find((item) => item.id === step.id)?.completedAt),
+      ]),
+    build: () => {
+      if (!smallMinutes.reportValidity()) {
+        smallMinutes.focus();
+        return null;
+      }
+      if (detail.plan.steps.find((item) => item.id === step.id)?.completedAt) return null;
+      return {
+        action: "step_help",
+        locale: getLocale(),
+        planId: detail.plan.id,
+        revision: detail.plan.revision,
+        stepId: step.id,
+        minutes: Number(smallMinutes.value),
+      };
+    },
+  });
+  const includeReflection = input("checkbox", "aiIncludeReflection");
+  const reflectionConsent = el(
+    "label",
+    "checkbox-field",
+    includeReflection,
+    text("span", "aiReflectionConsent"),
+  );
+  const originalReflection = el("div", "ai-original-reflection");
+  const studyHelp = aiPanel({
+    title: "aiStudyTitle",
+    action: "aiStudyAction",
+    disclosure: "aiStudyDisclosure",
+    controls: [reflectionConsent],
+    current: active,
+    watch: [reflection, includeReflection],
+    signature: () =>
+      JSON.stringify([
+        detail.plan.revision,
+        reflection.value,
+        includeReflection.checked,
+        reflection.readOnly,
+      ]),
+    build: () => ({
+      action: "study_reflection",
+      locale: getLocale(),
+      planId: detail.plan.id,
+      revision: detail.plan.revision,
+      stepId: step.id,
+      ...(includeReflection.checked && reflection.value.trim()
+        ? { reflection: reflection.value.trim() }
+        : {}),
+    }),
+    useLabel: "aiUseReflection",
+    canUse: () => !reflection.readOnly,
+    use: (result) => {
+      if (result.kind !== "guidance" || reflection.readOnly) return;
+      const previous = reflection.value;
+      if (previous)
+        originalReflection.replaceChildren(
+          text("p", "aiOriginalReflection", "hint"),
+          el("p", "reflection-text", previous),
+        );
+      reflection.value = [result.summary, result.nextAction]
+        .filter(Boolean)
+        .join("\n\n")
+        .slice(0, LIMITS.reflection);
+      dirty();
+      reflection.focus();
+    },
+  });
   const completeButton = button(
     "completeStep",
     () => {
       if (!active()) return;
+      cancelAiOperations();
       const unlock = lockForm(form);
       completeButton.disabled = true;
       completionStatus.replaceChildren(notice("saving"));
@@ -419,6 +550,7 @@ export function showStudy(
           if (!active()) return;
           detail = result;
           update(result, false);
+          stepHelp.hidden = true;
           completeButton.hidden = true;
           focusStatus(completionStatus, "completionSaved");
         })
@@ -435,11 +567,12 @@ export function showStudy(
     },
     "button",
   );
-  form.append(minutesField, reflectionField, save, status);
+  form.append(minutesField, reflectionField, originalReflection, studyHelp, save, status);
   form.addEventListener("input", dirty);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!active() || !form.reportValidity()) return;
+    cancelAiOperations();
     minutesErrors.clear();
     reflectionErrors.clear();
     const body = {
@@ -509,6 +642,7 @@ export function showStudy(
       text("p", "sessionHelp"),
     ),
     resources,
+    stepHelp,
     form,
     el(
       "section",
@@ -521,7 +655,11 @@ export function showStudy(
   );
 }
 
-export function showActivity(host: HTMLElement, detail: PlanDetail): void {
+export function showActivity(
+  host: HTMLElement,
+  detail: PlanDetail,
+  isCurrent: () => boolean = () => host.isConnected,
+): void {
   const list = el("ol", "history-list");
   for (const activity of [...detail.activities].reverse()) {
     const row = el(
@@ -578,6 +716,19 @@ export function showActivity(host: HTMLElement, detail: PlanDetail): void {
     goal,
     text("p", "historyCopy", "hint"),
     rhythm(detail),
+    aiPanel({
+      title: "aiProgressTitle",
+      action: "aiProgressAction",
+      disclosure: "aiProgressDisclosure",
+      current: isCurrent,
+      signature: () => String(detail.plan.revision),
+      build: () => ({
+        action: "progress_recap",
+        locale: getLocale(),
+        planId: detail.plan.id,
+        revision: detail.plan.revision,
+      }),
+    }),
   );
   overview.setAttribute("aria-labelledby", goal.id);
   const retained = el(

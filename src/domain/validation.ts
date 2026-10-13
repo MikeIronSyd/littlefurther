@@ -109,13 +109,14 @@ function fields(input: Record<string, unknown>, creation: boolean): PlanFields {
     bad("steps");
   const steps: StepInput[] = items.map((value) => {
     const step = record(value);
-    keys(step, ["id", "title", "scheduledDate", "estimatedMinutes"]);
+    keys(step, ["id", "title", "scheduledDate", "estimatedMinutes", "sourceIds"]);
     if (creation && step.id !== undefined) bad("stepId");
     return {
       ...(step.id === undefined ? {} : { id: identifier(step.id, "stepId") }),
       title: text(step.title, "stepTitle", LIMITS.stepTitle),
       scheduledDate: calendarDate(step.scheduledDate, "scheduledDate"),
       estimatedMinutes: integer(step.estimatedMinutes, "estimatedMinutes", 1, LIMITS.minutes),
+      ...(step.sourceIds === undefined ? {} : { sourceIds: sourceIdentifiers(step.sourceIds) }),
     };
   });
   const ids = steps.flatMap((step) => (step.id ? [step.id] : []));
@@ -126,9 +127,24 @@ function fields(input: Record<string, unknown>, creation: boolean): PlanFields {
     targetDate: input.targetDate === null ? null : calendarDate(input.targetDate, "targetDate"),
     references: refs.map(safeUrl),
     steps,
+    ...(input.sourceIds === undefined ? {} : { sourceIds: sourceIdentifiers(input.sourceIds) }),
   };
 }
-const planKeys = ["requestId", "goal", "availabilityDates", "targetDate", "references", "steps"];
+function sourceIdentifiers(value: unknown): string[] {
+  if (!Array.isArray(value) || value.length > LIMITS.references) bad("sourceIds");
+  const ids = value.map((id) => identifier(id, "sourceIds"));
+  if (new Set(ids).size !== ids.length) bad("sourceIds");
+  return ids;
+}
+const planKeys = [
+  "requestId",
+  "goal",
+  "availabilityDates",
+  "targetDate",
+  "references",
+  "steps",
+  "sourceIds",
+];
 export function createPlanInput(value: unknown): CreatePlanInput {
   const input = record(value);
   keys(input, [...planKeys, "templateId"]);

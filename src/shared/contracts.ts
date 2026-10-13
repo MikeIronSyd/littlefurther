@@ -29,6 +29,7 @@ export interface StepInput {
   title: string;
   scheduledDate: string;
   estimatedMinutes: number;
+  sourceIds?: string[];
 }
 export interface PlanFields {
   goal: string;
@@ -36,6 +37,7 @@ export interface PlanFields {
   targetDate: string | null;
   references: string[];
   steps: StepInput[];
+  sourceIds?: string[];
 }
 export interface CreatePlanInput extends PlanFields {
   requestId: string;
@@ -51,6 +53,18 @@ export interface LearningStep {
   scheduledDate: string;
   estimatedMinutes: number;
   completedAt: string | null;
+  sourceIds?: string[];
+}
+export type SourceEvidence = "supplied" | "listed" | "cited" | "opened";
+export interface LearningSource {
+  id: string;
+  kind: "user_supplied" | "web_search";
+  url: string;
+  title: string | null;
+  publisher: string;
+  languageHint: Locale | "unknown";
+  observedAt: string;
+  evidence: SourceEvidence[];
 }
 export interface LearningPlan {
   id: string;
@@ -66,6 +80,7 @@ export interface LearningPlan {
   steps: LearningStep[];
   createdAt: string;
   updatedAt: string;
+  sources?: LearningSource[];
 }
 export interface StudyActivity {
   id: string;

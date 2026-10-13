@@ -22,18 +22,18 @@ function expectCode(action: () => unknown, code: string): void {
 }
 function v1(database: Database.Database): void {
   database.exec(
-    "DROP TABLE circle_receipt; DROP TABLE circle_encouragement; DROP TABLE circle_item; DROP TABLE circle_invite; DROP TABLE circle_member; DROP TABLE study_circle; DELETE FROM app_schema WHERE version=2;",
+    "DROP TABLE ai_source_draft; DROP TABLE circle_receipt; DROP TABLE circle_encouragement; DROP TABLE circle_item; DROP TABLE circle_invite; DROP TABLE circle_member; DROP TABLE study_circle; DELETE FROM app_schema WHERE version IN (2,3);",
   );
 }
 
-test("fresh/repeated v2 migration and populated v1 upgrade preserve every private row", () => {
+test("fresh/repeated current migration and populated v1 upgrade preserve every private row", () => {
   const { database } = fixture();
   try {
     assert.deepEqual(database.prepare("SELECT version FROM app_schema ORDER BY version").all(), [
       { version: 1 },
       { version: 2 },
+      { version: 3 },
     ]);
-    v1(database);
     const journey = new JourneyStore(database, now);
     journey.saveProfile("u0", { locale: "en", timezone: "Africa/Lagos" });
     let detail = journey.create("u0", {
@@ -72,6 +72,9 @@ test("fresh/repeated v2 migration and populated v1 upgrade preserve every privat
       "request_receipt",
     ];
     const before = tables.map((table) => database.prepare(`SELECT * FROM ${table}`).all());
+    // Seed using the current writer, then remove only synthetic newer tables to
+    // exercise an actual populated legacy schema without a current-store constructor.
+    v1(database);
     migrate(database);
     migrate(database);
     assert.deepEqual(
@@ -88,7 +91,6 @@ test("fresh/repeated v2 migration and populated v1 upgrade preserve every privat
 test("failed additive migration rolls back and unsupported/noncontiguous schemas fail", () => {
   const { database } = fixture();
   try {
-    v1(database);
     const journey = new JourneyStore(database, now);
     journey.saveProfile("u0", { locale: "en", timezone: "UTC" });
     journey.create("u0", {
@@ -102,6 +104,7 @@ test("failed additive migration rolls back and unsupported/noncontiguous schemas
     });
     const tables = ["learner_profile", "learning_plan", "request_receipt"];
     const before = tables.map((table) => database.prepare(`SELECT * FROM ${table}`).all());
+    v1(database);
     database.exec("CREATE TABLE circle_member(marker TEXT)");
     assert.throws(() => migrate(database));
     assert.equal(

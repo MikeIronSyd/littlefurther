@@ -28,12 +28,16 @@ import {
 } from "../domain/validation.js";
 import { JourneyStore, migrate } from "./store.js";
 import { CircleStore } from "./circles.js";
+import { AiAssistance, type AiAssistanceOptions } from "./ai-assistance.js";
+import { AiSourceStore } from "./ai-sources.js";
+import { aiAssistInput } from "../domain/ai-validation.js";
 
 export interface AppOptions {
   dataDirectory: string;
   origin: string;
   clientDirectory?: string;
   clock?: () => Date;
+  ai?: AiAssistanceOptions;
 }
 
 async function persistentSecret(directory: string): Promise<string> {
@@ -107,6 +111,13 @@ export async function createApp(
     const auth = betterAuth(authOptions);
     const store = new JourneyStore(database, options.clock ?? (() => new Date()));
     const circles = new CircleStore(database, options.clock ?? (() => new Date()));
+    const assistance = new AiAssistance(
+      store,
+      circles,
+      new AiSourceStore(database, options.clock ?? (() => new Date())),
+      options.clock ?? (() => new Date()),
+      options.ai,
+    );
     const app = express();
     app.disable("x-powered-by");
     app.use((request, response, next) => {
@@ -150,10 +161,38 @@ export async function createApp(
         name: session.user.name,
         email: session.user.email,
       };
+      response.locals.sessionId = session.session.id;
       next();
     });
     const owner = (response: Response): string => (response.locals.user as { id: string }).id;
     const planId = (request: Request): string => identifier(request.params.id);
+    app.get("/api/ai/status", (_request, response) => {
+      response.json(assistance.status());
+    });
+    app.post("/api/ai/assist", async (request, response) => {
+      const input = aiAssistInput(request.body);
+      const user = owner(response);
+      const originalSession = response.locals.sessionId as string;
+      const controller = new AbortController();
+      const disconnected = (): void => {
+        if (!response.writableEnded) controller.abort();
+      };
+      response.once("close", disconnected);
+      request.once("aborted", disconnected);
+      try {
+        const result = await assistance.run(user, input, controller.signal, async () => {
+          const session = await auth.api.getSession({
+            headers: fromNodeHeaders(request.headers),
+            query: { disableCookieCache: true, disableRefresh: true },
+          });
+          return session?.user.id === user && session.session.id === originalSession;
+        });
+        if (!controller.signal.aborted) response.json(result);
+      } finally {
+        response.removeListener("close", disconnected);
+        request.removeListener("aborted", disconnected);
+      }
+    });
     app.get("/api/me", (_request, response) => {
       response.json({ user: response.locals.user, profile: store.profile(owner(response)) });
     });
@@ -298,7 +337,13 @@ export async function createApp(
       response.status(500).json({ error: { code: "save_failed" } });
     };
     app.use(errors);
-    return { app, close: () => database.close() };
+    return {
+      app,
+      close: () => {
+        assistance.close();
+        database.close();
+      },
+    };
   } catch (error) {
     database.close();
     throw error;

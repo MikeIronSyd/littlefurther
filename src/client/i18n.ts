@@ -2,6 +2,77 @@ import type { Locale } from "../shared/contracts.js";
 import { APP_NAME } from "./branding.js";
 
 const en = {
+  aiPlanTitle: "Get help drafting your plan",
+  aiDraftPlan: "Draft my plan with AI",
+  aiPlanDisclosure:
+    "Your goal, starting point, pasted material and supplied links are sent to OpenAI. When search is selected, relevant learning topics are also used for web search. Review the draft before saving.",
+  aiStartingPoint: "What you already know (optional)",
+  aiMaterial: "Paste learning material (optional)",
+  aiMaterialHint:
+    "Paste only material you are comfortable sending to OpenAI. Links alone are not automatically read.",
+  aiSearch: "Search the web for credible learning resources",
+  aiStepTitle: "Make room for a smaller step",
+  aiStepAction: "Make this step smaller",
+  aiStepDisclosure:
+    "OpenAI receives your goal, this unfinished step, associated source metadata, plan reference links and available minutes. Your original step and completion count stay intact.",
+  aiCapacity: "Minutes available for a small session",
+  aiStudyTitle: "Help with studying and reflection",
+  aiStudyAction: "Help me study and reflect",
+  aiStudyDisclosure:
+    "OpenAI receives your goal, this step, associated source metadata and plan reference links. This reflection draft is sent only if you select the option below. Saved reflections and other people's records are not sent. Nothing is saved or completed automatically.",
+  aiReflectionConsent: "Include this reflection draft in study help",
+  aiUseReflection: "Use this suggestion in my reflection",
+  aiComebackTitle: "Find a gentle way back",
+  aiComebackAction: "Help me restart",
+  aiComebackDisclosure:
+    "OpenAI receives unfinished steps, available minutes and schedule facts. This advice does not change your dates or completed work; review dates separately below.",
+  aiProgressTitle: "Reflect on your recorded effort",
+  aiProgressAction: "Summarize my progress",
+  aiProgressDisclosure:
+    "OpenAI receives recorded counts and study-action facts. Private reflections are not sent. Your recorded numbers remain the source of truth; a recap is not an assessment of mastery.",
+  aiCircleTitle: "Help express your own commitment",
+  aiCircleAction: "Help me phrase this",
+  aiCircleDisclosure:
+    "Only your typed draft, message kind and language are sent to OpenAI. Your learning plan, private reflections and other people's posts are not sent. Use, preview and share are separate actions.",
+  aiUseCircle: "Use this wording",
+  aiUsePlan: "Use this draft for review",
+  aiPending: "Preparing a suggestion… You can cancel or continue manually.",
+  aiCancel: "Cancel AI request",
+  aiCancelled: "Request cancelled. Your existing work is unchanged.",
+  aiDiscard: "Discard suggestion",
+  aiUse: "Use suggestion",
+  aiReview: "AI can make mistakes. Review this suggestion; your existing work is unchanged.",
+  aiAccepted: "Suggestion accepted for review. Save or share only when you are ready.",
+  aiChanged: "The input changed. Request a new suggestion when ready.",
+  aiManual: "Your input is retained. You can continue with the existing manual controls.",
+  aiUnavailable: "AI is unavailable. Continue manually or try again later.",
+  aiBusy: "AI is busy. Wait and try again; your input is retained.",
+  aiTimeout: "The AI request timed out. Your input is retained; try again when ready.",
+  aiRefused: "AI could not help with this request. Your input is retained.",
+  aiInvalid: "The suggestion could not be safely used. Your input is retained.",
+  aiConnection:
+    "OpenAI could not be reached. Your input is retained; continue manually or try again later.",
+  aiSourcesUnavailable:
+    "The suggested sources could not be retained. Your input is unchanged; request a new draft when ready.",
+  aiInsufficient: "More information is needed",
+  aiSuggestedCopy: "Suggested wording",
+  aiSourceObserved: "Recorded {date}",
+  aiSourceSupplied: "Supplied link; the page has not been verified.",
+  aiSourceSearch: "Returned by web search; review suitability before using.",
+  aiSourceLanguage: "URL language hint: {language}",
+  aiUnknown: "unknown",
+  aiEvidenceSupplied: "Supplied link",
+  aiEvidenceListed: "Listed in search",
+  aiEvidenceCited: "Cited in search",
+  aiEvidenceOpened: "Opened by search",
+  aiSourceLimits:
+    "Source language, free access, accuracy and current availability are not guaranteed. Search listings or citations do not prove that a full page was read.",
+  aiAssociatedSources: "Sources for this step",
+  aiOtherSources: "Other plan resources",
+  aiRemoveSource: "Remove source",
+  aiSourceLinksMismatch:
+    "Keep the reference link for each retained source, or use Remove source to remove its association before saving.",
+  aiOriginalReflection: "Your earlier reflection is retained below so you can compare.",
   appName: APP_NAME,
   learning: "My learning",
   journeys: "Journeys",
@@ -291,7 +362,7 @@ const en = {
   template: "Start from",
   manual: "My own topics or course sections",
   templateHint:
-    "Starter actions are suggestions. Estimates are editable. A goal title alone does not generate a curriculum.",
+    "Starter actions are suggestions. Estimates are editable. Manual drafts use the selected template or your topics.",
   topics: "Your topics or sections",
   topicsHint: "One action per line. Bring the topics from material you already use.",
   makeDraft: "Review draft steps",
@@ -374,6 +445,79 @@ const en = {
 
 type MessageKey = keyof typeof en;
 const fr: Record<MessageKey, string> = {
+  aiPlanTitle: "Obtenir de l’aide pour préparer votre programme",
+  aiDraftPlan: "Préparer mon programme avec l’IA",
+  aiPlanDisclosure:
+    "Votre objectif, point de départ, texte collé et liens sont envoyés à OpenAI. Si vous sélectionnez la recherche, les sujets pertinents servent aussi à une recherche web. Vérifiez le brouillon avant de l’enregistrer.",
+  aiStartingPoint: "Ce que vous savez déjà (facultatif)",
+  aiMaterial: "Collez un document d’étude (facultatif)",
+  aiMaterialHint:
+    "Collez uniquement du contenu que vous acceptez d’envoyer à OpenAI. Les liens seuls ne sont pas lus automatiquement.",
+  aiSearch: "Rechercher des ressources d’apprentissage crédibles sur le web",
+  aiStepTitle: "Faire de la place à une petite étape",
+  aiStepAction: "Réduire cette étape",
+  aiStepDisclosure:
+    "OpenAI reçoit votre objectif, cette étape à terminer, les informations des sources associées, les liens du programme et les minutes disponibles. L’étape originale et son décompte sont conservés.",
+  aiCapacity: "Minutes disponibles pour une petite séance",
+  aiStudyTitle: "Aide pour étudier et faire le point",
+  aiStudyAction: "M’aider à étudier et faire le point",
+  aiStudyDisclosure:
+    "OpenAI reçoit votre objectif, cette étape, les informations des sources associées et les liens du programme. Ce brouillon de réflexion n’est envoyé que si vous sélectionnez l’option ci-dessous. Les réflexions enregistrées et les informations des autres ne sont pas envoyées. Rien n’est enregistré ni terminé automatiquement.",
+  aiReflectionConsent: "Inclure ce brouillon de réflexion dans l’aide à l’étude",
+  aiUseReflection: "Utiliser cette suggestion dans ma réflexion",
+  aiComebackTitle: "Trouver une reprise en douceur",
+  aiComebackAction: "M’aider à reprendre",
+  aiComebackDisclosure:
+    "OpenAI reçoit les étapes restantes, les minutes disponibles et les informations du calendrier. Ce conseil ne modifie ni vos dates ni vos étapes terminées ; vérifiez les dates séparément ci-dessous.",
+  aiProgressTitle: "Faire le point sur vos efforts enregistrés",
+  aiProgressAction: "Résumer mes progrès",
+  aiProgressDisclosure:
+    "OpenAI reçoit les décomptes enregistrés et les faits des séances. Vos réflexions privées ne sont pas envoyées. Les nombres enregistrés restent la référence ; un résumé ne mesure pas la maîtrise.",
+  aiCircleTitle: "Exprimer votre propre engagement",
+  aiCircleAction: "M’aider à formuler ceci",
+  aiCircleDisclosure:
+    "Seuls votre brouillon saisi, le type de message et la langue sont envoyés à OpenAI. Votre programme, vos réflexions privées et les messages des autres ne sont pas envoyés. Utiliser, prévisualiser et partager sont des actions séparées.",
+  aiUseCircle: "Utiliser cette formulation",
+  aiUsePlan: "Utiliser ce brouillon pour vérification",
+  aiPending: "Préparation d’une suggestion… Vous pouvez annuler ou continuer manuellement.",
+  aiCancel: "Annuler la demande IA",
+  aiCancelled: "Demande annulée. Votre travail reste inchangé.",
+  aiDiscard: "Ignorer la suggestion",
+  aiUse: "Utiliser la suggestion",
+  aiReview: "L’IA peut se tromper. Vérifiez cette suggestion ; votre travail reste inchangé.",
+  aiAccepted:
+    "Suggestion acceptée pour vérification. Enregistrez ou partagez lorsque vous êtes prêt.",
+  aiChanged: "Le contenu a changé. Demandez une nouvelle suggestion lorsque vous êtes prêt.",
+  aiManual: "Votre saisie est conservée. Vous pouvez continuer avec les commandes manuelles.",
+  aiUnavailable: "L’IA est indisponible. Continuez manuellement ou réessayez plus tard.",
+  aiBusy: "L’IA est occupée. Patientez puis réessayez ; votre saisie est conservée.",
+  aiTimeout:
+    "La demande IA a expiré. Votre saisie est conservée ; réessayez lorsque vous êtes prêt.",
+  aiRefused: "L’IA n’a pas pu répondre à cette demande. Votre saisie est conservée.",
+  aiInvalid: "La suggestion n’a pas pu être utilisée en sécurité. Votre saisie est conservée.",
+  aiConnection:
+    "OpenAI est injoignable. Votre saisie est conservée ; continuez manuellement ou réessayez plus tard.",
+  aiSourcesUnavailable:
+    "Les sources proposées n’ont pas pu être conservées. Votre saisie reste inchangée ; demandez un nouveau brouillon lorsque vous êtes prêt.",
+  aiInsufficient: "Plus d’informations sont nécessaires",
+  aiSuggestedCopy: "Formulation proposée",
+  aiSourceObserved: "Enregistré le {date}",
+  aiSourceSupplied: "Lien fourni ; la page n’a pas été vérifiée.",
+  aiSourceSearch: "Résultat de recherche web ; vérifiez sa pertinence avant utilisation.",
+  aiSourceLanguage: "Indication de langue dans l’URL : {language}",
+  aiUnknown: "inconnue",
+  aiEvidenceSupplied: "Lien fourni",
+  aiEvidenceListed: "Présent dans la recherche",
+  aiEvidenceCited: "Cité dans la recherche",
+  aiEvidenceOpened: "Ouvert par la recherche",
+  aiSourceLimits:
+    "La langue, la gratuité, l’exactitude et la disponibilité actuelle des sources ne sont pas garanties. Un résultat ou une citation ne prouve pas qu’une page entière a été lue.",
+  aiAssociatedSources: "Sources de cette étape",
+  aiOtherSources: "Autres ressources du programme",
+  aiRemoveSource: "Retirer la source",
+  aiSourceLinksMismatch:
+    "Conservez le lien de chaque source retenue ou utilisez Retirer la source pour supprimer son association avant d’enregistrer.",
+  aiOriginalReflection: "Votre réflexion précédente est conservée ci-dessous pour comparaison.",
   appName: APP_NAME,
   learning: "Mon apprentissage",
   journeys: "Parcours",
@@ -671,7 +815,7 @@ const fr: Record<MessageKey, string> = {
   template: "Point de départ",
   manual: "Mes propres sujets ou sections de cours",
   templateHint:
-    "Les actions proposées et les durées estimées sont modifiables. Un titre seul ne génère pas de programme.",
+    "Les actions proposées et les durées estimées sont modifiables. Les brouillons manuels utilisent le modèle sélectionné ou vos sujets.",
   topics: "Vos sujets ou sections",
   topicsHint: "Une action par ligne, tirée du matériel que vous utilisez déjà.",
   makeDraft: "Vérifier les étapes proposées",

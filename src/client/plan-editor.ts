@@ -1,10 +1,14 @@
 import {
   type GoalTemplate,
   type LearningPlan,
+  type LearningSource,
   LIMITS,
   type PlanDetail,
   type StepInput,
 } from "../shared/contracts.js";
+import { normalizedSourceUrl } from "../domain/ai-validation.js";
+import { AI_LIMITS } from "../shared/ai-contracts.js";
+import { aiPanel, cancelAiOperations, sourceList } from "./ai-assistance.js";
 import { errorKey, RequestError, request } from "./api.js";
 import { bind, dateLabel, getLocale, type MessageKey, message } from "./i18n.js";
 import {
@@ -62,7 +66,10 @@ export function showPlanEditor(
       estimatedMinutes: step.estimatedMinutes,
       completed: Boolean(step.completedAt),
       uiId: step.id,
+      ...(step.sourceIds ? { sourceIds: [...step.sourceIds] } : {}),
     })) ?? [];
+  let sources: LearningSource[] = [...(existing?.sources ?? [])];
+  const sourceReview = el("section", "ai-saved-sources");
   let reviewed = Boolean(existing);
   let previousBody = "";
   let requestId = crypto.randomUUID();
@@ -115,6 +122,17 @@ export function showPlanEditor(
   references.maxLength = LIMITS.references * (LIMITS.url + 1);
   const referenceField = field("referenceLinks", references, "referenceHint");
   const referenceErrors = fieldErrors(references, referenceField);
+  const startingPoint = el("textarea");
+  startingPoint.name = "aiStartingPoint";
+  startingPoint.rows = 2;
+  startingPoint.maxLength = AI_LIMITS.notes;
+  const material = el("textarea");
+  material.name = "aiMaterial";
+  material.rows = 3;
+  material.maxLength = AI_LIMITS.notes;
+  const search = input("checkbox", "aiSearch");
+  search.checked = true;
+  const searchField = el("label", "checkbox-field", search, text("span", "aiSearch"));
   const review = el("section", "draft-review");
   const stepList = el("div", "draft-steps");
   const stepControls = new Map<
@@ -249,6 +267,13 @@ export function showPlanEditor(
       })
     )
       referenceErrors.show("invalidLink");
+    else if (
+      sources.some(
+        (source) =>
+          !links.some((url) => normalizedSourceUrl(url) === normalizedSourceUrl(source.url)),
+      )
+    )
+      referenceErrors.show("aiSourceLinksMismatch");
     else {
       referenceErrors.clear();
       return true;
@@ -283,6 +308,56 @@ export function showPlanEditor(
         el("ul", "", ...warnings),
         text("p", "conflictNote", "hint"),
       );
+  };
+  const renderSources = (): void => {
+    sourceReview.replaceChildren();
+    sourceReview.hidden = !sources.length;
+    if (!sources.length) return;
+    sourceReview.append(
+      text("h2", "resources"),
+      sourceList(sources),
+      text("p", "aiSourceLimits", "hint"),
+    );
+    for (const source of sources) {
+      const removeSource = button(
+        "aiRemoveSource",
+        () => {
+          sources = sources.filter((item) => item.id !== source.id);
+          for (const step of draft)
+            if (step.sourceIds) step.sourceIds = step.sourceIds.filter((id) => id !== source.id);
+          references.value = referenceLines()
+            .filter((url) => {
+              try {
+                return normalizedSourceUrl(url) !== source.url;
+              } catch {
+                return true;
+              }
+            })
+            .join("\n");
+          dirty();
+          renderSteps();
+        },
+        "button subtle",
+      );
+      bind(removeSource, () => {
+        removeSource.textContent = message("aiRemoveSource");
+        removeSource.setAttribute(
+          "aria-label",
+          `${message("aiRemoveSource")}: ${source.title ?? source.publisher}`,
+        );
+      });
+      removeSource.disabled = draft.some(
+        (step) => step.completed && step.sourceIds?.includes(source.id),
+      );
+      sourceReview.append(
+        el(
+          "div",
+          "ai-source-action",
+          el("span", "", source.title ?? source.publisher),
+          removeSource,
+        ),
+      );
+    }
   };
   const renderSteps = (focus?: {
     uiId: string;
@@ -381,6 +456,8 @@ export function showPlanEditor(
       }
       stepControls.set(step.uiId, { title, up, down, remove });
       if (step.completed) row.append(text("p", "completedLocked", "hint"));
+      const associated = sources.filter((source) => step.sourceIds?.includes(source.id));
+      if (associated.length) row.append(text("h3", "aiAssociatedSources"), sourceList(associated));
       stepList.append(row);
     }
     const removed =
@@ -395,6 +472,7 @@ export function showPlanEditor(
     addStep.disabled = draft.length >= LIMITS.steps;
     updateStepLimit();
     conflicts();
+    renderSources();
     if (focus) {
       const controls = stepControls.get(focus.uiId);
       if (controls) {
@@ -430,6 +508,7 @@ export function showPlanEditor(
         completed: false,
         uiId: crypto.randomUUID(),
       }));
+      sources = [];
       reviewed = true;
       review.hidden = false;
       makeDraft.hidden = true;
@@ -441,6 +520,79 @@ export function showPlanEditor(
     "button primary",
   );
   makeDraft.hidden = reviewed;
+  const aiDraft = existing
+    ? null
+    : aiPanel({
+        title: "aiPlanTitle",
+        action: "aiDraftPlan",
+        disclosure: "aiPlanDisclosure",
+        controls: [
+          field("aiStartingPoint", startingPoint),
+          field("aiMaterial", material, "aiMaterialHint"),
+          searchField,
+        ],
+        current: active,
+        watch: [form],
+        signature: () =>
+          JSON.stringify([
+            goal.value,
+            startingPoint.value,
+            material.value,
+            references.value,
+            search.checked,
+            availability.value,
+            target.value,
+            topics.value,
+          ]),
+        build: () => {
+          if (!goal.reportValidity()) {
+            goal.focus();
+            return null;
+          }
+          if (!validateAvailability()) {
+            availability.focus();
+            return null;
+          }
+          if (!validateReferences()) {
+            references.focus();
+            return null;
+          }
+          return {
+            action: "plan_draft",
+            locale: getLocale(),
+            goal: goal.value.trim(),
+            links: referenceLines(),
+            search: search.checked,
+            ...(startingPoint.value.trim() ? { startingPoint: startingPoint.value.trim() } : {}),
+            ...(material.value.trim() ? { material: material.value.trim() } : {}),
+          };
+        },
+        useLabel: "aiUsePlan",
+        use: (result) => {
+          if (result.kind !== "plan") return;
+          const available = datesFrom(availability.value);
+          goal.value = result.goal;
+          sources = [...result.sources];
+          references.value = sources.map((source) => source.url).join("\n");
+          draft = result.steps.map((step, index) => ({
+            ...step,
+            sourceIds: [...step.sourceIds],
+            scheduledDate: available[Math.min(index, available.length - 1)] ?? "",
+            completed: false,
+            uiId: crypto.randomUUID(),
+          }));
+          reviewed = true;
+          review.hidden = false;
+          makeDraft.hidden = true;
+          templateSelect.value = "";
+          templateSelect.disabled = true;
+          topicField.hidden = true;
+          templateInfo();
+          dirty();
+          renderSteps();
+          reviewHeading.focus();
+        },
+      });
   const reviewHeading = text("h2", "reviewTitle");
   reviewHeading.tabIndex = -1;
   const addStep = button("addStep", () => {
@@ -463,6 +615,7 @@ export function showPlanEditor(
     text("p", "reviewHint", "hint"),
     stepStatus,
     stepList,
+    sourceReview,
     addStep,
     stepLimit,
     warningList,
@@ -472,6 +625,9 @@ export function showPlanEditor(
   review.hidden = !reviewed;
   templateSelect.addEventListener("change", templateInfo);
   availability.addEventListener("input", conflicts);
+  references.addEventListener("input", () => {
+    renderSources();
+  });
   target.addEventListener("input", conflicts);
   form.addEventListener("input", dirty);
   form.addEventListener("submit", (event) => {
@@ -486,11 +642,15 @@ export function showPlanEditor(
       return;
     }
     if (!form.reportValidity()) return;
+    cancelAiOperations();
     const body = {
       goal: goal.value.trim(),
       availabilityDates: datesFrom(availability.value),
       targetDate: target.value || null,
       references: referenceLines(),
+      ...(sources.length || existing?.sources
+        ? { sourceIds: sources.map((source) => source.id) }
+        : {}),
       steps: draft.map(({ completed: _completed, uiId: _uiId, ...step }) => step),
       ...(existing
         ? { revision: existing.revision }
@@ -534,7 +694,16 @@ export function showPlanEditor(
           known.error.show(errorKey(error));
           errors.replaceChildren();
           failedControl = known.control;
-        } else errors.replaceChildren(notice(errorKey(error), true));
+        } else
+          errors.replaceChildren(
+            notice(
+              error instanceof RequestError &&
+                ["source_unavailable", "source_limit"].includes(error.code)
+                ? "aiSourcesUnavailable"
+                : errorKey(error),
+              true,
+            ),
+          );
       })
       .finally(() => {
         unlock();
@@ -558,6 +727,7 @@ export function showPlanEditor(
     availabilityField,
     targetField,
     referenceField,
+    ...(aiDraft ? [aiDraft] : []),
     makeDraft,
     errors,
     review,

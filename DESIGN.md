@@ -240,6 +240,12 @@ Unfinished path actions have persistent soft fills, control-line outlines and44p
 
 ## Do's and Don'ts
 
+### Contextual AI additions — 13 October 2026
+
+Keep assistance inside the existing planning/study/Comeback/Activity/circle surfaces. Quiet secondary text buttons open inline, readable suggestions; Amber remains the main study/save hierarchy. Suggestions carry visible optionality, recipient/context disclosure, pending/cancel/error states and explicit Use/Dismiss actions. Accepting a plan is followed by the existing review/save; accepting circle text invalidates the old preview and sharing still requires exact-copy review. Private reflection consent starts unchecked; no saved peer/reflection history is silently sent.
+
+Sources use underlined native links next to associated steps and an accessible resource list with original title/domain, observation, evidence and language hint. No free-access/currentness/translated-content badge is inferred from a citation. Render all model text as text, preserving native focus and44px controls. The [six OpenAI reference boards](docs/specs/capstone/designs/ai-assistance/reference.html) are synthetic precode preparation and separate from running-app evidence or future human approval. Preserve the approved D016 baseline identity and the latest hover-border treatment.
+
 ### Do
 
 - Do preserve one dominant amber study action and the connected ordered path.

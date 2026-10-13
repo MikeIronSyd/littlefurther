@@ -9,7 +9,12 @@ export class RequestError extends Error {
     super(code);
   }
 }
-export async function request<T>(path: string, method = "GET", body?: unknown): Promise<T> {
+export async function request<T>(
+  path: string,
+  method = "GET",
+  body?: unknown,
+  signal?: AbortSignal,
+): Promise<T> {
   let response: Response;
   try {
     response = await fetch(path, {
@@ -20,6 +25,7 @@ export async function request<T>(path: string, method = "GET", body?: unknown): 
           ? { Accept: "application/json" }
           : { Accept: "application/json", "Content-Type": "application/json" },
       ...(body === undefined ? {} : { body: JSON.stringify(body) }),
+      ...(signal ? { signal } : {}),
     });
   } catch {
     throw new RequestError("NETWORK", 0);

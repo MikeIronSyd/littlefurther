@@ -7,6 +7,7 @@ import type {
   Profile,
 } from "../shared/contracts.js";
 import { errorKey, RequestError, request } from "./api.js";
+import { cancelAiOperations } from "./ai-assistance.js";
 import { showCircles } from "./circle.js";
 import { showComeback } from "./comeback.js";
 import { getLocale, message, setLocale } from "./i18n.js";
@@ -61,11 +62,13 @@ const shell = createShell(root, {
   },
 });
 function beginView(): () => boolean {
+  cancelAiOperations();
   const view = ++loadVersion;
   const session = sessionVersion;
   return () => view === loadVersion && session === sessionVersion;
 }
 function clearSession(): void {
+  cancelAiOperations();
   sessionVersion += 1;
   loadVersion += 1;
   profileVersion += 1;
@@ -113,6 +116,7 @@ function saveProfile(patch: Partial<Profile>): Promise<MeResponse | null> {
 }
 async function changeLocale(locale: Locale): Promise<void> {
   if (signOutPending) return;
+  cancelAiOperations();
   setLocale(locale);
   if (me?.profile) {
     const session = sessionVersion;
@@ -469,7 +473,7 @@ async function renderRoute(focus = false): Promise<void> {
         ),
         list,
       );
-    } else if (route === "activity") showActivity(shell.main, current);
+    } else if (route === "activity") showActivity(shell.main, current, isCurrent);
     else
       showLearning(
         shell.main,
@@ -523,6 +527,7 @@ async function renderRoute(focus = false): Promise<void> {
           focusHeading(shell.main);
         },
         openCircles,
+        isCurrent,
       );
     if (plans.length > 1 && route !== "journeys") {
       const select = el("select");
@@ -598,6 +603,11 @@ window.addEventListener("hashchange", () => {
 });
 window.addEventListener("beforeunload", (event) => {
   if (dirty) event.preventDefault();
+});
+window.addEventListener("littlefurther-session-expired", () => {
+  clearSession();
+  shell.status("signedOut");
+  showAuth();
 });
 shell.main.replaceChildren(text("p", "loading", "loading-state"));
 void initialize();

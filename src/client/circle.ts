@@ -12,6 +12,7 @@ import {
   type ShareCircleItemInput,
 } from "../shared/contracts.js";
 import { errorKey, RequestError, request } from "./api.js";
+import { aiPanel, cancelAiOperations } from "./ai-assistance.js";
 import { bind, getLocale, type MessageKey, message } from "./i18n.js";
 import { button, el, field, focusHeading, input, named, notice, text } from "./ui.js";
 
@@ -175,6 +176,7 @@ export function showCircles(
   }
   async function write(operation: WriteOperation): Promise<void> {
     if (busy) return;
+    cancelAiOperations();
     busy = true;
     pending = operation;
     lockedControls ??= [
@@ -645,6 +647,7 @@ export function showCircles(
   }
   function compose(detail: CircleDetail): void {
     generation += 1;
+    const composeVersion = generation;
     const form = el("form", "circle-compose-form");
     named(form, "circleComposeTitle");
     const kind = el("select");
@@ -685,6 +688,40 @@ export function showCircles(
     };
     const previewButton = text("button", "previewSharedCopy", "button");
     previewButton.type = "submit";
+    const help = aiPanel({
+      title: "aiCircleTitle",
+      action: "aiCircleAction",
+      disclosure: "aiCircleDisclosure",
+      current: () =>
+        active() &&
+        !busy &&
+        lockedControls === null &&
+        composeVersion === generation &&
+        form.isConnected,
+      watch: [draft, kind],
+      signature: () => JSON.stringify([draft.value, kind.value]),
+      build: () => {
+        if (!draft.reportValidity()) {
+          draft.focus();
+          return null;
+        }
+        return {
+          action: "circle_draft",
+          circleId: detail.circle.id,
+          locale: getLocale(),
+          kind: kind.value as CircleItemKind,
+          draft: draft.value.trim(),
+        };
+      },
+      useLabel: "aiUseCircle",
+      use: (result) => {
+        if (result.kind !== "circle") return;
+        draft.value = result.text;
+        invalidate();
+        setDirty(true);
+        draft.focus();
+      },
+    });
     form.addEventListener("input", () => {
       invalidate();
       setDirty(true);
@@ -732,6 +769,7 @@ export function showCircles(
     form.append(
       field("sharedKind", kind),
       field("sharedMessage", draft, "sharedMessageHint"),
+      help,
       previewButton,
       preview,
     );
