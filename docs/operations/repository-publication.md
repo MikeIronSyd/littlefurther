@@ -21,10 +21,6 @@ Use the [development guide](../DEVELOPMENT.md), [current specification](../specs
 
 The private repository's main branch resolves to its intended source commit, authenticated readback confirms the expected files, and authorized tracker results are recorded with their limits. The timed demo, submission, learner validation and production gaps remain separate work.
 
-## Local-only recording material
+## Local-only material
 
-On 14 October the user requested that video scripts, storyboards and video-rehearsal documents/assets stay on this PC and outside the repository. Existing local copies are ignored; keep future recording preparation in ignored local storage. Publish application source, regression tests and ordinary product/developer documentation through the established procedure. Do not re-add or rename the excluded packet into another published folder.
-
-The cleanup removes the packet from current repository files with normal commits. Published ancestry is preserved; earlier commits retain historical copies. Current-tree removal is not a history purge. Source behavior and learner data remain unchanged. Scoped documentation/link checks, local-copy hashes, unchanged source bytes, independent review, authenticated remote readback and saved tracker comparisons are applicable; no new full application-suite result follows from this documentation change.
-
-Verification on 14 October: all 34 excluded paths were absent from the published current tree, local archive hashes passed, all 64 protected source/test/config files were unchanged, and independent review found no blocker. Scoped documentation checks passed for the affected records. E035 saved readbacks preserve complete Sheet/Kaneo histories and metadata. Authenticated normal publication retains existing ancestry; these checks do not purge old commits or establish a new application-suite pass.
+Recording preparation stays in ignored local storage. The user explicitly authorized a bounded main-branch history cleanup on14October2026, retaining local copies and application source. Only that reviewed cleanup permits exact-old-head force-with-lease; future publication remains normal. Verify fresh network clones and report cached-object limits separately. Never republish archived pre-cleanup history.
