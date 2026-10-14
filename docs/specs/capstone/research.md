@@ -255,5 +255,8 @@ User-reported reused-email failure led to [a two-string copy correction](increme
 
 ## R41 — Interface feedback and draft protection, 14 October 2026
 
-Inspected `main.ts` and `shell.ts` establish that global status survives replaced main content and that successful save callbacks announce before rendering. Clear the earlier status only after accepted `canLeave()` navigation. Existing `i18n.ts` and `plan-editor.ts` count/localization bindings support singular removal wording without changing consent or history. Native draft protection, verification and delivery retain their separately recorded status.
+Source inspection established that shell status outlives replaced main content; clear it only after accepted navigation to preserve actual save/session messages. Existing localization/count conventions support a singular removal acknowledgement without changing consent or history. The six-line correction and [native-dialog regressions](../../../tests/e2e/rehearsal-corrections.spec.ts) were verified on 14 October: eight focused cases and the required 85 domain/server + 102 browser suite passed. These are prior application results, not new tests for publication cleanup.
 
+## R42 — Local-only recording content, 14 October 2026
+
+The user requested removal of video scripts and video-rehearsal documentation from the repositories. Tracked-file and inbound-reference inventories established 34 packet files plus duplicated master-document/context content. Hash-verified owner snapshots and original local copies are preserved before untracking. Normal current-tree commits preserve recorded as source evidence history; no history purge or application change is in scope. Ignore rules, tracked-tree link checks, source-byte comparison, independent review, authenticated publication and saved tracker readbacks establish completion.

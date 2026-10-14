@@ -1,6 +1,6 @@
 # Capstone verification and judging evidence
 
-14 October interface feedback: obsolete save feedback and singular removal wording were addressed. Eight fresh native-dialog browser cases passed within the recorded scope. Other checks and delivery retain their separately recorded status.
+14 October interface feedback: obsolete save status clears after accepted navigation, and one-step removal uses correct English/French wording. Fresh native-dialog regressions passed for plan, study/reflection, circle and preferences drafts. The prior required run passed 85 domain/server and 102 browser tests; these are dated results, not new tests for this documentation cleanup. See [regression tests](../../../tests/e2e/rehearsal-corrections.spec.ts). Recording preparation is kept locally.
 
 Latest saved evidence — 14 October: [Docker DK01–DK08](increments/docker-verification.md) and [E031/D019](reviews/2026-10-14-docker-trackers.md) record the verified local container option, required passing checks, scoped review, saved tracker history and normally published source. Final documentary closeout is read back against its intended reference; no new application test or learner/demo outcome is inferred from that closeout.
 

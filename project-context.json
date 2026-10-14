@@ -442,7 +442,7 @@
   ],
   "current_status": {
     "date": "2026-10-14",
-    "summary": "Dated technical verification: eight focused native-dialog cases and the required 85 domain/server plus 102 browser/static/build/process/audit checks passed. Recording and submission are separate deliverables.",
+    "summary": "Local copies preserved; current-tree removal and link/policy edits prepared. Verification, publication and tracker readbacks pending.",
     "product_specification": "docs/specs/capstone/spec.md",
     "application_verification": "docs/specs/capstone/verification.md",
     "user_guide": "docs/USER_GUIDE.md",
@@ -450,12 +450,11 @@
     "development": "docs/DEVELOPMENT.md",
     "presentation": "docs/specs/capstone/increments/repository-presentation.md",
     "reconciliation": "docs/specs/capstone/increments/status-reconciliation.md",
-    "tracker_record": "docs/specs/capstone/verification.md",
-    "evidence_boundary": "Use the focused correction record for fresh native-dialog tests and required checks. The video script has planned timing; recording, learner outcomes and submission remain unfinished.",
+    "tracker_record": "docs/operations/repository-publication.md#local-only-recording-material",
+    "evidence_boundary": "Recording preparation is local-only. This documentation cleanup does not change the application or establish a new application test pass; historical commits retain earlier copies.",
     "packaging": "docs/specs/capstone/increments/docker.md",
     "packaging_verification": "docs/specs/capstone/increments/docker-verification.md",
-    "packaging_status": "DK01–DK08 verified within recorded scope: clean LinuxAMD64/emulatedARM64; synthetic persistence/restore/mockAI;5container browser;required85domain/server+94browser/static/build/process/audit pass;independentreview;E031D019savedexact17Sheetvalues and fullKaneo history; reviewed source normallypublished/readback. Documentarycloseout uses same normalpublication and finalreadback.",
-    "video_script": "docs/specs/capstone/verification.md"
+    "packaging_status": "DK01–DK08 verified within recorded scope: clean LinuxAMD64/emulatedARM64; synthetic persistence/restore/mockAI;5container browser;required85domain/server+94browser/static/build/process/audit pass;independentreview;E031D019savedexact17Sheetvalues and fullKaneo history; reviewed source normallypublished/readback. Documentarycloseout uses same normalpublication and finalreadback."
   },
   "status_reconciliation": {
     "date": "2026-10-14",
@@ -492,9 +491,18 @@
   },
   "feedback_corrections": {
     "date": "2026-10-14",
-    "scope": "Clear obsolete save status only after accepted navigation and use singular English/French removal wording. Preserve native draft guards and explicit save/completion/sharing.",
+    "scope": "Clear obsolete save status after accepted navigation and use singular English/French removal wording; preserve native draft guards.",
     "tests": "tests/e2e/rehearsal-corrections.spec.ts",
     "verification": "docs/specs/capstone/verification.md",
-    "status": "Dated technical verification: eight focused native-dialog cases and the required 85 domain/server plus 102 browser/static/build/process/audit checks passed. Recording and submission are separate deliverables."
+    "source_artifact": "05e5e443310b294aa6a7689fad1e15b7d82ab773",
+    "status": "Implemented and verified before this documentation-only cleanup.",
+    "checks": "14 October prior run: 8 focused browser cases; required 85 domain/server and 102 browser/static/build/process/audit checks passed. No new application test claimed for content cleanup."
+  },
+  "repository_content_policy": {
+    "date": "2026-10-14",
+    "record": "docs/operations/repository-publication.md#local-only-recording-material",
+    "recording_material": "Video scripts, storyboards and video-rehearsal documents/assets stay local and excluded from Git.",
+    "history": "Normal current-tree removal preserves published ancestry; historical commits retain earlier copies.",
+    "status": "Local copies preserved; current-tree removal and link/policy edits prepared. Verification, publication and tracker readbacks pending."
   }
 }

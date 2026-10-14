@@ -18,3 +18,11 @@ dist/
 auth-secret
 .impeccable/review/
 .impeccable/live/
+
+# Recording preparation remains local (14 October user decision)
+docs/demo/
+docs/assets/rehearsal/
+docs/assets/rehearsal-corrections/
+docs/specs/capstone/designs/rehearsal-corrections/
+docs/specs/capstone/increments/rehearsal*.md
+docs/specs/capstone/reviews/2026-10-14-rehearsal*.md

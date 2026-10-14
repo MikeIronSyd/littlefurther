@@ -1,6 +1,6 @@
 # Capstone delivery plan
 
-14 October interface feedback: obsolete save feedback and singular removal wording were addressed. Eight fresh native-dialog browser cases passed within the recorded scope. Other checks and delivery retain their separately recorded status.
+14 October interface feedback: obsolete save status clears after accepted navigation, and one-step removal uses correct English/French wording. Fresh native-dialog regressions passed for plan, study/reflection, circle and preferences drafts. The prior required run passed 85 domain/server and 102 browser tests; these are dated results, not new tests for this documentation cleanup. See [regression tests](../../../tests/e2e/rehearsal-corrections.spec.ts). Recording preparation is kept locally.
 
 Latest saved result — 14 October: Docker technical verification, independent review and [E031/D019 tracker readbacks](reviews/2026-10-14-docker-trackers.md) are complete. Reviewed implementation is published and read back; documentary closeout uses the same authorized normal procedure and verifies its intended source reference. The next product deliverable remains the timed demo/submission, with learner validation and later human AI-surface review distinct.
 

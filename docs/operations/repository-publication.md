@@ -20,3 +20,9 @@ Use the [development guide](../DEVELOPMENT.md), [current specification](../specs
 ## Done When
 
 The private repository's main branch resolves to its intended source commit, authenticated readback confirms the expected files, and authorized tracker results are recorded with their limits. The timed demo, submission, learner validation and production gaps remain separate work.
+
+## Local-only recording material
+
+On 14 October the user requested that video scripts, storyboards and video-rehearsal documents/assets stay on this PC and outside the repository. Existing local copies are ignored; keep future recording preparation in ignored local storage. Publish application source, regression tests and ordinary product/developer documentation through the established procedure. Do not re-add or rename the excluded packet into another published folder.
+
+The cleanup removes the packet from current repository files with normal commits. Published ancestry is preserved; earlier commits retain historical copies. Current-tree removal is not a history purge. Source behavior and learner data remain unchanged. Scoped documentation/link checks, local-copy hashes, unchanged source bytes, independent review, authenticated remote readback and saved tracker comparisons are applicable; no new full application-suite result follows from this documentation change.

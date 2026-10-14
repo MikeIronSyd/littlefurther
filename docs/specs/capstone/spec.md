@@ -1,6 +1,6 @@
 # Track 2 capstone specification
 
-14 October interface feedback: obsolete save feedback and singular removal wording were addressed. Eight fresh native-dialog browser cases passed within the recorded scope. Other checks and delivery retain their separately recorded status.
+14 October interface feedback: obsolete save status clears after accepted navigation, and one-step removal uses correct English/French wording. Fresh native-dialog regressions passed for plan, study/reflection, circle and preferences drafts. The prior required run passed 85 domain/server and 102 browser tests; these are dated results, not new tests for this documentation cleanup. See [regression tests](../../../tests/e2e/rehearsal-corrections.spec.ts). Recording preparation is kept locally.
 
 Current packaging increment — 14 October: [Docker contract](increments/docker.md) adds a local clone/build/start option while preserving the existing app, schema and API. R38 feasibility is closed; actual acceptance/release state belongs in [Docker verification](increments/docker-verification.md). Earlier product/check/approval records remain dated evidence.
 
