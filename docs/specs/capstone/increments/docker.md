@@ -60,7 +60,7 @@ Scoped R38 reclosed14October14:54Africa/Lagos before the documentation correctio
 2. Add scoped bind config/process checks and Dockerfile/Compose/ignore/optional AI override.
 3. Add Docker operations guide and concise links in existing developer/architecture/README records; no source reorganization.
 4. Build clean source context and run unique-volume lifecycle/backup/security/AI-wiring/browser acceptance checks, then required native verification. Leave ordinary data/server intact.
-5. Apply reusable independent review, resolve blockers, reconcile actual results/J1–J4/current records, update both trackers and perform separate normal repository delivery/readback.
+5. Apply reusable independent review, resolve blockers, reconcile actual results/J1–J4/current records, update both trackers and perform authorized normal source delivery/readback.
 
 ## Done When
 
