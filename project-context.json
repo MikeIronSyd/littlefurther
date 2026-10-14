@@ -486,6 +486,7 @@
     "research": "R39 source plus isolated syntheticHTTP verified duplicate masking; conditional existing-password guidance preserves auth semantics.",
     "scope": "Two accountError catalogue values only, English/French; no auth/API/schema/control/dependency changes.",
     "checks": "Staticcheck/lint/format/build pass;11existing auth/password browser tests pass1.1m;8precode references +8actual visual/retainedinput/focus cases pass across EN/FR,1440/320,100–200roottext.",
-    "status": "Two localized strings implemented;R39closed/precodevisuals done;static/build and11affectedauth/password tests plus8actualvisualcases pass;independent scopedreview no blocker. Tracker and normal publication readbacks pending."
+    "status": "Two localized strings implemented and scopedreviewed;static/build,11affectedauth/password tests and8actualvisual/input/focus cases pass. Reviewedsourcepublished/readback;E032savedandverified inbothtrackers withhistoryintact. Documentarycloseoutuses normalpublication/finalreadback.",
+    "tracker_sync": "BrowserMCP11Sheetvalues,0mismatches/priorstyle/formula/structurechanges;E032unique/noDecision;B25old31207exact(final34150). Kaneo4272prefix+164475oldtext=168747,HTML199539 withprior194461exact;Savedreload/titleIPNoDate/10boardunchanged."
   }
 }
