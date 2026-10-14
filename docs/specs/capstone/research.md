@@ -252,3 +252,4 @@ This scoped reopening closed14October14:54Africa/Lagos before correcting the ope
 ## R39 — Incomplete sign-up clarification, 14 October 2026
 
 User-reported reused-email failure led to [a two-string copy correction](increments/signup-copy.md). Installed BetterAuth/source inspection and an isolated fake-email HTTP experiment establish duplicate masking200, subsequent wrong-password401 and successful existing-password sign-in. Invalid inputs/rate limits/server failures can also reach the shared fallback. Research is closed before frontend edits: use conditional guidance naming the existing password, preserve auth privacy/failure semantics and the current accessible form. A definitive duplicate-email assertion cannot be inferred. Proposed visual reference, affected execution and delivery are recorded in the increment; no ordinary learner data or live provider call is involved.
+
