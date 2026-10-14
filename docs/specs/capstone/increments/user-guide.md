@@ -24,7 +24,7 @@ R29 discovery is complete for this bounded documentation scope. No essential fac
 | UG01 | Every current screen/control family and all five connected capabilities have user steps using actual English labels; French equivalence, local entry and shell are included. |
 | UG02 | Explain validation, saved vs unsaved work, minutes vs completion, active vs retained history, selected-journey totals, calendar-day tracking, source/version limits, optional peer privacy and cleanup accurately. |
 | UG03 | Cover errors, uncertainty/stale recovery, session changes, accessibility controls and absent features without promising unsupported controls or measured benefits. Separate learner use from maintainer commands. |
-| UG04 | Independent source-linked completeness review, local link/content checks, saved E021/A010 trackers, normal dual-private source publication and exact heads; actual evidence only. |
+| UG04 | Independent source-linked completeness review, local link/content checks, saved E021/A010 trackers, normal source evidence and exact heads; actual evidence only. |
 
 Plan: author guide and README entry; independent inventories review assigned guide sections; correct documentary findings as one batch; validate local links/coverage and `git diff --check`; publish; reconcile E021/A010; close out actual results. No source/test/data/schema/API/dependency changes or full application check claims.
 
@@ -38,4 +38,4 @@ On 10 October 2026, three independent source/prose reviews found no omitted curr
 
 Root ran `node .local/user-guide-check.mjs`: passed all 27 sequential sections, 45 current control labels, 34 relative documentation links and context JSON parsing. `git diff --check` passed. These are documentation checks, not application tests; no app build/static/browser suite was rerun for prose-only changes. No product source, tests, database, dependency or API changes.
 
-UG01–UG03 are satisfied within current source-documentation scope. UG04 artifact publication and E021/A010 saved readback are complete; [delivery verification](user-guide-verification.md) records exact results. No human usability, learner outcome, formal design approval or finished video is inferred. Final documentation closeout is published separately through normal dual-repository delivery.
+UG01–UG03 are satisfied within current source-documentation scope. UG04 artifact publication and E021/A010 saved readback are complete; [delivery verification](user-guide-verification.md) records exact results. No human usability, learner outcome, formal design approval or finished video is inferred. Final documentation closeout is recorded as source evidence separately through normal source evidence.

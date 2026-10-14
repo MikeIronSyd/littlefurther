@@ -73,7 +73,7 @@ Domain checks: impossible/leap dates, unsafe/credential URLs, invalid timezones,
 
 ## Done When
 
-The root can run the local app using committed documentation, sign in, explicitly confirm locale/timezone and a reviewed plan, log study with optional reflection, explicitly complete a step, edit future scope with retained history, and refresh without lost saved progress. Applicable scripts and meaningful domain/HTTP/browser checks have actual recorded outcomes and independent review findings are addressed. Both authorized repositories and activity trackers are reconciled by root. P06/P07 and full-capstone acceptance remain separately open until implemented and verified.
+The root can run the local app using committed documentation, sign in, explicitly confirm locale/timezone and a reviewed plan, log study with optional reflection, explicitly complete a step, edit future scope with retained history, and refresh without lost saved progress. Applicable scripts and meaningful domain/HTTP/browser checks have actual recorded outcomes and independent review findings are addressed. this private repository and activity trackers are reconciled by root. P06/P07 and full-capstone acceptance remain separately open until implemented and verified.
 
 ### Server/domain increment check record
 

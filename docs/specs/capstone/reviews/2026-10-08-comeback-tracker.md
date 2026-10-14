@@ -18,7 +18,7 @@ Inputs read: `AGENTS.md`, `project-context.json`, the capstone specification, pl
 | A004 / CAH-5 | `r00pcmdoxqe9pg9sypknq8kv` | In Progress | P06 research/specification and settled scope |
 | A006 / CAH-7 | `zlku14kwk2hz6t8wiuhskib1` | In Progress | Actual Comeback implementation, verification and next increment |
 | A008 / CAH-9 | `uhcnhzx7eeu0qc3jonj5qzkj` | In Progress | Actual reusable-skill, agent and MCP work |
-| A009 / CAH-3 | `p866v9czc3ko17xfzg9gyx5y` | Done for initial setup | Supplied and verified normal dual-repository publication |
+| A009 / CAH-3 | `p866v9czc3ko17xfzg9gyx5y` | Done for initial setup | Supplied and verified normal source evidence |
 | A010 / CAH-10 | `nx3nmey5c6huteswnhhzv2zf` | In Progress | Actual acceptance evidence, failures/fixes and limitations |
 
 A007 / CAH-8 (`x4m83y5luy1m0hk8gg7uch42`) is **Capstone submission and reflection** and remains **To Do**. It is not an implementation completion flag.
@@ -48,7 +48,7 @@ The initial preparation established both destinations, the intended Miva identit
 
 ### Final evidence inputs
 
-The [Comeback verification](../increments/comeback-verification.md), [independent source review](2026-10-08-comeback-review.md) and [scoped visual review](2026-10-08-comeback-visual.md) were read before live reconciliation. Root supplied actual results and artifact `204e227a63c550140ed7b868c1fe76e68b74391b`: [separate account](https://github.com/MikeIronSyd/littlefurther/commit/204e227a63c550140ed7b868c1fe76e68b74391b), [MikeIronSyd](https://github.com/MikeIronSyd/littlefurther/commit/204e227a63c550140ed7b868c1fe76e68b74391b). Normal Git push exited 0 and root read both remote main heads as the exact SHA. GitHub MCP `github_fetch_commit` independently returned the matching personal SHA, title and canonical URL; Miva readback remains Git CLI evidence. This tracker agent did not run product checks or publish source.
+The [Comeback verification](../increments/comeback-verification.md), [independent source review](2026-10-08-comeback-review.md) and [scoped visual review](2026-10-08-comeback-visual.md) were read before live reconciliation. Root supplied actual results and artifact `204e227a63c550140ed7b868c1fe76e68b74391b`: [source evidence](https://github.com/MikeIronSyd/littlefurther/commit/204e227a63c550140ed7b868c1fe76e68b74391b). GitHub MCP `github_fetch_commit` independently returned the matching source evidence revision, title and canonical URL; Miva readback remains Git CLI evidence. This tracker agent did not run product checks or publish source.
 
 ### Sheet result and subsequent user clarifications
 

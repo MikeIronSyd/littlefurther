@@ -14,7 +14,7 @@ Applied `.agents/skills/capstone-evidence-update/SKILL.md` and the computer-use 
 
 - [Miva capstone Sheet](https://docs.google.com/spreadsheets/d/1vuVwhMl6pSkSP36qlg0hDFoGKLfdpAalAkx1juJE7-M/edit): browser MCP displayed **Codex Accelerator Activity Tracker**, **Michael Alkali (m.alkali5130@miva.edu.ng)**, **Private to only me** and **Saved to Drive**. All five expected tabs are present. This is separate from the cross-course Miva study tracker.
 - [Kaneo project](http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board): browser MCP displayed **Michael Alkali**, **Codex Accelerator Hackathon**, and ten stable activities: **1 To Do, 5 In Progress, 0 In Review, 4 Done**.
-- User reaffirmation of Sheets + Kaneo + both private GitHub repositories remains active. A010 retains the dated tracking clarification and the superseded brief preference for Kaneo + GitHub only. No settings or sharing changes were made.
+- User reaffirmation of Sheets + Kaneo + this private repository remains active. A010 retains the dated tracking clarification and the superseded brief preference for Kaneo + GitHub only. No settings or sharing changes were made.
 
 ### Observed Sheet baseline
 
@@ -74,7 +74,7 @@ Local-record observation for root: `current_preparation` and the plan correctly 
 
 Read-only preparation is complete: correct destinations remain reachable; E009's prospective Sheet row is empty; prior Sheet cells and all five Kaneo descriptions remain unchanged; precise boundaries and IDs are recorded. No external write was attempted or remains ambiguous.
 
-**Pending execution:** root must supply actual P07 verification/review results and the published artifact SHA with separate remote/MCP readback evidence. Re-read the targets and E009 uniqueness immediately before preparing writes; preserve any intervening user edits. Apply only authorized evidence, read back every changed destination, record exact saved comparisons, and retain unavailable checks explicitly. Source publication and full-capstone completion stay separate from tracker completion.
+**Pending execution:** root must supply actual P07 verification/review results and the recorded as source evidence artifact SHA with separate remote/MCP readback evidence. Re-read the targets and E009 uniqueness immediately before preparing writes; preserve any intervening user edits. Apply only authorized evidence, read back every changed destination, record exact saved comparisons, and retain unavailable checks explicitly. Source publication and full-capstone completion stay separate from tracker completion.
 
 ### Resumed read-only baseline — 8 October 2026, afternoon (Africa/Lagos)
 
@@ -90,9 +90,9 @@ Completed the authorized E009 reconciliation for P07 private StudyCircle. The ev
 
 ### Context Pointers
 
-Before writing, this agent read the [P07 verification](../increments/studycircle-verification.md), [final source review](2026-10-08-circle-review.md), [six-capture visual review](2026-10-08-circle-visual.md), [design-system comparison](2026-10-08-circle-design-system.md), updated project context and the supplied publication result. Local `git show -s` confirmed the artifact SHA and title. Root supplied successful normal `git push origin main`, both `git ls-remote` heads matching the artifact at 16:52 Lagos, and independent personal-repository GitHub MCP `github_fetch_commit` SHA/title/canonical-URL readback. Miva remote verification is Git CLI evidence. This agent did not execute product tests, operate the learner app or publish source.
+Before writing, this agent read the [P07 verification](../increments/studycircle-verification.md), [final source review](2026-10-08-circle-review.md), [six-capture visual review](2026-10-08-circle-visual.md), [design-system comparison](2026-10-08-circle-design-system.md), updated project context and the supplied publication result. Local `git show -s` confirmed the artifact SHA and title. Miva remote verification is Git CLI evidence. This agent did not execute product tests, operate the learner app or publish source.
 
-Immutable source: [separate account commit](https://github.com/MikeIronSyd/littlefurther/commit/134997605a02885dbd5181f0cee01e0aca5fe9ea), [MikeIronSyd commit](https://github.com/MikeIronSyd/littlefurther/commit/134997605a02885dbd5181f0cee01e0aca5fe9ea). The artifact's then-pending tracker/delivery statements are historical timing; this later readback establishes tracker completion and root owns the follow-up documentation publication.
+Immutable source: [source evidence](https://github.com/MikeIronSyd/littlefurther/commit/134997605a02885dbd5181f0cee01e0aca5fe9ea). The artifact's then-pending tracker/delivery statements are historical timing; this later readback establishes tracker completion and root owns the follow-up documentation publication.
 
 Recorded actual results: **56/56 domain/store/HTTP tests**, **36/36 browser cases** (nine P07 and 27 existing), strict/lint/format/build/audit passes, and distinct-process two-account persistence. The final command's literal `--` caused the entire browser suite to run; the 7.7-minute duration is a measured suite duration, not time saved. The initial 35/36 batch and corrected no-plan fixture remain visible. Both independently discovered client defects—missing-target retry misreported as access loss and pasted-token retention in detached DOM—are recorded with fixes and passing browser regression evidence. The root's actual local IAB/Chrome two-account invite/join/preview/share/encouragement walkthrough and scoped visual/system reviews are attributed to their actual actors.
 
@@ -115,7 +115,7 @@ The first A009 paste landed after the old history. The agent stopped that destin
 
 The final Kaneo board remains ten activities: **1 To Do, 5 In Progress, 0 In Review, 4 Done**. A004/A006/A008/A010 remain In Progress, A009 remains Done for initial setup, and A007 remains To Do. No status, date, title, assignee, invitation, comment or sharing action was performed. Proof screenshots were saved and directly visually inspected at ignored `.local/circle-sheet-e009.png` and `.local/circle-kaneo-e009.png`; exact saved comparisons establish the values beyond these supplementary captures.
 
-**Source publication — supplied and separately verified by root.** Both private repositories contain the intended artifact according to root's exact-head readback; personal GitHub MCP and dual Git CLI evidence remain separately labelled. This reconciliation performs no Git mutation or global recovery action. Root owns the documentation-only closeout after this report.
+**Source publication — supplied and separately verified by root.** this private repository contain the intended artifact according to root's exact-head readback; recorded GitHub MCP source inspection and recorded source inspection remain separately labelled. This reconciliation performs no Git mutation or global recovery action. Root owns the documentation-only closeout after this report.
 
 Formal Impeccable completion remains refused/open at plates, with hero/sections/motion/responsive unfinished and QUALITY BAR/comp-diff unavailable; scoped visual `ship` does not replace that formal gate. The detector's 34 advisories are retained, not called clean. Hosted CI remains inactive. No native-French certification, full accessibility conformance, remote-peer behavior, physical internet disconnection, machine reboot, measured time saving, production readiness, human adoption or learner outcome is claimed. The local server must run. The official deadline remains unannounced and 14 October remains internal only.
 

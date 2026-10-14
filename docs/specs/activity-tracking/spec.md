@@ -1,6 +1,6 @@
 # Hackathon activity tracking
 
-Use a Google Sheet owned by `m.alkali5130@miva.edu.ng` and the existing local Kaneo workspace to preserve the hackathon brief, activities, milestones, decisions and evidence. Keep source in the private separate account and MikeIronSyd repositories. Current direction as of 2026-10-07 is Track 2: Engagement & Staying in the Learning Journey, for learners generally, with all five capabilities and both personal cycles and private peer StudyCircle. The selected local browser demo uses curated templates, text/link inputs, English/French, a running local server for internet-disconnected use, and image-first interface design. See [the current capstone specification](../capstone/spec.md). Dated entries below preserve history; superseded Guidance and audience questions must not be reimported into active state.
+Use a Google Sheet owned by `m.alkali5130@miva.edu.ng` and the existing local Kaneo workspace to preserve the hackathon brief, activities, milestones, decisions and evidence. Keep intended non-secret source in the private MikeIronSyd/littlefurther repository. Current direction as of 2026-10-07 is Track 2: Engagement & Staying in the Learning Journey, for learners generally, with all five capabilities and both personal cycles and private peer StudyCircle. The selected local browser demo uses curated templates, text/link inputs, English/French, a running local server for internet-disconnected use, and image-first interface design. See [the current capstone specification](../capstone/spec.md). Dated entries below preserve history; superseded Guidance and audience questions must not be reimported into active state.
 
 ## Requirements and scope
 
@@ -20,7 +20,7 @@ The Google Sheet contains Context, Activities, Milestones, Decisions, and Codex 
 
 Kaneo uses the same A001 through A010 prefixes, with To Do, In Progress, In Review, and Done columns. Record LMS module completion separately from the weekly milestones and practical deliverables. A requirement whose completion has not been checked remains explicitly unverified.
 
-The13October user decision supersedes the earlier shared-history workflow. Each private repository has its own owner identity, authentication and Git history; the school destination is being replaced with a fresh private copy. Follow [publication](../../operations/repository-publication.md), verify independent expected heads and preserve unrelated hooks. Retain historical tracker results as dated evidence, never as permission to reconnect the histories.
+Publish intended non-secret source under the [publication procedure](../../operations/repository-publication.md), preserving hooks and verifying the intended source commit. Keep the Miva Sheet and Kaneo history and saved readbacks accurate. The [14 October status reconciliation](../capstone/increments/status-reconciliation.md) corrects active summaries without changing product behavior.
 
 Google Sheets was prepared as a verified local workbook. The user explicitly requested the signed-in Miva browser workflow. Browser file upload required an additional extension permission, so the existing editing controls are used to populate the native Sheet instead. Verify the native result separately from the local workbook.
 
@@ -33,7 +33,7 @@ Live execution status and publication evidence belong in the linked Google Sheet
 | AC1 | The context preserves the brief, one-track constraint, three options, four judging criteria, milestones, and confirmed identities. | Parse the context and compare with screenshots and explicit user answers. |
 | AC2 | A native Google Sheet in the Miva account contains five populated, legible tabs with useful scrolling and status controls. | Verify account, title, tab contents, representative cells, formatting, and saved state in the browser. |
 | AC3 | Kaneo contains the hackathon project and ten initial tasks with aligned IDs, descriptions, and honest statuses. | Read back the board and task details. |
-| AC4 | Intended non-secret source is committed and pushed to both authorized private GitHub repositories. | Verify both remote main-branch commit hashes against the intended local commit. Global recovery is separate and does not receive project files or Git history. |
+| AC4 | Intended non-secret source is committed and pushed to the authorized private GitHub repository. | Verify the project remote main-branch commit hashes against the intended local commit. Global recovery is separate and does not receive project files or Git history. |
 | AC5 | Records distinguish actual outcomes from planned or unverified work. | Review statuses, dates, evidence, and unresolved fields in all records. |
 
 ## Plan
@@ -41,10 +41,10 @@ Live execution status and publication evidence belong in the linked Google Sheet
 1. Record the brief, milestones, settled constraints, identities, and remaining project decisions.
 2. Build and inspect the workbook, then populate and verify the native Miva Sheet.
 3. Create and verify the Kaneo project and tasks, preserving common IDs.
-4. Check intended source for credentials and unsuitable generated data, verify the existing private repository destinations and account access, then use separate owner identities, authentication, commits and normal pushes to deliver equivalent application source to each independent history.
+4. Check intended source for credentials and unsuitable generated data, verify repository access, then commit and publish normally using authorized authentication. Read back the intended commit.
 5. Record actual verification and publication evidence in the activity trackers. Keep future project decisions unresolved until they are discussed.
 
-The spreadsheet, Kaneo, and account discovery work can run independently. Source publication depends on intended-source checks and verified access to both authorized repositories; no global-recovery registration or checkpoint is a project-publication prerequisite.
+The spreadsheet, Kaneo, and account discovery work can run independently. Source publication depends on intended-source checks and verified access to this private repository; no global-recovery registration or checkpoint is a project-publication prerequisite.
 
 ## Initial setup verification — 2026-10-02
 
@@ -53,7 +53,7 @@ This section preserves the original setup and its then-applicable recovery polic
 - At initial setup, context JSON parsed successfully; it had three track options, four judging criteria, and no selected track.
 - The local workbook contains five populated tabs. Artifact-tool inspection and the formula error scan found no formula errors. Every tab was rendered and checked for clipping. Saved workbook XML confirms tables, filters, frozen panes, and status validation. The bundled Node process returned exit 1 without a diagnostic after exporting; the saved ZIP, XML, content, and rendered views were checked independently.
 - The saved native Sheet was visually reviewed and exported for independent readback. Every used cell matches the verified workbook plus authorized updates: zero value mismatches and zero cell errors. Its five tabs contain 27 context records, ten activities, fourteen requirements, four decisions, and one initial Codex evidence entry. All five filters and frozen heading rows, the four work-tab ID-column freezes, and six-option Activities/Milestones status dropdowns were verified. The Share dialog shows m.alkali5130@miva.edu.ng as Owner and general access Restricted. A002 is Done; A009 tracks source publication and recovery.
-- Both GitHub repositories were read back as private. The exact Miva invitation was accepted, and the personal GitHub CLI reported WRITE access to `MikeIronSyd/andela-miva-codex-hackathon`.
+- Repository access checks were performed as part of the original source-delivery preparation; current publication follows the linked procedure.
 - Kaneo was reloaded and read back in the visible UI: exactly ten tasks, no duplicates, no due dates, and all descriptions and statuses verified. At setup readback there were seven To Do, two In Progress, and one Done task. Course completion had not been verified at that point.
 - `Register-Project.ps1 -Path <workspace> -ConfigPath <physical-runtime-config>` succeeded after an already-running scheduled checkpoint completed. Original hooks were preserved.
 - The scheduled recovery checkpoint completed successfully at 18:34:59 WAT on 2026-10-02. This precedes source publication; it is not evidence that the repositories contain the final source.
@@ -89,8 +89,8 @@ Latest concept-blending increment on 2026-10-03: A003 returns to Done because th
 
 Before source publication, run JSON parsing, `git diff --check`, and a credential-pattern scan over intended source. When using the installed GitHub CLI profile, keep its GitHub configuration scoped to child processes. Publish through normal local Git, preserving unrelated hooks; do not invoke project recovery wrappers. Never commit credentials, recovery configuration, private keys, conversation databases, or recovery archives as project source.
 
-If project publication fails or its result is ambiguous, read both remote heads before retrying and keep the pending result explicit. Preserve local source and existing tracker records when an external destination fails. Any independently authorized global checkpoint failure belongs to the separate globals-only recovery workflow, without uploading project files or history.
+If project publication fails or its result is ambiguous, read the intended source revision before retrying and keep the pending result explicit. Preserve local source and existing tracker records when an external destination fails. Any independently authorized global checkpoint failure belongs to the separate globals-only recovery workflow, without uploading project files or history.
 
 ### Tracking clarification — 8 October 2026
 
-The user asked why Google Sheets was in use and which account owned it. Root explained the earlier dual-tracker request and identified the existing restricted capstone Sheet under `m.alkali5130@miva.edu.ng`. A proposed simplification was immediately superseded when the user explicitly said to continue with the Google Sheet and everything previously in use. The original Sheet, Kaneo and both private GitHub repositories remain active. No destination was deleted or had its sharing changed; the E008 Sheet writes had already completed before the question, so no redundant rewrite was needed. This clarification does not alter the separate Miva study tracker.
+The user asked why Google Sheets was in use and which account owned it. Root explained the earlier dual-tracker request and identified the existing restricted capstone Sheet under `m.alkali5130@miva.edu.ng`. A proposed simplification was immediately superseded when the user explicitly said to continue with the Google Sheet and everything previously in use. The original Sheet, Kaneo and this private repository remain active. No destination was deleted or had its sharing changed; the E008 Sheet writes had already completed before the question, so no redundant rewrite was needed. This clarification does not alter the separate Miva study tracker.

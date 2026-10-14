@@ -55,7 +55,7 @@ The outstanding capture requirement must remain in the root's research/plan reco
 
 ## Constraints
 
-The installed [component-review reference](C:/Users/USER/.codex/skills/impeccable/reference/component-review.md:11) states: **“Never submit the page or write a receipt on the user's behalf.”** Its receipt section says to apply the user's decisions, and requires every item approved plus confirmed inventory before advancing. This is the exact human-decision requirement; a broad request to proceed with the review does not supply those item decisions.
+The installed component-review reference (historical local reference) states: **“Never submit the page or write a receipt on the user's behalf.”** Its receipt section says to apply the user's decisions, and requires every item approved plus confirmed inventory before advancing. This is the exact human-decision requirement; a broad request to proceed with the review does not supply those item decisions.
 
 Michael can decide whether the six regions should be drawn in code, turned into images or revised, then inspect the comp coverage and submit his decisions. Existing Amber selection is settled. No additional aesthetic approval round or feature-scope decision was introduced.
 

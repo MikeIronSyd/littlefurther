@@ -13,7 +13,7 @@ The reviewer inspected the selected A master/reference, R28/specification, nativ
 | BI01 | Exact decorative A and complete noninteractive identity | Verified pass: exact path/viewBox/rounded strokes in factory; computed paint/semantics/name assertions; desktop/mobile image inspection | Learner recognition unmeasured |
 | BI02 | EN/FR name/title, themed mark, reflow | Verified pass within tested scope: shared name, initial title, single optional break,32/29mark; root17cases include both locales/themes and signed-in/out100/200% text at1440/320 | Root-text enlargement is not browser zoom; captures cover two signed-out states |
 | BI03 | Auth/navigation/preferences/focus/session/reveal invariants | Verified pass within affected suite; factory-only shell substitution, unchanged handlers; real signout401/sidebar restoration/expiry/storage/reveal checks retained | No new full application-suite or backend check inferred |
-| BI04 | Checks/review/current records/saved trackers/dual source heads | Checks and independent source/visual review completed; later tracker/publication results belong to contract closeout | Overall formal approval and video remain separate |
+| BI04 | Checks/review/current records/saved trackers/source references | Checks and independent source/visual review completed; later tracker/publication results belong to contract closeout | Overall formal approval and video remain separate |
 
 ## Constraints
 
@@ -27,4 +27,4 @@ Two reviewer/tracker agent turns initially stopped at an account usage limit; af
 
 ## Done When
 
-Independent source/visual assessment and affected-check subparts are complete with no remaining scoped code blocker. Root must reconcile documentation, exact saved tracker fields and normal dual-private publication before marking BI04 complete. No formal human approval, comprehensive accessibility/native-French validation, human adoption, learning benefit, trademark clearance or timed final video is inferred.
+Independent source/visual assessment and affected-check subparts are complete with no remaining scoped code blocker. Root must reconcile documentation, exact saved tracker fields and normal source evidence before marking BI04 complete. No formal human approval, comprehensive accessibility/native-French validation, human adoption, learning benefit, trademark clearance or timed final video is inferred.

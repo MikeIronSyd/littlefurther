@@ -1,24 +1,22 @@
-# Publish under each repository's own identity
+# Publish LittleFurther
 
 ## Goal
 
-Keep the private project copies separate in Git authorship, documentation and authenticated publishing while delivering equivalent application source.
+Publish intended non-secret LittleFurther source and documentation to the private MikeIronSyd/littlefurther repository while preserving product data, credentials and existing Git hooks.
 
 ## Context Pointers
 
-The13October user decision supersedes the earlier dual-push and identical-head policy. See [identity specification](../specs/capstone/increments/repository-identities.md). Dated records describe the historical workflow; they are not permission to reconnect the histories.
+Use the [development guide](../DEVELOPMENT.md), [current specification](../specs/capstone/spec.md), [verification](../specs/capstone/verification.md) and [status reconciliation](../specs/capstone/increments/status-reconciliation.md). Dated application results identify the checks performed and supporting source; they are not new test runs or repository-publication dates.
 
 ## Constraints
 
-1. Inspect the checkout's origin URL and configured author email before committing. Authenticate the publishing process as that repository's owner; check `gh api user` under the intended child-scoped profile. Do not change global credentials or Git identity.
-2. Use a separate checkout and owner identity for each repository. The main development checkout's origin has one push destination. Its school readback remote is deliberately blocked for pushing.
-3. The ignored `.local/repository-identities/prepare-school.mjs` prepares the school projection on this PC. It maps both authorship fields and evidence revisions, removes other-account references and preserves application files. Its private receipt maps the two histories. It never pushes. Review its output and the school checkout before delivery.
-4. For subsequent updates, compare the prepared school main with its remote main. Require remote main to be an ancestor; use a normal explicit main-only push from the school checkout with school authentication. Stop on divergence. Never use mirror/all-ref pushes or import the original history into the school repository.
-5. Verify each destination against its own expected commit. Their heads are intentionally different. Compare protected source/tests/dependencies and artwork/capture bytes to establish content equivalence.
-6. Preserve unrelated hooks, ignored secrets, learner data and local recovery material. Backups and private revision maps stay on this PC. Global CodexRecovery remains outside project publication.
-
-An independent clone of either repository can develop normally using its own owner identity. The local projection helper is an operator migration tool, not a prerequisite for running LittleFurther.
+1. Inspect origin, branch and author/committer settings before committing. Origin must identify https://github.com/MikeIronSyd/littlefurther.git; authenticate authorized publication as MikeIronSyd without changing global credentials.
+2. Review intended changes and preserve unrelated work and hooks. Keep API keys, learner databases, local runtime files, private receipts and generated caches outside Git.
+3. Run proportionate checks and independent review. Documentation-only checks do not establish new application behavior or learner outcomes. Resolve blocking findings before publication.
+4. Use normal explicit main-branch publication after checking the remote state. Stop on divergence; do not force-push or publish unrelated refs.
+5. Read back private visibility, the intended commit and its files through available authenticated tools. A local commit or a successful documentation validator alone is not proof of publication.
+6. Record actual outcomes in the Miva Google Sheet and Kaneo, preserving history and checking saved state. Global CodexRecovery is outside project publication; it never receives this project's source, Git history or data. No hosting, CI activation, purchase or paid storage is implied.
 
 ## Done When
 
-Each published main resolves to its independently expected SHA and owner identity; school historical content and contributors contain no other-account identity; application source remains equivalent. Record actual saved tracker and remote results without claiming identical hashes or new application tests.
+The private repository's main branch resolves to its intended source commit, authenticated readback confirms the expected files, and authorized tracker results are recorded with their limits. The timed demo, submission, learner validation and production gaps remain separate work.

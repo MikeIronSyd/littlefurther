@@ -71,7 +71,7 @@ Transport/uncertain confirmation failure preserves the exact body/request ID and
 2. Frontend agent owns `comeback.ts`, narrow main/journey integration, EN/FR keys and scoped CSS after contract/type agreement. Preserve unrelated state and layout.
 3. Root owns new browser acceptance tests and full aggregate checks. Add tests for learner outcomes/failure paths, not DOM implementation trivia. Existing suite remains regression coverage.
 4. Independent agent applies `learning-journey-review`; fresh visual review checks desktop/light-dark/mobile captures in one batch, with one correction/confirmation batch if needed. No fake formal Impeccable receipts; retain the earlier unfinished phase boundary. Documentation comparison preserves the incumbent design system.
-5. Use `capstone-evidence-update` for actual results, normal Git publication/readback on both private repositories, and saved readback in Miva Sheets/Kaneo. E008 uniqueness must be checked before writing. No global recovery action, paid service, external message or capstone submission.
+5. Use `capstone-evidence-update` for actual results, normal Git publication/readback on this private repository, and saved readback in Miva Sheets/Kaneo. E008 uniqueness must be checked before writing. No global recovery action, paid service, external message or capstone submission.
 
 Exact aggregate commands: `pnpm run check`, `pnpm run lint`, `pnpm run format:check`, `pnpm run build`, `pnpm test`, `pnpm run verify:process`, `pnpm run test:e2e`, `pnpm run audit`. Baseline check/test passed before edits; new checks remain pending. Capture actual failed/skipped checks as well as corrected results. Run the browser suite on installed Edge with synthetic isolated accounts, preserving auth rate limits and real learner data.
 
@@ -84,6 +84,6 @@ Exact aggregate commands: `pnpm run check`, `pnpm run lint`, `pnpm run format:ch
 | CB03 | EN/FR UI presents exact dates, retained effort and both conflict types; explicit acknowledgement, zero-shift and unavailable states work.320px reflow, light/dark, keyboard/focus and locale/unsaved input preservation are inspected. |
 | CB04 | Failed/uncertain saves retain retry identity and honest copy; changed input invalidates preview; stale data requires regeneration; navigation during pending results does not overwrite a new view. |
 | CB05 | Confirmed schedule survives reload and persistence checks; five-minute study adds activity without completing a step. Existing private journey remains passing. |
-| CB06 | Actual review/checks and limits recorded, both remote heads verified, tracker writes compared with saved state. Full peer system, learner benefit/adoption and timed video remain separate outstanding milestones. |
+| CB06 | Actual review/checks and limits recorded, the intended source revision verified, tracker writes compared with saved state. Full peer system, learner benefit/adoption and timed video remain separate outstanding milestones. |
 
 Verification and remaining limitations will be recorded in `comeback-verification.md` after actual execution. This document is a contract, not a claim of implementation or acceptance.

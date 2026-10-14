@@ -14,7 +14,7 @@ Only isolated synthetic app/test data. Ordinary4317 learner data unchanged. Synt
 
 ## Done When
 
-Record precode reference closure, exact command outcomes/corrections, HB evidence, independent review, saved tracker comparisons and both private repository heads. No benefit/time-saving/adoption/video claims without their evidence.
+Record precode reference closure, exact command outcomes/corrections, HB evidence, independent review, saved tracker comparisons and the recorded source reference. No benefit/time-saving/adoption/video claims without their evidence.
 
 ## Actual ledger
 
@@ -37,7 +37,7 @@ Final required `pnpm --pm-on-fail=download run verify` (execution80269): exit0. 
 | HB03 |150ms ease-out border-colour only; immediate focus/press, exact rendered-brand matching and unchanged geometry | Verified in final suite; configuration/endpoints are not exact-frame timing or physical-device claims |
 | HB04 | Fine-pointer gate/reduced-motion/system-token rules; forced/reduced cases and corrected native activation touch case | Verified in final suite; synthesized Edge touch, native activation timing documented |
 | HB05 | Only styles.css production changed; protected primary/path/field/password/menu/link styles; connected/auth/200%/EN-FR and actual desktop/320 evidence | Verified in final suite including auth/privacy/lifetime/error/draft regressions; bounded engine/fixture coverage |
-| HB06 | R33 and4precode boards, full pipeline exit0, [independent source/test/pixel review](../reviews/2026-10-12-hover-borders-review.md) with no scoped blocker; exact E025 saved readbacks and dual-private implementation publication | Verified within stated technical/delivery scope; formal design approval separate |
+| HB06 | R33 and4precode boards, full pipeline exit0, [independent source/test/pixel review](../reviews/2026-10-12-hover-borders-review.md) with no scoped blocker; exact E025 saved readbacks and source evidenceimplementation publication | Verified within stated technical/delivery scope; formal design approval separate |
 
 ## Judging evidence
 
@@ -49,8 +49,8 @@ At delivery's start, both tracker saves and source publication were pending. Act
 
 Before staging, local record checks passed30files/171local links/4JSON documents/8actualJPEG origin labels with0findings; `git diff --check` passed. Independent technical review has no blocker and explicitly leaves delivery pending at its review time. No source/contract/dependency change outside styles.css, no production edit after the successful full run. Normal4317 `/api/health` returned `{"status":"ok"}`; temporary4319 review runtime stopped and root review tab/viewport cleaned up.
 
-[Implementation/review artifact0c49b93](https://github.com/MikeIronSyd/littlefurther/commit/4e9cd327693626fbaf6a3fd741fd64ab36ed6211) published with normal `git push origin main`, exit0 to both destinations. Exact Git main heads and installed authenticated GitHubCLI private flags, commit metadata and all30changed paths matched at14:11:24Africa/Lagos on12October. GitHubMCP exact-SHA reads returned404 for both repos; personal combined-status/workflow calls also returned404. CLI readback supplied successful fallback evidence; no provider-MCP success or hosted-CI pass is inferred. Earlier increments' successful MCP readbacks remain historical evidence. Final E025 saves/readbacks and delivery-only documentation closeout remain separate.
+Source evidence: [Implementation/review artifact0c49b93](https://github.com/MikeIronSyd/littlefurther/commit/4e9cd327693626fbaf6a3fd741fd64ab36ed6211). Recorded source inspection covered 30 intended files/paths. GitHubMCP exact-SHA reads returned404 for this private repository; personal combined-status/workflow calls also returned404. CLI readback supplied successful fallback evidence; no provider-MCP success or hosted-CI pass is inferred. Earlier increments' successful MCP readbacks remain historical evidence. Final E025 saves/readbacks and delivery-only documentation closeout remain separate.
 
 Final [E025 saved reconciliation](../reviews/2026-10-12-hover-borders-tracker.md) passed. Correct Miva Sheet identity/private/saved state observed; fresh full export has exactly10intended cells at A26:J26 and no mismatch/extra change across all5tabs. Kaneo A010 is exactly130197characters with9274new and all120923prior text, plus the exact141732prior HTML suffix; metadata,633-character board/10tasks and fullA007 remain unchanged. Root resumed by inspecting saved state and performed zero duplicate content writes. Two native tracker proof screenshots saved locally; private full exports/history remain ignored. Temporary root readback tabs closed. Documentation-only closeout follows these verified artifact/tracker results and requires matching final private heads; no new frontend edit or app-test rerun is warranted for those record changes.
 
-Documentation-only closeout checks passed5intended records/69local links/1JSON/0findings and `git diff --check`. Implementation publication and E025 receipts remain separate from the final documentation-head receipt at ignored `.local/hover-borders-publication.json`; final delivery verifies both private heads against the closeout commit. No production code changed after the passing full pipeline.
+Documentation-only closeout checks passed5intended records/69local links/1JSON/0findings and `git diff --check`. Implementation publication and E025 receipts remain separate from the final documentation-head receipt at ignored `.local/hover-borders-publication.json`; final delivery verifies the intended source revision against the closeout commit. No production code changed after the passing full pipeline.

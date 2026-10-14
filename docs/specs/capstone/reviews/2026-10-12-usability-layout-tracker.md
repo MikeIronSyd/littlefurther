@@ -4,13 +4,13 @@
 
 Complete the authorized usability/layout evidence reconciliation without duplicating the interrupted session's writes. **Both saved destinations pass exact comparisons.** E024 remains a historical **11 October 2026** event; this continuation's read-only verification completed on **12 October 2026 at 09:58:17 Africa/Lagos**.
 
-The tracker agent actually reinvoked `capstone-evidence-update`, read the current project instructions/context, [UL specification](../increments/usability-layout.md), [verification ledger](../increments/usability-layout-verification.md), [independent review](2026-10-11-usability-layout-review.md), publication receipt and prepared baseline/payload records. Computer-use browser MCP supplied live page observations and saved readbacks. Spreadsheet preservation guidance informed the bounded exported-value comparison; no native Sheets or Kaneo connector is claimed.
+Computer-use browser MCP supplied live page observations and saved readbacks. Spreadsheet preservation guidance informed the bounded exported-value comparison; no native Sheets or Kaneo connector is claimed.
 
 ## Context Pointers
 
 - [Correct Miva capstone Sheet](https://docs.google.com/spreadsheets/d/1vuVwhMl6pSkSP36qlg0hDFoGKLfdpAalAkx1juJE7-M/edit?gid=1036487466#gid=1036487466): Google Account identity visibly **m.alkali5130@miva.edu.ng**, document status **Saved to Drive**, sharing **Private to only me**. E024 is uniquely at **Codex evidence!A25:J25**; E023 remains uniquely at A24. This is separate from the general Miva study-progress tracker.
 - [Existing Kaneo A010](http://localhost:5173/dashboard/workspace/wefNu1lRD5XDr17r5UVFiRpc2kcbXBVi/project/nejfw2r0b5lg6v9wpqorte7h/board?taskId=nx3nmey5c6huteswnhhzv2zf): **A010 Record decisions and verification evidence**, **In Progress**, **No date**.
-- [Implementation/review artifact](https://github.com/MikeIronSyd/littlefurther/commit/9c5f12e0f05dfad8df8ef40017e808592598681a) and [Miva copy](https://github.com/MikeIronSyd/littlefurther/commit/9c5f12e0f05dfad8df8ef40017e808592598681a): the root's normal publication and installed CLI receipt verifies both private flags, exact heads/metadata and all 46 intended paths at 21:56:54 on 11 October. Personal GitHub MCP exact-commit read succeeded; Miva MCP returned 404, with authenticated CLI fallback. Empty statuses and PR-filtered workflow lists do not establish hosted CI success. This tracker agent did not commit or push.
+- [Implementation/review artifact](https://github.com/MikeIronSyd/littlefurther/commit/9c5f12e0f05dfad8df8ef40017e808592598681a) and [Miva copy](https://github.com/MikeIronSyd/littlefurther/commit/9c5f12e0f05dfad8df8ef40017e808592598681a): the root's normal publication and installed CLI receipt verifies recorded private metadata, exact heads/metadata and all 46 intended paths at 21:56:54 on 11 October. recorded GitHub MCP source inspection exact-commit read succeeded; Miva MCP returned 404, with authenticated CLI fallback. Empty statuses and PR-filtered workflow lists do not establish hosted CI success. This tracker agent did not commit or push.
 
 | Destination/check | Actual saved comparison | Result |
 | --- | --- | --- |

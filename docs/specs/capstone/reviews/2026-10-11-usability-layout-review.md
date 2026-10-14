@@ -4,7 +4,7 @@
 
 Review the UL01–08 implementation independently for blocking correctness, regression, privacy, keyboard-focus and layout issues. The reviewed revision is the uncommitted usability/layout increment over `5f222238b2dceb1027db745d8fdd1b4c10b53b3e`. Production source remained unchanged after the final source/pixel review and through the successful required verification run reported below.
 
-**Result: no blocking finding within this scope.** Technical acceptance is supported by the inspected source, bounded actual captures and completed checks. Tracker reconciliation and dual-repository publication remain pending at review time; this report does not establish formal design approval or learner outcomes.
+**Result: no blocking finding within this scope.** Technical acceptance is supported by the inspected source, bounded actual captures and completed checks. Tracker reconciliation and source evidence remain pending at review time; this report does not establish formal design approval or learner outcomes.
 
 ## Context Pointers
 
@@ -24,7 +24,7 @@ The root reported the complete required `pnpm --pm-on-fail=download run verify` 
 | UL06 | Compact Activity measure and semantic record groups without changing records/order/calculations; shared wrapping circle navigation with guards | Source invariant comparison, isolated three-type Activity/data-equality tests, two-type actual Activity fixture; desktop/mobile nav, dirty-state and write-lock cases in run 12345 | verified pass | Actual browser fixture contained two populated history types; tests cover all three. Navigation wraps when needed, including enlarged text, rather than at every 320px presentation. |
 | UL07 | Clear timezone/date/minute guidance with unchanged inputs/defaults/limits and separately visible estimate | Explicit UTC examples; unchanged date/parser/default boundaries; actual five-minute viewport capture shows reported 5 and estimated 20; new study cases and complete pipeline | verified pass | No timer, picker or new default behavior; native French-language quality and learner comprehension are not established. |
 | UL08 technical checks | Research/reference sequence, meaningful regression coverage, complete required checks and independent bounded review | R32/precode records, complete run 12345, diff-check record, actual captures and this review | verified pass | Mechanical detector silence and passing checks do not establish usability, WCAG conformance or defect freedom. |
-| UL08 delivery | Saved tracker reconciliation and intended source published to both private repositories with exact verified heads | Delivery section in verification ledger | unverified | Pending at review time; root owns tracker writes, commit/push and remote readback. |
+| UL08 delivery | Saved tracker reconciliation and intended source retained as source evidence with exact verified heads | Delivery section in verification ledger | unverified | Pending at review time; root owns tracker writes, commit/push and remote readback. |
 
 ## Constraints
 
@@ -38,4 +38,4 @@ Root-text enlargement and forced-colour automated checks are not full browser-zo
 
 ## Done When
 
-The independent implementation review is complete: acceptance-linked source/pixel review and completed-check synthesis found no blocking issue. The root may continue the authorized evidence reconciliation and publication, then record saved Sheet/Kaneo readback and both exact remote heads under UL08. Those delivery gates must be completed or accurately left open before declaring the whole increment delivered. Formal design approval, learner validation and the final demo/submission remain separate decisions and work.
+The independent implementation review is complete: acceptance-linked source/pixel review and completed-check synthesis found no blocking issue. The root may continue the authorized evidence reconciliation and publication, then record saved Sheet/Kaneo readback and the intended source revision under UL08. Those delivery gates must be completed or accurately left open before declaring the whole increment delivered. Formal design approval, learner validation and the final demo/submission remain separate decisions and work.

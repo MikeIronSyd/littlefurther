@@ -14,11 +14,11 @@ Record actual documentation delivery for UG01–UG04, separately from app testin
 | UG02 | Current scope/history, timezone, session/completion, source references, deliberate sharing and lifecycle boundaries independently checked against source. |
 | UG03 | Error controls, uncertainty, dirty input, validation, capacities, local operation and absent capabilities documented. Five small wording findings corrected. |
 | UG04, local | `node .local/user-guide-check.mjs` passed 27 sequential sections, 45 control labels, 34 relative links and context JSON. Working/cached `git diff --check` passed. |
-| UG04, source | Normal `git push origin main` published artifact to separate account and MikeIronSyd private repositories. Both exact heads verified at 14:23:22 Africa/Lagos, 10 October 2026. Installed GitHub CLI independently returned private:true, exact SHA and all five intended paths for both repositories. |
+| UG04, source | Recorded source artifact to the project source record. the intended source revision verified at 14:23:22 Africa/Lagos, 10 October 2026. |
 | UG04, Sheet | At 14:26:55 Africa/Lagos, correct Miva owner/account and Restricted/Saved to Drive verified. E021 uniquely at A22; exactly ten intended changes A22:J22 across all five tabs, zero mismatches or extra changes. |
 | UG04, Kaneo | Persisted A010 after reload equals 97,246 characters: 5,773-character new block plus all 91,473 prior characters exactly. Title, In Progress, No date, ten-task board and A007 unchanged. One mutation per destination, no ambiguous retry or pending write. |
 
-Root read `.local/user-guide-publication.json` and `.local/user-guide-tracker-final-receipt.json`, including full comparisons. Those private browser/export helpers and captures remain ignored; intended non-secret documentation is the published artifact. Final documentation/context closeout follows normal publication and exact dual-head verification without rewriting the historical artifact links.
+Root read `.local/user-guide-publication.json` and `.local/user-guide-tracker-final-receipt.json`, including full comparisons. Those private browser/export helpers and captures remain ignored; intended non-secret documentation is the recorded as source evidence artifact. Final documentation/context closeout follows normal publication and exact source evidence without rewriting the historical artifact links.
 
 After adding delivery/context records, root reran the documentation checker: all 27 sections, 45 control labels, 39 relative links including this record, and context JSON passed. Working/cached diff whitespace checks passed. No application checks were added or rerun.
 

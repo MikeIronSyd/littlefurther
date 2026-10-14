@@ -21,4 +21,4 @@ Visual identity → dashboard → concrete capabilities → focused gallery → 
 
 ## Done When
 
-Approximately600–900words excluding commands/captions; local asset/link/anchor checks and independent review pass. Actual GitHub light/dark/narrow rendering and dual-private delivery are recorded separately. Do not apply this Read brief to `src/client/main.ts` or change the application's Operate brief.
+Approximately600–900words excluding commands/captions; local asset/link/anchor checks and independent review pass. Actual GitHub light/dark/narrow rendering and source evidence are recorded separately. Do not apply this Read brief to `src/client/main.ts` or change the application's Operate brief.

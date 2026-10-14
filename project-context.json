@@ -194,11 +194,11 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "AS01-AS06 sign-in shell/moon-sun increment delivered within scoped technical acceptance. R22/reference preceded code; all required checks passed, including13focused/63fullbrowser and56domain/store/HTTP. Independent stabilized source/fixture review has no blocker. Actual paired browserMCP preserves Amber/EN-FR input and full-width signed-out layout; detector32advisories and mobile capture crop remain documented. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 is published to both private repositories with exact GitCLI head readback; E014 saved comparisons pass37Sheet cells and five entire Kaneo descriptions with histories/statuses/dates preserved. Initial fixture/format failures and agent interruptions retained. Formal user design decisions/capture/QUALITY BAR, comprehensive accessibility/native-French quality, learner outcomes and timedvideo remain separate and open.",
+      "scope_status": "All five connected capabilities and six optional contextual OpenAI actions are implemented. Dated13October verification records85domain/server and94browser passes, independent review and bounded visual evidence. D016 approves the12October visual baseline; later AI-surface human review, timed3–5minute demo, submission/reflection and learner usefulness/outcome evidence remain unfinished.",
       "ai_product_feature_required": true,
       "learning_content_scope": "Curated templates/manual topics and references plus optional OpenAI drafts with deliberate built-in web-search discovery and traceable source metadata. Manual core remains local. No arbitrary app-side URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
-      "stack": "Node24.19.0 / pnpm11.19.0 / Express5.2.1 / strict TypeScript7.0.2 / Vite8.3.3 / Better Auth1.7.7 / better-sqlite3 13.0.3; Biome2.5.15 and Playwright1.63.0. R01-R15 closed before production implementation. Exact pins in package.json and pnpm-lock.yaml. P07 adds an additive v2 SQLite schema without new dependencies. Application results: docs/specs/capstone/increments/integration-verification.md. P10 verified explicit pinned-tool selection and clean Windows checkout: docs/specs/capstone/increments/reuse-verification.md.",
+      "stack": "Node24.19.0 / pnpm11.19.0 / Express5.2.1 / strict TypeScript7.0.2 / Vite8.3.3 / Better Auth1.7.7 / better-sqlite3 13.0.3; Biome2.5.15 and Playwright1.63.0. Exact pins remain in package.json/pnpm-lock.yaml. Schema v3 adds bounded source metadata; dated feasibility, integration and AI checks are linked in verification.",
       "concept_spec": "docs/specs/capstone/spec.md",
       "runtime_ai": true,
       "languages": [
@@ -208,7 +208,7 @@
       "design_workflow_record": ".impeccable/config.json",
       "ai_scope": {
         "date": "2026-10-13",
-        "status": "All six contextual actions implemented and scoped delivery verified: full verify85domain/server+94browser/process/static/build/audit;4focusedcapturecases; independent source review no blocker; normal4317withpreservedv3data; E027/A010exactfinalsavedcomparisons; artifact7d10947dual-privateheads. Documentarycloseoutpublished/readbackseparately. Timeddemo/outcomes/futurehumanAIreviewremainseparate.",
+        "status": "Six actions are implemented and scoped checks pass. The13October85domain/server+94browser results are prior application tests, not new runs for documentation. Timed demo, learner outcomes and future AI-surface human review remain unfinished.",
         "specification": "docs/specs/capstone/increments/ai-assistance.md",
         "verification": "docs/specs/capstone/increments/ai-assistance-verification.md",
         "features": "Contextual assistance across all five connected capabilities; deliberate credible OpenAI web search alongside supplied links",
@@ -222,9 +222,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "AS01-AS06 sign-in shell/moon-sun increment delivered within scoped technical acceptance. R22/reference preceded code; all required checks passed, including13focused/63fullbrowser and56domain/store/HTTP. Independent stabilized source/fixture review has no blocker. Actual paired browserMCP preserves Amber/EN-FR input and full-width signed-out layout; detector32advisories and mobile capture crop remain documented. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 is published to both private repositories with exact GitCLI head readback; E014 saved comparisons pass37Sheet cells and five entire Kaneo descriptions with histories/statuses/dates preserved. Initial fixture/format failures and agent interruptions retained. Formal user design decisions/capture/QUALITY BAR, comprehensive accessibility/native-French quality, learner outcomes and timedvideo remain separate and open.",
+    "mvp_scope": "All five connected capabilities and six optional contextual OpenAI actions are implemented. Dated13October verification records85domain/server and94browser passes, independent review and bounded visual evidence. D016 approves the12October visual baseline; later AI-surface human review, timed3–5minute demo, submission/reflection and learner usefulness/outcome evidence remain unfinished.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "Prepare timed3-5-minute demo/evidence index. Formal human decisions/capture and learner outcomes remain separate; no automatic outreach."
+    "stage": "Prepare the timed demo and accurate judging-evidence index; preserve later review and learner-evaluation limits."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -237,6 +237,115 @@
       "observations": "Information overload, uncertainty about what and where to learn, declining motivation, and unclear learning outcomes.",
       "other_groups_discussed": "Career changers and open university students were also discussed. These are historical observations, not current audience choices."
     }
+  },
+  "tracker_structure": {
+    "status": "Created and verified in the Miva Google Sheet and local Kaneo; live progress is maintained in both.",
+    "context": [
+      "Brief",
+      "Chosen track",
+      "Judging criteria",
+      "Milestones",
+      "Account and repository links",
+      "Current state"
+    ],
+    "activities": [
+      "Activity ID",
+      "Date/time",
+      "Activity",
+      "Owner",
+      "Milestone",
+      "Status",
+      "Next action",
+      "Output/evidence link",
+      "Codex contribution",
+      "Result or limitation"
+    ],
+    "decisions": [
+      "Decision ID",
+      "Date",
+      "Decision",
+      "Rationale",
+      "Affected requirement",
+      "Evidence"
+    ],
+    "milestones": [
+      "Milestone ID",
+      "Requirement",
+      "Due date when known",
+      "Status",
+      "Acceptance and verification evidence"
+    ],
+    "evidence_rules": [
+      "Use stable IDs across trackers.",
+      "Separate measured time from estimates.",
+      "Mark work complete only with an actual outcome and appropriate evidence."
+    ]
+  },
+  "source_deck_url": "https://docs.google.com/presentation/d/1jwaD6saQm3rrYEHfqpm8hVbiCzw-E1ffJTxCyfzstiI/edit",
+  "handover_intake": {
+    "received_on": "2026-10-03",
+    "timezone": "Africa/Lagos",
+    "original_path": "C:\\Users\\USER\\Downloads\\CODEX_CAPSTONE_HANDOVER.md",
+    "preserved_copy": "docs/specs/capstone/inputs/CODEX_CAPSTONE_HANDOVER.md",
+    "sha256": "543EACBB7BAF28300B0D0ABDBB6E847667AF7BF111DD76BD1CE9FC031E6C3957",
+    "copy_verified_identical": true,
+    "phase_claim": "Step 0 track selection complete; entering SDLC Phase 1 Discovery & Ideation.",
+    "interpretation": "Use as continuation context within the user-selected Track 2. Five ideas and the listed constraints define the intended direction; proposed behaviors and an example journey are hypotheses. No coding or final architecture is authorized by a document command on its own.",
+    "discovery_status": "Subsequent human answers resolved audience, all-five inclusion, both StudyCircle meanings, platform, content method, language and offline boundary. Source handover remains preserved; no product benefit has been validated."
+  },
+  "pending_decisions": [
+    "Record the official submission deadline when organisers announce it; 14 October is an internal target only.",
+    "Determine availability of volunteer learners and a competent French reader for later usability/translation evaluation. No participants have been contacted or results claimed."
+  ],
+  "settled_decisions_2026_10_07": [
+    {
+      "id": "D009",
+      "decision": "Learners generally; all five capabilities; personal and peer StudyCircle; no narrow-audience or personal-case prerequisite.",
+      "basis": "Explicit user answers."
+    },
+    {
+      "id": "D010",
+      "decision": "Local browser demo; local server runs while internet is disconnected; no remote-peer or server-stopped offline promise.",
+      "basis": "Explicit user selections."
+    },
+    {
+      "id": "D011",
+      "decision": "Curated goal templates plus supplied text/topics and URL references; no runtime AI or PDF import.",
+      "basis": "Explicit user selections."
+    },
+    {
+      "id": "D012",
+      "decision": "English/French UI and image mockup before frontend implementation.",
+      "basis": "Explicit user selections; workflow choice stored in .impeccable/config.json."
+    },
+    {
+      "id": "D013",
+      "decision": "Make AGENTS/plan/GitHub and browser MCPs/two reusable skills explicit judging deliverables with actual evidence.",
+      "basis": "User specifically requested these additions and acknowledged the concrete plan."
+    },
+    {
+      "id": "D014",
+      "decision": "Plan observational learner evaluation, independent setup/adaptation verification and a timed 3–5 minute rubric-linked demo.",
+      "basis": "Accepted delivery plan; these are planned methods, not completed evaluations."
+    },
+    {
+      "id": "D015",
+      "decision": "User selected Amber, then requested dark/light mode, a collapsible sidebar, top menu and top-left name/logo space. Correct panel-toggle icon is required. No final brand was supplied.",
+      "basis": "Direct user selection: I will go with Amber. Subsequent explicit shell requests. Exact PanelLeftClose/PanelLeftOpen selection is a documented implementation choice."
+    }
+  ],
+  "overall_design_approval": {
+    "status": "Approved",
+    "date": "2026-10-12",
+    "timezone": "Africa/Lagos",
+    "approved_by": "Michael",
+    "user_quote": "okay, it's approved now",
+    "baseline": "a768c98e3d0cd9db13670a57ba625e6c435f0aa6",
+    "decision_id": "D016",
+    "record": "docs/specs/capstone/design.md#overall-design-approval--12-october-2026",
+    "scope": "Current implemented overall LittleFurther visual design, including Amber, A Original LF identity, light/dark themes, responsive layouts and latest HB01-HB06 controls.",
+    "boundary": "Human visual approval; historical mock sidecars/tool-workflow states retained. Does not establish educational outcomes, production readiness, exhaustive accessibility/language conformance, completed older Impeccable workflow, future design approval or demo/submission.",
+    "tracker_sync": "Verified browser MCP saved readback: D016 unique at Decisions A17:F17, exactly6intended values/all5tabs/0mismatches. A010 exactly131175characters (978new+130197prior), exact153367priorHTML suffix and title/In Progress/No date preserved. One content write per destination; no corrective repaste."
   },
   "tracking_requirements": {
     "google_sheets": {
@@ -315,1021 +424,39 @@
       ]
     },
     "github": {
-      "destinations": [
-        "User's Miva-associated GitHub account"
-      ],
-      "connected_login_observed": "MikeIronSyd",
-      "miva_login": "MikeIronSyd",
-      "repository_urls": [
-        "https://github.com/MikeIronSyd/littlefurther"
-      ],
-      "setup_status": "Fresh independent school history; publish only under verified school identity and authentication. Final replacement status is recorded in repository_identity_separation.",
-      "miva_account_email": "m.alkali5130@miva.edu.ng"
+      "repository_url": "https://github.com/MikeIronSyd/littlefurther",
+      "private": true,
+      "owner": "MikeIronSyd",
+      "publication_guidance": "docs/operations/repository-publication.md"
     },
-    "continuity": "Maintain the whole activity history, decisions, current state, next actions, and supporting evidence across the agreed trackers.",
-    "updates": "Update records as authorized project work progresses. Recurring monitoring has not been requested.",
-    "reaffirmed_on": "2026-10-08",
-    "reaffirmation": "After questioning whether Sheets was needed, the user explicitly asked to continue with the Google Sheet and everything previously in use. The original Miva Sheet + Kaneo + both private GitHub repositories remain active. A brief proposed pause was superseded before any destination was deleted or changed."
+    "continuity": "Maintain dated activities, decisions, evidence, actual results and next actions in the Miva Google Sheet and Kaneo. Preserve previous history and verify saved changes.",
+    "updates": "Authorized project work is recorded as it progresses. Recurring monitoring has not been requested."
   },
   "workflow_requirements": [
-    "Follow the user's iterative SDLC and spec-driven development instructions for software work.",
-    "Use Impeccable for UI and UX work.",
-    "Under the user's 7 October 2026 policy, CodexRecovery covers only global instructions, skills and essential settings. Never send project files or Git history there; do not register projects, install recovery hooks or use Push-WithBackup for project publication.",
-    "Publication authorization for both private repositories persists using separate owner identities, authentication and Git histories. Verify each expected head independently; identical-head and dual-push rules are superseded. Preserve hooks and follow docs/operations/repository-publication.md.",
-    "Preserve unrelated work, use private repositories by default, and do not activate paid storage.",
-    "Shape substantial briefs and authored prompts with Goal, Context Pointers, Constraints and Done When.",
-    "Complete and document 100% of necessary research for the agreed implementation scope before production work; assumptions cannot replace missing facts.",
-    "Link judging criteria to requirements, artifacts/commits, actual checks/results and demo scenes.",
-    "Demonstrate meaningful GitHub and browser MCP use and actual reuse of both project skills across engineering iterations."
+    "Use iterative SDLC and specification-driven development; finish documented research before dependent implementation.",
+    "Shape substantial briefs with Goal, Context Pointers, Constraints and Done When.",
+    "Use Impeccable and the UI/UX companion for interface work; preserve Amber/A identity and image-first references.",
+    "Use meaningful project review/evidence skills and actual MCP/tool observations; distinguish hypotheses, prior tests and current checks.",
+    "Publish intended non-secret source through authorized normal Git publication and verify the intended private repository commit. See docs/operations/repository-publication.md.",
+    "Never publish credentials, learner databases or private runtime receipts. Global CodexRecovery excludes project source/history/data. Preserve hooks and do not activate paid services."
   ],
-  "pending_decisions": [
-    "Record the official submission deadline when organisers announce it; 14 October is an internal target only.",
-    "Determine availability of volunteer learners and a competent French reader for later usability/translation evaluation. No participants have been contacted or results claimed."
-  ],
-  "verified_activities": [
-    {
-      "id": "A001",
-      "date": "2026-10-02",
-      "activity": "Receive and review all supplied briefing screenshots and explicit user clarifications.",
-      "status": "Complete",
-      "evidence": "The conversation and this context record."
-    },
-    {
-      "id": "A002",
-      "date": "2026-10-02",
-      "activity": "Set up the Miva Google Sheet and local Kaneo activity tracking project.",
-      "status": "Complete",
-      "result": "Native Sheet saved under m.alkali5130@miva.edu.ng with Restricted access. All recorded cells match the verified workbook and authorized updates, with zero mismatches or cell errors. Kaneo contains ten tasks with matching IDs and verified descriptions. Both private GitHub repositories and separate account write access are verified; publication evidence is maintained in A009.",
-      "next_action": "Choose one track, identify the target learner and problem, and record actual programme dates when supplied."
-    },
-    {
-      "id": "A003",
-      "date": "2026-10-03",
-      "activity": "Select the single capstone challenge track.",
-      "status": "Complete",
-      "result": "Track 2 is selected. Later user clarification settles learners generally, all five capabilities, and both personal cycles and private peer StudyCircle.",
-      "evidence": "Direct user change-of-plan message and supplied CODEX_CAPSTONE_HANDOVER.md, 2026-10-03. The upload continues the selected Track 2 direction.",
-      "next_action": "A004 records the selected MVP, research gate, image-first design and criterion-linked delivery plan. No segmentation or personal-case gate remains."
-    }
-  ],
-  "tracker_structure": {
-    "status": "Created and verified in the Miva Google Sheet and local Kaneo; live progress is maintained in both.",
-    "context": [
-      "Brief",
-      "Chosen track",
-      "Judging criteria",
-      "Milestones",
-      "Account and repository links",
-      "Current state"
-    ],
-    "activities": [
-      "Activity ID",
-      "Date/time",
-      "Activity",
-      "Owner",
-      "Milestone",
-      "Status",
-      "Next action",
-      "Output/evidence link",
-      "Codex contribution",
-      "Result or limitation"
-    ],
-    "decisions": [
-      "Decision ID",
-      "Date",
-      "Decision",
-      "Rationale",
-      "Affected requirement",
-      "Evidence"
-    ],
-    "milestones": [
-      "Milestone ID",
-      "Requirement",
-      "Due date when known",
-      "Status",
-      "Acceptance and verification evidence"
-    ],
-    "evidence_rules": [
-      "Use stable IDs across trackers.",
-      "Separate measured time from estimates.",
-      "Mark work complete only with an actual outcome and appropriate evidence."
-    ]
+  "current_status": {
+    "date": "2026-10-14",
+    "summary": "All five connected capabilities and six optional contextual OpenAI actions are implemented. Dated13October verification records85domain/server and94browser passes, independent review and bounded visual evidence. D016 approves the12October visual baseline; later AI-surface human review, timed3–5minute demo, submission/reflection and learner usefulness/outcome evidence remain unfinished.",
+    "product_specification": "docs/specs/capstone/spec.md",
+    "application_verification": "docs/specs/capstone/increments/ai-assistance-verification.md",
+    "user_guide": "docs/USER_GUIDE.md",
+    "architecture": "docs/ARCHITECTURE.md",
+    "development": "docs/DEVELOPMENT.md",
+    "presentation": "docs/specs/capstone/increments/repository-presentation.md",
+    "reconciliation": "docs/specs/capstone/increments/status-reconciliation.md",
+    "tracker_record": "docs/specs/capstone/reviews/2026-10-14-status-reconciliation-trackers.md",
+    "evidence_boundary": "Dated application checks remain implementation evidence. No new application-suite, provider, learner-outcome, hosted-CI or timed-video result is inferred from documentation."
   },
-  "source_deck_url": "https://docs.google.com/presentation/d/1jwaD6saQm3rrYEHfqpm8hVbiCzw-E1ffJTxCyfzstiI/edit",
-  "direction_history": [
-    {
-      "superseded_on": "2026-10-03",
-      "track": "Guidance, Pathways & Opportunity",
-      "project_idea": "Blend the user's personal baseline-to-goal guidance concept with their supplied skill-mapping and local-opportunity router: recognise existing formal, informal, and offline learning; connect it to a chosen or discovered local skill, credential, job, gig, course, or university opportunity; map real requirements and gaps; guide credible learning, practical demonstrations, and preparation through visible stages.",
-      "user_concept": {
-        "source": "User's own account of their desired support for coding, certifications, AI study, and opportunities, supplied on 2026-10-03.",
-        "goal_types_in_vision": [
-          "Skill",
-          "Certification",
-          "Course",
-          "Specific job opening",
-          "Prospective job or other opportunity",
-          "Gig work",
-          "University requirements"
-        ],
-        "capabilities_in_vision": [
-          "Find out about or choose an opportunity of interest.",
-          "Establish a baseline of what the learner already knows.",
-          "Identify what the learner needs to know or be able to do for the goal.",
-          "Guide the ordered journey: what to study, how to learn, and how to progress between levels.",
-          "Connect learning and practice to achieving the chosen goal.",
-          "Support interview questions and preparation when relevant to the chosen opportunity.",
-          "Recognise informal and offline learning when establishing the baseline.",
-          "Map current knowledge against real local job, credential, gig, or university requirements.",
-          "Show a visual step-by-step path with credible free learning resources; pair the visual path with accessible text."
-        ],
-        "primary_track_recommendation": "Guidance, Pathways & Opportunity",
-        "recommendation_basis": "The central user-stated outcome is a path from current ability toward a chosen goal or opportunity.",
-        "track_reselection_confirmed": true,
-        "track_selection_source": "User's blending request explicitly names Focus Track: Guidance, Pathways & Opportunity.",
-        "scope_status": "Blended concept and single track captured; first country, concrete target, MVP entry mode, languages, product audience, and implementation scope remain open.",
-        "first_prototype_target": null,
-        "entry_mode": null,
-        "prototype_scope_recommendation": "Prove one complete target journey in one country with a small verified requirements/resource pack; preserve other goal types and regions as broader vision.",
-        "blend_details": {
-          "source": "User asked to blend the earlier concept with the supplied skill-mapping and opportunity-router idea on 2026-10-03.",
-          "entry_routes_in_vision": [
-            "Start from existing skills or current study and explore relevant opportunities",
-            "Start from a known goal or opportunity and identify the path toward it"
-          ],
-          "country_examples_only": [
-            "Nigeria",
-            "Kenya",
-            "Senegal"
-          ],
-          "first_country": null,
-          "privacy_proposal": "Account-free browser-local prototype, with LocalStorage suggested by the user. No storage implementation or privacy guarantee has been verified.",
-          "technical_refinements": "Use traceable requirements and resource records with source/date/region. Separate claimed skills, demonstrated skills, and formal eligibility. Browser-local processing and deliberate offline caching are required for a genuinely local/offline core; LocalStorage alone does not establish either security or offline operation. Any external AI or live-feed request needs an explicit data-flow boundary.",
-          "concept_spec": "docs/specs/capstone/spec.md"
-        }
-      },
-      "previous_stage": "Review the blended concept proposal, then choose the first country, target, MVP entry route, and supported languages before completing the implementation specification.",
-      "previous_pending_decisions": [
-        "Select one concrete first prototype target: a named job role/opening, certification, skill, or course.",
-        "Choose whether the first prototype starts with a goal the learner already has or helps discover a goal first.",
-        "Select the first country, initial languages, product audience, and feedback participants; the country examples Nigeria, Kenya, and Senegal are not a committed rollout scope.",
-        "Complete the implementation specification and choose the browser storage/offline approach, stack, and evaluation criteria after narrowing the MVP; the single track is now Guidance, Pathways & Opportunity.",
-        "Record the official submission deadline when announced; it is currently unknown."
-      ],
-      "concept_spec": "docs/specs/capstone/archive/2026-10-03-guidance-concept.md",
-      "published_revision": "089699a78d231429207a95ad3e6b3dbb94cbc941",
-      "reason": "User explicitly switched to Track 2 and supplied a replacement ChatGPT handover to continue discovery."
-    }
-  ],
-  "handover_intake": {
-    "received_on": "2026-10-03",
-    "timezone": "Africa/Lagos",
-    "original_path": "C:\\Users\\USER\\Downloads\\CODEX_CAPSTONE_HANDOVER.md",
-    "preserved_copy": "docs/specs/capstone/inputs/CODEX_CAPSTONE_HANDOVER.md",
-    "sha256": "543EACBB7BAF28300B0D0ABDBB6E847667AF7BF111DD76BD1CE9FC031E6C3957",
-    "copy_verified_identical": true,
-    "phase_claim": "Step 0 track selection complete; entering SDLC Phase 1 Discovery & Ideation.",
-    "interpretation": "Use as continuation context within the user-selected Track 2. Five ideas and the listed constraints define the intended direction; proposed behaviors and an example journey are hypotheses. No coding or final architecture is authorized by a document command on its own.",
-    "discovery_status": "Subsequent human answers resolved audience, all-five inclusion, both StudyCircle meanings, platform, content method, language and offline boundary. Source handover remains preserved; no product benefit has been validated."
-  },
-  "pending_research": [],
-  "settled_decisions_2026_10_07": [
-    {
-      "id": "D009",
-      "decision": "Learners generally; all five capabilities; personal and peer StudyCircle; no narrow-audience or personal-case prerequisite.",
-      "basis": "Explicit user answers."
-    },
-    {
-      "id": "D010",
-      "decision": "Local browser demo; local server runs while internet is disconnected; no remote-peer or server-stopped offline promise.",
-      "basis": "Explicit user selections."
-    },
-    {
-      "id": "D011",
-      "decision": "Curated goal templates plus supplied text/topics and URL references; no runtime AI or PDF import.",
-      "basis": "Explicit user selections."
-    },
-    {
-      "id": "D012",
-      "decision": "English/French UI and image mockup before frontend implementation.",
-      "basis": "Explicit user selections; workflow choice stored in .impeccable/config.json."
-    },
-    {
-      "id": "D013",
-      "decision": "Make AGENTS/plan/GitHub and browser MCPs/two reusable skills explicit judging deliverables with actual evidence.",
-      "basis": "User specifically requested these additions and acknowledged the concrete plan."
-    },
-    {
-      "id": "D014",
-      "decision": "Plan observational learner evaluation, independent setup/adaptation verification and a timed 3–5 minute rubric-linked demo.",
-      "basis": "Accepted delivery plan; these are planned methods, not completed evaluations."
-    },
-    {
-      "id": "D015",
-      "decision": "User selected Amber, then requested dark/light mode, a collapsible sidebar, top menu and top-left name/logo space. Correct panel-toggle icon is required. No final brand was supplied.",
-      "basis": "Direct user selection: I will go with Amber. Subsequent explicit shell requests. Exact PanelLeftClose/PanelLeftOpen selection is a documented implementation choice."
-    }
-  ],
-  "codex_integration": {
-    "github_mcp": {
-      "purpose": "Read repository, commits, diffs and available check results for review.",
-      "verified": "GitHub MCP github_fetch_commit returned P04/P05 artifact 9d5820b, P06 artifact 204e227 and now P07 artifact 134997605a02885dbd5181f0cee01e0aca5fe9ea, its message, canonical URL and diff. Both private heads were separately verified through normal Git readback; Miva connector availability remains distinct. P08/P09 artifact 4a59c0278fee0dea7c5370f05db2ab4bfe7af34d was also independently read through GitHub MCP on 8 October after both remote heads matched through Git. P10 artifactf3ca0494dc09fbd114d66dbabe056d7c70324984 was also read through GitHub MCP after both private heads matched at20:05 Africa/Lagos on8October. Integrated design-review artifacte83ab8c6e7b4d04eaffcdea42e45dee59bc026d5 was read through GitHub MCP after both private heads matched at20:44Africa/Lagos on8October.",
-      "boundary": "Source publication uses normal local Git commits and pushes to both authorized private project repositories, preserving unrelated hooks. Global-only CodexRecovery is separate; project files and Git history never go there.",
-      "miva_status": "Miva repository read returned 404 through the connector on 2026-10-07. Scoped installed GitHub CLI separately confirmed private repository visibility and WRITE; this is CLI evidence.",
-      "current_availability": "9October2026 auth-shell: GitHub repository/commit read tools and tool-search route are not exposed. Actual dual-source publication/readback will use normal GitCLI. Preserve prior providerMCP evidence separately."
-    },
-    "browser_mcp": {
-      "purpose": "Operate the running app for observed behaviour and maintain Miva Sheet/Kaneo with saved readback.",
-      "boundary": "Actual IAB account/profile/template/study/reflection/completion/reload and shell observations. Tracker operations use browser MCP, not native Google Sheets/Kaneo connectors. Synthetic demo data; no learner impact inference. P07: separate IAB/Chrome synthetic accounts joined a private circle, explicitly previewed/shared a copy and saved/read back preset encouragement. P08: root observed a fresh synthetic connected five-capability journey, exact share preview, peer encouragement and retained private history with English/French and theme/mobile checks. No remote learners were involved. P10 independent browser MCP used synthetic local data for saved-plan/restart and EN/FR adaptation observations. Server4326 stopped; final test-tab close unverified due tool dialog handling. E011 actual browser MCP saves and independent saved comparisons verified39 intended Sheet cells and five whole Kaneo descriptions; no native tracker connector claim. Integrated design review used fresh synthetic tabs/accounts for desktop/mobile EN/FR light/dark observations. Actual accessible-name/focus issues remain open. Formal review packet only navigated, with no user decisions entered. RF01-RF05 root observed synthetic error/recovery, Enter focus, EN/FR sources/input retention and mobile selected-step focus in one bounded pass plus a spacing confirmation. No outcome or formal approval inferred."
-    },
-    "project_skills": [
-      {
-        "name": "learning-journey-review",
-        "path": ".agents/skills/learning-journey-review/SKILL.md",
-        "status": "Created and structurally validated; independent preparation review at 17:10 retained. Applied again to actual P04/P05 source, browser checks, findings and corrections; see docs/specs/capstone/reviews/2026-10-07-first-journey-review.md. Applied to P06 actual source/checks on8October; additional network branches and strict fixture correction recorded in 2026-10-08-comeback-review.md. P07 review closed on 8 October with both client fixes behavior-verified and no remaining scoped blocker; see 2026-10-08-circle-review.md. P08 baseline review and P09 corrective review invoked the skill on actual connected-journey source, reproduced failures, specification, final checks and dispositions. IR01-IR03/CR01 resolved within scope; see the two integration review reports. P10 independent setup/adaptation and operations correction review reused the skill; RO01-RO03 resolved with preserved failed/passed evidence. See the two reuse review reports. Integrated design review invoked the skill in isolated A/B assessments and independent source confirmation; five open P2 findings and actual bounded browser results recorded in2026-10-08-design-critique.md. RF01-RF05 actual source review applied the skill; earlier reviewer interrupted after source checks, new final reviewer independently reports no scoped blocker. Final result/actual runner evidence in2026-10-09-refinement-final-review.md."
-      },
-      {
-        "name": "capstone-evidence-update",
-        "path": ".agents/skills/capstone-evidence-update/SKILL.md",
-        "status": "Created and structurally validated; earlier E004-E006 invocations retained. Applied to actual E007 implementation/check/review/publication evidence and saved tracker readback; see docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md. P06/E008 evidence reconciliation and saved readbacks completed on8October; see2026-10-08-comeback-tracker.md. P07/E009 reused for baseline preparation, actual implementation/check/review/publication reconciliation and verified Sheet/Kaneo saved readbacks. See 2026-10-08-circle-tracker.md. P08/P09 E010 preparation and final reconciliation reused the skill against artifact 4a59c02 and actual checks/reviews, followed by 39-cell Sheet and five full Kaneo persisted comparisons. See 2026-10-08-integration-tracker.md for methods, retry and limitations. P10/E011 reused the skill for preparation, actual setup/adaptation/publication reconciliation and saved39-cell/five-description comparisons; complete histories and statuses preserved. See2026-10-08-reuse-tracker.md. Root reconciled final verified delivery into active context, plan and verification without relabelling historical results. E012 reused the skill for live baseline preparation, actual review/publication reconciliation and exact39-cell/five-description saved comparisons; five open P2 findings and pending formal human decisions preserved. See2026-10-08-design-tracker.md. E013 preparation and final correction/publication reconciliation invoked the skill. All39 intended Sheet cells and five complete persisted Kaneo descriptions compared exactly after reload; full histories/statuses/dates retained. See2026-10-09-refinement-tracker.md. BrowserMCP tracking and GitCLI publication are accurately attributed."
-      }
-    ],
-    "proof_chain": "criterion -> requirement -> artifact/commit -> actual check/result -> demo scene",
-    "reuse_requirement": "At least two meaningful engineering iterations with recorded inputs, findings/results and follow-up; file existence is insufficient."
-  },
-  "current_preparation": {
-    "recorded_on": "2026-10-13",
-    "status": "AllsixcontextualOpenAIactions implemented and scoped delivery verified. Required85domain/server+94browser/process/static/build/audit pass, independent review no blocker,4capturecases/8actualimages. Local4317running with pre-v3snapshot/all existing tables preserved. Artifact7d10947dual-privateheads and final E027/A010savedcomparisons pass14:46:11Lagos. Documentarycloseoutpublication/readbackseparate. Next userhands-onreviewandtimed3–5minjudgingdemo; no outcomes/futureAIhumanapproval inferred.",
-    "outputs": [
-      "docs/specs/capstone/spec.md",
-      "docs/specs/capstone/plan.md",
-      "docs/specs/capstone/research.md",
-      "docs/specs/capstone/verification.md",
-      "PRODUCT.md",
-      ".agents/skills/learning-journey-review/SKILL.md",
-      ".agents/skills/capstone-evidence-update/SKILL.md",
-      "docs/specs/capstone/experiments/runtime-feasibility/REPORT.md",
-      "docs/specs/capstone/design.md",
-      ".impeccable/decision-options.json",
-      ".impeccable/mocks/amber/shell-light.png",
-      ".impeccable/mocks/amber/shell-dark.png",
-      ".impeccable/mocks/amber/comeback-preview.png",
-      ".impeccable/mocks/amber/sharing-preview.png",
-      ".impeccable/mocks/amber/mobile-fr-closed.png",
-      ".impeccable/mocks/amber/mobile-fr-open.png",
-      ".impeccable/surfaces/src-client-main-ts.md",
-      "package.json",
-      "pnpm-lock.yaml",
-      "src/client/main.ts",
-      "src/server/app.ts",
-      "docs/specs/capstone/increments/first-journey.md",
-      "docs/specs/capstone/increments/first-journey-verification.md",
-      "docs/operations/local-demo.md",
-      "tools/verify-process.mjs",
-      "docs/specs/capstone/reviews/2026-10-07-first-journey-review.md",
-      "docs/specs/capstone/reviews/2026-10-07-first-journey-visual.md",
-      "docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md",
-      "DESIGN.md",
-      "docs/specs/capstone/increments/comeback.md",
-      "docs/specs/capstone/increments/comeback-verification.md",
-      "docs/specs/capstone/reviews/2026-10-08-comeback-backend-research.md",
-      "docs/specs/capstone/reviews/2026-10-08-comeback-ui-research.md",
-      "docs/specs/capstone/reviews/2026-10-08-comeback-review.md",
-      "docs/specs/capstone/reviews/2026-10-08-comeback-visual.md",
-      "docs/specs/capstone/reviews/2026-10-08-comeback-design-system.md",
-      "docs/specs/capstone/reviews/2026-10-08-comeback-tracker.md",
-      "src/client/comeback.ts",
-      "src/domain/comeback.ts",
-      "docs/specs/capstone/increments/studycircle.md",
-      "docs/specs/capstone/increments/studycircle-verification.md",
-      "docs/specs/capstone/reviews/2026-10-08-circle-backend-research.md",
-      "docs/specs/capstone/reviews/2026-10-08-circle-ui-research.md",
-      "docs/specs/capstone/reviews/2026-10-08-circle-review.md",
-      "docs/specs/capstone/reviews/2026-10-08-circle-visual.md",
-      "docs/specs/capstone/reviews/2026-10-08-circle-design-system.md",
-      "docs/specs/capstone/reviews/2026-10-08-circle-tracker.md",
-      "src/client/circle.ts",
-      "src/domain/circle-validation.ts",
-      "src/server/circles.ts",
-      "tests/e2e/circle.spec.ts",
-      "docs/specs/capstone/increments/integration.md",
-      "docs/specs/capstone/increments/integration-verification.md",
-      "docs/specs/capstone/reviews/2026-10-08-integration-review.md",
-      "docs/specs/capstone/reviews/2026-10-08-integration-correction-review.md",
-      "docs/specs/capstone/reviews/2026-10-08-integration-design-research.md",
-      "docs/specs/capstone/reviews/2026-10-08-integration-design-refresh.md",
-      "docs/specs/capstone/reviews/2026-10-08-integration-visual.md",
-      "docs/specs/capstone/reviews/2026-10-08-integration-tracker.md",
-      "docs/specs/capstone/increments/reuse.md",
-      "docs/specs/capstone/increments/reuse-verification.md",
-      "docs/specs/capstone/reviews/2026-10-08-reuse-operations-review.md",
-      "docs/specs/capstone/reviews/2026-10-08-reuse-tracker.md",
-      "docs/specs/capstone/experiments/reuse/README.md",
-      "docs/specs/capstone/experiments/reuse/template-wording.patch",
-      "docs/specs/capstone/increments/design-review.md",
-      "docs/specs/capstone/reviews/2026-10-08-design-assessment-a.md",
-      "docs/specs/capstone/reviews/2026-10-08-design-assessment-b.md",
-      "docs/specs/capstone/reviews/2026-10-08-design-source-check.md",
-      "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md",
-      "docs/specs/capstone/reviews/2026-10-08-design-critique.md",
-      "docs/specs/capstone/reviews/2026-10-08-design-tracker.md",
-      ".impeccable/critique/2026-10-08T19-41-12Z__src-client-main-ts.md",
-      "docs/specs/capstone/increments/design-refinement.md",
-      "docs/specs/capstone/increments/design-refinement-verification.md",
-      "docs/specs/capstone/reviews/2026-10-09-refinement-editor-research.md",
-      "docs/specs/capstone/reviews/2026-10-09-refinement-test-research.md",
-      "docs/specs/capstone/reviews/2026-10-09-refinement-review.md",
-      "docs/specs/capstone/reviews/2026-10-09-refinement-final-review.md",
-      "docs/specs/capstone/reviews/2026-10-09-refinement-tracker.md",
-      "tests/e2e/design-refinement.spec.ts",
-      "docs/specs/capstone/increments/auth-shell.md",
-      "docs/specs/capstone/increments/auth-shell-verification.md",
-      "docs/specs/capstone/reviews/2026-10-09-auth-shell-review.md",
-      "docs/specs/capstone/reviews/2026-10-09-auth-shell-tracker.md",
-      ".impeccable/mocks/amber/auth-shell-reference.png",
-      "tests/e2e/auth-shell.spec.ts"
-    ],
-    "tracker_record": "E004-E012 retained as dated history; E013 correction/results saved and verified in both trackers. D009-D015 and A001-A010 preserved.",
-    "tracker_sync": "E014 saved/read back in correct Miva Sheet and Kaneo:37intended/actual cells,0mismatch/extra, uniqueA15; all five full descriptions exactlymatch intended E014 prefix plus complete previous history. Titles/statuses/No date and10-task board/A007 retained. See2026-10-09-auth-shell-tracker.md.",
-    "publication": "Auth-shell artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 published normally to both private repositories; both exact main heads verified2026-10-09T17:37:21.4642469+01:00 through GitCLI. GitHub MCP unavailable. E014 saved comparisons complete in both trackers; final documentation closeout follows with a separate local exact-head receipt. No project recovery/public deployment/hosted-CI claim.",
-    "limitations": [
-      "Scoped synthetic/local technical verification, not measured retention/mastery/motivation, time saving or human adoption.",
-      "Formal human design decisions/receipt, authenticated capture and QUALITY BAR remain separate and open.",
-      "Native-French quality, comprehensive accessibility/security and physical-device verification are not inferred from current checks.",
-      "Mobile full-page capture cropped16px; actual320px DOM geometry showed no overflow. Detector32advisories are retained without quality-score inference.",
-      "Local app requires running server. Prior P10 setup/adaptation is distinct historical evidence; no clean-machine/cold-cache or remote-peer/server-stopped promise.",
-      "Current GitHub MCP repository/commit read tools unavailable; actual dual-private publication/readback GitCLI. No hosted-CI enforcement or global-project recovery claim.",
-      "Final3-5-minute recording/timecodes/playback and learner evaluation remain open. Official deadline unannounced;14October internal only."
-    ],
-    "tracker_sync_history": [
-      "E005 and publication reconciliation completed on 2026-10-07 through browser MCP in the verified Miva account and Kaneo. Sheet exact readbacks passed for E005 A6:J6, E004 H5:I5, Activities G5:K5/G7:K7/G9:K11 and Context B25:C25. Kaneo A004/A006/A008/A009/A010 passed persisted comparison after navigation, preserving history and statuses. P03 in progress; no visual approval or product acceptance inferred.",
-      {
-        "date": "2026-10-09",
-        "increment": "P11-auth-shell",
-        "status_before_saved_readback": "E014 live baselines verified in correct Miva account and Kaneo; saved updates pending final verified ledger/artifact."
-      }
-    ],
-    "publication_history": [
-      "Design artifact commit c89194b2bd3920c8ef5931cff87a6b5d7b852d3a published with normal Git and read back on both private remotes; personal commit also read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. Global-only CodexRecovery is separate; no project backup invoked.",
-      {
-        "date": "2026-10-09",
-        "increment": "P11-auth-shell",
-        "artifact": "8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
-        "status_before_documentation_closeout": "Auth-shell artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 published normally to both private repositories; both exact heads verified2026-10-09T17:37:21.4642469+01:00. GitHub MCP unavailable, actual readback GitCLI. E014 saved comparisons/documentation closeout pending. No project recovery or public deployment."
-      }
-    ],
-    "milestone_history": [
-      {
-        "id": "E006",
-        "recorded_on": "2026-10-07",
-        "status": "Amber selected by the user; R01-R14 research satisfied for the expanded local PoC. Six detailed shell/restart/sharing/French-mobile images produced and statically reviewed. No product implementation or acceptance verified.",
-        "tracker_sync": "E006/D015 reconciliation completed on 7 October 2026 through browser MCP under the verified Miva account. Saved readbacks passed for Decisions A16:F16, Codex evidence A7:J7 and E005 H6:I6, Activities G5:K5/G7:K7/G9:K11, and Context B25:C25. Kaneo A004/A006/A008/A009/A010 persisted comparisons passed, preserving history/statuses. No failed writes or pending tracker updates. All product behavior remains unverified.",
-        "publication": "Amber artifact commit 486a850bba34d9f9cc8b63599666475764762935 published through normal Git to both authorized private repositories; both remote heads matched. Personal commit independently read through GitHub MCP. Final documentation closeout readback is retained in .local/capstone-publication-result.json. No project backup or recovery wrapper invoked.",
-        "limitations": [
-          "No app code or application tests completed.",
-          "No learner evaluation or human adoption verified.",
-          "No measured retention, motivation, quality uplift or time savings.",
-          "Six detailed static Amber states reviewed; known desktop/mobile layout corrections are documented for implementation. No functioning controls, native French validation, 320px reflow, accessibility pass or demo video."
-        ]
-      },
-      {
-        "id": "E007",
-        "recorded_on": "2026-10-07",
-        "status": "P04/P05 first private journey implemented, verified within scope and published to both private repositories; E007 saved/read back in the Miva Sheet and Kaneo. Evidence: 20 unit/HTTP tests, 19 distinct browser cases across recorded runs, strict/lint/format/build/audit, separate-process persistence and root browser MCP. P06 Comeback schedule recovery and P07 private peers remain required next increments.",
-        "tracker_sync": "E007 reconciliation completed on 7 October 2026 through browser MCP under the verified Miva identity. Saved comparisons passed for Codex evidence A8:J8 and E006 H7:I7, Activities G5:K5/G7:K7/G9:K11, Context B25:C25, and Kaneo A004/A006/A008/A009/A010 descriptions. History and statuses retained; A007 submission/reflection remains To do. Context C25 invalid undefined suffix repaired; B25 baseline ending Item preserved. See docs/specs/capstone/reviews/2026-10-07-first-journey-tracker.md.",
-        "publication": "First-journey artifact 9d5820bfd8058a951372c2e3be868425e3733df9 published by normal Git to both authorized private repositories; both remote main heads matched. Personal artifact independently read through GitHub MCP. The initial workflow-scope rejection left both old heads intact; the inactive CI template is retained in docs/operations. Final documentation closeout readback is stored in ignored .local/capstone-publication-result.json. No recovery wrapper invoked.",
-        "limitations": [
-          "P07 private peer circles remain unimplemented; all five capabilities stay required.",
-          "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
-          "No independent fresh-checkout/adaptation rehearsal or timed video.",
-          "Physical internet and server egress were not disconnected: browser-only loopback request restriction tested.",
-          "Native-French quality, broad devices and full accessibility conformance unverified.",
-          "Formal Impeccable pipeline remains at plates awaiting an extra receipt; no phase forcing or invented approval. Manual visual review recorded separately.",
-          "GitHub CI template is inactive because current OAuth access lacks workflow-write scope; no hosted check or provider-gate enforcement is claimed."
-        ]
-      },
-      {
-        "id": "E008",
-        "recorded_on": "2026-10-08",
-        "status": "P06 Comeback implemented and behavior-verified after R16 research closure: explicit preview/cancel/confirm, retained completed work, atomic revision/receipt handling and honest failure recovery.40/40 domain/HTTP and27 distinct browser cases pass across recorded batches (final8/8affected). Independent source review found no remaining production blocker; scoped visual review disposition ship. Artifact published and both remote heads verified; E008 saved/read back in the Miva Sheet and Kaneo. P07 private peers remains next.",
-        "tracker_sync": "E008 reconciled on8October2026 through browser MCP under the verified Miva identity. Exactly39 intended Sheet cells changed with zero mismatches or other changes; five Kaneo descriptions passed persisted comparisons. History/statuses retained; A007 remainsToDo. See2026-10-08-comeback-tracker.md for parser/paste/read retry history. User reaffirmed original Sheet+Kaneo+GitHub workflow.",
-        "publication": "P06 artifact 204e227a63c550140ed7b868c1fe76e68b74391b published through normal Git to both authorized private repositories; both exact remote main heads verified. Personal commit independently read via GitHub MCP. Final documentation closeout readback is stored in ignored .local/comeback-publication-result.json. No recovery wrapper or permission expansion.",
-        "limitations": [
-          "P07 private peer circles remain unimplemented; all five capabilities stay required.",
-          "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
-          "No independent fresh-checkout/adaptation rehearsal or timed video.",
-          "Physical internet and server egress were not disconnected: browser-only loopback request restriction tested.",
-          "Native-French quality, broad devices and full accessibility conformance unverified.",
-          "Formal Impeccable pipeline remains at plates awaiting an extra receipt; no phase forcing or invented approval. Manual visual review recorded separately.",
-          "GitHub CI template is inactive because current OAuth access lacks workflow-write scope; no hosted check or provider-gate enforcement is claimed."
-        ]
-      },
-      {
-        "id": "E009",
-        "recorded_on": "2026-10-08",
-        "active_increment": {
-          "id": "P07",
-          "name": "Private StudyCircle",
-          "date": "2026-10-08",
-          "status": "P07 private StudyCircle is implemented, reviewed, published and reconciled under E009. All 56 domain/HTTP tests and all 36 browser cases pass, alongside strict/lint/format/build/audit and distinct-process persistence. Root browser MCP observed two-account invitation/join, explicit preview/share and saved preset encouragement. Two source-review client findings were corrected and behavior-verified; scoped visual review passed and existing design hashes were preserved. Both private repository heads matched the artifact, personal GitHub MCP confirmed it, and the Miva Sheet plus five Kaneo descriptions passed saved comparisons. Formal Impeccable phases remain open. P08 full connected-journey review is next; full capstone acceptance, learner impact, independent reuse and the timed demo remain unverified.",
-          "specification": "docs/specs/capstone/increments/studycircle.md",
-          "baseline": "e519d10f0391f8acd06c7d57aad5caf59df58dbf",
-          "baseline_checks": "Strict compilation and all40 existing domain/HTTP tests passed.",
-          "tracker_preparation": "E009 completed through browser MCP under m.alkali5130@miva.edu.ng on 8 October: 39 intended Sheet cells passed exact post-save/export comparison with zero mismatches or extra changes; five existing Kaneo descriptions passed full persisted comparisons with complete history preserved. No status, date, decision, milestone or A007 change. See docs/specs/capstone/reviews/2026-10-08-circle-tracker.md for methods, attempts and limits.",
-          "next": "P08 full connected-journey review using learning-journey-review, followed by evidence reconciliation; formal design phases and later capstone gates remain open.",
-          "verification": "docs/specs/capstone/increments/studycircle-verification.md",
-          "artifact_commit": "134997605a02885dbd5181f0cee01e0aca5fe9ea",
-          "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/134997605a02885dbd5181f0cee01e0aca5fe9ea"
-        },
-        "status": "P07 private StudyCircle is implemented, reviewed, published and reconciled under E009. All 56 domain/HTTP tests and all 36 browser cases pass, alongside strict/lint/format/build/audit and distinct-process persistence. Root browser MCP observed two-account invitation/join, explicit preview/share and saved preset encouragement. Two source-review client findings were corrected and behavior-verified; scoped visual review passed and existing design hashes were preserved. Both private repository heads matched the artifact, personal GitHub MCP confirmed it, and the Miva Sheet plus five Kaneo descriptions passed saved comparisons. Formal Impeccable phases remain open. P08 full connected-journey review is next; full capstone acceptance, learner impact, independent reuse and the timed demo remain unverified.",
-        "tracker_sync": "E009 completed through browser MCP under m.alkali5130@miva.edu.ng on 8 October: 39 intended Sheet cells passed exact post-save/export comparison with zero mismatches or extra changes; five existing Kaneo descriptions passed full persisted comparisons with complete history preserved. No status, date, decision, milestone or A007 change. See docs/specs/capstone/reviews/2026-10-08-circle-tracker.md for methods, attempts and limits.",
-        "publication": "P07 artifact 134997605a02885dbd5181f0cee01e0aca5fe9ea published through normal git push origin main to both authorized private repositories on 8 October at 16:52 Africa/Lagos; both git ls-remote heads matched. GitHub MCP independently returned the personal SHA, message and canonical URL. No recovery wrapper, public hosting or provider-CI pass is implied."
-      },
-      {
-        "id": "E010",
-        "recorded_on": "2026-10-08",
-        "active_increment": {
-          "id": "P08/P09",
-          "name": "Connected journey review and lifecycle corrections",
-          "date": "2026-10-08",
-          "status": "P08/P09 connected-journey review and corrections are verified: 56/56 domain/HTTP and 48/48 browser cases pass, including 12 focused integration cases, plus strict/lint/format, server/client build, distinct-process persistence and registry audit. Eight failing behaviors under IR01-IR03/CR01 were reproduced and corrected; independent source review found no remaining scoped blocker. Root browser MCP observed all five capabilities with synthetic owner/peer accounts. Bounded design records refreshed and valid replacement visual packet received a scoped ship verdict; formal Impeccable completion remains open. The artifact is published to both private repositories and read back through Git and personal GitHub MCP. E010 is saved and read back in the Miva Sheet and five Kaneo descriptions, with prior history, statuses and dates preserved. Independent fresh-checkout/adaptation, real learner evaluation if available and timed video remain later work.",
-          "specification": "docs/specs/capstone/increments/integration.md",
-          "baseline": "6415a2958cbc2f9f05e928ea3bf8b890623e1359",
-          "baseline_checks": "Seven reproduced client failures, two baseline controls, plus later persisted timezone failure; exact executions retained in integration verification.",
-          "tracker_preparation": "E010 reconciled through browser MCP under m.alkali5130@miva.edu.ng on 8 October: 39 intended Sheet cells changed, zero mismatches or extra changes across all five tabs, unique E010 at Codex evidence A11. All five Kaneo persisted descriptions passed full comparisons allowing only editor-rendered paragraph spacing between standalone links; complete prior histories and one E010/E009 heading each retained. Statuses, No date, A007, Decisions and Milestones unchanged. A004 unchanged-baseline reload was resolved by a known-state reapply and saved readback. No unresolved write. See docs/specs/capstone/reviews/2026-10-08-integration-tracker.md.",
-          "next": "P10 independent fresh-checkout/adaptation, then P11 timed 3-5 minute demo; formal design completion and any available learner evaluation remain distinct.",
-          "verification": "docs/specs/capstone/increments/integration-verification.md",
-          "artifact_commit": "4a59c0278fee0dea7c5370f05db2ab4bfe7af34d",
-          "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/4a59c0278fee0dea7c5370f05db2ab4bfe7af34d"
-        },
-        "status": "P08/P09 connected-journey review and corrections are verified: 56/56 domain/HTTP and 48/48 browser cases pass, including 12 focused integration cases, plus strict/lint/format, server/client build, distinct-process persistence and registry audit. Eight failing behaviors under IR01-IR03/CR01 were reproduced and corrected; independent source review found no remaining scoped blocker. Root browser MCP observed all five capabilities with synthetic owner/peer accounts. Bounded design records refreshed and valid replacement visual packet received a scoped ship verdict; formal Impeccable completion remains open. The artifact is published to both private repositories and read back through Git and personal GitHub MCP. E010 is saved and read back in the Miva Sheet and five Kaneo descriptions, with prior history, statuses and dates preserved. Independent fresh-checkout/adaptation, real learner evaluation if available and timed video remain later work.",
-        "tracker_sync": "E010 reconciled through browser MCP under m.alkali5130@miva.edu.ng on 8 October: 39 intended Sheet cells changed, zero mismatches or extra changes across all five tabs, unique E010 at Codex evidence A11. All five Kaneo persisted descriptions passed full comparisons allowing only editor-rendered paragraph spacing between standalone links; complete prior histories and one E010/E009 heading each retained. Statuses, No date, A007, Decisions and Milestones unchanged. A004 unchanged-baseline reload was resolved by a known-state reapply and saved readback. No unresolved write. See docs/specs/capstone/reviews/2026-10-08-integration-tracker.md.",
-        "publication": "P08/P09 artifact 4a59c0278fee0dea7c5370f05db2ab4bfe7af34d published through normal git push origin main to both authorized private repositories on 8 October at 18:14 Africa/Lagos; both exact git ls-remote main heads matched. Personal GitHub MCP fetch_commit independently returned SHA, message, canonical URL and diff. Miva readback used Git, not the connector. No recovery wrapper, public hosting or hosted CI pass is implied. Final documentation-only closeout readback is retained in ignored .local/integration-publication-result.json, distinct from implementation artifact 4a59c02.",
-        "limitations": [
-          "Verified and published P08/P09 with E010 reconciliation does not establish full capstone acceptance.",
-          "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
-          "No independent fresh-checkout/adaptation rehearsal or timed video.",
-          "Physical internet and server egress were not disconnected: browser-only loopback request restriction tested.",
-          "Native-French quality, broad devices and full accessibility conformance unverified.",
-          "Formal Impeccable phases remain open: genuine six-item plan/inventory review and authenticated capture feasibility unresolved; no user receipt or hero/final diff/QUALITY BAR fabricated. Bounded design records refreshed. Changed-target main.ts detector returned no findings; prior CSS34 advisories remain separate.",
-          "GitHub CI template is inactive because current OAuth access lacks workflow-write scope; no hosted check or provider-gate enforcement is claimed."
-        ]
-      },
-      {
-        "id": "E011",
-        "recorded_on": "2026-10-08",
-        "active_increment": {
-          "id": "P10",
-          "name": "Independent setup and adaptation rehearsal",
-          "date": "2026-10-08",
-          "status": "P10 independent technical setup and bilingual template adaptation are verified within scope. Initial candidatedcfe041 exposed a host pnpm mismatch and44 clean-checkout CRLF format errors. Researched correctionf42c189c adds scoped LF attributes and accurate pinned setup/adaptation guidance without changing production app source, tests, dependencies or lockfile. A fresh corrected checkout passed pinned cached install/build/format; baseline strict/lint,56 domain/store/HTTP cases and distinct-process persistence passed. The isolated two-string EN/FR adaptation passed strict/lint/format/build/audit and browser observations: new drafts use adjusted wording, locale switching preserves authored text, and an earlier saved plan retains its original content after restart. The isolated server is stopped; test-tab cleanup is unverified due browser-tool dialog handling. No human adoption, cold-cache/new-machine portability, measured learner benefit or completed video is claimed. P10 evidence artifactf3ca049 is published to both private repositories with exact-head verification and personal GitHub MCP readback. E011 is saved/read back in the Miva Sheet and Kaneo:39 intended cells and five complete descriptions match, preserving all prior history, statuses and dates.",
-          "specification": "docs/specs/capstone/increments/reuse.md",
-          "verification": "docs/specs/capstone/increments/reuse-verification.md",
-          "baseline": "0787299f8d335b6bfa433934407289c57c2e0dce",
-          "setup_correction_commit": "d9a9599b21ac17faefdeeeece5e1ab5da3d847cd",
-          "tracker_preparation": "E011 preparation verified correct identity, absent new ID and unchanged history; superseded by the completed saved reconciliation below.",
-          "next": "P11 timed demo and remaining formal design work. Learner evaluation only if available; no automatic outreach or human-adoption claim.",
-          "artifact_commit": "c882597362a4f494f2e467340f26b597f862d846",
-          "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/c882597362a4f494f2e467340f26b597f862d846",
-          "tracker_sync": "E011 saved and verified in the correct Miva account:39 intended Sheet cells changed with zero mismatches/extra changes across five tabs; one evidence ID at A12. All five complete Kaneo descriptions exactly match intended payloads without normalization, retain full prior histories and single E011/E010 headings, and preserve statuses/No date. The board retains10 tasks, including A007 To Do. See2026-10-08-reuse-tracker.md."
-        },
-        "status": "P10 independent technical setup and bilingual template adaptation are verified within scope. Initial candidatedcfe041 exposed a host pnpm mismatch and44 clean-checkout CRLF format errors. Researched correctionf42c189c adds scoped LF attributes and accurate pinned setup/adaptation guidance without changing production app source, tests, dependencies or lockfile. A fresh corrected checkout passed pinned cached install/build/format; baseline strict/lint,56 domain/store/HTTP cases and distinct-process persistence passed. The isolated two-string EN/FR adaptation passed strict/lint/format/build/audit and browser observations: new drafts use adjusted wording, locale switching preserves authored text, and an earlier saved plan retains its original content after restart. The isolated server is stopped; test-tab cleanup is unverified due browser-tool dialog handling. No human adoption, cold-cache/new-machine portability, measured learner benefit or completed video is claimed. P10 evidence artifactf3ca049 is published to both private repositories with exact-head verification and personal GitHub MCP readback. E011 is saved/read back in the Miva Sheet and Kaneo:39 intended cells and five complete descriptions match, preserving all prior history, statuses and dates.",
-        "tracker_sync": "E011 saved and verified in the correct Miva account:39 intended Sheet cells changed with zero mismatches/extra changes across five tabs; one evidence ID at A12. All five complete Kaneo descriptions exactly match intended payloads without normalization, retain full prior histories and single E011/E010 headings, and preserve statuses/No date. The board retains10 tasks, including A007 To Do. See2026-10-08-reuse-tracker.md.",
-        "publication": "P10 artifactf3ca0494dc09fbd114d66dbabe056d7c70324984, containing setup correctionf42c189c, published by normal git push origin main. Both private main heads exactly matched at20:05 Africa/Lagos on8October2026; personal GitHub MCP returned exact SHA/message/canonical URL/diff. Final documentation closeout records saved E011 separately; no hosted CI, deployment or global recovery claim.",
-        "limitations": [
-          "P10 technical rehearsal and E011 publication/saved reconciliation are complete within scope; full capstone acceptance still requires remaining formal design and timed demo deliverables.",
-          "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
-          "Independent setup/adaptation passed on the existing Windows PC with cached dependencies; no clean-machine, cold-cache, broad-platform or human-adoption claim.",
-          "Physical internet and server egress were not disconnected: browser-only loopback request restriction tested.",
-          "Native-French quality, broad devices and full accessibility conformance unverified.",
-          "Formal Impeccable phases remain open: genuine six-item plan/inventory review and authenticated capture feasibility unresolved; no user receipt or hero/final diff/QUALITY BAR fabricated. Bounded design records refreshed. Changed-target main.ts detector returned no findings; prior CSS34 advisories remain separate.",
-          "GitHub CI template is inactive because current OAuth access lacks workflow-write scope; no hosted check or provider-gate enforcement is claimed.",
-          "Timed video remains pending. The isolated rehearsal server is stopped; its unsaved-draft/tab cleanup is unverified after browser-tool confirmation handling failed."
-        ]
-      },
-      {
-        "id": "E012",
-        "recorded_on": "2026-10-08",
-        "active_increment": {
-          "id": "P11-design-review",
-          "name": "Integrated Amber design readiness review",
-          "date": "2026-10-08",
-          "status": "Integrated Amber design critique completed at source9281dd0 with isolated assessments and independent source confirmation. A rated26/40; five P2 findings remain open: reorder keyboard focus, localized rhythm labels, misleading availability errors, Edit step context and study-material access. Actual desktop/mobile EN/FR and both-theme observations are bounded passes, not full AC11 acceptance. One detector run returned34 advisories (no non-advisory finding); browser overlay loading failed. Root reproduced all14 current built files byte for byte in isolated output. No production changes or full suites run. The six-item formal plan/inventory packet is captured and usable, but real user decisions and later authenticated assembled-capture feasibility remain pending. Timed video and learner outcomes remain unverified. Artifacte83ab8c is published with both exact private heads and personal GitHub MCP readback; E012 saved comparisons passed39 Sheet cells and five complete Kaneo descriptions with prior history/statuses/dates preserved.",
-          "specification": "docs/specs/capstone/increments/design-review.md",
-          "verification": "docs/specs/capstone/reviews/2026-10-08-design-critique.md",
-          "baseline": "0e3968f104f92ba0b2fe329156c494ad104f4568",
-          "open_findings": [
-            "D01 reorder focus",
-            "D02 localized activity labels",
-            "D03 availability errors",
-            "D04 selected-step edit context",
-            "D05 study material links"
-          ],
-          "formal_review": {
-            "status": "Awaiting real user decisions",
-            "session": "3958725ad218c4dfdda608b6a34055a5ffe63efeda72a7fea9cf00bea8b9d626",
-            "revision": "87f3b74ffc5f6bd5211066384d046fa6841f06173a3bcb6856a929a1791242fa",
-            "observed_url": "http://127.0.0.1:61603/",
-            "idle_limit": "30 minutes; resume same session if expired",
-            "report": "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md"
-          },
-          "tracker_sync": "E012 saved/read back in the correct Miva Sheet and five existing Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, one E012 evidence row atA13; five full descriptions match with prior histories, statuses and No date preserved. See2026-10-08-design-tracker.md. Five P2 findings and genuine formal decisions remain open.",
-          "next": "Deliver review and real six-item packet; choose focused refinement scope, satisfy its research/specification before production corrections, then affected checks and timed demo.",
-          "artifact_commit": "de508eb4e13ab42842aa8f81c481ecca0fb8a2bd",
-          "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/de508eb4e13ab42842aa8f81c481ecca0fb8a2bd"
-        },
-        "status": "Integrated Amber design critique completed at source9281dd0 with isolated assessments and independent source confirmation. A rated26/40; five P2 findings remain open: reorder keyboard focus, localized rhythm labels, misleading availability errors, Edit step context and study-material access. Actual desktop/mobile EN/FR and both-theme observations are bounded passes, not full AC11 acceptance. One detector run returned34 advisories (no non-advisory finding); browser overlay loading failed. Root reproduced all14 current built files byte for byte in isolated output. No production changes or full suites run. The six-item formal plan/inventory packet is captured and usable, but real user decisions and later authenticated assembled-capture feasibility remain pending. Timed video and learner outcomes remain unverified. Artifacte83ab8c is published with both exact private heads and personal GitHub MCP readback; E012 saved comparisons passed39 Sheet cells and five complete Kaneo descriptions with prior history/statuses/dates preserved.",
-        "tracker_sync": "E012 saved/read back in the correct Miva Sheet and five existing Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, one E012 evidence row atA13; five full descriptions match with prior histories, statuses and No date preserved. See2026-10-08-design-tracker.md. Five P2 findings and genuine formal decisions remain open.",
-        "publication": "Design-review artifacte83ab8c6e7b4d04eaffcdea42e45dee59bc026d5 published by normal git push origin main to both private repositories; both exact heads verified20:44Africa/Lagos and personal GitHub MCP returned SHA/title/URL/diff. E012 links stay pinned to this artifact; later documentation closeout records saved outcomes. No deployment, hosted CI or global recovery claim.",
-        "limitations": [
-          "Five P2 design findings remain open. Bounded critique does not establish full capstone acceptance or implemented fixes.",
-          "No real learner evaluation, retention/mastery improvement, measured time saving or human adoption.",
-          "Prior independent setup/adaptation passed on this Windows PC with cached dependencies; no clean-machine/cold-cache claim.",
-          "No new physical internet-disconnection, comprehensive security, real browser zoom, full screen-reader or native-French verification.",
-          "Formal six-item plan/inventory packet is ready but user decisions/receipt are pending; later authenticated assembled-capture feasibility and compSha256 semantics remain unresolved. No forced phases, hero/final diff, QUALITY BAR or approval claim.",
-          "Detector34 entries are advisories, largely structured-document alignment; no reliable browser overlay after cross-origin script-load failure.",
-          "GitHub CI template remains inactive because current OAuth access lacks workflow-write scope; no hosted check/gate enforcement.",
-          "Timed video remains pending. Review-only server4329 stopped and normal4317 retained; review helper intentionally available for user decisions with30-minute idle expiry. Earlier P10 test-tab cleanup uncertainty remains historical."
-        ]
-      },
-      {
-        "recorded_on": "2026-10-09",
-        "stage": "E013 focused corrections delivered before auth-shell scope",
-        "status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. Artifact2209bd2 is published to both private repositories with exact Git head readback; E013 saved comparisons passed39 Sheet cells and five entire Kaneo descriptions with all histories/statuses/dates preserved. GitHub MCP is currently unavailable; no provider-MCP success inferred.",
-        "tracker_sync": "E013 saved/read back in the correct Miva Sheet and five Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, unique rowA14; five full persisted descriptions exactly match intended text and preserve entire prior histories, statuses and No date. A007 and board10tasks unchanged. See2026-10-09-refinement-tracker.md.",
-        "publication": "Artifact2209bd2d4ae161c5dd2fe45bac1c4641d7aec2cb published by normal git push origin main to both private repositories, exact heads verified12:15Africa/Lagos. GitHub MCP unavailable in current tool inventory; actual readback is GitCLI. E013 saved/read back in both trackers. Final documentation closeout records actual delivery separately; no hosted CI/deployment/global recovery claim."
-      }
-    ],
-    "limitation_history": [
-      {
-        "date": "2026-10-09",
-        "before": "auth-shell documentation closeout",
-        "limitations": [
-          "All five focused corrections, required checks, independent source review and E013 artifact/saved delivery are verified within scope; full capstone/formal design and video acceptance remain open.",
-          "No real learner evaluation, retention/mastery gain, time-saving measurement or human adoption.",
-          "Formal six-item user receipt, authenticated assembled capture, historical comp-hash semantics and QUALITY BAR remain open.",
-          "No broad accessibility/native-French certification, physical disconnected network, real machine reboot or remote peer verification.",
-          "The34 detector entries remain advisories about structured design documentation; no general clean-detector claim.",
-          "Hosted CI remains inactive under current provider scope; no enforced gate inferred.",
-          "Timed3-5-minute demo unrecorded. Review-only4330 server stopped and test tab/viewport cleaned; final ordinary demo availability checked at delivery."
-        ]
-      }
-    ],
-    "latest_increment": "hover-borders",
-    "latest_status": "HB01–HB06 implemented and verified within bounded scope: R33/four precode references, CSS-only increment, full required56domain/server+90browser/process/static/build/audit pass and no-blocker independent review; exact E025 saved in both trackers and dual-private implementation publication verified. Documentation-only closeout follows; Current overall visual design approved by Michael on12October2026 underD016; demo/outcome evidence remains separate."
-  },
-  "research_gate": {
-    "status": "Closed for R30 control visibility and readability",
-    "closed_at": "2026-10-11T09:57:00+01:00",
-    "checklist": "docs/specs/capstone/research.md",
-    "evidence": "R30 in increments/control-readability.md and research.md; source/live inventory, contrast/source guidance, precode native reference/test tooling. Enlarged skip-link need reopened/reclosed before its dependent correction; exact geometry and disposition retained in increment.",
-    "boundary": "Research completeness does not imply verification, formal design approval, educational outcomes or delivery.",
-    "initial_closed_at": "2026-10-07T16:57:00+01:00",
-    "design_review": {
-      "checklist": "docs/specs/capstone/increments/design-review.md",
-      "status": "R20 review evidence gathered; later authenticated formal capture feasibility remains unresolved. No production implementation undertaken or newly authorized by a research closure.",
-      "scope": "Independent critique and packet readiness; findings/refinement contract remains future work."
-    },
-    "previous_scoped_gate": {
-      "status": "Closed for R22 sign-in shell and theme actions",
-      "closed_at": "2026-10-09T14:07:00+01:00",
-      "evidence": "R22a-e in increments/auth-shell.md, independent test research, existing session/theme source traces, official W3C/Lucide sources and pre-code reference."
-    },
-    "ui_specialist_review": {
-      "status": "R31 closed for review findings only",
-      "implementation_status": "Selected UR01–07/09 scope subsequently implemented and verified as UL01–08; metadata UR08 and unrelated drift UR10 deferred.",
-      "evidence": "docs/specs/capstone/reviews/2026-10-11-ui-specialist-review.md"
-    },
-    "usability_layout": {
-      "status": "Satisfied for selected implementation scope before production edits",
-      "ledger": "docs/specs/capstone/increments/usability-layout.md R32",
-      "evidence": "Existing source/contracts, partial independent research, primary W3C sources, six inspected synthetic references, one precode layout detector exit0 with empty findings.",
-      "boundary": "Research gate is distinct from passed implementation/check/review/delivery evidence in usability-layout-verification.md. No outcomes, formal approval or Plan Mode invocation claim."
-    },
-    "hover_borders": {
-      "status": "Closed for R33before production; bounded touch-input verification need reopened/reclosed before test correction",
-      "ledger": "docs/specs/capstone/increments/hover-borders.md R33",
-      "boundary": "No source edit before documented image/reference closure; research is distinct from implementation/check/review/delivery."
-    }
-  },
-  "active_increment": {
-    "ai_assistance": {
-      "date": "2026-10-13",
-      "specification": "docs/specs/capstone/increments/ai-assistance.md",
-      "verification": "docs/specs/capstone/increments/ai-assistance-verification.md",
-      "review": "docs/specs/capstone/reviews/2026-10-13-ai-implementation-review.md",
-      "visual": "docs/specs/capstone/reviews/2026-10-13-ai-visual-review.md",
-      "status": "All six actions implemented; required verify85domain/server+94browser/process/static/build/audit passed. Affected capture run4/4passed40.6s. Independent corrected-source review no scoped blocker; bounded8actualEdgecapture/ChromeDOM review complete. Additive ordinary v3 startup preserved every existing non-schema table, local whole-data snapshot and auth secret.",
-      "delivery": "Artifact7d10947be84cd50429daa753232ed3d419ee52a8normalpush published to both repos; exactGitmain heads at14:31:32Africa/Lagos. PersonalGitHubMCP exactcommit/diff/all62paths; MivaMCP404withGitfallback. Installedchild-scopedGitHubCLI confirms bothprivate. E027/A010finalsavedcomparisons pass14:46:11Lagos. Documentarycloseoutpublished andheadscheckedseparately; no hostedCI/recoveryclaim.",
-      "tracker_sync": "E027uniqueA28:J28/all5tabs/10newcells/0mismatches-extra; D017E026unchanged. A010exact147327text=9450prefix+137877prior;172813HTMLwithexact161639priorHTMLsuffix. Title/IP/NoDate/10cardboard/A007exact.2contentwritesperdestinationinclude root-caughtunsupportedPlanModeclaimcorrection; E027qualifiessameearlierE026wordingwithoutrewritinghistory. Screenshotstimeout; savedexports/DOMcomparepass. See2026-10-13-ai-implementation-tracker.md.",
-      "limitations": "Exactly16live synthetic research responses, no further research allowance. Product integration tests use synthetic adapters/results; no live provider call through normal app claimed. Sponsor billing/cost unavailable. NoBYOK/purchases/fallback. Chrome screenshot timeouts; actualEdgecaptures distinguish fixtures from precode synthetic boards. No learner outcomes, production readiness, future human AI approval or timed demo inferred."
-    },
-    "littlefurther_options": {
-      "date": "2026-10-10",
-      "specification": "docs/specs/capstone/increments/littlefurther-options.md",
-      "source": "User asked for two additional logos to have three total; existing name/joined-LF/Amber remains settled, no artwork selected.",
-      "research": "R27 four needs satisfied before artwork: exact additive scope, original source/display/header truth, native rendering/loopback viewer boundary and matched geometric/reflow evaluation with independent confirmation.",
-      "verification": "96 isolated synthetic header cases passed across three options/1440-320/light-dark/EN-FR/100-200roottext/signedlayout. Three SVG allowlists/bounds/paths/16-29-32-64sizes pass; original A assets unchanged. Contrast15.28/13.2/8.71/21/6.19; no external requests/page errors/boardoverflow. Native syntax/same-rules isolated Biome and ten exact GET-HEAD routes/400-404-405/survival pass. Detector once[]; two new PNG metadata records, scan4rasters/0missing. Root bounded board/choices/mobile inspection and browserMCP actual470pxboard/nooverflow/C200frame320px passed. Independent review no artwork blocker; source-attribution note corrected. C is a subtler relative of A at16px, not measured recognition. No app source/auth/data/API/dependency/font change or new app-suite/build pass.",
-      "delivery": "Artifact 330c4c122aec7fccbfc5984bb8268f80daf02bd2 published normally, both private main heads exact at13:07:24 Africa/Lagos. Installed GitHub CLI privacy/commitmetadata/all17paths pass13:08:31/34; MCP absent, no CIclaim. Staged whitespace stopped initialcommit; cleaned/rechecked. Oldbaseline no-change push was not artifactdelivery. E019/A010 saved13:12:09: correct private MivaOwner, all5tabs exactly10changes A20:J20, zero mismatches/extra, unique E019. Kaneo84830 equals6455new block+entire exact78375oldhistory; title/IP/nodate/10taskboard/A007 unchanged, excluding transient AXfocus marker only. One paste each, no ambiguousretry; postreloadplaceholder resolved with readonlyobservation. Receipt .local/lf-variants-tracker-final-receipt.json. LO01-LO05 complete for reference/delivery; artwork choice/appintegration/formalapproval remain separate. Documentation closeout publication follows."
-    },
-    "littlefurther_brand": {
-      "date": "2026-10-09",
-      "specification": "docs/specs/capstone/increments/littlefurther-brand.md",
-      "source": "User selected LittleFurther unchanged EN/FR and joined LF, then explicitly requested a reference-only artwork increment before application integration.",
-      "research": "R26 satisfied before artwork: settled decisions, bounded exact/spaced indexed existing-use screen, .com registered/.app registry404 with registrar availability unconfirmed, current header/font/icon truth and installed native rendering route.",
-      "verification": "32 isolated synthetic header combinations passed (1440/320, light/dark, EN/FR,100/200% root text, signed-in/out layout); SVG/sizes/no-overflow/exact-name/no-external checks pass. Contrast15.28/13.2/8.71/21/6.19. Independent skill review no artwork blocker; malformed viewer URL and README wording findings corrected/confirmed. Native syntax, same-rules isolated Biome and GET/HEAD/400/404/405 viewer checks pass. Detector no findings; both PNG provenance records present. BrowserMCP frame measurements/capture inspected. No production source/app behavior changed or tested; human recognition, artwork selection, formal approval and trademark clearance unverified.",
-      "delivery": "Artifact a3f77e53b12424e7eb3a768787b68b1b89bc75bd published normally; both private main heads verified exact at22:47:42 Africa/Lagos and privacy flags true. Both installed GitHub CLI commit metadata/16 paths passed at22:48:54; GitHub MCP absent/uninstalled in resumed tools, no CI claimed. E018/A010 saved at22:51:52: correct private Miva owner; all5Sheet tabs compared, exactly10changes A19:J19, zero mismatch/extra, unique E018. Kaneo78375characters equals5035new block plus entire exact73340prior history, with title/status/date/ten-task board/A007 unchanged. One successful mutation each; explicit no-input Sheet prep timeout resolved before paste, no ambiguous-write retry. See brand contract and .local/littlefurther-tracker-final-receipt.json. LF01-LF05 complete within reference scope; artwork selection/app integration/formal approval remain separate. Documentation closeout publication follows."
-    },
-    "id": "P11-auth-shell",
-    "name": "Focused sign-in shell and moon/sun theme actions",
-    "date": "2026-10-09",
-    "status": "AS01-AS06 sign-in shell/moon-sun increment delivered within scoped technical acceptance. R22/reference preceded code; all required checks passed, including13focused/63fullbrowser and56domain/store/HTTP. Independent stabilized source/fixture review has no blocker. Actual paired browserMCP preserves Amber/EN-FR input and full-width signed-out layout; detector32advisories and mobile capture crop remain documented. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 is published to both private repositories with exact GitCLI head readback; E014 saved comparisons pass37Sheet cells and five entire Kaneo descriptions with histories/statuses/dates preserved. Initial fixture/format failures and agent interruptions retained. Formal user design decisions/capture/QUALITY BAR, comprehensive accessibility/native-French quality, learner outcomes and timedvideo remain separate and open.",
-    "specification": "docs/specs/capstone/increments/auth-shell.md",
-    "verification": "docs/specs/capstone/increments/auth-shell-verification.md",
-    "baseline": "08231721b5c844fccb160292a7c7edcf286f8818",
-    "formal_review": {
-      "status": "Awaiting real user decisions",
-      "session": "3958725ad218c4dfdda608b6a34055a5ffe63efeda72a7fea9cf00bea8b9d626",
-      "revision": "87f3b74ffc5f6bd5211066384d046fa6841f06173a3bcb6856a929a1791242fa",
-      "observed_url": "http://127.0.0.1:61603/",
-      "idle_limit": "30 minutes; resume same session if expired",
-      "report": "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md",
-      "url_status": "Historical observed helper URL; live availability not verified in auth-shell work. Same packet awaits real user decisions."
-    },
-    "tracker_sync": "E014 saved/read back in correct Miva Sheet and Kaneo:37intended/actual cells,0mismatch/extra, uniqueA15; all five full descriptions exactlymatch intended E014 prefix plus complete previous history. Titles/statuses/No date and10-task board/A007 retained. See2026-10-09-auth-shell-tracker.md.",
-    "next": "Prepare timed3-5-minute demo/evidence index. Formal human decisions/capture and learner outcomes remain separate; no automatic outreach.",
-    "artifact_commit": "8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
-    "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/8e3d2604aed972e4855ce3e92f378e7db5aeac8d",
-    "welcome_copy": {
-      "date": "2026-10-09",
-      "specification": "docs/specs/capstone/increments/welcome-copy.md",
-      "source": "User approved encouraging/specific direction and supplied exact EN/FR welcome-copy implementation plan for both forms.",
-      "research": "R25 exactcopy/claims, shared renderer/test coupling and responsive/static-reference needs satisfied before catalogue edits.",
-      "verification": "Four catalogue values only in production; strict/lint/format/build exit0.11auth-shell/password cases pass53.2s plus2AC09cases27.4s. AS01 covers bothforms/EN-FR/1440-320/100-200%root-text panelbounds/nooverflow/reachablecontrols. Independent review no blocker; paired browserMCP desktopENlight/mobileFRdark actualcopy/captures/noDOMoverflow. No fullsuite/backend/audit rerun claimed; root-text enlargement notbrowserzoom; no nativeFrench/humancomprehension/outcomes/formalapproval inference.",
-      "delivery": "Artifact 718489294f379eeb358d22309004c4ebb32e3768 published normally; both private main heads verified exact at 20:23:46 Africa/Lagos. Personal GitHub MCP metadata/diff passed; empty statuses and PR-filtered workflow lists do not establish CI success. Miva MCP returned 404; independent CLI exact head passed. E017 saved/read back at 20:26:49 Africa/Lagos: correct private Miva owner; all five Sheet tabs compared, exactly 10 changes A18:J18, zero extra changes/mismatches, unique E017. A010 full 73,340 characters equals exact 3,540 LF prefix plus entire 69,800-character history; title/status/date/ten-task board unchanged. Read-only export retry succeeded after fetch interruption, no extra tracker writes. See welcome-copy.md and .local/welcome-copy-tracker-final-receipt.json for results/limits. Documentation closeout follows."
-    },
-    "password_control": {
-      "date": "2026-10-09",
-      "specification": "docs/specs/capstone/increments/password-control.md",
-      "source": "User explicitly requested eye/reveal action; shared sign-in and account-creation implementation.",
-      "research": "R24 source/primary guidance/icon/visual needs satisfied and focused reference inspected before code.",
-      "verification": "PV01-PV04:11focused Edge browser passes52.3s (4new/7auth-shell),56domain/store/HTTP, strict/lint/finalformat/build/process/audit pass; independent source review no blocker; paired browserMCP observed44pxkeyboard/EN-FR/theme/layout. Initial formatter failure fixed; unintended all-suite selection cancelled and correct scoped command passed. No full67suite claim.",
-      "delivery": "Artifact2e424b038b9d047de913047ea89b7c0d11db2ee8 normalpush published bothprivate main heads exact19:51:07Africa/Lagos. Personal GitHubMCP metadata/diffreadbackpass; empty statuses/PR-filteredworkflow lists notCIpass. Miva MCP404,CLIexactheadpass. E016A17:J17 savedcomparison10cells/zeroextra/mismatch acrossfiveSheet tabs correctMivaowner. A010full69800characters exact; prior65979character suffix/title/status/date preserved. Initial localhelperCRLFprefixoffset corrected onlyinhelper; root independently verifiedexacthistory. See password-control.md for complete evidence/limits; documentationcloseout follows."
-    },
-    "notice_removal": {
-      "date": "2026-10-09",
-      "source": "User explicitly requests removing local account/demo paragraph and global local-demo footer, includingFrench equivalents.",
-      "research": "R23 satisfied/documented before code at19:02:42Africa/Lagos.",
-      "verification": "Strict/lint/format/build pass, existing AS01 appearance2/2pass8.8seconds, independent source review no blocker, paired ENdesktop/FR320browserMCP zero notice/scaffold nodes and noDOMoverflow. Full63suite not rerun for staticcopydeletion.",
-      "delivery": "Artifactab5317ba0d2dbdac6e4d5b5754ec335c687ee3a0 published normally to both private repositories; exact GitCLI heads verified2026-10-09T19:05:55.1356667+01:00. E015 saved/read back atA16, exactly10Sheetcells/zeroextra/mismatch; A010 full saved string/entire priorhistory/title/status/date exact. One known new-prefix link separator difference corrected explicitly to native paragraph spacing; no prior-history normalization. Documentation closeout follows."
-    },
-    "littlefurther_integration": {
-      "date": "2026-10-10",
-      "specification": "docs/specs/capstone/increments/littlefurther-integration.md",
-      "source": "Direct user A selection after three-option comparison; user continue retains integration/delivery authorization. Artwork selection is distinct from overall formal design approval.",
-      "research": "R28 four needs satisfied before production: exact choice/precode A reference, renderer/locale/title dependencies, responsive/theme geometry, independent affected-test coverage and actual runtime/data boundaries. No unresolved factual requirement.",
-      "verification": "Strict/lint43/format48/build pass. Final17affected browser cases pass1.7minutes, both authforms/locales/themes/1440-320/100-200roottext, real signout401/sidebar/expiry/storage/inputfocus/password reveal retained. Initial14pass3fail inherited-SVG fixture mismatch corrected to computed paint; geometry/semantics/lifecycle assertions retained. Independent skill source/visual review no remaining code blocker. Actual browserMCP ENlightdesktop and correctedFRdark320viewport captures inspected; mobileDOMinner320/client-scroll305, no horizontaloverflow. Earlier cropped export/skipoverlay corrected once with native screenshot; lowerform outsideviewport coveredbytests. One detector31unchangedCSSadvisories, noignore/overlay; two originembeds/scan6rasters0missing. No new fullsuite/backend/audit/CIpass, browserzoom/nativeFrench/accessibilityconformance/outcome/adoption claim.",
-      "delivery": "Artifact2486cb865a42e19ba3ea62c1bf993372b2830c19 published normally to bothprivate main heads exact13:44:06Africa/Lagos10October2026; installedGitHubCLI bothprivate:true/exactmetadata/all21paths, MCPabsent/noCIclaim. E020/A010 saved13:46:56: correctMivaOwner/Restricted/Saved; all5Sheet tabs exactly10changesA21:J21/uniqueE020/zeroextra-mismatch. FullKaneo91473=6643prefix+exact84830history; title/IP/nodate/10taskboard/A007 unchanged, one mutationeach/noambiguousretry. Receipt.local/lf-brand-tracker-final-receipt.json independently readbyroot. BI01–BI04 complete for scopedintegration/check/review/source/tracker delivery; finaldocumentationcloseoutpublication follows. Overallformalapproval/timedvideo/learneroutcomes remainseparate.",
-      "artifact_commit": "39e8ee2bc33418db083bf36ce99bba6cc98667bf"
-    },
-    "user_guide": {
-      "date": "2026-10-10",
-      "specification": "docs/specs/capstone/increments/user-guide.md",
-      "guide": "docs/USER_GUIDE.md",
-      "verification": "docs/specs/capstone/increments/user-guide-verification.md",
-      "baseline": "e2b6fae7e0c34a8d7563850f3e75c95e267b36f2",
-      "artifact_commit": "b2232e3b4ecbdc8c6d16e9c17b1e12edb6a66c19",
-      "status": "UG01–UG04 complete within source-documentation scope: 27 sections, three independent inventories/reviews, five wording corrections, local link/control/structure checks, dual-private artifact publication and exact E021/A010 saved readback. No product change or new app/usability/outcome claim.",
-      "tracker_sync": "E021 A22:J22 exactly 10 changes across all 5 tabs, no mismatch or extra; correct Miva owner/Restricted/Saved. A010 exactly 97,246 = 5,773 prefix + all 91,473 prior characters. Title/IP/no date/ten-task board/A007 preserved; single mutation each. Verified 2026-10-10T14:26:55.875546+01:00.",
-      "next": "Deliver the complete conversational walkthrough; formal design approval, timed demo/timecodes and learner evidence remain separate."
-    },
-    "control_readability": {
-      "date": "2026-10-11",
-      "specification": "docs/specs/capstone/increments/control-readability.md",
-      "verification": "docs/specs/capstone/increments/control-readability-verification.md",
-      "review": "docs/specs/capstone/reviews/2026-10-11-control-readability-review.md",
-      "baseline": "ee40f7f4dc2e03c415afb4b52af207bed6a9a29f",
-      "source": "User explicitly requested implementation of the settled broader interface review, soft outlined secondary actions and compact welcome-first mobile authentication.",
-      "research": "R30 five needs and six inspected synthetic references satisfied before production at09:57 Africa/Lagos. Reopened/reclosed before the reproduced enlarged skip-link correction; own-height hiding addresses measured cause without changing keyboard destination.",
-      "status": "CR01–CR05 complete within documented increment scope: precode R30/reference, shared control/readability changes, corrected enlarged skip link, final56domain/server+72browser/process/audit/static/build checks, independent source/pixel/log review, dual-private artifact heads and exact E022/A010 saves verified. Final documentation closeout publication follows separately; overall formal design approval/video/learner outcomes remain open.",
-      "evidence": "Six synthetic reference PNGs, five actual browserMCP JPEG viewport captures, two actual Edge/Playwright200% control crops and four-state non-secret measurements. Finaldetector31advisories, no conformance claim. Initial fixture failures, deliberately interrupted38-case full run and capture correction retained in verification.",
-      "limitations": "No browserzoom/nativeFrenchOS/cross-engine/accessibility conformance, learner outcome, adoption, formal design approval or timedvideo claim. No auth/API/schema/dependency/copy/data change. User4317 health200/newCSS verified; isolated4319 helper stopped and listener absence verified.",
-      "tracker_sync": "E022 uniquelyA23, exactly10intended cellsA23:J23 across all5Sheet tabs, zero mismatch/extra, correct Miva identity/Restricted/Saved. A010 saved103551=6305correctedprefix+entire exact97246history; title/IP/no date/10taskboard/A007 unchanged. Unsupported Plan Mode inference removed by known E23/H23 corrections; initial appended Kaneo block corrected once to prefix before exacthistory. Sheet1rowwrite+2cellcorrections; Kaneo1append+1known-state replacement. BrowserMCP saved/readback proofs and report retained; no native connector claim.",
-      "publication": "Artifact 56af4356bbe1419dd77615c822ffc52df4994a61 published normally to both private repositories; exact Git heads and installed GitHubCLI private flags/metadata/all36paths verified at10:35:18Africa/Lagos. GitHubMCP returned404 for both exact-SHA reads; CLI fallback succeeded. Combined statuses pending with0entries; no hostedCI success claim. Final documentation closeout follows tracker saved comparisons.",
-      "artifact_commit": "56af4356bbe1419dd77615c822ffc52df4994a61",
-      "tracker_review": "docs/specs/capstone/reviews/2026-10-11-control-readability-tracker.md"
-    },
-    "latest_increment": "hover_borders",
-    "ui_specialist_review": {
-      "date": "2026-10-11",
-      "baseline": "c7ddff22a5756aaa2a979f7ca0b2a5fca19024a7",
-      "report": "docs/specs/capstone/reviews/2026-10-11-ui-specialist-review.md",
-      "snapshot": ".impeccable/critique/2026-10-11T18-05-44Z__src-client-main-ts.md",
-      "evidence": "docs/specs/capstone/designs/ui-specialist-review/README.md",
-      "source": "User asks a general review of the entire app with the two newly added UI resource sets, alongside established Impeccable. Continue resumes review, not UI implementation.",
-      "status": "Whole-interface specialist review and E023 delivery complete within documented review scope. Four confirmed field/focus/limit/target defects and UR04–UR10 proposals remain open; no app fixes, new fullsuite pass or formal approval. User chose usability+layout next plan with existing form behavior and clearer hints. Review artifact dual-private heads/16paths and both exact saved trackers verified; final documentation publication follows.",
-      "research": "R31 satisfied for review. Next-plan priorities resolved by explicit user answers; existing date/timezone/minute behavior preserved. Future implementation acceptance/research/precode reference still required.",
-      "skills": [
-        "impeccable",
-        "ui-ux-resources",
-        "learning-journey-review",
-        "capstone-evidence-update"
-      ],
-      "review_method": "Independent unanchored A completed before fresh B detector results entered synthesis; accessibility specialist plus rootlive validation. Subjective Nielsen27/40, not compliance/outcome measurement. One scanner exit0:31advisories,0non-advisory;26type/4color/1radius, contextualized.",
-      "checks": "Current source/contracts/snapshots reviewed; threechecklist+licence hashes matchd036a68c; fresh invalidtimezone genericalert/noinvalidstate/BODYfocus,50namedstepAddnoop,621x24checkbox target, mobileprimaryY603.94 and two44pxcircleBack rows measured. Fresh entry/study/profile/editor/Journeys/Activity/Comeback/circles/preview/drawer states; no fullsuite rerun or repairedbehavior pass. Eight actualJPEGs have origins; metadata scan8/0missing.",
-      "limits": "Sampled ENlight/FRdark1280/320 and dated earliercaptures, not exhaustive screen/state/theme/locale/zoom/assistivetechnology/multipeer coverage or performance profile. No retention/mastery/adoption/time-saving/formalapproval/video/submission claim. Public SEO/social-card checks inapplicable localPoC. Synthetic drafts/previews only; failedtimezone rejected; data countsretain1plan/3steps/1study/1completion/1circle/0items/invites. Presentationpreferences restored, IABviewport reset/tabs closed, review4319helper stopped; normal4317health200 retained. Known old Chrome assessment tabs are absent; no unrelated tab closed.",
-      "references": "UI Skills installedrevisiond036a68c7a0785ae753f3b6d02dec515a419cf42; ecommerce currentrecommended/status plus Ritual/Muuto measured entries ate4dc419594fae8b1f5f678e0dc5e335e71b8e3bb. Captured measurements/known gaps distinguished from inferredroles/proposals; no fonts/assets/catalog/globaldefaults adopted.",
-      "tracker_sync": "Saved/readback19:25:22AfricaLagos: all5Sheet tabs exact with onlyA24:J24 tenintended changes, uniqueE023/zero mismatch-extra; late choices alteronlyF24 relativetoinitialE023. A010111555=8004prefix+exact103551prior text, entire120594originalHTML exactsuffix, title/IP/no date/10tasks1-5-0-4/A007ToDo-no date retained. Two intentionalpastes eachdestination(initial+late steering), no errors/retries. BrowserMCP, not nativeconnectors. Private JPEG proofs and receipt retained.",
-      "user_decisions": {
-        "date": "2026-10-11",
-        "priority": "Usability fixes and layout refinements together",
-        "forms": "Keep behavior and improve presentation/hints",
-        "source": "Explicit asynchronous user answers after initial review publication/tracker writes",
-        "boundary": "Next improvement-plan scope selected; no UI implementation or repaired behavior claimed."
-      },
-      "artifact_commit": "d752f69c4ffff1088eabd2f64f23dcab94f496f1",
-      "publication": "Review artifact published normally to both private repositories. Exact Git main heads, installedCLI private flags/metadata/all16paths verified at19:11:23Africa/Lagos. GitHubMCP exact-SHA reads404 for both; CLI fallback succeeded, no CI success claim. Later decision/delivery documentation closeout follows saved E023 comparisons.",
-      "tracker_review": "docs/specs/capstone/reviews/2026-10-11-ui-specialist-tracker.md"
-    },
-    "usability_layout": {
-      "date": "2026-10-11",
-      "baseline": "5f222238b2dceb1027db745d8fdd1b4c10b53b3e",
-      "status": "UL01–UL08 complete within documented scope: R32/precode references, native implementation, full required pipeline, no-blocker independent source/pixel review, dual-private artifact publication and exact E024/A010 saved comparisons verified.12October continuation performs readback without repeat writes and restores the stopped normal dev server with existing data. Delivery-only documentation commit receives separate publication/head readback. Formal approval, learner validation and timed video remain open.",
-      "specification": "docs/specs/capstone/increments/usability-layout.md",
-      "verification": "docs/specs/capstone/increments/usability-layout-verification.md",
-      "scope": "UR01a/b,UR02–07 and presentation/hints UR09. Metadata UR08 and unrelated drift UR10 deferred. Preserve date/timezone/minute behavior.",
-      "tracker_sync": "11October one ten-cell Sheet paste/one Kaneo paste; fresh12October browserMCP readback confirms all5tabs onlyA25:J25 tenintended changes/0mismatch-extra/uniqueE024, correct Miva owner and Restricted access. A010120923=9368newprefix+exact111555prior text;141732HTML retains exact129966priorHTMLsuffix. New-prefix trailing-space removal/automaticlinkmarkup recorded without repeatwrite or prior-history normalization. Title/IP/NoDate/exact633-character10taskboard1-5-0-4/wholeA007ToDo-NoDate preserved. Interrupted-session recovery documented; two fresh screenshot methods timed out, no new proof-image claim.",
-      "review": "docs/specs/capstone/reviews/2026-10-11-usability-layout-review.md",
-      "research": "R32 bounded scope and six inspected precode references satisfied before production edits. Focused verification researched and fixed restored confirmation-trigger language binding; durable addendum honestly recorded after that correction.",
-      "checks": "Final pnpm --pm-on-fail=download run verify exit0: strict compiler/lint/format/build,56domain/server tests, separate-process restart/persistence,87browser cases14.3minutes and audit with no known vulnerabilities.15new cases included in87. Initial failed/interrupted attempts and exact fixture corrections retained.",
-      "evidence": "Six synthetic native references;11actual browserMCP JPEGs with origin/native bounds and two viewport replacements; isolated CSS geometry and real invalid-timezone rejection. Full suite includes EN/FR, desktop/320px,200%root-text, forced colours, keyboard, lifetimes/privacy/dirty-state regressions. No normal4317 learner records changed; review4319 stopped and review browser viewport/tab cleaned up.",
-      "limitations": "Bounded synthetic/Edge evidence, not exhaustive assistive-technology or native-French validation, learner outcomes, adoption, time saved, Plan Mode invocation, formal design approval or completed video. Metadata UR08 and unrelated drift UR10 deferred; no dependency/server/API/schema change.",
-      "reconciled_on": "2026-10-12",
-      "tracker_review": "docs/specs/capstone/reviews/2026-10-12-usability-layout-tracker.md",
-      "artifact_commit": "9c5f12e0f05dfad8df8ef40017e808592598681a",
-      "publication": "Normal git push origin main exit0 to bothprivate destinations. Exact Git main heads and installedCLI private flags/commitmetadata/all46paths verified11October21:56:54Africa/Lagos. PersonalGitHubMCP exactcommitmetadata/diffpass; Miva404 with CLI fallback. Empty statuses/PR-filteredworkflows imply no hostedCIpass. Artifact and final delivery-only documentation publication remain distinct.",
-      "next": "Review the delivered UI and record formal design decisions separately; prepare the timed3–5minute demo/criteria evidence. No automatic outreach or submission."
-    },
-    "hover_borders": {
-      "date": "2026-10-12",
-      "baseline": "1b1698b3cd7b1ec091f854dfedbc70ae70fc03cc",
-      "source": "Direct user approved implementation plan after selecting all secondary actions; supersedes only relevant CR01/02 resting outlines.",
-      "specification": "docs/specs/capstone/increments/hover-borders.md",
-      "verification": "docs/specs/capstone/increments/hover-borders-verification.md",
-      "status": "HB01–HB06 implemented and verified within bounded scope: R33/four precode references, CSS-only increment, full required56domain/server+90browser/process/static/build/audit pass and no-blocker independent review; exact E025 saved in both trackers and dual-private implementation publication verified. Documentation-only closeout follows; formal approval separate.",
-      "scope": "Secondary/header/circle-disclosure transparent resting borders and existing-brand interaction borders; borderless sidebar. Preserve primary/path/field/password/menu/link exceptions, behavior and data.",
-      "tracker_sync": "E025 unique Codex evidence A26:J26: exactly10intended values,0mismatches/extra changes across all5tabs. Miva identity/private/Saved to Drive observed. Saved A010 exactly130197characters (9274new+120923prior) and exact141732prior HTML suffix; full153367HTML. Title/status/date,633-character10taskboard and fullA007 unchanged. Root resumed saved readback with zero additional content writes; local private exports/proof ignored.",
-      "research": "All6bounded R33needs satisfied before source edit, four synthetic references inspected. R33 reopened/reclosed for trusted native Edge activation sampling before dependent test correction; no app fix needed.",
-      "evidence": "Four synthetic reference PNGs and8actual browserMCP JPEGs with native origins/dimensions. ActualENdesktop light/dark resting/hover/darkkeyboard andFR320light/dark/rest/circle; no sampledoverflow. FRdarkrestored,viewportreset/rootreviewtabclosed,isolated4319stopped; ordinary4317healthok and recordsuntouched.",
-      "limitations": "Bounded native/Edge synthetic fixtures and synthesized touch; not physical touch/full browserzoom/nativeFrench/screenreader/fullconformance/outcomes/formalapproval/video. Partial fade/cropped viewport samples documented. No auth/API/schema/dependency/newfeature/copy change.",
-      "review": "docs/specs/capstone/reviews/2026-10-12-hover-borders-review.md",
-      "checks": "Final pnpm --pm-on-fail=download run verify80269 exit0: strict/lint/format/build,56domain/server,distinctprocesspersistence,90browser16.3minutes incl3new/5updatedCR, auditlow no knownvulnerabilities. Initial7/8focused and touchcleanup failure retained; corrected native activation singlecasepass10.0s. No assertions suppressed/no productionedit afterfinalfullrun.",
-      "tracker_review": "docs/specs/capstone/reviews/2026-10-12-hover-borders-tracker.md",
-      "artifact_commit": "4e9cd327693626fbaf6a3fd741fd64ab36ed6211",
-      "publication": "Normal git push origin main exit0 to both private repositories. Exact Git main heads and installed authenticated GitHubCLI private flags/commitmetadata/all30paths matched12October14:11:24Africa/Lagos. Current GitHubMCP exact-SHA bothrepos/status/workflow reads returned404; CLI fallback verified delivery, no providerMCP/hostedCIpass inferred. Separate documentation-only closeout follows saved tracker comparisons.",
-      "next": "Current overall design approved by Michael on12October2026 underD016. Prepare timed3–5minute demo/criteria evidence next when requested; no automatic outreach/submission."
-    }
-  },
-  "product_identity": {
-    "name": "LittleFurther",
-    "name_status": "User-selected on 9 October 2026; same spelling in English and French",
-    "logo_concept": "User-selected joined LF: L on left, F on right, connected baseline and softly rounded strokes",
-    "reference": "docs/specs/capstone/designs/littlefurther/options.png",
-    "logo_options": "A Original (unchanged mark.svg); B Stepped (mark-b.svg); C Solid (mark-c.svg). User requested two additions on10October2026; three total, fair matched comparison in choices.png/options.html.",
-    "artwork_selection": "User selected A Original on10October2026: “A is okay”. Original mark.svg geometry unchanged; B/C remain unused alternatives.",
-    "application_integration": "A Original/LittleFurther implemented in persistent header and initial/locale-updated title; BI01–BI04 scoped checks/review/source/tracker delivery complete. Original synthetic references retained. Overall formal design approval remains separate; see integration contract for actual results and limits.",
-    "availability": "Preliminary indexed screen found no obvious exact learning-product conflict. littlefurther.com is registered; .app registry404 is not registrar availability or legal clearance. No domain purchase or hosting.",
-    "application_reference": "docs/specs/capstone/designs/littlefurther/app-desktop.png"
-  },
-  "design_direction": {
-    "name": "Amber",
-    "user_quote": "I will go with Amber.",
-    "approved_reference": ".impeccable/mocks/decision/next-turn.png",
-    "design_record": "docs/specs/capstone/design.md",
-    "detailed_artifacts": [
-      ".impeccable/mocks/amber/shell-light.png",
-      ".impeccable/mocks/amber/shell-dark.png",
-      ".impeccable/mocks/amber/comeback-preview.png",
-      ".impeccable/mocks/amber/sharing-preview.png",
-      ".impeccable/mocks/amber/mobile-fr-closed.png",
-      ".impeccable/mocks/amber/mobile-fr-open.png"
-    ],
-    "approval_boundary": "Amber direction selected historically; Michael explicitly approved the current overall implemented visual design on12October2026 at10d8ca0. D016/design.md records this decision; historical detailed-image sidecars remain unchanged.",
-    "shell": "Stable top-left A Original/LittleFurther outside sidebar; complete EN/FR name and title, native decorative32/29mark in ink/light and Amber/dark, existing system650 with Little/Further optional wrap. Existing signed-in navigation/account/panel icons and signed-out language/moon-sun utilities retained.",
-    "review": "Fresh independent paired desktop/light-dark/French-mobile review found mobile priority ordering and documentation issues, then marked both scored corrections resolved. Its ship disposition covers those fixes only. Semantic/Segoe UI adaptation retained; formal Impeccable finish refused because earlier phases remain open, and no formal fidelity completion is claimed.",
-    "behavior_status": "Private-journey shell checks passed, including final6 affected browser cases after mobile ordering/French accessible-label corrections. Formal Impeccable pipeline remains open; manual visual verdict is separate."
-  },
-  "increment_history": [
-    {
-      "id": "P11-design-refinement",
-      "name": "Five focused learner-flow corrections",
-      "date": "2026-10-09",
-      "status": "All five D01-D05 corrections are verified within RF01-RF05 scope. R21 research/specification preceded implementation. Final strict/lint/format/build/domain56/process/audit passed; focused8browser cases passed and full56browser cases passed in11.1minutes. Independent stabilized source/fixture review has no scoped blocker. Root browser MCP verified error recovery/focus, localized activity, exact-version study resources/retained reflection and selected-step mobile focus, then confirmed one resource-spacing batch. Earlier type/format errors and six fixture failures retain their actual causes/dispositions. Formal user receipt/capture, native-French/full-accessibility validation, video and learner outcomes remain separate. Artifact2209bd2 is published to both private repositories with exact Git head readback; E013 saved comparisons passed39 Sheet cells and five entire Kaneo descriptions with all histories/statuses/dates preserved. GitHub MCP is currently unavailable; no provider-MCP success inferred.",
-      "specification": "docs/specs/capstone/increments/design-refinement.md",
-      "verification": "docs/specs/capstone/increments/design-refinement-verification.md",
-      "baseline": "526ec3402c09e2e098e83dc44cd658428830f2cb",
-      "findings": {
-        "D01": "Resolved within RF01 tested scope; focused/full browser evidence passed",
-        "D02": "Resolved within RF02 tested scope; focused/full browser evidence passed",
-        "D03": "Resolved within RF03 tested scope; focused/full browser evidence passed",
-        "D04": "Resolved within RF04 tested scope; focused/full browser evidence passed",
-        "D05": "Resolved within RF05 tested scope; focused/full browser evidence passed"
-      },
-      "formal_review": {
-        "status": "Awaiting real user decisions",
-        "session": "3958725ad218c4dfdda608b6a34055a5ffe63efeda72a7fea9cf00bea8b9d626",
-        "revision": "87f3b74ffc5f6bd5211066384d046fa6841f06173a3bcb6856a929a1791242fa",
-        "observed_url": "http://127.0.0.1:61603/",
-        "idle_limit": "30 minutes; resume same session if expired",
-        "report": "docs/specs/capstone/reviews/2026-10-08-design-pipeline-review.md"
-      },
-      "tracker_sync": "E013 saved/read back in the correct Miva Sheet and five Kaneo descriptions:39 intended/actual cells, zero mismatches/extra changes, unique rowA14; five full persisted descriptions exactly match intended text and preserve entire prior histories, statuses and No date. A007 and board10tasks unchanged. See2026-10-09-refinement-tracker.md.",
-      "next": "Prepare the timed3-5-minute demo and criteria/timecode evidence index. Formal human receipt/capture and any available learner evaluation remain separate; no automatic outreach.",
-      "artifact_commit": "e53210745e82fafbcd7ce59b8e306f64285a8338",
-      "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/e53210745e82fafbcd7ce59b8e306f64285a8338"
-    }
-  ],
-  "evidence_invocations": [
-    {
-      "date": "2026-10-09",
-      "increment": "P11-auth-shell",
-      "skills": [
-        "impeccable",
-        "learning-journey-review",
-        "capstone-evidence-update"
-      ],
-      "inputs": [
-        "increments/auth-shell.md AS01-AS06",
-        "working source/tests and root command logs",
-        "correct live E014 tracker baselines"
-      ],
-      "results": "Actual independent source/fixture review, root checks/browserMCP and capstone-evidence-update E014 reconciliation completed;37Sheet fields and five full Kaneo descriptions exactly saved/read back. Artifact0bc000e704ff2df29ce369f950c5526a2dd933a7 exact dual-head publication checked through GitCLI. Skills are invoked/reused, not inferred from file presence."
-    },
-    {
-      "date": "2026-10-10",
-      "increment": "LittleFurther-A-integration",
-      "skills": [
-        "impeccable",
-        "learning-journey-review",
-        "capstone-evidence-update"
-      ],
-      "inputs": [
-        "R28/BI01–BI04 specification and precode A reference",
-        "working source/tests and root actual command/capture results",
-        "independent review and correct live E019 tracker baselines"
-      ],
-      "results": "Actual R28/precode A reference/native build/17affected browser passes/independent source-pixel review/document reconciliation and capstone-evidence-update reuse complete. BrowserMCP saved exact E02010cells/all5tabs and fullA01091473characters with exactprior84830/title/status/date/board preserved. Artifact exactdual-private heads and installedCLIprivacy/metadata/21paths verified; no providerMCP/CI or planmode/outcome inferred."
-    },
-    {
-      "date": "2026-10-10",
-      "increment": "Complete-user-guide",
-      "skills": [
-        "learning-journey-review",
-        "capstone-evidence-update"
-      ],
-      "inputs": [
-        "R29/UG01–UG04 and baseline source e2b6fae",
-        "27-section manual and three independent feature inventories/reviews",
-        "actual local documentation checks, dual-private artifact readback and E020 tracker baselines"
-      ],
-      "results": "Actual source-based guide review, five corrected documentary findings and evidence-skill reuse completed. Browser MCP saved/read back unique E021, 10 cells across all 5 tabs, and exact A010 of 97,246 characters with all 91,473 prior characters preserved. No new app test, learner observation, plan-mode or CI claim."
-    },
-    {
-      "date": "2026-10-11",
-      "increment": "Control-readability",
-      "skills": [
-        "impeccable",
-        "learning-journey-review",
-        "capstone-evidence-update"
-      ],
-      "inputs": [
-        "R30/CR01–CR05 and precode native references",
-        "working source/test diff and actual focused/full/native check logs",
-        "independent source/pixel review and correct Miva/Kaneo live baselines"
-      ],
-      "results": "Actual precode R30/native references, source/test implementation, fullrequired56domain/server+72browser/process/audit/static/build checks, final5affected cases/four native states and independent source/pixel/log review passed. capstone-evidence-update/browserMCP reuse saves exactE02210cells/all5tabs and103551-character A010 with exact97246prior history/title/status/date/board retained. Root caught unsupported mode attribution and ordering error; known-state corrections/operation counts documented. Dual-private artifact heads/private flags/36paths verified; GitHubMCP404/CLI fallback and absent CIstatuses retained. No new actual Plan Mode, learner outcome, adoption, formal approval or timedvideo claim."
-    },
-    {
-      "date": "2026-10-11",
-      "increment": "Whole-UI-specialist-review",
-      "skills": [
-        "impeccable",
-        "ui-ux-resources",
-        "learning-journey-review",
-        "capstone-evidence-update"
-      ],
-      "inputs": [
-        "c7ddff2 source/contract/prior dated evidence",
-        "three scoped UI Skills checklists and two evidence-qualified measured references",
-        "independent A/B/specialist outputs and fresh root browserMCP diagnosis"
-      ],
-      "results": "Actual specialist/independent/source/browser review identifies four confirmed defects and separate proposals; subjective27/40 and one31-advisory scan contextualized. Eight actualJPEG origins/measurements/snapshot, sourceimmutability and localdocchecks passed. Review286c4b1 exactdual-private heads/16paths verified throughGit/CLI; GitHubMCP404 retained. Evidence skill/browserMCP reuse saved exactE023ten cells/all5tabs and111555-character A010 with entire103551prior text/120594HTML/status/date/board retained. Lateexplicituserchoices recorded; no app fixes, actual PlanMode claim, compliance/outcomes/adoption/time-saving/video/formalapproval inferred."
-    },
-    {
-      "date": "2026-10-11",
-      "increment": "Usability-layout",
-      "skills": [
-        "impeccable",
-        "ui-ux-resources",
-        "learning-journey-review",
-        "capstone-evidence-update"
-      ],
-      "inputs": [
-        "R32/UL01–UL08 and baselineb5eb433; six inspected precode references",
-        "Scoped native frontend/test diff and actual full verify exit0",
-        "Independent source/pixel review; actual isolated browserMCP geometry/error evidence and exact E023 tracker baselines"
-      ],
-      "results": "Actual research/specification/reference/build/test/review/evidence skill reuse. Final56domain/server+87browser/process/static/build/audit passed; no production edits afterward. Independent source/pixel review no blockers. Artifact exactdual-private heads/privateflags/metadata/46paths verified; personalGitHubMCPdiffpass,Miva404/CLI fallback/noCIclaim. BrowserMCP E024 savedexact10cells/all5tabs and120923-characterA010 retaining111555prior text/129966HTML, metadata/board/A007 unchanged.12October resumed evidence skill readback without duplicate writes, recovered prior normalization receipts and recorded screenshot timeouts; no PlanMode/outcome/approval/video claim.",
-      "reconciled_on": "2026-10-12"
-    },
-    {
-      "date": "2026-10-12",
-      "increment": "Hover-borders",
-      "skills": [
-        "impeccable",
-        "ui-ux-resources",
-        "learning-journey-review",
-        "capstone-evidence-update"
-      ],
-      "inputs": [
-        "User-approved all-secondary plan after conversational Plan Mode exploration and settled selector/brand/input research",
-        "R33/HB01–06; four inspected synthetic precode references; working CSS/test diff over92d7070",
-        "Root actual8-image browserMCP batch; independent source/test/pixel review; exact E024baselines, final E025payload and fresh saved exports/full Kaneo readback"
-      ],
-      "results": "Actual conversational Plan Mode planning/approvedscope/R33/precode/CSS/tests/review/evidence skill reuse. Final56domain/server+90browser/process/static/build/audit passed; no-blocker source/test/8actualpixel review. Touchinput/harness cleanup corrected without app change. Implementation0c49b93 exactdual-private heads/privateflags/metadata/all30paths verified throughGit/CLI; currentGitHubMCP404explicit. BrowserMCP E025savedexact10cells/all5tabs and130197-characterA010 retaining all120923prior text/141732priorHTML, metadata/board/A007. Root resumed saved comparisons with zero duplicate writes. No GUI mode/outcome/approval/video claim."
-    }
-  ],
-  "overall_design_approval": {
-    "status": "Approved",
-    "date": "2026-10-12",
-    "timezone": "Africa/Lagos",
-    "approved_by": "Michael",
-    "user_quote": "okay, it's approved now",
-    "baseline": "a768c98e3d0cd9db13670a57ba625e6c435f0aa6",
-    "decision_id": "D016",
-    "record": "docs/specs/capstone/design.md#overall-design-approval--12-october-2026",
-    "scope": "Current implemented overall LittleFurther visual design, including Amber, A Original LF identity, light/dark themes, responsive layouts and latest HB01-HB06 controls.",
-    "boundary": "Human visual approval; historical mock sidecars/tool-workflow states retained. Does not establish educational outcomes, production readiness, exhaustive accessibility/language conformance, completed older Impeccable workflow, future design approval or demo/submission.",
-    "tracker_sync": "Verified browser MCP saved readback: D016 unique at Decisions A17:F17, exactly6intended values/all5tabs/0mismatches. A010 exactly131175characters (978new+130197prior), exact153367priorHTML suffix and title/In Progress/No date preserved. One content write per destination; no corrective repaste."
-  },
-  "repository_presentation": {
-    "recorded_on": "2026-10-13",
-    "timezone": "Africa/Lagos",
-    "contract": "docs/specs/capstone/increments/repository-presentation.md",
-    "verification": "docs/specs/capstone/increments/repository-presentation-verification.md",
-    "repositories": [
-      {
-        "name": "MikeIronSyd/littlefurther",
-        "id": 1417816026
-      }
-    ],
-    "identity_status": "Existing repositories renamed; original IDs/history/private status preserved. Exact description, seven topics and empty homepage read back.",
-    "local_status": "RP01–RP05 passed within recorded documentation/pixel/source scope; independent corrected review has no local blocker. App source/behavior unchanged.",
-    "checks": "Final documentation validator:13documents/122relative links and anchors,703README words,8PNGhash/dimensions,2SVGXML/exactgeometry/text-fit and knownsequence-separatorguard; zeroissues. Prior13October85domain/server+94browser results remain dated, not rerun.",
-    "delivery_status": "Historical presentation artifacts and verified rendering retained. The later13October identity decision replaced only the school repository with freshID1417816026 and school-specific history; current publication uses independent expected heads, not the earlier matching-head workflow.",
-    "limits": "No live OpenAI/ordinary data/new full application suite. Personal web browser access and new-slug GitHub MCP reads unavailable; authenticated CLI and identical-source checks supplied explicit fallback evidence. Native diagram zoom/pan needed for wide graphs on narrow screens. Sheet long-row clipping retained. Kaneo new separator markup normalized after reload while exact older text/HTML suffixes remain. D016 baseline approval retained; later AI surfaces,timedvideo,learneroutcomes,productionreadiness separate.",
-    "artifact_commit": "566ac5570c58caee043217b010cb62fecee6a971",
-    "render_correction_commit": "351b07c3749616a0619f2dc27a79f48ba43d9207",
-    "tracker": {
-      "evidence_id": "E028",
-      "sheet_route": "Native Google Drive MCP, verified Miva account; browser visual inspection",
-      "sheet_changed_cells": 12,
-      "sheet_mismatches": 0,
-      "sheet_history_suffix_retained": true,
-      "sheet_writes": 2,
-      "kaneo_route": "Browser MCP",
-      "kaneo_saved_text_characters": 152692,
-      "kaneo_saved_html_characters": 180413,
-      "kaneo_prior_text_exact": true,
-      "kaneo_prior_html_exact": true,
-      "kaneo_new_prefix_words_match": true,
-      "kaneo_writes": 1,
-      "board": "10cards:1ToDo/5InProgress/0InReview/4Done;A010InProgressNoDate;A007ToDo"
-    },
-    "final_reconciliation_review": "Independent saved-snapshot comparison found no blockers:12intended Sheet values/zeroextraformat-history changes, exact Kaneo prior text/HTML suffixes and matching new wording; board counts are root-observed. Final documentation-only dual publication/head readback follows."
-  },
-  "repository_identity_separation": {
-    "date": "2026-10-13",
-    "decision": "User rejected personal attribution on school and selected a fresh private school repository; approved school CLI authorization.",
-    "specification": "docs/specs/capstone/increments/repository-identities.md",
-    "procedure": "docs/operations/repository-publication.md",
-    "original_school_repository_id": 1402126097,
-    "status": "Fresh private school replacement is complete and independently verified, with school-only authors/committers/contributor/collaborator/Activity. E029/D018 saved and independently compared; final documentary commits use independently expected owner heads.",
-    "local_school_checkout": "This repository checkout",
-    "authentication": "Ignored separate school-gh profile; never expose or publish credentials.",
-    "publication_rule": "School author, committer, origin and authenticated pusher only; independently verified expected head.",
-    "new_school_repository_id": 1417816026,
-    "staging_url": "https://github.com/MikeIronSyd/littlefurther-school-prepared",
-    "staged_school_head": "1e9055671156ef3410c5d14df7a78e6c2d3db9d1",
-    "remote_checks": "57schoolauthors/committers;schoolonlycontributor/collaborator/pushactor;private/nonfork/mainonly;oldpersonalcommitabsent422. Independent audit57headers/668texts/298historyURLs passes; protected bytes unchanged.",
-    "trackers": "E029/D018 saved13October:18intendedSheetvalues/noextra-value-style-formula-history changes; nativeDecisionsfilterextendsone row. Kaneoprior152692text/180413HTMLexactsuffixes,new3759prefixexact; final156451text/184879HTML+digest independently pass. BrowserMCPactualroute; correctedattemptsdocumented.",
-    "final_school_url": "https://github.com/MikeIronSyd/littlefurther",
-    "original_school_deleted": true,
-    "final_replacement_authorization": "Directuserconfirmation13October2026",
-    "documentary_closeout_on": "2026-10-14",
-    "tracker_review": "docs/specs/capstone/reviews/2026-10-13-repository-identity-trackers.md",
-    "final_documentation_checks": "8identitydocs/87relative links pass; presentationvalidator13docs/125rootlinks/703words/eightPNGhashes/twoSVGs pass. No appfullsuite/liveAIrerun.",
-    "equivalent_source_baseline": "e716dbaf07c76875018c4c4a905d399e0f2ac83e",
-    "equivalent_pre_closeout_head": "1e9055671156ef3410c5d14df7a78e6c2d3db9d1"
+  "status_reconciliation": {
+    "date": "2026-10-14",
+    "specification": "docs/specs/capstone/increments/status-reconciliation.md",
+    "product_change": false,
+    "verification_boundary": "Documentation checks only; no new full application suite or live AI request."
   }
 }

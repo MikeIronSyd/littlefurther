@@ -37,7 +37,7 @@ The independent reviewer ran source/document inspection and Impeccable context o
 
 ## Done When
 
-The first scoped source review is complete with no production blocker. Inspect the final E2E changes and root verification/browser evidence, confirm the production fingerprint, and record actual outcomes before using this review as release evidence. Both tracker readbacks and both remote heads are root delivery responsibilities and must remain separately evidenced.
+The first scoped source review is complete with no production blocker. Inspect the final E2E changes and root verification/browser evidence, confirm the production fingerprint, and record actual outcomes before using this review as release evidence. Both tracker readbacks and the intended source revision are root delivery responsibilities and must remain separately evidenced.
 
 ---
 
@@ -97,4 +97,4 @@ Both independent reviewers performed source/document inspection; neither execute
 
 ### Done When
 
-Independent stabilized source/fixture scrutiny and review of completed root evidence are complete with no scoped blocker. The original production fingerprints remain unchanged; final test formatting is explicitly traced. No additional test, browser pass or detector run is required by this scoped review. Root may proceed with authorized delivery and record E014 saved tracker comparisons and both private remote heads separately. This report does not claim those delivery actions, close the formal design gate or establish complete capstone acceptance.
+Independent stabilized source/fixture scrutiny and review of completed root evidence are complete with no scoped blocker. The original production fingerprints remain unchanged; final test formatting is explicitly traced. No additional test, browser pass or detector run is required by this scoped review. Root may proceed with authorized delivery and record E014 saved tracker comparisons and the intended source revision separately. This report does not claim those delivery actions, close the formal design gate or establish complete capstone acceptance.

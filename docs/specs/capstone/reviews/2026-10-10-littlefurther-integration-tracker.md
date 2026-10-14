@@ -6,7 +6,7 @@ Reconcile actual LittleFurther A integration, checks, review and source delivery
 
 ## Context Pointers
 
-Actual capstone-evidence-update/computer-use invocation used the [integration contract](../increments/littlefurther-integration.md), [independent review](2026-10-10-littlefurther-integration.md), root final-check output and artifact `39e8ee2bc33418db083bf36ce99bba6cc98667bf`. Both private main heads matched13:44:06; installed GitHub CLI privacy/immutable metadata/all21paths passed. No GitHub MCP/hosted CI result inferred.
+Actual capstone-evidence-update/computer-use invocation used the [integration contract](../increments/littlefurther-integration.md), [independent review](2026-10-10-littlefurther-integration.md), root final-check output and artifact `39e8ee2bc33418db083bf36ce99bba6cc98667bf`. the intended source revision matched13:44:06; installed GitHub CLI privacy/immutable metadata/all21paths passed. No GitHub MCP/hosted CI result inferred.
 
 | Destination | Actual saved comparison | Result |
 | --- | --- | --- |
@@ -24,4 +24,4 @@ Receipt `.local/lf-brand-tracker-final-receipt.json` records exact comparisons, 
 
 ## Done When
 
-E020/A010 saved comparisons pass and no tracker write remains pending. Final documentation closeout uses normal commits/pushes to both private repositories with exact final-head readback; no recovery repository upload, paid service, submission or outreach. Continue toward the timed demo/evidence index and separate formal design decision when requested.
+E020/A010 saved comparisons pass and no tracker write remains pending. Final documentation closeout uses normal commits/pushes to this private repository with exact final-head readback; no recovery repository upload, paid service, submission or outreach. Continue toward the timed demo/evidence index and separate formal design decision when requested.

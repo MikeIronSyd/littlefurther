@@ -38,13 +38,13 @@ All five required needs are satisfied at14:07 Africa/Lagos on9October2026 before
 3. Existing icon helper adds only upstream moon/sun geometry; i18n supplies action labels. Theme paint updates root dataset, decorative SVG and action name/tooltip in place. Hover/focus tooltip state stays local to shell; Escape dismisses it. Remove obsolete track/knob rules and retain forced-color/reduced-motion safeguards.
 4. Run `pnpm --pm-on-fail=download run check`, `run lint`, `run format:check`, `run build`, `test`, `run verify:process`, focused `exec playwright test tests/e2e/auth-shell.spec.ts tests/e2e/shell.spec.ts`, one full `run test:e2e`, and `run audit`. Preserve actual failures and corrections; do not weaken checks.
 5. Independent source/AC review using learning-journey-review; one batched actual browser MCP desktop-light EN/mobile-dark FR check, then at most one confirmation after a demonstrated fix. Run detector once, contextualize advisories. Update design-system behavior notes and verification.
-6. Reconcile E014 against live trackers, preserving histories/statuses/dates. Invoke capstone-evidence-update, normal authorized Git publication to both private destinations, verify both heads. GitHub MCP unavailable at discovery; record fallback accurately if still unavailable. No global recovery work.
+6. Reconcile E014 against live trackers, preserving histories/statuses/dates. Invoke capstone-evidence-update, normal authorized Git publication to this private repository, verify the intended source revision. GitHub MCP unavailable at discovery; record fallback accurately if still unavailable. No global recovery work.
 
 No migration is required. Rollback restores prior source/build and retains unchanged database. Use isolated synthetic test data; preserve normal demo data and keep local demo available.
 
 ## Done When
 
-AS01–AS06 have actual verification and no scoped blocking review finding; both correct trackers have saved readback and both private remote heads match intended publication. Describe any unverified destination separately. No human design approval, educational benefit, production readiness or completed video follows from this change.
+AS01–AS06 have actual verification and no scoped blocking review finding; both correct trackers have saved readback and the intended source revision match intended publication. Describe any unverified destination separately. No human design approval, educational benefit, production readiness or completed video follows from this change.
 
 ## Requested notice deletion — 9 October2026 (R23)
 
@@ -64,4 +64,4 @@ Plan: delete the two renderers/keys/exclusive styles; run check/lint/format/buil
 
 ### Done When
 
-NR01-NR02 have source, existing appearance-case and actual browser evidence; scoped independent review has no blocker; current build is available, intended source published to both private repositories, and concise E015 saved record readback is separate and accurate.
+NR01-NR02 have source, existing appearance-case and actual browser evidence; scoped independent review has no blocker; current build is available, intended source retained as source evidence, and concise E015 saved record readback is separate and accurate.

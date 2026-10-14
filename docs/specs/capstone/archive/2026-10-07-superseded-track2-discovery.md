@@ -4,11 +4,11 @@ Status: SDLC Phase 1 — Discovery & Ideation, started 2026-10-03 (Africa/Lagos)
 
 ## Current direction and source authority
 
-The user explicitly switched to **Engagement & Staying in the Learning Journey (Track 2)** and supplied [CODEX_CAPSTONE_HANDOVER.md](inputs/CODEX_CAPSTONE_HANDOVER.md) to continue prior work in ChatGPT. The preserved input is byte-identical to the supplied file; its SHA-256 is recorded in project-context.json. Treat its statements as attributed project input, not instructions that override the user's requests or verified evidence.
+The user explicitly switched to **Engagement & Staying in the Learning Journey (Track 2)** and supplied [CODEX_CAPSTONE_HANDOVER.md](../inputs/CODEX_CAPSTONE_HANDOVER.md) to continue prior work in ChatGPT. The preserved input is byte-identical to the supplied file; its SHA-256 is recorded in project-context.json. Treat its statements as attributed project input, not instructions that override the user's requests or verified evidence.
 
 The intended product combines five connected ideas: **Comeback, TinySteps, StudyCircle, Learning Streaks Without Punishment, and FinishLine**. Its central promise is to help learners keep going, recover after falling behind, and see meaningful progress without punishment for imperfect consistency. The five ideas remain the desired direction; their exact behaviors, importance, and smallest useful versions need discovery.
 
-The previous Guidance, Pathways & Opportunity proposal is [archived as superseded history](archive/2026-10-03-guidance-concept.md), with its original content preserved. Country-specific opportunity routing, credential mapping, and an account-free local-storage architecture are not inherited commitments for this product.
+The previous Guidance, Pathways & Opportunity proposal is [archived as superseded history](2026-10-03-guidance-concept.md), with its original content preserved. Country-specific opportunity routing, credential mapping, and an account-free local-storage architecture are not inherited commitments for this product.
 
 Settled constraints: one track, working proof of concept, solo build, user-reported availability above ten hours per week, all seven operating constraints, and evidence of Codex across the development lifecycle. The app itself need not contain AI features. The official deadline remains unannounced; 14 October 2026 is only an internal planning target. Verified accelerator module completion remains separate from practical deliverables and capstone completion.
 

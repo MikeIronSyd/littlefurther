@@ -19,7 +19,7 @@ Saved tracker inputs are ignored `.local/repository-presentation/sheet-before.js
 
 ## Constraints
 
-Root-provided delivery evidence: the same existing repository IDs, `1402125626` and `1402126097`, are now private `separate account/littlefurther` and `MikeIronSyd/littlefurther`; the exact selected About description, seven topics and empty homepage were read back. Updated origin fetch/two push URLs and miva retain both destinations. Normal dual publication and both main-head readbacks match artifact `566ac55`. This subagent inspected the local commit but did not execute the rename, push, external readbacks or browser rendering. Root's final verification must attach its actual observations rather than infer them from this ledger.
+Root-provided presentation evidence includes the selected LittleFurther About description, seven topics, empty website field and bounded native GitHub light/dark/narrow rendering. Source artifact links support the presentation implementation. This reviewer did not perform metadata writes, publication or browser rendering.
 
 Proposed writes are narrowly scoped: Context B22 replaces only active repository destinations; B25 prepends a qualified E028 current summary plus the exact previous value; Codex evidence A29:J29 receives one new row; Kaneo A010 prepends plain E028 text while retaining the entire prior description. No Activities, Milestones or Decisions cells, existing IDs, task status/date, board counts or historical commit links are to be changed. Saved-state comparisons remain required. The ten-card board and A010 In Progress/No Date are root-owned readback targets.
 
@@ -27,7 +27,7 @@ The earlier D016 approval is settled for baseline `a768c98`; future AI surfaces,
 
 ## Done When
 
-The ignored tracker payload is prepared and baseline-preservation inputs are verified. At this checkpoint local evidence preparation is complete, but actual GitHub render/redirect checks, Sheet/Kaneo writes and saved comparisons, and any documentary-closeout publication remain pending under root ownership. Root must resolve the payload's explicit finalization fields before saving, compare only intended Sheet fields plus untouched-history/formatting invariants, verify Kaneo's exact retained suffix/status/date/board state, and record the final dual heads separately.
+The ignored tracker payload is prepared and baseline-preservation inputs are verified. At this checkpoint local evidence preparation is complete, but actual GitHub render/redirect checks, Sheet/Kaneo writes and saved comparisons, and any documentary-closeout publication remain pending under root ownership. Root must resolve the payload's explicit finalization fields before saving, compare only intended Sheet fields plus untouched-history/formatting invariants, verify Kaneo's exact retained suffix/status/date/board state, and record the final source evidences separately.
 
 ## Root saved reconciliation — 13 October 2026
 
@@ -37,7 +37,7 @@ The preceding agent record is preparation history. Root finalized and saved E028
 
 ### Context Pointers
 
-See [delivery verification](../increments/repository-presentation-verification.md#delivery-and-saved-evidence--13-october-2026). Initial artifact 566ac55 and reviewed render correction 351b07c were published with matching private heads. Native Miva Google Drive MCP updated/read the Sheet; browser MCP inspected it and edited Kaneo. GitHub MCP returned404; CLI and native Miva web evidence are accurately separated.
+See [delivery verification](../increments/repository-presentation-verification.md#delivery-and-saved-evidence--13-october-2026). Initial artifact 566ac55 and reviewed render correction 351b07c were recorded as source evidence with matching private heads. Native Miva Google Drive MCP updated/read the Sheet; browser MCP inspected it and edited Kaneo. GitHub MCP returned404; CLI and native Miva web evidence are accurately separated.
 
 ### Constraints
 
@@ -45,4 +45,4 @@ Sheet final comparison:12intended changed values, zero mismatches, unchanged for
 
 ### Done When
 
-The final documentary closeout is published normally and both exact heads checked. Private before/after receipts stay ignored; no further tracker write is needed to record that documentation-only final commit.
+The final documentary closeout is recorded as source evidence and the intended source revision checked. Private before/after receipts stay ignored; no further tracker write is needed to record that documentation-only final commit.

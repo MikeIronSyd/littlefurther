@@ -21,7 +21,7 @@ Inspected `README.md`, `PRODUCT.md`, `docs/README.md`, `docs/ARCHITECTURE.md`, `
 | RP05 | Local links/assets and independent bounded review | Reviewer read-only path/heading approximation found zero failures across seven main documents. Root's saved validator receipt records 107 relative links across nine files, 704 words, eight captures, both SVG checks and zero issues. Final provenance correctly records dark 1280×1681 after reload. | Verified pass for local review/check evidence | No actual GitHub Markdown/Mermaid render was observed by this reviewer; remote rendering remains RP07. |
 | RP06 | Rename, metadata/privacy/remotes and redirects | Expected next delivery step; not executed or observed by reviewer. | Unverified | No repository mutation or Git action performed here. |
 | RP07 | Actual GitHub light/dark/narrow render | Local source/pixels inspected; provider render not inspected. | Unverified | Mermaid syntax and Markdown source are not remote render evidence. |
-| RP08 | Evidence/tracker saved readback and exact dual publication | Expected subsequent reconciliation/publication. | Unverified | No tracker access/write, commit, push, remote-head or saved-readback claim follows from this review. |
+| RP08 | Evidence/tracker saved readback and exact source documentation | Expected subsequent reconciliation/publication. | Unverified | No tracker access/write, commit, push, remote-head or saved-readback claim follows from this review. |
 
 The final captured dashboard pair has the same saved plan/activity; the dark reload clears a transient success notice, so its height is 1681 versus light's 1729. The saved first completion, remaining steps, one study day and five reported minutes agree. French mobile is a successful 320px interface with explicitly English learner-authored content. Circle pixels show two synthetic local accounts, a deliberately shared commitment and preset encouragement; FinishLine says the active steps are complete and keeps the self-report/mastery distinction.
 
@@ -52,7 +52,7 @@ The 85 domain/server and 94 browser results are explicitly prior 13 October chec
 
 ## Done When
 
-Local document/pixel findings are corrected and read back; RP01–RP05's scoped local candidate is ready. Continue RP06–RP08 within existing user authorization: rename/metadata/remotes, actual provider render in the agreed themes/narrow layout, saved authorized tracker comparisons, ordinary dual publication and exact head verification. Keep their actual results in the presentation verification record. No additional user approval gate is introduced by this review.
+Local document/pixel findings are corrected and read back; RP01–RP05's scoped local candidate is ready. Continue RP06–RP08 within existing user authorization: rename/metadata/remotes, actual provider render in the agreed themes/narrow layout, saved authorized tracker comparisons, ordinary source documentation and exact head verification. Keep their actual results in the presentation verification record. No additional user approval gate is introduced by this review.
 
 ## Addendum — native sequence-render correction, 13 October 2026
 

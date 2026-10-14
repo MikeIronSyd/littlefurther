@@ -45,7 +45,7 @@ Editor interface: `showPlanEditor(...existingArguments, options?: {selectedStepI
 2. Implement disjoint editor/root changes and independent focused tests.
 3. Run required `pnpm --pm-on-fail=download run check`, `lint`, `format:check`, `build`, `pnpm --pm-on-fail=download test`, `run verify:process`, `run test:e2e`, `run audit`. Use the focused browser file first to diagnose correction-specific failures, then one full browser run after changes stabilize. Never weaken assertions or count historical passes as fresh evidence.
 4. Perform independent source review and one batched browser MCP desktop/mobile EN/FR/theme inspection with synthetic data. Fix demonstrated blockers in one batch and confirm affected behavior once. Run Impeccable detector once on changed frontend targets; advisory documentation drift remains separate.
-5. Record RF01–RF05 implementation/actual results, residual limits and J1–J4 evidence. Reconcile E013 in the correct Miva Sheet/Kaneo after live uniqueness check, publish intended source to both private repositories and verify each head. Global recovery remains separate.
+5. Record RF01–RF05 implementation/actual results, residual limits and J1–J4 evidence. Reconcile E013 in the correct Miva Sheet/Kaneo after live uniqueness check, publish intended source to this private repository and verify each head. Global recovery remains separate.
 
 No migration is needed; rollback restores the prior source/build while retaining the unchanged local database. Builds should be served from the corrected source for the final observation. Existing demo data stays intact; test data is isolated and ignored.
 

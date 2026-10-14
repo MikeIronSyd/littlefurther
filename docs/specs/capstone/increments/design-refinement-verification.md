@@ -75,7 +75,7 @@ The normal demo4317 was not running at the9October preflight. Root started the f
 
 ### Source publication
 
-Normal `git push origin main` published [e53210745e82fafbcd7ce59b8e306f64285a8338](https://github.com/MikeIronSyd/littlefurther/commit/e53210745e82fafbcd7ce59b8e306f64285a8338), containing the verified correction and evidence, to both private repositories. Both main heads exactly matched at12:15:02Africa/Lagos. The current tool inventory exposes no GitHub repository/commit read tool or searchable-tool route, so provider MCP readback is unavailable for this increment; publication readback is GitCLI evidence. Earlier actual GitHub MCP results remain preserved. No unavailable provider check is called passed. E013 saved tracker reconciliation is recorded after execution; this documentation closeout is separate from the artifact linked there.
+Source evidence: [e53210745e82fafbcd7ce59b8e306f64285a8338](https://github.com/MikeIronSyd/littlefurther/commit/e53210745e82fafbcd7ce59b8e306f64285a8338). the intended source revision exactly matched at12:15:02Africa/Lagos. The current tool inventory exposes no GitHub repository/commit read tool or searchable-tool route, so provider MCP readback is unavailable for this increment; publication readback is GitCLI evidence. Earlier actual GitHub MCP results remain preserved. No unavailable provider check is called passed. E013 saved tracker reconciliation is recorded after execution; this documentation closeout is separate from the artifact linked there.
 
 ### Saved E013 delivery
 

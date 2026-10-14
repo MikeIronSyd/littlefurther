@@ -18,7 +18,7 @@ Use each tool for the evidence it can actually provide:
 | Evidence need | Preferred route | What to retain |
 | --- | --- | --- |
 | Local change, source, build, tests | Shell and repository tooling | Working directory, exact command, revision, exit result, useful output or artifact |
-| Published commit, pull request, provider checks | Available GitHub MCP read tools | Repository, immutable SHA, check name/status, URL, observation time |
+| recorded as source evidence commit, pull request, provider checks | Available GitHub MCP read tools | Repository, immutable SHA, check name/status, URL, observation time |
 | Running learner journey | Browser computer-use MCP | App URL/build, setup, actions, visible result, evidence reference and limitations |
 
 Discover available tools and inspect package scripts or documented commands before running them. Do not invent a test command, infer a passed provider check from a push, or substitute a screenshot for an interaction. If the preferred tool is unavailable, name the missing evidence and any actual fallback accurately. Shell Git is local/CLI evidence; browser automation of Sheets or Kaneo is browser MCP use, not native tracker MCP integration.

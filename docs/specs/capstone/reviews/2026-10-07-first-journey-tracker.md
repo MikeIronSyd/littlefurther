@@ -16,7 +16,7 @@ Reconcile the P04/P05 first private learning journey into the existing Miva Shee
 | A004 / CAH-5 | r00pcmdoxqe9pg9sypknq8kv | In Progress | Specification/research and current scope |
 | A006 / CAH-7 | zlku14kwk2hz6t8wiuhskib1 | In Progress | First usable prototype and remaining work |
 | A008 / CAH-9 | uhcnhzx7eeu0qc3jonj5qzkj | In Progress | Actual Codex/skills/MCP evidence |
-| A009 / CAH-3 | p866v9czc3ko17xfzg9gyx5y | Done (initial setup) | Actual dual-repository publication |
+| A009 / CAH-3 | p866v9czc3ko17xfzg9gyx5y | Done (initial setup) | Actual source evidence |
 | A010 / CAH-10 | nx3nmey5c6huteswnhhzv2zf | In Progress | Verification, limitations and next actions |
 
 A007 / CAH-8 is **Capstone submission and reflection**, not the implementation task. Its To Do status and cleared native due date remain unchanged. The initial board contains one To Do, five In Progress and four Done tasks.
@@ -34,7 +34,7 @@ The final evidence is reconciled to exact existing Sheet ranges and Kaneo descri
 
 ### Final saved reconciliation
 
-**Source evidence.** The [first-journey verification](../increments/first-journey-verification.md), [behavior review](2026-10-07-first-journey-review.md), and [bounded visual verdict](2026-10-07-first-journey-visual.md) were read. Root supplied actual test, browser MCP and publication outcomes. Artifact `9d5820bfd8058a951372c2e3be868425e3733df9` was published by normal Git to both private repositories; root verified both remote main heads and independently read the matching personal commit through GitHub MCP. Links saved to trackers: [separate account artifact](https://github.com/MikeIronSyd/littlefurther/commit/9d5820bfd8058a951372c2e3be868425e3733df9) and [MikeIronSyd artifact](https://github.com/MikeIronSyd/littlefurther/commit/9d5820bfd8058a951372c2e3be868425e3733df9). This tracker agent did not run product checks or publish source.
+**Source evidence.** The [first-journey verification](../increments/first-journey-verification.md), [behavior review](2026-10-07-first-journey-review.md), and [bounded visual verdict](2026-10-07-first-journey-visual.md) were read. Root supplied actual test, browser MCP and publication outcomes. Artifact `9d5820bfd8058a951372c2e3be868425e3733df9` retained as source evidence; root verified the intended source revision and independently read the matching personal commit through GitHub MCP. Links saved to trackers: [source evidence](https://github.com/MikeIronSyd/littlefurther/commit/9d5820bfd8058a951372c2e3be868425e3733df9). This tracker agent did not run product checks or publish source.
 
 **Sheet result.** Browser MCP wrote and immediately compared the following ranges, then reloaded the Sheet and repeated persisted comparisons. Every intended value matched. The UI showed Saved to Drive under the verified Miva identity.
 
@@ -49,7 +49,7 @@ A fresh browser XLSX export was compared cell by cell with the initial export us
 
 **Kaneo result.** Updated only the descriptions of A004/CAH-5, A006/CAH-7, A008/CAH-9, A009/CAH-3 and A010/CAH-10 using their task IDs above. Each original description was read again and matched its baseline before adding the dated E007 block. Each task was then reloaded, and its complete description matched the intended update with rendered whitespace normalized. All five comparisons passed. The final board still contains ten tasks: one To Do, five In Progress, zero In Review and four Done. A007 remains To Do; A009 remains Done for initial setup; no title, assignee, due date or status changed.
 
-**Failures/retries.** No tracker write failed or required retry; no ambiguous saved state remained. An initial numeric-tab lookup failed, and the corrected string lookup found root already controlled that tab. Separate temporary tabs were opened in the same verified browser profiles before any write. These access/setup attempts did not change tracker data. Source-publication history is recorded separately: unpublished candidate `d86bb91` was rejected by both repositories because active workflow creation required OAuth workflow scope. Root retained the manual workflow as an unactivated documentation template, amended that unpublished candidate and successfully published `9d5820b`; no credentials were expanded, hosted workflow activated or paid service enabled.
+**Failures/retries.** No tracker write failed or required retry; no ambiguous saved state remained. An initial numeric-tab lookup failed, and the corrected string lookup found root already controlled that tab. Separate temporary tabs were opened in the same verified browser profiles before any write. These access/setup attempts did not change tracker data. Source evidence: `d86bb91`. Root retained the manual workflow as an unactivated documentation template, amended that unpublished candidate and successfully published `9d5820b`; no credentials were expanded, hosted workflow activated or paid service enabled.
 
 | Criterion | Requirement/artifact at `9d5820b` | Actual result and demo boundary |
 | --- | --- | --- |

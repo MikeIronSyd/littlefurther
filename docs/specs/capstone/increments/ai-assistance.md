@@ -133,7 +133,7 @@ Use contextual inline panels/buttons in current screens; manual/curated learning
 2. Implement strict request/output/source validators, injected native-fetch adapter, operation limits, source staging and v3 migration; add domain/HTTP/migration/privacy/failure checks before ordinary-data startup.
 3. Add six contextual UI paths with review/acceptance, input/session/view/stale guards, localized pending/cancel/failure/manual fallback and traceable citations.
 4. Run focused tests and `pnpm --pm-on-fail=download run verify`; review actual EN/FR/light/dark/desktop/320px/enlarged/keyboard/reduced-motion/forced-colour behavior. Resolve blockers through independent `learning-journey-review`.
-5. Align delivered specifications/guide/operations/design evidence; use `capstone-evidence-update` for actual Miva Sheet/Kaneo readbacks; publish intended non-secret changes by normal Git to both private repositories and verify exact heads/GitHub MCP readback.
+5. Align delivered specifications/guide/operations/design evidence; use `capstone-evidence-update` for actual Miva Sheet/Kaneo readbacks; publish intended non-secret changes by normal Git to this private repository and verify exact heads/GitHub MCP readback.
 
 ## Done When
 
@@ -149,6 +149,6 @@ Use contextual inline panels/buttons in current screens; manual/curated learning
 | AI08 | Server-only secrets and bounded tool/data policy; reject unauthorized/stale/unsafe/unknown-ID/executable results. | Adversarial outbound/route/tool/owner/source/markup tests, independent review; no prose-immunity claim. |
 | AI09 | Sponsored-key/no-purchase policy, one-search/one-generation/timeout/concurrency bounds and honest failure recovery. | User prerequisite resolution and actual bounded access/usage evidence with inaccessible sponsor billing stated; fake exhaustion/429/timeout/refusal/malformed/cancel/duplicate-operation checks and server-outbound blocking. |
 | AI10 | Six contextual paths preserve EN/FR, themes, desktop/320px/enlarged/keyboard/accessibility preferences. | Actual app captures/review and focus/input/drawer/tooltips/draft regressions; distinguish synthetic references. |
-| AI11 | Required checks/review/records/trackers/dual-private publication have actual results. | Full verify command; independent findings resolved; saved Miva Sheet/Kaneo readbacks; matching remote heads. |
+| AI11 | Required checks/review/records/trackers/source evidence have actual results. | Full verify command; independent findings resolved; saved Miva Sheet/Kaneo readbacks; verified source reference. |
 
 Technical acceptance does not establish educational effectiveness, adoption, production readiness or exhaustive accessibility conformance. The timed 3–5 minute capstone demonstration remains separate and should distinguish product AI from Codex's development role.

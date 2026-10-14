@@ -19,8 +19,8 @@ All results start pending. Captures use separate synthetic data and mocked provi
 | RP03 | Passed locally | Three guides and active PRODUCT/operations summaries corrected. Independent review confirmed actual folders, local circle preview, source staging versus explicit saved snapshots, D016/AI/video boundaries. |
 | RP04 | Passed scoped capture | Eight successful current Edge captures with isolated synthetic SQLite/accounts and5mock responses,0live provider calls. Final dark reload clears transient notice, preserving data. Receipt records dimensions/hashes; full-page/cropped limits explicit. |
 | RP05 | Passed locally | `node docs/assets/littlefurther/validate.mjs`: exit0,107relative links/anchors,8PNGhash/dimension matches,2valid exact-geometry SVGs with fitting wordmark. `git diff --check` passes. Independent review has no remaining scoped local blocker. |
-| RP06 | Passed with browser limitation | IDs1402125626/1402126097 preserved; exact metadata/private/empty homepage and remotes read back. Both legacy Git/API paths resolve preserved SHA/canonical new repositories. Miva web redirect observed; personal browser access unavailable. |
-| RP07 | Passed bounded native review | Miva owner page: light/dark assets, loaded gallery,320px README reflow and native learning/system/corrected AI SVG labels. Wide diagrams use native zoom/pan. Both published copies identical; personal browser render unavailable. |
+| RP06 | Product metadata inspected | LittleFurther About description, seven topics and empty website field were checked. Historical source links remain evidence references. |
+| RP07 | Passed bounded native review | Miva owner page: light/dark assets, loaded gallery,320px README reflow and native learning/system/corrected AI SVG labels. Wide diagrams use native zoom/pan. Native rendering evidence is bounded to the inspected browser session. |
 | RP08 | Artifacts and saved trackers passed | Normal dual artifact/correction publication and exact heads; E028/Context:12intended value changes, zero mismatches, formatting/history retained. Saved/reloaded Kaneo retains exact earlier text/HTML. Final documentary closeout publishes/checks separately. |
 
 ### Actual preparation, review and limitations
@@ -37,21 +37,21 @@ Personal rename/metadata used installed GitHub CLI with profile scoped to the ch
 
 ## Done When
 
-Record actual artifact checks, independent findings, names/metadata, render observations, saved tracker comparisons and dual head readbacks with their scope.
+Record actual artifact checks, independent findings, names/metadata, render observations, saved tracker comparisons and source evidences with their scope.
 
 ## Delivery and saved evidence — 13 October 2026
 
 ### Goal
 
-RP01–RP08 are verified within the explicit scope/limits below. This documentary closeout records actual artifact publication, native rendering and E028 saves; its final dual publication/head check follows normally.
+RP01–RP08 are verified within the explicit scope/limits below. This documentary closeout records actual artifact publication, native rendering and E028 saves; its final source documentation/head check follows normally.
 
 ### Context Pointers
 
-Presentation artifact **566ac5570c58caee043217b010cb62fecee6a971** contains30intended non-secret files; normal dual push and both exact heads passed. Independently reviewed native-sequence correction **351b07c3749616a0619f2dc27a79f48ba43d9207** also pushed normally with matching heads. Final README count is703after replacing the skipped tagline heading level with a paragraph; earlier704counts are preparation results. Validator passes110relative links,8PNGhashes/dimensions and2SVG parsing/geometry/text-fit checks, plus the unsafe-message guard. Guard6case evidence is independent; it is not a full Mermaid parser.
+Presentation artifact **566ac5570c58caee043217b010cb62fecee6a971** contains30intended non-secret files; the source artifact reference is retained. Independently reviewed native-sequence correction **351b07c3749616a0619f2dc27a79f48ba43d9207** also retained as source evidence. Final README count is703after replacing the skipped tagline heading level with a paragraph; earlier704counts are preparation results. Validator passes110relative links,8PNGhashes/dimensions and2SVG parsing/geometry/text-fit checks, plus the unsafe-message guard. Guard6case evidence is independent; it is not a full Mermaid parser.
 
 Actual Miva GitHub browser review confirmed expected native SVG actor/action labels after the three-comma fix, including24-hour metadata staging, local circle preview and separate Share. Initial paint/loading captures were followed by valid loaded-view proof; private images remain ignored. Desktop light/dark and320px README asset selection/navigation reflow passed (page305px/pictures239px). Architecture diagrams rendered in light/dark; narrow page geometry had no page overflow. Native zoom/pan supports wide diagrams on narrow displays. Temporary media/metrics/viewport overrides were restored.
 
-GitHub MCP new-slug reads returned404 for both private copies, including full-SHA attempts. Authenticated CLI returned exact30-file artifact and current metadata; Git returned matching main heads. Both old-slug APIs returned preserved 98372ac/canonical new names/IDs and both old Git URLs resolved current heads. Miva's old web commit visibly redirected. Personal Chrome was signed out and Miva lacked private personal access, so personal web/render proof was unavailable. No auth/permission changes were made. Miva native display evidence and identical source/personal CLI metadata remain distinct.
+The recorded native GitHub review inspected light/dark assets, the gallery, README reflow and rendered diagrams. Connector access was unavailable in that checkpoint; authenticated source readback supplied fallback evidence. This does not establish hosted CI or a new application test.
 
 ### Constraints
 
@@ -65,7 +65,7 @@ J1 maps actual planning/research/reference/source helpers, Impeccable/companion,
 
 ### Done When
 
-Artifacts, corrected native render and saved tracker comparisons pass; the final documentation-only commit is published normally and checked against both renamed heads. No additional tracker/provider/test action is required by this closeout. Final head evidence belongs to the delivery tool result/user report rather than a self-referential commit hash in this file.
+Artifacts, corrected native render and saved tracker comparisons pass; the final documentation-only commit is recorded as source evidence and checked against the intended source revision. No additional tracker/provider/test action is required by this closeout. Final head evidence belongs to the delivery tool result/user report rather than a self-referential commit hash in this file.
 
 Final closeout validation at18:17Africa/Lagos expanded to all13affected/current authored documents and passed **122relative links/anchors**,703READMEwords,8PNGhash/dimension checks,2SVGXML/geometry/text-fit checks and the sequence guard, zeroissues. Both documentation helper syntax checks and git diff --check pass. No product source/tests/dependency changes are present; this remains documentation-only verification.
 

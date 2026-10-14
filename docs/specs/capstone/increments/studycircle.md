@@ -105,7 +105,7 @@ Externalize all labels/errors and preset descriptions in EN/FR; format timestamp
 2. Frontend owns circle.ts and narrow main/journey/i18n/styles integration; reads craft-floor immediately before UI edits. No production edits precede gate closure.
 3. Root owns browser tests and process-restart extension; one aggregate test runner/server to avoid port and auth-rate conflicts. Preserve strict diagnostics and existing40 unit/HTTP plus27 browser cases.
 4. Independent learning-journey-review checks role/lifecycle/privacy/receipt contracts and actual outputs. Fresh visual reviewer gets final desktop/light-dark/mobile packet; documenter compares the ordinary extension to the preserved system. No fabricated formal Impeccable receipts.
-5. Update actual evidence with capstone-evidence-update, normal publication/readback on both private repositories and saved Sheet/Kaneo comparisons. No external messages, capstone submission, permission expansion or paid service.
+5. Update actual evidence with capstone-evidence-update, normal publication/readback on this private repository and saved Sheet/Kaneo comparisons. No external messages, capstone submission, permission expansion or paid service.
 
 Exact checks: `pnpm run check`, `pnpm run lint`, `pnpm run format:check`, `pnpm run build`, `pnpm test`, `pnpm run verify:process`, `pnpm run test:e2e`, `pnpm run audit`. Record failures, unavailable checks and corrected runs. All app scenarios use synthetic data. Local behavior checks do not prove human adoption or retention.
 
@@ -119,6 +119,6 @@ Exact checks: `pnpm run check`, `pnpm run lint`, `pnpm run format:check`, `pnpm 
 | SC04 | Owner/member/nonmember/removed/signed-out permissions hold for every route group and cross-circle IDs; deletion/leave/removal/closure perform cleanup, retain private work and deny subsequent access, including stale receipts/rejoin. |
 | SC05 | No-plan entry, EN/FR, desktop light/dark, French320px, keyboard/focus and input preservation work. Failed/uncertain mutations and post-save readback are honest; late callbacks cannot replace other screens; token absent from URL/storage. |
 | SC06 | Circle state survives browser reload and distinct-process restart; existing learning/Comeback regressions pass under their recorded conditions. |
-| SC07 | Review, documentation, normal dual publication and E009 tracker saved readbacks are recorded with real limits. P08 onward, learner evaluation, independent adoption and timed video remain separate. |
+| SC07 | Review, documentation, normal source documentation and E009 tracker saved readbacks are recorded with real limits. P08 onward, learner evaluation, independent adoption and timed video remain separate. |
 
 Actual results belong in `studycircle-verification.md` after execution. This pre-code contract alone passes none of the product criteria.

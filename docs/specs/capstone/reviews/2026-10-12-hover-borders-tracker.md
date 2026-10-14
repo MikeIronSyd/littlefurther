@@ -12,14 +12,14 @@ Browser automation through MCP used the existing [capstone Sheet](https://docs.g
 
 | Criterion | Requirement, artifact and actual result | Demo boundary |
 | --- | --- | --- |
-| J1 | R33/HB01–06; actual conversational Plan Mode planning, specification, reference-first CSS/test work, independent review, reusable review/evidence skills, browser MCP readbacks and dual-private Git/CLI publication | Codex-role scene has evidence; no GUI mode interaction or current successful GitHub MCP read is inferred |
+| J1 | R33/HB01–06; actual conversational Plan Mode planning, specification, reference-first CSS/test work, independent review, reusable review/evidence skills, browser MCP readbacks and source evidenceGit/CLI publication | Codex-role scene has evidence; no GUI mode interaction or current successful GitHub MCP read is inferred |
 | J2 | Synthetic educational engagement journey retains recognizable soft actions, immediate keyboard focus and touch-native actions; bounded state/geometry checks and eight actual captures | Working interface evidence, not validated retention or learning benefit |
 | J3 | CSS-only scope preserves stack, modules and setup; required static/build/process/tests/audit pass | Earlier setup rehearsal remains dated; this is no new human-adoption experiment |
 | J4 | Actual light/dark desktop and French 320px control states supplement the planned walkthrough | Timed 3–5 minute video, playback and submission remain pending |
 
 ## Constraints
 
-Fresh prewrite comparisons verified all five Sheet tabs, empty A26:J26, unique E024 at A25, full A010 text/rich HTML, task metadata, board and A007. Prepared E025 was held until the implementation artifact was published and independently read back. The tracker agent then saved E025; its immediate files exist for both destinations. Its execution ended before final reconciliation. Root inspected existing saved state first and made **zero additional content writes**. An already-claimed agent tab could not be reused, so root opened two temporary readback tabs in the same Miva browser profile and closed only those tabs afterward.
+Fresh prewrite comparisons verified all five Sheet tabs, empty A26:J26, unique E024 at A25, full A010 text/rich HTML, task metadata, board and A007. Prepared E025 was held until the implementation artifact was recorded as source evidence and independently read back. The tracker agent then saved E025; its immediate files exist for both destinations. Its execution ended before final reconciliation. Root inspected existing saved state first and made **zero additional content writes**. An already-claimed agent tab could not be reused, so root opened two temporary readback tabs in the same Miva browser profile and closed only those tabs afterward.
 
 Root's fresh Sheet export, compared against the full frozen baseline and intended values, passed: exactly ten changed cells, Codex evidence A26:J26; zero mismatches and zero extra changes across Context, Activities, Milestones, Decisions and Codex evidence. E025 occurs once at A26 and E024 remains once at A25. Selection readback showed E025 and Count:10. This confirms values and saved state, not every historical formatting attribute.
 
@@ -31,4 +31,4 @@ Earlier tooling recovery consisted of one inventory retry, a freshly observed cl
 
 ## Done When
 
-Both tracker content updates and saved readbacks are complete. Actual implementation publication is verified in both private repositories through normal Git and authenticated CLI metadata/head/path checks. Current exact-SHA GitHub MCP reads returned 404; no provider-MCP or hosted-CI success is claimed. Root reconciles these records and publishes a separate documentation-only closeout, checking both final heads without repeating the tracker writes. Product outcomes, physical-device/full accessibility validation, formal design approval and the recorded capstone pitch remain separate.
+Both tracker content updates and saved readbacks are complete. Current exact-SHA GitHub MCP reads returned 404; no provider-MCP or hosted-CI success is claimed. Verify the intended source commit before publication. Product outcomes, physical-device/full accessibility validation, formal design approval and the recorded capstone pitch remain separate.

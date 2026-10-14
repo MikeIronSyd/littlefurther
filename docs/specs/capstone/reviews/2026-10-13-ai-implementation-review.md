@@ -65,6 +65,6 @@ Untrusted model/source prose remains advisory; exact validated source IDs, owner
 
 ## Done When
 
-Independent corrected-source and final-log review is complete with **no remaining scoped implementation blocker** and all IR01–IR06 corrections resolved. The full required pipeline and affected capture run have inspected passing logs; the bounded actual application/locale-date observations are attributed to root's read record. Root retains final tracker saved comparisons and dual-private publication/head readbacks before treating AI11 as delivered. This reviewer owns only this review record; product corrections were made by their owners.
+Independent corrected-source and final-log review is complete with **no remaining scoped implementation blocker** and all IR01–IR06 corrections resolved. The full required pipeline and affected capture run have inspected passing logs; the bounded actual application/locale-date observations are attributed to root's read record. Root retains final tracker saved comparisons and source evidence/head readbacks before treating AI11 as delivered. This reviewer owns only this review record; product corrections were made by their owners.
 
 No test command, provider request, ordinary-data action or running-app review was performed by this reviewer. All execution is attributed above; no further live call follows from this evidence reconciliation. Future AI-surface human review, measured learner outcomes and the timed capstone demo remain separate.

@@ -1,15 +1,15 @@
 # Hackathon project instructions
 
-## Repository identity separation — 13 October 2026
+## Repository publication
 
-This private repository belongs to MikeIronSyd. Commit and publish only with the verified school identity and school authentication. Its origin must point only to this school repository. The previous dual-push/equal-head instructions are superseded. Historical work records are identity-adapted copies with revisions mapped to equivalent school commits; this does not represent new tests, captures or approvals. Follow docs/operations/repository-publication.md.
+LittleFurther is maintained in this private repository. Use the authorized owner identity and normal Git publication; preserve hooks, secrets and learner data. Follow [publication](docs/operations/repository-publication.md).
 
 
 This is the Andela x Miva x OpenAI Codex Accelerator Hackathon workspace. The user completed briefing intake and both LMS modules, then explicitly selected Track 2: Engagement & Staying in the Learning Journey. The agreed MVP combines Comeback, TinySteps, StudyCircle, nonpunitive consistency tracking, and FinishLine in one experience for learners generally. StudyCircle includes both personal study/review cycles and private peer accountability. These decisions are settled; do not reopen learner segmentation, feature inclusion, or a required personal interruption case. P04/P05 provides the local private learning journey, P06 adds Comeback schedule recovery, and P07 implements private circles with real local accounts, deliberate sharing and lifecycle controls. P08/P09 reviews the connected journey and corrects session/view lifetimes, unsaved-state protection, route consistency and profile-write ordering. P10 independently rehearses setup and bilingual template adaptation, correcting pinned-launcher guidance and Windows checkout EOL behavior without changing product templates. The9October focused design correction implements keyboard focus, localized activity descriptions, accurate availability errors, selected-step editing and version-matched study links. Read docs/specs/capstone/spec.md, increments/design-refinement.md and its verification record for current results and remaining gates before proceeding. Product benefits remain hypotheses, not validated outcomes. The earlier Guidance concept is archived. BSc AI enrollment is user-reported and distinct from verified accelerator completion.
 
 ## Resume with context
 
-The13October repository presentation supplies LittleFurther branding, current synthetic-data screenshots and developer/judge guides. This fresh private MikeIronSyd/littlefurther repository preserves equivalent application source through a school-specific history. See the identity specification for original-backup and actual replacement evidence.
+The13October repository presentation supplies LittleFurther branding, qualified synthetic-data screenshots and learner/developer/judge guides. Current product and documentation status is recorded in docs/specs/capstone/increments/status-reconciliation.md.
 
 On12October2026 Michael explicitly approved the current overall implemented LittleFurther visual design: “okay, it's approved now”. D016 in `docs/specs/capstone/design.md` records baseline10d8ca0, scope and limits. Overall human visual approval is settled for that baseline; retain historical pending statements/mock sidecars/tool-workflow receipts without treating them as a new approval gate. This decision does not establish outcomes, production readiness, exhaustive accessibility conformance, future-design approval or demo completion.
 
@@ -65,8 +65,8 @@ Use Africa/Lagos for user-facing dates and times. Set up recurring monitoring on
 
 ## Publish and recover
 
-Publish intended non-secret source only to this private MikeIronSyd/littlefurther repository from its school checkout, using the school author/committer identity and school authentication. Verify its own expected main head; never import another account history or require identical heads. Preserve unrelated hooks and follow docs/operations/repository-publication.md.
+Publish intended non-secret source to this private MikeIronSyd/littlefurther repository using authorized owner authentication. Verify the intended main commit and preserve unrelated hooks. Follow docs/operations/repository-publication.md.
 
 The user's 7 October 2026 policy limits CodexRecovery to global instructions, skills and essential settings. Never send project files, project Git history, chat/task/conversation history, prompt drafts, databases, workspace folders, browser/app profiles, task automations or generated runtime caches to the recovery repository. Do not register projects, install recovery Git hooks, or invoke `Push-WithBackup` for project publication. Global recovery is separate from this project's publication checks.
 
-When using the installed GitHub CLI profile, identify the physical runtime from the scheduled task WorkingDirectory or `runtime_physical_path` and scope `gh_config_dir` to child processes. A local commit is not proof of publication; verify the remote heads. Never activate paid storage or commit credentials, private keys, recovery configuration, conversation databases, or recovery archives as project source. Preserve historical recovery evidence as history without treating it as a current project-backup requirement.
+Use authenticated GitHub tools without changing global credentials. A local commit is not proof of publication; verify the intended remote commit. Never activate paid storage or commit credentials, private keys, conversation databases, recovery configuration or archives.

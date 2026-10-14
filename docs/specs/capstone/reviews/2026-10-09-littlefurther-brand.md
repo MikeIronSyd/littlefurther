@@ -14,7 +14,7 @@ The reviewer inspected the [contract](../increments/littlefurther-brand.md), edi
 | LF02 | Exact name, existing type/palette, promise outside header | HTML/CSS, README and images | Verified pass | System-font rendering on this Windows host |
 | LF03 | Desktop/320px, both layout states, enlarged text preserves brand/utilities | Source, board/mobile captures and root's 32-case receipt | Verified pass within synthetic reference scope | Reviewer read checks without rerunning; no application interaction established |
 | LF04 | Reference-only boundary, production unchanged | Reference labels, scope inspection and reconciled authority notes | Verified pass | Final artwork selection/integration/overall formal approval remain pending |
-| LF05 | Actual review, saved trackers and dual publication | Independent review completed; root delivery record follows | Review complete; delivery recorded separately | No tracker or publication result inferred from artwork review |
+| LF05 | Actual review, saved trackers and source documentation | Independent review completed; root delivery record follows | Review complete; delivery recorded separately | No tracker or publication result inferred from artwork review |
 
 The L/F shapes remain distinguishable across the four displayed sizes. The open monogram differs from the enclosed panel icon. At320px/200% root text, signed-in wordmark wraps only between Little and Further; language/theme/account/navigation references remain visible. Reported contrast values agree with the inspected palette.
 

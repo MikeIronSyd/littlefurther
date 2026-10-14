@@ -56,7 +56,7 @@ Ordered work: implement the small lifecycle correction; run the nine focused cas
 3. Record a minimal corrective contract after research, then implement and run focused regressions and the required quality checks. Independent reviewer reinspects changed source/evidence as a separate meaningful iteration.
 4. Root browser MCP observes the connected learner journey with synthetic accounts; desktop/mobile and both languages are inspected in one bounded visual round, with at most one confirmation round after actual fixes.
 5. Refresh DESIGN.md/sidecar by extracting the incumbent implementation and preserving its normative identity. Apply actual phase checks when supported; never force a user review receipt or infer approval from a screenshot.
-6. Use E010 after checking live uniqueness; publish intended source normally to both private repositories, read back both heads and personal GitHub MCP artifact, then verify saved Sheet/Kaneo updates.
+6. Use E010 after checking live uniqueness; publish intended source normally to this private repository, read back the intended source revision and recorded GitHub MCP source inspection artifact, then verify saved Sheet/Kaneo updates.
 
 ## Done When
 
