@@ -183,7 +183,7 @@ test("AC01/05: removing a completed step changes active scope while retaining hi
     .getByRole("group", { name: "Step 1 of 2", exact: true })
     .getByRole("button", { name: "Remove", exact: true })
     .click();
-  await page.getByRole("checkbox", { name: /I understand that removing 1 steps/ }).check();
+  await page.getByRole("checkbox", { name: /I understand that removing 1 step changes/ }).check();
   await page.getByRole("button", { name: "Save revised plan", exact: true }).click();
   await expect(page.getByText("0 of 1 step complete", { exact: true })).toBeVisible();
   await page.reload();

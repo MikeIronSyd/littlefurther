@@ -1,5 +1,7 @@
 # Capstone verification and judging evidence
 
+14 October interface feedback: obsolete save feedback and singular removal wording were addressed. Eight fresh native-dialog browser cases passed within the recorded scope. Other checks and delivery retain their separately recorded status.
+
 Latest saved evidence — 14 October: [Docker DK01–DK08](increments/docker-verification.md) and [E031/D019](reviews/2026-10-14-docker-trackers.md) record the verified local container option, required passing checks, scoped review, saved tracker history and normally published source. Final documentary closeout is read back against its intended reference; no new application test or learner/demo outcome is inferred from that closeout.
 
 The14October [Docker verification](increments/docker-verification.md) records the current local packaging increment: clean LinuxAMD64/emulatedARM64, synthetic lifecycle/restore/mockAI and five container browser checks pass. The required native command exited0 at15:01Africa/Lagos with85domain/server and94browser tests plus static/build/process/audit. Independent review and preflight follow-up are complete; tracker/publication readbacks are recorded separately. R38 preceded implementation. Older results below retain their dated scope; no Docker check establishes adoption, learner outcomes or a timed demo.

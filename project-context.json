@@ -442,19 +442,20 @@
   ],
   "current_status": {
     "date": "2026-10-14",
-    "summary": "All five connected capabilities and six optional contextual OpenAI actions are implemented. Dated13October verification records85domain/server and94browser passes, independent review and bounded visual evidence. D016 approves the12October visual baseline; later AI-surface human review, timed3–5minute demo, submission/reflection and learner usefulness/outcome evidence remain unfinished.",
+    "summary": "Dated technical verification: eight focused native-dialog cases and the required 85 domain/server plus 102 browser/static/build/process/audit checks passed. Recording and submission are separate deliverables.",
     "product_specification": "docs/specs/capstone/spec.md",
-    "application_verification": "docs/specs/capstone/increments/ai-assistance-verification.md",
+    "application_verification": "docs/specs/capstone/verification.md",
     "user_guide": "docs/USER_GUIDE.md",
     "architecture": "docs/ARCHITECTURE.md",
     "development": "docs/DEVELOPMENT.md",
     "presentation": "docs/specs/capstone/increments/repository-presentation.md",
     "reconciliation": "docs/specs/capstone/increments/status-reconciliation.md",
-    "tracker_record": "docs/specs/capstone/reviews/2026-10-14-status-reconciliation-trackers.md",
-    "evidence_boundary": "Use the Docker verification record for the14October packaging checks. Earlier application checks, human baseline approval and future demo/outcome work retain their dated scope.",
+    "tracker_record": "docs/specs/capstone/verification.md",
+    "evidence_boundary": "Use the focused correction record for fresh native-dialog tests and required checks. The video script has planned timing; recording, learner outcomes and submission remain unfinished.",
     "packaging": "docs/specs/capstone/increments/docker.md",
     "packaging_verification": "docs/specs/capstone/increments/docker-verification.md",
-    "packaging_status": "DK01–DK08 verified within recorded scope: clean LinuxAMD64/emulatedARM64; synthetic persistence/restore/mockAI;5container browser;required85domain/server+94browser/static/build/process/audit pass;independentreview;E031D019savedexact17Sheetvalues and fullKaneo history; reviewed source normallypublished/readback. Documentarycloseout uses same normalpublication and finalreadback."
+    "packaging_status": "DK01–DK08 verified within recorded scope: clean LinuxAMD64/emulatedARM64; synthetic persistence/restore/mockAI;5container browser;required85domain/server+94browser/static/build/process/audit pass;independentreview;E031D019savedexact17Sheetvalues and fullKaneo history; reviewed source normallypublished/readback. Documentarycloseout uses same normalpublication and finalreadback.",
+    "video_script": "docs/specs/capstone/verification.md"
   },
   "status_reconciliation": {
     "date": "2026-10-14",
@@ -488,5 +489,12 @@
     "checks": "Staticcheck/lint/format/build pass;11existing auth/password browser tests pass1.1m;8precode references +8actual visual/retainedinput/focus cases pass across EN/FR,1440/320,100–200roottext.",
     "status": "Two localized strings implemented and scopedreviewed;static/build,11affectedauth/password tests and8actualvisual/input/focus cases pass. Reviewedsourcepublished/readback;E032savedandverified inbothtrackers withhistoryintact. Documentarycloseoutuses normalpublication/finalreadback.",
     "tracker_sync": "BrowserMCP11Sheetvalues,0mismatches/priorstyle/formula/structurechanges;E032unique/noDecision;B25old31207exact(final34150). Kaneo4272prefix+164475oldtext=168747,HTML199539 withprior194461exact;Savedreload/titleIPNoDate/10boardunchanged."
+  },
+  "feedback_corrections": {
+    "date": "2026-10-14",
+    "scope": "Clear obsolete save status only after accepted navigation and use singular English/French removal wording. Preserve native draft guards and explicit save/completion/sharing.",
+    "tests": "tests/e2e/rehearsal-corrections.spec.ts",
+    "verification": "docs/specs/capstone/verification.md",
+    "status": "Dated technical verification: eight focused native-dialog cases and the required 85 domain/server plus 102 browser/static/build/process/audit checks passed. Recording and submission are separate deliverables."
   }
 }

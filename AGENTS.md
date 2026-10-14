@@ -10,6 +10,8 @@ This is the Andela x Miva x OpenAI Codex Accelerator Hackathon workspace. The us
 
 ## Resume with context
 
+The 14 October interface fixes clear obsolete save feedback on accepted navigation and localize singular removal wording. Preserve native draft guards and the regression tests in `tests/e2e/rehearsal-corrections.spec.ts`. Ordinary learner data and provider credentials remain outside documentation work.
+
 The14October Docker clone-and-run increment follows `docs/specs/capstone/increments/docker.md` and its verification record. R38 Linux feasibility closed before packaging. Preserve native127.0.0.1 binding, container-only0.0.0.0 binding with loopback published ports, complete named-volume auth/SQLite persistence and optional read-only credential mounts. Docker tests use isolated synthetic volumes/ports and mocked provider responses; never import ordinary PC records, expose keys, make live sponsored calls or publish images merely to verify packaging. 
 
 The13October repository presentation supplies LittleFurther branding, qualified synthetic-data screenshots and learner/developer/judge guides. Current product and documentation status is recorded in docs/specs/capstone/increments/status-reconciliation.md.

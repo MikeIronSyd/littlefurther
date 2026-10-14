@@ -913,6 +913,11 @@ export function getLocale(): Locale {
 export function message(key: MessageKey, values: Record<string, string | number> = {}): string {
   let result: string = (locale === "fr" ? fr : en)[key];
   const count = Number(values.count);
+  if (key === "removeConfirm" && count === 1)
+    result =
+      locale === "fr"
+        ? "Je comprends que le retrait de 1 étape modifie le parcours actif. Le travail antérieur reste dans l’historique."
+        : "I understand that removing 1 step changes the active scope. Earlier work remains in history.";
   if (key === "studyDays" && count === 1)
     result = locale === "fr" ? "1 jour d’étude" : "1 study day";
   if (key === "sessionCount" && count === 1)

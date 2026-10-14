@@ -84,6 +84,7 @@ function canLeave(): boolean {
   if (signOutPending) return false;
   if (dirty && !window.confirm(message("unsavedLeave"))) return false;
   dirty = false;
+  shell.status(null);
   return true;
 }
 function markDirty(): void {

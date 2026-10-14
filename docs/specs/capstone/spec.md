@@ -1,5 +1,7 @@
 # Track 2 capstone specification
 
+14 October interface feedback: obsolete save feedback and singular removal wording were addressed. Eight fresh native-dialog browser cases passed within the recorded scope. Other checks and delivery retain their separately recorded status.
+
 Current packaging increment — 14 October: [Docker contract](increments/docker.md) adds a local clone/build/start option while preserving the existing app, schema and API. R38 feasibility is closed; actual acceptance/release state belongs in [Docker verification](increments/docker-verification.md). Earlier product/check/approval records remain dated evidence.
 
 Current status — 14 October 2026, Africa/Lagos: the connected local product and all six optional OpenAI actions are implemented, with dated checks in [AI verification](increments/ai-assistance-verification.md). Repository presentation and authorized publication are delivered. The [current-status reconciliation](increments/status-reconciliation.md), [plan](plan.md) and [verification](verification.md) distinguish completed work from the unfinished timed demo/submission, later AI-surface human review and learner validation. This update changes status documentation, not product requirements.
