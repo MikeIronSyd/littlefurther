@@ -9,6 +9,9 @@ const portText = process.env.CAPSTONE_PORT ?? "4317";
 const port = Number(portText);
 if (!/^\d+$/u.test(portText) || !Number.isInteger(port) || port < 1024 || port > 65535)
   throw new Error("CAPSTONE_PORT must be an integer from 1024 to 65535");
+const bindHost = process.env.CAPSTONE_BIND_HOST ?? "127.0.0.1";
+if (bindHost !== "127.0.0.1" && bindHost !== "0.0.0.0")
+  throw new Error("CAPSTONE_BIND_HOST must be 127.0.0.1 or 0.0.0.0");
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const origin = `http://127.0.0.1:${port}`;
 async function configuredAiKey(): Promise<string | undefined> {
@@ -41,7 +44,7 @@ server.on("error", (error) => {
   );
   process.exitCode = 1;
 });
-server.listen(port, "127.0.0.1", () => {
+server.listen(port, bindHost, () => {
   console.log(`Local learning demo: ${origin}\nKeep this process running. Stop with Ctrl+C.`);
 });
 let stopping = false;

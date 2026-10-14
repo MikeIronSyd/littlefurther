@@ -10,6 +10,8 @@ This is the Andela x Miva x OpenAI Codex Accelerator Hackathon workspace. The us
 
 ## Resume with context
 
+The14October Docker clone-and-run increment follows `docs/specs/capstone/increments/docker.md` and its verification record. R38 Linux feasibility closed before packaging. Preserve native127.0.0.1 binding, container-only0.0.0.0 binding with loopback published ports, complete named-volume auth/SQLite persistence and optional read-only credential mounts. Docker tests use isolated synthetic volumes/ports and mocked provider responses; never import ordinary PC records, expose keys, make live sponsored calls or publish images merely to verify packaging. 
+
 The13October repository presentation supplies LittleFurther branding, qualified synthetic-data screenshots and learner/developer/judge guides. Current product and documentation status is recorded in docs/specs/capstone/increments/status-reconciliation.md.
 
 On12October2026 Michael explicitly approved the current overall implemented LittleFurther visual design: “okay, it's approved now”. D016 in `docs/specs/capstone/design.md` records baseline10d8ca0, scope and limits. Overall human visual approval is settled for that baseline; retain historical pending statements/mock sidecars/tool-workflow receipts without treating them as a new approval gate. This decision does not establish outcomes, production readiness, exhaustive accessibility conformance, future-design approval or demo completion.

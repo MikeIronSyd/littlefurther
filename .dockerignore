@@ -1,0 +1,23 @@
+# Only build inputs enter the context; credentials/data/history never do.
+**
+!Dockerfile
+!.dockerignore
+!package.json
+!pnpm-lock.yaml
+!tsconfig.json
+!tsconfig.server.json
+!vite.config.ts
+!index.html
+!src/
+!src/**
+**/node_modules/
+**/.local/
+**/.git/
+**/.env
+**/.env.*
+**/*.sqlite*
+**/auth-secret
+**/*.key
+**/*.pem
+**/*.pfx
+**/*.age

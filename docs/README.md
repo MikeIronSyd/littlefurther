@@ -2,6 +2,8 @@
 
 Start with the path that matches what you want to do. These guides describe the current local proof of concept; dated records preserve what was actually checked.
 
+For clone-and-run without host Node/pnpm, use [Docker setup and recovery](operations/docker.md). [Docker specification](specs/capstone/increments/docker.md) and [verification](specs/capstone/increments/docker-verification.md) distinguish packaging, executed platform checks and delivery.
+
 | Reader | Start here | Continue with |
 | --- | --- | --- |
 | Learners | [Complete user guide](USER_GUIDE.md) | [Local setup and account limits](operations/local-demo.md), gallery below |
@@ -9,6 +11,8 @@ Start with the path that matches what you want to do. These guides describe the 
 | Judges and reviewers | [Product introduction](../README.md) | [Judging evidence](specs/capstone/verification.md), [AI checks](specs/capstone/increments/ai-assistance-verification.md#actual-executed-checks), [plan](specs/capstone/plan.md) |
 
 ## Current status and evidence
+
+The14October [Docker verification](specs/capstone/increments/docker-verification.md) adds clean LinuxAMD64 and emulatedARM64 builds/runs, persistence/restore/mockAI checks and five container browser tests. The new full required native run passes85domain/server and94browser tests plus static/build/process/audit. See that record for independent review, delivery and platform limits; the older counts below remain dated evidence.
 
 The local connected journey and six optional AI actions are implemented. The 13 October [AI verification](specs/capstone/increments/ai-assistance-verification.md) records 85 domain/server and 94 browser passes, independent source review and bounded visual observations. These are dated results at the recorded revision, not tests rerun for this documentation increment.
 

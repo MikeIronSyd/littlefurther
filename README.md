@@ -85,6 +85,16 @@ AI help sits inside existing tasks: draft a plan, make a step smaller, study and
 
 ## Run locally
 
+With Docker Desktop's Linux engine or Linux Docker Engine28+ and Compose, clone this repository and run:
+
+```bash
+docker compose up --build -d
+```
+
+Open **http://127.0.0.1:4317**. Docker builds the pinned runtime locally and keeps fresh private records in a named volume. No host Node/pnpm or AI key is needed. See [Docker setup, optional AI, alternate ports and stopped backups](docs/operations/docker.md) and [actual platform verification](docs/specs/capstone/increments/docker-verification.md). Initial building downloads the base image/packages; no project-image publication or hosting is configured.
+
+For native development instead:
+
 Use **Node 24.19.0** and **pnpm 11.19.0**. Clone this private repository with an account that has access:
 
 ```powershell

@@ -2,9 +2,10 @@ import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
 import { createHash, randomBytes, randomUUID } from "node:crypto";
 import { once } from "node:events";
-import { mkdir, mkdtemp, readFile, rm } from "node:fs/promises";
+import { access, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { createServer } from "node:net";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 
 // This check restarts the actual executable; factory-level reopen tests live separately.
 const parent = path.resolve(".local/process-tests");
@@ -25,6 +26,7 @@ async function start() {
     cwd: process.cwd(),
     env: {
       ...process.env,
+      CAPSTONE_BIND_HOST: "127.0.0.1",
       CAPSTONE_PORT: String(port),
       CAPSTONE_DATA_DIR: directory,
       CAPSTONE_AI_DISABLED: "1",
@@ -64,6 +66,58 @@ async function stop() {
   await exited;
   child = undefined;
 }
+async function rejectInvalidBindHosts() {
+  const preload = path.join(directory, "guard-credential-read.mjs");
+  const marker = path.join(directory, "credential-read-attempted");
+  await writeFile(
+    preload,
+    `import fs from "node:fs";
+import { syncBuiltinESMExports } from "node:module";
+import path from "node:path";
+const original = fs.promises.readFile;
+fs.promises.readFile = async function(filename, ...options) {
+  if (path.basename(String(filename)) === "ai-provider.env") {
+    fs.writeFileSync(${JSON.stringify(marker)}, "attempted");
+    throw new Error("Credential access is forbidden by this check");
+  }
+  return original.call(this, filename, ...options);
+};
+syncBuiltinESMExports();
+`,
+  );
+  for (const [index, value] of ["", "localhost", "192.0.2.1", " 127.0.0.1"].entries()) {
+    const dataDirectory = path.join(directory, `invalid-bind-${index}`);
+    const env = {
+      ...process.env,
+      CAPSTONE_BIND_HOST: value,
+      CAPSTONE_PORT: String(port),
+      CAPSTONE_DATA_DIR: dataDirectory,
+      CAPSTONE_AI_DISABLED: "0",
+    };
+    delete env.OPENAI_API_KEY;
+    const rejected = spawn(
+      process.execPath,
+      ["--import", pathToFileURL(preload).href, "dist/server/index.js"],
+      { cwd: process.cwd(), env, windowsHide: true, stdio: ["ignore", "pipe", "pipe"] },
+    );
+    let errorOutput = "";
+    rejected.stdout.resume();
+    rejected.stderr.on("data", (chunk) => {
+      errorOutput += chunk.toString();
+    });
+    const timeout = setTimeout(() => rejected.kill("SIGTERM"), 15_000);
+    let code;
+    try {
+      [code] = await once(rejected, "exit");
+    } finally {
+      clearTimeout(timeout);
+    }
+    assert.equal(code, 1);
+    assert.ok(errorOutput.includes("CAPSTONE_BIND_HOST must be 127.0.0.1 or 0.0.0.0"));
+    await assert.rejects(access(dataDirectory), { code: "ENOENT" });
+    await assert.rejects(access(marker), { code: "ENOENT" });
+  }
+}
 let cookie = "";
 async function request(endpoint, method = "GET", body) {
   const response = await fetch(`${origin}${endpoint}`, {
@@ -79,6 +133,8 @@ async function request(endpoint, method = "GET", body) {
   return response;
 }
 try {
+  await rejectInvalidBindHosts();
+  console.log("PASS: invalid bind hosts reject before data creation or credential-file access.");
   const firstPid = await start();
   const password = randomBytes(24).toString("base64url");
   const account = { email: "restart-check@example.invalid", password };

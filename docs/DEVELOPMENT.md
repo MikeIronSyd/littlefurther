@@ -18,6 +18,8 @@ Open http://127.0.0.1:4317. This serves built assets; stop, rebuild and restart 
 
 ## Checks and evidence
 
+For clone-and-run without host Node/pnpm, use [Docker operations](operations/docker.md). [The contract](specs/capstone/increments/docker.md) records the pinned build, nonroot persistence, local ports and credential boundaries; [verification](specs/capstone/increments/docker-verification.md) records actual results. Native tooling remains the development/quality workflow. Keep ordinary native data and disposable container-test volumes separate. Docker adds no registry, CI or hot reload.
+
 ```powershell
 pnpm --pm-on-fail=download run check
 pnpm --pm-on-fail=download run lint

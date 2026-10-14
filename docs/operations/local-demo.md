@@ -6,6 +6,8 @@ Run LittleFurther on this PC with local accounts and SQLite. This guide covers t
 
 ## Context Pointers
 
+For the optional container runtime, see [Docker operations](docker.md), [contract](../specs/capstone/increments/docker.md) and [actual verification](../specs/capstone/increments/docker-verification.md). Docker starts with its own fresh named volume; this native guide's ordinary data folder is not automatically migrated.
+
 Use the repository root, package.json, the single pnpm-lock.yaml, and [first-journey contract](../specs/capstone/increments/first-journey.md). Exact tested runtime/tooling is recorded in [R11](../specs/capstone/experiments/runtime-feasibility/REPORT.md) and [R15](../specs/capstone/experiments/quality-tooling.md).
 
 The [Comeback contract](../specs/capstone/increments/comeback.md) and [verification record](../specs/capstone/increments/comeback-verification.md) describe P06 behavior and its actual check status. P06 adds no dependency or schema migration.

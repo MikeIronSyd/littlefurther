@@ -1,0 +1,11 @@
+# Optional operator configuration. This file never contains a credential.
+# Run the regular-file preflight in docs/operations/docker.md before `up`.
+services:
+  app:
+    volumes:
+      - type: bind
+        source: ./.local/ai-provider.env
+        target: /app/.local/ai-provider.env
+        read_only: true
+        bind:
+          create_host_path: false

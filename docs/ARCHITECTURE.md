@@ -28,6 +28,10 @@ flowchart TB
 
 The manual core works without internet while the server runs. AI, search and external reference pages need internet. The app itself does not fetch arbitrary pages or extract PDFs.
 
+### Optional Docker packaging
+
+[Docker clone-and-run](operations/docker.md) packages the same compiled client/server and production dependencies in a pinned Linux Node image. The native browser connects to host127.0.0.1 with equal host/container ports. The listener uses0.0.0.0 inside Docker; canonical127.0.0.1 Host/Origin checks remain unchanged, and native startup still defaults to127.0.0.1. A nonroot process uses one named volume for the complete SQLite/auth directory. An optional read-only key-file mount enables existing AI; keys/data are excluded from builds. No service, schema or API is added. [Actual platform/lifecycle checks](specs/capstone/increments/docker-verification.md) qualify portability claims.
+
 ## Actual source responsibilities
 
 | Path | Responsibility |
