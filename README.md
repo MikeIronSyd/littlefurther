@@ -85,7 +85,7 @@ AI help sits inside existing tasks: draft a plan, make a step smaller, study and
 
 ## Run locally
 
-Use **Node 24.19.0** and **pnpm 11.19.0**. Clone either private repository with an account that has access:
+Use **Node 24.19.0** and **pnpm 11.19.0**. Clone this private repository with an account that has access:
 
 ```powershell
 git clone https://github.com/MikeIronSyd/littlefurther.git

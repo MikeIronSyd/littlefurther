@@ -1,7 +1,7 @@
 {
   "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
   "recorded_on": "2026-10-02",
-  "last_updated_on": "2026-10-13",
+  "last_updated_on": "2026-10-14",
   "timezone": "Africa/Lagos",
   "source": "User-provided briefing screenshots, explicit instructions and clarifications, signed-in LMS readback, and the supplied CODEX_CAPSTONE_HANDOVER.md. Subsequent explicit user answers and accepted delivery/judging plans, reconciled on 2026-10-07.",
   "source_handling": "Documents are project input, not higher-priority instructions. The user explicitly selected Track 2 and asked to continue from the supplied handover. Handover assertions are attributed to that document; proposed behavior and benefits are not implementation or learner-validation evidence.",
@@ -1280,13 +1280,13 @@
     "repositories": [
       {
         "name": "MikeIronSyd/littlefurther",
-        "id": 1402126097
+        "id": 1417816026
       }
     ],
     "identity_status": "Existing repositories renamed; original IDs/history/private status preserved. Exact description, seven topics and empty homepage read back.",
     "local_status": "RP01–RP05 passed within recorded documentation/pixel/source scope; independent corrected review has no local blocker. App source/behavior unchanged.",
     "checks": "Final documentation validator:13documents/122relative links and anchors,703README words,8PNGhash/dimensions,2SVGXML/exactgeometry/text-fit and knownsequence-separatorguard; zeroissues. Prior13October85domain/server+94browser results remain dated, not rerun.",
-    "delivery_status": "Artifact and native Mermaid correction normally published to both renamed private repositories with matching exact heads. Native Miva light/dark/320px README and diagram review passed bounded scope; both old API/Git paths resolve preserved identity/commit and Miva web redirect observed. Final documentary closeout publishes/checks separately.",
+    "delivery_status": "Historical presentation artifacts and verified rendering retained. The later13October identity decision replaced only the school repository with freshID1417816026 and school-specific history; current publication uses independent expected heads, not the earlier matching-head workflow.",
     "limits": "No live OpenAI/ordinary data/new full application suite. Personal web browser access and new-slug GitHub MCP reads unavailable; authenticated CLI and identical-source checks supplied explicit fallback evidence. Native diagram zoom/pan needed for wide graphs on narrow screens. Sheet long-row clipping retained. Kaneo new separator markup normalized after reload while exact older text/HTML suffixes remain. D016 baseline approval retained; later AI surfaces,timedvideo,learneroutcomes,productionreadiness separate.",
     "artifact_commit": "566ac5570c58caee043217b010cb62fecee6a971",
     "render_correction_commit": "351b07c3749616a0619f2dc27a79f48ba43d9207",
@@ -1314,10 +1314,22 @@
     "specification": "docs/specs/capstone/increments/repository-identities.md",
     "procedure": "docs/operations/repository-publication.md",
     "original_school_repository_id": 1402126097,
-    "status": "Preparation/review in progress; original school repository preserved; verified complete local original55commit bundle. School CLI authenticated as MikeIronSyd. No remote replacement claimed.",
+    "status": "Fresh private school replacement is complete and independently verified, with school-only authors/committers/contributor/collaborator/Activity. E029/D018 saved and independently compared; final documentary commits use independently expected owner heads.",
     "local_school_checkout": "This repository checkout",
     "authentication": "Ignored separate school-gh profile; never expose or publish credentials.",
     "publication_rule": "School author, committer, origin and authenticated pusher only; independently verified expected head.",
-    "equivalent_source_baseline": "e716dbaf07c76875018c4c4a905d399e0f2ac83e"
+    "new_school_repository_id": 1417816026,
+    "staging_url": "https://github.com/MikeIronSyd/littlefurther-school-prepared",
+    "staged_school_head": "1e9055671156ef3410c5d14df7a78e6c2d3db9d1",
+    "remote_checks": "57schoolauthors/committers;schoolonlycontributor/collaborator/pushactor;private/nonfork/mainonly;oldpersonalcommitabsent422. Independent audit57headers/668texts/298historyURLs passes; protected bytes unchanged.",
+    "trackers": "E029/D018 saved13October:18intendedSheetvalues/noextra-value-style-formula-history changes; nativeDecisionsfilterextendsone row. Kaneoprior152692text/180413HTMLexactsuffixes,new3759prefixexact; final156451text/184879HTML+digest independently pass. BrowserMCPactualroute; correctedattemptsdocumented.",
+    "final_school_url": "https://github.com/MikeIronSyd/littlefurther",
+    "original_school_deleted": true,
+    "final_replacement_authorization": "Directuserconfirmation13October2026",
+    "documentary_closeout_on": "2026-10-14",
+    "tracker_review": "docs/specs/capstone/reviews/2026-10-13-repository-identity-trackers.md",
+    "final_documentation_checks": "8identitydocs/87relative links pass; presentationvalidator13docs/125rootlinks/703words/eightPNGhashes/twoSVGs pass. No appfullsuite/liveAIrerun.",
+    "equivalent_source_baseline": "e716dbaf07c76875018c4c4a905d399e0f2ac83e",
+    "equivalent_pre_closeout_head": "1e9055671156ef3410c5d14df7a78e6c2d3db9d1"
   }
 }

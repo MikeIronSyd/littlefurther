@@ -33,3 +33,23 @@ Preserve the original repository and verified local bundle until the concrete re
 ## Done When
 
 No blocking Git/source-integrity issue was observed in the reviewed projection. Both final documentation corrections are prepared; local publication readiness remains conditional on a regenerated receipt/tip check. Fresh staging must then verify independent repository ID, privacy, only the intended main branch, school-only contributor/commit/push attribution, current content and exact expected head. Final replacement and retirement of the original school destination remain a separate concrete user decision. Tracker writes, staging publication, replacement and final remote results must be recorded from their actual execution; this review establishes none of those outcomes.
+
+### Frozen projection addendum
+
+The reviewer independently audited the final frozen source `1e9055671156ef3410c5d14df7a78e6c2d3db9d1` and school main `1e9055671156ef3410c5d14df7a78e6c2d3db9d1`. This addendum follows the frozen staging artifact and belongs to a later documentary closeout.
+
+Batch-object inspection covered every reachable rewritten commit and all valid UTF-8 text blobs: 57 commit headers, 668 distinct text blobs and 298 school commit/blob/tree URL occurrences. There were zero incorrect author/committer identities, other-account login/identifier references, original source-commit-prefix references or unknown history targets. All URL revisions identify commits reachable from school main. Current tracking JSON retains one school destination and correctly labels the mapped baseline `equivalent_source_baseline`; no literal original-backup SHA is mislabeled there. Both previously conflicting active publication rules are corrected in this final source.
+
+An independent protected-path diff is again empty for source, tests, package/lockfile, eight presentation screenshots and both SVG variants. The receipt reports 104 changed documentation/evidence paths and zero failures. The reviewed publication helper verifies the school account and exact fresh repository ID/privacy, pushes only main normally, rejects non-ancestor main updates and checks the resulting advertised refs/head. It performs no force or mirror push. This reviewer read the helper and local artifacts only; credential contents and browser state were not inspected.
+
+No blocking local finding remains. Fresh remote metadata/author/contributor/Activity results and final replacement authorization remain the root's separate execution gates. No application tests, tracker saves, staging push or final replacement are claimed by this addendum.
+
+### Actual replacement readback addendum
+
+Following the root's recorded direct user authorization and browser deletion/rename execution, this reviewer independently queried the final repository through the verified school CLI profile. Profile readback identifies MikeIronSyd, account ID332818283. Final `MikeIronSyd/littlefurther` has independent repository ID1417816026, is private and not a fork, retains the exact intended About description/seven topics/empty homepage, and exposes only main with no tags.
+
+Final main is `1e9055671156ef3410c5d14df7a78e6c2d3db9d1`. All 57 API-listed commits resolve both authors and committers to the school account and verified school noreply email. Contributors lists only MikeIronSyd with 57 contributions; collaborators lists only the school owner. The complete current Activity response contains one main-branch creation, authenticated as MikeIronSyd, leading to the expected head. An owner-authenticated lookup of the retired repository ID1402126097 returns HTTP404. Looking up the original account-attributed commit object on the fresh repository returns HTTP422 with “No commit found for SHA”; that original object is not available in the replacement's commit lookup. Its identifying SHA remains in the private query evidence rather than this identity-adapted record.
+
+Independent Git remote readbacks verify the development source at `1e9055671156ef3410c5d14df7a78e6c2d3db9d1` and school main at its distinct expected head. The school checkout's sole origin points to the final school URL. The development checkout retains a single personal origin destination and a blocked school push route. Protected source/dependency/artwork/capture diffs remain empty.
+
+No blocking replacement finding remains. These checks establish the 57-commit migration artifact and observed repository state, not a later documentary-closeout SHA. Tracker saved-state reconciliation and subsequent independent normal publications remain the root's outstanding closeout work. No browser operation, credential-content access, application test, deletion, rename or push was performed by this reviewer.
