@@ -442,7 +442,7 @@
   ],
   "current_status": {
     "date": "2026-10-14",
-    "summary": "Local copies preserved; current-tree removal and link/policy edits prepared. Verification, publication and tracker readbacks pending.",
+    "summary": "Current-tree cleanup verified: 34 recording-preparation files excluded, local copies preserved, all 64 protected application/test/config files unchanged, scoped documentation checks and independent review passed. Initial private publication/readbacks and E035 saved tracker comparisons are complete. Earlier commits retain historical copies; no history purge or new application test is claimed.",
     "product_specification": "docs/specs/capstone/spec.md",
     "application_verification": "docs/specs/capstone/verification.md",
     "user_guide": "docs/USER_GUIDE.md",
@@ -503,6 +503,8 @@
     "record": "docs/operations/repository-publication.md#local-only-recording-material",
     "recording_material": "Video scripts, storyboards and video-rehearsal documents/assets stay local and excluded from Git.",
     "history": "Normal current-tree removal preserves published ancestry; historical commits retain earlier copies.",
-    "status": "Local copies preserved; current-tree removal and link/policy edits prepared. Verification, publication and tracker readbacks pending."
+    "status": "Current-tree cleanup verified: 34 recording-preparation files excluded, local copies preserved, all 64 protected application/test/config files unchanged, scoped documentation checks and independent review passed. Initial private publication/readbacks and E035 saved tracker comparisons are complete. Earlier commits retain historical copies; no history purge or new application test is claimed.",
+    "tracker_sync": "E035 saved through browser MCP: exactly 11 Sheet values; no unexpected/style/formula/structure changes; unique E035 and complete 43904-character prior Context suffix (final 45010). Kaneo final 185352 text/219196 HTML retains complete prior 182523 text/215971 HTML; Saved/reload/title/status/date/board unchanged.",
+    "source_artifact": "6f90191a4587845f60a692155aa2b581cf86aec7"
   }
 }
