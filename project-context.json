@@ -479,5 +479,13 @@
     "tracker_record": "docs/specs/capstone/reviews/2026-10-14-docker-trackers.md",
     "checks": "14October15:01Africa/Lagos requiredverifyexit0;85domain/server,94browser(15.5m),static/build/process/audit(no known vulnerabilities);shipping5browser56.56s;10layers11865entries/ninecanariesexcluded;Desktopmissing-sourceflagqualified,6hostpreflightfixturespass.",
     "tracker_sync": "BrowserMCP actualwrites/readback after nativeDrive toolsremoved; initial nativeMCP discovery. Sheet17values,0mismatches/styles/formula/structure changes,E031D019unique,B25old27767exact(final31207). Kaneo4899prefix+159576prior=164475text,194461HTML exactprior188489HTMLsuffix;Savedreload,title/IP/NoDate/10board/A007unchanged."
+  },
+  "signup_copy": {
+    "date": "2026-10-14",
+    "specification": "docs/specs/capstone/increments/signup-copy.md",
+    "research": "R39 source plus isolated syntheticHTTP verified duplicate masking; conditional existing-password guidance preserves auth semantics.",
+    "scope": "Two accountError catalogue values only, English/French; no auth/API/schema/control/dependency changes.",
+    "checks": "Staticcheck/lint/format/build pass;11existing auth/password browser tests pass1.1m;8precode references +8actual visual/retainedinput/focus cases pass across EN/FR,1440/320,100–200roottext.",
+    "status": "Two localized strings implemented;R39closed/precodevisuals done;static/build and11affectedauth/password tests plus8actualvisualcases pass;independent scopedreview no blocker. Tracker and normal publication readbacks pending."
   }
 }

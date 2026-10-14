@@ -114,7 +114,8 @@ const en = {
   haveAccount: "Already have an account? Sign in",
   needAccount: "New here? Create an account",
   credentials: "Check your email and password, then try again.",
-  accountError: "We could not create this account. Check your details or try signing in.",
+  accountError:
+    "We couldn’t complete sign-up. If you’ve used this email here before, sign in with your existing password. Otherwise, check your details and try again.",
   networkError:
     "We could not reach the local server. Keep this page open, check that the server is running, and retry. Your unsaved input is still here.",
   saveError: "Your changes were not saved. Check your input and try again.",
@@ -560,7 +561,7 @@ const fr: Record<MessageKey, string> = {
   needAccount: "Première visite ? Créer un compte",
   credentials: "Vérifiez votre adresse e-mail et votre mot de passe, puis réessayez.",
   accountError:
-    "Impossible de créer ce compte. Vérifiez vos informations ou essayez de vous connecter.",
+    "Impossible de terminer l’inscription. Si vous avez déjà un compte avec cette adresse e-mail, connectez-vous avec votre mot de passe habituel. Sinon, vérifiez vos informations et réessayez.",
   networkError:
     "Impossible de joindre le serveur local. Gardez cette page ouverte, vérifiez que le serveur fonctionne et réessayez. Votre saisie non enregistrée est conservée ici.",
   saveError: "Vos modifications n’ont pas été enregistrées. Vérifiez votre saisie et réessayez.",
