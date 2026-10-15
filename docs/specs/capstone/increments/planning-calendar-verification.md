@@ -2,7 +2,7 @@
 
 ## Goal
 
-Verify PC01–PC06 against the local uncommitted planning-calendar increment based onc3a07fe. Shared publication and tracker writes are not authorized by passing checks.
+Verify PC01–PC06 against the planning-calendar increment based onc3a07fe. Required checks, scoped review and separately user-approved source/tracker delivery are complete within the recorded scope.
 
 ## Context Pointers
 
@@ -34,8 +34,8 @@ Michael explicitly deferred remaining work to record before the submission deadl
 
 ## 15 October combined verification closeout
 
-The 14 October user-requested pause and earlier partial runs above remain historical facts. The later accepted lifecycle implementation resumed combined verification. 15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only. The full run includes all planning-calendar browser cases and existing mocked-AI regression cases. This is one combined result, not an invented standalone calendar run. Local implementation/checks are now complete within scope; commits, pushes and tracker writes remain pending explicit approval.
+The 14 October user-requested pause and earlier partial runs above remain historical facts. The later accepted lifecycle implementation resumed combined verification. 15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only. The full run includes all planning-calendar browser cases and existing mocked-AI regression cases. This is one combined result, not an invented standalone calendar run. Implementation/checks are complete within scope. Michael then explicitly approved the reviewed source, tracker and bounded documentary batch on15October. Feature publication and E036 saved readbacks passed; see the [publication record](../reviews/2026-10-15-learning-lifecycle-publication.md).
 
 ## Done When
 
-Local implementation, combined required checks and scoped review are complete. Shared delivery remains pending Michael's explicit approval of concrete content and destinations. The earlier recording deadline pause is preserved above as history.
+Implementation, combined required checks, scoped review and approved source/tracker delivery are complete. The earlier recording deadline pause is preserved above as history. This publication closeout adds no product change or new application-test claim.

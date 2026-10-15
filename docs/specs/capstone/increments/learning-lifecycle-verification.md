@@ -2,7 +2,7 @@
 
 ## Goal
 
-Verify LC01–LC07 against the local uncommitted combined lifecycle/planning-calendar changes. No commit, publication or tracker approval follows from a check.
+Verify LC01–LC07 against the combined lifecycle/planning-calendar changes. Required checks, independent review and the separately user-approved source/tracker delivery are complete within the recorded scope.
 
 ## Context Pointers
 
@@ -26,7 +26,7 @@ Verify LC01–LC07 against the local uncommitted combined lifecycle/planning-cal
 | Actual browser MCP | Isolated account creation, timezone, manual plan save, archive/list/read-only view, EN→FR, deletion preview/cancel and restoration observed through visible UI | `http://localhost:4335`; no ordinary learner-data change, no permanent deletion through MCP |
 | Actual visual review | Six final captures, desktop/320px, EN/FR, both themes and200% root text; all measured visible buttons≥44×44, no measured horizontal overflow; cancellation focus and unchecked destructive/restoration choices verified | One French320 forced-colours/reduced-motion restoration state; not exhaustive accessibility conformance |
 | Independent review | Initial localized-date issue fixed and independently closed. Bounded follow-up found no blocking privacy/retry/ownership/lifecycle regression; nine capture source hashes match | Complete pipeline receipt now passes; reviewer’s source follow-up ran no additional tests |
-| Shared destinations | Pending explicit approval | No commit/push/Sheet/Kaneo write authorized or performed |
+| Shared destinations | User-approved feature source and E036 saved readbacks verified | Normal publication retained repository history and public visibility; complete prior tracker text retained |
 
 ## Acceptance evidence
 
@@ -38,7 +38,7 @@ Verify LC01–LC07 against the local uncommitted combined lifecycle/planning-cal
 | LC04 | Store recovery tests cover latest identity, expired AI staging, selected historical links, preserved resources, limits, inconsistent metadata and atomic rejection; LC04 browser covers preview/defaults/conflicts/append and deleted-session absence | No URL fetching or recreation of private study records |
 | LC05 | Circle store/HTTP and extended SC02/03/06 browser tests exercise own-only withdrawal, rotating IDs, retry/update/re-add, other sender retention and existing lifecycle | Circles remain local, private and nonarchivable |
 | LC06 | Lifecycle HTTP tests cover authorization, strict request input, concurrent writes/revisions and delayed mocked AI; store tests cover content-free receipts, rollback and restart | No real provider call, machine reboot or native ARM check for this increment |
-| LC07 | R44, precode board, final actual captures, browser MCP observations, scoped detector and independent review are recorded; final pipeline passed | Shared delivery and later human design decisions remain separate |
+| LC07 | R44, precode board, final actual captures, browser MCP observations, scoped detector and independent review are recorded; final pipeline passed | Delivery is recorded separately; later human design decisions remain separate |
 
 ## Review corrections and visual limits
 
@@ -56,8 +56,8 @@ Final scoped documentation validation passed: 16 Markdown records, 259 relative 
 
 ## Delivery state
 
-Local implementation and documentation are prepared. The tracker content remains a local draft pending live identity/schema readback and Michael's approval of exact fields/content. No new stable evidence ID is allocated without checking the current tracker. No commit or push is approved or performed. Publication retains this repository’s existing history and owner authentication.
+Michael explicitly approved the reviewed87-path feature batch,11Sheet values, Kaneo A010 prefix and bounded four-path closeout on15October2026. Feature artifact [ada0bd1](https://github.com/MikeIronSyd/littlefurther/commit/ada0bd1aa1f017b8de2112396046bab50aaecbf2) was normally pushed and its exact main head, owner authentication and author/committer verified. The repository remains public as requested. E036 is unique and saved through browser/computer-use MCP in both trackers. Complete prior Sheet/Kaneo rendered-text histories and tracker metadata were preserved; see the [publication record](../reviews/2026-10-15-learning-lifecycle-publication.md) for actual comparisons and HTML/capture limits. Local-only recording material remains excluded.
 
 ## Done When
 
-Local implementation, required verification and independent review are complete within the recorded scope. Keep local/shared delivery states separate. No secure erasure, provider recall, learning outcome, production readiness or new Docker-platform verification is claimed.
+Implementation, required verification, independent review, approved feature publication and saved tracker readbacks are complete within the recorded scope. The four-path documentary closeout changes no product source. No secure erasure, provider recall, learning outcome, production readiness or new Docker-platform verification is claimed.
