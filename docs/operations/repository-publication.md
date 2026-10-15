@@ -2,9 +2,11 @@
 
 ## Goal
 
-Publish intended non-secret LittleFurther source and documentation to the private MikeIronSyd/littlefurther repository while preserving product data, credentials and existing Git hooks.
+Publish intended non-secret LittleFurther source and documentation to the MikeIronSyd/littlefurther repository while preserving product data, credentials and existing Git hooks.
 
 ## Context Pointers
+
+Current visibility decision —15October2026: Michael explicitly selected leaving this repository public for now. Preserve that visibility; no visibility change is part of this publication. Earlier dated private-metadata checks remain historical evidence. Credentials, learner records and local-only material remain excluded.
 
 Use the [development guide](../DEVELOPMENT.md), [current specification](../specs/capstone/spec.md), [verification](../specs/capstone/verification.md) and [status reconciliation](../specs/capstone/increments/status-reconciliation.md). Dated application results identify the checks performed and supporting source; they are not new test runs or repository-publication dates.
 
@@ -14,12 +16,12 @@ Use the [development guide](../DEVELOPMENT.md), [current specification](../specs
 2. Review intended changes and preserve unrelated work and hooks. Keep API keys, learner databases, local runtime files, private receipts and generated caches outside Git.
 3. Run proportionate checks and independent review. Documentation-only checks do not establish new application behavior or learner outcomes. Resolve blocking findings before publication.
 4. Use normal explicit main-branch publication after checking the remote state. Stop on divergence; do not force-push or publish unrelated refs.
-5. Read back private visibility, the intended commit and its files through available authenticated tools. A local commit or a successful documentation validator alone is not proof of publication.
+5. Read back the selected visibility, the intended commit and its files through available authenticated tools. A local commit or a successful documentation validator alone is not proof of publication.
 6. Record actual outcomes in the Miva Google Sheet and Kaneo, preserving history and checking saved state. Global CodexRecovery is outside project publication; it never receives this project's source, Git history or data. No hosting, CI activation, purchase or paid storage is implied.
 
 ## Done When
 
-The private repository's main branch resolves to its intended source commit, authenticated readback confirms the expected files, and authorized tracker results are recorded with their limits. The timed demo, submission, learner validation and production gaps remain separate work.
+The repository's main branch resolves to its intended source commit, authenticated readback confirms the expected files, and authorized tracker results are recorded with their limits. The timed demo, submission, learner validation and production gaps remain separate work.
 
 ## Local-only material
 

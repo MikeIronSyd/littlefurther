@@ -112,10 +112,12 @@ for (const [theme, language] of [
     let detail = await savedDetail(page);
     await mutate(page, `/api/plans/${detail.plan.id}/activities`, {
       requestId: randomUUID(),
+      revision: detail.plan.revision,
       stepId: detail.plan.steps[0]?.id,
       minutes: 7,
       reflection: "Private synthetic retained note",
     });
+    detail = await savedDetail(page);
     await mutate(page, `/api/plans/${detail.plan.id}/completions`, {
       requestId: randomUUID(),
       revision: detail.plan.revision,
@@ -149,7 +151,13 @@ for (const [theme, language] of [
     await page
       .getByRole("link", { name: language === "en" ? "Activity" : "Activité", exact: true })
       .click();
-    await expect(page.locator(".activity-records")).toHaveCount(3);
+    await expect(page.locator(".activity-history > .activity-records")).toHaveCount(3);
+    await expect(
+      page.locator(".removed-steps").getByRole("heading", {
+        name: language === "en" ? "Removed steps" : "Étapes retirées",
+        exact: true,
+      }),
+    ).toBeVisible();
     await expect(
       page.getByRole("heading", {
         name: language === "en" ? "Completed steps" : "Étapes terminées",

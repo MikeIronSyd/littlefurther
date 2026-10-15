@@ -10,6 +10,7 @@ import {
   expectNoHorizontalOverflow,
   expectOnlyUiStorage,
   saveManualPlan,
+  selectAvailability,
 } from "./helpers.js";
 
 const guidance: AiAssistResponse = {
@@ -74,7 +75,13 @@ test("AI02/07/10: AI plan remains a source-associated editable draft, with bilin
   });
   await page.getByRole("button", { name: "Create a learning plan", exact: true }).click();
   await page.getByLabel("Learning goal", { exact: true }).fill("My first web page");
-  await page.getByLabel("Dates you are available", { exact: true }).fill("2026-10-13, 2026-10-14");
+  await expect(page.getByLabel("Your topics or sections (optional)", { exact: true })).toHaveValue(
+    "",
+  );
+  await expect(
+    page.getByLabel("Your topics or sections (optional)", { exact: true }),
+  ).not.toHaveAttribute("required");
+  await selectAvailability(page, ["2026-10-13", "2026-10-14"]);
   await page
     .getByLabel("What you already know (optional)", { exact: true })
     .fill("I know how to use a browser");
@@ -86,9 +93,7 @@ test("AI02/07/10: AI plan remains a source-associated editable draft, with bilin
   ).toBeChecked();
   await page.getByRole("button", { name: "Draft my plan with AI", exact: true }).focus();
   await page.keyboard.press("Enter");
-  await expect(
-    page.getByRole("button", { name: "Use this draft for review", exact: true }),
-  ).toBeVisible();
+  await expect(page.getByRole("button", { name: "Review AI draft", exact: true })).toBeVisible();
   expect(sent).toMatchObject({
     action: "plan_draft",
     goal: "My first web page",
@@ -108,7 +113,13 @@ test("AI02/07/10: AI plan remains a source-associated editable draft, with bilin
       .first()
       .getByRole("link", { name: first.title ?? "" }),
   ).toHaveAttribute("href", first.url);
-  await page.getByRole("button", { name: "Use this draft for review", exact: true }).click();
+  await expect(page.getByLabel("Your topics or sections (optional)", { exact: true })).toBeHidden();
+  await expect(page.getByRole("button", { name: "Review draft steps", exact: true })).toBeHidden();
+  await page.getByRole("button", { name: "Review AI draft", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Review every step", exact: true })).toBeFocused();
+  expect(
+    ((await (await page.request.get("/api/plans")).json()) as { plans: LearningPlan[] }).plans,
+  ).toHaveLength(0);
   await expect(page.getByLabel("Action", { exact: true }).first()).toHaveValue("Write a heading");
   await page.getByLabel("Action", { exact: true }).first().fill("Write a descriptive heading");
   await page.getByRole("button", { name: "Move step down", exact: true }).first().click();
@@ -160,9 +171,7 @@ test("AI02/07/10: AI plan remains a source-associated editable draft, with bilin
   await expect(
     page.getByRole("button", { name: "Draft my plan with AI", exact: true }),
   ).toBeDisabled();
-  await expect(
-    page.getByRole("button", { name: "Use this draft for review", exact: true }),
-  ).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Review AI draft", exact: true })).toHaveCount(0);
   releaseSave();
   await expect(page.getByRole("alert")).toBeVisible();
   expect(savedBody).toMatchObject({
@@ -391,8 +400,10 @@ test("AI08/09/10: errors, cancellation, changed inputs and session expiry preser
   await createAccount(page);
   await page.getByRole("button", { name: "Create a learning plan", exact: true }).click();
   await page.getByLabel("Learning goal", { exact: true }).fill("Keep my manual input");
-  await page.getByLabel("Dates you are available", { exact: true }).fill("2026-10-13");
-  await page.getByLabel("Your topics or sections", { exact: true }).fill("Read one section");
+  await selectAvailability(page, ["2026-10-13"]);
+  await page
+    .getByLabel("Your topics or sections (optional)", { exact: true })
+    .fill("Read one section");
   const run = page.getByRole("button", { name: "Draft my plan with AI", exact: true });
   for (const code of ["ai_quota", "ai_refused", "ai_invalid_output", "ai_timeout"]) {
     await page.route("**/api/ai/assist", (route) =>
@@ -424,6 +435,10 @@ test("AI08/09/10: errors, cancellation, changed inputs and session expiry preser
   await expect(page.getByRole("button", { name: "Cancel AI request", exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Cancel AI request", exact: true }).click();
   await expect(run).toBeFocused();
+  await expect(
+    page.getByLabel("Your topics or sections (optional)", { exact: true }),
+  ).toBeVisible();
+  await expect(page.getByRole("button", { name: "Review draft steps", exact: true })).toBeVisible();
   release();
   await expect(page.getByText("Late response must not appear", { exact: true })).toHaveCount(0);
   gate = new Promise<void>((resolve) => {

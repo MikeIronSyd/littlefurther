@@ -8,6 +8,12 @@ import { errorKey, RequestError, request } from "./api.js";
 import { aiPanel, cancelAiOperations, sourceList } from "./ai-assistance.js";
 import { bind, dateLabel, getLocale, message } from "./i18n.js";
 import {
+  completionAction,
+  type LifecycleContext,
+  removedStepsSection,
+  studyRecordActions,
+} from "./learning-lifecycle.js";
+import {
   button,
   el,
   field,
@@ -138,6 +144,7 @@ export function showLearning(
   recover: () => void,
   circle: () => void,
   isCurrent: () => boolean = () => host.isConnected,
+  lifecycle?: LifecycleContext,
 ): void {
   disposeLearningLayout();
   const next = detail.plan.steps.find((step) => step.id === detail.nextStepId);
@@ -241,6 +248,16 @@ export function showLearning(
       }
       action?.replaceWith(copy);
       copy.append(...(action ? [action] : []), text("p", "aiAssociatedSources", "hint"), links);
+    }
+    if (step.completedAt && lifecycle) {
+      const completion = detail.completions.find(
+        (event) =>
+          event.stepId === step.id && !event.correctedAt && event.createdAt === step.completedAt,
+      );
+      if (completion) {
+        const content = row.lastElementChild;
+        content?.append(completionAction(host, detail, completion, lifecycle));
+      }
     }
     path.append(row);
   }
@@ -593,6 +610,7 @@ export function showStudy(
     void request<PlanDetail>(`/api/plans/${detail.plan.id}/activities`, "POST", {
       ...body,
       requestId: activityRequest,
+      revision: detail.plan.revision,
     })
       .then((result) => {
         if (!active()) return;
@@ -659,6 +677,7 @@ export function showActivity(
   host: HTMLElement,
   detail: PlanDetail,
   isCurrent: () => boolean = () => host.isConnected,
+  lifecycle?: LifecycleContext,
 ): void {
   const list = el("ol", "history-list");
   for (const activity of [...detail.activities].reverse()) {
@@ -678,27 +697,34 @@ export function showActivity(
         text("p", "privateNote", "reflection-label"),
         el("p", "reflection-text", activity.reflection),
       );
+    if (lifecycle) row.append(studyRecordActions(host, detail, activity, lifecycle));
     list.append(row);
   }
   const completions = el("ol", "history-list");
-  for (const completion of [...detail.completions].reverse())
-    completions.append(
-      el(
-        "li",
-        "history-entry",
-        el("h4", "", completion.stepTitle),
-        text("span", "complete", "completed-label"),
-        " · ",
-        dated(completion.createdAt, detail.progress.timezone),
-      ),
+  for (const completion of [...detail.completions].reverse()) {
+    const row = el(
+      "li",
+      "history-entry",
+      el("h4", "", completion.stepTitle),
+      text("span", completion.correctedAt ? "completionCorrected" : "complete", "completed-label"),
+      " · ",
+      dated(completion.createdAt, detail.progress.timezone),
     );
+    if (completion.correctedAt)
+      row.append(
+        text("p", "completionCorrectedCopy", "hint"),
+        dated(completion.correctedAt, detail.progress.timezone),
+      );
+    else if (lifecycle) row.append(completionAction(host, detail, completion, lifecycle));
+    completions.append(row);
+  }
   const changes = el("div", "scope-history");
   for (const event of detail.scopeEvents)
     changes.append(
       el(
         "p",
         "hint",
-        text("span", "scopeChanged", "", {
+        text("span", event.kind === "restore" ? "stepRestoredHistory" : "scopeChanged", "", {
           before: event.previousCount,
           after: event.currentCount,
         }),
@@ -759,4 +785,6 @@ export function showActivity(
       retained,
     ),
   );
+  if (lifecycle)
+    host.querySelector(".activity-layout")?.append(removedStepsSection(host, detail, lifecycle));
 }

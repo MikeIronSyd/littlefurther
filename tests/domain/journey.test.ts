@@ -9,6 +9,9 @@ import {
 } from "../../src/domain/progress.js";
 import {
   activityInput,
+  planActionInput,
+  restoreStepInput,
+  circleWithdrawalInput,
   calendarDate,
   createPlanInput,
   DomainError,
@@ -114,16 +117,23 @@ test("unsupported goals retain supplied topics without an invented template", ()
 });
 test("limits and explicit IDs protect mutation contracts", () => {
   assert.throws(
-    () => activityInput({ requestId: randomUUID(), stepId: randomUUID(), minutes: 0 }),
-    DomainError,
-  );
-  assert.throws(
-    () => activityInput({ requestId: randomUUID(), stepId: randomUUID(), minutes: 1.5 }),
+    () => activityInput({ requestId: randomUUID(), revision: 1, stepId: randomUUID(), minutes: 0 }),
     DomainError,
   );
   assert.throws(
     () =>
-      activityInput({ requestId: randomUUID(), stepId: randomUUID(), minutes: 5, completed: true }),
+      activityInput({ requestId: randomUUID(), revision: 1, stepId: randomUUID(), minutes: 1.5 }),
+    DomainError,
+  );
+  assert.throws(
+    () =>
+      activityInput({
+        requestId: randomUUID(),
+        revision: 1,
+        stepId: randomUUID(),
+        minutes: 5,
+        completed: true,
+      }),
     DomainError,
   );
   assert.throws(
@@ -131,13 +141,14 @@ test("limits and explicit IDs protect mutation contracts", () => {
       activityInput({
         requestId: randomUUID(),
         stepId: randomUUID(),
+        revision: 1,
         minutes: 5,
         reflection: "a".repeat(2001),
       }),
     DomainError,
   );
   assert.throws(
-    () => activityInput({ requestId: "retry", stepId: randomUUID(), minutes: 5 }),
+    () => activityInput({ requestId: "retry", revision: 1, stepId: randomUUID(), minutes: 5 }),
     DomainError,
   );
   const { templateId: _templateId, ...edit } = input();
@@ -210,4 +221,57 @@ test("conflicts expose unavailable dates and fixed target without moving dates",
   );
   assert.equal(changed.steps[0]?.scheduledDate, "2026-03-12");
   assert.equal(changed.targetDate, "2026-03-10");
+});
+
+test("lifecycle mutations require strict revision/request identities and bounded restoration choices", () => {
+  const action = { requestId: randomUUID(), revision: 1 };
+  assert.deepEqual(planActionInput(action), action);
+  for (const value of [
+    { requestId: action.requestId },
+    { ...action, revision: 0 },
+    { ...action, owner: "other" },
+    { ...action, requestId: "retry" },
+  ])
+    assert.throws(() => planActionInput(value), DomainError);
+  assert.throws(
+    () => activityInput({ requestId: randomUUID(), stepId: randomUUID(), minutes: 5 }),
+    DomainError,
+  );
+  assert.equal(activityInput({ ...action, stepId: randomUUID(), minutes: 5 }).revision, 1);
+  const restored = {
+    ...action,
+    scopeEventId: randomUUID(),
+    references: ["https://example.org/history"],
+    acknowledgeConflicts: false,
+  };
+  assert.deepEqual(restoreStepInput(restored), restored);
+  for (const value of [
+    { ...restored, acknowledgeConflicts: "yes" },
+    { ...restored, scopeEventId: "missing" },
+    { ...restored, references: ["javascript:alert(1)"] },
+    { ...restored, references: Array(11).fill("https://example.org/history") },
+    { ...restored, references: ["https://example.org/history", "https://example.org/history"] },
+    { ...restored, step: { title: "injected" } },
+  ])
+    assert.throws(() => restoreStepInput(value), DomainError);
+  const withdrawal = { requestId: randomUUID(), encouragementId: randomUUID() };
+  assert.deepEqual(circleWithdrawalInput(withdrawal), withdrawal);
+  assert.throws(() => circleWithdrawalInput({ ...withdrawal, senderId: "other" }), DomainError);
+});
+
+test("completion corrections remain in history while totals omit corrected events", () => {
+  const stepId = plan.steps[0]?.id ?? "";
+  const completed = {
+    id: randomUUID(),
+    stepId,
+    stepTitle: "Read",
+    scheduledDate: "2026-03-10",
+    createdAt: "2026-03-10T12:00:00.000Z",
+  };
+  const corrected = { ...completed, id: randomUUID(), correctedAt: "2026-03-10T13:00:00.000Z" };
+  assert.equal(
+    progressFor(plan, [], [completed, corrected], new Date("2026-03-10T14:00:00.000Z"))
+      .cumulativeCompletions,
+    1,
+  );
 });

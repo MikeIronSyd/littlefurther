@@ -162,15 +162,18 @@ try {
     })
   ).json();
   const endpoint = `/api/plans/${created.plan.id}`;
-  await request(`${endpoint}/activities`, "POST", {
-    requestId: randomUUID(),
-    stepId: created.plan.steps[0].id,
-    minutes: 5,
-    reflection: "Synthetic private note retained across process restart",
-  });
+  const studied = await (
+    await request(`${endpoint}/activities`, "POST", {
+      requestId: randomUUID(),
+      revision: created.plan.revision,
+      stepId: created.plan.steps[0].id,
+      minutes: 5,
+      reflection: "Synthetic private note retained across process restart",
+    })
+  ).json();
   await request(`${endpoint}/completions`, "POST", {
     requestId: randomUUID(),
-    revision: created.plan.revision,
+    revision: studied.plan.revision,
     stepId: created.plan.steps[0].id,
   });
   const completed = await (await request(endpoint)).json();

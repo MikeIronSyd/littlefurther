@@ -2,6 +2,8 @@
 
 Core app documented on **10 October 2026**, Africa/Lagos, against source revision `e2b6fae`; optional contextual AI added **13 October 2026** in section 28. This guide uses the **English button and field names**. Selecting **Français** changes interface labels; the same features remain available. It describes the local prototype, including its limits. Actual verification and delivery are recorded in the [AI increment record](specs/capstone/increments/ai-assistance-verification.md).
 
+The current local update adds calendar planning and the archive/deletion/recovery controls described in section 29. Its implementation and verification status are separate: consult the [lifecycle verification record](specs/capstone/increments/learning-lifecycle-verification.md) rather than treating these instructions as a test-pass or publication claim.
+
 ## 1. What the app does and where each feature lives
 
 LittleFurther connects planning, studying, reflection, progress, returning after a break and optional peer support in one learning journey. The capability names are useful for explaining the product; most are not separate tabs.
@@ -16,6 +18,7 @@ LittleFurther connects planning, studying, reflection, progress, returning after
 | Comeback | Review restart dates; Try a 5-minute restart | Review revised dates or take a small study action after interruption |
 | Private peer StudyCircle | Study together → Open study circles | Invitation-only commitments, check-ins and preset encouragement |
 | Multiple journeys and history | Journeys; Choose a journey; Activity | Keep goals separate and inspect the selected goal's records |
+| Record management and recovery | Journeys → Active / Archived; Activity → Removed steps and record actions | Archive/restore plans, delete unwanted records and correct accidental completion |
 | Presentation/navigation | Language, moon/sun, sidebar, mobile drawer | Use English/French, light/dark and responsive navigation |
 
 The usual sequence is: **create account → confirm timezone → create/review/save plan → study → save minutes/reflection → optionally complete the action → inspect progress → return or adjust → optionally involve peers**. Peer support is never required.
@@ -87,7 +90,7 @@ Theme and desktop-sidebar choices are saved for that browser origin, shared by a
 1. On the empty learning screen, choose **Create a learning plan**. If plans already exist, use **Journeys → Create a learning plan**.
 2. Enter **Learning goal**, for example “Complete my introductory statistics unit.”
 3. Under **Start from**, choose **My own topics or course sections**.
-4. In **Your topics or sections**, enter one action per line, for example:
+4. In **Your topics or sections (optional)**, enter one action per line for this manual route, for example:
 
    ```text
    Read the introduction to descriptive statistics
@@ -95,14 +98,14 @@ Theme and desktop-sidebar choices are saved for that browser origin, shared by a
    Summarize what I learned
    ```
 
-5. In **Dates you are available**, enter actual dates as `YYYY-MM-DD`, separated by commas or new lines. For example: `2026-10-10, 2026-10-12, 2026-10-14`. Use dates appropriate to your own schedule.
+5. In **Dates you are available**, choose **Open calendar**, select a date, then choose **Add date**. Repeat for each date you can study. The selected dates appear below; use their **Remove** actions to change the selection. Keyboard date entry remains available if you prefer it.
 6. Optionally enter **Fixed target date (optional)**.
 7. Optionally enter **Reference links (optional)**, one complete `http://` or `https://` URL per line.
 8. Choose **Review draft steps**.
 9. Review and adjust all resulting actions using the controls in section 9.
 10. Choose **Confirm and save plan**. Wait for the saved message and My learning.
 
-A goal title alone does not generate a course. Each nonblank supplied topic becomes an action with an initial 10-minute estimate. Dates are assigned in their entered order, one per action; if actions outnumber dates, the remaining actions initially reuse the last entered date. Duplicate availability dates are removed. Enter dates chronologically for a predictable first draft.
+A goal title alone does not generate a manual course. Each nonblank supplied topic becomes an action with an initial 10-minute estimate. Selected dates are unique and sorted chronologically, one per action; if actions outnumber dates, remaining actions initially reuse the last selected date. Choose at least one date, up to366, within2000–2100. A date in the picker joins the selection only when you choose **Add date**. Before the first Add, choosing a date replaces **No dates selected yet** with **Click Add date to include this date**; clearing the picker restores the empty message. The browser controls the calendar's appearance and language; the app translates its surrounding controls and selected-date labels.
 
 No plan is saved merely by reviewing it. After review, edit the action rows; the initial topic box is hidden and Start from is locked. Cancel and begin again if you want a different starting point. Saving another plan creates a separate journey rather than replacing the previous one.
 
@@ -111,7 +114,7 @@ No plan is saved merely by reviewing it. After review, edit the action rows; the
 1. Choose **Create a learning plan**.
 2. Under **Start from**, select **Build a simple web page**. This is the one curated starter currently included.
 3. Read **Supported outcome**, **Before you start** and **Template sources**.
-4. Enter availability, an optional fixed target and optional personal references.
+4. Select and add your available dates, then optionally choose a fixed target and enter personal references.
 5. Enter your own Learning goal, or leave it blank to use the starter title.
 6. Choose **Review draft steps**, adjust the suggestions, then **Confirm and save plan**.
 
@@ -168,7 +171,7 @@ You can work out of order. The highlighted next action continues to follow your 
 
 There is no study timer. Minutes are learner-reported. Saving records the current server time; no backdating field exists. Blank reflection is allowed and is not shared automatically.
 
-After a successful save, the current minutes/reflection become read-only and Save disappears. To log another session on an unfinished action, return and open that action again. Saved study logs/reflections have no edit/delete control.
+After a successful save, the current minutes/reflection become read-only and Save disappears. To log another session on an unfinished action, return and open that action again. Saved study text and minutes cannot be edited. In **Activity**, you can **Delete study session** or **Remove private reflection**; section 29 explains their different effects.
 
 Reference links open separately and may require internet. The app does not fetch, download, summarize or verify their educational content. If the saved starter version is unavailable, the study screen explains that its source metadata is unavailable; your own references remain. A manual plan without references does not show an empty reference section.
 
@@ -189,7 +192,7 @@ This prefills a small study log. It does not start a countdown, revise dates or 
 
 Saving study never completes an action automatically. Completing an action never saves minutes/reflection automatically or adds a study day. You can complete without logging a session. If you have typed unsaved minutes/reflection, save them separately before leaving; completion does not clear those unsaved edits. The still-open form can save a session after completion, but completed path rows cannot later open a new form.
 
-The completion button disappears after success. There is no Undo completion control. Completion is a self-report, not a grade or proof of mastery.
+The completion button disappears after success. To correct an accidental completion, use **Mark as unfinished** beside the completed path entry or its Activity record. The original event remains visible as corrected; section 29 explains the confirmation and totals. Completion is a self-report, not a grade or proof of mastery.
 
 ## 14. FinishLine, an all-complete plan and an empty active plan
 
@@ -212,13 +215,13 @@ Changing active scope can change the completed/total fraction. Historical comple
 
 **N sessions · M minutes studied** is cumulative across all time for that selected journey, rather than restricted to the displayed seven-day range. All these counters are per journey; Activity is not an all-goals dashboard.
 
-History retains the action title at the time of the study/completion event. Removing a step does not erase its earlier work. Scope entries show **Active scope changed from N to M steps**; a saved revision may record the same before/after count. Session/completion lists currently display earliest entries first; scope-change records are most recent first. There is no search/filter/edit/delete/export control in Activity.
+History retains the action title at the time of the study/completion event. Removing a step from the editor does not erase its earlier work. Scope entries show **Active scope changed from N to M steps**; a saved revision may record the same before/after count. A restoration adds **Step restored · N to M active steps**. Session/completion lists display earliest entries first; scope-change records are most recent first. Activity offers contextual removal/correction controls and **Removed steps** recovery, described in section 29. It has no history search, text editing or learner-data export.
 
 With no study logs, the app explains **No study activity yet. Your first session can be a small one.** Completion history can still exist independently.
 
 ## 16. Open multiple journeys and edit a saved plan
 
-**Journeys** lists goals and active-step counts, with newest-created plans first. Choose **Open journey** beside a goal. More than one plan also enables **Choose a journey** on My learning and Activity. A fresh load selects the first available plan unless a current choice already exists in that page session. There is no per-journey deep link or journey deletion/restore screen.
+**Journeys** lists goals and active-step counts, with newest-created plans first. Use **Show plans** to choose **Active** or **Archived**, including when no active plans remain. Choose **Open journey** beside an active goal or **View archived plan** beside an archived one. More than one active plan also enables **Choose a journey** on My learning and Activity. A fresh load selects the first available active plan unless a current choice already exists in that page session. There is no per-journey deep link. Archive, restore and permanent deletion are explained in section 29.
 
 To revise a plan:
 
@@ -229,7 +232,7 @@ To revise a plan:
 
 **Edit step** beside the highlighted action opens this same full editor and focuses that action's Action field, labelled **Editing step N of M**. It is not a separate one-step editor.
 
-Completed action titles/dates/estimates stay read-only. You may reorder or remove those rows; removal archives their history rather than erasing it. There is no archive browser. Existing-plan editing locks Start from. Changing availability/target does not automatically reschedule the existing rows. An existing plan may be saved with zero active rows; a new plan requires at least one.
+Completed action titles/dates/estimates stay read-only. You may reorder or remove those rows; scope removal retains their history rather than erasing it. Browse removed rows through **Activity → Removed steps** and restore them deliberately. Whole-plan archiving is a separate Journeys action. Existing-plan editing locks Start from. Changing availability/target does not automatically reschedule the existing rows. An existing plan may be saved with zero active rows; a new plan requires at least one.
 
 ## 17. Comeback: revise a schedule after interruption
 
@@ -291,6 +294,7 @@ On another member's copy:
 1. Choose **Preset encouragement**: **Keep going**, **Small steps count**, or **Glad you returned**.
 2. Choose **Send encouragement**.
 3. To replace your existing response on that copy, choose another preset and **Update encouragement**.
+4. To withdraw your own response, choose **Remove my encouragement**. The shared copy and other members' encouragement stay. You can deliberately send another preset later.
 
 There is one preset per sender/copy, not multiple reactions. You cannot send encouragement on your own copy. There is no free-text reply or chat.
 
@@ -317,6 +321,8 @@ Access changes are enforced on the next request. Already-seen information cannot
 
 **Saving:** wait for the saved confirmation. Buttons can temporarily disable while requests run. Theme/language changes are not substitutes for saving the active plan or study log.
 
+Archive, deletion, correction and step-restoration confirmations also protect their open context with the unsaved-work guard. **Cancel** closes a confirmation without changing saved records and returns focus to its trigger. A confirmation is not the completed action.
+
 | Situation | What to do |
 | --- | --- |
 | Server unreachable | Keep the current page open, restart/check the local server, then retry. Avoid reloading away unsaved input |
@@ -326,6 +332,8 @@ Access changes are enforced on the next request. Already-seen information cannot
 | Invalid input | Correct the identified field while retaining your draft. Timezone, reference and known single-field errors retain their hints and recover focus after the form unlocks. Repeated-row or unknown errors use the form message rather than guessing a row |
 | Ordinary editor/study says plan changed in another window | Preserve wanted unsaved text separately, then deliberately reopen/reload the saved journey and reconcile edits. Those screens do not have a Reload saved plan button; reloading discards unsaved input |
 | Comeback stale/uncertain response | Use its explicit **Reload saved plan / Retry the same change / Open saved plan** controls as offered |
+| Archive/deletion/recovery uncertain response | Use **Retry the same action** or **Refresh saved state**. The retry reuses the exact request; refreshing reads the saved plan before continuing |
+| Archive/deletion/recovery says the plan changed | Choose **Refresh saved state**, then review the action and any counts or conflicts again |
 | Circle uncertain action | Use **Retry the same action** or **Check saved information**; avoid sending a new equivalent action blindly |
 | Circle saved, latest information failed | Use **Refresh circle information**; refreshing reads state rather than reposting |
 | Circle changed / unavailable | Refresh. If access ended, return to your circles; your private learning remains |
@@ -365,7 +373,7 @@ Saved accounts, plans, sessions, reflections and circles live in the local serve
 
 The installed/built core can work without internet while its local server runs. External resources may still need internet. There is no server-stopped offline app.
 
-The current interface has no guest mode, email verification/delivery/password reset/change, account name/email editing or deletion, learner-data import/export, session/device manager, completion undo, study-log/reflection editing/deletion, whole-journey deletion, browsable archive/restore, PDF import, arbitrary app-side resource fetching, quiz/grading/mastery assessment, certificate, study timer, reminders/push notifications, free-text chat, circle rename/ownership transfer/reopen, or remote-peer/public-hosting flow. Optional AI drafts and deliberate web-search discovery are described in section 28. It has English/French UI, without automatic translation of saved learner content. These are limits of this version, not extra controls to find.
+The current interface has no guest mode, email verification/delivery/password reset/change, account name/email editing or deletion, learner-data import/export, session/device manager, saved study-log/reflection text editing, PDF import, arbitrary app-side resource fetching, quiz/grading/mastery assessment, certificate, study timer, reminders/push notifications, free-text chat, circle rename/ownership transfer/reopen, reversible circle archive, or remote-peer/public-hosting flow. Optional AI drafts and deliberate web-search discovery are described in section 28; record deletion, completion correction and plan/step recovery are in section 29. It has English/French UI, without automatic translation of saved learner content. These are limits of this version, not extra controls to find.
 
 ## 26. Optional PC-owner appendix: start, stop and restart
 
@@ -405,12 +413,12 @@ AI uses the app's server-managed OpenAI credential. There is no personal-key fie
 
 ### Draft a learning plan
 
-1. Open **Create a learning plan**, enter your goal and at least one available study date. The existing manual/template controls still work.
+1. Open **Create a learning plan**, enter your goal, then use **Open calendar → Add date** to select at least one available study date. **Your topics or sections (optional)** can stay empty for this AI route; learners who already have topics can supply them. The existing manual/template controls still work.
 2. In **Get help drafting your plan**, optionally describe **What you already know** or **Paste learning material**. Paste only material you are comfortable sending to OpenAI. Supplied reference links are included as links; their pages are not automatically read.
 3. Review **Search the web for credible learning resources**, which starts selected; clear it if you do not want discovery. Search runs only when you request the draft and may consult pages. Discovery currently favors a bounded set of primary learning sites and cannot guarantee resources for every subject or language.
 4. Select **Draft my plan with AI**. Use **Cancel AI request** to stop waiting, or continue manually. Cancellation cannot undo a request already processed by OpenAI.
 5. Review the proposed outcome, prerequisites, small steps and clickable sources. Source records show publisher, observation date, URL language hint and whether the link was supplied, listed, cited or opened in search. A listing/citation does not establish that the full page was read. Accuracy, current availability, free access and language suitability still need your review.
-6. Choose **Use this draft for review** or **Discard suggestion**. Using it populates editable draft steps; it does not save a journey. Review titles, minutes, dates, references and source associations, then use the existing **Save** action when ready.
+6. Choose **Review AI draft** or **Discard suggestion**. While a usable AI suggestion is ready, the manual-topic box and competing **Review draft steps** action are hidden. Reviewing the AI draft populates editable generated steps without requiring manual topics; it does not save a journey. Review titles, minutes, dates, references and source associations, then use **Confirm and save plan** when ready. Discarding or changing the drafting inputs restores manual planning and prevents use of the old suggestion.
 7. Keep each retained source's reference link, or select **Remove source** to remove its association. Invalid partially typed links remain editable. Sources linked to completed work cannot be removed through the draft editor. Source staging expires after 24 hours; if an unsaved draft expires, request a new draft rather than treating old source IDs as saved evidence.
 
 The AI drafts an initial segment of up to ten steps, not a guaranteed complete curriculum. If evidence is insufficient, provide relevant material, deliberately search, or use manual planning. AI does not certify job readiness, mastery or completion.
@@ -452,3 +460,58 @@ The AI drafts an initial segment of up to ten steps, not a guaranteed complete c
 Changing relevant input, language, journey or view invalidates pending advice; signing out or losing access also prevents late results from applying. Ordinary Save/Share operations cancel competing AI work. A refused, malformed, stale, timed-out or unavailable response leaves manual work available. Provider credit/network errors retain inputs; no automatic retry or alternative model/provider is used. You may explicitly try again when ready, but sufficient funding is not guaranteed.
 
 OpenAI requests use `store:false`; this does not mean zero provider retention. Do not send sensitive material that you do not intend to disclose. Server credentials are excluded from source, browser storage and learner controls. This prototype offers contextual help rather than a general chatbot.
+
+## 29. Archive, delete and recover learning records
+
+### Archive, view or restore a whole plan
+
+1. Open **Journeys** and leave **Show plans** set to **Active**.
+2. Find the goal and choose **Archive plan**. Read the inline explanation, then choose **Archive plan** again to confirm, or **Cancel** to keep it active.
+3. Select **Archived** in Show plans. This view remains available even when all your plans are archived.
+4. Choose **View archived plan** to read its path, original dates, resources, progress and private history. The archived view is read-only: restore the plan before editing, studying, correcting or deleting individual records, recovering removed steps, or using plan-related AI.
+5. Choose **Restore plan**, read the confirmation and confirm **Restore plan**. It opens in My learning with its original schedule and records. Overdue dates are not moved automatically; use Comeback afterward if wanted.
+
+Archiving keeps private records and allows restoration. It does not delete shared circle copies, and it is different from removing a step in the editor.
+
+### Permanently delete a whole plan
+
+1. Find the plan in either Journeys view, or open its archived view, and choose **Delete permanently**.
+2. Wait for fresh saved details. Check the goal name and counts of steps, study sessions, completion records and scope changes.
+3. Read the deletion warning and check **I understand that this plan and its private history will be permanently deleted.** The final button stays disabled until you acknowledge it.
+4. Choose **Delete permanently** again, or **Cancel** to keep the plan.
+
+Successful deletion removes that plan and its private history from the live app. Deleting the selected or last plan clears stale selection and leaves the appropriate remaining journey or empty state. Previously shared circle copies remain independent; delete your own shared copy separately if wanted. This action cannot be undone in the app. It does not securely erase disks, remove existing backups or recall information already processed by an AI provider.
+
+### Delete a study session or remove only its reflection
+
+1. Open the active plan's **Activity** and find the study entry by title, date, minutes and optional private note.
+2. Choose **Delete study session** to remove its minutes and reflection together, or **Remove private reflection** to remove only the note. The latter appears only where a reflection exists.
+3. Read the contextual confirmation and choose the same action again, or **Cancel**.
+
+Session deletion recalculates session count, studied minutes and recorded study days/consistency. It does not undo step completion. Reflection removal keeps the session, minutes and date unchanged. Neither action provides text editing or an in-app undo.
+
+### Correct accidental completion
+
+1. Beside the completed step in Your path, or its completion entry in Activity, choose **Mark as unfinished**. For an event belonging to a removed step, use **Correct completion** in Activity; you do not need to restore that step first.
+2. Read the confirmation, then choose **Mark as unfinished** or **Correct completion** again.
+3. The original event remains labelled **Completion corrected** and is excluded from completion totals. Study sessions and private reflections stay.
+
+The current step becomes unfinished only when the corrected event is its current completion; correcting an older event cannot clear a newer one. Completing the step again creates a new completion event. Corrected entries offer no further correction action.
+
+### Recover a removed step
+
+1. Open the active plan's **Activity → Removed steps**. Each currently removed step appears once using its latest saved version.
+2. Choose **Review step restoration**. Check its title, original date, estimate, **Complete** or **Unfinished** status, and associated source information.
+3. Under **Additional historical links**, select only the extra plan-level links you want. None start selected. Current resources stay, and associated historical sources are restored without fetching them or requiring an unexpired AI draft.
+4. If schedule conflicts appear, review them and check **I acknowledge the schedule conflicts shown above.** Restoration preserves the original date; it does not reschedule the step.
+5. Choose **Restore step**, or **Cancel**. Restoration appends the original step to the path; use Edit plan afterward to reorder it if wanted.
+
+Completion status comes from the current correction history, so a corrected removed step returns unfinished. Restoring does not recreate deleted study sessions or reflections. The existing limits of 50 active steps and 10 reference links apply; unsafe or inconsistent historical source metadata is rejected without a partial restoration. Refresh saved state and review again if the plan or candidate changed.
+
+### Withdraw encouragement
+
+Open the relevant circle and choose **Remove my encouragement** on another member's shared copy where you have sent a preset. Only your contribution is withdrawn; the copy and other people's encouragement remain. You can later choose a preset and **Send encouragement** again. If your encouragement changed elsewhere, refresh the circle before removing it. Circle closure remains destructive and has no archive or reopen option.
+
+### Recover an uncertain action
+
+Wait for a success status before treating an action as finished. If a network/server response leaves the result uncertain, use **Retry the same action** to reuse that exact request or **Refresh saved state** to inspect what persisted. If the plan changed, refresh and review the action again, including fresh deletion counts or restoration conflicts. Cancelling or leaving a page does not undo a request already accepted by the server.

@@ -10,6 +10,7 @@ import { normalizedSourceUrl } from "../domain/ai-validation.js";
 import { AI_LIMITS } from "../shared/ai-contracts.js";
 import { aiPanel, cancelAiOperations, sourceList } from "./ai-assistance.js";
 import { errorKey, RequestError, request } from "./api.js";
+import { availabilityPicker } from "./availability-picker.js";
 import { bind, dateLabel, getLocale, type MessageKey, message } from "./i18n.js";
 import {
   button,
@@ -32,14 +33,6 @@ interface FieldError {
   key: MessageKey;
   values: Record<string, string | number>;
 }
-const datesFrom = (value: string): string[] => [
-  ...new Set(
-    value
-      .split(/[\s,]+/)
-      .map((date) => date.trim())
-      .filter(Boolean),
-  ),
-];
 function validDate(value: string): boolean {
   return (
     /^\d{4}-\d{2}-\d{2}$/.test(value) &&
@@ -71,6 +64,7 @@ export function showPlanEditor(
   let sources: LearningSource[] = [...(existing?.sources ?? [])];
   const sourceReview = el("section", "ai-saved-sources");
   let reviewed = Boolean(existing);
+  let aiSuggestionAvailable = false;
   let previousBody = "";
   let requestId = crypto.randomUUID();
   const form = el("form", "editor-form");
@@ -103,13 +97,7 @@ export function showPlanEditor(
   const topicField = field("topics", topics, "topicsHint");
   const topicErrors = fieldErrors(topics, topicField);
   const sourcePanel = el("section", "source-panel");
-  const availability = el("textarea");
-  availability.name = "availability";
-  availability.rows = 3;
-  availability.required = true;
-  availability.value = existing?.availabilityDates.join(", ") ?? "";
-  const availabilityField = field("availability", availability, "availabilityHint");
-  const availabilityErrors = fieldErrors(availability, availabilityField);
+  const availability = availabilityPicker(existing?.availabilityDates ?? []);
   const target = input("date", "targetDate", existing?.targetDate ?? "");
   target.min = "2000-01-01";
   target.max = "2100-12-31";
@@ -175,7 +163,7 @@ export function showPlanEditor(
   save.type = "submit";
   const templateInfo = (): void => {
     const selected = templates.find((item) => item.id === templateSelect.value);
-    topicField.hidden = Boolean(selected) || reviewed;
+    topicField.hidden = Boolean(selected) || reviewed || aiSuggestionAvailable;
     if (topicField.hidden) topicErrors.clear();
     sourcePanel.replaceChildren();
     if (selected) {
@@ -198,20 +186,7 @@ export function showPlanEditor(
       }
     }
   };
-  const validateAvailability = (): boolean => {
-    const available = datesFrom(availability.value);
-    const invalid = available.filter((date) => !validDate(date));
-    if (!available.length) availabilityErrors.show("availabilityRequired");
-    else if (invalid.length)
-      availabilityErrors.show("availabilityInvalid", { dates: invalid.join(", ") });
-    else if (available.length > LIMITS.availability)
-      availabilityErrors.show("availabilityTooMany", { max: LIMITS.availability });
-    else {
-      availabilityErrors.clear();
-      return true;
-    }
-    return false;
-  };
+  const validateAvailability = availability.validate;
   const topicLines = () =>
     topics.value
       .split("\n")
@@ -282,7 +257,7 @@ export function showPlanEditor(
   };
   const conflicts = (): void => {
     warningList.replaceChildren();
-    const available = datesFrom(availability.value);
+    const available = availability.values();
     const warnings = draft.flatMap((step) => {
       const found: HTMLElement[] = [];
       if (!validDate(step.scheduledDate)) return found;
@@ -485,12 +460,12 @@ export function showPlanEditor(
     "makeDraft",
     () => {
       errors.replaceChildren();
-      const available = datesFrom(availability.value);
+      const available = availability.values();
       const selected = templates.find((item) => item.id === templateSelect.value);
       const availabilityValid = validateAvailability();
       const topicsValid = selected ? true : validateTopics();
       if (!availabilityValid || !topicsValid) {
-        (topicsValid ? availability : topics).focus();
+        (topicsValid ? availability.picker : topics).focus();
         return;
       }
       const actions =
@@ -500,6 +475,7 @@ export function showPlanEditor(
         errors.append(notice("invalidDraft", true));
         return;
       }
+      cancelAiOperations();
       if (!goal.value.trim() && selected) goal.value = selected.text[getLocale()].title;
       draft = actions.map((action, index) => ({
         title: action.title,
@@ -540,9 +516,11 @@ export function showPlanEditor(
             material.value,
             references.value,
             search.checked,
-            availability.value,
+            availability.values(),
             target.value,
             topics.value,
+            templateSelect.value,
+            reviewed,
           ]),
         build: () => {
           if (!goal.reportValidity()) {
@@ -550,7 +528,7 @@ export function showPlanEditor(
             return null;
           }
           if (!validateAvailability()) {
-            availability.focus();
+            availability.picker.focus();
             return null;
           }
           if (!validateReferences()) {
@@ -568,9 +546,14 @@ export function showPlanEditor(
           };
         },
         useLabel: "aiUsePlan",
+        suggestionChanged: (available) => {
+          aiSuggestionAvailable = available;
+          makeDraft.hidden = reviewed || available;
+          templateInfo();
+        },
         use: (result) => {
           if (result.kind !== "plan") return;
-          const available = datesFrom(availability.value);
+          const available = availability.values();
           goal.value = result.goal;
           sources = [...result.sources];
           references.value = sources.map((source) => source.url).join("\n");
@@ -599,7 +582,7 @@ export function showPlanEditor(
     if (draft.length < LIMITS.steps) {
       const step: DraftStep = {
         title: "",
-        scheduledDate: datesFrom(availability.value)[0] ?? "",
+        scheduledDate: availability.values()[0] ?? "",
         estimatedMinutes: 10,
         completed: false,
         uiId: crypto.randomUUID(),
@@ -624,7 +607,7 @@ export function showPlanEditor(
   );
   review.hidden = !reviewed;
   templateSelect.addEventListener("change", templateInfo);
-  availability.addEventListener("input", conflicts);
+  availability.element.addEventListener("input", conflicts);
   references.addEventListener("input", () => {
     renderSources();
   });
@@ -634,18 +617,27 @@ export function showPlanEditor(
     event.preventDefault();
     if (!active() || !reviewed) return;
     if (!validateAvailability()) {
-      availability.focus();
+      availability.picker.focus();
       return;
     }
     if (!validateReferences()) {
       references.focus();
       return;
     }
-    if (!form.reportValidity()) return;
+    // The picker holds an unadded candidate, not a field saved with this plan.
+    const pickerDisabled = availability.picker.disabled;
+    let valid = false;
+    try {
+      availability.picker.disabled = true;
+      valid = form.reportValidity();
+    } finally {
+      availability.picker.disabled = pickerDisabled;
+    }
+    if (!valid) return;
     cancelAiOperations();
     const body = {
       goal: goal.value.trim(),
-      availabilityDates: datesFrom(availability.value),
+      availabilityDates: availability.values(),
       targetDate: target.value || null,
       references: referenceLines(),
       ...(sources.length || existing?.sources
@@ -678,7 +670,10 @@ export function showPlanEditor(
         failed = true;
         const knownFields = {
           goal: { control: goal, error: goalErrors },
-          availabilityDates: { control: availability, error: availabilityErrors },
+          availabilityDates: {
+            control: availability.picker,
+            error: { show: availability.showError },
+          },
           targetDate: { control: target, error: targetErrors },
           references: { control: references, error: referenceErrors },
         };
@@ -724,7 +719,7 @@ export function showPlanEditor(
     field("template", templateSelect, "templateHint"),
     topicField,
     sourcePanel,
-    availabilityField,
+    availability.element,
     targetField,
     referenceField,
     ...(aiDraft ? [aiDraft] : []),

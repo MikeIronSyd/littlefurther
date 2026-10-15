@@ -80,6 +80,7 @@ export interface LearningPlan {
   steps: LearningStep[];
   createdAt: string;
   updatedAt: string;
+  archivedAt?: string | null;
   sources?: LearningSource[];
 }
 export interface StudyActivity {
@@ -90,14 +91,37 @@ export interface StudyActivity {
   reflection: string | null;
   createdAt: string;
 }
+export interface PlanActionInput {
+  requestId: string;
+  revision: number;
+}
+export interface RestoreStepInput extends PlanActionInput {
+  scopeEventId: string;
+  references: string[];
+  acknowledgeConflicts: boolean;
+}
+export interface DeletedPlan {
+  deletedPlanId: string;
+}
+export interface RemovedStep {
+  step: LearningStep;
+  scopeEventId: string;
+  removedAt: string;
+  sources: LearningSource[];
+  references: string[];
+  conflicts: PlanConflict[];
+}
 export interface CompletionEvent {
   id: string;
   stepId: string;
   stepTitle: string;
   scheduledDate: string;
   createdAt: string;
+  correctedAt?: string | null;
 }
 export interface ScopeEvent {
+  kind?: "edit" | "restore";
+  restoredStepId?: string;
   id: string;
   previousCount: number;
   currentCount: number;
@@ -131,6 +155,7 @@ export interface PlanDetail {
 }
 export interface ActivityInput {
   requestId: string;
+  revision: number;
   stepId: string;
   minutes: number;
   reflection?: string;
@@ -225,6 +250,9 @@ export interface RedeemCircleInviteInput extends CircleRequestInput {
 export interface ShareCircleItemInput extends CircleRequestInput {
   kind: CircleItemKind;
   text: string;
+}
+export interface CircleWithdrawalInput extends CircleRequestInput {
+  encouragementId: string;
 }
 export interface CircleEncouragementInput extends CircleRequestInput {
   preset: EncouragementPreset;

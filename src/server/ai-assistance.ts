@@ -107,6 +107,7 @@ export class AiAssistance {
     input: Exclude<AiAssistInput, { action: "plan_draft" | "circle_draft" }>,
   ): PlanDetail {
     const detail = this.store.detail(owner, input.planId);
+    if (detail.plan.archivedAt) throw new DomainError("plan_archived", 409);
     if (detail.plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
     return detail;
   }

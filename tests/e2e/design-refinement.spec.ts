@@ -6,6 +6,7 @@ import {
   openManualDraft,
   respectAuthenticationRateLimit,
   saveManualPlan,
+  selectAvailability,
 } from "./helpers.js";
 
 test.afterEach(async ({ page: _page }, testInfo) => {
@@ -45,7 +46,9 @@ async function expectFieldError(control: Locator, copy: string | RegExp): Promis
         .map((node) => node?.textContent ?? ""),
     };
   });
-  expect(association.ids.length, "The existing hint remains beside the error association").toBe(2);
+  expect(association.ids.length, "Existing hints remain beside the error association").toBe(
+    (await control.getAttribute("name")) === "availabilityDate" ? 3 : 2,
+  );
   expect(association.alerts).toHaveLength(1);
   if (typeof copy === "string") expect(association.alerts[0]).toBe(copy);
   else expect(association.alerts[0]).toMatch(copy);
@@ -232,44 +235,39 @@ test("RF03: curated availability errors are specific, associated and preserve re
   });
   await page.getByRole("button", { name: "Create a learning plan", exact: true }).click();
   await page.getByLabel("Start from", { exact: true }).selectOption("html-first-page@1");
-  const availability = page.locator('textarea[name="availability"]');
-  await expect(availability).toHaveAccessibleName("Dates you are available");
+  const availability = page.locator('input[name="availabilityDate"]');
+  await expect(availability).toHaveAccessibleName("Choose a date");
+  await expect(
+    page.getByRole("group", { name: "Dates you are available", exact: true }),
+  ).toBeVisible();
   const hint = await availability.getAttribute("aria-describedby");
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await expectFieldError(availability, "Add at least one available date.");
   await expect(availability).toBeFocused();
-  await expect(page.getByLabel("Your topics or sections", { exact: true })).toBeHidden();
-  await availability.fill("2026-10-08, tomorrow, 2026-02-30");
+  await expect(page.getByLabel("Your topics or sections (optional)", { exact: true })).toBeHidden();
+  await selectAvailability(page, ["2026-10-08", "2026-10-10"]);
   await expect(availability).not.toHaveAttribute("aria-invalid", "true");
   await expect(availability).toHaveAttribute("aria-describedby", hint ?? "");
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
-  await expectFieldError(availability, /Fix these dates: tomorrow, 2026-02-30\./);
-  await expect(availability).toHaveValue("2026-10-08, tomorrow, 2026-02-30");
-  const tooMany = Array.from({ length: 367 }, (_, offset) => {
-    const date = new Date("2026-01-01T12:00:00Z");
-    date.setUTCDate(date.getUTCDate() + offset);
-    return date.toISOString().slice(0, 10);
-  }).join(", ");
-  await availability.fill(tooMany);
-  await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
-  await expectFieldError(availability, "Use at most 366 available dates.");
-  await expect(availability).toHaveValue(tooMany);
-  await availability.fill("2026-10-08, 2026-10-10");
-  await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await expect(page.getByLabel("Action", { exact: true })).toHaveCount(8);
   await page.getByLabel("Action", { exact: true }).first().fill("My authored purpose stays");
-  await availability.fill("2026-10-08, tomorrow");
+  await page.getByRole("button", { name: "Remove Oct 8, 2026", exact: true }).click();
+  await page.getByRole("button", { name: "Remove Oct 10, 2026", exact: true }).click();
   await page.getByRole("button", { name: "Confirm and save plan", exact: true }).click();
-  await expectFieldError(availability, /Fix these dates: tomorrow\./);
+  await expectFieldError(availability, "Add at least one available date.");
   await expect(availability).toBeFocused();
   await changeLocale(page, "fr");
-  await expectFieldError(availability, /Corrigez ces dates : tomorrow\./);
+  await expectFieldError(availability, "Ajoutez au moins une date disponible.");
   await expect(page.getByLabel("Action", { exact: true }).first()).toHaveValue(
     "My authored purpose stays",
   );
-  await expect(availability).toHaveValue("2026-10-08, tomorrow");
+  await expect(page.getByText("Aucune date sélectionnée.", { exact: true })).toBeHidden();
+  await expect(
+    page.getByText("Cliquez sur Ajouter la date pour inclure cette date.", { exact: true }),
+  ).toBeVisible();
+  await expect(page.locator(".availability-count")).toHaveText("0 dates sélectionnées sur 366");
   expect(planWrites).toBe(0);
-  await availability.fill("2026-10-08, 2026-10-10");
+  await selectAvailability(page, ["2026-10-08", "2026-10-10"], "fr");
   await page.getByRole("button", { name: "Confirmer et enregistrer", exact: true }).click();
   await expect(page.getByText("0 étapes terminées sur 8", { exact: true })).toBeVisible();
   expect(planWrites).toBe(1);
@@ -283,10 +281,10 @@ test("RF03: manual topic errors localize separately and editing one field retain
   await page.getByRole("button", { name: "Create a learning plan", exact: true }).click();
   await page.getByLabel("Learning goal", { exact: true }).fill("My goal keeps its own language");
   const topics = page.locator('textarea[name="topics"]');
-  const availability = page.locator('textarea[name="availability"]');
-  await expect(topics).toHaveAccessibleName("Your topics or sections");
-  await expect(availability).toHaveAccessibleName("Dates you are available");
-  await availability.fill("2026-10-08");
+  const availability = page.locator('input[name="availabilityDate"]');
+  await expect(topics).toHaveAccessibleName("Your topics or sections (optional)");
+  await expect(availability).toHaveAccessibleName("Choose a date");
+  await selectAvailability(page, ["2026-10-08"]);
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await expectFieldError(topics, "Add at least one topic or section, one action per line.");
   await expect(topics).toBeFocused();
@@ -296,10 +294,10 @@ test("RF03: manual topic errors localize separately and editing one field retain
   await expectFieldError(topics, "Use at most 50 topics or sections, one action per line.");
   const longTopic = "x".repeat(241);
   await topics.fill(`An authored first action\n${longTopic}`);
-  await availability.fill("tomorrow");
+  await page.getByRole("button", { name: "Remove Oct 8, 2026", exact: true }).click();
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await expectFieldError(topics, "Shorten topics on lines 2 to at most 240 characters each.");
-  await expectFieldError(availability, /Fix these dates: tomorrow\./);
+  await expectFieldError(availability, "Add at least one available date.");
   await expect(topics).toBeFocused();
   await changeLocale(page, "fr");
   await expectFieldError(topics, "Limitez les sujets des lignes 2 à 240 caractères chacun.");
@@ -309,8 +307,8 @@ test("RF03: manual topic errors localize separately and editing one field retain
   );
   await topics.fill("An authored first action");
   await expect(topics).not.toHaveAttribute("aria-invalid", "true");
-  await expectFieldError(availability, /Corrigez ces dates : tomorrow\./);
-  await availability.fill("2026-10-08");
+  await expectFieldError(availability, "Ajoutez au moins une date disponible.");
+  await selectAvailability(page, ["2026-10-08"], "fr");
   await page.getByRole("button", { name: "Vérifier les étapes proposées", exact: true }).click();
   await expect(page.getByLabel("Action", { exact: true })).toHaveValue("An authored first action");
   expect(
@@ -400,7 +398,7 @@ test("RF05: study exposes localized template and learner references without fetc
   await page
     .getByLabel("Reference links (optional)", { exact: true })
     .fill(`${reference}\n${reference}`);
-  await page.getByLabel("Dates you are available", { exact: true }).fill("2026-10-08");
+  await selectAvailability(page, ["2026-10-08"]);
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await page.getByLabel("Action", { exact: true }).first().fill("My authored page purpose");
   await page.getByRole("button", { name: "Confirm and save plan", exact: true }).click();

@@ -220,6 +220,7 @@ test("Comeback HTTP preserves private history and applies exact revision-bound d
             body: {
               requestId: randomUUID(),
               stepId: first.id,
+              revision: detail.plan.revision,
               minutes: 7,
               reflection: "Private reflection stays private",
             },
@@ -305,7 +306,7 @@ test("Comeback HTTP preserves private history and applies exact revision-bound d
     );
 
     await t.test(
-      "exact retry returns saved response while conflicting keys and stale fresh keys reject",
+      "exact retry returns current authorized state while conflicting keys and stale fresh keys reject",
       async () => {
         const detail = await create();
         const body = {
@@ -332,22 +333,32 @@ test("Comeback HTTP preserves private history and applies exact revision-bound d
         assert.ok(step);
         await error(
           await request(`/api/plans/${detail.plan.id}/activities`, {
-            body: { requestId: body.requestId, stepId: step.id, minutes: 5 },
+            body: {
+              requestId: body.requestId,
+              revision: applied.plan.revision,
+              stepId: step.id,
+              minutes: 5,
+            },
           }),
           409,
           "idempotency_conflict",
         );
         const later = await json<PlanDetail>(
           await request(`/api/plans/${detail.plan.id}/activities`, {
-            body: { requestId: randomUUID(), stepId: step.id, minutes: 5 },
+            body: {
+              requestId: randomUUID(),
+              revision: applied.plan.revision,
+              stepId: step.id,
+              minutes: 5,
+            },
           }),
         );
         assert.deepEqual(
           await json<PlanDetail>(await request(confirmRoute(detail), { body })),
-          applied,
+          later,
         );
         assert.equal((await current(detail.plan.id)).activities.length, later.activities.length);
-        assert.equal(later.plan.revision, applied.plan.revision);
+        assert.equal(later.plan.revision, applied.plan.revision + 1);
       },
     );
 
@@ -429,7 +440,7 @@ test("Comeback HTTP preserves private history and applies exact revision-bound d
     });
 
     await t.test(
-      "activity and profile changes preserve preview validity and survive confirmation",
+      "activity invalidates old previews while profile changes preserve refreshed revision",
       async () => {
         const detail = await create();
         const body = { revision: detail.plan.revision, restartDate: "2026-10-08" };
@@ -441,6 +452,7 @@ test("Comeback HTTP preserves private history and applies exact revision-bound d
             body: {
               requestId: randomUUID(),
               stepId: step.id,
+              revision: detail.plan.revision,
               minutes: 5,
               reflection: "Still private after rescheduling",
             },
@@ -455,8 +467,15 @@ test("Comeback HTTP preserves private history and applies exact revision-bound d
           ).status,
           200,
         );
-        const applied = await json<PlanDetail>(
+        await error(
           await request(confirmRoute(detail), { body: { requestId: randomUUID(), ...body } }),
+          409,
+          "stale_revision",
+        );
+        const applied = await json<PlanDetail>(
+          await request(confirmRoute(detail), {
+            body: { requestId: randomUUID(), ...body, revision: activity.plan.revision },
+          }),
         );
         assert.equal(applied.plan.locale, "fr");
         assert.equal(applied.plan.timezone, "America/New_York");
@@ -620,11 +639,16 @@ test("Comeback HTTP preserves private history and applies exact revision-bound d
         );
         const step = applied.plan.steps[0];
         assert.ok(step);
-        const body = { requestId: randomUUID(), stepId: step.id, minutes: 5 };
+        const body = {
+          requestId: randomUUID(),
+          revision: applied.plan.revision,
+          stepId: step.id,
+          minutes: 5,
+        };
         const studied = await json<PlanDetail>(
           await request(`/api/plans/${detail.plan.id}/activities`, { body }),
         );
-        assert.equal(studied.plan.revision, applied.plan.revision);
+        assert.equal(studied.plan.revision, applied.plan.revision + 1);
         assert.equal(studied.progress.studiedMinutes, 5);
         assert.equal(studied.progress.activityCount, 1);
         assert.equal(studied.progress.completed, 0);

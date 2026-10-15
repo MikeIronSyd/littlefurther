@@ -10,8 +10,9 @@ import { errorKey, RequestError, request } from "./api.js";
 import { cancelAiOperations } from "./ai-assistance.js";
 import { showCircles } from "./circle.js";
 import { showComeback } from "./comeback.js";
-import { getLocale, message, setLocale } from "./i18n.js";
+import { getLocale, type MessageKey, message, setLocale } from "./i18n.js";
 import { showActivity, showLearning, showStudy } from "./journey.js";
+import { type LifecycleContext, showArchivedPlan, showJourneys } from "./learning-lifecycle.js";
 import { showPlanEditor } from "./plan-editor.js";
 import { createShell, type Route } from "./shell.js";
 import {
@@ -35,9 +36,12 @@ const root = rootElement;
 let me: MeResponse | null = null;
 let plans: LearningPlan[] = [];
 let detail: PlanDetail | null = null;
+let selectedPlanId: string | null = null;
 let templates: GoalTemplate[] = [];
 let dirty = false;
 let route: Route = "learning";
+let journeyStatus: "active" | "archived" = "active";
+let archivedPlanId: string | null = null;
 let loadVersion = 0;
 let sessionVersion = 0;
 let profileVersion = 0;
@@ -46,6 +50,7 @@ let signOutPending = false;
 const shell = createShell(root, {
   onNavigate: (target) => {
     if (canLeave()) {
+      archivedPlanId = null;
       route = target;
       history.replaceState(null, "", `#${route}`);
       void renderRoute(true);
@@ -75,8 +80,11 @@ function clearSession(): void {
   profileWrites = Promise.resolve();
   me = null;
   detail = null;
+  selectedPlanId = null;
   plans = [];
   templates = [];
+  journeyStatus = "active";
+  archivedPlanId = null;
   dirty = false;
   shell.setUser(null);
 }
@@ -357,6 +365,7 @@ function createOrEdit(existing: LearningPlan | null, selectedStepId?: string): v
     (result) => {
       if (!current()) return;
       detail = result;
+      selectedPlanId = result.plan.id;
       dirty = false;
       route = "learning";
       history.replaceState(null, "", "#learning");
@@ -431,50 +440,105 @@ async function renderRoute(focus = false): Promise<void> {
     if (!isCurrent()) return;
     plans = planResult.plans;
     templates = templateResult.templates;
-    const selected = plans.find((plan) => plan.id === detail?.plan.id) ?? plans[0];
+    const lifecycle: LifecycleContext = {
+      current: isCurrent,
+      setDirty: (value) => {
+        if (isCurrent()) dirty = value;
+      },
+      changed: (result, outcome?: MessageKey) => {
+        if (!isCurrent()) return;
+        detail = result;
+        selectedPlanId = result.plan.id;
+        dirty = false;
+        archivedPlanId = null;
+        if (outcome === "planRestored") {
+          route = "learning";
+          history.replaceState(null, "", "#learning");
+        } else if (result.plan.archivedAt) {
+          route = "journeys";
+          journeyStatus = "archived";
+          history.replaceState(null, "", "#journeys");
+        }
+        shell.status(outcome ?? null);
+        void renderRoute(true);
+      },
+      deleted: (planId) => {
+        if (!isCurrent()) return;
+        if (detail?.plan.id === planId) detail = null;
+        if (selectedPlanId === planId) selectedPlanId = null;
+        archivedPlanId = null;
+        dirty = false;
+        shell.status("planDeleted");
+        void renderRoute(true);
+      },
+    };
+    // Journeys must remain reachable for archived-only accounts. It does not
+    // depend on loading an unrelated active plan first.
+    if (route === "journeys") {
+      if (archivedPlanId) {
+        const archived = await request<PlanDetail>(`/api/plans/${archivedPlanId}`);
+        if (!isCurrent()) return;
+        if (!archived.plan.archivedAt) {
+          detail = archived;
+          archivedPlanId = null;
+          route = "learning";
+          history.replaceState(null, "", "#learning");
+          void renderRoute(true);
+          return;
+        }
+        showArchivedPlan(shell.main, archived, lifecycle, () => {
+          if (!isCurrent() || !canLeave()) return;
+          archivedPlanId = null;
+          void renderRoute(true);
+        });
+      } else {
+        showJourneys(shell.main, journeyStatus, {
+          current: isCurrent,
+          canLeave,
+          setDirty: lifecycle.setDirty,
+          selectStatus: (value) => {
+            journeyStatus = value;
+            void renderRoute(true);
+          },
+          open: (plan) => {
+            if (!isCurrent()) return;
+            if (plan.archivedAt) archivedPlanId = plan.id;
+            else {
+              selectedPlanId = plan.id;
+              route = "learning";
+              history.replaceState(null, "", "#learning");
+            }
+            void renderRoute(true);
+          },
+          create: () => createOrEdit(null),
+          changed: lifecycle.changed,
+          deleted: lifecycle.deleted,
+        });
+      }
+      if (focus) focusHeading(shell.main);
+      return;
+    }
+    const selected =
+      plans.find((plan) => plan.id === (selectedPlanId ?? detail?.plan.id)) ?? plans[0];
     if (!selected) {
       detail = null;
+      selectedPlanId = null;
       empty();
       if (focus) focusHeading(shell.main);
       return;
     }
     const current = await request<PlanDetail>(`/api/plans/${selected.id}`);
     if (!isCurrent()) return;
+    if (current.plan.archivedAt) {
+      archivedPlanId = current.plan.id;
+      route = "journeys";
+      history.replaceState(null, "", "#journeys");
+      void renderRoute(true);
+      return;
+    }
     detail = current;
-    if (route === "journeys") {
-      const list = el("ul", "journey-list");
-      for (const plan of plans) {
-        const open = button("goJourney", () => {
-          if (!isCurrent() || !canLeave()) return;
-          detail = { ...current, plan };
-          route = "learning";
-          history.replaceState(null, "", "#learning");
-          void renderRoute(true);
-        });
-        list.append(
-          el(
-            "li",
-            "journey-row",
-            el(
-              "div",
-              "",
-              el("h2", "", plan.goal),
-              text("p", "planCount", "hint", { count: plan.steps.length }),
-            ),
-            open,
-          ),
-        );
-      }
-      shell.main.replaceChildren(
-        el(
-          "div",
-          "page-heading",
-          text("h1", "journeys"),
-          button("createGoal", () => createOrEdit(null), "button primary"),
-        ),
-        list,
-      );
-    } else if (route === "activity") showActivity(shell.main, current, isCurrent);
+    selectedPlanId = current.plan.id;
+    if (route === "activity") showActivity(shell.main, current, isCurrent, lifecycle);
     else
       showLearning(
         shell.main,
@@ -529,8 +593,9 @@ async function renderRoute(focus = false): Promise<void> {
         },
         openCircles,
         isCurrent,
+        lifecycle,
       );
-    if (plans.length > 1 && route !== "journeys") {
+    if (plans.length > 1) {
       const select = el("select");
       select.name = "currentJourney";
       for (const plan of plans) {
@@ -544,6 +609,7 @@ async function renderRoute(focus = false): Promise<void> {
         const chosen = plans.find((plan) => plan.id === select.value);
         if (chosen) {
           detail = { ...current, plan: chosen };
+          selectedPlanId = chosen.id;
           void renderRoute(true);
         }
       });

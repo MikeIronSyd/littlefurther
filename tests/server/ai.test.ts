@@ -271,12 +271,14 @@ test("six actions use bounded owner context, preserve records and keep circle/re
       await f.request(`/api/plans/${detail.plan.id}/activities`, cookie, {
         requestId: randomUUID(),
         stepId,
+        revision: detail.plan.revision,
         minutes: 5,
         reflection: "SAVED REFLECTION MUST STAY LOCAL",
       })
     ).status,
     200,
   );
+  detail = (await (await f.request(`/api/plans/${detail.plan.id}`, cookie)).json()) as PlanDetail;
   const base = { locale: "en", planId: detail.plan.id, revision: detail.plan.revision };
   const before = await (await f.request(`/api/plans/${detail.plan.id}`, cookie)).json();
   for (const input of [

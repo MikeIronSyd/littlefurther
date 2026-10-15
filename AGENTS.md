@@ -2,7 +2,7 @@
 
 ## Repository publication
 
-LittleFurther is maintained in this private repository. Use the authorized owner identity and normal Git publication; preserve hooks, secrets and learner data. Follow [publication](docs/operations/repository-publication.md).
+LittleFurther is maintained in this repository, currently public by Michael’s15October2026 decision. Use the authorized owner identity and normal Git publication; preserve hooks, secrets and learner data. Follow [publication](docs/operations/repository-publication.md).
 
 
 
@@ -70,7 +70,7 @@ Use Africa/Lagos for user-facing dates and times. Set up recurring monitoring on
 
 ## Publish and recover
 
-Publish intended non-secret source to this private MikeIronSyd/littlefurther repository using authorized owner authentication. Verify the intended main commit and preserve unrelated hooks. Follow docs/operations/repository-publication.md.
+Publish intended non-secret source to this MikeIronSyd/littlefurther repository using authorized owner authentication. Verify the intended main commit and preserve unrelated hooks. Follow docs/operations/repository-publication.md.
 
 The user's 7 October 2026 policy limits CodexRecovery to global instructions, skills and essential settings. Never send project files, project Git history, chat/task/conversation history, prompt drafts, databases, workspace folders, browser/app profiles, task automations or generated runtime caches to the recovery repository. Do not register projects, install recovery Git hooks, or invoke `Push-WithBackup` for project publication. Global recovery is separate from this project's publication checks.
 

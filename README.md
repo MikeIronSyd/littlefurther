@@ -95,7 +95,7 @@ Open **http://127.0.0.1:4317**. Docker builds the pinned runtime locally and kee
 
 For native development instead:
 
-Use **Node 24.19.0** and **pnpm 11.19.0**. Clone this private repository with an account that has access:
+Use **Node 24.19.0** and **pnpm 11.19.0**. Clone this repository:
 
 ```powershell
 git clone https://github.com/MikeIronSyd/littlefurther.git

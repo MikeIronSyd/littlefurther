@@ -8,6 +8,7 @@ import {
   openManualDraft,
   respectAuthenticationRateLimit,
   saveManualPlan,
+  selectAvailability,
 } from "./helpers.js";
 
 test("AC01/03/05/09/10: reviewed manual plan, study and explicit completion survive refresh", async ({
@@ -122,9 +123,9 @@ test("AC09: supplied learning text is rendered literally and unsafe reference li
   await page.getByRole("button", { name: "Create a learning plan", exact: true }).click();
   await page.getByLabel("Learning goal", { exact: true }).fill("Test plain text");
   await page
-    .getByLabel("Your topics or sections", { exact: true })
+    .getByLabel("Your topics or sections (optional)", { exact: true })
     .fill('<img src=x onerror="document.body.dataset.injected=1">');
-  await page.getByLabel("Dates you are available", { exact: true }).fill("2026-10-08");
+  await selectAvailability(page, ["2026-10-08"]);
   await page.getByLabel("Reference links (optional)", { exact: true }).fill("javascript:alert(1)");
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await page.getByRole("button", { name: "Confirm and save plan", exact: true }).click();
@@ -236,7 +237,7 @@ test("AC02: supported template keeps sources, prerequisites and an editable revi
     "href",
     "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content",
   );
-  await page.getByLabel("Dates you are available", { exact: true }).fill("2026-10-08, 2026-10-10");
+  await selectAvailability(page, ["2026-10-08", "2026-10-10"]);
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await expect(page.getByLabel("Action", { exact: true })).toHaveCount(8);
   await page

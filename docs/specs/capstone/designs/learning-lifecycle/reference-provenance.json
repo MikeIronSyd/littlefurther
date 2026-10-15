@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-15T08:33:26.223Z",
+  "classification": "synthetic pre-implementation visual reference; no live provider or learner data",
+  "receipts": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "noHorizontalOverflow": true,
+      "minimumButtonHeight": 44
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "noHorizontalOverflow": true,
+      "minimumButtonHeight": 44
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "noHorizontalOverflow": true,
+      "minimumButtonHeight": 44
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "noHorizontalOverflow": true,
+      "minimumButtonHeight": 44
+    }
+  ]
+}

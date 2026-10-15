@@ -62,6 +62,7 @@ interface AiPanelOptions {
   use?: (result: AiAssistResponse) => void;
   canUse?: () => boolean;
   useLabel?: MessageKey;
+  suggestionChanged?: (available: boolean) => void;
 }
 
 // Each inline assistant owns its operation and result. It never locks the manual form.
@@ -92,6 +93,7 @@ export function aiPanel(options: AiPanelOptions): HTMLElement {
     cancel.hidden = true;
     response = null;
     resultHost.replaceChildren();
+    options.suggestionChanged?.(false);
     if (wasPending) status.replaceChildren(text("p", "aiCancelled", "hint"));
   };
   const cancel = button(
@@ -178,6 +180,7 @@ export function aiPanel(options: AiPanelOptions): HTMLElement {
           )
         : null;
     resultHost.append(el("div", "form-actions", use, discard));
+    options.suggestionChanged?.(result.kind !== "insufficient" && Boolean(options.use));
     const resultHeading = resultHost.querySelector<HTMLElement>("h3");
     if (resultHeading) {
       resultHeading.tabIndex = -1;
@@ -258,7 +261,8 @@ export function aiPanel(options: AiPanelOptions): HTMLElement {
         .finally(() => {
           window.clearTimeout(timeout);
           if (operation !== version) return;
-          activeOperations.delete(invalidate);
+          // View/language changes must also clear a ready, unaccepted suggestion.
+          if (!response) activeOperations.delete(invalidate);
           controller = null;
           run.disabled = false;
           cancel.hidden = true;

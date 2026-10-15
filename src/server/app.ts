@@ -17,13 +17,16 @@ import {
 } from "../domain/circle-validation.js";
 import {
   activityInput,
+  circleWithdrawalInput,
   comebackConfirmInput,
   comebackPreviewInput,
   completionInput,
   createPlanInput,
   DomainError,
   identifier,
+  planActionInput,
   profileInput,
+  restoreStepInput,
   updatePlanInput,
 } from "../domain/validation.js";
 import { JourneyStore, migrate } from "./store.js";
@@ -203,14 +206,69 @@ export async function createApp(
     app.get("/api/templates", (_request, response) => {
       response.json({ templates });
     });
-    app.get("/api/plans", (_request, response) => {
-      response.json({ plans: store.list(owner(response)) });
+    app.get("/api/plans", (request, response) => {
+      const status = request.query.status ?? "active";
+      if (status !== "active" && status !== "archived")
+        throw new DomainError("invalid_input", 400, "status");
+      response.json({ plans: store.list(owner(response), status) });
     });
     app.post("/api/plans", (request, response) => {
       response.status(201).json(store.create(owner(response), createPlanInput(request.body)));
     });
     app.get("/api/plans/:id", (request, response) => {
       response.json(store.detail(owner(response), planId(request)));
+    });
+    app.get("/api/plans/:id/removed-steps", (request, response) => {
+      response.json({ steps: store.removedSteps(owner(response), planId(request)) });
+    });
+    app.post("/api/plans/:id/archive", (request, response) => {
+      response.json(store.archive(owner(response), planId(request), planActionInput(request.body)));
+    });
+    app.post("/api/plans/:id/restore", (request, response) => {
+      response.json(store.restore(owner(response), planId(request), planActionInput(request.body)));
+    });
+    app.post("/api/plans/:id/delete", (request, response) => {
+      response.json(store.delete(owner(response), planId(request), planActionInput(request.body)));
+    });
+    app.post("/api/plans/:id/activities/:activityId/delete", (request, response) => {
+      response.json(
+        store.deleteActivity(
+          owner(response),
+          planId(request),
+          identifier(request.params.activityId, "activityId"),
+          planActionInput(request.body),
+        ),
+      );
+    });
+    app.post("/api/plans/:id/activities/:activityId/reflection/remove", (request, response) => {
+      response.json(
+        store.removeReflection(
+          owner(response),
+          planId(request),
+          identifier(request.params.activityId, "activityId"),
+          planActionInput(request.body),
+        ),
+      );
+    });
+    app.post("/api/plans/:id/completions/:completionId/correct", (request, response) => {
+      response.json(
+        store.correctCompletion(
+          owner(response),
+          planId(request),
+          identifier(request.params.completionId, "completionId"),
+          planActionInput(request.body),
+        ),
+      );
+    });
+    app.post("/api/plans/:id/steps/:stepId/restore", (request, response) => {
+      response.json(
+        store.restoreStep(
+          owner(response),
+          planId(request),
+          identifier(request.params.stepId, "stepId"),
+          restoreStepInput(request.body),
+        ),
+      );
     });
     app.put("/api/plans/:id", (request, response) => {
       response.json(store.update(owner(response), planId(request), updatePlanInput(request.body)));
@@ -287,6 +345,16 @@ export async function createApp(
           planId(request),
           identifier(request.params.itemId, "itemId"),
           circleEncouragementInput(request.body),
+        ),
+      );
+    });
+    app.post("/api/circles/:id/items/:itemId/encouragement/withdraw", (request, response) => {
+      response.json(
+        circles.withdrawEncouragement(
+          owner(response),
+          planId(request),
+          identifier(request.params.itemId, "itemId"),
+          circleWithdrawalInput(request.body),
         ),
       );
     });

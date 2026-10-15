@@ -49,11 +49,16 @@ test("fresh/repeated current migration and populated v1 upgrade preserve every p
     assert.ok(stepId);
     detail = journey.activity("u0", detail.plan.id, {
       ...request(),
+      revision: detail.plan.revision,
       stepId,
       minutes: 5,
       reflection: "Private reflection",
     });
-    detail = journey.complete("u0", detail.plan.id, { ...request(), stepId, revision: 1 });
+    detail = journey.complete("u0", detail.plan.id, {
+      ...request(),
+      stepId,
+      revision: detail.plan.revision,
+    });
     detail = journey.update("u0", detail.plan.id, {
       ...request(),
       revision: detail.plan.revision,
@@ -199,6 +204,137 @@ test("database failure after joining rolls back membership, token consumption an
     database.exec("DROP TRIGGER fail_join_receipt");
     assert.equal(circles.redeem("u1", join).circleId, id);
     assert.equal(circles.detail("u0", id).circle.memberCount, 2);
+    assert.deepEqual(database.pragma("foreign_key_check"), []);
+  } finally {
+    database.close();
+  }
+});
+
+test("own encouragement withdrawal, update and re-add protect newer contributions and retries", () => {
+  const { database, circles } = fixture();
+  try {
+    const id = circles.create("u0", { ...request(), name: "Encouragement lifecycle" }).circleId;
+    for (const user of ["u1", "u2"]) {
+      const invite = circles.createInvite("u0", id, request());
+      assert.ok(invite.token);
+      circles.redeem(user, { ...request(), token: invite.token });
+    }
+    const itemId = circles.share("u0", id, {
+      ...request(),
+      kind: "commitment",
+      text: "One small step",
+    }).itemId;
+    const list = () => circles.detail("u0", id).items[0]?.encouragements ?? [];
+    const own = () => list().find((entry) => entry.senderName === "User 1");
+    const firstSend = { ...request(), preset: "keep_going" as const };
+    circles.encourage("u1", id, itemId, firstSend);
+    circles.encourage("u2", id, itemId, { ...request(), preset: "glad_you_returned" });
+    const first = own();
+    const other = list().find((entry) => entry.senderName === "User 2");
+    assert.ok(first && other);
+    const outdatedWithdrawal = { ...request(), encouragementId: first.id };
+    const update = { ...request(), preset: "small_steps_count" as const };
+    circles.encourage("u1", id, itemId, update);
+    const updated = own();
+    assert.ok(updated);
+    assert.notEqual(updated.id, first.id);
+    assert.equal(updated.preset, "small_steps_count");
+    circles.encourage("u1", id, itemId, update);
+    assert.deepEqual(own(), updated);
+    expectCode(
+      () => circles.withdrawEncouragement("u1", id, itemId, outdatedWithdrawal),
+      "encouragement_changed",
+    );
+    expectCode(
+      () =>
+        circles.withdrawEncouragement("u0", id, itemId, {
+          ...request(),
+          encouragementId: other.id,
+        }),
+      "not_found",
+    );
+    expectCode(
+      () =>
+        circles.withdrawEncouragement("u3", id, itemId, {
+          ...request(),
+          encouragementId: updated.id,
+        }),
+      "not_found",
+    );
+    const withdrawal = { ...request(), encouragementId: updated.id };
+    assert.deepEqual(circles.withdrawEncouragement("u1", id, itemId, withdrawal), { ok: true });
+    assert.deepEqual(list(), [other]);
+    assert.deepEqual(circles.withdrawEncouragement("u1", id, itemId, withdrawal), { ok: true });
+    circles.encourage("u1", id, itemId, firstSend);
+    circles.encourage("u1", id, itemId, update);
+    assert.deepEqual(list(), [other]);
+    circles.encourage("u1", id, itemId, { ...request(), preset: "keep_going" });
+    const readded = own();
+    assert.ok(readded);
+    assert.notEqual(readded.id, updated.id);
+    assert.deepEqual(circles.withdrawEncouragement("u1", id, itemId, withdrawal), { ok: true });
+    assert.deepEqual(own(), readded);
+    expectCode(
+      () =>
+        circles.withdrawEncouragement("u1", id, itemId, {
+          ...withdrawal,
+          encouragementId: readded.id,
+        }),
+      "idempotency_conflict",
+    );
+    circles.leave("u1", id, request());
+    expectCode(() => circles.withdrawEncouragement("u1", id, itemId, withdrawal), "not_found");
+    const invite = circles.createInvite("u0", id, request());
+    assert.ok(invite.token);
+    circles.redeem("u1", { ...request(), token: invite.token });
+    expectCode(() => circles.withdrawEncouragement("u1", id, itemId, withdrawal), "not_found");
+    assert.deepEqual(list(), [other]);
+    assert.deepEqual(database.pragma("foreign_key_check"), []);
+  } finally {
+    database.close();
+  }
+});
+
+test("withdrawal rolls back with receipt failure and keeps content-free replay metadata", () => {
+  const { database, circles } = fixture();
+  try {
+    const id = circles.create("u0", { ...request(), name: "Atomic withdrawal" }).circleId;
+    const invite = circles.createInvite("u0", id, request());
+    assert.ok(invite.token);
+    circles.redeem("u1", { ...request(), token: invite.token });
+    const itemId = circles.share("u0", id, {
+      ...request(),
+      kind: "check_in",
+      text: "Shared copy remains",
+    }).itemId;
+    circles.encourage("u1", id, itemId, { ...request(), preset: "keep_going" });
+    const encouragement = circles.detail("u0", id).items[0]?.encouragements[0];
+    assert.ok(encouragement);
+    const withdrawal = { ...request(), encouragementId: encouragement.id };
+    database.exec(`CREATE TRIGGER fail_withdrawal_receipt BEFORE INSERT ON circle_receipt
+      BEGIN SELECT RAISE(ABORT, 'synthetic withdrawal receipt failure'); END;`);
+    assert.throws(
+      () => circles.withdrawEncouragement("u1", id, itemId, withdrawal),
+      /synthetic withdrawal receipt failure/u,
+    );
+    assert.deepEqual(circles.detail("u0", id).items[0]?.encouragements, [encouragement]);
+    assert.equal(
+      database.prepare("SELECT * FROM circle_receipt WHERE request_id=?").get(withdrawal.requestId),
+      undefined,
+    );
+    database.exec("DROP TRIGGER fail_withdrawal_receipt");
+    circles.withdrawEncouragement("u1", id, itemId, withdrawal);
+    const reopened = new CircleStore(database, now);
+    assert.deepEqual(reopened.withdrawEncouragement("u1", id, itemId, withdrawal), { ok: true });
+    assert.deepEqual(reopened.detail("u0", id).items[0]?.encouragements, []);
+    const receipt = database
+      .prepare("SELECT * FROM circle_receipt WHERE request_id=?")
+      .get(withdrawal.requestId);
+    assert.ok(receipt);
+    const serialized = JSON.stringify(receipt);
+    assert.ok(!serialized.includes("Shared copy remains") && !serialized.includes("keep_going"));
+    circles.deleteItem("u0", id, itemId, request());
+    expectCode(() => circles.withdrawEncouragement("u1", id, itemId, withdrawal), "not_found");
     assert.deepEqual(database.pragma("foreign_key_check"), []);
   } finally {
     database.close();

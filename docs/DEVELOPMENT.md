@@ -43,6 +43,8 @@ Use a new empty ignored `CAPSTONE_DATA_DIR` for experiments; never point tests a
 
 Optional AI uses server-only `OPENAI_API_KEY` from the environment or ignored `.local/ai-provider.env`. Never put keys in `VITE_` configuration, browser storage, tracked examples, logs or chat. `CAPSTONE_AI_DISABLED=1` disables AI before loading credentials. No BYOK, automatic retry, provider fallback, purchase or top-up exists. [Operations](operations/local-demo.md) covers configuration/failure/recovery.
 
+For [lifecycle controls](specs/capstone/increments/learning-lifecycle.md), keep activity writes revision-aware as well as plan edits/completions. Tests must inspect current state and receipt contents, not rely on historical full-response snapshots: retries return current authorized state without repeating a write. Exercise archive/read-only/restore, transactional private-record cleanup, corrected completion totals, latest-snapshot step restoration and stale encouragement withdrawal with isolated records. Use sacrificial synthetic plans for destructive checks; keep ordinary learner data and local-only recording material untouched. Actual results belong in the [lifecycle verification record](specs/capstone/increments/learning-lifecycle-verification.md).
+
 ## Adapt templates and translations
 
 1. Inspect `src/domain/templates.ts`, validators/contracts and [P10 adaptation evidence](specs/capstone/increments/reuse.md). Keep the supported template ID stable; change its version only with explicit compatibility/stored-history handling.
@@ -56,6 +58,6 @@ Shape substantial work around **Goal, Context Pointers, Constraints and Done Whe
 
 Invoke [learning-journey-review](../.agents/skills/learning-journey-review/SKILL.md) with the increment, criteria, revision and execution evidence. It produces an AC-linked review, prioritizes findings and separates observed behavior from unverified claims. A review document alone cannot establish a running app or human adoption.
 
-Invoke [capstone-evidence-update](../.agents/skills/capstone-evidence-update/SKILL.md) with actual artifacts/results to reconcile J1–J4 and authorized trackers. Use supported GitHub MCP reads and distinguish unavailable private-repository reads from authenticated CLI fallback. Browser MCP observes interactions and maintains Kaneo; verified Miva Google Drive MCP can update/read bounded Sheet cells, with browser visual inspection. Describe actual routes accurately, preserve stable IDs/history and compare saved changes.
+Invoke [capstone-evidence-update](../.agents/skills/capstone-evidence-update/SKILL.md) with actual artifacts/results to reconcile J1–J4 and authorized trackers. Use supported GitHub MCP reads and distinguish unavailable repository reads from authenticated CLI fallback. Browser MCP observes interactions and maintains Kaneo; verified Miva Google Drive MCP can update/read bounded Sheet cells, with browser visual inspection. Describe actual routes accurately, preserve stable IDs/history and compare saved changes.
 
 Publish intended non-secret source through [authorized normal Git publication](operations/repository-publication.md), preserving hooks and verifying the intended main commit. Project data/history never goes to CodexRecovery. Keep learner hypotheses, dated tests, human approval and the unfinished video distinct.

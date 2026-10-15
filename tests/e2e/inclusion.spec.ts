@@ -1,6 +1,12 @@
 import { writeFile } from "node:fs/promises";
 import { expect, type Locator, test } from "@playwright/test";
-import { capture, createAccount, expectNoHorizontalOverflow, saveManualPlan } from "./helpers.js";
+import {
+  capture,
+  createAccount,
+  expectNoHorizontalOverflow,
+  saveManualPlan,
+  selectAvailability,
+} from "./helpers.js";
 
 async function contrastOf(
   locator: Locator,
@@ -130,9 +136,9 @@ test("AC11: French mobile journey supports saving study and explicit completion"
   await page.getByRole("button", { name: "Créer un parcours", exact: true }).click();
   await page.getByLabel("Objectif d’apprentissage", { exact: true }).fill("Comprendre mes notes");
   await page
-    .getByLabel("Vos sujets ou sections", { exact: true })
+    .getByLabel("Vos sujets ou sections (facultatif)", { exact: true })
     .fill("Lire les notes\nRédiger une explication");
-  await page.getByLabel("Vos dates disponibles", { exact: true }).fill("2026-10-08, 2026-10-10");
+  await selectAvailability(page, ["2026-10-08", "2026-10-10"], "fr");
   await page.getByRole("button", { name: "Vérifier les étapes proposées", exact: true }).click();
   await expectNoHorizontalOverflow(page);
   await page.getByRole("button", { name: "Confirmer et enregistrer", exact: true }).click();

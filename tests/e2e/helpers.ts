@@ -57,10 +57,30 @@ export async function openManualDraft(
   await page
     .getByLabel("Start from", { exact: true })
     .selectOption({ label: "My own topics or course sections" });
-  await page.getByLabel("Your topics or sections", { exact: true }).fill(topics);
-  await page.getByLabel("Dates you are available", { exact: true }).fill("2026-10-08, 2026-10-10");
+  await page.getByLabel("Your topics or sections (optional)", { exact: true }).fill(topics);
+  await selectAvailability(page, ["2026-10-08", "2026-10-10"]);
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Review every step", exact: true })).toBeVisible();
+}
+
+export async function selectAvailability(
+  page: Page,
+  dates: string[],
+  locale: "en" | "fr" = "en",
+): Promise<void> {
+  // Filling a native date value represents the operating system's selection.
+  // Opening/using the actual native popup is verified separately in browser review.
+  const date = page.getByLabel(locale === "fr" ? "Choisir une date" : "Choose a date", {
+    exact: true,
+  });
+  const add = page.getByRole("button", {
+    name: locale === "fr" ? "Ajouter la date" : "Add date",
+    exact: true,
+  });
+  for (const value of dates) {
+    await date.fill(value);
+    await add.click();
+  }
 }
 
 export async function saveManualPlan(page: Page): Promise<void> {

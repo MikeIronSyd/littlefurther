@@ -1,0 +1,62 @@
+{
+  "observedAt": "2026-10-14T22:14:13.317Z",
+  "baseRevision": "c3a07fe96247808bb0c20ebd77c5e8a22e7e6535",
+  "sourceState": "uncommitted planning-calendar working tree",
+  "sourceHashes": {
+    "src/client/availability-picker.ts": "b45086f46a06484816138cd15a8e563f082d8ffffd13d98851825a0617f110c6",
+    "src/client/plan-editor.ts": "0f359a86c64c92c6e4b9fa4db8e72aca65d5dd4619d0c09301947d405feacf8a",
+    "src/client/ai-assistance.ts": "68899cd3c7caa22a0f99a80ba79fd1b5a2048b45b859116e5fc52a7efbc0dfe5",
+    "src/client/i18n.ts": "20160e5364777756a78f251ceaa6c3d1a020589eb1f962afdc19694eea527d5f",
+    "src/client/styles.css": "06d662a058fda12adc10afcce0d9f75063570ecf0c656bab040fcee12800439b"
+  },
+  "classification": "actual application interface; isolated synthetic learner records; mocked AI/search responses; no saved plan",
+  "rows": [
+    {
+      "name": "pending-date-en",
+      "width": 1440,
+      "locale": "en",
+      "theme": "light",
+      "textScale": 100,
+      "scope": "availability fieldset",
+      "captureBounds": {
+        "x": 268,
+        "y": 661.375,
+        "width": 780,
+        "height": 229.375
+      },
+      "noHorizontalOverflow": true
+    },
+    {
+      "name": "desktop-light-en",
+      "width": 1440,
+      "locale": "en",
+      "theme": "light",
+      "textScale": 100,
+      "noHorizontalOverflow": true
+    },
+    {
+      "name": "desktop-dark-ai-en",
+      "width": 1440,
+      "locale": "en",
+      "theme": "dark",
+      "textScale": 100,
+      "noHorizontalOverflow": true
+    },
+    {
+      "name": "mobile-dark-fr-enlarged",
+      "width": 320,
+      "locale": "fr",
+      "theme": "dark",
+      "textScale": 200,
+      "noHorizontalOverflow": true
+    },
+    {
+      "name": "mobile-light-ai-review-fr",
+      "width": 320,
+      "locale": "fr",
+      "theme": "light",
+      "textScale": 100,
+      "noHorizontalOverflow": true
+    }
+  ]
+}

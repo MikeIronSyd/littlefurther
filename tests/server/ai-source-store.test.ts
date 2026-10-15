@@ -107,6 +107,7 @@ test("populated v1/v2 additive migration preserves JSON, history, receipts and r
       let detail = journey.create("u0", create);
       const stepId = detail.plan.steps[0]?.id ?? "";
       detail = journey.activity("u0", detail.plan.id, {
+        revision: detail.plan.revision,
         requestId: randomUUID(),
         stepId,
         minutes: 5,
@@ -136,9 +137,9 @@ test("populated v1/v2 additive migration preserves JSON, history, receipts and r
       assert.equal("sources" in rebooted.detail("u0", detail.plan.id).plan, false);
       assert.equal(rebooted.detail("u0", detail.plan.id).completions.length, 1);
       assert.equal(rebooted.detail("u0", detail.plan.id).activities[0]?.reflection, "Private note");
-      // A pre-upgrade receipt still hashes the same absent optional fields and replays its original JSON.
+      // Absent optional fields hash identically; receipts replay current authorized state.
       const replay = rebooted.create("u0", createPlanInput(create));
-      assert.equal(replay.plan.revision, 1);
+      assert.equal(replay.plan.revision, detail.plan.revision);
       assert.equal("sources" in replay.plan, false);
       assert.equal(count(database), 0);
     } finally {
@@ -244,7 +245,7 @@ test("save resolves only owner-issued IDs, snapshots metadata and replays after 
     assert.equal(count(database), 0);
     advance(25);
     const rebooted = new JourneyStore(database, clock);
-    assert.deepEqual(rebooted.create("u0", create), saved);
+    assert.deepEqual(rebooted.create("u0", create), rebooted.detail("u0", saved.plan.id));
     code(() => rebooted.create("u0", { ...create, goal: "Changed" }), "idempotency_conflict");
     assert.deepEqual(rebooted.detail("u0", saved.plan.id).plan.sources, [known]);
     const edited = rebooted.update("u0", saved.plan.id, update(saved));
@@ -307,6 +308,7 @@ test("completed associations stay immutable and removed source snapshots remain 
     let detail = journey.create("u0", input([known]));
     const stepId = detail.plan.steps[0]?.id ?? "";
     detail = journey.activity("u0", detail.plan.id, {
+      revision: detail.plan.revision,
       requestId: randomUUID(),
       stepId,
       minutes: 5,

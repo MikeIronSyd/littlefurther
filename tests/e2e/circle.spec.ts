@@ -87,6 +87,7 @@ test("SC02/03/06: two real accounts deliberately share copies and encouragement 
   const privatePlan = (await (await page.request.get(`/api/plans/${planId}`)).json()) as PlanDetail;
   await mutate(page, `/api/plans/${planId}/activities`, {
     requestId: randomUUID(),
+    revision: privatePlan.plan.revision,
     stepId: privatePlan.plan.steps[0]?.id,
     minutes: 5,
     reflection: "This private reflection is never shared.",
@@ -172,6 +173,43 @@ test("SC02/03/06: two real accounts deliberately share copies and encouragement 
     await expect(peer.locator(".circle-item")).toHaveCount(2);
     await expectOnlyUiStorage(peer);
     await page.getByRole("button", { name: "Refresh circle information", exact: true }).click();
+    await expect(page.getByRole("button", { name: /^Remove my encouragement / })).toHaveCount(0);
+    await page.getByLabel("Preset encouragement", { exact: true }).selectOption("keep_going");
+    await page.getByRole("button", { name: "Send encouragement", exact: true }).click();
+    await expect(page.getByRole("button", { name: /^Remove my encouragement / })).toHaveCount(1);
+    await peer.getByRole("button", { name: "Refresh circle information", exact: true }).click();
+    const supportBeforeWithdrawal = (await detail(peer, id)).items.find(
+      (item) => item.text === "I studied for five minutes today.",
+    )?.encouragements;
+    expect(supportBeforeWithdrawal).toHaveLength(1);
+    await peer.getByLabel("Language", { exact: true }).selectOption("fr");
+    await peer.setViewportSize({ width: 320, height: 900 });
+    const withdraw = peer.getByRole("button", { name: /^Retirer mon encouragement / });
+    await expect(withdraw).toHaveCount(1);
+    const bounds = await withdraw.boundingBox();
+    expect(bounds).not.toBeNull();
+    expect(bounds?.width).toBeGreaterThanOrEqual(44);
+    expect(bounds?.height).toBeGreaterThanOrEqual(44);
+    await expectNoHorizontalOverflow(peer);
+    await withdraw.focus();
+    await peer.keyboard.press("Enter");
+    await expect(peer.getByRole("button", { name: /^Retirer mon encouragement / })).toHaveCount(0);
+    const supportAfterWithdrawal = await detail(peer, id);
+    expect(
+      supportAfterWithdrawal.items.find((item) => item.text === commitment)?.encouragements,
+    ).toEqual([]);
+    expect(
+      supportAfterWithdrawal.items.find((item) => item.text === "I studied for five minutes today.")
+        ?.encouragements,
+    ).toEqual(supportBeforeWithdrawal);
+    await peer.getByLabel("Langue", { exact: true }).selectOption("en");
+    await peer.setViewportSize({ width: 1440, height: 1000 });
+    await peer
+      .getByLabel("Preset encouragement", { exact: true })
+      .selectOption("small_steps_count");
+    await peer.getByRole("button", { name: "Send encouragement", exact: true }).click();
+    await expect(peer.getByRole("button", { name: /^Remove my encouragement / })).toHaveCount(1);
+    await page.getByRole("button", { name: "Refresh circle information", exact: true }).click();
     const ownedCopy = page
       .locator(".circle-item")
       .filter({ has: page.getByText(commitment, { exact: true }) });
@@ -181,7 +219,7 @@ test("SC02/03/06: two real accounts deliberately share copies and encouragement 
     await expect(page.locator(".circle-item")).toHaveCount(1);
     const remaining = await detail(peer, id);
     expect(remaining.items[0]?.text).toBe("I studied for five minutes today.");
-    expect(remaining.items[0]?.encouragements).toEqual([]);
+    expect(remaining.items[0]?.encouragements).toEqual(supportBeforeWithdrawal);
   } finally {
     await peerContext.close();
   }

@@ -244,7 +244,14 @@ for (const theme of ["light", "dark"] as const) {
     ).toBeVisible();
     await page.getByRole("button", { name: "Choose the next action", exact: true }).click();
     await expect(page.locator(".path-step.completed")).toHaveCount(1);
-    await expect(page.locator(".path-step.completed button")).toHaveCount(0);
+    const completedRow = page.locator(".path-step.completed");
+    await expect(completedRow.locator(".path-action")).toHaveCount(0);
+    const correction = completedRow.getByRole("button", {
+      name: "Mark as unfinished",
+      exact: true,
+    });
+    await softBoundary(page, correction);
+    await target(correction);
     await expect(page.locator(".path-action")).toHaveCount(1);
     await page.getByRole("link", { name: "Activity", exact: true }).click();
     const overview = page.getByRole("region", { name: "Review my learning notes", exact: true });

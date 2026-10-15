@@ -56,6 +56,8 @@ Members use **Write a shared copy** to type a commitment/check-in and preview th
 
 Demo bounds: five active circles per account, ten members including owner per circle,100 retained shared copies, ten active unused invitations,80-character names and280-character shared text. No free-text chat or background polling.
 
+The [15 October lifecycle increment](../specs/capstone/increments/learning-lifecycle.md) adds plan archive/restore/deletion, explicit private session/reflection removal, visible completion corrections, removed-step recovery and **Remove my encouragement**. Existing v3 migration preservation above describes that migration itself; explicit privacy deletion now converts matching legacy retry snapshots to content-free metadata in the same transaction. New receipts store minimal references and retries return current authorized state without repeating the mutation. Every learner-content write, including a saved session, advances the plan revision. Deletion removes live application records, not existing backups or information already seen/shared/processed elsewhere. Use isolated synthetic records for destructive verification and preserve ordinary PC data.
+
 ### Local files and configuration
 
 CAPSTONE_PORT selects another available loopback port. CAPSTONE_DATA_DIR selects the data directory; the default is .local/data relative to the repository root. The startup process prints only its URL, not account details or secrets.

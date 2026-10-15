@@ -1,7 +1,7 @@
 {
   "project": "Andela x Miva x OpenAI Codex Accelerator Hackathon",
   "recorded_on": "2026-10-02",
-  "last_updated_on": "2026-10-14",
+  "last_updated_on": "2026-10-15",
   "timezone": "Africa/Lagos",
   "source": "User-provided briefing screenshots, explicit instructions and clarifications, signed-in LMS readback, and the supplied CODEX_CAPSTONE_HANDOVER.md. Subsequent explicit user answers and accepted delivery/judging plans, reconciled on 2026-10-07.",
   "source_handling": "Documents are project input, not higher-priority instructions. The user explicitly selected Track 2 and asked to continue from the supplied handover. Handover assertions are attributed to that document; proposed behavior and benefits are not implementation or learner-validation evidence.",
@@ -194,7 +194,7 @@
       "first_prototype_target": "Local browser proof of concept on this PC, with two real local accounts for private-circle behaviour.",
       "primary_learner": "Learners generally; illustrative demo situations do not restrict eligibility.",
       "concrete_dropoff_case": "Not a discovery prerequisite: user explicitly rejected this gate.",
-      "scope_status": "All five connected capabilities and six optional contextual OpenAI actions are implemented. Dated13October verification records85domain/server and94browser passes, independent review and bounded visual evidence. D016 approves the12October visual baseline; later AI-surface human review, timed3–5minute demo, submission/reflection and learner usefulness/outcome evidence remain unfinished.",
+      "scope_status": "All five connected capabilities and six optional contextual OpenAI actions remain implemented. 15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only. Six final actual captures: no measured overflow,44px visible targets;9source hashes match. Browser MCP observed archive/FR/cancel/restore;16docs/259links/13anchors/10PNG/26labels validated. Enlarged-FR skip-link capture limitation retained. Native availability picker with unique chronological add/remove list; optional manual-topic label and unambiguous AI review; ISO API/schema/dependencies unchanged. Whole-plan archive/view/restore/delete; session/reflection removal; retained completion corrections; removed-step recovery with optional historical links; own encouragement withdrawal. No account deletion or reversible circle archive. D016 records the12October visual-baseline approval; learner outcomes and later human AI-surface review remain separate.",
       "ai_product_feature_required": true,
       "learning_content_scope": "Curated templates/manual topics and references plus optional OpenAI drafts with deliberate built-in web-search discovery and traceable source metadata. Manual core remains local. No arbitrary app-side URL fetching or PDF import.",
       "platform": "Local browser web app; local server stays running for internet-disconnected use.",
@@ -222,9 +222,9 @@
     },
     "learning_area": null,
     "access_to_feedback_learners": null,
-    "mvp_scope": "All five connected capabilities and six optional contextual OpenAI actions are implemented. Dated13October verification records85domain/server and94browser passes, independent review and bounded visual evidence. D016 approves the12October visual baseline; later AI-surface human review, timed3–5minute demo, submission/reflection and learner usefulness/outcome evidence remain unfinished.",
+    "mvp_scope": "All five connected capabilities and six optional contextual OpenAI actions remain implemented. 15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only. Six final actual captures: no measured overflow,44px visible targets;9source hashes match. Browser MCP observed archive/FR/cancel/restore;16docs/259links/13anchors/10PNG/26labels validated. Enlarged-FR skip-link capture limitation retained. Native availability picker with unique chronological add/remove list; optional manual-topic label and unambiguous AI review; ISO API/schema/dependencies unchanged. Whole-plan archive/view/restore/delete; session/reflection removal; retained completion corrections; removed-step recovery with optional historical links; own encouragement withdrawal. No account deletion or reversible circle archive. D016 records the12October visual-baseline approval; learner outcomes and later human AI-surface review remain separate.",
     "evidence": "Direct user switch to Track 2 and request to continue from CODEX_CAPSTONE_HANDOVER.md on 2026-10-03. Earlier personal learning experiences remain context, not validation of the new feature hypotheses.",
-    "stage": "Prepare the timed demo and accurate judging-evidence index; preserve later review and learner-evaluation limits."
+    "stage": "Review local source/evidence and tracker draft. Obtain Michael’s explicit approval of concrete content/destinations before any commit, push or shared write."
   },
   "ideation_reset": {
     "date": "2026-10-03",
@@ -425,9 +425,12 @@
     },
     "github": {
       "repository_url": "https://github.com/MikeIronSyd/littlefurther",
-      "private": true,
+      "private": false,
       "owner": "MikeIronSyd",
-      "publication_guidance": "docs/operations/repository-publication.md"
+      "publication_guidance": "docs/operations/repository-publication.md",
+      "visibility": "public",
+      "repository_id": 1419658733,
+      "visibility_decision": "Michael explicitly selected leaving this repository public for now on15October2026; preserve visibility. Earlier dated private checks remain historical evidence."
     },
     "continuity": "Maintain dated activities, decisions, evidence, actual results and next actions in the Miva Google Sheet and Kaneo. Preserve previous history and verify saved changes.",
     "updates": "Authorized project work is recorded as it progresses. Recurring monitoring has not been requested."
@@ -437,24 +440,31 @@
     "Shape substantial briefs with Goal, Context Pointers, Constraints and Done When.",
     "Use Impeccable and the UI/UX companion for interface work; preserve Amber/A identity and image-first references.",
     "Use meaningful project review/evidence skills and actual MCP/tool observations; distinguish hypotheses, prior tests and current checks.",
-    "Publish intended non-secret source through authorized normal Git publication and verify the intended private repository commit. See docs/operations/repository-publication.md.",
+    "Publish intended non-secret source through authorized normal Git publication and verify the intended repository commit. See docs/operations/repository-publication.md.",
     "Never publish credentials, learner databases or private runtime receipts. Global CodexRecovery excludes project source/history/data. Preserve hooks and do not activate paid services."
   ],
   "current_status": {
-    "date": "2026-10-14",
-    "summary": "Current-tree cleanup verified: 34 recording-preparation files excluded, local copies preserved, all 64 protected application/test/config files unchanged, scoped documentation checks and independent review passed. Initial private publication/readbacks and E035 saved tracker comparisons are complete. Earlier commits retain historical copies; no history purge or new application test is claimed.",
+    "date": "2026-10-15",
+    "summary": "LC01–LC07 implemented and verified locally; independent source/visual follow-up has no blocker. Shared delivery remains pending explicit approval.",
     "product_specification": "docs/specs/capstone/spec.md",
-    "application_verification": "docs/specs/capstone/verification.md",
+    "application_verification": "docs/specs/capstone/increments/learning-lifecycle-verification.md",
     "user_guide": "docs/USER_GUIDE.md",
     "architecture": "docs/ARCHITECTURE.md",
     "development": "docs/DEVELOPMENT.md",
     "presentation": "docs/specs/capstone/increments/repository-presentation.md",
     "reconciliation": "docs/specs/capstone/increments/status-reconciliation.md",
-    "tracker_record": "docs/operations/repository-publication.md#local-only-recording-material",
-    "evidence_boundary": "Recording preparation is local-only. This documentation cleanup does not change the application or establish a new application test pass; historical commits retain earlier copies.",
+    "evidence_boundary": "French enlarged deletion capture has a documented fixed skip-link overlay. No ordinary learner mutation/live provider call, secure-erasure/provider-recall claim, learner outcome, exhaustive accessibility or new Docker-platform verification.",
     "packaging": "docs/specs/capstone/increments/docker.md",
     "packaging_verification": "docs/specs/capstone/increments/docker-verification.md",
-    "packaging_status": "DK01–DK08 verified within recorded scope: clean LinuxAMD64/emulatedARM64; synthetic persistence/restore/mockAI;5container browser;required85domain/server+94browser/static/build/process/audit pass;independentreview;E031D019savedexact17Sheetvalues and fullKaneo history; reviewed source normallypublished/readback. Documentarycloseout uses same normalpublication and finalreadback."
+    "packaging_status": "DK01–DK08 verified within recorded scope: clean LinuxAMD64/emulatedARM64; synthetic persistence/restore/mockAI;5container browser;required85domain/server+94browser/static/build/process/audit pass;independentreview;E031D019savedexact17Sheetvalues and fullKaneo history; reviewed source normallypublished/readback. Documentarycloseout uses same normalpublication and finalreadback.",
+    "active_specification": "docs/specs/capstone/increments/learning-lifecycle.md",
+    "review": "docs/specs/capstone/reviews/2026-10-15-learning-lifecycle-review.md",
+    "visual": "docs/specs/capstone/designs/learning-lifecycle/README.md",
+    "checks": "15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only. Six final actual captures: no measured overflow,44px visible targets;9source hashes match. Browser MCP observed archive/FR/cancel/restore;16docs/259links/13anchors/10PNG/26labels validated. Enlarged-FR skip-link capture limitation retained.",
+    "calendar": "docs/specs/capstone/increments/planning-calendar.md",
+    "calendar_verification": "docs/specs/capstone/increments/planning-calendar-verification.md",
+    "delivery": "Local files and tracker draft only. No commit/push/shared write authorized or performed; concrete content and destinations require Michael's explicit approval.",
+    "tracker_sync": "Pending explicit approval of a concrete update; local draft retained. Prior E035 and earlier saved tracker history remain historical records, not a write for this increment."
   },
   "status_reconciliation": {
     "date": "2026-10-14",
@@ -506,5 +516,46 @@
     "status": "Current-tree cleanup verified: 34 recording-preparation files excluded, local copies preserved, all 64 protected application/test/config files unchanged, scoped documentation checks and independent review passed. Initial private publication/readbacks and E035 saved tracker comparisons are complete. Earlier commits retain historical copies; no history purge or new application test is claimed.",
     "tracker_sync": "E035 saved through browser MCP: exactly 11 Sheet values; no unexpected/style/formula/structure changes; unique E035 and complete 43904-character prior Context suffix (final 45010). Kaneo final 185352 text/219196 HTML retains complete prior 182523 text/215971 HTML; Saved/reload/title/status/date/board unchanged.",
     "source_artifact": "6f90191a4587845f60a692155aa2b581cf86aec7"
+  },
+  "planning_calendar": {
+    "date": "2026-10-14",
+    "specification": "docs/specs/capstone/increments/planning-calendar.md",
+    "verification": "docs/specs/capstone/increments/planning-calendar-verification.md",
+    "review": "docs/specs/capstone/reviews/2026-10-14-planning-calendar-review.md",
+    "research": "R43 closed before frontend edits: native selection/API/accessibility/lifetime research plus four inspected precode references and an actual isolated Edge calendar popup. Later optional-label reference and two source-traced edge-case addenda preceded their corrections.",
+    "scope": "Native availability picker with unique chronological add/remove list; optional manual-topic label and unambiguous AI review; ISO API/schema/dependencies unchanged.",
+    "checks": "Earlier focused results and user-requested recording pause are preserved. 15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only.",
+    "status": "Implemented and included in the passing15October combined lifecycle verification. No commit, push or shared tracker write authorized/performed.",
+    "limitations": "Synthetic isolated verification/mocked responses only; no live sponsored request, ordinary learner-data change, fresh Docker-platform run, learner outcome or timed recording. Native calendar appearance and language are browser-controlled."
+  },
+  "learning_lifecycle": {
+    "date": "2026-10-15",
+    "specification": "docs/specs/capstone/increments/learning-lifecycle.md",
+    "verification": "docs/specs/capstone/increments/learning-lifecycle-verification.md",
+    "review": "docs/specs/capstone/reviews/2026-10-15-learning-lifecycle-review.md",
+    "visual": "docs/specs/capstone/designs/learning-lifecycle/README.md",
+    "research": "R44 complete before production edits; content-free receipts, owner/revision lifecycle rules, latest snapshot/current correction recovery and rotating encouragement IDs verified in source and isolated feasibility research.",
+    "scope": "Whole-plan archive/view/restore/delete; session/reflection removal; retained completion corrections; removed-step recovery with optional historical links; own encouragement withdrawal. No account deletion or reversible circle archive.",
+    "status": "LC01–LC07 implemented and verified locally; independent source/visual follow-up has no blocker. Shared delivery remains pending explicit approval.",
+    "checks": "15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only. Six final actual captures: no measured overflow,44px visible targets;9source hashes match. Browser MCP observed archive/FR/cancel/restore;16docs/259links/13anchors/10PNG/26labels validated. Enlarged-FR skip-link capture limitation retained.",
+    "limitations": "French enlarged deletion capture has a documented fixed skip-link overlay. No ordinary learner mutation/live provider call, secure-erasure/provider-recall claim, learner outcome, exhaustive accessibility or new Docker-platform verification.",
+    "delivery": "Local files and tracker draft only. No commit/push/shared write authorized or performed; concrete content and destinations require Michael's explicit approval."
+  },
+  "active_increment": {
+    "id": "learning-lifecycle",
+    "name": "Archive, deletion and recovery controls",
+    "date": "2026-10-15",
+    "status": "LC01–LC07 implemented and locally verified; independent review has no blocker. 15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only. No commit, push or shared write approved/performed.",
+    "specification": "docs/specs/capstone/increments/learning-lifecycle.md",
+    "verification": "docs/specs/capstone/increments/learning-lifecycle-verification.md",
+    "baseline": "c3a07fe96247808bb0c20ebd77c5e8a22e7e6535",
+    "formal_review": {
+      "status": "D016 baseline approved; later AI-surface human review remains separate.",
+      "baseline": "a768c98",
+      "record": "docs/specs/capstone/design.md#overall-design-approval--12-october-2026",
+      "boundary": "Historical pipeline sessions/URLs are not active approval gates or newly completed tool receipts."
+    },
+    "tracker_sync": "Pending explicit approval of a concrete update; local draft retained. Prior E035 and earlier saved tracker history remain historical records, not a write for this increment.",
+    "next": "Review local source/evidence and tracker draft. Obtain Michael’s explicit approval of concrete content/destinations before any commit, push or shared write."
   }
 }

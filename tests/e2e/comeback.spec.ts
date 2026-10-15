@@ -39,15 +39,16 @@ async function prepare(page: Page): Promise<PlanDetail> {
   });
   const first = created.plan.steps[0];
   expect(first).toBeDefined();
-  await mutate(page, `/api/plans/${created.plan.id}/activities`, {
+  const studied = await mutate<PlanDetail>(page, `/api/plans/${created.plan.id}/activities`, {
     requestId: randomUUID(),
+    revision: created.plan.revision,
     stepId: first?.id,
     minutes: 3,
     reflection: "Synthetic private note kept intact",
   });
   const completed = await mutate<PlanDetail>(page, `/api/plans/${created.plan.id}/completions`, {
     requestId: randomUUID(),
-    revision: created.plan.revision,
+    revision: studied.plan.revision,
     stepId: first?.id,
   });
   await page.reload();
@@ -112,7 +113,7 @@ test("CB01/02/03/05: preview, cancel, acknowledged confirmation and five-minute 
   const studied = await readPlan(page, before.plan.id);
   expect(studied.progress.completed).toBe(1);
   expect(studied.progress.studiedMinutes).toBe(8);
-  expect(studied.plan.revision).toBe(saved.plan.revision);
+  expect(studied.plan.revision).toBe(saved.plan.revision + 1);
 });
 
 test("CB03: Amber preview retains dates in light, dark and French mobile layouts", async ({

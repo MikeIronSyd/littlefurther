@@ -2024,3 +2024,208 @@ input[type="checkbox"] {
     border: 1px solid CanvasText;
   }
 }
+
+.availability-picker {
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.availability-picker > legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.availability-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px auto;
+  gap: 10px;
+  align-items: end;
+}
+.availability-open {
+  width: 44px;
+  min-height: 44px;
+  padding: 10px;
+}
+.availability-open .icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+.availability-selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 12px 0;
+  list-style: none;
+}
+.availability-date {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-inline-start: 12px;
+  border: 1px solid var(--control-line);
+  border-radius: 6px;
+  background: var(--surface);
+  max-width: 100%;
+}
+.availability-date-label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.availability-date > .button {
+  flex-shrink: 0;
+}
+.availability-picker > .hint {
+  margin-block: 8px;
+}
+.availability-status:empty {
+  display: none;
+}
+@media (max-width: 600px) {
+  .availability-controls {
+    grid-template-columns: minmax(0, 1fr) 44px;
+  }
+  .availability-add {
+    grid-column: 1 / -1;
+  }
+  .availability-selected {
+    display: grid;
+  }
+  .availability-date {
+    justify-content: space-between;
+  }
+}
+@media (forced-colors: active) {
+  .availability-date {
+    border-color: CanvasText;
+    background: Canvas;
+  }
+}
+
+/* Contextual lifecycle actions share the incumbent secondary-button treatment. */
+.lifecycle-actions,
+.journey-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+.lifecycle-journey-row {
+  display: block;
+}
+.journey-summary {
+  margin-bottom: 16px;
+  min-width: 0;
+}
+.journey-summary h2,
+.lifecycle-context,
+.removed-steps h3,
+.archived-plan-view h2,
+.archived-plan-view h3 {
+  overflow-wrap: anywhere;
+}
+.lifecycle-action {
+  min-width: 0;
+  max-width: 100%;
+}
+.lifecycle-action:has(.lifecycle-panel:not(:empty)) {
+  flex-basis: 100%;
+  width: 100%;
+}
+.lifecycle-panel:not(:empty) {
+  margin-top: 12px;
+}
+.lifecycle-confirmation {
+  background: var(--amber-band);
+  color: var(--amber-ink);
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 0;
+  max-width: 75ch;
+}
+.lifecycle-confirmation h3 {
+  margin-top: 0;
+}
+.lifecycle-confirmation .hint {
+  color: inherit;
+}
+.lifecycle-confirmation .lifecycle-actions {
+  margin-top: 18px;
+}
+.lifecycle-context {
+  font-weight: 600;
+}
+.lifecycle-status:not(:empty) {
+  margin-top: 16px;
+}
+.lifecycle-status > .button {
+  margin: 10px 10px 0 0;
+}
+.button.danger {
+  color: var(--error);
+}
+.history-entry > .lifecycle-actions,
+.path-copy > .lifecycle-action,
+.path-source-body > .lifecycle-action {
+  margin-top: 14px;
+}
+.path-copy {
+  flex: 1;
+  min-width: 0;
+}
+.path-step:has(.lifecycle-confirmation) {
+  align-items: flex-start;
+}
+.historical-links {
+  min-width: 0;
+  padding: 0;
+  margin: 20px 0;
+  border: 0;
+}
+.historical-links legend {
+  font-weight: 600;
+}
+.historical-link-choice {
+  margin-top: 10px;
+  overflow-wrap: anywhere;
+}
+.historical-link-choice .resource-link {
+  margin-inline-start: 36px;
+  font-size: 0.875rem;
+}
+.archived-plan-view > .activity-records,
+.archived-plan-view > .references,
+.removed-steps {
+  margin-top: 32px;
+}
+.archived-plan-view > .page-heading > .text-button {
+  min-width: 44px;
+}
+.archived-path {
+  padding-inline-start: 24px;
+}
+@media (max-width: 799px) {
+  .lifecycle-confirmation {
+    padding: 16px;
+  }
+  .journey-controls,
+  .plan-lifecycle-actions {
+    width: 100%;
+  }
+  .lifecycle-actions > .button,
+  .lifecycle-action > .button {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+@media (forced-colors: active) {
+  .lifecycle-confirmation {
+    border: 1px solid CanvasText;
+  }
+  .button.danger {
+    color: ButtonText;
+  }
+}

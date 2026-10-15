@@ -1,6 +1,9 @@
 import {
   LIMITS,
   type ActivityInput,
+  type CircleWithdrawalInput,
+  type PlanActionInput,
+  type RestoreStepInput,
   type ComebackConfirmInput,
   type ComebackPreviewInput,
   type CompletionInput,
@@ -165,12 +168,45 @@ export function updatePlanInput(value: unknown): UpdatePlanInput {
     revision: integer(input.revision, "revision", 1, Number.MAX_SAFE_INTEGER),
   };
 }
+export function planActionInput(value: unknown): PlanActionInput {
+  const input = record(value);
+  keys(input, ["requestId", "revision"]);
+  return {
+    requestId: identifier(input.requestId, "requestId"),
+    revision: integer(input.revision, "revision", 1, Number.MAX_SAFE_INTEGER),
+  };
+}
+export function restoreStepInput(value: unknown): RestoreStepInput {
+  const input = record(value);
+  keys(input, ["requestId", "revision", "scopeEventId", "references", "acknowledgeConflicts"]);
+  if (!Array.isArray(input.references) || input.references.length > LIMITS.references)
+    bad("references");
+  if (typeof input.acknowledgeConflicts !== "boolean") bad("acknowledgeConflicts");
+  const references = input.references.map(safeUrl);
+  if (new Set(references).size !== references.length) bad("references");
+  return {
+    requestId: identifier(input.requestId, "requestId"),
+    revision: integer(input.revision, "revision", 1, Number.MAX_SAFE_INTEGER),
+    scopeEventId: identifier(input.scopeEventId, "scopeEventId"),
+    references,
+    acknowledgeConflicts: input.acknowledgeConflicts,
+  };
+}
+export function circleWithdrawalInput(value: unknown): CircleWithdrawalInput {
+  const input = record(value);
+  keys(input, ["requestId", "encouragementId"]);
+  return {
+    requestId: identifier(input.requestId, "requestId"),
+    encouragementId: identifier(input.encouragementId, "encouragementId"),
+  };
+}
 export function activityInput(value: unknown): ActivityInput {
   const input = record(value);
-  keys(input, ["requestId", "stepId", "minutes", "reflection"]);
+  keys(input, ["requestId", "revision", "stepId", "minutes", "reflection"]);
   return {
     requestId: identifier(input.requestId, "requestId"),
     stepId: identifier(input.stepId, "stepId"),
+    revision: integer(input.revision, "revision", 1, Number.MAX_SAFE_INTEGER),
     minutes: integer(input.minutes, "minutes", 1, LIMITS.minutes),
     ...(input.reflection === undefined
       ? {}

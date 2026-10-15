@@ -11,6 +11,7 @@ import {
   type CircleItemKind,
   type CircleRequestInput,
   type CircleSummary,
+  type CircleWithdrawalInput,
   type CreateCircleInput,
   type EncouragementPreset,
   type RedeemCircleInviteInput,
@@ -499,7 +500,7 @@ export class CircleStore {
           throw new DomainError("not_allowed", 403);
         this.database
           .prepare(`INSERT INTO circle_encouragement(id,circle_id,item_id,sender_member_id,preset,created_at) VALUES(?,?,?,?,?,?)
-        ON CONFLICT(item_id,sender_member_id) DO UPDATE SET preset=excluded.preset,created_at=excluded.created_at`)
+        ON CONFLICT(item_id,sender_member_id) DO UPDATE SET id=excluded.id,preset=excluded.preset,created_at=excluded.created_at`)
           .run(
             randomUUID(),
             circleId,
@@ -508,6 +509,42 @@ export class CircleStore {
             input.preset,
             this.clock().toISOString(),
           );
+        return itemId;
+      },
+    );
+    return ok();
+  }
+
+  withdrawEncouragement(
+    user: string,
+    circleId: string,
+    itemId: string,
+    input: CircleWithdrawalInput,
+  ): { ok: true } {
+    this.write(
+      user,
+      circleId,
+      input,
+      `item:encouragement:withdraw:${circleId}:${itemId}`,
+      "item",
+      false,
+      (access) => {
+        this.item(circleId, itemId);
+        const current = this.database
+          .prepare(
+            "SELECT id FROM circle_encouragement WHERE circle_id=? AND item_id=? AND sender_member_id=?",
+          )
+          .get(circleId, itemId, access.member_id) as { id: string } | undefined;
+        if (!current) throw new DomainError("not_found", 404);
+        if (current.id !== input.encouragementId)
+          throw new DomainError("encouragement_changed", 409);
+        this.database
+          .prepare(
+            "DELETE FROM circle_encouragement WHERE circle_id=? AND item_id=? AND sender_member_id=? AND id=?",
+          )
+          .run(circleId, itemId, access.member_id, input.encouragementId);
+        // The receipt targets the still-shared item. Retrying withdrawal acknowledges
+        // the original removal without touching an encouragement deliberately re-added later.
         return itemId;
       },
     );

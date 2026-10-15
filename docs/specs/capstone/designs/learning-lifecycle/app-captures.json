@@ -1,0 +1,603 @@
+{
+  "observedAt": "2026-10-15T09:04:34.738Z",
+  "baseRevision": "c3a07fe96247808bb0c20ebd77c5e8a22e7e6535",
+  "sourceState": "uncommitted combined lifecycle/planning-calendar working tree",
+  "sourceHashes": {
+    "src/client/main.ts": "c1c4f3ff6553d2a7a9b3d19ca19d69a93933c9312017e641feca0de27eaffbb7",
+    "src/client/journey.ts": "22c2526833f784d819ec69c7b9fa46a9ff6314c9da2c23990bd0bfc7c130178e",
+    "src/client/learning-lifecycle.ts": "8ccafb26ffbe3ecaee23b1ea6a84d18938115f648367103044253910ac8a10ac",
+    "src/client/circle.ts": "760df00821abb22f80fac89e8aecced15e9fd058828d04a28731b48bf5aacb19",
+    "src/client/i18n.ts": "c2405da949df08349207d96719e66e6b1534de2cebd246b7acdd64277402a071",
+    "src/client/styles.css": "5caa6fa3fa23768487783700249f611e2759ba9931875475133693eb6acbde38",
+    "src/shared/contracts.ts": "f1fb5faf12808ded67383f2c8dce49612bd9b1585a54637076d76fcfc2c41805",
+    "src/server/app.ts": "162b869e351666cdacaa5ac92c97d2dcf9a2b7fe6855a90835314125891593c6",
+    "src/server/store.ts": "b7a5c18691473b2d8be9012a4eff593953551dabace8bb42c83c83d1896720e0"
+  },
+  "classification": "actual application interface; synthetic isolated records; AI disabled; no provider calls",
+  "baseURL": "http://localhost:4335",
+  "dataDirectory": ".local/learning-lifecycle/browser-data",
+  "browser": "installed Microsoft Edge through Playwright, headless",
+  "rows": [
+    {
+      "name": "activity-corrected-light-en",
+      "file": "docs/specs/capstone/designs/learning-lifecycle/app-activity-corrected-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "textScale": 100,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "captureDimensions": {
+        "width": 1440,
+        "height": 1570
+      },
+      "noHorizontalOverflow": true,
+      "buttonTargetsAtLeast44": true,
+      "scope": "full page"
+    },
+    {
+      "name": "journeys-active-light-en",
+      "file": "docs/specs/capstone/designs/learning-lifecycle/app-journeys-active-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "textScale": 100,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "captureDimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "noHorizontalOverflow": true,
+      "buttonTargetsAtLeast44": true,
+      "scope": "full page"
+    },
+    {
+      "name": "delete-confirmation-light-en",
+      "file": "docs/specs/capstone/designs/learning-lifecycle/app-delete-confirmation-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "textScale": 100,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "captureDimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "noHorizontalOverflow": true,
+      "buttonTargetsAtLeast44": true,
+      "scope": "full page"
+    },
+    {
+      "name": "archived-readonly-dark-en",
+      "file": "docs/specs/capstone/designs/learning-lifecycle/app-archived-readonly-dark-en.png",
+      "locale": "en",
+      "theme": "dark",
+      "textScale": 100,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "captureDimensions": {
+        "width": 1440,
+        "height": 1554
+      },
+      "noHorizontalOverflow": true,
+      "buttonTargetsAtLeast44": true,
+      "scope": "full page"
+    },
+    {
+      "name": "removed-preview-dark-fr",
+      "file": "docs/specs/capstone/designs/learning-lifecycle/app-removed-preview-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "textScale": 100,
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "captureDimensions": {
+        "width": 296,
+        "height": 1205
+      },
+      "noHorizontalOverflow": true,
+      "buttonTargetsAtLeast44": true,
+      "scope": "focused actual application element"
+    },
+    {
+      "name": "delete-confirmation-light-fr-enlarged",
+      "file": "docs/specs/capstone/designs/learning-lifecycle/app-delete-confirmation-light-fr-enlarged.png",
+      "locale": "fr",
+      "theme": "light",
+      "textScale": 200,
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "captureDimensions": {
+        "width": 296,
+        "height": 1752
+      },
+      "noHorizontalOverflow": true,
+      "buttonTargetsAtLeast44": true,
+      "scope": "focused actual application element"
+    }
+  ],
+  "checks": [
+    {
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "buttonTargets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Sign out",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Summarize my progress",
+          "width": 212.578125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Delete study session",
+          "width": 185.703125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Remove private reflection",
+          "width": 224.046875,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "name": "activity-corrected-light-en",
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "keyboard traversal",
+      "archiveTriggerReachedByTab": true
+    },
+    {
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "buttonTargets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Preferences",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Sign out",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Create a learning plan",
+          "width": 197.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Open journey",
+          "width": 136.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Archive plan",
+          "width": 127.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Delete permanently",
+          "width": 181.09375,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "name": "journeys-active-light-en",
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "buttonTargets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Preferences",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Sign out",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Create a learning plan",
+          "width": 197.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Open journey",
+          "width": 136.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Archive plan",
+          "width": 127.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Delete permanently",
+          "width": 181.09375,
+          "height": 46,
+          "disabled": true
+        },
+        {
+          "label": "Cancel",
+          "width": 85.828125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Delete permanently",
+          "width": 181.09375,
+          "height": 46,
+          "disabled": true
+        }
+      ],
+      "name": "delete-confirmation-light-en",
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "confirmation cancellation",
+      "triggerFocusRestored": true,
+      "uncheckedDeletionCannotSubmit": true
+    },
+    {
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "buttonTargets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Switch to light mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Preferences",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Sign out",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Back",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Restore plan",
+          "width": 128.375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Delete permanently",
+          "width": 181.09375,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "name": "archived-readonly-dark-en",
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "viewportWidth": 320,
+      "viewportHeight": 900,
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "buttonTargets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Préférences",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Se déconnecter",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Résumer mes progrès",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Supprimer la séance d’étude",
+          "width": 244.359375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Retirer la réflexion privée",
+          "width": 220.234375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Vérifier la restauration de l’étape",
+          "width": 275.0625,
+          "height": 46,
+          "disabled": true
+        },
+        {
+          "label": "Annuler",
+          "width": 95.359375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Restaurer l’étape",
+          "width": 160.0625,
+          "height": 46,
+          "disabled": true
+        }
+      ],
+      "name": "removed-preview-dark-fr",
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "viewportWidth": 320,
+      "viewportHeight": 900,
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "buttonTargets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Préférences",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Se déconnecter",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Résumer mes progrès",
+          "width": 262,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Supprimer la séance d’étude",
+          "width": 244.359375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Retirer la réflexion privée",
+          "width": 220.234375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Vérifier la restauration de l’étape",
+          "width": 275.0625,
+          "height": 46,
+          "disabled": true
+        },
+        {
+          "label": "Annuler",
+          "width": 95.359375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Restaurer l’étape",
+          "width": 160.0625,
+          "height": 46,
+          "disabled": true
+        }
+      ],
+      "name": "removed-preview-fr-forced-colours-reduced-motion",
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "forced colours and reduced motion",
+      "overflowAndTargetsMeasured": true,
+      "scope": "FR320 removed-step preview; no exhaustive system-colour audit"
+    },
+    {
+      "viewportWidth": 320,
+      "viewportHeight": 900,
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "buttonTargets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode sombre",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Préférences",
+          "width": 199.546875,
+          "height": 68,
+          "disabled": false
+        },
+        {
+          "label": "Se déconnecter",
+          "width": 199.546875,
+          "height": 116,
+          "disabled": false
+        },
+        {
+          "label": "Créer un parcours",
+          "width": 296,
+          "height": 118,
+          "disabled": false
+        },
+        {
+          "label": "Ouvrir le parcours",
+          "width": 296,
+          "height": 118,
+          "disabled": false
+        },
+        {
+          "label": "Archiver le programme",
+          "width": 296,
+          "height": 118,
+          "disabled": false
+        },
+        {
+          "label": "Supprimer définitivement",
+          "width": 296,
+          "height": 118,
+          "disabled": true
+        },
+        {
+          "label": "Annuler",
+          "width": 152.703125,
+          "height": 70,
+          "disabled": false
+        },
+        {
+          "label": "Supprimer définitivement",
+          "width": 264,
+          "height": 118,
+          "disabled": true
+        }
+      ],
+      "name": "delete-confirmation-light-fr-enlarged",
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "historical link/conflict defaults",
+      "historicalLinksUnchecked": true,
+      "conflictsUnchecked": true,
+      "restorationDisabledUntilAcknowledgement": true
+    }
+  ],
+  "externalBrowserRequests": [],
+  "limits": [
+    "No live provider calls or AI response review",
+    "Native OS date-popup appearance not rechecked in this lifecycle capture",
+    "Forced colours/reduced motion checked in one mobile restoration state; no exhaustive conformance claim",
+    "No ordinary learner record used or modified",
+    "Application test pipeline and independent visual review are separate"
+  ]
+}

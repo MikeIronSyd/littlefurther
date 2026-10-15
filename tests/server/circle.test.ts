@@ -159,6 +159,7 @@ test("real-session circles enforce private copies, one-use invitations and lifec
         privateDetail = await json<PlanDetail>(
           await request(`/api/plans/${privateDetail.plan.id}/activities`, "alpha", {
             ...key(),
+            revision: privateDetail.plan.revision,
             stepId: privateDetail.plan.steps[0]?.id,
             minutes: 5,
             reflection: "NEVER SHARED REFLECTION",
@@ -299,6 +300,10 @@ test("real-session circles enforce private copies, one-use invitations and lifec
           [`/api/circles/${id}/leave`, key()],
           [`/api/circles/${id}/members/${member.id}/remove`, key()],
           [`/api/circles/${id}/close`, key()],
+          [
+            `/api/circles/${id}/items/${itemId}/encouragement/withdraw`,
+            { ...key(), encouragementId: randomUUID() },
+          ],
         ];
         for (const [route, body] of routes) {
           await error(await request(route, "", body), 401, "unauthenticated");
@@ -462,6 +467,77 @@ test("real-session circles enforce private copies, one-use invitations and lifec
         } finally {
           db.close();
         }
+      },
+    );
+    await t.test(
+      "withdrawal validates current own identity and cannot remove a fresh re-add on retry",
+      async () => {
+        const route = `/api/circles/${id}/items/${ownerItem}/encouragement/withdraw`;
+        const original = (await detail("bravo")).items.find((item) => item.id === ownerItem)
+          ?.encouragements[0];
+        assert.ok(original);
+        await error(
+          await request(route, "bravo", {
+            ...key(),
+            encouragementId: original.id,
+            preset: "keep_going",
+          }),
+          400,
+          "invalid_input",
+        );
+        await error(
+          await request(route, "bravo", { ...key(), encouragementId: "invalid" }),
+          400,
+          "invalid_input",
+        );
+        await error(
+          await request(route, "alpha", { ...key(), encouragementId: original.id }),
+          404,
+          "not_found",
+        );
+        const withdrawal = { ...key(), encouragementId: original.id };
+        assert.deepEqual(await json(await request(route, "bravo", withdrawal)), { ok: true });
+        assert.deepEqual(
+          (await detail()).items.find((item) => item.id === ownerItem)?.encouragements,
+          [],
+        );
+        assert.deepEqual(await json(await request(route, "bravo", withdrawal)), { ok: true });
+        await json(
+          await request(
+            `/api/circles/${id}/items/${ownerItem}/encouragement`,
+            "bravo",
+            encouragementInput,
+          ),
+        );
+        assert.deepEqual(
+          (await detail()).items.find((item) => item.id === ownerItem)?.encouragements,
+          [],
+        );
+        await json(
+          await request(`/api/circles/${id}/items/${ownerItem}/encouragement`, "bravo", {
+            ...key(),
+            preset: "glad_you_returned",
+          }),
+        );
+        const fresh = (await detail()).items.find((item) => item.id === ownerItem)
+          ?.encouragements[0];
+        assert.ok(fresh);
+        assert.notEqual(fresh.id, original.id);
+        assert.deepEqual(await json(await request(route, "bravo", withdrawal)), { ok: true });
+        assert.deepEqual(
+          (await detail()).items.find((item) => item.id === ownerItem)?.encouragements,
+          [fresh],
+        );
+        await error(
+          await request(route, "bravo", { ...key(), encouragementId: original.id }),
+          409,
+          "encouragement_changed",
+        );
+        await error(
+          await request(route, "bravo", { ...withdrawal, encouragementId: fresh.id }),
+          409,
+          "idempotency_conflict",
+        );
       },
     );
     await t.test("nested resources from another circle cannot be acted on", async () => {

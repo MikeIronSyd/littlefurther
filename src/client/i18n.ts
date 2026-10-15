@@ -2,6 +2,74 @@ import type { Locale } from "../shared/contracts.js";
 import { APP_NAME } from "./branding.js";
 
 const en = {
+  plansStatus: "Show plans",
+  activePlans: "Active",
+  archivedPlans: "Archived",
+  noActivePlans: "No active learning plans.",
+  noArchivedPlans: "No archived learning plans.",
+  archivePlan: "Archive plan",
+  restorePlan: "Restore plan",
+  viewArchivedPlan: "View archived plan",
+  deletePlan: "Delete permanently",
+  archiveConfirm: "Archive this learning plan?",
+  archiveCopy: "The plan and its private history are kept. You can view or restore it later.",
+  deletePlanConfirm: "Delete this learning plan permanently?",
+  deletePlanCopy:
+    "This removes the plan and its private history from this app. It cannot be undone here. Copies already shared in circles remain. Existing backups are not erased.",
+  deletePlanCounts:
+    "{steps} steps · {sessions} study sessions · {completions} completion records · {changes} scope changes",
+  deletePlanAcknowledge:
+    "I understand that this plan and its private history will be permanently deleted.",
+  archivedTitle: "Archived learning plan",
+  archivedReadOnly: "Read-only. Restore this plan to continue learning or manage its records.",
+  archivedDate: "Archived on {date}",
+  planArchived: "Plan archived. Its private records are preserved.",
+  planRestored: "Plan restored. Its original schedule and records are preserved.",
+  planDeleted: "Plan and its private history deleted.",
+  deleteSession: "Delete study session",
+  deleteSessionConfirm: "Delete this study session?",
+  deleteSessionCopy:
+    "Its recorded minutes and private reflection will be removed. Step completion will stay unchanged.",
+  removeReflection: "Remove private reflection",
+  removeReflectionConfirm: "Remove this private reflection?",
+  removeReflectionCopy: "The session, recorded minutes and date will stay unchanged.",
+  markUnfinished: "Mark as unfinished",
+  correctCompletion: "Correct completion",
+  correctCompletionConfirm: "Correct this completion record?",
+  correctCompletionCopy:
+    "This completion stays visible as corrected and is excluded from totals. Study records remain. A newer completion will stay unchanged.",
+  completionCorrected: "Completion corrected",
+  unfinished: "Unfinished",
+  completionCorrectedCopy: "Kept in history and excluded from completion totals.",
+  recordRemoved: "Study record updated.",
+  completionCorrectionSaved: "Completion corrected. Study records are preserved.",
+  removedSteps: "Removed steps",
+  removedStepsCopy:
+    "Review steps removed from this plan. Restoring a step appends it to the path with its original date; deleted study records do not return.",
+  noRemovedSteps: "No removed steps to restore.",
+  previewRestoreStep: "Review step restoration",
+  restoreStep: "Restore step",
+  restoreStepCopy:
+    "This step will be appended to your path with its original date and current completion status. Current resources stay unchanged.",
+  historicalLinks: "Additional historical links",
+  historicalLinksCopy: "Choose any additional links to restore. None are selected automatically.",
+  restoreConflictAcknowledge: "I acknowledge the schedule conflicts shown above.",
+  stepRestored: "Step restored at the end of your learning path.",
+  stepRestoredHistory: "Step restored · {before} to {after} active steps",
+  lifecycleRetry: "Retry the same action",
+  lifecycleRefresh: "Refresh saved state",
+  lifecycleUncertain:
+    "The result is uncertain. Retry the same action or refresh saved state before continuing.",
+  lifecycleStale: "This plan changed. Refresh its saved state and review the action again.",
+  lifecycleArchived: "This plan is archived. Restore it before changing its records.",
+  lifecycleRestoreConflict:
+    "Review and acknowledge the current schedule conflicts before restoring.",
+  lifecycleRestoreLimit:
+    "Restoring would exceed the existing step or resource limit. Edit the active plan first.",
+  lifecycleSourceUnavailable:
+    "Historical resource details could not be restored safely. Refresh and review this step again.",
+  removeMyEncouragement: "Remove my encouragement",
+  circleEncouragementChanged: "Your encouragement changed. Refresh the circle before removing it.",
   aiPlanTitle: "Get help drafting your plan",
   aiDraftPlan: "Draft my plan with AI",
   aiPlanDisclosure:
@@ -35,7 +103,7 @@ const en = {
   aiCircleDisclosure:
     "Only your typed draft, message kind and language are sent to OpenAI. Your learning plan, private reflections and other people's posts are not sent. Use, preview and share are separate actions.",
   aiUseCircle: "Use this wording",
-  aiUsePlan: "Use this draft for review",
+  aiUsePlan: "Review AI draft",
   aiPending: "Preparing a suggestion… You can cancel or continue manually.",
   aiCancel: "Cancel AI request",
   aiCancelled: "Request cancelled. Your existing work is unchanged.",
@@ -364,8 +432,9 @@ const en = {
   manual: "My own topics or course sections",
   templateHint:
     "Starter actions are suggestions. Estimates are editable. Manual drafts use the selected template or your topics.",
-  topics: "Your topics or sections",
-  topicsHint: "One action per line. Bring the topics from material you already use.",
+  topics: "Your topics or sections (optional)",
+  topicsHint:
+    "For a manual plan, add one action per line. For an AI plan, use Draft my plan with AI below; you do not need to enter topics here.",
   makeDraft: "Review draft steps",
   templateSources: "Template sources",
   templateSourcesUnavailable:
@@ -374,8 +443,19 @@ const en = {
   outcome: "Supported outcome",
   checked: "Checked {date}",
   availability: "Dates you are available",
+  availabilityChoose: "Choose a date",
+  availabilityOpen: "Open calendar",
+  availabilityAdd: "Add date",
+  availabilityEmpty: "No dates selected yet.",
+  availabilityPending: "Click Add date to include this date.",
+  availabilityCount: "{count} of {max} dates selected",
+  availabilityAdded: "{date} added.",
+  availabilityRemoved: "{date} removed.",
+  availabilityDuplicate: "{date} is already selected.",
+  availabilityRemove: "Remove {date}",
+  availabilityPickRequired: "Choose a date to add.",
   availabilityHint:
-    "Use year-month-day, for example 2026-10-14. Separate dates with commas or new lines: 2026-10-14, 2026-10-16. You can study at your own pace.",
+    "Choose a date in the calendar, then add it to your availability. Remove dates you no longer need. At the limit, remove a date before adding another.",
   referenceLinks: "Reference links (optional)",
   referenceHint:
     "Up to 10 links, one per line, starting with http:// or https://. Links are saved without fetching their content.",
@@ -393,7 +473,7 @@ const en = {
   stepRemoved: "Step removed. Active steps: {total}.",
   editingStepContext: "Editing step {number} of {total}.",
   availabilityRequired: "Add at least one available date.",
-  availabilityInvalid: "Fix these dates: {dates}. Use YYYY-MM-DD from 2000-01-01 to 2100-12-31.",
+  availabilityInvalid: "Choose a valid date from 2000-01-01 to 2100-12-31.",
   availabilityTooMany: "Use at most {max} available dates.",
   topicsRequired: "Add at least one topic or section, one action per line.",
   topicsTooMany: "Use at most {max} topics or sections, one action per line.",
@@ -446,6 +526,81 @@ const en = {
 
 type MessageKey = keyof typeof en;
 const fr: Record<MessageKey, string> = {
+  plansStatus: "Afficher les programmes",
+  activePlans: "Actifs",
+  archivedPlans: "Archivés",
+  noActivePlans: "Aucun programme d’étude actif.",
+  noArchivedPlans: "Aucun programme d’étude archivé.",
+  archivePlan: "Archiver le programme",
+  restorePlan: "Restaurer le programme",
+  viewArchivedPlan: "Voir le programme archivé",
+  deletePlan: "Supprimer définitivement",
+  archiveConfirm: "Archiver ce programme d’étude ?",
+  archiveCopy:
+    "Le programme et son historique privé sont conservés. Vous pourrez les consulter ou les restaurer plus tard.",
+  deletePlanConfirm: "Supprimer définitivement ce programme d’étude ?",
+  deletePlanCopy:
+    "Le programme et son historique privé seront supprimés de cette application. Cette action est irréversible ici. Les copies déjà partagées dans les cercles restent. Les sauvegardes existantes ne sont pas effacées.",
+  deletePlanCounts:
+    "{steps} étapes · {sessions} séances d’étude · {completions} enregistrements de fin · {changes} modifications du parcours",
+  deletePlanAcknowledge:
+    "Je comprends que ce programme et son historique privé seront définitivement supprimés.",
+  archivedTitle: "Programme d’étude archivé",
+  archivedReadOnly:
+    "Lecture seule. Restaurez ce programme pour continuer à apprendre ou gérer ses enregistrements.",
+  archivedDate: "Archivé le {date}",
+  planArchived: "Programme archivé. Ses enregistrements privés sont conservés.",
+  planRestored:
+    "Programme restauré. Son calendrier et ses enregistrements d’origine sont conservés.",
+  planDeleted: "Programme et historique privé supprimés.",
+  deleteSession: "Supprimer la séance d’étude",
+  deleteSessionConfirm: "Supprimer cette séance d’étude ?",
+  deleteSessionCopy:
+    "Ses minutes enregistrées et sa réflexion privée seront supprimées. La validation de l’étape restera inchangée.",
+  removeReflection: "Retirer la réflexion privée",
+  removeReflectionConfirm: "Retirer cette réflexion privée ?",
+  removeReflectionCopy: "La séance, les minutes enregistrées et la date resteront inchangées.",
+  markUnfinished: "Marquer comme inachevée",
+  correctCompletion: "Corriger la validation",
+  correctCompletionConfirm: "Corriger cet enregistrement de fin d’étape ?",
+  correctCompletionCopy:
+    "Cette validation restera visible comme corrigée et sera exclue des totaux. Les séances d’étude sont conservées. Une validation plus récente restera inchangée.",
+  completionCorrected: "Validation corrigée",
+  unfinished: "Inachevée",
+  completionCorrectedCopy: "Conservée dans l’historique et exclue des totaux de validation.",
+  recordRemoved: "Enregistrement d’étude mis à jour.",
+  completionCorrectionSaved: "Validation corrigée. Les séances d’étude sont conservées.",
+  removedSteps: "Étapes retirées",
+  removedStepsCopy:
+    "Consultez les étapes retirées de ce programme. Restaurer une étape l’ajoute à la fin du parcours avec sa date d’origine ; les séances supprimées ne reviennent pas.",
+  noRemovedSteps: "Aucune étape retirée à restaurer.",
+  previewRestoreStep: "Vérifier la restauration de l’étape",
+  restoreStep: "Restaurer l’étape",
+  restoreStepCopy:
+    "Cette étape sera ajoutée à la fin du parcours avec sa date d’origine et son état de validation actuel. Les ressources actuelles restent inchangées.",
+  historicalLinks: "Liens historiques supplémentaires",
+  historicalLinksCopy:
+    "Choisissez les liens supplémentaires à restaurer. Aucun n’est sélectionné automatiquement.",
+  restoreConflictAcknowledge: "Je reconnais les conflits de calendrier présentés ci-dessus.",
+  stepRestored: "Étape restaurée à la fin du parcours d’apprentissage.",
+  stepRestoredHistory: "Étape restaurée · de {before} à {after} étapes actives",
+  lifecycleRetry: "Réessayer la même action",
+  lifecycleRefresh: "Actualiser l’état enregistré",
+  lifecycleUncertain:
+    "Le résultat est incertain. Réessayez la même action ou actualisez l’état enregistré avant de continuer.",
+  lifecycleStale:
+    "Ce programme a changé. Actualisez son état enregistré et vérifiez à nouveau l’action.",
+  lifecycleArchived:
+    "Ce programme est archivé. Restaurez-le avant de modifier ses enregistrements.",
+  lifecycleRestoreConflict:
+    "Vérifiez et reconnaissez les conflits de calendrier actuels avant de restaurer.",
+  lifecycleRestoreLimit:
+    "La restauration dépasserait la limite d’étapes ou de ressources. Modifiez d’abord le programme actif.",
+  lifecycleSourceUnavailable:
+    "Les détails des ressources historiques n’ont pas pu être restaurés en toute sécurité. Actualisez et vérifiez à nouveau cette étape.",
+  removeMyEncouragement: "Retirer mon encouragement",
+  circleEncouragementChanged:
+    "Votre encouragement a changé. Actualisez le cercle avant de le retirer.",
   aiPlanTitle: "Obtenir de l’aide pour préparer votre programme",
   aiDraftPlan: "Préparer mon programme avec l’IA",
   aiPlanDisclosure:
@@ -479,7 +634,7 @@ const fr: Record<MessageKey, string> = {
   aiCircleDisclosure:
     "Seuls votre brouillon saisi, le type de message et la langue sont envoyés à OpenAI. Votre programme, vos réflexions privées et les messages des autres ne sont pas envoyés. Utiliser, prévisualiser et partager sont des actions séparées.",
   aiUseCircle: "Utiliser cette formulation",
-  aiUsePlan: "Utiliser ce brouillon pour vérification",
+  aiUsePlan: "Vérifier le brouillon de l’IA",
   aiPending: "Préparation d’une suggestion… Vous pouvez annuler ou continuer manuellement.",
   aiCancel: "Annuler la demande IA",
   aiCancelled: "Demande annulée. Votre travail reste inchangé.",
@@ -817,8 +972,9 @@ const fr: Record<MessageKey, string> = {
   manual: "Mes propres sujets ou sections de cours",
   templateHint:
     "Les actions proposées et les durées estimées sont modifiables. Les brouillons manuels utilisent le modèle sélectionné ou vos sujets.",
-  topics: "Vos sujets ou sections",
-  topicsHint: "Une action par ligne, tirée du matériel que vous utilisez déjà.",
+  topics: "Vos sujets ou sections (facultatif)",
+  topicsHint:
+    "Pour un parcours manuel, ajoutez une action par ligne. Pour un parcours avec l’IA, utilisez Préparer mon programme avec l’IA ci-dessous ; aucun sujet n’est requis ici.",
   makeDraft: "Vérifier les étapes proposées",
   templateSources: "Sources du modèle",
   templateSourcesUnavailable:
@@ -827,8 +983,19 @@ const fr: Record<MessageKey, string> = {
   outcome: "Objectif du modèle",
   checked: "Vérifié le {date}",
   availability: "Vos dates disponibles",
+  availabilityChoose: "Choisir une date",
+  availabilityOpen: "Ouvrir le calendrier",
+  availabilityAdd: "Ajouter la date",
+  availabilityEmpty: "Aucune date sélectionnée.",
+  availabilityPending: "Cliquez sur Ajouter la date pour inclure cette date.",
+  availabilityCount: "{count} dates sélectionnées sur {max}",
+  availabilityAdded: "{date} ajoutée.",
+  availabilityRemoved: "{date} retirée.",
+  availabilityDuplicate: "{date} est déjà sélectionnée.",
+  availabilityRemove: "Retirer {date}",
+  availabilityPickRequired: "Choisissez une date à ajouter.",
   availabilityHint:
-    "Utilisez année-mois-jour, par exemple 2026-10-14. Séparez les dates par des virgules ou des sauts de ligne : 2026-10-14, 2026-10-16. Avancez à votre rythme.",
+    "Choisissez une date dans le calendrier, puis ajoutez-la à vos disponibilités. Retirez les dates inutiles. À la limite, retirez une date avant d’en ajouter une autre.",
   referenceLinks: "Liens de référence (facultatifs)",
   referenceHint:
     "Jusqu’à 10 liens, un par ligne, commençant par http:// ou https://. Les liens sont conservés sans télécharger leur contenu.",
@@ -847,8 +1014,7 @@ const fr: Record<MessageKey, string> = {
   stepRemoved: "Étape retirée. Étapes actives : {total}.",
   editingStepContext: "Modification de l’étape {number} sur {total}.",
   availabilityRequired: "Ajoutez au moins une date disponible.",
-  availabilityInvalid:
-    "Corrigez ces dates : {dates}. Utilisez le format AAAA-MM-JJ, du 2000-01-01 au 2100-12-31.",
+  availabilityInvalid: "Choisissez une date valide du 2000-01-01 au 2100-12-31.",
   availabilityTooMany: "Utilisez au maximum {max} dates disponibles.",
   topicsRequired: "Ajoutez au moins un sujet ou une section, une action par ligne.",
   topicsTooMany: "Utilisez au maximum {max} sujets ou sections, une action par ligne.",

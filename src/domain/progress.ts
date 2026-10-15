@@ -39,7 +39,7 @@ export function progressFor(
   return {
     completed: plan.steps.filter((step) => step.completedAt !== null).length,
     total: plan.steps.length,
-    cumulativeCompletions: completions.length,
+    cumulativeCompletions: completions.filter((event) => !event.correctedAt).length,
     activityCount: activities.length,
     studiedMinutes: activities.reduce((total, activity) => total + activity.minutes, 0),
     studyDayCount: studyDates.length,

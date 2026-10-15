@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
 import type Database from "better-sqlite3";
 import { comebackPreview } from "../domain/comeback.js";
-import { normalizedSourceUrl } from "../domain/ai-validation.js";
+import { learningSource, normalizedSourceUrl } from "../domain/ai-validation.js";
 import { conflictsFor, progressFor } from "../domain/progress.js";
 import { DomainError } from "../domain/validation.js";
 import type {
@@ -12,6 +12,10 @@ import type {
   CompletionEvent,
   CompletionInput,
   CreatePlanInput,
+  DeletedPlan,
+  PlanActionInput,
+  RemovedStep,
+  RestoreStepInput,
   LearningPlan,
   LearningSource,
   PlanFields,
@@ -21,6 +25,7 @@ import type {
   StudyActivity,
   UpdatePlanInput,
 } from "../shared/contracts.js";
+import { LIMITS } from "../shared/contracts.js";
 import { AiSourceStore } from "./ai-sources.js";
 
 interface PlanRow {
@@ -135,7 +140,7 @@ export class JourneyStore {
             "INSERT INTO learner_profile (owner_id, locale, timezone) VALUES (?, ?, ?) ON CONFLICT(owner_id) DO UPDATE SET locale=excluded.locale, timezone=excluded.timezone",
           )
           .run(owner, profile.locale, profile.timezone);
-        for (const plan of this.list(owner)) {
+        for (const plan of this.list(owner, "all")) {
           if (plan.timezone !== profile.timezone || plan.locale !== profile.locale) {
             plan.timezone = profile.timezone;
             plan.locale = profile.locale;
@@ -147,11 +152,17 @@ export class JourneyStore {
       .immediate();
   }
 
-  list(owner: string): LearningPlan[] {
+  list(owner: string, status: "active" | "archived" | "all" = "active"): LearningPlan[] {
     const rows = this.database
       .prepare("SELECT owner_id, body FROM learning_plan WHERE owner_id = ? ORDER BY rowid DESC")
       .all(owner) as PlanRow[];
-    return rows.map((row) => JSON.parse(row.body) as LearningPlan);
+    return rows
+      .map((row) => this.normalizePlan(JSON.parse(row.body) as LearningPlan))
+      .filter(
+        (plan) =>
+          status === "all" ||
+          (status === "archived" ? plan.archivedAt !== null : plan.archivedAt === null),
+      );
   }
 
   private plan(owner: string, id: string): LearningPlan {
@@ -159,7 +170,25 @@ export class JourneyStore {
       .prepare("SELECT owner_id, body FROM learning_plan WHERE id = ? AND owner_id = ?")
       .get(id, owner) as PlanRow | undefined;
     if (!row) throw new DomainError("not_found", 404);
-    return JSON.parse(row.body) as LearningPlan;
+    return this.normalizePlan(JSON.parse(row.body) as LearningPlan);
+  }
+
+  private normalizePlan(plan: LearningPlan): LearningPlan {
+    return { ...plan, archivedAt: plan.archivedAt ?? null };
+  }
+
+  private active(owner: string, id: string, revision?: number): LearningPlan {
+    const plan = this.plan(owner, id);
+    if (plan.archivedAt) throw new DomainError("plan_archived", 409);
+    if (revision !== undefined && plan.revision !== revision)
+      throw new DomainError("stale_revision", 409);
+    return plan;
+  }
+
+  private advance(plan: LearningPlan, owner: string): void {
+    plan.revision++;
+    plan.updatedAt = this.clock().toISOString();
+    this.savePlan(plan, owner);
   }
 
   detail(owner: string, id: string): PlanDetail {
@@ -173,12 +202,18 @@ export class JourneyStore {
       this.database
         .prepare("SELECT body FROM step_completion WHERE plan_id = ? ORDER BY rowid DESC")
         .all(id) as EventRow[]
-    ).map((row) => JSON.parse(row.body) as CompletionEvent);
+    ).map((row) => {
+      const event = JSON.parse(row.body) as CompletionEvent;
+      return { ...event, correctedAt: event.correctedAt ?? null };
+    });
     const scopeEvents = (
       this.database
         .prepare("SELECT body FROM scope_event WHERE plan_id = ? ORDER BY rowid DESC")
         .all(id) as EventRow[]
-    ).map((row) => JSON.parse(row.body) as ScopeEvent);
+    ).map((row) => {
+      const event = JSON.parse(row.body) as ScopeEvent;
+      return { ...event, kind: event.kind ?? "edit" };
+    });
     return {
       plan,
       activities,
@@ -196,13 +231,41 @@ export class JourneyStore {
       .run(JSON.stringify(plan), plan.id, owner);
   }
 
-  private write(
+  private receiptPlanId(value: unknown): string | null {
+    if (!value || typeof value !== "object") return null;
+    if ("planId" in value && typeof value.planId === "string") return value.planId;
+    if (
+      "plan" in value &&
+      value.plan &&
+      typeof value.plan === "object" &&
+      "id" in value.plan &&
+      typeof value.plan.id === "string"
+    )
+      return value.plan.id;
+    return null;
+  }
+
+  private scrubReceipts(owner: string, id: string): void {
+    const rows = this.database
+      .prepare("SELECT request_id, response FROM request_receipt WHERE owner_id = ?")
+      .all(owner) as { request_id: string; response: string }[];
+    const update = this.database.prepare(
+      "UPDATE request_receipt SET response = ? WHERE owner_id = ? AND request_id = ?",
+    );
+    for (const row of rows) {
+      const value: unknown = JSON.parse(row.response);
+      if (this.receiptPlanId(value) === id)
+        update.run(JSON.stringify({ planId: id }), owner, row.request_id);
+    }
+  }
+
+  private write<T extends PlanDetail | DeletedPlan>(
     owner: string,
     requestId: string,
     operation: string,
     body: unknown,
-    action: () => PlanDetail,
-  ): PlanDetail {
+    action: () => T,
+  ): T {
     const digest = createHash("sha256").update(JSON.stringify(body)).digest("hex");
     return this.database
       .transaction(() => {
@@ -214,14 +277,29 @@ export class JourneyStore {
         if (receipt) {
           if (receipt.operation !== operation || receipt.digest !== digest)
             throw new DomainError("idempotency_conflict", 409);
-          return JSON.parse(receipt.response) as PlanDetail;
+          const value: unknown = JSON.parse(receipt.response);
+          const planId = this.receiptPlanId(value);
+          if (!planId) throw new DomainError("not_found", 404);
+          if (operation === `delete:${planId}`) return { deletedPlanId: planId } as T;
+          const result = this.detail(owner, planId);
+          if (
+            !operation.startsWith("archive:") &&
+            !operation.startsWith("restore:") &&
+            result.plan.archivedAt
+          )
+            throw new DomainError("plan_archived", 409);
+          return result as T;
         }
         const result = action();
+        const response =
+          "plan" in result
+            ? { planId: result.plan.id }
+            : { planId: result.deletedPlanId, deleted: true };
         this.database
           .prepare(
             "INSERT INTO request_receipt (owner_id, request_id, operation, digest, response) VALUES (?, ?, ?, ?, ?)",
           )
-          .run(owner, requestId, operation, digest, JSON.stringify(result));
+          .run(owner, requestId, operation, digest, JSON.stringify(response));
         return result;
       })
       .immediate();
@@ -239,6 +317,7 @@ export class JourneyStore {
         templateId: input.templateId,
         templateVersion: input.templateId === null ? null : 1,
         revision: 1,
+        archivedAt: null,
         timezone: profile.timezone,
         locale: profile.locale,
         availabilityDates: input.availabilityDates,
@@ -271,10 +350,8 @@ export class JourneyStore {
   }
 
   update(owner: string, id: string, input: UpdatePlanInput): PlanDetail {
-    this.plan(owner, id);
     return this.write(owner, input.requestId, `update:${id}`, input, () => {
-      const plan = this.plan(owner, id);
-      if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+      const plan = this.active(owner, id, input.revision);
       const sources = this.resolveSources(owner, input, plan);
       const nextSteps = input.steps.map((step) => {
         if (!step.id) {
@@ -314,6 +391,7 @@ export class JourneyStore {
         id: randomUUID(),
         previousCount: plan.steps.length,
         currentCount: nextSteps.length,
+        kind: "edit",
         createdAt: now,
       };
       this.database
@@ -340,9 +418,8 @@ export class JourneyStore {
   }
 
   activity(owner: string, id: string, input: ActivityInput): PlanDetail {
-    this.plan(owner, id);
     return this.write(owner, input.requestId, `activity:${id}`, input, () => {
-      const plan = this.plan(owner, id);
+      const plan = this.active(owner, id, input.revision);
       const step = plan.steps.find((item) => item.id === input.stepId);
       if (!step) throw new DomainError("invalid_step", 400, "stepId");
       const activity: StudyActivity = {
@@ -356,15 +433,14 @@ export class JourneyStore {
       this.database
         .prepare("INSERT INTO study_activity (id, plan_id, body) VALUES (?, ?, ?)")
         .run(activity.id, id, JSON.stringify(activity));
+      this.advance(plan, owner);
       return this.detail(owner, id);
     });
   }
 
   complete(owner: string, id: string, input: CompletionInput): PlanDetail {
-    this.plan(owner, id);
     return this.write(owner, input.requestId, `complete:${id}`, input, () => {
-      const plan = this.plan(owner, id);
-      if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+      const plan = this.active(owner, id, input.revision);
       const step = plan.steps.find((item) => item.id === input.stepId);
       if (!step) throw new DomainError("invalid_step", 400, "stepId");
       if (step.completedAt !== null) throw new DomainError("already_complete", 409);
@@ -375,6 +451,7 @@ export class JourneyStore {
         stepTitle: step.title,
         scheduledDate: step.scheduledDate,
         createdAt: now,
+        correctedAt: null,
       };
       this.database
         .prepare("INSERT INTO step_completion (id, plan_id, body) VALUES (?, ?, ?)")
@@ -387,17 +464,240 @@ export class JourneyStore {
     });
   }
 
+  archive(owner: string, id: string, input: PlanActionInput): PlanDetail {
+    return this.write(owner, input.requestId, `archive:${id}`, input, () => {
+      const plan = this.plan(owner, id);
+      if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+      if (plan.archivedAt) throw new DomainError("already_archived", 409);
+      plan.archivedAt = this.clock().toISOString();
+      this.advance(plan, owner);
+      return this.detail(owner, id);
+    });
+  }
+
+  restore(owner: string, id: string, input: PlanActionInput): PlanDetail {
+    return this.write(owner, input.requestId, `restore:${id}`, input, () => {
+      const plan = this.plan(owner, id);
+      if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+      if (!plan.archivedAt) throw new DomainError("not_archived", 409);
+      plan.archivedAt = null;
+      this.advance(plan, owner);
+      return this.detail(owner, id);
+    });
+  }
+
+  delete(owner: string, id: string, input: PlanActionInput): DeletedPlan {
+    return this.write(owner, input.requestId, `delete:${id}`, input, () => {
+      const plan = this.plan(owner, id);
+      if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+      this.scrubReceipts(owner, id);
+      for (const table of ["study_activity", "step_completion", "scope_event"])
+        this.database.prepare(`DELETE FROM ${table} WHERE plan_id = ?`).run(id);
+      this.database
+        .prepare("DELETE FROM learning_plan WHERE id = ? AND owner_id = ?")
+        .run(id, owner);
+      return { deletedPlanId: id };
+    });
+  }
+
+  deleteActivity(
+    owner: string,
+    id: string,
+    activityId: string,
+    input: PlanActionInput,
+  ): PlanDetail {
+    return this.write(owner, input.requestId, `delete_activity:${id}:${activityId}`, input, () => {
+      const plan = this.active(owner, id, input.revision);
+      const removed = this.database
+        .prepare("DELETE FROM study_activity WHERE id = ? AND plan_id = ?")
+        .run(activityId, id);
+      if (!removed.changes) throw new DomainError("not_found", 404);
+      this.scrubReceipts(owner, id);
+      this.advance(plan, owner);
+      return this.detail(owner, id);
+    });
+  }
+
+  removeReflection(
+    owner: string,
+    id: string,
+    activityId: string,
+    input: PlanActionInput,
+  ): PlanDetail {
+    return this.write(
+      owner,
+      input.requestId,
+      `remove_reflection:${id}:${activityId}`,
+      input,
+      () => {
+        const plan = this.active(owner, id, input.revision);
+        const row = this.database
+          .prepare("SELECT body FROM study_activity WHERE id = ? AND plan_id = ?")
+          .get(activityId, id) as EventRow | undefined;
+        if (!row) throw new DomainError("not_found", 404);
+        const activity = JSON.parse(row.body) as StudyActivity;
+        if (activity.reflection === null) throw new DomainError("reflection_unavailable", 409);
+        activity.reflection = null;
+        this.database
+          .prepare("UPDATE study_activity SET body = ? WHERE id = ? AND plan_id = ?")
+          .run(JSON.stringify(activity), activityId, id);
+        this.scrubReceipts(owner, id);
+        this.advance(plan, owner);
+        return this.detail(owner, id);
+      },
+    );
+  }
+
+  correctCompletion(
+    owner: string,
+    id: string,
+    completionId: string,
+    input: PlanActionInput,
+  ): PlanDetail {
+    return this.write(
+      owner,
+      input.requestId,
+      `correct_completion:${id}:${completionId}`,
+      input,
+      () => {
+        const plan = this.active(owner, id, input.revision);
+        const completions = this.detail(owner, id).completions;
+        const completion = completions.find((event) => event.id === completionId);
+        if (!completion) throw new DomainError("not_found", 404);
+        if (completion.correctedAt) throw new DomainError("already_corrected", 409);
+        const current = completions.find(
+          (event) => event.stepId === completion.stepId && !event.correctedAt,
+        );
+        completion.correctedAt = this.clock().toISOString();
+        this.database
+          .prepare("UPDATE step_completion SET body = ? WHERE id = ? AND plan_id = ?")
+          .run(JSON.stringify(completion), completionId, id);
+        const step = plan.steps.find((item) => item.id === completion.stepId);
+        if (step && current?.id === completion.id) step.completedAt = null;
+        this.advance(plan, owner);
+        return this.detail(owner, id);
+      },
+    );
+  }
+
+  removedSteps(owner: string, id: string): RemovedStep[] {
+    const detail = this.detail(owner, id);
+    const active = new Set(detail.plan.steps.map((step) => step.id));
+    const found = new Set<string>();
+    const rows = this.database
+      .prepare("SELECT body, before_json FROM scope_event WHERE plan_id = ? ORDER BY rowid DESC")
+      .all(id) as { body: string; before_json: string }[];
+    const candidates: RemovedStep[] = [];
+    for (const row of rows) {
+      const event = JSON.parse(row.body) as ScopeEvent;
+      const before = JSON.parse(row.before_json) as LearningPlan;
+      for (const saved of before.steps) {
+        if (active.has(saved.id) || found.has(saved.id)) continue;
+        found.add(saved.id);
+        const latest = detail.completions.find(
+          (completion) => completion.stepId === saved.id && !completion.correctedAt,
+        );
+        const step = { ...saved, completedAt: latest?.createdAt ?? null };
+        const sources = (before.sources ?? []).filter((source) =>
+          saved.sourceIds?.includes(source.id),
+        );
+        const associated = new Set(sources.map((source) => normalizedSourceUrl(source.url)));
+        const currentReferences = new Set(detail.plan.references.map(normalizedSourceUrl));
+        candidates.push({
+          step,
+          scopeEventId: event.id,
+          removedAt: event.createdAt,
+          sources,
+          references: [
+            ...new Map(
+              before.references
+                .filter(
+                  (url) =>
+                    !associated.has(normalizedSourceUrl(url)) &&
+                    !currentReferences.has(normalizedSourceUrl(url)),
+                )
+                .map((url) => [normalizedSourceUrl(url), url]),
+            ).values(),
+          ],
+          conflicts: conflictsFor({ ...detail.plan, steps: [step] }),
+        });
+      }
+    }
+    return candidates;
+  }
+
+  restoreStep(owner: string, id: string, stepId: string, input: RestoreStepInput): PlanDetail {
+    return this.write(owner, input.requestId, `restore_step:${id}:${stepId}`, input, () => {
+      const plan = this.active(owner, id, input.revision);
+      if (plan.steps.some((step) => step.id === stepId))
+        throw new DomainError("step_already_present", 409);
+      const candidate = this.removedSteps(owner, id).find((item) => item.step.id === stepId);
+      if (!candidate) throw new DomainError("not_found", 404);
+      if (candidate.scopeEventId !== input.scopeEventId)
+        throw new DomainError("stale_revision", 409);
+      if (candidate.conflicts.length && !input.acknowledgeConflicts)
+        throw new DomainError("restore_conflicts", 409, "acknowledgeConflicts");
+      if (plan.steps.length >= LIMITS.steps) throw new DomainError("restore_limit", 409, "steps");
+      const permitted = new Set(candidate.references.map(normalizedSourceUrl));
+      if (input.references.some((url) => !permitted.has(normalizedSourceUrl(url))))
+        throw new DomainError("invalid_input", 400, "references");
+      this.associations(candidate.step.sourceIds, candidate.sources);
+      const sources = new Map((plan.sources ?? []).map((source) => [source.id, source]));
+      for (const snapshot of candidate.sources) {
+        let source: LearningSource;
+        try {
+          source = learningSource(snapshot);
+        } catch {
+          throw new DomainError("source_unavailable", 409, "sourceIds");
+        }
+        const current = sources.get(source.id);
+        if (current) {
+          let normalized: LearningSource;
+          try {
+            normalized = learningSource(current);
+          } catch {
+            throw new DomainError("source_unavailable", 409, "sourceIds");
+          }
+          if (JSON.stringify(normalized) !== JSON.stringify(source))
+            throw new DomainError("source_unavailable", 409, "sourceIds");
+        }
+        sources.set(source.id, source);
+      }
+      this.associations(candidate.step.sourceIds, [...sources.values()]);
+      const references = new Map(plan.references.map((url) => [normalizedSourceUrl(url), url]));
+      for (const url of [...candidate.sources.map((source) => source.url), ...input.references])
+        if (!references.has(normalizedSourceUrl(url)))
+          references.set(normalizedSourceUrl(url), url);
+      if (references.size > LIMITS.references || sources.size > LIMITS.references)
+        throw new DomainError("restore_limit", 409, "references");
+      const now = this.clock().toISOString();
+      const event: ScopeEvent = {
+        id: randomUUID(),
+        previousCount: plan.steps.length,
+        currentCount: plan.steps.length + 1,
+        createdAt: now,
+        kind: "restore",
+        restoredStepId: stepId,
+      };
+      this.database
+        .prepare("INSERT INTO scope_event (id, plan_id, body, before_json) VALUES (?, ?, ?, ?)")
+        .run(event.id, id, JSON.stringify(event), JSON.stringify(plan));
+      plan.steps.push(candidate.step);
+      plan.references = [...references.values()];
+      if (sources.size || plan.sources !== undefined) plan.sources = [...sources.values()];
+      this.advance(plan, owner);
+      return this.detail(owner, id);
+    });
+  }
+
   previewComeback(owner: string, id: string, input: ComebackPreviewInput): ComebackPreview {
-    const plan = this.plan(owner, id);
-    if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+    const plan = this.active(owner, id, input.revision);
     return comebackPreview(plan, input.restartDate);
   }
 
   confirmComeback(owner: string, id: string, input: ComebackConfirmInput): PlanDetail {
-    this.plan(owner, id);
     return this.write(owner, input.requestId, `comeback:${id}`, input, () => {
-      const plan = this.plan(owner, id);
-      if (plan.revision !== input.revision) throw new DomainError("stale_revision", 409);
+      const plan = this.active(owner, id, input.revision);
       const preview = comebackPreview(plan, input.restartDate);
       if (preview.shiftDays === 0) return this.detail(owner, id);
       const dates = new Map(preview.changes.map((change) => [change.stepId, change.proposedDate]));

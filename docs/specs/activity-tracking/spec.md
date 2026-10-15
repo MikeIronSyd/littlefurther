@@ -1,6 +1,6 @@
 # Hackathon activity tracking
 
-Use a Google Sheet owned by `m.alkali5130@miva.edu.ng` and the existing local Kaneo workspace to preserve the hackathon brief, activities, milestones, decisions and evidence. Keep intended non-secret source in the private MikeIronSyd/littlefurther repository. Current direction as of 2026-10-07 is Track 2: Engagement & Staying in the Learning Journey, for learners generally, with all five capabilities and both personal cycles and private peer StudyCircle. The selected local browser demo uses curated templates, text/link inputs, English/French, a running local server for internet-disconnected use, and image-first interface design. See [the current capstone specification](../capstone/spec.md). Dated entries below preserve history; superseded Guidance and audience questions must not be reimported into active state.
+Use a Google Sheet owned by `m.alkali5130@miva.edu.ng` and the existing local Kaneo workspace to preserve the hackathon brief, activities, milestones, decisions and evidence. Keep intended non-secret source in the MikeIronSyd/littlefurther repository. Current direction as of 2026-10-07 is Track 2: Engagement & Staying in the Learning Journey, for learners generally, with all five capabilities and both personal cycles and private peer StudyCircle. The selected local browser demo uses curated templates, text/link inputs, English/French, a running local server for internet-disconnected use, and image-first interface design. See [the current capstone specification](../capstone/spec.md). Dated entries below preserve history; superseded Guidance and audience questions must not be reimported into active state.
 
 ## Requirements and scope
 
@@ -9,7 +9,7 @@ Use a Google Sheet owned by `m.alkali5130@miva.edu.ng` and the existing local Ka
 - Record Codex's contribution to planning, building, reviewing, and documenting, with links to actual artifacts. AGENTS.md, plan mode, MCPs, and reusable skills can strengthen that evidence.
 - Track the entire activity history and current work in both Google Sheets and Kaneo. Keep stable activity IDs across both.
 - Distinguish completed work, future work, unknown dates, unverified course completion, measured time, estimates, and unavailable checks. Do not invent these values.
-- Use the existing local Kaneo service and authenticated accounts. Keep GitHub repositories private and credentials outside source files.
+- Use the existing local Kaneo service and authenticated accounts. 15October2026 decision: leave this repository public for now and keep credentials outside source files.
 - Apply the user's SDLC, specification, UI/UX skill and authorized project commit/push instructions to subsequent work. Under the replacement 7 October 2026 policy, global Codex recovery is separate and never captures project files or Git history.
 
 The capstone specification and research checklist govern product work. Audience, five-feature inclusion, both StudyCircle meanings and the selected delivery boundaries are settled. Adding paid services and creating recurring monitoring are outside this setup. Track MCP usage and reusable-skill invocations as actual work, with tool identity, artifact links, results and limitations; do not award completion merely for configured tools or skill files.
@@ -33,7 +33,7 @@ Live execution status and publication evidence belong in the linked Google Sheet
 | AC1 | The context preserves the brief, one-track constraint, three options, four judging criteria, milestones, and confirmed identities. | Parse the context and compare with screenshots and explicit user answers. |
 | AC2 | A native Google Sheet in the Miva account contains five populated, legible tabs with useful scrolling and status controls. | Verify account, title, tab contents, representative cells, formatting, and saved state in the browser. |
 | AC3 | Kaneo contains the hackathon project and ten initial tasks with aligned IDs, descriptions, and honest statuses. | Read back the board and task details. |
-| AC4 | Intended non-secret source is committed and pushed to the authorized private GitHub repository. | Verify the project remote main-branch commit hashes against the intended local commit. Global recovery is separate and does not receive project files or Git history. |
+| AC4 | Intended non-secret source is committed and pushed to the authorized GitHub repository. | Verify the project remote main-branch commit hashes against the intended local commit. Global recovery is separate and does not receive project files or Git history. |
 | AC5 | Records distinguish actual outcomes from planned or unverified work. | Review statuses, dates, evidence, and unresolved fields in all records. |
 
 ## Plan
@@ -44,7 +44,7 @@ Live execution status and publication evidence belong in the linked Google Sheet
 4. Check intended source for credentials and unsuitable generated data, verify repository access, then commit and publish normally using authorized authentication. Read back the intended commit.
 5. Record actual verification and publication evidence in the activity trackers. Keep future project decisions unresolved until they are discussed.
 
-The spreadsheet, Kaneo, and account discovery work can run independently. Source publication depends on intended-source checks and verified access to this private repository; no global-recovery registration or checkpoint is a project-publication prerequisite.
+The spreadsheet, Kaneo, and account discovery work can run independently. Source publication depends on intended-source checks and verified access to this repository; no global-recovery registration or checkpoint is a project-publication prerequisite.
 
 ## Initial setup verification — 2026-10-02
 

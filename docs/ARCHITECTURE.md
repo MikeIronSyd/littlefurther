@@ -36,7 +36,7 @@ The manual core works without internet while the server runs. AI, search and ext
 
 | Path | Responsibility |
 | --- | --- |
-| `src/client/` | Native DOM screens, localized copy, editor, study, Comeback, Activity, circles, shell/preferences and contextual AI review controls. |
+| `src/client/` | Native DOM screens, localized copy, editor, study, Comeback, Activity, circles, shell/preferences and contextual AI review controls. `learning-lifecycle.ts` coordinates archive/deletion/correction/recovery confirmations and read-only archived views. |
 | `src/domain/` | Validation and deterministic learning/circle/AI rules, progress/date calculations, templates and source constraints. |
 | `src/server/app.ts` | Same-origin routes, authentication/authorization, input validation and orchestration. |
 | `src/server/store.ts`, `circles.ts` | SQLite migration/private journey and circle persistence, transactional writes and retry receipts. |
@@ -95,6 +95,16 @@ Accounts/sessions and private records live in ignored local SQLite with a persis
 Schema v3 adds source drafts to the v1/v2 store. Metadata is bounded, owner-scoped and expires after 24 hours; separate successful plan saving copies exact source snapshots into retained plan JSON. Cleanup does not delete saved snapshots. Listed/cited/opened labels describe returned search evidence, not independent accuracy, free access or full-page reading. Supplied links remain unverified unless actually consulted.
 
 Study saving does not complete a step. Comeback shifts unfinished dates only after preview/confirmation. Circle sharing creates a separate explicit copy; later private edits do not update it. Revisions, write receipts and transactions protect these workflows. [Operations](operations/local-demo.md) covers complete data-directory isolation and matching-source rollback.
+
+### Archive, deletion and recovery
+
+The [lifecycle contract](specs/capstone/increments/learning-lifecycle.md) adds backward-compatible JSON metadata without a new SQL table: absent `archivedAt` means active, absent `correctedAt` means an effective completion, and scope-event kind distinguishes editing from restoration. Active/archived lists are owner-scoped. Archived details and history remain readable; content writes and saved-plan AI are rejected until restoration. Restore keeps the original schedule. Delayed AI responses recheck the current lifecycle and revision before they can be used.
+
+Every learning-data mutation, including recording study, requires a request identity and current revision and advances the revision once. Exact retries do not repeat the mutation. New journey receipts contain minimal plan references instead of copied private plan/history responses; replay returns the current authorized state. Legacy receipts are read compatibly. Session/reflection deletion converts matching legacy snapshots into content-free references in the same transaction. Whole-plan deletion removes the plan and its activity/completion/scope rows atomically, with minimal retry markers preventing old requests from recreating deleted content.
+
+Session deletion changes recorded minutes, sessions and study days without changing completion. Reflection-only removal retains its session. Completion correction retains a visibly corrected event outside totals and cannot clear a newer completion. Removed-step recovery uses the latest saved scope snapshot, preserves step identity/date, derives completion from the current ledger and appends the step. Associated historical sources and explicitly selected additional links are validated locally; restoration neither fetches pages nor requires unexpired AI staging, and never replays deleted study records.
+
+Circle copies remain independent when a private plan or record is deleted. Own-encouragement withdrawal targets the current encouragement ID; a fresh update rotates that ID so an old withdrawal cannot remove a newer contribution. Existing circle closure remains destructive, without a reversible archive. App deletion does not claim secure disk erasure, backup purge or recall of previously processed provider requests. [Lifecycle verification](specs/capstone/increments/learning-lifecycle-verification.md) records actual checks and remaining gates separately from these implementation details.
 
 ## Evidence and future work
 

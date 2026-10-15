@@ -33,6 +33,7 @@ function circleError(error: unknown): MessageKey {
     invite_limit: "circleInviteLimit",
     owner_must_close: "circleOwnerMustClose",
     idempotency_conflict: "circleRetryConflict",
+    encouragement_changed: "circleEncouragementChanged",
     invalid_input: "circleInvalid",
   };
   return codes[error.code] ?? (error.status === 409 ? "circleConflict" : errorKey(error));
@@ -512,6 +513,25 @@ export function showCircles(
             reconcile: reload,
           });
         });
+        if (previous) {
+          const withdraw = button(
+            "removeMyEncouragement",
+            () =>
+              void write({
+                path: `/api/circles/${id}/items/${item.id}/encouragement/withdraw`,
+                body: {
+                  requestId: crypto.randomUUID(),
+                  encouragementId: previous.id,
+                },
+                after: reload,
+                reconcile: reload,
+              }),
+            "button subtle",
+          );
+          withdraw.id = `circle-action-${crypto.randomUUID()}`;
+          withdraw.setAttribute("aria-labelledby", `${withdraw.id} ${copy.id} ${byline.id}`);
+          form.append(withdraw);
+        }
         row.append(form);
       }
       feed.append(row);

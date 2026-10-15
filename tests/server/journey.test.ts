@@ -207,7 +207,12 @@ test("private persisted journey enforces real sessions, mutation contracts and r
         await request(`/api/plans/${id}/activities`, {
           method: "POST",
           cookie: bravo,
-          body: { requestId: randomUUID(), stepId: step.id, minutes: 5 },
+          body: {
+            requestId: randomUUID(),
+            revision: detail.plan.revision,
+            stepId: step.id,
+            minutes: 5,
+          },
         }),
         404,
         "not_found",
@@ -242,6 +247,7 @@ test("private persisted journey enforces real sessions, mutation contracts and r
         const body = {
           requestId: randomUUID(),
           stepId: step.id,
+          revision: detail.plan.revision,
           minutes: 5,
           reflection: "My private note <script>plain text</script>",
         };
@@ -253,7 +259,7 @@ test("private persisted journey enforces real sessions, mutation contracts and r
           }),
         );
         assert.equal(detail.progress.completed, 0);
-        assert.equal(detail.plan.revision, 1);
+        assert.equal(detail.plan.revision, 2);
         assert.equal(detail.progress.studiedMinutes, 5);
         assert.equal(detail.progress.studyDayCount, 1);
         assert.deepEqual(detail.progress.studyDates, ["2026-10-08"]);
@@ -281,7 +287,12 @@ test("private persisted journey enforces real sessions, mutation contracts and r
           await request(`/api/plans/${detail.plan.id}/activities`, {
             method: "POST",
             cookie: alpha,
-            body: { requestId: randomUUID(), stepId: step.id, minutes: 2 },
+            body: {
+              requestId: randomUUID(),
+              revision: detail.plan.revision,
+              stepId: step.id,
+              minutes: 2,
+            },
           }),
         );
         assert.equal(detail.activities[0]?.reflection, null);
@@ -301,7 +312,7 @@ test("private persisted journey enforces real sessions, mutation contracts and r
           body,
         }),
       );
-      assert.equal(detail.plan.revision, 2);
+      assert.equal(detail.plan.revision, 4);
       assert.equal(detail.progress.completed, 1);
       assert.equal(detail.progress.activityCount, 2);
       assert.equal(detail.progress.studiedMinutes, 7);
@@ -319,7 +330,7 @@ test("private persisted journey enforces real sessions, mutation contracts and r
         await request(`/api/plans/${detail.plan.id}/completions`, {
           method: "POST",
           cookie: alpha,
-          body: { ...body, requestId: randomUUID(), revision: 2 },
+          body: { ...body, requestId: randomUUID(), revision: detail.plan.revision },
         }),
         409,
         "already_complete",
@@ -347,7 +358,7 @@ test("private persisted journey enforces real sessions, mutation contracts and r
           body: {
             ...edit,
             requestId: randomUUID(),
-            revision: 2,
+            revision: detail.plan.revision,
             steps: [{ ...completed, title: "Rewritten history" }],
           },
         }),
@@ -393,7 +404,12 @@ test("private persisted journey enforces real sessions, mutation contracts and r
         await request(`/api/plans/${detail.plan.id}/activities`, {
           method: "POST",
           cookie: alpha,
-          body: { requestId: randomUUID(), stepId: last.id, minutes: 5 },
+          body: {
+            requestId: randomUUID(),
+            revision: detail.plan.revision,
+            stepId: last.id,
+            minutes: 5,
+          },
         }),
         400,
         "invalid_step",
