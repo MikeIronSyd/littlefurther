@@ -12,6 +12,8 @@ For clone-and-run without host Node/pnpm, use [Docker setup and recovery](operat
 
 ## Current status and evidence
 
+The17October [comprehensive UI refinement](specs/capstone/increments/ui-refinement.md) is implemented and verified locally: early manual/AI drafting, compact optional assistance/source metadata and contextual management. [Actual checks and limits](specs/capstone/increments/ui-refinement-verification.md) record100domain/server and123browser passes plus required static/build/process/audit checks; delivery is pending approval. [Latest review gallery](specs/capstone/designs/ui-refinement/README.md) separates precode references, initial findings and corrected captures; the13October screenshots below remain dated presentation evidence.
+
 The14October [Docker verification](specs/capstone/increments/docker-verification.md) adds clean LinuxAMD64 and emulatedARM64 builds/runs, persistence/restore/mockAI checks and five container browser tests. The new full required native run passes85domain/server and94browser tests plus static/build/process/audit. See that record for independent review, delivery and platform limits; the older counts below remain dated evidence.
 
 The local connected journey and six optional AI actions are implemented. The 13 October [AI verification](specs/capstone/increments/ai-assistance-verification.md) records 85 domain/server and 94 browser passes, independent source review and bounded visual observations. These are dated results at the recorded revision, not tests rerun for this documentation increment.

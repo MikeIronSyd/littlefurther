@@ -5,6 +5,7 @@ import {
   expectNoHorizontalOverflow,
   openManualDraft,
   respectAuthenticationRateLimit,
+  revealDetails,
   saveManualPlan,
   selectAvailability,
 } from "./helpers.js";
@@ -395,6 +396,7 @@ test("RF05: study exposes localized template and learner references without fetc
   await page.getByRole("button", { name: "Create a learning plan", exact: true }).click();
   await page.getByLabel("Start from", { exact: true }).selectOption("html-first-page@1");
   const reference = "https://example.test/my-own-reference";
+  await revealDetails(page.getByLabel("Reference links (optional)", { exact: true }));
   await page
     .getByLabel("Reference links (optional)", { exact: true })
     .fill(`${reference}\n${reference}`);
@@ -470,6 +472,7 @@ test("RF05: manual, empty and mismatched-version study resources retain provenan
   await createAccount(page);
   await openManualDraft(page);
   const reference = "https://example.test/private-reference";
+  await revealDetails(page.getByLabel("Reference links (optional)", { exact: true }));
   await page.getByLabel("Reference links (optional)", { exact: true }).fill(reference);
   await page.getByRole("button", { name: "Confirm and save plan", exact: true }).click();
   await expect(page.getByText("0 of 2 steps complete", { exact: true })).toBeVisible();
@@ -480,6 +483,7 @@ test("RF05: manual, empty and mismatched-version study resources retain provenan
   await expect(page.getByRole("link", { name: /^MDN/ })).toHaveCount(0);
   await page.getByRole("button", { name: "Choose the next action", exact: true }).click();
   await page.getByRole("button", { name: "Edit plan", exact: true }).click();
+  await revealDetails(page.getByLabel("Reference links (optional)", { exact: true }));
   await page.getByLabel("Reference links (optional)", { exact: true }).fill("");
   await page.getByRole("button", { name: "Save revised plan", exact: true }).click();
   await expect(
@@ -490,6 +494,7 @@ test("RF05: manual, empty and mismatched-version study resources retain provenan
   await expect(page.getByRole("link", { name: /^MDN/ })).toHaveCount(0);
   await page.getByRole("button", { name: "Choose the next action", exact: true }).click();
   await page.getByRole("button", { name: "Edit plan", exact: true }).click();
+  await revealDetails(page.getByLabel("Reference links (optional)", { exact: true }));
   await page.getByLabel("Reference links (optional)", { exact: true }).fill(reference);
   await page.getByRole("button", { name: "Save revised plan", exact: true }).click();
   await expect(

@@ -67,6 +67,41 @@ function lockControls(host: HTMLElement): () => void {
 
 const openConfirmations = new WeakMap<HTMLElement, () => void>();
 const confirmationVersions = new WeakMap<HTMLElement, number>();
+interface ManagementGroup {
+  root: HTMLElement;
+  controls: HTMLElement;
+  panels: HTMLElement;
+  reveal: () => void;
+}
+
+function managementGroup(key: MessageKey, recordContext: () => string): ManagementGroup {
+  const disclosure = el("details", "lifecycle-management");
+  const summary = text("summary", key, "management-summary", { context: recordContext() });
+  bind(summary, () => {
+    summary.textContent = message(key, { context: recordContext() });
+  });
+  const controls = el("div", "lifecycle-actions management-controls");
+  const panels = el("div", "management-panels");
+  disclosure.append(summary, controls);
+  return {
+    root: el("div", "lifecycle-group", disclosure, panels),
+    controls,
+    panels,
+    reveal: () => {
+      disclosure.open = true;
+    },
+  };
+}
+
+function contextualName(control: HTMLElement, key: MessageKey, recordContext?: () => string): void {
+  if (!recordContext) return;
+  bind(control, () => {
+    const label = message(key);
+    control.textContent = label;
+    control.setAttribute("aria-label", `${label}: ${recordContext()}`);
+  });
+}
+
 interface ActionOptions {
   host: HTMLElement;
   detail: PlanDetail | LearningPlan;
@@ -79,6 +114,8 @@ interface ActionOptions {
   danger?: boolean;
   fresh?: boolean;
   deletion?: boolean;
+  group?: ManagementGroup;
+  recordContext?: () => string;
   preview?: (detail: PlanDetail, form: HTMLFormElement, confirm: HTMLButtonElement) => () => object;
 }
 
@@ -86,6 +123,11 @@ interface ActionOptions {
 // alternative; neither navigation nor an old response can repaint a later view.
 function actionControl(options: ActionOptions): HTMLElement {
   const { host, context } = options;
+  const actionButton = (key: MessageKey, run: () => void): HTMLButtonElement => {
+    const control = button(key, run);
+    contextualName(control, key, options.recordContext);
+    return control;
+  };
   const wrapper = el("div", "lifecycle-action");
   const panel = el("div", "lifecycle-panel");
   const active = (): boolean => context.current() && wrapper.isConnected;
@@ -95,7 +137,11 @@ function actionControl(options: ActionOptions): HTMLElement {
     () => void open(),
     `button subtle${options.danger ? " danger" : ""}`,
   );
-  wrapper.append(trigger, panel);
+  contextualName(trigger, options.label, options.recordContext);
+  if (options.group) {
+    options.group.controls.append(trigger);
+    wrapper.append(panel);
+  } else wrapper.append(trigger, panel);
 
   async function open(): Promise<void> {
     if (!active() || opening) return;
@@ -128,6 +174,7 @@ function actionControl(options: ActionOptions): HTMLElement {
         `button${options.danger ? " danger" : " primary"}`,
       );
       confirm.type = "submit";
+      contextualName(confirm, options.label, options.recordContext);
       let busy = false;
       let pending: object | null = null;
       let release: (() => void) | null = null;
@@ -142,10 +189,14 @@ function actionControl(options: ActionOptions): HTMLElement {
         "cancel",
         () => {
           close();
-          if (active()) trigger.focus();
+          if (active()) {
+            options.group?.reveal();
+            trigger.focus();
+          }
         },
         "button subtle",
       );
+      contextualName(cancel, "cancel", options.recordContext);
       form.append(heading, el("p", "lifecycle-context", detail.plan.goal), text("p", options.copy));
       if (options.deletion)
         form.append(
@@ -181,7 +232,7 @@ function actionControl(options: ActionOptions): HTMLElement {
             context.deleted(detail.plan.id);
           } else {
             status.replaceChildren(notice(lifecycleError(error), true));
-            status.append(button("lifecycleRefresh", () => void refresh()));
+            status.append(actionButton("lifecycleRefresh", () => void refresh()));
             focusFailure(status, active);
           }
         } finally {
@@ -211,8 +262,8 @@ function actionControl(options: ActionOptions): HTMLElement {
           if (uncertain) {
             status.replaceChildren(notice("lifecycleUncertain", true));
             status.append(
-              button("lifecycleRetry", () => void write()),
-              button("lifecycleRefresh", () => void refresh()),
+              actionButton("lifecycleRetry", () => void write()),
+              actionButton("lifecycleRefresh", () => void refresh()),
             );
           } else {
             pending = null;
@@ -220,7 +271,7 @@ function actionControl(options: ActionOptions): HTMLElement {
             release = null;
             trigger.disabled = true;
             status.replaceChildren(notice(lifecycleError(error), true));
-            status.append(button("lifecycleRefresh", () => void refresh()));
+            status.append(actionButton("lifecycleRefresh", () => void refresh()));
           }
           focusFailure(status, active);
         } finally {
@@ -251,6 +302,8 @@ export function planActions(
 ): HTMLElement {
   const plan = "plan" in detail ? detail.plan : detail;
   const lifecycle = Boolean(plan.archivedAt);
+  const recordContext = (): string => plan.goal;
+  const group = managementGroup("managePlan", recordContext);
   const archive = actionControl({
     host,
     detail,
@@ -261,6 +314,8 @@ export function planActions(
     path: `/api/plans/${plan.id}/${lifecycle ? "restore" : "archive"}`,
     outcome: lifecycle ? "planRestored" : "planArchived",
     fresh: true,
+    group,
+    recordContext,
   });
   const remove = actionControl({
     host,
@@ -274,6 +329,8 @@ export function planActions(
     fresh: true,
     deletion: true,
     danger: true,
+    group,
+    recordContext,
     preview: (_fresh, form, confirm) => {
       const acknowledge = input("checkbox", "confirmPlanDeletion");
       acknowledge.required = true;
@@ -287,7 +344,9 @@ export function planActions(
       return () => ({});
     },
   });
-  return el("div", "lifecycle-actions plan-lifecycle-actions", archive, remove);
+  group.root.classList.add("plan-lifecycle-actions");
+  group.panels.append(archive, remove);
+  return group.root;
 }
 
 export function showJourneys(
@@ -361,6 +420,7 @@ export function showJourneys(
         const open = button(plan.archivedAt ? "viewArchivedPlan" : "goJourney", () => {
           if (active() && callbacks.canLeave()) callbacks.open(plan);
         });
+        contextualName(open, plan.archivedAt ? "viewArchivedPlan" : "goJourney", () => plan.goal);
         // Preview actions fetch fresh owner-scoped detail before showing counts.
         row.append(
           summary,
@@ -400,7 +460,9 @@ export function studyRecordActions(
   activity: StudyActivity,
   context: LifecycleContext,
 ): HTMLElement {
-  const actions = el("div", "lifecycle-actions");
+  const recordContext = (): string =>
+    `${activity.stepTitle} · ${dateLabel(activity.createdAt, detail.progress.timezone)} · ${activity.minutes} min`;
+  const group = managementGroup("manageRecord", recordContext);
   const preview = (_detail: PlanDetail, form: HTMLFormElement): (() => object) => {
     form.append(
       el("p", "", activity.stepTitle),
@@ -414,7 +476,7 @@ export function studyRecordActions(
     if (activity.reflection) form.append(el("p", "reflection-text", activity.reflection));
     return () => ({});
   };
-  actions.append(
+  group.panels.append(
     actionControl({
       host,
       detail,
@@ -426,10 +488,12 @@ export function studyRecordActions(
       outcome: "recordRemoved",
       danger: true,
       preview,
+      group,
+      recordContext,
     }),
   );
   if (activity.reflection)
-    actions.append(
+    group.panels.append(
       actionControl({
         host,
         detail,
@@ -441,9 +505,11 @@ export function studyRecordActions(
         outcome: "recordRemoved",
         danger: true,
         preview,
+        group,
+        recordContext,
       }),
     );
-  return actions;
+  return group.root;
 }
 
 export function completionAction(
@@ -452,25 +518,33 @@ export function completionAction(
   completion: CompletionEvent,
   context: LifecycleContext,
 ): HTMLElement {
-  return actionControl({
-    host,
-    detail,
-    context,
-    label: detail.plan.steps.some((step) => step.id === completion.stepId)
-      ? "markUnfinished"
-      : "correctCompletion",
-    title: "correctCompletionConfirm",
-    copy: "correctCompletionCopy",
-    path: `/api/plans/${detail.plan.id}/completions/${completion.id}/correct`,
-    outcome: "completionCorrectionSaved",
-    preview: (_detail, form) => {
-      form.append(
-        el("p", "", completion.stepTitle),
-        el("p", "hint", localDate(completion.createdAt, detail.progress.timezone)),
-      );
-      return () => ({});
-    },
-  });
+  const recordContext = (): string =>
+    `${completion.stepTitle} · ${dateLabel(completion.createdAt, detail.progress.timezone)}`;
+  const group = managementGroup("manageCompletion", recordContext);
+  group.panels.append(
+    actionControl({
+      host,
+      detail,
+      context,
+      label: detail.plan.steps.some((step) => step.id === completion.stepId)
+        ? "markUnfinished"
+        : "correctCompletion",
+      title: "correctCompletionConfirm",
+      copy: "correctCompletionCopy",
+      path: `/api/plans/${detail.plan.id}/completions/${completion.id}/correct`,
+      outcome: "completionCorrectionSaved",
+      group,
+      recordContext,
+      preview: (_detail, form) => {
+        form.append(
+          el("p", "", completion.stepTitle),
+          el("p", "hint", localDate(completion.createdAt, detail.progress.timezone)),
+        );
+        return () => ({});
+      },
+    }),
+  );
+  return group.root;
 }
 
 export function removedStepsSection(
@@ -519,10 +593,12 @@ export function removedStepsSection(
               copy: "restoreStepCopy",
               path: `/api/plans/${detail.plan.id}/steps/${candidate.step.id}/restore`,
               outcome: "stepRestored",
+              recordContext: () => candidate.step.title,
               preview: (_detail, form, confirm) => {
                 bind(confirm, () => {
                   confirm.textContent = message("restoreStep");
                 });
+                contextualName(confirm, "restoreStep", () => candidate.step.title);
                 form.append(
                   el("h4", "", candidate.step.title),
                   el(

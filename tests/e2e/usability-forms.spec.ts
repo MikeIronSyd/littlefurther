@@ -4,6 +4,7 @@ import {
   createAccount,
   openManualDraft,
   respectAuthenticationRateLimit,
+  revealDetails,
   saveManualPlan,
 } from "./helpers.js";
 
@@ -89,6 +90,7 @@ test("UL01: reference count and malformed-link guidance differ without losing th
     if (new URL(request.url()).pathname === "/api/plans" && request.method() === "POST") writes++;
   });
   const references = page.locator('textarea[name="references"]');
+  await revealDetails(references);
   await expect(references).toHaveAccessibleName("Reference links (optional)");
   const hint = await references.getAttribute("aria-describedby");
   const links = Array.from({ length: 11 }, (_, index) => `https://example.test/resource-${index}`);

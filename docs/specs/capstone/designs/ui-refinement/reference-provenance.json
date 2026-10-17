@@ -1,0 +1,1200 @@
+{
+  "createdAt": "2026-10-17T20:30:26.480Z",
+  "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+  "classification": "Synthetic pre-implementation UI references, not actual application screenshots or verification",
+  "rendering": "Installed Microsoft Edge through local Playwright; editable standalone HTML; no external assets, app server, learner records or provider requests",
+  "content": "Existing product labels and synthetic records, with proposed drafting, management and counted-completion UX labels. Illustrative source metadata is not a live search result.",
+  "brand": "Selected A Original LF geometry, incumbent Amber/ink palette, Segoe UI system stack",
+  "sources": [
+    {
+      "file": "DESIGN.md",
+      "sha256": "4f88c6c772a077c7dca9bae001a43eac4db2c689ee1d82c7676c704ce0ec40ef"
+    },
+    {
+      "file": "src/client/styles.css",
+      "sha256": "5caa6fa3fa23768487783700249f611e2759ba9931875475133693eb6acbde38"
+    },
+    {
+      "file": "src/client/branding.ts",
+      "sha256": "ce4bc49715116d65c6b77261371a84bc905547da0ef122ffa6094fbdb6f96e19"
+    },
+    {
+      "file": "src/client/i18n.ts",
+      "sha256": "c2405da949df08349207d96719e66e6b1534de2cebd246b7acdd64277402a071"
+    }
+  ],
+  "referenceHtmlSha256": "6a608e2d9cc563f96eeb2cdf7b3d69946a29b804dea3aee79e6ac75d44c8750d",
+  "specimens": [
+    {
+      "surface": "planning",
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "file": "planning-desktop-light.png",
+      "classification": "synthetic pre-implementation design reference",
+      "png": {
+        "width": 1440,
+        "height": 2382,
+        "sha256": "4ae8e12c5745271234f4cbe2bea6f85ffd623beaeb54793292e7678d7366e8ab"
+      },
+      "checks": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "fullHeight": 2382,
+        "controls": [
+          {
+            "label": "Collapse sidebar",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Language",
+            "width": 112,
+            "height": 45
+          },
+          {
+            "label": "Switch to dark mode",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Account",
+            "width": 220.8125,
+            "height": 46
+          },
+          {
+            "label": "goal",
+            "width": 880,
+            "height": 46
+          },
+          {
+            "label": "Use my own topics",
+            "width": 434,
+            "height": 52
+          },
+          {
+            "label": "Get an AI draft",
+            "width": 434,
+            "height": 52
+          },
+          {
+            "label": "start",
+            "width": 431,
+            "height": 48
+          },
+          {
+            "label": "minutes",
+            "width": 431,
+            "height": 47
+          },
+          {
+            "label": "Availability and optional plan details",
+            "width": 285.953125,
+            "height": 44
+          },
+          {
+            "label": "available",
+            "width": 389.390625,
+            "height": 48
+          },
+          {
+            "label": "Add date",
+            "width": 100.609375,
+            "height": 48
+          },
+          {
+            "label": "target",
+            "width": 880,
+            "height": 48
+          },
+          {
+            "label": "knowledge",
+            "width": 431,
+            "height": 46
+          },
+          {
+            "label": "links",
+            "width": 431,
+            "height": 46
+          },
+          {
+            "label": "Search the web for credible learning resources",
+            "width": 880,
+            "height": 44
+          },
+          {
+            "label": "Draft my plan with AI",
+            "width": 189.53125,
+            "height": 46
+          },
+          {
+            "label": "action1",
+            "width": 702,
+            "height": 74
+          },
+          {
+            "label": "estimate1",
+            "width": 160,
+            "height": 60
+          },
+          {
+            "label": "Move up",
+            "width": 98.21875,
+            "height": 46
+          },
+          {
+            "label": "Move down",
+            "width": 119.875,
+            "height": 46
+          },
+          {
+            "label": "Remove",
+            "width": 92.265625,
+            "height": 46
+          },
+          {
+            "label": "action2",
+            "width": 702,
+            "height": 46
+          },
+          {
+            "label": "estimate2",
+            "width": 160,
+            "height": 46
+          },
+          {
+            "label": "Move up",
+            "width": 98.21875,
+            "height": 46
+          },
+          {
+            "label": "Move down",
+            "width": 119.875,
+            "height": 46
+          },
+          {
+            "label": "Remove",
+            "width": 92.265625,
+            "height": 46
+          },
+          {
+            "label": "action3",
+            "width": 702,
+            "height": 46
+          },
+          {
+            "label": "estimate3",
+            "width": 160,
+            "height": 46
+          },
+          {
+            "label": "Move up",
+            "width": 98.21875,
+            "height": 46
+          },
+          {
+            "label": "Move down",
+            "width": 119.875,
+            "height": 46
+          },
+          {
+            "label": "Remove",
+            "width": 92.265625,
+            "height": 46
+          },
+          {
+            "label": "Add step",
+            "width": 99.15625,
+            "height": 46
+          },
+          {
+            "label": "Source details",
+            "width": 880,
+            "height": 44
+          },
+          {
+            "label": "Confirm and save plan",
+            "width": 196.390625,
+            "height": 46
+          }
+        ],
+        "brand": {
+          "text": "LittleFurther",
+          "rect": {
+            "width": 127.046875,
+            "height": 23.75
+          },
+          "rangeRects": [
+            {
+              "left": 138,
+              "right": 189.828125,
+              "top": 22.125,
+              "bottom": 50.125
+            },
+            {
+              "left": 189.828125,
+              "right": 189.828125,
+              "top": 22.125,
+              "bottom": 50.125
+            },
+            {
+              "left": 189.828125,
+              "right": 265.046875,
+              "top": 22.125,
+              "bottom": 50.125
+            }
+          ]
+        },
+        "openConfirmations": 0
+      },
+      "noHorizontalOverflow": true,
+      "visibleTargetsAtLeast44px": true
+    },
+    {
+      "surface": "planning",
+      "name": "mobile",
+      "width": 320,
+      "height": 900,
+      "theme": "dark",
+      "file": "planning-mobile-dark.png",
+      "classification": "synthetic pre-implementation design reference",
+      "png": {
+        "width": 320,
+        "height": 3268,
+        "sha256": "a9f9b20085c5b5e6b2cd76161f7db435853753ceef74ef5c51e78529068349e4"
+      },
+      "checks": {
+        "clientWidth": 320,
+        "scrollWidth": 320,
+        "fullHeight": 3268,
+        "controls": [
+          {
+            "label": "Open navigation",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Language",
+            "width": 100,
+            "height": 44
+          },
+          {
+            "label": "Switch to light mode",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Account",
+            "width": 64,
+            "height": 44
+          },
+          {
+            "label": "goal",
+            "width": 296,
+            "height": 46
+          },
+          {
+            "label": "Use my own topics",
+            "width": 296,
+            "height": 48
+          },
+          {
+            "label": "Get an AI draft",
+            "width": 296,
+            "height": 48
+          },
+          {
+            "label": "start",
+            "width": 296,
+            "height": 48
+          },
+          {
+            "label": "minutes",
+            "width": 296,
+            "height": 46
+          },
+          {
+            "label": "Availability and optional plan details",
+            "width": 285.953125,
+            "height": 44
+          },
+          {
+            "label": "available",
+            "width": 185.390625,
+            "height": 48
+          },
+          {
+            "label": "Add date",
+            "width": 100.609375,
+            "height": 48
+          },
+          {
+            "label": "target",
+            "width": 296,
+            "height": 48
+          },
+          {
+            "label": "knowledge",
+            "width": 296,
+            "height": 46
+          },
+          {
+            "label": "links",
+            "width": 296,
+            "height": 46
+          },
+          {
+            "label": "Search the web for credible learning resources",
+            "width": 296,
+            "height": 48
+          },
+          {
+            "label": "Draft my plan with AI",
+            "width": 189.53125,
+            "height": 46
+          },
+          {
+            "label": "action1",
+            "width": 296,
+            "height": 74
+          },
+          {
+            "label": "estimate1",
+            "width": 296,
+            "height": 46
+          },
+          {
+            "label": "Move up",
+            "width": 98.21875,
+            "height": 46
+          },
+          {
+            "label": "Move down",
+            "width": 119.875,
+            "height": 46
+          },
+          {
+            "label": "Remove",
+            "width": 92.265625,
+            "height": 46
+          },
+          {
+            "label": "action2",
+            "width": 296,
+            "height": 46
+          },
+          {
+            "label": "estimate2",
+            "width": 296,
+            "height": 46
+          },
+          {
+            "label": "Move up",
+            "width": 98.21875,
+            "height": 46
+          },
+          {
+            "label": "Move down",
+            "width": 119.875,
+            "height": 46
+          },
+          {
+            "label": "Remove",
+            "width": 92.265625,
+            "height": 46
+          },
+          {
+            "label": "action3",
+            "width": 296,
+            "height": 46
+          },
+          {
+            "label": "estimate3",
+            "width": 296,
+            "height": 46
+          },
+          {
+            "label": "Move up",
+            "width": 98.21875,
+            "height": 46
+          },
+          {
+            "label": "Move down",
+            "width": 119.875,
+            "height": 46
+          },
+          {
+            "label": "Remove",
+            "width": 92.265625,
+            "height": 46
+          },
+          {
+            "label": "Add step",
+            "width": 99.15625,
+            "height": 46
+          },
+          {
+            "label": "Source details",
+            "width": 296,
+            "height": 44
+          },
+          {
+            "label": "Confirm and save plan",
+            "width": 196.390625,
+            "height": 46
+          }
+        ],
+        "brand": {
+          "text": "LittleFurther",
+          "rect": {
+            "width": 112.921875,
+            "height": 21.109375
+          },
+          "rangeRects": [
+            {
+              "left": 111,
+              "right": 157.0625,
+              "top": 20.4375,
+              "bottom": 46.4375
+            },
+            {
+              "left": 157.0625,
+              "right": 157.0625,
+              "top": 20.4375,
+              "bottom": 46.4375
+            },
+            {
+              "left": 157.0625,
+              "right": 223.921875,
+              "top": 20.4375,
+              "bottom": 46.4375
+            }
+          ]
+        },
+        "openConfirmations": 0
+      },
+      "noHorizontalOverflow": true,
+      "visibleTargetsAtLeast44px": true
+    },
+    {
+      "surface": "study",
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "file": "study-desktop-light.png",
+      "classification": "synthetic pre-implementation design reference",
+      "png": {
+        "width": 1440,
+        "height": 1254,
+        "sha256": "7f02d69307b02e9664115daefa6f2b23140f52611316415700de0da4721369ff"
+      },
+      "checks": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "fullHeight": 1254,
+        "controls": [
+          {
+            "label": "Collapse sidebar",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Language",
+            "width": 112,
+            "height": 45
+          },
+          {
+            "label": "Switch to dark mode",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Account",
+            "width": 220.8125,
+            "height": 46
+          },
+          {
+            "label": "studied",
+            "width": 630,
+            "height": 46
+          },
+          {
+            "label": "reflection",
+            "width": 630,
+            "height": 100
+          },
+          {
+            "label": "Save study session",
+            "width": 168.40625,
+            "height": 46
+          },
+          {
+            "label": "Help with studying and reflection",
+            "width": 297.1875,
+            "height": 46
+          },
+          {
+            "label": "Include this reflection draft in study help",
+            "width": 880,
+            "height": 44
+          },
+          {
+            "label": "Help me study and reflect",
+            "width": 221.25,
+            "height": 46
+          },
+          {
+            "label": "Mark this step complete",
+            "width": 209.3125,
+            "height": 46
+          }
+        ],
+        "brand": {
+          "text": "LittleFurther",
+          "rect": {
+            "width": 127.046875,
+            "height": 23.75
+          },
+          "rangeRects": [
+            {
+              "left": 138,
+              "right": 189.828125,
+              "top": 22.125,
+              "bottom": 50.125
+            },
+            {
+              "left": 189.828125,
+              "right": 189.828125,
+              "top": 22.125,
+              "bottom": 50.125
+            },
+            {
+              "left": 189.828125,
+              "right": 265.046875,
+              "top": 22.125,
+              "bottom": 50.125
+            }
+          ]
+        },
+        "openConfirmations": 0
+      },
+      "noHorizontalOverflow": true,
+      "visibleTargetsAtLeast44px": true
+    },
+    {
+      "surface": "study",
+      "name": "mobile",
+      "width": 320,
+      "height": 900,
+      "theme": "dark",
+      "file": "study-mobile-dark.png",
+      "classification": "synthetic pre-implementation design reference",
+      "png": {
+        "width": 320,
+        "height": 1504,
+        "sha256": "2d87934830e6a3fba8b1f6f9f7ec5df8c9d74454737b6e9756df532b410338b5"
+      },
+      "checks": {
+        "clientWidth": 320,
+        "scrollWidth": 320,
+        "fullHeight": 1504,
+        "controls": [
+          {
+            "label": "Open navigation",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Language",
+            "width": 100,
+            "height": 44
+          },
+          {
+            "label": "Switch to light mode",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Account",
+            "width": 64,
+            "height": 44
+          },
+          {
+            "label": "studied",
+            "width": 262,
+            "height": 46
+          },
+          {
+            "label": "reflection",
+            "width": 262,
+            "height": 100
+          },
+          {
+            "label": "Save study session",
+            "width": 262,
+            "height": 46
+          },
+          {
+            "label": "Help with studying and reflection",
+            "width": 296,
+            "height": 70
+          },
+          {
+            "label": "Include this reflection draft in study help",
+            "width": 296,
+            "height": 48
+          },
+          {
+            "label": "Help me study and reflect",
+            "width": 221.25,
+            "height": 46
+          },
+          {
+            "label": "Mark this step complete",
+            "width": 209.3125,
+            "height": 46
+          }
+        ],
+        "brand": {
+          "text": "LittleFurther",
+          "rect": {
+            "width": 112.921875,
+            "height": 21.109375
+          },
+          "rangeRects": [
+            {
+              "left": 111,
+              "right": 157.0625,
+              "top": 20.4375,
+              "bottom": 46.4375
+            },
+            {
+              "left": 157.0625,
+              "right": 157.0625,
+              "top": 20.4375,
+              "bottom": 46.4375
+            },
+            {
+              "left": 157.0625,
+              "right": 223.921875,
+              "top": 20.4375,
+              "bottom": 46.4375
+            }
+          ]
+        },
+        "openConfirmations": 0
+      },
+      "noHorizontalOverflow": true,
+      "visibleTargetsAtLeast44px": true
+    },
+    {
+      "surface": "activity",
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "file": "activity-desktop-light.png",
+      "classification": "synthetic pre-implementation design reference",
+      "png": {
+        "width": 1440,
+        "height": 1783,
+        "sha256": "80068302f23406ec136ead4df0f1c95b24d3c6f9fde279efbdf4eef82e67a21c"
+      },
+      "checks": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "fullHeight": 1783,
+        "controls": [
+          {
+            "label": "Collapse sidebar",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Language",
+            "width": 112,
+            "height": 45
+          },
+          {
+            "label": "Switch to dark mode",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Account",
+            "width": 220.8125,
+            "height": 46
+          },
+          {
+            "label": "Manage study record",
+            "width": 190.046875,
+            "height": 44
+          },
+          {
+            "label": "Delete study session",
+            "width": 181.703125,
+            "height": 46
+          },
+          {
+            "label": "Remove private reflection",
+            "width": 220.046875,
+            "height": 46
+          },
+          {
+            "label": "Manage study record",
+            "width": 190.046875,
+            "height": 44
+          },
+          {
+            "label": "Delete study session",
+            "width": 181.703125,
+            "height": 46
+          },
+          {
+            "label": "Manage completion record",
+            "width": 227.359375,
+            "height": 44
+          },
+          {
+            "label": "Mark as unfinished",
+            "width": 171.75,
+            "height": 46
+          },
+          {
+            "label": "Reflect on your recorded effort",
+            "width": 251.90625,
+            "height": 44
+          },
+          {
+            "label": "Summarize my progress",
+            "width": 208.578125,
+            "height": 89
+          }
+        ],
+        "brand": {
+          "text": "LittleFurther",
+          "rect": {
+            "width": 127.046875,
+            "height": 23.75
+          },
+          "rangeRects": [
+            {
+              "left": 138,
+              "right": 189.828125,
+              "top": 22.125,
+              "bottom": 50.125
+            },
+            {
+              "left": 189.828125,
+              "right": 189.828125,
+              "top": 22.125,
+              "bottom": 50.125
+            },
+            {
+              "left": 189.828125,
+              "right": 265.046875,
+              "top": 22.125,
+              "bottom": 50.125
+            }
+          ]
+        },
+        "openConfirmations": 0
+      },
+      "noHorizontalOverflow": true,
+      "visibleTargetsAtLeast44px": true
+    },
+    {
+      "surface": "activity",
+      "name": "mobile",
+      "width": 320,
+      "height": 900,
+      "theme": "dark",
+      "file": "activity-mobile-dark.png",
+      "classification": "synthetic pre-implementation design reference",
+      "png": {
+        "width": 320,
+        "height": 1960,
+        "sha256": "8459ed7ab0e87d34a6acd10aa25e1f17cc932b899ed2f8d07d595fa1849303ba"
+      },
+      "checks": {
+        "clientWidth": 320,
+        "scrollWidth": 320,
+        "fullHeight": 1960,
+        "controls": [
+          {
+            "label": "Open navigation",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Language",
+            "width": 100,
+            "height": 44
+          },
+          {
+            "label": "Switch to light mode",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Account",
+            "width": 64,
+            "height": 44
+          },
+          {
+            "label": "Manage study record",
+            "width": 190.046875,
+            "height": 44
+          },
+          {
+            "label": "Delete study session",
+            "width": 181.703125,
+            "height": 46
+          },
+          {
+            "label": "Remove private reflection",
+            "width": 220.046875,
+            "height": 46
+          },
+          {
+            "label": "Manage study record",
+            "width": 190.046875,
+            "height": 44
+          },
+          {
+            "label": "Delete study session",
+            "width": 181.703125,
+            "height": 46
+          },
+          {
+            "label": "Manage completion record",
+            "width": 227.359375,
+            "height": 44
+          },
+          {
+            "label": "Mark as unfinished",
+            "width": 171.75,
+            "height": 46
+          },
+          {
+            "label": "Reflect on your recorded effort",
+            "width": 251.90625,
+            "height": 44
+          },
+          {
+            "label": "Summarize my progress",
+            "width": 208.578125,
+            "height": 46
+          }
+        ],
+        "brand": {
+          "text": "LittleFurther",
+          "rect": {
+            "width": 112.921875,
+            "height": 21.109375
+          },
+          "rangeRects": [
+            {
+              "left": 111,
+              "right": 157.0625,
+              "top": 20.4375,
+              "bottom": 46.4375
+            },
+            {
+              "left": 157.0625,
+              "right": 157.0625,
+              "top": 20.4375,
+              "bottom": 46.4375
+            },
+            {
+              "left": 157.0625,
+              "right": 223.921875,
+              "top": 20.4375,
+              "bottom": 46.4375
+            }
+          ]
+        },
+        "openConfirmations": 0
+      },
+      "noHorizontalOverflow": true,
+      "visibleTargetsAtLeast44px": true
+    },
+    {
+      "surface": "journeys",
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "file": "journeys-desktop-light.png",
+      "classification": "synthetic pre-implementation design reference",
+      "png": {
+        "width": 1440,
+        "height": 1196,
+        "sha256": "4af6b99dc8251c2a725a8fa5f6a1d4a20a5ed011eb0189e6eee292db947b5e28"
+      },
+      "checks": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "fullHeight": 1196,
+        "controls": [
+          {
+            "label": "Collapse sidebar",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Language",
+            "width": 112,
+            "height": 45
+          },
+          {
+            "label": "Switch to dark mode",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Account",
+            "width": 220.8125,
+            "height": 46
+          },
+          {
+            "label": "Create a learning plan",
+            "width": 193.265625,
+            "height": 46
+          },
+          {
+            "label": "status",
+            "width": 240,
+            "height": 45
+          },
+          {
+            "label": "Open journey",
+            "width": 132.9375,
+            "height": 46
+          },
+          {
+            "label": "Manage plan",
+            "width": 138.015625,
+            "height": 44
+          },
+          {
+            "label": "Archive plan",
+            "width": 123.9375,
+            "height": 46
+          },
+          {
+            "label": "Delete permanently",
+            "width": 138.015625,
+            "height": 70
+          },
+          {
+            "label": "Open journey",
+            "width": 132.9375,
+            "height": 46
+          },
+          {
+            "label": "Manage plan",
+            "width": 138.015625,
+            "height": 44
+          },
+          {
+            "label": "Archive plan",
+            "width": 123.9375,
+            "height": 46
+          },
+          {
+            "label": "Delete permanently",
+            "width": 138.015625,
+            "height": 70
+          },
+          {
+            "label": "Cancel",
+            "width": 81.828125,
+            "height": 46
+          },
+          {
+            "label": "Archive plan",
+            "width": 123.9375,
+            "height": 46
+          }
+        ],
+        "brand": {
+          "text": "LittleFurther",
+          "rect": {
+            "width": 127.046875,
+            "height": 23.75
+          },
+          "rangeRects": [
+            {
+              "left": 138,
+              "right": 189.828125,
+              "top": 22.125,
+              "bottom": 50.125
+            },
+            {
+              "left": 189.828125,
+              "right": 189.828125,
+              "top": 22.125,
+              "bottom": 50.125
+            },
+            {
+              "left": 189.828125,
+              "right": 265.046875,
+              "top": 22.125,
+              "bottom": 50.125
+            }
+          ]
+        },
+        "openConfirmations": 1
+      },
+      "noHorizontalOverflow": true,
+      "visibleTargetsAtLeast44px": true
+    },
+    {
+      "surface": "journeys",
+      "name": "mobile",
+      "width": 320,
+      "height": 900,
+      "theme": "dark",
+      "file": "journeys-mobile-dark.png",
+      "classification": "synthetic pre-implementation design reference",
+      "png": {
+        "width": 320,
+        "height": 1466,
+        "sha256": "6bd8d4d8c8a91e99538688f83aa72a72764a613484a804c9f9eea85f5e0243c7"
+      },
+      "checks": {
+        "clientWidth": 320,
+        "scrollWidth": 320,
+        "fullHeight": 1466,
+        "controls": [
+          {
+            "label": "Open navigation",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Language",
+            "width": 100,
+            "height": 44
+          },
+          {
+            "label": "Switch to light mode",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "label": "Account",
+            "width": 64,
+            "height": 44
+          },
+          {
+            "label": "Create a learning plan",
+            "width": 193.265625,
+            "height": 46
+          },
+          {
+            "label": "status",
+            "width": 240,
+            "height": 45
+          },
+          {
+            "label": "Open journey",
+            "width": 132.9375,
+            "height": 46
+          },
+          {
+            "label": "Manage plan",
+            "width": 138.015625,
+            "height": 44
+          },
+          {
+            "label": "Archive plan",
+            "width": 123.9375,
+            "height": 46
+          },
+          {
+            "label": "Delete permanently",
+            "width": 138.015625,
+            "height": 70
+          },
+          {
+            "label": "Open journey",
+            "width": 132.9375,
+            "height": 46
+          },
+          {
+            "label": "Manage plan",
+            "width": 138.015625,
+            "height": 44
+          },
+          {
+            "label": "Archive plan",
+            "width": 123.9375,
+            "height": 46
+          },
+          {
+            "label": "Delete permanently",
+            "width": 138.015625,
+            "height": 70
+          },
+          {
+            "label": "Cancel",
+            "width": 81.828125,
+            "height": 46
+          },
+          {
+            "label": "Archive plan",
+            "width": 123.9375,
+            "height": 46
+          }
+        ],
+        "brand": {
+          "text": "LittleFurther",
+          "rect": {
+            "width": 112.921875,
+            "height": 21.109375
+          },
+          "rangeRects": [
+            {
+              "left": 111,
+              "right": 157.0625,
+              "top": 20.4375,
+              "bottom": 46.4375
+            },
+            {
+              "left": 157.0625,
+              "right": 157.0625,
+              "top": 20.4375,
+              "bottom": 46.4375
+            },
+            {
+              "left": 157.0625,
+              "right": 223.921875,
+              "top": 20.4375,
+              "bottom": 46.4375
+            }
+          ]
+        },
+        "openConfirmations": 1
+      },
+      "noHorizontalOverflow": true,
+      "visibleTargetsAtLeast44px": true
+    }
+  ],
+  "board": {
+    "file": "board.png",
+    "width": 1340,
+    "height": 7218,
+    "sha256": "e5557cc69f1a5e7908c1ac76f030184e766a6d7403b1fc45a0e7f407c00d1b09"
+  },
+  "limits": [
+    "English synthetic references only; application verification must cover English and French.",
+    "Closed disclosure content is not included in the visible-target assertions.",
+    "Static controls illustrate the design and do not implement application actions.",
+    "Source metadata, dates and records are synthetic; source links in the reference do not constitute research verification.",
+    "Mechanical checks do not establish accessibility conformance, usability outcomes or human approval."
+  ]
+}

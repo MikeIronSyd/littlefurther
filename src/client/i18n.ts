@@ -2,6 +2,18 @@ import type { Locale } from "../shared/contracts.js";
 import { APP_NAME } from "./branding.js";
 
 const en = {
+  planningMethod: "How would you like to draft?",
+  planningManual: "Use my topics or a starter",
+  planningAi: "Draft with AI",
+  planningMethodHint: "Choose a starting route. You can review and edit every step before saving.",
+  planningExtras: "Optional details",
+  planningExtrasHint: "Add a target date, reference links or context for the AI draft.",
+  planningSchedule: "Make room for study",
+  aiReady: "Suggestion ready. Review it when you are ready.",
+  aiSourceDetails: "Source details: {title}",
+  managePlan: "Manage plan: {context}",
+  manageRecord: "Manage study record: {context}",
+  manageCompletion: "Review completion: {context}",
   plansStatus: "Show plans",
   activePlans: "Active",
   archivedPlans: "Archived",
@@ -236,9 +248,9 @@ const en = {
   history: "Retained history",
   historyCopy:
     "Earlier activity and completed work stay in your history when the active plan changes.",
-  pastCompletions: "{count} completions recorded in history",
+  pastCompletions: "{count} completions counted in history",
   sessionCount: "{count} study sessions",
-  activityCompletions: "Completed steps",
+  activityCompletions: "Completion history",
   activityChanges: "Scope changes",
   noActivity: "No study activity yet. Your first session can be a small one.",
   afterStudy: "After studying",
@@ -526,6 +538,20 @@ const en = {
 
 type MessageKey = keyof typeof en;
 const fr: Record<MessageKey, string> = {
+  planningMethod: "Comment souhaitez-vous préparer votre programme ?",
+  planningManual: "Utiliser mes sujets ou un modèle",
+  planningAi: "Préparer avec l’IA",
+  planningMethodHint:
+    "Choisissez un point de départ. Vous pourrez vérifier et modifier chaque étape avant l’enregistrement.",
+  planningExtras: "Informations facultatives",
+  planningExtrasHint:
+    "Ajoutez une date cible, des liens de référence ou du contexte pour le brouillon de l’IA.",
+  planningSchedule: "Prévoyez du temps pour étudier",
+  aiReady: "La suggestion est prête. Vérifiez-la lorsque vous le souhaitez.",
+  aiSourceDetails: "Détails de la source : {title}",
+  managePlan: "Gérer le programme : {context}",
+  manageRecord: "Gérer la séance d’étude : {context}",
+  manageCompletion: "Vérifier la validation : {context}",
   plansStatus: "Afficher les programmes",
   activePlans: "Actifs",
   archivedPlans: "Archivés",
@@ -770,9 +796,9 @@ const fr: Record<MessageKey, string> = {
   history: "Historique conservé",
   historyCopy:
     "Vos activités et votre travail terminé restent dans l’historique lorsque le parcours actif change.",
-  pastCompletions: "{count} étapes terminées dans l’historique",
+  pastCompletions: "{count} validations comptabilisées dans l’historique",
   sessionCount: "{count} séances d’étude",
-  activityCompletions: "Étapes terminées",
+  activityCompletions: "Historique des validations",
   activityChanges: "Modifications du parcours",
   noActivity: "Aucune activité pour le moment. Votre première séance peut être courte.",
   afterStudy: "Après la séance",
@@ -1090,7 +1116,9 @@ export function message(key: MessageKey, values: Record<string, string | number>
     result = locale === "fr" ? "1 séance d’étude" : "1 study session";
   if (key === "pastCompletions" && count === 1)
     result =
-      locale === "fr" ? "1 étape terminée dans l’historique" : "1 completion recorded in history";
+      locale === "fr"
+        ? "1 validation comptabilisée dans l’historique"
+        : "1 completion counted in history";
   if (key === "planCount" && count === 1)
     result = locale === "fr" ? "1 étape active" : "1 active step";
   if (

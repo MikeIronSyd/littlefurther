@@ -49,7 +49,12 @@
     {
       "name": "Depth of Codex Integration",
       "requirement": "Show Codex across planning, building, reviewing, and documenting.",
-      "supporting_mechanisms": ["AGENTS.md", "plan mode", "MCPs", "reusable skills"],
+      "supporting_mechanisms": [
+        "AGENTS.md",
+        "plan mode",
+        "MCPs",
+        "reusable skills"
+      ],
       "user_emphasis": "Treat depth of integration as a core project-selection and delivery criterion."
     },
     {
@@ -196,7 +201,10 @@
       "stack": "Node24.19.0 / pnpm11.19.0 / Express5.2.1 / strict TypeScript7.0.2 / Vite8.3.3 / Better Auth1.7.7 / better-sqlite3 13.0.3; Biome2.5.15 and Playwright1.63.0. Exact pins remain in package.json/pnpm-lock.yaml. Schema v3 adds bounded source metadata; dated feasibility, integration and AI checks are linked in verification.",
       "concept_spec": "docs/specs/capstone/spec.md",
       "runtime_ai": true,
-      "languages": ["English", "French"],
+      "languages": [
+        "English",
+        "French"
+      ],
       "design_workflow_record": ".impeccable/config.json",
       "ai_scope": {
         "date": "2026-10-13",
@@ -436,10 +444,10 @@
     "Never publish credentials, learner databases or private runtime receipts. Global CodexRecovery excludes project source/history/data. Preserve hooks and do not activate paid services."
   ],
   "current_status": {
-    "date": "2026-10-15",
-    "summary": "LC01–LC07 implemented and verified; independent source/visual review has no blocker. Approved source publication and E036 delivery completed15October2026.",
+    "date": "2026-10-17",
+    "summary": "UR01–UR08 implemented and verified locally: required100domain/server+123browser cases (21.2minutes), static/type/lint/format/build/process/audit passed; independent source/correction review has no blocker. One24-slot actual visual batch and one5-image confirmation completed. No commit, push or tracker/shared write approved or performed.",
     "product_specification": "docs/specs/capstone/spec.md",
-    "application_verification": "docs/specs/capstone/increments/learning-lifecycle-verification.md",
+    "application_verification": "docs/specs/capstone/increments/ui-refinement-verification.md",
     "user_guide": "docs/USER_GUIDE.md",
     "architecture": "docs/ARCHITECTURE.md",
     "development": "docs/DEVELOPMENT.md",
@@ -449,14 +457,14 @@
     "packaging": "docs/specs/capstone/increments/docker.md",
     "packaging_verification": "docs/specs/capstone/increments/docker-verification.md",
     "packaging_status": "DK01–DK08 verified within recorded scope: clean LinuxAMD64/emulatedARM64; synthetic persistence/restore/mockAI;5container browser;required85domain/server+94browser/static/build/process/audit pass;independentreview;E031D019savedexact17Sheetvalues and fullKaneo history; reviewed source normallypublished/readback. Documentarycloseout uses same normalpublication and finalreadback.",
-    "active_specification": "docs/specs/capstone/increments/learning-lifecycle.md",
+    "active_specification": "docs/specs/capstone/increments/ui-refinement.md",
     "review": "docs/specs/capstone/reviews/2026-10-15-learning-lifecycle-review.md",
     "visual": "docs/specs/capstone/designs/learning-lifecycle/README.md",
     "checks": "15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only. Six final actual captures: no measured overflow,44px visible targets;9source hashes match. Browser MCP observed archive/FR/cancel/restore;16docs/259links/13anchors/10PNG/26labels validated. Enlarged-FR skip-link capture limitation retained.",
     "calendar": "docs/specs/capstone/increments/planning-calendar.md",
     "calendar_verification": "docs/specs/capstone/increments/planning-calendar-verification.md",
-    "delivery": "Verified lifecycle/calendar source published at ada0bd1aa1f017b8de2112396046bab50aaecbf2 (MikeIronSyd/littlefurther, public as requested). Normal publication retained existing history; exact remote main, owner authentication and author/committer were verified through Git/CLI and GitHub MCP. E036 saved and independently compared. See docs/specs/capstone/reviews/2026-10-15-learning-lifecycle-publication.md.",
-    "tracker_sync": "E036 saved through browser/computer-use MCP in the Miva Sheet and Kaneo A010. All five Sheet tabs compared: exactly11approved values,10exact row values,1781prior cells/formulas/types/semantic styles retained,35prior evidence IDs and uniqueE036. ContextB25=3151new+45010entire prior=48161characters. Kaneo saved reload=3151new+185352entire prior text=188503; title/In Progress/No priority/Unassigned/No date/10-task board unchanged. Available199999-character prior HTML prefix exact; complete old HTML baseline exceeded tool limit.",
+    "delivery": "Local implementation only; publication and tracker writes require fresh concrete approval.",
+    "tracker_sync": "E037 exact local draft only; no shared write approved. E036 remains the last verified shared update. Existing histories and metadata must be preserved.",
     "publication_record": "docs/specs/capstone/reviews/2026-10-15-learning-lifecycle-publication.md"
   },
   "status_reconciliation": {
@@ -538,23 +546,37 @@
     "publication_record": "docs/specs/capstone/reviews/2026-10-15-learning-lifecycle-publication.md"
   },
   "active_increment": {
-    "id": "learning-lifecycle",
-    "name": "Archive, deletion and recovery controls",
-    "date": "2026-10-15",
-    "status": "LC01–LC07 implemented, required combined verification passed100domain/server+115browser, independent source/visual review has no blocker. Source publication and E036 tracker delivery verified15October2026. No new application suite was run for publication-only closeout.",
-    "specification": "docs/specs/capstone/increments/learning-lifecycle.md",
-    "verification": "docs/specs/capstone/increments/learning-lifecycle-verification.md",
-    "baseline": "c3a07fe96247808bb0c20ebd77c5e8a22e7e6535",
+    "id": "ui-refinement",
+    "name": "Comprehensive one-page UI refinement",
+    "date": "2026-10-17",
+    "status": "UR01–UR08 implemented and verified locally: required100domain/server+123browser cases (21.2minutes), static/type/lint/format/build/process/audit passed; independent source/correction review has no blocker. One24-slot actual visual batch and one5-image confirmation completed. No commit, push or tracker/shared write approved or performed.",
+    "specification": "docs/specs/capstone/increments/ui-refinement.md",
+    "verification": "docs/specs/capstone/increments/ui-refinement-verification.md",
+    "baseline": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
     "formal_review": {
       "status": "D016 baseline approved; later AI-surface human review remains separate.",
       "baseline": "a768c98",
       "record": "docs/specs/capstone/design.md#overall-design-approval--12-october-2026",
       "boundary": "Historical pipeline sessions/URLs are not active approval gates or newly completed tool receipts."
     },
-    "tracker_sync": "E036 saved through browser/computer-use MCP in the Miva Sheet and Kaneo A010. All five Sheet tabs compared: exactly11approved values,10exact row values,1781prior cells/formulas/types/semantic styles retained,35prior evidence IDs and uniqueE036. ContextB25=3151new+45010entire prior=48161characters. Kaneo saved reload=3151new+185352entire prior text=188503; title/In Progress/No priority/Unassigned/No date/10-task board unchanged. Available199999-character prior HTML prefix exact; complete old HTML baseline exceeded tool limit.",
-    "next": "Inspect delivered controls and gather learner feedback. Recording/submission and educational outcomes remain separate. Obtain fresh explicit approval before another concrete commit, push or shared write.",
-    "publication_record": "docs/specs/capstone/reviews/2026-10-15-learning-lifecycle-publication.md",
-    "artifact_commit": "ada0bd1aa1f017b8de2112396046bab50aaecbf2",
-    "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/ada0bd1aa1f017b8de2112396046bab50aaecbf2"
+    "tracker_sync": "E037 exact local draft only; no shared write approved. E036 remains the last verified shared update. Existing histories and metadata must be preserved.",
+    "next": "Review the exact local81-path feature/owner previews and E037 tracker proposal, then obtain Michael’s fresh approval for the bounded commit+push+tracker+documentary-closeout batch. Preserve AGENTS.md and all local-only material.",
+    "publication_record": null,
+    "artifact_commit": null,
+    "artifact_url": null
+  },
+  "ui_refinement": {
+    "date": "2026-10-17",
+    "specification": "docs/specs/capstone/increments/ui-refinement.md",
+    "verification": "docs/specs/capstone/increments/ui-refinement-verification.md",
+    "research": "R45 closed before frontend implementation; eight synthetic desktop/mobile references inspected before code. Calendar placeholders qualified; actual calendar behavior preserved.",
+    "scope": "Early manual/AI drafting choice on one page, compact source metadata and contextual assistance, study/history hierarchy, contextual lifecycle groups, selection reset and account dismissal. No API/schema/dependency change.",
+    "status": "UR01–UR08 implemented and verified locally: required100domain/server+123browser cases (21.2minutes), static/type/lint/format/build/process/audit passed; independent source/correction review has no blocker. One24-slot actual visual batch and one5-image confirmation completed. No commit, push or tracker/shared write approved or performed.",
+    "limitations": "Synthetic isolated records and mocked AI only. No screen-reader certification, educational outcome, new container-platform run or human design approval inferred.",
+    "delivery": "No commit, push or shared tracker update approved or performed for this increment. Publication uses this repository owner and existing history; visibility remains public as requested.",
+    "checks": "Required verify exit0 on17/10/2026, 22:05:41 Africa/Lagos:100domain/server+123browser,static/type/lint/format/build/process,audit(no known vulnerabilities); focused9/9 passed. Local docs/assets checks and owner previews are recorded in ignored receipts.",
+    "next": "Review the exact local81-path feature/owner previews and E037 tracker proposal, then obtain Michael’s fresh approval for the bounded commit+push+tracker+documentary-closeout batch. Preserve AGENTS.md and all local-only material.",
+    "review": "docs/specs/capstone/reviews/2026-10-17-ui-refinement-review.md",
+    "visual": "docs/specs/capstone/designs/ui-refinement/README.md"
   }
 }

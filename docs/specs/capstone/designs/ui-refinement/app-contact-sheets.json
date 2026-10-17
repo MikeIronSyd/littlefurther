@@ -1,0 +1,138 @@
+{
+  "createdAt": "2026-10-17T20:41:13.597Z",
+  "classification": "contact sheets derived only from recorded actual-interface captures; thumbnails are reduced for orientation, not new app states",
+  "boards": [
+    {
+      "file": "app-contact-1.png",
+      "title": "Entry, preferences and planning",
+      "sourceFiles": [
+        {
+          "file": "app-initial-auth-desktop-light-en.png",
+          "sha256": "4f5a1dceb92b46694502b1734050ba7abbdf6faa0f4a0a6525f63b843b62b89d"
+        },
+        {
+          "file": "app-initial-auth-mobile-dark-fr.png",
+          "sha256": "3ce4b1f52e76d31bfea4001a0b1b5438efe47638f0a71910b041ac16d6ab01b4"
+        },
+        {
+          "file": "app-initial-preferences-desktop-light-en.png",
+          "sha256": "24071a62e582e9565312586702c72b715bc94937d77c956b7eca31363c0f2c6f"
+        },
+        {
+          "file": "app-initial-preferences-mobile-dark-fr.png",
+          "sha256": "6a2d90a384fd1794b04b45759ad89b6fff97fb659b61fed9187cbbf20fdd7350"
+        },
+        {
+          "file": "app-initial-planning-desktop-light-en.png",
+          "sha256": "dc915607e8416c70ba92d65a6e021c4fab0739276a2c2fa0f752f76f808f186d"
+        },
+        {
+          "file": "app-initial-planning-mobile-dark-fr.png",
+          "sha256": "9d89e87b28ef0f2851582296c29737cf52db0b9bd5b731bb2ae69458998499dc"
+        }
+      ],
+      "width": 1160,
+      "height": 2040,
+      "sha256": "b40179662e718ed8fe76edf8651ca2a482cafec161fd622089e485dc9f126846"
+    },
+    {
+      "file": "app-contact-2.png",
+      "title": "Learning, study and retained history",
+      "sourceFiles": [
+        {
+          "file": "app-initial-dashboard-desktop-light-en.png",
+          "sha256": "048a905f35147742f7e397919e7aa725ec826b9e5375f35d65a881071dce62c1"
+        },
+        {
+          "file": "app-initial-dashboard-mobile-dark-fr.png",
+          "sha256": "6a4e4fb7d3ec7e027909b78a49cc099ba88c6fbfa0cf15d3b51bb9b4ed621f81"
+        },
+        {
+          "file": "app-initial-study-desktop-light-en.png",
+          "sha256": "56ce0b203f908ac7fca0a2b4c28e17aab3d49bec06c0b57e876f2276c3790efa"
+        },
+        {
+          "file": "app-initial-study-mobile-dark-fr.png",
+          "sha256": "418e2915d4139519e99822ec1a27192c98596bbc5d8cb778f165a0c080acd21f"
+        },
+        {
+          "file": "app-initial-activity-desktop-light-en.png",
+          "sha256": "da95ac164eed20eadfbe437ba70a8850070bf716f2572c097f7ebcfa30fa7f7e"
+        },
+        {
+          "file": "app-initial-activity-mobile-dark-fr.png",
+          "sha256": "73aef5b66221fe6c40be3777b2ab84a0b7db15e7fbebb57bf515b86194ade8d6"
+        }
+      ],
+      "width": 1160,
+      "height": 2040,
+      "sha256": "77ef431eceb83507ac34af5c8e6d9049789d0c694c5f47b6c39c3d0b2de99fda"
+    },
+    {
+      "file": "app-contact-3.png",
+      "title": "Returning, private support and FinishLine",
+      "sourceFiles": [
+        {
+          "file": "app-initial-comeback-desktop-light-en.png",
+          "sha256": "389bb9af0e3aa5a0a37ab311db49d66c139e3d8bcf8c65739a9b17d25a58081d"
+        },
+        {
+          "file": "app-initial-comeback-mobile-dark-fr.png",
+          "sha256": "368c4b6c2c76d9544281f1bc81178d09feac9d4b3f52e6d0bc53064d37fd66ab"
+        },
+        {
+          "file": "app-initial-circles-desktop-light-en.png",
+          "sha256": "2e47b233eb6458714101be7fc6fc937d5e663376700d6e3b61cb991be6cac65c"
+        },
+        {
+          "file": "app-initial-circles-mobile-dark-fr.png",
+          "sha256": "0b5143c341e57021d39008791c7c2d84880dd1ad1acffb656afcf4326dac2968"
+        },
+        {
+          "file": "app-initial-finishline-desktop-light-en.png",
+          "sha256": "4321baeee9bdb2e76cfece6a82696f549e987b5416e45faf70c5759d9b152f13"
+        },
+        {
+          "file": "app-initial-finishline-mobile-dark-fr.png",
+          "sha256": "248f3e384999515fc19bfe1019534597c44c2f7799c0f3b6bb13efc92a5a2150"
+        }
+      ],
+      "width": 1160,
+      "height": 2040,
+      "sha256": "1b32ced08e8a54bb4027a1dbc08e53b2bdd5f59df6c001ecefaf21bea76819a5"
+    },
+    {
+      "file": "app-contact-4.png",
+      "title": "Journeys, focused review and accessibility conditions",
+      "sourceFiles": [
+        {
+          "file": "app-initial-journeys-desktop-light-en.png",
+          "sha256": "05213561983b4cc48fbb799fac42ddac8800d4a3efe029a90e01fbc8990ee7c8"
+        },
+        {
+          "file": "app-initial-journeys-mobile-dark-fr.png",
+          "sha256": "25438cd49db104611963bb3318c293b154283defca685b6dd88f682df91dfe03"
+        },
+        {
+          "file": "app-initial-planning-review-desktop-light-en.png",
+          "sha256": "72a883b29bcd27a6710002201694b5a7bbfc45749baee1e95597ea53a025d151"
+        },
+        {
+          "file": "app-initial-planning-review-mobile-dark-fr.png",
+          "sha256": "70dc0846d48c63d02b8b14434995a146a932d2ecd8814aa5085cff3c59e50973"
+        },
+        {
+          "file": "app-initial-preferences-mobile-fr-enlarged-forced.png",
+          "sha256": "653d660a7c297702b4c3dbe80ce3ccb96272f52b987fc2a0ebf7570c604a11c1"
+        },
+        {
+          "file": "app-initial-touch-drawer-mobile-dark-fr.png",
+          "sha256": "2785f4d606acfbac49b484076a6cb945342261565c7a48cade6b54d7760f39db"
+        }
+      ],
+      "width": 1160,
+      "height": 2040,
+      "sha256": "32c2607b1b7277f8177f90b3749ecb44673a3b118544f5fea622ca4eb17400dc"
+    }
+  ]
+}

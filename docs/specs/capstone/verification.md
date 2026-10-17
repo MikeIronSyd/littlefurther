@@ -1,5 +1,7 @@
 # Capstone verification and judging evidence
 
+Current local increment — 17 October 2026, Africa/Lagos: [UR01–UR08 UI refinement](increments/ui-refinement-verification.md) records one-page drafting, quieter optional assistance and contextual management. Corrected required verification passed100domain/server and123browser cases plus static/build/process/audit checks; [independent/visual review](reviews/2026-10-17-ui-refinement-review.md) and qualified captures preserve actual findings and limits. Publication and E037 tracker writes remain unapproved. This paragraph supersedes the dated current-status snapshots below; earlier test and saved-delivery claims keep their original scope.
+
 Current repository visibility —15October2026: Michael selected leaving this repository public for now. The [lifecycle verification](increments/learning-lifecycle-verification.md) records the current lifecycle/calendar checks and delivery status. Earlier dated metadata observations retain their historical scope.
 
 14 October interface feedback: obsolete save status clears after accepted navigation, and one-step removal uses correct English/French wording. Fresh native-dialog regressions passed for plan, study/reflection, circle and preferences drafts. The prior required run passed 85 domain/server and 102 browser tests; these are dated results, not new tests for this documentation cleanup. See [regression tests](../../../tests/e2e/rehearsal-corrections.spec.ts). Recording preparation is kept locally.

@@ -605,7 +605,11 @@ async function renderRoute(focus = false): Promise<void> {
       }
       select.value = current.plan.id;
       select.addEventListener("change", () => {
-        if (!isCurrent() || !canLeave()) return;
+        if (!isCurrent()) return;
+        if (!canLeave()) {
+          select.value = current.plan.id;
+          return;
+        }
         const chosen = plans.find((plan) => plan.id === select.value);
         if (chosen) {
           detail = { ...current, plan: chosen };

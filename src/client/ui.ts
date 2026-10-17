@@ -134,6 +134,14 @@ export function focusHeading(root: HTMLElement): void {
   }
 }
 
+export function revealControl(control: HTMLElement): void {
+  let ancestor = control.parentElement;
+  while (ancestor) {
+    if (ancestor instanceof HTMLDetailsElement) ancestor.open = true;
+    ancestor = ancestor.parentElement;
+  }
+}
+
 export function lockForm(form: HTMLFormElement): () => void {
   const controls = [
     ...form.querySelectorAll<
@@ -156,6 +164,7 @@ export function focusFailure(
 ): void {
   if (!current() || !host.isConnected) return;
   if (control?.isConnected) {
+    revealControl(control);
     control.focus();
     return;
   }

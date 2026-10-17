@@ -9,20 +9,50 @@ export function cancelAiOperations(): void {
   for (const cancel of activeOperations) cancel();
 }
 
+function uniqueSources(sources: LearningSource[]): LearningSource[] {
+  const seen = new Set<string>();
+  return sources.filter((source) => {
+    if (seen.has(source.id)) return false;
+    seen.add(source.id);
+    return true;
+  });
+}
+
+function sourceLink(source: LearningSource): HTMLAnchorElement {
+  const link = el("a", "resource-link", source.title ?? source.url);
+  link.href = source.url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  return link;
+}
+
+export function sourceLinks(sources: LearningSource[]): HTMLElement {
+  const list = el("ul", "ai-source-links");
+  for (const source of uniqueSources(sources)) {
+    const row = el("li", "", sourceLink(source));
+    row.dataset.sourceId = source.id;
+    list.append(row);
+  }
+  return list;
+}
+
 export function sourceList(sources: LearningSource[]): HTMLElement {
   const list = el("ul", "ai-source-list");
-  for (const source of sources) {
-    const link = el("a", "resource-link", source.title ?? source.url);
-    link.href = source.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    const row = el("li", "", link, el("p", "hint", source.publisher));
+  for (const source of uniqueSources(sources)) {
+    const domain = new URL(source.url).hostname;
+    const publisher = source.publisher === domain ? domain : `${domain} · ${source.publisher}`;
+    const row = el("li", "", sourceLink(source), el("p", "hint", publisher));
     row.dataset.sourceId = source.id;
+    const details = el("details", "ai-source-details");
+    const summary = text("summary", "aiSourceDetails", "ai-source-summary", {
+      title: source.title ?? source.url,
+    });
     const observed = el("p", "hint");
     bind(observed, () => {
       observed.textContent = message("aiSourceObserved", { date: dateLabel(source.observedAt) });
     });
-    row.append(
+    details.append(
+      summary,
       observed,
       text("p", source.kind === "user_supplied" ? "aiSourceSupplied" : "aiSourceSearch", "hint"),
     );
@@ -44,7 +74,8 @@ export function sourceList(sources: LearningSource[]): HTMLElement {
         .map((value) => message(evidenceKeys[value]))
         .join(" · ");
     });
-    row.append(language, evidence);
+    details.append(language, evidence);
+    row.append(details);
     list.append(row);
   }
   return list;
@@ -63,6 +94,7 @@ interface AiPanelOptions {
   canUse?: () => boolean;
   useLabel?: MessageKey;
   suggestionChanged?: (available: boolean) => void;
+  initiallyExpanded?: boolean;
 }
 
 // Each inline assistant owns its operation and result. It never locks the manual form.
@@ -72,6 +104,20 @@ export function aiPanel(options: AiPanelOptions): HTMLElement {
   const heading = text("h2", options.title);
   heading.id = `ai-${crypto.randomUUID()}`;
   panel.setAttribute("aria-labelledby", heading.id);
+  const disclosure = el("details", "ai-disclosure");
+  disclosure.open = options.initiallyExpanded ?? false;
+  const summary = el(
+    "summary",
+    "ai-summary",
+    heading,
+    text("span", options.action, "ai-summary-action"),
+  );
+  heading.classList.add("ai-summary-title");
+  const body = el("div", "ai-body");
+  const ready = el("p", "hint ai-ready");
+  ready.setAttribute("role", "status");
+  ready.setAttribute("aria-live", "polite");
+  ready.setAttribute("aria-atomic", "true");
   const status = el("div", "ai-status");
   const resultHost = el("div", "ai-result");
   let controller: AbortController | null = null;
@@ -92,6 +138,7 @@ export function aiPanel(options: AiPanelOptions): HTMLElement {
     run.disabled = false;
     cancel.hidden = true;
     response = null;
+    ready.textContent = "";
     resultHost.replaceChildren();
     options.suggestionChanged?.(false);
     if (wasPending) status.replaceChildren(text("p", "aiCancelled", "hint"));
@@ -137,7 +184,7 @@ export function aiPanel(options: AiPanelOptions): HTMLElement {
               "",
               el("p", "", step.title),
               text("p", "estimated", "hint", { minutes: step.estimatedMinutes }),
-              sourceList(result.sources.filter((source) => step.sourceIds.includes(source.id))),
+              sourceLinks(result.sources.filter((source) => step.sourceIds.includes(source.id))),
             ),
           ),
         ),
@@ -181,11 +228,9 @@ export function aiPanel(options: AiPanelOptions): HTMLElement {
         : null;
     resultHost.append(el("div", "form-actions", use, discard));
     options.suggestionChanged?.(result.kind !== "insufficient" && Boolean(options.use));
-    const resultHeading = resultHost.querySelector<HTMLElement>("h3");
-    if (resultHeading) {
-      resultHeading.tabIndex = -1;
-      resultHeading.focus();
-    }
+    // Arrival is asynchronous: announce it without moving the learner away from
+    // another field, or reopening a deliberately collapsed assistant.
+    ready.textContent = message("aiReady");
   };
   const run = button(
     options.action,
@@ -254,7 +299,8 @@ export function aiPanel(options: AiPanelOptions): HTMLElement {
           const failure = text("p", key, "notice error");
           failure.setAttribute("role", "alert");
           status.replaceChildren(failure, text("p", "aiManual", "hint"));
-          focusFailure(status, current);
+          if (disclosure.open && panel.contains(document.activeElement))
+            focusFailure(status, current);
           if (error instanceof RequestError && error.status === 401)
             window.dispatchEvent(new Event("littlefurther-session-expired"));
         })
@@ -280,14 +326,18 @@ export function aiPanel(options: AiPanelOptions): HTMLElement {
         }
       });
   }
-  panel.append(
-    heading,
+  body.append(
     text("p", options.disclosure, "hint"),
     ...(options.controls ?? []),
     el("div", "form-actions", run, cancel),
     status,
     resultHost,
   );
+  disclosure.append(summary, body);
+  panel.append(disclosure, ready);
+  bind(ready, () => {
+    ready.textContent = response ? message("aiReady") : "";
+  });
   // Abort when the enclosing view disappears, including circle's internal navigation.
   const observer = new MutationObserver(() => {
     if (!panel.isConnected) {

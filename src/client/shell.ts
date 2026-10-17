@@ -126,6 +126,18 @@ export function createShell(root: HTMLElement, options: ShellOptions) {
     ),
   );
   account.append(accountSummary, accountItems);
+  account.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !account.open) return;
+    event.preventDefault();
+    account.open = false;
+    accountSummary.focus();
+  });
+  const dismissAccount = (event: Event): void => {
+    if (account.open && event.target instanceof Node && !account.contains(event.target))
+      account.open = false;
+  };
+  root.addEventListener("pointerdown", dismissAccount);
+  root.addEventListener("focusin", dismissAccount);
   account.hidden = true;
   const utilities = el("div", "utilities", language, themeControl, account);
   const header = el("header", "app-header", brandGroup, utilities);

@@ -584,7 +584,7 @@ export function showStudy(
     },
     "button",
   );
-  form.append(minutesField, reflectionField, originalReflection, studyHelp, save, status);
+  form.append(minutesField, reflectionField, originalReflection, save, status, studyHelp);
   form.addEventListener("input", dirty);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -660,8 +660,8 @@ export function showStudy(
       text("p", "sessionHelp"),
     ),
     resources,
-    stepHelp,
     form,
+    stepHelp,
     el(
       "section",
       "completion-section",
@@ -706,7 +706,11 @@ export function showActivity(
       "li",
       "history-entry",
       el("h4", "", completion.stepTitle),
-      text("span", completion.correctedAt ? "completionCorrected" : "complete", "completed-label"),
+      text(
+        "span",
+        completion.correctedAt ? "completionCorrected" : "complete",
+        completion.correctedAt ? "corrected-label" : "completed-label",
+      ),
       " · ",
       dated(completion.createdAt, detail.progress.timezone),
     );
@@ -742,19 +746,6 @@ export function showActivity(
     goal,
     text("p", "historyCopy", "hint"),
     rhythm(detail),
-    aiPanel({
-      title: "aiProgressTitle",
-      action: "aiProgressAction",
-      disclosure: "aiProgressDisclosure",
-      current: isCurrent,
-      signature: () => String(detail.plan.revision),
-      build: () => ({
-        action: "progress_recap",
-        locale: getLocale(),
-        planId: detail.plan.id,
-        revision: detail.plan.revision,
-      }),
-    }),
   );
   overview.setAttribute("aria-labelledby", goal.id);
   const retained = el(
@@ -787,4 +778,19 @@ export function showActivity(
   );
   if (lifecycle)
     host.querySelector(".activity-layout")?.append(removedStepsSection(host, detail, lifecycle));
+  host.querySelector(".activity-layout")?.append(
+    aiPanel({
+      title: "aiProgressTitle",
+      action: "aiProgressAction",
+      disclosure: "aiProgressDisclosure",
+      current: isCurrent,
+      signature: () => String(detail.plan.revision),
+      build: () => ({
+        action: "progress_recap",
+        locale: getLocale(),
+        planId: detail.plan.id,
+        revision: detail.plan.revision,
+      }),
+    }),
+  );
 }

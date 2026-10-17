@@ -4,6 +4,8 @@ Core app documented on **10 October 2026**, Africa/Lagos, against source revisio
 
 The current local update adds calendar planning and the archive/deletion/recovery controls described in section 29. Its implementation and verification status are separate: consult the [lifecycle verification record](specs/capstone/increments/learning-lifecycle-verification.md) rather than treating these instructions as a test-pass or publication claim.
 
+The17October local refinement adds the early drafting choice, expandable optional help/source metadata and contextual management described in section30. Consult its [verification record](specs/capstone/increments/ui-refinement-verification.md) for actual checks and delivery status.
+
 ## 1. What the app does and where each feature lives
 
 LittleFurther connects planning, studying, reflection, progress, returning after a break and optional peer support in one learning journey. The capability names are useful for explaining the product; most are not separate tabs.
@@ -89,7 +91,7 @@ Theme and desktop-sidebar choices are saved for that browser origin, shared by a
 
 1. On the empty learning screen, choose **Create a learning plan**. If plans already exist, use **Journeys → Create a learning plan**.
 2. Enter **Learning goal**, for example “Complete my introductory statistics unit.”
-3. Under **Start from**, choose **My own topics or course sections**.
+3. Leave **Use my topics or a starter** selected, then under **Start from**, choose **My own topics or course sections**.
 4. In **Your topics or sections (optional)**, enter one action per line for this manual route, for example:
 
    ```text
@@ -99,8 +101,8 @@ Theme and desktop-sidebar choices are saved for that browser origin, shared by a
    ```
 
 5. In **Dates you are available**, choose **Open calendar**, select a date, then choose **Add date**. Repeat for each date you can study. The selected dates appear below; use their **Remove** actions to change the selection. Keyboard date entry remains available if you prefer it.
-6. Optionally enter **Fixed target date (optional)**.
-7. Optionally enter **Reference links (optional)**, one complete `http://` or `https://` URL per line.
+6. Expand **Optional details** to enter **Fixed target date (optional)** if wanted.
+7. In that section, optionally enter **Reference links (optional)**, one complete `http://` or `https://` URL per line.
 8. Choose **Review draft steps**.
 9. Review and adjust all resulting actions using the controls in section 9.
 10. Choose **Confirm and save plan**. Wait for the saved message and My learning.
@@ -112,7 +114,7 @@ No plan is saved merely by reviewing it. After review, edit the action rows; the
 ## 8. Create a plan from the available starter
 
 1. Choose **Create a learning plan**.
-2. Under **Start from**, select **Build a simple web page**. This is the one curated starter currently included.
+2. Leave **Use my topics or a starter** selected; under **Start from**, select **Build a simple web page**. This is the one curated starter currently included.
 3. Read **Supported outcome**, **Before you start** and **Template sources**.
 4. Select and add your available dates, then optionally choose a fixed target and enter personal references.
 5. Enter your own Learning goal, or leave it blank to use the starter title.
@@ -413,12 +415,12 @@ AI uses the app's server-managed OpenAI credential. There is no personal-key fie
 
 ### Draft a learning plan
 
-1. Open **Create a learning plan**, enter your goal, then use **Open calendar → Add date** to select at least one available study date. **Your topics or sections (optional)** can stay empty for this AI route; learners who already have topics can supply them. The existing manual/template controls still work.
-2. In **Get help drafting your plan**, optionally describe **What you already know** or **Paste learning material**. Paste only material you are comfortable sending to OpenAI. Supplied reference links are included as links; their pages are not automatically read.
+1. Open **Create a learning plan**, enter your goal and select **Draft with AI**. Use **Open calendar → Add date** to select at least one available study date. The manual topic/starter fields are hidden for this route.
+2. Expand **Optional details** to describe **What you already know**, **Paste learning material** or add reference links if wanted. Paste only material you are comfortable sending to OpenAI. Supplied reference links are included as links; their pages are not automatically read.
 3. Review **Search the web for credible learning resources**, which starts selected; clear it if you do not want discovery. Search runs only when you request the draft and may consult pages. Discovery currently favors a bounded set of primary learning sites and cannot guarantee resources for every subject or language.
 4. Select **Draft my plan with AI**. Use **Cancel AI request** to stop waiting, or continue manually. Cancellation cannot undo a request already processed by OpenAI.
 5. Review the proposed outcome, prerequisites, small steps and clickable sources. Source records show publisher, observation date, URL language hint and whether the link was supplied, listed, cited or opened in search. A listing/citation does not establish that the full page was read. Accuracy, current availability, free access and language suitability still need your review.
-6. Choose **Review AI draft** or **Discard suggestion**. While a usable AI suggestion is ready, the manual-topic box and competing **Review draft steps** action are hidden. Reviewing the AI draft populates editable generated steps without requiring manual topics; it does not save a journey. Review titles, minutes, dates, references and source associations, then use **Confirm and save plan** when ready. Discarding or changing the drafting inputs restores manual planning and prevents use of the old suggestion.
+6. Choose **Review AI draft** or **Discard suggestion**. Reviewing the AI draft populates editable generated steps without requiring manual topics; it does not save a journey. Review titles, minutes, dates, references and source associations, then use **Confirm and save plan** when ready. Before accepting review you may switch to **Use my topics or a starter**, retaining inputs and cancelling pending AI. Discarding prevents use of the old suggestion but leaves your selected drafting route unchanged. Accepted review locks the route; cancel and start again to choose another route.
 7. Keep each retained source's reference link, or select **Remove source** to remove its association. Invalid partially typed links remain editable. Sources linked to completed work cannot be removed through the draft editor. Source staging expires after 24 hours; if an unsaved draft expires, request a new draft rather than treating old source IDs as saved evidence.
 
 The AI drafts an initial segment of up to ten steps, not a guaranteed complete curriculum. If evidence is insufficient, provide relevant material, deliberately search, or use manual planning. AI does not certify job readiness, mastery or completion.
@@ -466,16 +468,16 @@ OpenAI requests use `store:false`; this does not mean zero provider retention. D
 ### Archive, view or restore a whole plan
 
 1. Open **Journeys** and leave **Show plans** set to **Active**.
-2. Find the goal and choose **Archive plan**. Read the inline explanation, then choose **Archive plan** again to confirm, or **Cancel** to keep it active.
+2. Find the goal, expand **Manage plan**, then choose **Archive plan**. Read the inline explanation, then choose **Archive plan** again to confirm, or **Cancel** to keep it active.
 3. Select **Archived** in Show plans. This view remains available even when all your plans are archived.
 4. Choose **View archived plan** to read its path, original dates, resources, progress and private history. The archived view is read-only: restore the plan before editing, studying, correcting or deleting individual records, recovering removed steps, or using plan-related AI.
-5. Choose **Restore plan**, read the confirmation and confirm **Restore plan**. It opens in My learning with its original schedule and records. Overdue dates are not moved automatically; use Comeback afterward if wanted.
+5. Expand **Manage plan**, choose **Restore plan**, read the confirmation and confirm **Restore plan**. It opens in My learning with its original schedule and records. Overdue dates are not moved automatically; use Comeback afterward if wanted.
 
 Archiving keeps private records and allows restoration. It does not delete shared circle copies, and it is different from removing a step in the editor.
 
 ### Permanently delete a whole plan
 
-1. Find the plan in either Journeys view, or open its archived view, and choose **Delete permanently**.
+1. Find the plan in either Journeys view, or open its archived view. Expand **Manage plan** and choose **Delete permanently**.
 2. Wait for fresh saved details. Check the goal name and counts of steps, study sessions, completion records and scope changes.
 3. Read the deletion warning and check **I understand that this plan and its private history will be permanently deleted.** The final button stays disabled until you acknowledge it.
 4. Choose **Delete permanently** again, or **Cancel** to keep the plan.
@@ -485,14 +487,14 @@ Successful deletion removes that plan and its private history from the live app.
 ### Delete a study session or remove only its reflection
 
 1. Open the active plan's **Activity** and find the study entry by title, date, minutes and optional private note.
-2. Choose **Delete study session** to remove its minutes and reflection together, or **Remove private reflection** to remove only the note. The latter appears only where a reflection exists.
+2. Expand **Manage study record**, then choose **Delete study session** to remove its minutes and reflection together, or **Remove private reflection** to remove only the note. The latter appears only where a reflection exists.
 3. Read the contextual confirmation and choose the same action again, or **Cancel**.
 
 Session deletion recalculates session count, studied minutes and recorded study days/consistency. It does not undo step completion. Reflection removal keeps the session, minutes and date unchanged. Neither action provides text editing or an in-app undo.
 
 ### Correct accidental completion
 
-1. Beside the completed step in Your path, or its completion entry in Activity, choose **Mark as unfinished**. For an event belonging to a removed step, use **Correct completion** in Activity; you do not need to restore that step first.
+1. Beside the completed step in Your path, or its completion entry in Activity, expand **Review completion** and choose **Mark as unfinished**. For an event belonging to a removed step, use **Correct completion** in that group in Activity; you do not need to restore that step first.
 2. Read the confirmation, then choose **Mark as unfinished** or **Correct completion** again.
 3. The original event remains labelled **Completion corrected** and is excluded from completion totals. Study sessions and private reflections stay.
 
@@ -515,3 +517,15 @@ Open the relevant circle and choose **Remove my encouragement** on another membe
 ### Recover an uncertain action
 
 Wait for a success status before treating an action as finished. If a network/server response leaves the result uncertain, use **Retry the same action** to reuse that exact request or **Refresh saved state** to inspect what persisted. If the plan changed, refresh and review the action again, including fresh deletion counts or restoration conflicts. Cancelling or leaving a page does not undo a request already accepted by the server.
+
+## 30. Focused drafting, optional assistance and contextual management
+
+The17October refinement keeps planning on one page. Start with your goal and choose **Use my topics or a starter** or **Draft with AI**. Shared scheduling stays visible; **Optional details** contains target date and links, plus AI context on the AI route. Switching routes before review retains entered values and cancels waiting suggestions. After review, the route is locked so another result cannot silently replace your edited steps. Validation opens a containing optional section before focusing its field.
+
+Contextual AI help starts collapsed. Expand its labelled heading, read what will be sent, then choose the request button. Opening the heading alone makes no request and saves nothing. A completed suggestion announces readiness without moving you from another field. Review/Use remains deliberate. Step links stay beside their steps; the resource catalogue shows each source ID once, with **Source details** for provenance. Distinct historical source IDs are retained.
+
+On study screens, minutes, private reflection and **Save study session** come before optional assistance. Completion is still separate. Activity places records before the optional progress recap; **Completion history** includes corrected events, while the counted-history total excludes corrected events.
+
+In Journeys, Open/View stays visible. Expand **Manage plan** for archive, restoration or permanent deletion. In Activity, expand **Manage study record** for session/reflection removal or **Review completion** for correction. Each summary/action names its record. Confirmation and retry panels stay visible even if you collapse their trigger group; cancelling reopens the group and returns focus to the action. These controls retain all acknowledgements and safeguards described in section29.
+
+The Account popover closes with Escape, returning focus to Account. Clicking or tabbing to an outside control closes it without taking focus away from that control. Cancelling a dirty journey switch restores the selector to the plan still displayed. These are interaction refinements, not new server, privacy or storage capabilities.

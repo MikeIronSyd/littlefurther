@@ -8,7 +8,7 @@ import {
 } from "../shared/contracts.js";
 import { normalizedSourceUrl } from "../domain/ai-validation.js";
 import { AI_LIMITS } from "../shared/ai-contracts.js";
-import { aiPanel, cancelAiOperations, sourceList } from "./ai-assistance.js";
+import { aiPanel, cancelAiOperations, sourceLinks, sourceList } from "./ai-assistance.js";
 import { errorKey, RequestError, request } from "./api.js";
 import { availabilityPicker } from "./availability-picker.js";
 import { bind, dateLabel, getLocale, type MessageKey, message } from "./i18n.js";
@@ -22,6 +22,7 @@ import {
   lockForm,
   named,
   notice,
+  revealControl,
   text,
 } from "./ui.js";
 
@@ -64,6 +65,7 @@ export function showPlanEditor(
   let sources: LearningSource[] = [...(existing?.sources ?? [])];
   const sourceReview = el("section", "ai-saved-sources");
   let reviewed = Boolean(existing);
+  let method: "manual" | "ai" = "manual";
   let aiSuggestionAvailable = false;
   let previousBody = "";
   let requestId = crypto.randomUUID();
@@ -163,7 +165,8 @@ export function showPlanEditor(
   save.type = "submit";
   const templateInfo = (): void => {
     const selected = templates.find((item) => item.id === templateSelect.value);
-    topicField.hidden = Boolean(selected) || reviewed || aiSuggestionAvailable;
+    topicField.hidden = method === "ai" || Boolean(selected) || reviewed || aiSuggestionAvailable;
+    topics.disabled = topicField.hidden;
     if (topicField.hidden) topicErrors.clear();
     sourcePanel.replaceChildren();
     if (selected) {
@@ -432,7 +435,7 @@ export function showPlanEditor(
       stepControls.set(step.uiId, { title, up, down, remove });
       if (step.completed) row.append(text("p", "completedLocked", "hint"));
       const associated = sources.filter((source) => step.sourceIds?.includes(source.id));
-      if (associated.length) row.append(text("h3", "aiAssociatedSources"), sourceList(associated));
+      if (associated.length) row.append(text("h3", "aiAssociatedSources"), sourceLinks(associated));
       stepList.append(row);
     }
     const removed =
@@ -487,9 +490,7 @@ export function showPlanEditor(
       sources = [];
       reviewed = true;
       review.hidden = false;
-      makeDraft.hidden = true;
-      templateSelect.disabled = true;
-      topicField.hidden = true;
+      updateMethod();
       renderSteps();
       review.querySelector<HTMLElement>("h2")?.focus();
     },
@@ -502,11 +503,8 @@ export function showPlanEditor(
         title: "aiPlanTitle",
         action: "aiDraftPlan",
         disclosure: "aiPlanDisclosure",
-        controls: [
-          field("aiStartingPoint", startingPoint),
-          field("aiMaterial", material, "aiMaterialHint"),
-          searchField,
-        ],
+        initiallyExpanded: true,
+        controls: [searchField],
         current: active,
         watch: [form],
         signature: () =>
@@ -521,8 +519,10 @@ export function showPlanEditor(
             topics.value,
             templateSelect.value,
             reviewed,
+            method,
           ]),
         build: () => {
+          if (method !== "ai" || reviewed) return null;
           if (!goal.reportValidity()) {
             goal.focus();
             return null;
@@ -532,6 +532,7 @@ export function showPlanEditor(
             return null;
           }
           if (!validateReferences()) {
+            revealControl(references);
             references.focus();
             return null;
           }
@@ -548,7 +549,7 @@ export function showPlanEditor(
         useLabel: "aiUsePlan",
         suggestionChanged: (available) => {
           aiSuggestionAvailable = available;
-          makeDraft.hidden = reviewed || available;
+          makeDraft.hidden = reviewed || method === "ai" || available;
           templateInfo();
         },
         use: (result) => {
@@ -566,16 +567,82 @@ export function showPlanEditor(
           }));
           reviewed = true;
           review.hidden = false;
-          makeDraft.hidden = true;
           templateSelect.value = "";
-          templateSelect.disabled = true;
-          topicField.hidden = true;
-          templateInfo();
+          updateMethod();
           dirty();
           renderSteps();
           reviewHeading.focus();
         },
       });
+  const manualFields = el(
+    "div",
+    "planning-manual-fields",
+    field("template", templateSelect, "templateHint"),
+    topicField,
+    sourcePanel,
+  );
+  const aiContext = el(
+    "div",
+    "planning-ai-context",
+    field("aiStartingPoint", startingPoint),
+    field("aiMaterial", material, "aiMaterialHint"),
+  );
+  const extras = el(
+    "details",
+    "planning-extras",
+    text("summary", "planningExtras"),
+    el(
+      "div",
+      "planning-extras-body",
+      text("p", "planningExtrasHint", "hint"),
+      targetField,
+      referenceField,
+      aiContext,
+    ),
+  );
+  const schedule = el(
+    "section",
+    "planning-schedule",
+    text("h2", "planningSchedule"),
+    availability.element,
+  );
+  const methods = el("fieldset", "planning-method", text("legend", "planningMethod"));
+  const methodChoices = el("div", "planning-method-options");
+  const methodControls: HTMLInputElement[] = [];
+  for (const value of ["manual", "ai"] as const) {
+    const choice = input("radio", "draftMethod", value);
+    choice.checked = value === method;
+    choice.addEventListener("change", () => {
+      if (!choice.checked || reviewed || !active()) return;
+      cancelAiOperations();
+      method = value;
+      updateMethod();
+      dirty();
+    });
+    methodControls.push(choice);
+    methodChoices.append(
+      el(
+        "label",
+        "checkbox-field",
+        choice,
+        text("span", value === "manual" ? "planningManual" : "planningAi"),
+      ),
+    );
+  }
+  methods.append(methodChoices, text("p", "planningMethodHint", "hint"));
+  function updateMethod(): void {
+    manualFields.hidden = method !== "manual";
+    topics.disabled = method !== "manual" || reviewed;
+    templateSelect.disabled = Boolean(existing) || method !== "manual" || reviewed;
+    aiContext.hidden = method !== "ai";
+    startingPoint.disabled = method !== "ai";
+    material.disabled = method !== "ai";
+    search.disabled = method !== "ai";
+    if (aiDraft) aiDraft.hidden = method !== "ai" || reviewed;
+    for (const choice of methodControls) choice.disabled = reviewed;
+    makeDraft.hidden = reviewed || method === "ai" || aiSuggestionAvailable;
+    templateInfo();
+  }
   const reviewHeading = text("h2", "reviewTitle");
   reviewHeading.tabIndex = -1;
   const addStep = button("addStep", () => {
@@ -613,6 +680,13 @@ export function showPlanEditor(
   });
   target.addEventListener("input", conflicts);
   form.addEventListener("input", dirty);
+  form.addEventListener(
+    "invalid",
+    (event) => {
+      if (event.target instanceof HTMLElement) revealControl(event.target);
+    },
+    true,
+  );
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!active() || !reviewed) return;
@@ -621,6 +695,7 @@ export function showPlanEditor(
       return;
     }
     if (!validateReferences()) {
+      revealControl(references);
       references.focus();
       return;
     }
@@ -716,17 +791,16 @@ export function showPlanEditor(
   );
   form.append(
     goalField,
-    field("template", templateSelect, "templateHint"),
-    topicField,
-    sourcePanel,
-    availability.element,
-    targetField,
-    referenceField,
+    ...(existing ? [] : [methods]),
+    manualFields,
+    schedule,
+    extras,
     ...(aiDraft ? [aiDraft] : []),
     makeDraft,
     errors,
     review,
   );
+  updateMethod();
   bind(sourcePanel, templateInfo);
   if (reviewed) renderSteps();
   named(form, existing ? "editTitle" : "planTitle");

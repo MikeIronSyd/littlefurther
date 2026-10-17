@@ -1,10 +1,13 @@
 import { expect, type Locator, type Page, test } from "@playwright/test";
 import {
   capture,
+  contextualAction,
   createAccount,
   expectNoHorizontalOverflow,
   openManualDraft,
+  openManagement,
   respectAuthenticationRateLimit,
+  revealDetails,
 } from "./helpers.js";
 
 test.afterEach(async ({ page: _page }, testInfo) => {
@@ -173,6 +176,7 @@ for (const theme of ["light", "dark"] as const) {
     await softBoundary(page, page.getByRole("button", { name: "Cancel", exact: true }));
     await page.getByRole("button", { name: "Cancel", exact: true }).click();
     await openManualDraft(page);
+    await revealDetails(page.getByLabel("Reference links (optional)", { exact: true }));
     await page
       .getByLabel("Reference links (optional)", { exact: true })
       .fill("https://example.test/reference");
@@ -246,9 +250,9 @@ for (const theme of ["light", "dark"] as const) {
     await expect(page.locator(".path-step.completed")).toHaveCount(1);
     const completedRow = page.locator(".path-step.completed");
     await expect(completedRow.locator(".path-action")).toHaveCount(0);
-    const correction = completedRow.getByRole("button", {
-      name: "Mark as unfinished",
-      exact: true,
+    await openManagement(completedRow);
+    const correction = completedRow.locator("details.lifecycle-management").getByRole("button", {
+      name: contextualAction("Mark as unfinished"),
     });
     await softBoundary(page, correction);
     await target(correction);
@@ -268,8 +272,8 @@ for (const theme of ["light", "dark"] as const) {
     ).toBeGreaterThanOrEqual(24);
     await capture(page, `control-readability-activity-${theme}`);
     await page.getByRole("link", { name: "Journeys", exact: true }).click();
-    await softBoundary(page, page.getByRole("button", { name: "Open journey", exact: true }));
-    await page.getByRole("button", { name: "Open journey", exact: true }).click();
+    await softBoundary(page, page.getByRole("button", { name: contextualAction("Open journey") }));
+    await page.getByRole("button", { name: contextualAction("Open journey") }).click();
     await page.getByRole("button", { name: "Review restart dates", exact: true }).click();
     await underlined(page.getByRole("button", { name: "Back to my learning", exact: true }));
     await softBoundary(page, page.getByRole("button", { name: "Edit plan", exact: true }));

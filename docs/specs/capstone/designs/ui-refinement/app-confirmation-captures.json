@@ -1,0 +1,148 @@
+{
+  "observedAt": "2026-10-17T20:44:03.389Z",
+  "revision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+  "sourceState": "post-correction uncommitted UI refinement",
+  "sourceHashes": {
+    "src/client/plan-editor.ts": "2deeb7f39e744b3ad956c4bc8b2ea9a89a939667e0395aad6febae1a42382e7e",
+    "src/client/ai-assistance.ts": "b8aadef861483af2705dcc7ad280690c390baab0c0a9850335e7af73a972d3da",
+    "src/client/learning-lifecycle.ts": "6977a492464d9d2e4903c9df0f3860766993081f3ee9f233855063084a6f83d9",
+    "src/client/styles.css": "4fb16e820a310faca5277af33560fc2e85f07911fc595a9c92eea7f6f2a1b0f8",
+    "src/client/i18n.ts": "12a58c01f4c87e3fa6671bacb373bbed0f2d41db67dab46f47694b1930759d42",
+    "src/client/ui.ts": "519e9ce1d1dad98f3333c09e6a57b2d2b7f1691fecb20b3ab455822ee4728622"
+  },
+  "builtHashes": {
+    "dist\\client\\index.html": "344a7e492dbef3bb1edf90537194529527edc90b8af3ba4890e0b3c9b986a983",
+    "dist\\client\\assets\\index-C6aeQVFZ.css": "064b66d9962bbe1dea46177837d374c7eb3e092fb731c9bc67bf83f66041b6f6",
+    "dist\\client\\assets\\index-YEboU_g6.js": "60b66bff5a0aaaf05c781ffdce9425153a409ec0b16c0cae2e622a3db940ddd5",
+    "dist\\client\\assets\\index-YEboU_g6.js.map": "b2184efa72f3028b02de193d2f1cc71d3afb979e9359159c9c6b957f07aace4f"
+  },
+  "classification": "actual application interface; retained isolated synthetic records; no provider request",
+  "origin": "http://127.0.0.1:4326",
+  "captures": [
+    {
+      "file": "app-confirmation-journeys-desktop-light-en.png",
+      "note": "Archive confirmation remains outside collapsed maintenance; no archive is applied. Visible text and accessible names are English.",
+      "geometry": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "width": 1440,
+      "height": 1000,
+      "sha256": "2b790b125ea4c3458ebeb32f17f75768521602b52ffaafdd9faae3b0aa6b68e8",
+      "classification": "actual application interface; retained isolated synthetic records; no provider request"
+    },
+    {
+      "file": "app-confirmation-journeys-mobile-dark-fr.png",
+      "note": "EN→FR updates visible/contextual archive, Cancel and Open text; confirmation remains visible with maintenance collapsed.",
+      "geometry": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "width": 320,
+      "height": 900,
+      "sha256": "de2027cf2aef392fd49402f287986f37062795032ce0fc97cebea18ab54f724a",
+      "classification": "actual application interface; retained isolated synthetic records; no provider request"
+    },
+    {
+      "file": "app-confirmation-journeys-cancel-reopened-en.png",
+      "note": "FR→EN roundtrip; Cancel reopens maintenance and restores Archive trigger focus. No archive/delete request occurred.",
+      "geometry": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "width": 1440,
+      "height": 1000,
+      "sha256": "86ae6137bffe079b155d66e7d65a76586e016d13294fca9c61fff441aa2d8fda",
+      "classification": "actual application interface; retained isolated synthetic records; no provider request"
+    },
+    {
+      "file": "app-confirmation-planning-desktop-light-en.png",
+      "note": "New plan before any review: compact 22px native radio glyphs within at least 44px labels; manual route selected.",
+      "geometry": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "width": 1440,
+      "height": 1000,
+      "sha256": "172a1821c6825a2055f3ec86fab48e4681e3fdfb2e21bfd482247a02694b3372",
+      "classification": "actual application interface; retained isolated synthetic records; no provider request"
+    },
+    {
+      "file": "app-confirmation-planning-mobile-dark-fr.png",
+      "note": "French narrow planning before review: keyboard-selected AI route retains compact native glyphs and readable 44px label targets. No AI request is made.",
+      "geometry": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "width": 320,
+      "height": 900,
+      "sha256": "fdc1c49291e3e93fb3d23ca7f1ad3dd4c7026f167cb36230e1caba6320bc6e15",
+      "classification": "actual application interface; retained isolated synthetic records; no provider request"
+    }
+  ],
+  "checks": [
+    {
+      "name": "contextual visible/accessibility labels",
+      "enToFrToEn": true,
+      "confirmationOutsideDisclosure": true,
+      "cancelReopensAndReturnsFocus": true,
+      "noMutationConfirmed": true
+    },
+    {
+      "name": "desktop EN planning before review",
+      "radioGlyphExpected": 22,
+      "labelTargetMinimum": 44,
+      "actual": [
+        {
+          "width": 22,
+          "height": 22,
+          "labelWidth": 384,
+          "labelHeight": 50,
+          "checked": true
+        },
+        {
+          "width": 22,
+          "height": 22,
+          "labelWidth": 384,
+          "labelHeight": 50,
+          "checked": false
+        }
+      ]
+    },
+    {
+      "name": "320px FR planning before review",
+      "radioGlyphExpected": 22,
+      "labelTargetMinimum": 44,
+      "actual": [
+        {
+          "width": 22,
+          "height": 22,
+          "labelWidth": 296,
+          "labelHeight": 50,
+          "checked": false
+        },
+        {
+          "width": 22,
+          "height": 22,
+          "labelWidth": 296,
+          "labelHeight": 50,
+          "checked": true
+        }
+      ]
+    }
+  ],
+  "planHashBefore": "c965d45d648048922e8e4102e50ba72f90974d8863000232d538d969e0c90aef",
+  "planHashAfter": "6fd95c039e9301a72e82ccb048d3cda4a3e13d3d7e91dbcd8ff07a87d782ff43",
+  "planWrites": [],
+  "aiRequests": 0,
+  "blockedExternalRequests": 0,
+  "errors": [
+    "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: \"c965d45d648048922e8e4102e50ba72f90974d8863000232d538d969e0c90aef\"\nReceived: \"6fd95c039e9301a72e82ccb048d3cda4a3e13d3d7e91dbcd8ff07a87d782ff43\"\n    at captureRawStack (C:\\Users\\USER\\Documents\\ChatGPT\\Andela X Miva X OpenAI (Codex Accelerator Hackathon)\\node_modules\\.pnpm\\playwright-core@1.63.0\\node_modules\\playwright-core\\lib\\coreBundle.js:8588:17)\n    at callMatcherAsStep (C:\\Users\\USER\\Documents\\ChatGPT\\Andela X Miva X OpenAI (Codex Accelerator Hackathon)\\node_modules\\.pnpm\\playwright@1.63.0\\node_modules\\playwright\\lib\\matchers\\expect.js:13310:57)\n    at Object.toBe (C:\\Users\\USER\\Documents\\ChatGPT\\Andela X Miva X OpenAI (Codex Accelerator Hackathon)\\node_modules\\.pnpm\\playwright@1.63.0\\node_modules\\playwright\\lib\\matchers\\expect.js:13302:23)\n    at C:\\Users\\USER\\Documents\\ChatGPT\\Andela X Miva X OpenAI (Codex Accelerator Hackathon)\\.local\\ui-refinement\\confirmation-capture.mjs:139:25"
+  ],
+  "scope": "One bounded confirmation of radio sizing and translated contextual controls; original captures remain historical failure evidence. No full visual batch repeated."
+}

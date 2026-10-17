@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { mkdir } from "node:fs/promises";
-import { expect, type Page } from "@playwright/test";
+import { expect, type Locator, type Page } from "@playwright/test";
 
 export interface SyntheticAccount {
   email: string;
@@ -54,6 +54,7 @@ export async function openManualDraft(
 ): Promise<void> {
   await page.getByRole("button", { name: "Create a learning plan", exact: true }).click();
   await page.getByLabel("Learning goal", { exact: true }).fill(goal);
+  await page.getByRole("radio", { name: "Use my topics or a starter", exact: true }).check();
   await page
     .getByLabel("Start from", { exact: true })
     .selectOption({ label: "My own topics or course sections" });
@@ -61,6 +62,27 @@ export async function openManualDraft(
   await selectAvailability(page, ["2026-10-08", "2026-10-10"]);
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Review every step", exact: true })).toBeVisible();
+}
+
+// Operate native disclosure summaries, rather than force-filling hidden controls.
+export async function revealDetails(control: Locator): Promise<void> {
+  const closedAncestor = control.locator("xpath=ancestor::details[not(@open)][last()]");
+  while (await closedAncestor.count()) {
+    await closedAncestor.locator(":scope > summary").click();
+  }
+  await expect(control).toBeVisible();
+}
+
+export async function openManagement(parent: Locator): Promise<void> {
+  const disclosure = parent.locator("details.lifecycle-management").first();
+  await expect(disclosure).toBeVisible();
+  if (!(await disclosure.evaluate((node) => (node as HTMLDetailsElement).open)))
+    await disclosure.locator(":scope > summary").click();
+  await expect(disclosure).toHaveAttribute("open", "");
+}
+
+export function contextualAction(label: string): RegExp {
+  return new RegExp(`^${label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}: `);
 }
 
 export async function selectAvailability(

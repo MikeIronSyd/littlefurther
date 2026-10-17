@@ -1,16 +1,25 @@
 import { expect, type Locator, type Page, test } from "@playwright/test";
 import type { LearningPlan, PlanDetail } from "../../src/shared/contracts.js";
-import { createAccount, expectNoHorizontalOverflow, openManualDraft } from "./helpers.js";
+import {
+  contextualAction,
+  createAccount,
+  expectNoHorizontalOverflow,
+  openManagement,
+  openManualDraft,
+  revealDetails,
+} from "./helpers.js";
 
 const goal = "Keep learning with recoverable records";
 
 async function createPlan(page: Page, reference = false): Promise<PlanDetail> {
   await createAccount(page, "Lifecycle learner");
   await openManualDraft(page, goal, "Read a short section\nExplain it in my own words");
-  if (reference)
+  if (reference) {
+    await revealDetails(page.getByLabel("Reference links (optional)", { exact: true }));
     await page
       .getByLabel("Reference links (optional)", { exact: true })
       .fill("https://example.org/course");
+  }
   await page.getByRole("button", { name: "Confirm and save plan", exact: true }).click();
   await expect(page.getByText("0 of 2 steps complete", { exact: true })).toBeVisible();
   return detail(page);
@@ -37,7 +46,7 @@ async function journeys(page: Page): Promise<Locator> {
 async function confirmWithin(parent: Locator, name: string): Promise<void> {
   const confirmation = parent.locator(".lifecycle-confirmation");
   await expect(confirmation).toBeVisible();
-  await confirmation.getByRole("button", { name, exact: true }).click();
+  await confirmation.getByRole("button", { name: contextualAction(name) }).click();
 }
 
 test("LC01: archive, readonly view, restore and deliberate last-plan deletion use visible controls", async ({
@@ -45,7 +54,8 @@ test("LC01: archive, readonly view, restore and deliberate last-plan deletion us
 }) => {
   const created = await createPlan(page);
   let row = await journeys(page);
-  await row.getByRole("button", { name: "Archive plan", exact: true }).click();
+  await openManagement(row);
+  await row.getByRole("button", { name: contextualAction("Archive plan") }).click();
   await confirmWithin(row, "Archive plan");
   await expect(page.getByLabel("Show plans", { exact: true })).toHaveValue("archived");
   await expect(page.locator(".journey-row")).toHaveCount(1);
@@ -69,7 +79,7 @@ test("LC01: archive, readonly view, restore and deliberate last-plan deletion us
   );
   await expect(language).toBeFocused();
   await language.selectOption("en");
-  await row.getByRole("button", { name: "View archived plan", exact: true }).click();
+  await row.getByRole("button", { name: contextualAction("View archived plan") }).click();
   const archivedBack = page
     .locator(".archived-plan-view > .page-heading")
     .getByRole("button", { name: "Back", exact: true });
@@ -80,25 +90,29 @@ test("LC01: archive, readonly view, restore and deliberate last-plan deletion us
     0,
   );
   await expect(page.getByRole("button", { name: "Edit plan", exact: true })).toHaveCount(0);
-  await expect(page.getByRole("button", { name: "Delete study session", exact: true })).toHaveCount(
-    0,
-  );
-  await page.getByRole("button", { name: "Restore plan", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: contextualAction("Delete study session") }),
+  ).toHaveCount(0);
+  await openManagement(page.locator(".archived-plan-view"));
+  await page.getByRole("button", { name: contextualAction("Restore plan") }).click();
   await page
     .locator(".lifecycle-confirmation")
-    .getByRole("button", { name: "Restore plan", exact: true })
+    .getByRole("button", { name: contextualAction("Restore plan") })
     .click();
   await expect(page.getByText("0 of 2 steps complete", { exact: true })).toBeVisible();
   const restored = await detail(page, created.plan.id);
   expect(restored.plan.archivedAt).toBeNull();
   expect(restored.plan.steps).toEqual(created.plan.steps);
   row = await journeys(page);
-  const remove = row.getByRole("button", { name: "Delete permanently", exact: true });
+  await openManagement(row);
+  const remove = row
+    .locator("details.lifecycle-management")
+    .getByRole("button", { name: contextualAction("Delete permanently") });
   await remove.click();
   const form = row.locator(".lifecycle-confirmation");
-  const finalDelete = form.getByRole("button", { name: "Delete permanently", exact: true });
+  const finalDelete = form.getByRole("button", { name: contextualAction("Delete permanently") });
   await expect(finalDelete).toBeDisabled();
-  await form.getByRole("button", { name: "Cancel", exact: true }).click();
+  await form.getByRole("button", { name: contextualAction("Cancel") }).click();
   await expect(remove).toBeFocused();
   await remove.click();
   await form.getByRole("checkbox").check();
@@ -125,9 +139,13 @@ test("LC02/03: reflection removal, completion correction and session deletion pr
   await page.getByRole("button", { name: "Choose the next action", exact: true }).click();
   await page.getByRole("link", { name: "Activity", exact: true }).click();
   const session = page
-    .locator(".history-entry")
-    .filter({ has: page.getByRole("button", { name: "Delete study session", exact: true }) });
-  await session.getByRole("button", { name: "Remove private reflection", exact: true }).click();
+    .locator(".activity-history > .activity-records")
+    .first()
+    .locator(".history-entry");
+  await openManagement(session);
+  await session
+    .getByRole("button", { name: contextualAction("Remove private reflection") })
+    .click();
   await confirmWithin(session, "Remove private reflection");
   let current = await detail(page, created.plan.id);
   expect(current.activities[0]?.reflection).toBeNull();
@@ -135,11 +153,22 @@ test("LC02/03: reflection removal, completion correction and session deletion pr
   expect(current.progress.completed).toBe(1);
   await expect(page.getByText("Private lifecycle note to remove", { exact: true })).toHaveCount(0);
   const completion = page
-    .locator(".history-entry")
-    .filter({ has: page.getByRole("button", { name: "Mark as unfinished", exact: true }) });
-  await completion.getByRole("button", { name: "Mark as unfinished", exact: true }).click();
+    .locator(".activity-history > .activity-records")
+    .nth(1)
+    .locator(".history-entry");
+  await openManagement(completion);
+  await completion.getByRole("button", { name: contextualAction("Mark as unfinished") }).click();
   await confirmWithin(completion, "Mark as unfinished");
   await expect(page.getByText("Completion corrected", { exact: true })).toBeVisible();
+  const corrected = page.locator(".corrected-label");
+  await expect(corrected).toHaveText("Completion corrected");
+  expect(await corrected.evaluate((node) => getComputedStyle(node).color)).toBe(
+    await page
+      .locator(".activity-history .hint")
+      .first()
+      .evaluate((node) => getComputedStyle(node).color),
+  );
+  await expect(page.getByText("0 completions counted in history", { exact: true })).toBeVisible();
   current = await detail(page, created.plan.id);
   expect(current.progress.completed).toBe(0);
   expect(current.progress.cumulativeCompletions).toBe(0);
@@ -149,7 +178,8 @@ test("LC02/03: reflection removal, completion correction and session deletion pr
   await page.getByRole("button", { name: "Mark this step complete", exact: true }).click();
   await page.getByRole("button", { name: "Choose the next action", exact: true }).click();
   await page.getByRole("link", { name: "Activity", exact: true }).click();
-  await session.getByRole("button", { name: "Delete study session", exact: true }).click();
+  await openManagement(session);
+  await session.getByRole("button", { name: contextualAction("Delete study session") }).click();
   await confirmWithin(session, "Delete study session");
   current = await detail(page, created.plan.id);
   expect(current.activities).toHaveLength(0);
@@ -172,6 +202,7 @@ test("LC04: removed-step preview chooses historical links and never restores a d
   await page.getByRole("button", { name: "Save study session", exact: true }).click();
   await page.getByRole("button", { name: "Choose the next action", exact: true }).click();
   await page.getByRole("button", { name: "Edit plan", exact: true }).click();
+  await revealDetails(page.getByLabel("Reference links (optional)", { exact: true }));
   await page.getByLabel("Reference links (optional)", { exact: true }).fill("");
   await page.locator(".availability-selected button").first().click();
   await page
@@ -183,12 +214,14 @@ test("LC04: removed-step preview chooses historical links and never restores a d
   await page.getByRole("button", { name: "Save revised plan", exact: true }).click();
   await page.getByRole("link", { name: "Activity", exact: true }).click();
   const session = page
-    .locator(".history-entry")
-    .filter({ has: page.getByRole("button", { name: "Delete study session", exact: true }) });
-  await session.getByRole("button", { name: "Delete study session", exact: true }).click();
+    .locator(".activity-history > .activity-records")
+    .first()
+    .locator(".history-entry");
+  await openManagement(session);
+  await session.getByRole("button", { name: contextualAction("Delete study session") }).click();
   await confirmWithin(session, "Delete study session");
   const removed = page.locator(".removed-steps");
-  await removed.getByRole("button", { name: "Review step restoration", exact: true }).click();
+  await removed.getByRole("button", { name: contextualAction("Review step restoration") }).click();
   const link = removed.getByRole("checkbox", { name: "https://example.org/course", exact: true });
   await expect(link).not.toBeChecked();
   await link.check();
@@ -197,11 +230,15 @@ test("LC04: removed-step preview chooses historical links and never restores a d
     exact: true,
   });
   await expect(conflicts).not.toBeChecked();
-  await expect(removed.getByRole("button", { name: "Restore step", exact: true })).toBeDisabled();
+  await expect(
+    removed.getByRole("button", { name: contextualAction("Restore step") }),
+  ).toBeDisabled();
   expect((await detail(page, created.plan.id)).plan.steps).toHaveLength(1);
   await conflicts.check();
-  await expect(removed.getByRole("button", { name: "Restore step", exact: true })).toBeEnabled();
-  await removed.getByRole("button", { name: "Restore step", exact: true }).click();
+  await expect(
+    removed.getByRole("button", { name: contextualAction("Restore step") }),
+  ).toBeEnabled();
+  await removed.getByRole("button", { name: contextualAction("Restore step") }).click();
   const current = await detail(page, created.plan.id);
   expect(current.plan.steps.map((step) => step.id)).toEqual([
     created.plan.steps[1]?.id,
@@ -227,10 +264,17 @@ test("LC06: uncertain deletion retains confirmation and retries the same request
     else await route.continue();
   });
   const row = await journeys(page);
-  await row.getByRole("button", { name: "Delete permanently", exact: true }).click();
+  await openManagement(row);
+  await row.getByRole("button", { name: contextualAction("Delete permanently") }).click();
   await row.locator(".lifecycle-confirmation").getByRole("checkbox").check();
   await confirmWithin(row, "Delete permanently");
   await expect(page.getByRole("button", { name: /Retry/, exact: false })).toBeVisible();
+  await row.locator("details.lifecycle-management > summary").click();
+  await expect(row.locator("details.lifecycle-management")).not.toHaveAttribute("open", "");
+  await expect(row.locator(".lifecycle-confirmation")).toBeVisible();
+  await expect(
+    row.getByRole("button", { name: contextualAction("Retry the same action") }),
+  ).toBeVisible();
   expect((await page.request.get(`/api/plans/${created.plan.id}`)).status()).toBe(200);
   await page.getByRole("button", { name: /Retry/, exact: false }).click();
   await expect(page.locator(".journey-row")).toHaveCount(0);
@@ -260,9 +304,9 @@ test("LC07: contextual controls retain readable keyboard targets in both themes,
         const themeControl = page.getByRole("button", { name: switchLabel, exact: true });
         if (await themeControl.count()) await themeControl.click();
         await expectNoHorizontalOverflow(page);
+        await openManagement(page.locator(".journey-row"));
         const archive = page.getByRole("button", {
-          name: locale === "en" ? "Archive plan" : "Archiver le programme",
-          exact: true,
+          name: contextualAction(locale === "en" ? "Archive plan" : "Archiver le programme"),
         });
         await archive.focus();
         await expect(archive).toBeFocused();

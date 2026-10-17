@@ -160,7 +160,7 @@ for (const [theme, language] of [
     ).toBeVisible();
     await expect(
       page.getByRole("heading", {
-        name: language === "en" ? "Completed steps" : "Étapes terminées",
+        name: language === "en" ? "Completion history" : "Historique des validations",
         exact: true,
         level: 3,
       }),

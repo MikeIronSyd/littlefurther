@@ -7,6 +7,7 @@ import {
   expectOnlyUiStorage,
   openManualDraft,
   respectAuthenticationRateLimit,
+  revealDetails,
   saveManualPlan,
   selectAvailability,
 } from "./helpers.js";
@@ -126,6 +127,7 @@ test("AC09: supplied learning text is rendered literally and unsafe reference li
     .getByLabel("Your topics or sections (optional)", { exact: true })
     .fill('<img src=x onerror="document.body.dataset.injected=1">');
   await selectAvailability(page, ["2026-10-08"]);
+  await revealDetails(page.getByLabel("Reference links (optional)", { exact: true }));
   await page.getByLabel("Reference links (optional)", { exact: true }).fill("javascript:alert(1)");
   await page.getByRole("button", { name: "Review draft steps", exact: true }).click();
   await page.getByRole("button", { name: "Confirm and save plan", exact: true }).click();
@@ -190,7 +192,7 @@ test("AC01/05: removing a completed step changes active scope while retaining hi
   await page.reload();
   await expect(page.getByText("0 of 1 step complete", { exact: true })).toBeVisible();
   await page.getByRole("link", { name: "Activity", exact: true }).click();
-  await expect(page.getByText("1 completion recorded in history", { exact: true })).toBeVisible();
+  await expect(page.getByText("1 completion counted in history", { exact: true })).toBeVisible();
   await expect(page.getByText("1 session · 5 minutes studied", { exact: true })).toBeVisible();
 });
 

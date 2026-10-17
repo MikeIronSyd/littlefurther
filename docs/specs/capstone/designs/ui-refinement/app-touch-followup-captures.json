@@ -1,0 +1,79 @@
+{
+  "observedAt": "2026-10-17T20:40:24.736Z",
+  "classification": "actual application interface; retained isolated synthetic records; no AI request in this followup",
+  "origin": "http://127.0.0.1:4326",
+  "sourceMatches": {
+    "src/client/main.ts": true,
+    "src/client/journey.ts": true,
+    "src/client/plan-editor.ts": true,
+    "src/client/ai-assistance.ts": true,
+    "src/client/learning-lifecycle.ts": true,
+    "src/client/shell.ts": true,
+    "src/client/ui.ts": true,
+    "src/client/styles.css": true,
+    "src/client/i18n.ts": true,
+    "src/client/circle.ts": true,
+    "src/client/comeback.ts": true,
+    "src/client/availability-picker.ts": true
+  },
+  "inheritedSourceHashes": {
+    "src/client/main.ts": "de517de02802d72d2418ba528759d942503b080b17ab56102134a338f3dac04a",
+    "src/client/journey.ts": "2dcdf20f4bdef79d1bad7b2a184e4210281c9e877c3a14e34b3d377c3d069e3b",
+    "src/client/plan-editor.ts": "2deeb7f39e744b3ad956c4bc8b2ea9a89a939667e0395aad6febae1a42382e7e",
+    "src/client/ai-assistance.ts": "b8aadef861483af2705dcc7ad280690c390baab0c0a9850335e7af73a972d3da",
+    "src/client/learning-lifecycle.ts": "325184c1ad61be607da4bd8cd1e61017af0be0361c8aeda9179fa1c31111a4ba",
+    "src/client/shell.ts": "f6e2c88c37351bc82cd88e01f1c559fa359f2d457e5ff4a25458b547968b3921",
+    "src/client/ui.ts": "519e9ce1d1dad98f3333c09e6a57b2d2b7f1691fecb20b3ab455822ee4728622",
+    "src/client/styles.css": "02ce65442b4a9442766bf0929b2e261b1103c4b2f1b590734fe8ca312791de12",
+    "src/client/i18n.ts": "12a58c01f4c87e3fa6671bacb373bbed0f2d41db67dab46f47694b1930759d42",
+    "src/client/circle.ts": "760df00821abb22f80fac89e8aecced15e9fd058828d04a28731b48bf5aacb19",
+    "src/client/comeback.ts": "c5fd42e511d96b073e4dbbb1aa00a37ee75cfbee86f97847053086d76ed2d3f9",
+    "src/client/availability-picker.ts": "b45086f46a06484816138cd15a8e563f082d8ffffd13d98851825a0617f110c6"
+  },
+  "fixture": "same retained dataset as initial batch; existing synthetic account signed in through UI",
+  "capture": {
+    "file": "app-initial-touch-drawer-mobile-dark-fr.png",
+    "width": 320,
+    "height": 900,
+    "sha256": "2785f4d606acfbac49b484076a6cb945342261565c7a48cade6b54d7760f39db"
+  },
+  "checks": {
+    "viewport": 320,
+    "document": 320,
+    "controls": [
+      {
+        "label": "Fermer",
+        "width": 89.0625,
+        "height": 46
+      },
+      {
+        "label": "Mon apprentissage",
+        "width": 227,
+        "height": 52
+      },
+      {
+        "label": "Parcours",
+        "width": 227,
+        "height": 52
+      },
+      {
+        "label": "Activité",
+        "width": 227,
+        "height": 52
+      }
+    ],
+    "targetsAtLeast44": true,
+    "hasTouch": true,
+    "localeBeforeOpeningDrawer": true,
+    "themeBeforeOpeningDrawer": true,
+    "keyboardEscapeFocusReturned": true,
+    "pageUnlocked": true
+  },
+  "harnessCorrections": [
+    "Initial harness attempted the background theme action after opening a native modal; native inertness correctly blocked it.",
+    "First touch-only followup asserted the English Edit label after signing into a learner whose saved locale was French; replaced with the language-independent goal-heading observation."
+  ],
+  "interpretation": "Harness setup/assertion failures, not product defects. This bounded followup fills only the previously uncaptured touch slot.",
+  "blockedExternalRequests": 0,
+  "liveProviderRequests": 0
+}

@@ -318,7 +318,7 @@ test("PC02: 366-date selection limit is explained and removal restores Add witho
   await expect(plans(page)).resolves.toHaveLength(0);
 });
 
-test("PC04: discarding or changing an AI proposal restores manual input; pending AI cannot replace manual review", async ({
+test("PC04/UR02: AI invalidation preserves authored manual input; route changes cancel pending suggestions", async ({
   page,
 }) => {
   test.setTimeout(60_000);
@@ -341,11 +341,18 @@ test("PC04: discarding or changing an AI proposal restores manual input; pending
   const manualReview = page.getByRole("button", { name: "Review draft steps", exact: true });
   const run = page.getByRole("button", { name: "Draft my plan with AI", exact: true });
   const reviewAi = page.getByRole("button", { name: "Review AI draft", exact: true });
+  const manualMethod = page.locator('input[name="draftMethod"][value="manual"]');
+  const aiMethod = page.locator('input[name="draftMethod"][value="ai"]');
+  await aiMethod.check();
   await run.click();
   await expect(reviewAi).toBeVisible();
   await expect(topics).toBeHidden();
   await expect(manualReview).toBeHidden();
   await page.getByRole("button", { name: "Discard suggestion", exact: true }).click();
+  await expect(aiMethod).toBeChecked();
+  await expect(topics).toBeHidden();
+  await expect(manualReview).toBeHidden();
+  await manualMethod.check();
   await expect(topics).toBeVisible();
   await expect(topics).toHaveValue("Read one section");
   await expect(manualReview).toBeVisible();
@@ -354,10 +361,11 @@ test("PC04: discarding or changing an AI proposal restores manual input; pending
   await page.route("**/api/ai/assist", (route) =>
     route.fulfill({ json: { kind: "insufficient", reason: "Please clarify the subject" } }),
   );
+  await aiMethod.check();
   await run.click();
   await expect(page.locator(".ai-result")).toContainText("Please clarify the subject");
-  await expect(topics).toBeVisible();
-  await expect(manualReview).toBeVisible();
+  await expect(topics).toBeHidden();
+  await expect(manualReview).toBeHidden();
   await expect(reviewAi).toHaveCount(0);
   await page.unroute("**/api/ai/assist");
   await page.route("**/api/ai/assist", (route) => route.fulfill({ json: generated }));
@@ -365,6 +373,8 @@ test("PC04: discarding or changing an AI proposal restores manual input; pending
   await expect(reviewAi).toBeVisible();
   await page.getByLabel("Language", { exact: true }).selectOption("fr");
   await expect(reviewAi).toHaveCount(0);
+  await expect(aiMethod).toBeChecked();
+  await manualMethod.check();
   await expect(topics).toBeVisible();
   await expect(topics).toHaveValue("Read one section");
   await expect(
@@ -372,6 +382,7 @@ test("PC04: discarding or changing an AI proposal restores manual input; pending
   ).toBeVisible();
   await expect(page.locator('input[name="availabilityDate"]')).toHaveValue("2026-10-08");
   await expect(page.locator(".availability-selected > li")).toHaveCount(1);
+  await aiMethod.check();
   await page.getByRole("button", { name: "Préparer mon programme avec l’IA", exact: true }).click();
   await expect(
     page.getByRole("button", { name: "Vérifier le brouillon de l’IA", exact: true }),
@@ -381,12 +392,13 @@ test("PC04: discarding or changing an AI proposal restores manual input; pending
     page.getByRole("button", { name: "Vérifier les étapes proposées", exact: true }),
   ).toBeHidden();
   await page.getByLabel("Langue", { exact: true }).selectOption("en");
-  await expect(manualReview).toBeVisible();
+  await expect(manualReview).toBeHidden();
   await expect(reviewAi).toHaveCount(0);
   await run.click();
   await expect(reviewAi).toBeVisible();
   await selectAvailability(page, ["2026-10-10"]);
   await expect(reviewAi).toHaveCount(0);
+  await manualMethod.check();
   await expect(manualReview).toBeVisible();
   await expect(topics).toHaveValue("Read one section");
   await page.unroute("**/api/ai/assist");
@@ -400,8 +412,10 @@ test("PC04: discarding or changing an AI proposal restores manual input; pending
       await route.fulfill({ json: generated });
     } catch {}
   });
+  await aiMethod.check();
   await run.click();
   await expect(page.getByRole("button", { name: "Cancel AI request", exact: true })).toBeVisible();
+  await manualMethod.check();
   await manualReview.click();
   await expect(page.getByLabel("Action", { exact: true })).toHaveValue("Read one section");
   release();

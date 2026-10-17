@@ -1920,16 +1920,14 @@ input[type="checkbox"] {
 }
 
 .ai-assistance {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: block;
   min-width: 0;
   max-width: 780px;
-  padding: 20px;
+  padding: 0;
   margin-block: 20px;
-  border-radius: 12px;
-  background: var(--amber-band);
-  color: var(--amber-ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
 }
 .support-column > .ai-assistance {
   margin-block: 0;
@@ -2227,5 +2225,180 @@ input[type="checkbox"] {
   }
   .button.danger {
     color: ButtonText;
+  }
+}
+
+/* Focused working sections; optional help and management use native disclosures. */
+.planning-method {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.planning-method legend {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.planning-method-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.planning-method-options .checkbox-field {
+  padding: 12px;
+  border: 1px solid var(--control-line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.planning-method-options .checkbox-field:has(:checked) {
+  background: var(--amber-band);
+  color: var(--amber-ink);
+  border-color: var(--brand-accent);
+}
+.planning-method-options input[type="radio"] {
+  flex: 0 0 22px;
+  width: 22px;
+  min-width: 22px;
+  height: 22px;
+  min-height: 22px;
+  padding: 0;
+  margin: 0;
+}
+.planning-method .hint {
+  margin-top: 10px;
+}
+.planning-manual-fields,
+.planning-schedule,
+.planning-extras-body,
+.planning-ai-context,
+.ai-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+.planning-schedule,
+.planning-extras {
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.planning-extras-body {
+  padding-top: 20px;
+}
+.planning-extras > summary,
+.management-summary,
+.ai-summary,
+.ai-source-summary {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--secondary-border);
+  border-radius: 8px;
+  background: var(--sidebar);
+  color: var(--ink);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  font-weight: 600;
+  transition: border-color 150ms ease-out;
+}
+:is(.planning-extras > summary, .management-summary, .ai-summary, .ai-source-summary):is(
+  :focus-visible,
+  :active
+) {
+  border-color: var(--interaction-border);
+}
+@media (hover: hover) and (pointer: fine) {
+  :is(.planning-extras > summary, .management-summary, .ai-summary, .ai-source-summary):hover {
+    border-color: var(--interaction-border);
+  }
+}
+.ai-summary-title {
+  display: inline;
+}
+.ai-summary-action {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+.ai-body {
+  padding: 20px 12px 0;
+}
+.ai-ready:not(:empty) {
+  margin-top: 12px;
+}
+.ai-ready:empty {
+  display: none;
+}
+.ai-source-links {
+  padding-inline-start: 20px;
+  margin-block: 8px;
+}
+.ai-source-links li + li {
+  margin-top: 4px;
+}
+.ai-source-details {
+  margin-top: 10px;
+}
+.ai-source-summary {
+  font-size: 0.875rem;
+}
+.ai-source-details > :where(p) {
+  padding-inline: 12px;
+}
+.lifecycle-group {
+  width: 100%;
+  min-width: 0;
+}
+.management-summary {
+  width: fit-content;
+  max-width: 100%;
+  font-size: 0.875rem;
+}
+.management-controls {
+  padding-top: 12px;
+}
+.management-panels:empty {
+  display: none;
+}
+.history-entry > .lifecycle-group,
+.path-copy > .lifecycle-group,
+.path-source-body > .lifecycle-group {
+  margin-top: 14px;
+}
+.corrected-label {
+  color: var(--muted);
+  font-weight: 600;
+}
+.activity-layout > .ai-assistance {
+  margin-top: 32px;
+}
+@media (max-width: 799px) {
+  .planning-method-options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ai-body {
+    padding-inline: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .planning-extras > summary,
+  .management-summary,
+  .ai-summary,
+  .ai-source-summary {
+    transition: none;
+  }
+}
+@media (forced-colors: active) {
+  .planning-method-options .checkbox-field,
+  .planning-extras > summary,
+  .management-summary,
+  .ai-summary,
+  .ai-source-summary {
+    border-color: ButtonText;
+  }
+  .planning-method-options .checkbox-field:has(:checked) {
+    outline: 2px solid Highlight;
   }
 }

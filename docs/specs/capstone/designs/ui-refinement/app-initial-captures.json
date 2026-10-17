@@ -1,0 +1,3347 @@
+{
+  "observedAt": "2026-10-17T20:39:05.946Z",
+  "revision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+  "sourceState": "uncommitted 17 October UI refinement working tree",
+  "sourceHashes": {
+    "src/client/main.ts": "de517de02802d72d2418ba528759d942503b080b17ab56102134a338f3dac04a",
+    "src/client/journey.ts": "2dcdf20f4bdef79d1bad7b2a184e4210281c9e877c3a14e34b3d377c3d069e3b",
+    "src/client/plan-editor.ts": "2deeb7f39e744b3ad956c4bc8b2ea9a89a939667e0395aad6febae1a42382e7e",
+    "src/client/ai-assistance.ts": "b8aadef861483af2705dcc7ad280690c390baab0c0a9850335e7af73a972d3da",
+    "src/client/learning-lifecycle.ts": "325184c1ad61be607da4bd8cd1e61017af0be0361c8aeda9179fa1c31111a4ba",
+    "src/client/shell.ts": "f6e2c88c37351bc82cd88e01f1c559fa359f2d457e5ff4a25458b547968b3921",
+    "src/client/ui.ts": "519e9ce1d1dad98f3333c09e6a57b2d2b7f1691fecb20b3ab455822ee4728622",
+    "src/client/styles.css": "02ce65442b4a9442766bf0929b2e261b1103c4b2f1b590734fe8ca312791de12",
+    "src/client/i18n.ts": "12a58c01f4c87e3fa6671bacb373bbed0f2d41db67dab46f47694b1930759d42",
+    "src/client/circle.ts": "760df00821abb22f80fac89e8aecced15e9fd058828d04a28731b48bf5aacb19",
+    "src/client/comeback.ts": "c5fd42e511d96b073e4dbbb1aa00a37ee75cfbee86f97847053086d76ed2d3f9",
+    "src/client/availability-picker.ts": "b45086f46a06484816138cd15a8e563f082d8ffffd13d98851825a0617f110c6"
+  },
+  "builtHashes": {
+    "dist\\client\\index.html": "dfa377aba1cd5ee85f3fd346c14b772989354e4448f32071b1e7c56cfa852f83",
+    "dist\\client\\assets\\index-Bg1JdZfG.css": "987742ae5fd0556f71caaa662b1e5dec6d1124e50e5a4ab3d3955b0666b37324",
+    "dist\\client\\assets\\index-C-XWsGSe.js": "eb5220cbc21c1ad35afa97d613ce69d5f93b740ca1dba443f9d7daf7d7f50c0b",
+    "dist\\client\\assets\\index-C-XWsGSe.js.map": "42f102e486473ba466e1988b8850fd6e9b45a72fed1125fcc91ed34af0cf4e43"
+  },
+  "intakeGitStatus": "M AGENTS.md\n M DESIGN.md\n M docs/USER_GUIDE.md\n M docs/specs/capstone/plan.md\n M docs/specs/capstone/research.md\n M docs/specs/capstone/spec.md\n M project-context.json\n M src/client/ai-assistance.ts\n M src/client/i18n.ts\n M src/client/journey.ts\n M src/client/learning-lifecycle.ts\n M src/client/main.ts\n M src/client/plan-editor.ts\n M src/client/shell.ts\n M src/client/styles.css\n M src/client/ui.ts\n M tests/e2e/ai.spec.ts\n M tests/e2e/control-readability.spec.ts\n M tests/e2e/design-refinement.spec.ts\n M tests/e2e/helpers.ts\n M tests/e2e/journey.spec.ts\n M tests/e2e/learning-lifecycle.spec.ts\n M tests/e2e/planning-calendar.spec.ts\n M tests/e2e/usability-forms.spec.ts\n M tests/e2e/usability-layout.spec.ts\n?? docs/specs/capstone/designs/ui-refinement/\n?? docs/specs/capstone/increments/ui-refinement-verification.md\n?? docs/specs/capstone/increments/ui-refinement.md\n?? tests/e2e/ui-refinement-interactions.spec.ts\n?? tests/e2e/ui-refinement-planning.spec.ts",
+  "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+  "browser": "installed Microsoft Edge through Playwright; headless",
+  "origin": "http://127.0.0.1:4326",
+  "dataDirectory": ".local\\ui-refinement\\capture-data",
+  "ordinaryDataAccessed": false,
+  "providerCredentialLoaded": false,
+  "liveProviderRequests": 0,
+  "syntheticProviderRequests": [
+    {
+      "action": "plan_search",
+      "locale": "en",
+      "synthetic": true
+    },
+    {
+      "action": "plan_draft",
+      "locale": "en",
+      "synthetic": true
+    }
+  ],
+  "blockedExternalRequests": 0,
+  "captures": [
+    {
+      "file": "app-initial-auth-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Signed-out shell; no learner data or authentication input is pictured.",
+      "sha256": "4f5a1dceb92b46694502b1734050ba7abbdf6faa0f4a0a6525f63b843b62b89d"
+    },
+    {
+      "file": "app-initial-auth-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Signed-out shell; no learner data or authentication input is pictured.",
+      "sha256": "3ce4b1f52e76d31bfea4001a0b1b5438efe47638f0a71910b041ac16d6ab01b4"
+    },
+    {
+      "file": "app-initial-preferences-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "New synthetic learner confirms an explicit timezone; the IANA contract remains unchanged.",
+      "sha256": "24071a62e582e9565312586702c72b715bc94937d77c956b7eca31363c0f2c6f"
+    },
+    {
+      "file": "app-initial-preferences-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "New synthetic learner confirms an explicit timezone; the IANA contract remains unchanged.",
+      "sha256": "6a2d90a384fd1794b04b45759ad89b6fff97fb659b61fed9187cbbf20fdd7350"
+    },
+    {
+      "file": "app-initial-preferences-mobile-fr-enlarged-forced.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "200% root text with forced colours and reduced motion; this is not browser zoom or a conformance audit.",
+      "sha256": "653d660a7c297702b4c3dbe80ce3ccb96272f52b987fc2a0ebf7570c604a11c1"
+    },
+    {
+      "file": "app-initial-planning-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Reviewed, unsaved three-step plan; associated compact links and one unique source catalogue.",
+      "sha256": "dc915607e8416c70ba92d65a6e021c4fab0739276a2c2fa0f752f76f808f186d"
+    },
+    {
+      "file": "app-initial-planning-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Reviewed, unsaved three-step plan; associated compact links and one unique source catalogue.",
+      "sha256": "9d89e87b28ef0f2851582296c29737cf52db0b9bd5b731bb2ae69458998499dc"
+    },
+    {
+      "file": "app-initial-planning-review-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 780,
+        "height": 1841
+      },
+      "scope": "focused actual element: .draft-review",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Focused editable AI review and unique provenance catalogue, before separate saving.",
+      "sha256": "72a883b29bcd27a6710002201694b5a7bbfc45749baee1e95597ea53a025d151"
+    },
+    {
+      "file": "app-initial-planning-review-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 296,
+        "height": 2433
+      },
+      "scope": "focused actual element: .draft-review",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Focused editable AI review and unique provenance catalogue, before separate saving.",
+      "sha256": "70dc0846d48c63d02b8b14434995a146a932d2ecd8814aa5085cff3c59e50973"
+    },
+    {
+      "file": "app-initial-dashboard-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Current next step and optional support after explicit plan saving.",
+      "sha256": "048a905f35147742f7e397919e7aa725ec826b9e5375f35d65a881071dce62c1"
+    },
+    {
+      "file": "app-initial-dashboard-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Current next step and optional support after explicit plan saving.",
+      "sha256": "6a4e4fb7d3ec7e027909b78a49cc099ba88c6fbfa0cf15d3b51bb9b4ed621f81"
+    },
+    {
+      "file": "app-initial-study-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Minutes, private reflection and Save precede optional assistance; completion remains separate. Unsaved synthetic reflection is retained across presentation changes.",
+      "sha256": "56ce0b203f908ac7fca0a2b4c28e17aab3d49bec06c0b57e876f2276c3790efa"
+    },
+    {
+      "file": "app-initial-study-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Minutes, private reflection and Save precede optional assistance; completion remains separate. Unsaved synthetic reflection is retained across presentation changes.",
+      "sha256": "418e2915d4139519e99822ec1a27192c98596bbc5d8cb778f165a0c080acd21f"
+    },
+    {
+      "file": "app-initial-activity-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Saved study and completion history before optional AI recap; contextual record-management disclosures.",
+      "sha256": "da95ac164eed20eadfbe437ba70a8850070bf716f2572c097f7ebcfa30fa7f7e"
+    },
+    {
+      "file": "app-initial-activity-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Saved study and completion history before optional AI recap; contextual record-management disclosures.",
+      "sha256": "73aef5b66221fe6c40be3777b2ab84a0b7db15e7fbebb57bf515b86194ade8d6"
+    },
+    {
+      "file": "app-initial-comeback-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Unapplied schedule preview; completed work remains and conflicts require acknowledgement.",
+      "sha256": "389bb9af0e3aa5a0a37ab311db49d66c139e3d8bcf8c65739a9b17d25a58081d"
+    },
+    {
+      "file": "app-initial-comeback-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Unapplied schedule preview; completed work remains and conflicts require acknowledgement.",
+      "sha256": "368c4b6c2c76d9544281f1bc81178d09feac9d4b3f52e6d0bc53064d37fd66ab"
+    },
+    {
+      "file": "app-initial-circles-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Two synthetic local accounts deliberately joined through an invitation, shared a commitment and sent preset encouragement through visible UI. No remote-peer claim.",
+      "sha256": "2e47b233eb6458714101be7fc6fc937d5e663376700d6e3b61cb991be6cac65c"
+    },
+    {
+      "file": "app-initial-circles-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Two synthetic local accounts deliberately joined through an invitation, shared a commitment and sent preset encouragement through visible UI. No remote-peer claim.",
+      "sha256": "0b5143c341e57021d39008791c7c2d84880dd1ad1acffb656afcf4326dac2968"
+    },
+    {
+      "file": "app-initial-finishline-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "All three steps deliberately self-reported complete; no mastery, credential or learning-outcome claim.",
+      "sha256": "4321baeee9bdb2e76cfece6a82696f549e987b5416e45faf70c5759d9b152f13"
+    },
+    {
+      "file": "app-initial-finishline-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "All three steps deliberately self-reported complete; no mastery, credential or learning-outcome claim.",
+      "sha256": "248f3e384999515fc19bfe1019534597c44c2f7799c0f3b6bb13efc92a5a2150"
+    },
+    {
+      "file": "app-initial-journeys-desktop-light-en.png",
+      "locale": "en",
+      "theme": "light",
+      "dimensions": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Open remains prominent; maintenance is a native disclosure with contextual controls.",
+      "sha256": "05213561983b4cc48fbb799fac42ddac8800d4a3efe029a90e01fbc8990ee7c8"
+    },
+    {
+      "file": "app-initial-journeys-mobile-dark-fr.png",
+      "locale": "fr",
+      "theme": "dark",
+      "dimensions": {
+        "width": 320,
+        "height": 900
+      },
+      "scope": "actual viewport; content below viewport is not pictured",
+      "sourceRevision": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
+      "classification": "actual application interface; isolated synthetic records; mocked AI/search responses",
+      "note": "Open remains prominent; maintenance is a native disclosure with contextual controls.",
+      "sha256": "25438cd49db104611963bb3318c293b154283defca685b6dd88f682df91dfe03"
+    }
+  ],
+  "checks": [
+    {
+      "name": "auth-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 441,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 441,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "Show password",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Sign in",
+          "width": 441,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "New here? Create an account",
+          "width": 441,
+          "height": 44,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "auth-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "Afficher le mot de passe",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Se connecter",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Première visite ? Créer un compte",
+          "width": 296,
+          "height": 44,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "preferences-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 600,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Save preferences and continue",
+          "width": 600,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "preferences-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Enregistrer et continuer",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "preferences-mobile-fr-enlarged-forced",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 149,
+          "height": 62,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 199.546875,
+          "height": 68,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 199.546875,
+          "height": 116,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 70,
+          "disabled": false
+        },
+        {
+          "label": "Enregistrer et continuer",
+          "width": 296,
+          "height": 118,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "explicit AI review focus",
+      "passed": true
+    },
+    {
+      "name": "planning-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Cancel",
+          "width": 85.828125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Use my topics or a starter",
+          "width": 384,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "Draft with AI",
+          "width": 384,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 611.390625,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "Open calendar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Add date",
+          "width": 104.609375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Remove Oct 8, 2026",
+          "width": 96.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Remove Oct 10, 2026",
+          "width": 96.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Remove Oct 12, 2026",
+          "width": 96.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Optional details",
+          "width": 780,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 94,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 70,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 94,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 742,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Move step up",
+          "width": 112.921875,
+          "height": 44,
+          "disabled": true
+        },
+        {
+          "label": "Move step down",
+          "width": 131.875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Remove",
+          "width": 76.984375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 742,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Move step up",
+          "width": 112.921875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Move step down",
+          "width": 131.875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Remove",
+          "width": 76.984375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 742,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Move step up",
+          "width": 112.921875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Move step down",
+          "width": 131.875,
+          "height": 44,
+          "disabled": true
+        },
+        {
+          "label": "Remove",
+          "width": 76.984375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Source details: MDN: Headings and paragraphs",
+          "width": 760,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Remove source: MDN: Headings and paragraphs",
+          "width": 148.25,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Add a step",
+          "width": 780,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Confirm and save plan",
+          "width": 200.390625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Cancel",
+          "width": 85.828125,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "planning-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Annuler",
+          "width": 95.359375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Utiliser mes sujets ou un modèle",
+          "width": 296,
+          "height": 98,
+          "disabled": false
+        },
+        {
+          "label": "Préparer avec l’IA",
+          "width": 296,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 242,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "Ouvrir le calendrier",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Ajouter la date",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Retirer 8 oct. 2026",
+          "width": 86.203125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Retirer 10 oct. 2026",
+          "width": 86.203125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Retirer 12 oct. 2026",
+          "width": 86.203125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Informations facultatives",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 94,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 70,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 94,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Monter l’étape",
+          "width": 111.84375,
+          "height": 44,
+          "disabled": true
+        },
+        {
+          "label": "Descendre l’étape",
+          "width": 131.421875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Retirer",
+          "width": 60.1875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Monter l’étape",
+          "width": 111.84375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Descendre l’étape",
+          "width": 131.421875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Retirer",
+          "width": 60.1875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Monter l’étape",
+          "width": 111.84375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Descendre l’étape",
+          "width": 131.421875,
+          "height": 44,
+          "disabled": true
+        },
+        {
+          "label": "Retirer",
+          "width": 60.1875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Détails de la source : MDN: Headings and paragraphs",
+          "width": 276,
+          "height": 64,
+          "disabled": false
+        },
+        {
+          "label": "Retirer la source: MDN: Headings and paragraphs",
+          "width": 155.125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Ajouter une étape",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Confirmer et enregistrer",
+          "width": 212.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Annuler",
+          "width": 95.359375,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "planning-review-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Cancel",
+          "width": 85.828125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Use my topics or a starter",
+          "width": 384,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "Draft with AI",
+          "width": 384,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 611.390625,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "Open calendar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Add date",
+          "width": 104.609375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Remove Oct 8, 2026",
+          "width": 96.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Remove Oct 10, 2026",
+          "width": 96.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Remove Oct 12, 2026",
+          "width": 96.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Optional details",
+          "width": 780,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 94,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 70,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 94,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 742,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Move step up",
+          "width": 112.921875,
+          "height": 44,
+          "disabled": true
+        },
+        {
+          "label": "Move step down",
+          "width": 131.875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Remove",
+          "width": 76.984375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 742,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Move step up",
+          "width": 112.921875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Move step down",
+          "width": 131.875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Remove",
+          "width": 76.984375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 742,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 362,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Move step up",
+          "width": 112.921875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Move step down",
+          "width": 131.875,
+          "height": 44,
+          "disabled": true
+        },
+        {
+          "label": "Remove",
+          "width": 76.984375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Source details: MDN: Headings and paragraphs",
+          "width": 760,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Remove source: MDN: Headings and paragraphs",
+          "width": 148.25,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Add a step",
+          "width": 780,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Confirm and save plan",
+          "width": 200.390625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Cancel",
+          "width": 85.828125,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "planning-review-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Annuler",
+          "width": 95.359375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Utiliser mes sujets ou un modèle",
+          "width": 296,
+          "height": 98,
+          "disabled": false
+        },
+        {
+          "label": "Préparer avec l’IA",
+          "width": 296,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 242,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "Ouvrir le calendrier",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Ajouter la date",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Retirer 8 oct. 2026",
+          "width": 86.203125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Retirer 10 oct. 2026",
+          "width": 86.203125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Retirer 12 oct. 2026",
+          "width": 86.203125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Informations facultatives",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 94,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 70,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 94,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Monter l’étape",
+          "width": 111.84375,
+          "height": 44,
+          "disabled": true
+        },
+        {
+          "label": "Descendre l’étape",
+          "width": 131.421875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Retirer",
+          "width": 60.1875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Monter l’étape",
+          "width": 111.84375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Descendre l’étape",
+          "width": 131.421875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Retirer",
+          "width": 60.1875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Monter l’étape",
+          "width": 111.84375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Descendre l’étape",
+          "width": 131.421875,
+          "height": 44,
+          "disabled": true
+        },
+        {
+          "label": "Retirer",
+          "width": 60.1875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Détails de la source : MDN: Headings and paragraphs",
+          "width": 276,
+          "height": 64,
+          "disabled": false
+        },
+        {
+          "label": "Retirer la source: MDN: Headings and paragraphs",
+          "width": 155.125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Ajouter une étape",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Confirmer et enregistrer",
+          "width": 212.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Annuler",
+          "width": 95.359375,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "dashboard-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Edit plan",
+          "width": 101.796875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Edit step",
+          "width": 101.015625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Start study session",
+          "width": 345,
+          "height": 60,
+          "disabled": false
+        },
+        {
+          "label": "Try a 5-minute restart",
+          "width": 195.765625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Write a descriptive heading\nNext action · Oct 8, 2026",
+          "width": 433,
+          "height": 64.671875,
+          "disabled": false
+        },
+        {
+          "label": "Add one short paragraph\nUpcoming · Oct 10, 2026",
+          "width": 433,
+          "height": 64.671875,
+          "disabled": false
+        },
+        {
+          "label": "Explain my page structure\nUpcoming · Oct 12, 2026",
+          "width": 433,
+          "height": 64.671875,
+          "disabled": false
+        },
+        {
+          "label": "Review restart dates",
+          "width": 184.296875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Open study circles",
+          "width": 170.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Reflect on your recorded effort\nSummarize my progress",
+          "width": 588,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 212.578125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Source details: MDN: Headings and paragraphs",
+          "width": 1124,
+          "height": 44,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "dashboard-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Modifier le parcours",
+          "width": 184.6875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Modifier l’étape",
+          "width": 142.171875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Commencer une séance",
+          "width": 262,
+          "height": 52,
+          "disabled": false
+        },
+        {
+          "label": "Reprendre avec 5 minutes",
+          "width": 225.78125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Revoir les dates de reprise",
+          "width": 227.5,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Write a descriptive heading\nProchaine action · 8 oct. 2026",
+          "width": 224,
+          "height": 87.34375,
+          "disabled": false
+        },
+        {
+          "label": "Add one short paragraph\nÀ venir · 10 oct. 2026",
+          "width": 224,
+          "height": 64.671875,
+          "disabled": false
+        },
+        {
+          "label": "Explain my page structure\nÀ venir · 12 oct. 2026",
+          "width": 224,
+          "height": 64.671875,
+          "disabled": false
+        },
+        {
+          "label": "Ouvrir les cercles d’étude",
+          "width": 220.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Faire le point sur vos efforts enregistrés\nRésumer mes progrès",
+          "width": 264,
+          "height": 101,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Détails de la source : MDN: Headings and paragraphs",
+          "width": 276,
+          "height": 64,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "study-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Back",
+          "width": 71.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Source details: MDN: Headings and paragraphs",
+          "width": 760,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 780,
+          "height": 142,
+          "disabled": false
+        },
+        {
+          "label": "Save study session",
+          "width": 780,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Help with studying and reflection\nHelp me study and reflect",
+          "width": 780,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 756,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 225.25,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Make room for a smaller step\nMake this step smaller",
+          "width": 780,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 756,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 200.0625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Mark this step complete",
+          "width": 213.3125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Choose the next action",
+          "width": 204.90625,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "study-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Retour",
+          "width": 86.546875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Détails de la source : MDN: Headings and paragraphs",
+          "width": 276,
+          "height": 64,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 296,
+          "height": 142,
+          "disabled": false
+        },
+        {
+          "label": "Enregistrer la séance",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Aide pour étudier et faire le point\nM’aider à étudier et faire le point",
+          "width": 264,
+          "height": 101,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 60,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 70,
+          "disabled": false
+        },
+        {
+          "label": "Faire de la place à une petite étape\nRéduire cette étape",
+          "width": 264,
+          "height": 101,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Marquer cette étape comme terminée",
+          "width": 296,
+          "height": 70,
+          "disabled": false
+        },
+        {
+          "label": "Choisir la prochaine action",
+          "width": 230.625,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "activity-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Manage study record: Write a descriptive heading · Oct 17, 2026 · 5 min",
+          "width": 492.796875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Delete study session: Write a descriptive heading · Oct 17, 2026 · 5 min",
+          "width": 185.703125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Remove private reflection: Write a descriptive heading · Oct 17, 2026 · 5 min",
+          "width": 224.046875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Review completion: Write a descriptive heading · Oct 17, 2026",
+          "width": 431.375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Mark as unfinished: Write a descriptive heading · Oct 17, 2026",
+          "width": 175.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Reflect on your recorded effort\nSummarize my progress",
+          "width": 646.875,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 212.578125,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "activity-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Gérer la séance d’étude : Write a descriptive heading · 17 oct. 2026 · 5 min",
+          "width": 296,
+          "height": 64,
+          "disabled": false
+        },
+        {
+          "label": "Supprimer la séance d’étude: Write a descriptive heading · 17 oct. 2026 · 5 min",
+          "width": 185.703125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Retirer la réflexion privée: Write a descriptive heading · 17 oct. 2026 · 5 min",
+          "width": 224.046875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Vérifier la validation : Write a descriptive heading · 17 oct. 2026",
+          "width": 296,
+          "height": 64,
+          "disabled": false
+        },
+        {
+          "label": "Marquer comme inachevée: Write a descriptive heading · 17 oct. 2026",
+          "width": 175.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Faire le point sur vos efforts enregistrés\nRésumer mes progrès",
+          "width": 264,
+          "height": 101,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "comeback-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Back to my learning",
+          "width": 139.484375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Edit plan",
+          "width": 101.796875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Find a gentle way back\nHelp me restart",
+          "width": 780,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 756,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 151.03125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 320,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "Preview revised dates",
+          "width": 194.03125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "I understand these conflicts. My target and availability will stay unchanged.",
+          "width": 621,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Cancel",
+          "width": 85.828125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Apply revised plan",
+          "width": 172.265625,
+          "height": 46,
+          "disabled": true
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "comeback-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Retour à mon parcours",
+          "width": 161.671875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Modifier le parcours",
+          "width": 184.6875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Trouver une reprise en douceur\nM’aider à reprendre",
+          "width": 264,
+          "height": 101,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 262,
+          "height": 48,
+          "disabled": false
+        },
+        {
+          "label": "Prévisualiser les dates révisées",
+          "width": 257.421875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Je comprends ces conflits. Ma date cible et mes disponibilités restent inchangées.",
+          "width": 296,
+          "height": 84,
+          "disabled": false
+        },
+        {
+          "label": "Annuler",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Appliquer le parcours révisé",
+          "width": 264,
+          "height": 46,
+          "disabled": true
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "circles-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Back to my learning",
+          "width": 139.484375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "All my circles",
+          "width": 91.609375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Write a shared copy",
+          "width": 182.625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Refresh circle information",
+          "width": 224.421875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Delete my shared copy",
+          "width": 203.6875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Members and circle settings",
+          "width": 472.59375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 161.5625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 119.15625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Invitations",
+          "width": 472.59375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 157.953125,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "circles-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Retour à mon parcours",
+          "width": 161.671875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Tous mes cercles",
+          "width": 117.484375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Rédiger une copie à partager",
+          "width": 248.78125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Actualiser les informations du cercle",
+          "width": 296,
+          "height": 70,
+          "disabled": false
+        },
+        {
+          "label": "Supprimer ma copie partagée",
+          "width": 254.109375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Membres et paramètres du cercle",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 171.796875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 152.546875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Invitations",
+          "width": 296,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 181.40625,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "finishline-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Edit plan",
+          "width": 101.796875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Create a learning plan",
+          "width": 197.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Review completion: Write a descriptive heading · Oct 17, 2026",
+          "width": 431.375,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Mark as unfinished: Write a descriptive heading · Oct 17, 2026",
+          "width": 175.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Review completion: Add one short paragraph · Oct 17, 2026",
+          "width": 417.796875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Mark as unfinished: Add one short paragraph · Oct 17, 2026",
+          "width": 175.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Review completion: Explain my page structure · Oct 17, 2026",
+          "width": 422,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Mark as unfinished: Explain my page structure · Oct 17, 2026",
+          "width": 175.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Open study circles",
+          "width": 170.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Reflect on your recorded effort\nSummarize my progress",
+          "width": 588,
+          "height": 74,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 212.578125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Source details: MDN: Headings and paragraphs",
+          "width": 1124,
+          "height": 44,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "finishline-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Modifier le parcours",
+          "width": 184.6875,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Créer un parcours",
+          "width": 262,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Vérifier la validation : Write a descriptive heading · 17 oct. 2026",
+          "width": 224,
+          "height": 85,
+          "disabled": false
+        },
+        {
+          "label": "Marquer comme inachevée: Write a descriptive heading · 17 oct. 2026",
+          "width": 175.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Vérifier la validation : Add one short paragraph · 17 oct. 2026",
+          "width": 224,
+          "height": 85,
+          "disabled": false
+        },
+        {
+          "label": "Marquer comme inachevée: Add one short paragraph · 17 oct. 2026",
+          "width": 175.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Vérifier la validation : Explain my page structure · 17 oct. 2026",
+          "width": 224,
+          "height": 85,
+          "disabled": false
+        },
+        {
+          "label": "Marquer comme inachevée: Explain my page structure · 17 oct. 2026",
+          "width": 175.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Ouvrir les cercles d’étude",
+          "width": 220.75,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Faire le point sur vos efforts enregistrés\nRésumer mes progrès",
+          "width": 264,
+          "height": 101,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 264,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Détails de la source : MDN: Headings and paragraphs",
+          "width": 276,
+          "height": 64,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "management keyboard focus",
+      "focused": true,
+      "outlineWidth": "3px",
+      "outlineStyle": "solid"
+    },
+    {
+      "name": "journeys-desktop-light-en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Collapse sidebar",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Language",
+          "width": 103,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Switch to dark mode",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Account",
+          "width": 190,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Create a learning plan",
+          "width": 197.265625,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Active\nArchived",
+          "width": 1144,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Open journey: Build a small page I can explain",
+          "width": 136.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Manage plan: Build a small page I can explain",
+          "width": 330.1875,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Archive plan: Build a small page I can explain",
+          "width": 127.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Delete permanently: Build a small page I can explain",
+          "width": 181.09375,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "journeys-mobile-dark-fr",
+      "viewport": {
+        "width": 320,
+        "height": 900
+      },
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "brand": "LittleFurther",
+      "targets": [
+        {
+          "label": "Ouvrir la navigation",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Langue",
+          "width": 98,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Passer en mode clair",
+          "width": 44,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Compte",
+          "width": 75,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "",
+          "width": 174,
+          "height": 44,
+          "disabled": false
+        },
+        {
+          "label": "Créer un parcours",
+          "width": 167.03125,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Actifs\nArchivés",
+          "width": 296,
+          "height": 45,
+          "disabled": false
+        },
+        {
+          "label": "Ouvrir le parcours: Build a small page I can explain",
+          "width": 136.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Gérer le programme : Build a small page I can explain",
+          "width": 296,
+          "height": 64,
+          "disabled": false
+        },
+        {
+          "label": "Archiver le programme: Build a small page I can explain",
+          "width": 127.9375,
+          "height": 46,
+          "disabled": false
+        },
+        {
+          "label": "Supprimer définitivement: Build a small page I can explain",
+          "width": 181.09375,
+          "height": 46,
+          "disabled": false
+        }
+      ],
+      "noHorizontalOverflow": true,
+      "targetsAtLeast44": true
+    },
+    {
+      "name": "touch drawer",
+      "open": true,
+      "hasTouch": true
+    }
+  ],
+  "errors": [
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.theme-button')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"theme-button\" aria-label=\"Passer en mode sombre\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a class=\"nav-link\" href=\"#learning\" aria-current=\"page\" data-route=\"learning\" aria-label=\"Mon apprentissage\">…</a> from <dialog open=\"\" class=\"mobile-drawer\" id=\"mobile-navigation\" aria-labelledby=\"drawer-title\">…</dialog> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <a class=\"nav-link\" href=\"#learning\" aria-current=\"page\" data-route=\"learning\" aria-label=\"Mon apprentissage\">…</a> from <dialog open=\"\" class=\"mobile-drawer\" id=\"mobile-navigation\" aria-labelledby=\"drawer-title\">…</dialog> subtree intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <button type=\"button\" class=\"button subtle\">Fermer</button> from <dialog open=\"\" class=\"mobile-drawer\" id=\"mobile-navigation\" aria-labelledby=\"drawer-title\">…</dialog> subtree intercepts pointer events\u001b[22m\n\u001b[2m  14 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <a class=\"nav-link\" href=\"#learning\" aria-current=\"page\" data-route=\"learning\" aria-label=\"Mon apprentissage\">…</a> from <dialog open=\"\" class=\"mobile-drawer\" id=\"mobile-navigation\" aria-labelledby=\"drawer-title\">…</dialog> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <a class=\"nav-link\" href=\"#learning\" aria-current=\"page\" data-route=\"learning\" aria-label=\"Mon apprentissage\">…</a> from <dialog open=\"\" class=\"mobile-drawer\" id=\"mobile-navigation\" aria-labelledby=\"drawer-title\">…</dialog> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button type=\"button\" class=\"button subtle\">Fermer</button> from <dialog open=\"\" class=\"mobile-drawer\" id=\"mobile-navigation\" aria-labelledby=\"drawer-title\">…</dialog> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <button type=\"button\" class=\"button subtle\">Fermer</button> from <dialog open=\"\" class=\"mobile-drawer\" id=\"mobile-navigation\" aria-labelledby=\"drawer-title\">…</dialog> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\n    at theme (C:\\Users\\USER\\Documents\\ChatGPT\\Andela X Miva X OpenAI (Codex Accelerator Hackathon)\\.local\\ui-refinement\\actual-capture.mjs:98:41)\n    at async file:///C:/Users/USER/Documents/ChatGPT/Andela%20X%20Miva%20X%20OpenAI%20(Codex%20Accelerator%20Hackathon)/.local/ui-refinement/actual-capture.mjs:290:23"
+  ],
+  "limits": [
+    "This is one bounded capture/interaction batch, not an exhaustive accessibility audit or outcome study.",
+    "Root-text enlargement is not native browser zoom.",
+    "Most images show a viewport; focused planning review separately shows its lower controls.",
+    "The provider adapter returns synthetic responses without making an outbound request.",
+    "All account, plan, study, completion, invitation, membership and sharing mutations used visible UI controls."
+  ]
+}

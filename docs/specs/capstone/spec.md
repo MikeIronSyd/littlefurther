@@ -219,3 +219,7 @@ Completion requires applicable tests/checks and independent review to pass, or a
 ## Active usability/layout refinement — 11 October 2026
 
 The user's combined usability/layout direction is specified in [UL01–08](increments/usability-layout.md). R32 and precode native references preceded implementation. Existing date/timezone/minute behavior, privacy and view lifetimes are preserved. The final full pipeline passes56domain/server and87browser cases plus static/build/process/audit checks; the [independent review](reviews/2026-10-11-usability-layout-review.md) has no scoped blocker. See [actual verification and separate delivery results](increments/usability-layout-verification.md). Technical acceptance remains distinct from formal human design approval.
+
+## Active comprehensive UI refinement —17October2026
+
+The user-approved one-page direction is governed by [UR01–UR08](increments/ui-refinement.md), R45 and the [precode references](designs/ui-refinement/README.md). Preserve calendar behavior, explicit review/save/share/completion and lifecycle privacy/retry contracts. Current implementation and verification are local work, separately recorded in [the verification record](increments/ui-refinement-verification.md); no new publication or approval is inferred from the historical increments above.
