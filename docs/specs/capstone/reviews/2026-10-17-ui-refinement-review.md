@@ -36,3 +36,8 @@ No real key, ordinary learner records, live provider request, shared write or co
 ## Done When
 
 The source review and two-item visual correction are complete within the agreed bounds. Final corrected required verification exited0 with100domain/server and123browser passes(21.2minutes),static/type/lint/format/build/process checks and audit with no known vulnerabilities. Local evidence and exact publication/tracker previews are ready. Obtain Michael's concrete approval before any local commit, push or shared update.
+
+
+## Approved release readback —17October2026
+
+The reviewed feature was normally published and its exact owner-authenticated head verified. E037’s11Sheet values and one KaneoA010prefix passed saved/reload comparison, with prior history retained. See [publication and comparison limits](2026-10-17-ui-refinement-publication.md). This supersedes the earlier approval-pending delivery status; all source-review findings and test/capture limitations above remain unchanged.

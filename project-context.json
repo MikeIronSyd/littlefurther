@@ -445,7 +445,7 @@
   ],
   "current_status": {
     "date": "2026-10-17",
-    "summary": "UR01–UR08 implemented and verified locally: required100domain/server+123browser cases (21.2minutes), static/type/lint/format/build/process/audit passed; independent source/correction review has no blocker. One24-slot actual visual batch and one5-image confirmation completed. No commit, push or tracker/shared write approved or performed.",
+    "summary": "UR01–UR08 implemented, verified and delivered on17October2026:100domain/server+123browser cases(21.2minutes),static/type/lint/format/build/process/audit passed; independent review and one bounded visual correction/confirmation complete. Approved feature publication and E037 tracker saved/reload readbacks passed.",
     "product_specification": "docs/specs/capstone/spec.md",
     "application_verification": "docs/specs/capstone/increments/ui-refinement-verification.md",
     "user_guide": "docs/USER_GUIDE.md",
@@ -458,14 +458,14 @@
     "packaging_verification": "docs/specs/capstone/increments/docker-verification.md",
     "packaging_status": "DK01–DK08 verified within recorded scope: clean LinuxAMD64/emulatedARM64; synthetic persistence/restore/mockAI;5container browser;required85domain/server+94browser/static/build/process/audit pass;independentreview;E031D019savedexact17Sheetvalues and fullKaneo history; reviewed source normallypublished/readback. Documentarycloseout uses same normalpublication and finalreadback.",
     "active_specification": "docs/specs/capstone/increments/ui-refinement.md",
-    "review": "docs/specs/capstone/reviews/2026-10-15-learning-lifecycle-review.md",
-    "visual": "docs/specs/capstone/designs/learning-lifecycle/README.md",
-    "checks": "15 October combined verification passed: 100 domain/server tests, 115 browser tests, and static/type, lint, format, build, process and dependency audit checks. Completed 15/10/2026, 10:45:42 Africa/Lagos. Isolated synthetic data and mocked AI only. Six final actual captures: no measured overflow,44px visible targets;9source hashes match. Browser MCP observed archive/FR/cancel/restore;16docs/259links/13anchors/10PNG/26labels validated. Enlarged-FR skip-link capture limitation retained.",
+    "review": "docs/specs/capstone/reviews/2026-10-17-ui-refinement-review.md",
+    "visual": "docs/specs/capstone/designs/ui-refinement/README.md",
+    "checks": "Required pnpm --pm-on-fail=download run verify exited0 at17/10/2026,22:05:41Africa/Lagos:100domain/server+123browser(21.2minutes),static/type/lint/format/build/process/audit(no known vulnerabilities). Focused9/9passed. No new application-suite run for this documentary closeout.",
     "calendar": "docs/specs/capstone/increments/planning-calendar.md",
     "calendar_verification": "docs/specs/capstone/increments/planning-calendar-verification.md",
-    "delivery": "Local implementation only; publication and tracker writes require fresh concrete approval.",
-    "tracker_sync": "E037 exact local draft only; no shared write approved. E036 remains the last verified shared update. Existing histories and metadata must be preserved.",
-    "publication_record": "docs/specs/capstone/reviews/2026-10-15-learning-lifecycle-publication.md"
+    "delivery": "Feature dfc30507931a96ff6bad1ecd0a3fc2d5793c9a27 published normally to MikeIronSyd/littlefurther and exact main read back; school owner author/committer and public visibility verified. E037 Sheet/Kaneo saved/readback passed. See docs/specs/capstone/reviews/2026-10-17-ui-refinement-publication.md.",
+    "tracker_sync": "E037 saved through browser/computer-use MCP:Codex evidence!A38:J38 exact10values;Context!B25 exact1061-character prefix+2newlines+48161-character history=49224characters. KaneoA010 exact7new paragraph texts,648prior childHTML records and entire prior text retained after reload; title/InProgress/NoDate/priority/assignee unchanged. Scoped readbacks, not a whole-workbook or full-board diff; native editor separator whitespace/autolinking qualified.",
+    "publication_record": "docs/specs/capstone/reviews/2026-10-17-ui-refinement-publication.md"
   },
   "status_reconciliation": {
     "date": "2026-10-14",
@@ -549,7 +549,7 @@
     "id": "ui-refinement",
     "name": "Comprehensive one-page UI refinement",
     "date": "2026-10-17",
-    "status": "UR01–UR08 implemented and verified locally: required100domain/server+123browser cases (21.2minutes), static/type/lint/format/build/process/audit passed; independent source/correction review has no blocker. One24-slot actual visual batch and one5-image confirmation completed. No commit, push or tracker/shared write approved or performed.",
+    "status": "UR01–UR08 implemented, verified and delivered on17October2026:100domain/server+123browser cases(21.2minutes),static/type/lint/format/build/process/audit passed; independent review and one bounded visual correction/confirmation complete. Approved feature publication and E037 tracker saved/reload readbacks passed.",
     "specification": "docs/specs/capstone/increments/ui-refinement.md",
     "verification": "docs/specs/capstone/increments/ui-refinement-verification.md",
     "baseline": "ee61b7d2f719aaca7559a6a9faee72afb6a855d2",
@@ -559,11 +559,13 @@
       "record": "docs/specs/capstone/design.md#overall-design-approval--12-october-2026",
       "boundary": "Historical pipeline sessions/URLs are not active approval gates or newly completed tool receipts."
     },
-    "tracker_sync": "E037 exact local draft only; no shared write approved. E036 remains the last verified shared update. Existing histories and metadata must be preserved.",
-    "next": "Review the exact local81-path feature/owner previews and E037 tracker proposal, then obtain Michael’s fresh approval for the bounded commit+push+tracker+documentary-closeout batch. Preserve AGENTS.md and all local-only material.",
-    "publication_record": null,
-    "artifact_commit": null,
-    "artifact_url": null
+    "tracker_sync": "E037 saved through browser/computer-use MCP:Codex evidence!A38:J38 exact10values;Context!B25 exact1061-character prefix+2newlines+48161-character history=49224characters. KaneoA010 exact7new paragraph texts,648prior childHTML records and entire prior text retained after reload; title/InProgress/NoDate/priority/assignee unchanged. Scoped readbacks, not a whole-workbook or full-board diff; native editor separator whitespace/autolinking qualified.",
+    "next": "Inspect the refined workflows and gather learner feedback. The minor manual-topic hint-direction advisory remains documented for a later bounded copy update. Any further commit, push or shared change requires a new concrete approval.",
+    "publication_record": "docs/specs/capstone/reviews/2026-10-17-ui-refinement-publication.md",
+    "artifact_commit": "dfc30507931a96ff6bad1ecd0a3fc2d5793c9a27",
+    "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/dfc30507931a96ff6bad1ecd0a3fc2d5793c9a27",
+    "latest_increment": "ui-refinement",
+    "delivery": "Feature dfc30507931a96ff6bad1ecd0a3fc2d5793c9a27 published normally to MikeIronSyd/littlefurther and exact main read back; school owner author/committer and public visibility verified. E037 Sheet/Kaneo saved/readback passed. See docs/specs/capstone/reviews/2026-10-17-ui-refinement-publication.md."
   },
   "ui_refinement": {
     "date": "2026-10-17",
@@ -571,12 +573,16 @@
     "verification": "docs/specs/capstone/increments/ui-refinement-verification.md",
     "research": "R45 closed before frontend implementation; eight synthetic desktop/mobile references inspected before code. Calendar placeholders qualified; actual calendar behavior preserved.",
     "scope": "Early manual/AI drafting choice on one page, compact source metadata and contextual assistance, study/history hierarchy, contextual lifecycle groups, selection reset and account dismissal. No API/schema/dependency change.",
-    "status": "UR01–UR08 implemented and verified locally: required100domain/server+123browser cases (21.2minutes), static/type/lint/format/build/process/audit passed; independent source/correction review has no blocker. One24-slot actual visual batch and one5-image confirmation completed. No commit, push or tracker/shared write approved or performed.",
+    "status": "UR01–UR08 implemented, verified and delivered on17October2026:100domain/server+123browser cases(21.2minutes),static/type/lint/format/build/process/audit passed; independent review and one bounded visual correction/confirmation complete. Approved feature publication and E037 tracker saved/reload readbacks passed.",
     "limitations": "Synthetic isolated records and mocked AI only. No screen-reader certification, educational outcome, new container-platform run or human design approval inferred.",
-    "delivery": "No commit, push or shared tracker update approved or performed for this increment. Publication uses this repository owner and existing history; visibility remains public as requested.",
+    "delivery": "Feature dfc30507931a96ff6bad1ecd0a3fc2d5793c9a27 published normally to MikeIronSyd/littlefurther and exact main read back; school owner author/committer and public visibility verified. E037 Sheet/Kaneo saved/readback passed. See docs/specs/capstone/reviews/2026-10-17-ui-refinement-publication.md.",
     "checks": "Required verify exit0 on17/10/2026, 22:05:41 Africa/Lagos:100domain/server+123browser,static/type/lint/format/build/process,audit(no known vulnerabilities); focused9/9 passed. Local docs/assets checks and owner previews are recorded in ignored receipts.",
-    "next": "Review the exact local81-path feature/owner previews and E037 tracker proposal, then obtain Michael’s fresh approval for the bounded commit+push+tracker+documentary-closeout batch. Preserve AGENTS.md and all local-only material.",
+    "next": "Inspect the refined workflows and gather learner feedback. The minor manual-topic hint-direction advisory remains documented for a later bounded copy update. Any further commit, push or shared change requires a new concrete approval.",
     "review": "docs/specs/capstone/reviews/2026-10-17-ui-refinement-review.md",
-    "visual": "docs/specs/capstone/designs/ui-refinement/README.md"
+    "visual": "docs/specs/capstone/designs/ui-refinement/README.md",
+    "tracker_sync": "E037 saved through browser/computer-use MCP:Codex evidence!A38:J38 exact10values;Context!B25 exact1061-character prefix+2newlines+48161-character history=49224characters. KaneoA010 exact7new paragraph texts,648prior childHTML records and entire prior text retained after reload; title/InProgress/NoDate/priority/assignee unchanged. Scoped readbacks, not a whole-workbook or full-board diff; native editor separator whitespace/autolinking qualified.",
+    "artifact_commit": "dfc30507931a96ff6bad1ecd0a3fc2d5793c9a27",
+    "artifact_url": "https://github.com/MikeIronSyd/littlefurther/commit/dfc30507931a96ff6bad1ecd0a3fc2d5793c9a27",
+    "publication_record": "docs/specs/capstone/reviews/2026-10-17-ui-refinement-publication.md"
   }
 }
